@@ -1,0 +1,20 @@
+project:
+  type: book
+
+book:
+  title: "Xác Suất Thống Kê"
+  author: "Võ Chí Công"
+  date: "2022/8/13"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt

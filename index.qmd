@@ -1,0 +1,18 @@
+# Lời nói đầu {.unnumbered}
+
+"Xác suất" và "thống kê" là hai môn học gây cho tôi
+nhiều khó khăn nhất.
+Môn "xác suất" tôi đã học những kiến thức cơ bản vài lần, tính ra là ở cấp 3, trong đại học, và gần đây là học trực tuyến.
+Môn "thống kê" tôi chưa học được cho ra bài bản lần nào, mấy tháng đầu năm 2022 có thử sức học trực tuyến nhưng đầu tư thời gian không đủ nên thi rớt thảm hại.
+
+Lần này nhất quyết học lại môn thống kê một cách nghiêm túc hơn, tôi tóm tắt lại kiến thức xác suất thống kê bằng tiếng Việt, mặc dù tài liệu học hầu hết là tiếng Anh, tiếng Nhật. Hy vọng tiếng mẹ đẻ sẽ giúp tôi hiểu rõ hơn các vấn đề, và trau dồi vốn từ vựng để chia sẻ kiến thức với các đồng nghiệp và bạn bè người Việt.
+
+Động cơ của việc học xác suất thống kê của tôi là để hiểu rõ hơn các lý thuyết căn bản trong ngành học máy và trí tuệ nhân tạo và áp dụng vào thực tiễn một cách đúng đắn, an toàn và công bằng hơn.
+
+Mục tiêu cụ thể trước mắt tôi đặt ra là học hiểu và lấy được chứng chỉ hoàn thành khoá học
+[Fundamentals of Statistics](https://www.edx.org/course/fundamentals-of-statistics)
+do các giáo sư đại học MIT dạy trên nền tảng trực tuyến edX.
+
+Tài liệu này được viết bằng các công cụ là
+[Quarto](https://quarto.org/docs/books)
+và [VSCode](https://code.visualstudio.com).

@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Xác Suất Thống Kê",
+    "section": "",
+    "text": "“Xác suất” và “thống kê” là hai môn học gây cho tôi nhiều khó khăn nhất. Môn “xác suất” tôi đã học những kiến thức cơ bản vài lần, tính ra là ở cấp 3, trong đại học, và gần đây là học trực tuyến. Môn “thống kê” tôi chưa học được cho ra bài bản lần nào, mấy tháng đầu năm 2022 có thử sức học trực tuyến nhưng đầu tư thời gian không đủ nên thi rớt thảm hại.\nLần này nhất quyết học lại môn thống kê một cách nghiêm túc hơn, tôi tóm tắt lại kiến thức xác suất thống kê bằng tiếng Việt, mặc dù tài liệu học hầu hết là tiếng Anh, tiếng Nhật. Hy vọng tiếng mẹ đẻ sẽ giúp tôi hiểu rõ hơn các vấn đề, và trau dồi vốn từ vựng để chia sẻ kiến thức với các đồng nghiệp và bạn bè người Việt.\nĐộng cơ của việc học xác suất thống kê của tôi là để hiểu rõ hơn các lý thuyết căn bản trong ngành học máy và trí tuệ nhân tạo và áp dụng vào thực tiễn một cách đúng đắn, an toàn và công bằng hơn.\nMục tiêu cụ thể trước mắt tôi đặt ra là học hiểu và lấy được chứng chỉ hoàn thành khoá học Fundamentals of Statistics do các giáo sư đại học MIT dạy trên nền tảng trực tuyến edX.\nTài liệu này được viết bằng các công cụ là Quarto và VSCode."
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Vào bài",
+    "section": "",
+    "text": "MITx. 2022. “Fundamentals of Statistics.” https://www.edx.org/course/fundamentals-of-statistics.\n\n\nWasserman, Larry. 2010. All of Statistics : A Concise Course in Statistical Inference. New York: Springer. http://www.amazon.de/All-Statistics-Statistical-Inference-Springer/dp/1441923225/ref=sr_1_2?ie=UTF8&qid=1356099149&sr=8-2."
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Tóm tắt",
+    "section": "",
+    "text": "Xác suất thống kê là nền tảng giúp ích cho việc phân tích dữ liệu, tổ chức thực hành thí nghiệm, chạy các mô hình giả lập, giải các bài toán tìm nghiệm tối ưu, nghiên cứu và ứng dụng học máy."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "Trích dẫn",
+    "section": "",
+    "text": "MITx. 2022. “Fundamentals of Statistics.” https://www.edx.org/course/fundamentals-of-statistics.\n\n\nWasserman, Larry. 2010. All of Statistics : A Concise Course in\nStatistical Inference. New York: Springer. http://www.amazon.de/All-Statistics-Statistical-Inference-Springer/dp/1441923225/ref=sr_1_2?ie=UTF8&qid=1356099149&sr=8-2."
+  }
+]

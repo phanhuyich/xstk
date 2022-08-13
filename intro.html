@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
+<meta name="generator" content="quarto-1.0.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -74,6 +74,9 @@ div.csl-indent {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -154,6 +157,27 @@ div.csl-indent {
 </header>
 
 <p>Tài liệu tham khảo chính là quyển “All of Statistics” của <span class="citation" data-cites="wasserman2010statistics">Wasserman (<a href="references.html#ref-wasserman2010statistics" role="doc-biblioref">2010</a>)</span>, tài liệu tham khảo cho khoá học <span class="citation" data-cites="mitx2022fundstats">MITx (<a href="references.html#ref-mitx2022fundstats" role="doc-biblioref">2022</a>)</span>.</p>
+<p>Môn xác suất nghiên cứu cách suy luận ra các đặc tính của tập dữ liệu sẽ được tạo ra từ một quy trình sản sinh dữ liệu. Ngược lại, môn thống kê nghiên cứu cách dự đoán đặc tính của một quy trình sản sinh dữ liệu từ tập dữ liệu đã quan sát được. Xem hình minh hoạ <a href="#fig-proba-stats">Figure&nbsp;<span>1.1</span></a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-proba-stats" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
+  A((Quy luật\n sản sinh))
+  B((Dữ liệu\n quan sát))
+  A--suy luận xác suất--&gt;B
+  B--quy nạp thống kê--&gt; A
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">Figure 1.1: Xác suất và thống kê.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">

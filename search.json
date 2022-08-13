@@ -11,7 +11,7 @@
     "href": "intro.html",
     "title": "1  Vào bài",
     "section": "",
-    "text": "MITx. 2022. “Fundamentals of Statistics.” https://www.edx.org/course/fundamentals-of-statistics.\n\n\nWasserman, Larry. 2010. All of Statistics : A Concise Course in Statistical Inference. New York: Springer. http://www.amazon.de/All-Statistics-Statistical-Inference-Springer/dp/1441923225/ref=sr_1_2?ie=UTF8&qid=1356099149&sr=8-2."
+    "text": "Môn xác suất nghiên cứu cách suy luận ra các đặc tính của tập dữ liệu sẽ được tạo ra từ một quy trình sản sinh dữ liệu. Ngược lại, môn thống kê nghiên cứu cách dự đoán đặc tính của một quy trình sản sinh dữ liệu từ tập dữ liệu đã quan sát được. Xem hình minh hoạ Figure 1.1.\n\n\n\n\n\nflowchart LR\n  A((Quy luật\\n sản sinh))\n  B((Dữ liệu\\n quan sát))\n  A--suy luận xác suất-->B\n  B--quy nạp thống kê--> A\n\n\n\n\n\nFigure 1.1: Xác suất và thống kê.\n\n\n\n\n\n\n\n\nMITx. 2022. “Fundamentals of Statistics.” https://www.edx.org/course/fundamentals-of-statistics.\n\n\nWasserman, Larry. 2010. All of Statistics : A Concise Course in Statistical Inference. New York: Springer. http://www.amazon.de/All-Statistics-Statistical-Inference-Springer/dp/1441923225/ref=sr_1_2?ie=UTF8&qid=1356099149&sr=8-2."
   },
   {
     "objectID": "summary.html",

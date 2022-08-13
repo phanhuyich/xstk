@@ -1,5 +1,15 @@
 # Vào bài
 
-Tài liệu tham khảo chính là
-quyển "All of Statistics" của @wasserman2010statistics,
-tài liệu tham khảo cho khoá học @mitx2022fundstats.
+Tài liệu tham khảo chính là quyển "All of Statistics" của @wasserman2010statistics, tài liệu tham khảo cho khoá học @mitx2022fundstats.
+
+Môn xác suất nghiên cứu cách suy luận ra các đặc tính của tập dữ liệu sẽ được tạo ra từ một quy trình sản sinh dữ liệu. Ngược lại, môn thống kê nghiên cứu cách dự đoán đặc tính của một quy trình sản sinh dữ liệu từ tập dữ liệu đã quan sát được. Xem hình minh hoạ @fig-proba-stats.
+
+```{mermaid}
+%%| label: fig-proba-stats
+%%| fig-cap: Xác suất và thống kê.
+flowchart LR
+  A((Quy luật\n sản sinh))
+  B((Dữ liệu\n quan sát))
+  A--suy luận xác suất-->B
+  B--quy nạp thống kê--> A
+```

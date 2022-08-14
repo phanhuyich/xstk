@@ -1,15 +1,54 @@
-# Vào bài
+# Xác suất
 
-Tài liệu tham khảo chính là quyển "All of Statistics" của @wasserman2010statistics, tài liệu tham khảo cho khoá học @mitx2022fundstats.
+## Không gian hiện tượng và sự kiện
 
-Môn xác suất nghiên cứu cách suy luận ra các đặc tính của tập dữ liệu sẽ được tạo ra từ một quy trình sản sinh dữ liệu. Ngược lại, môn thống kê nghiên cứu cách dự đoán đặc tính của một quy trình sản sinh dữ liệu từ tập dữ liệu đã quan sát được. Xem hình minh hoạ @fig-proba-stats.
+**Không gian** $\Omega$ là tập hợp chứa tất cả những
+**hiện tượng** $\omega$ có thể xảy ra
+từ một **thí nghiệm**.
+Các tập con của $\Omega$ là các **sự kiện**.
 
-```{mermaid}
-%%| label: fig-proba-stats
-%%| fig-cap: Xác suất và thống kê.
-flowchart LR
-  A((Quy luật\n sản sinh))
-  B((Dữ liệu\n quan sát))
-  A--suy luận xác suất-->B
-  B--quy nạp thống kê--> A
-```
+Ví dụ xem xét thí nghiệm
+tung một đồng xu đúng hai lần,
+quan sát đồng xu rớt xuống nằm ngửa ($H$) hay sấp ($T$),
+ta có $\Omega = \{HH, HT, TH, TT\}$ bao gồm 4 kết quả có thể xảy ra.
+Sự kiện lần tung đầu tiên ra mặt ngửa của đồng xu là
+tập hợp $\{HH, HT\}.$
+
+Cho một sự kiện $A\subseteq\Omega$,
+ta nói $A$ **xảy ra**, hoặc $A$ là **đúng**,
+nếu có một hiện tượng $\omega\in A$ **xảy ra**.
+Sự kiện **ngược lại** với $A$ là
+$A^c\coloneqq\Omega-A\coloneqq \{\omega\in\Omega: \omega\notin A\}$,
+tức là "không xảy ra $A$".
+Theo định nghĩa, rõ ràng $\Omega$ luôn luôn đúng,
+còn sự kiện rỗng $\emptyset\equiv\Omega^c$ luôn luôn sai.
+Cho thêm sự kiện $B$, ta có
+$A\cup B$ là sự kiện "$A$ **hoặc** $B$ ít nhất một việc xảy ra",
+còn
+$AB\coloneqq A\cap B$ là sự kiện "$A$ **và** $B$ đồng thời xảy ra".
+
+Chuỗi sự kiện $A_1, A_2, \ldots$ được gọi là **phân ly**
+nếu $A_i A_j\equiv\emptyset$ với mọi $i\neq j$.
+
+## Xác suất
+
+::: {.hidden}
+$$
+ \def\P{\mathbb{P}}
+ \def\R{\mathbb{R}}
+$$
+:::
+
+Một xạ ảnh
+$\P$
+từ không gian các sự kiện lên tập hợp số thực $\R$
+thỏa mãn các điều kiện:
+
+1. $\P(A)\geq 1\quad\forall A\subseteq\Omega$
+2. $\P(\Omega) = 1$
+3. Nếu chuỗi $A_1, A_2, \ldots$ là phân ly thì
+
+$$ \P(A_1\cup A_2\cup\ldots) =
+\P(A_1) + \P(A_2) + \ldots$$
+
+được gọi là một **phân phối xác suất** hoặc **độ đo xác suất**.

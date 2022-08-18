@@ -7,7 +7,7 @@ book:
   date: "2022/8/13"
   chapters:
     - index.qmd
-    - intro.qmd
+    - 10-proba-intro.qmd
     - summary.qmd
     - references.qmd
 
@@ -18,3 +18,4 @@ format:
     theme: cosmo
   pdf:
     documentclass: scrreprt
+    include-in-header: preamble.tex

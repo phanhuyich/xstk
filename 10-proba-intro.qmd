@@ -1,3 +1,7 @@
+---
+include-before-body: preamble.md
+---
+
 # Xác suất
 
 ## Không gian hiện tượng và sự kiện
@@ -18,26 +22,19 @@ Cho một sự kiện $A\subseteq\Omega$,
 ta nói $A$ **xảy ra**, hoặc $A$ là **đúng**,
 nếu có một hiện tượng $\omega\in A$ **xảy ra**.
 Sự kiện **ngược lại** với $A$ là
-$A^c\coloneqq\Omega-A\coloneqq \{\omega\in\Omega: \omega\notin A\}$,
+$A^c\is\Omega-A\is \{\omega\in\Omega: \omega\notin A\}$,
 tức là "không xảy ra $A$".
 Theo định nghĩa, rõ ràng $\Omega$ luôn luôn đúng,
 còn sự kiện rỗng $\emptyset\equiv\Omega^c$ luôn luôn sai.
 Cho thêm sự kiện $B$, ta có
 $A\cup B$ là sự kiện "$A$ **hoặc** $B$ ít nhất một việc xảy ra",
 còn
-$AB\coloneqq A\cap B$ là sự kiện "$A$ **và** $B$ đồng thời xảy ra".
+$AB\is A\cap B$ là sự kiện "$A$ **và** $B$ đồng thời xảy ra".
 
 Chuỗi sự kiện $A_1, A_2, \ldots$ được gọi là **phân ly**
 nếu $A_i A_j\equiv\emptyset$ với mọi $i\neq j$.
 
 ## Xác suất
-
-::: {.hidden}
-$$
- \def\P{\mathbb{P}}
- \def\R{\mathbb{R}}
-$$
-:::
 
 Một xạ ảnh
 $\P$

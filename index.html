@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.37">
+<meta name="generator" content="quarto-1.0.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,6 +17,25 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -27,7 +46,7 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
+<link href="./10-proba-intro.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -56,6 +75,9 @@ ul.task-list{list-style: none;}
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -96,7 +118,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Vào bài</span></a>
+  <a href="./10-proba-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Xác suất</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -159,9 +181,41 @@ ul.task-list{list-style: none;}
 <p>Lần này nhất quyết học lại môn thống kê một cách nghiêm túc hơn, tôi tóm tắt lại kiến thức xác suất thống kê bằng tiếng Việt, mặc dù tài liệu học hầu hết là tiếng Anh, tiếng Nhật. Hy vọng tiếng mẹ đẻ sẽ giúp tôi hiểu rõ hơn các vấn đề, và trau dồi vốn từ vựng để chia sẻ kiến thức với các đồng nghiệp và bạn bè người Việt.</p>
 <p>Động cơ của việc học xác suất thống kê của tôi là để hiểu rõ hơn các lý thuyết căn bản trong ngành học máy và trí tuệ nhân tạo và áp dụng vào thực tiễn một cách đúng đắn, an toàn và công bằng hơn.</p>
 <p>Mục tiêu cụ thể trước mắt tôi đặt ra là học hiểu và lấy được chứng chỉ hoàn thành khoá học <a href="https://www.edx.org/course/fundamentals-of-statistics">Fundamentals of Statistics</a> do các giáo sư đại học MIT dạy trên nền tảng trực tuyến edX.</p>
+<p>Tài liệu tham khảo chính là quyển “All of Statistics” của <span class="citation" data-cites="wasserman2010statistics">Wasserman (<a href="references.html#ref-wasserman2010statistics" role="doc-biblioref">2010</a>)</span>, tài liệu tham khảo cho khoá học <span class="citation" data-cites="mitx2022fundstats">MITx (<a href="references.html#ref-mitx2022fundstats" role="doc-biblioref">2022</a>)</span>.</p>
+<p>Môn xác suất nghiên cứu cách suy luận ra các đặc tính của tập dữ liệu sẽ được tạo ra từ một quy trình sản sinh dữ liệu. Ngược lại, môn thống kê nghiên cứu cách dự đoán đặc tính của một quy trình sản sinh dữ liệu từ tập dữ liệu đã quan sát được. Xem hình minh hoạ <a href="#fig-proba-stats">Figure&nbsp;<span>1</span></a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-proba-stats" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
+  A((Quy luật\n sản sinh))
+  B((Dữ liệu\n quan sát))
+  A--suy luận xác suất--&gt;B
+  B--quy nạp thống kê--&gt; A
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">Figure 1: Xác suất và thống kê.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Phân tích, khai thác dữ liệu, học máy và khoa học dữ liệu là những tên gọi khác của thống kê, tùy theo bối cảnh và trào lưu. Một số ứng dụng cụ thể của thống kê là tính toán hồi quy, mật độ, phân loại và giả lập.</p>
+<p>Thuật ngữ chuyên môn trong tài liệu này chắc chắn có nhiều chỗ không chuẩn chỉnh do vốn tiếng Việt và kiến thức hạn chế của tác giả. Xin vui lòng góp ý tại <a href="https://github.com/vochicong/xstk/issues">GitHub issues</a>.</p>
 <p>Tài liệu này được viết bằng các công cụ là <a href="https://quarto.org/docs/books">Quarto</a> và <a href="https://code.visualstudio.com">VSCode</a>.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-mitx2022fundstats" class="csl-entry" role="doc-biblioentry">
+MITx. 2022. <span>“Fundamentals of Statistics.”</span> <a href="https://www.edx.org/course/fundamentals-of-statistics">https://www.edx.org/course/fundamentals-of-statistics</a>.
+</div>
+<div id="ref-wasserman2010statistics" class="csl-entry" role="doc-biblioentry">
+Wasserman, Larry. 2010. <em>All of Statistics : A Concise Course in Statistical Inference</em>. New York: Springer. <a href="http://www.amazon.de/All-Statistics-Statistical-Inference-Springer/dp/1441923225/ref=sr_1_2?ie=UTF8&amp;qid=1356099149&amp;sr=8-2">http://www.amazon.de/All-Statistics-Statistical-Inference-Springer/dp/1441923225/ref=sr_1_2?ie=UTF8&amp;qid=1356099149&amp;sr=8-2</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -266,8 +320,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Vào bài</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./10-proba-intro.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Xác suất</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -10,10 +10,9 @@ Lần này nhất quyết học lại môn thống kê một cách nghiêm túc 
 Động cơ của việc học xác suất thống kê của tôi là để hiểu rõ hơn các lý thuyết căn bản trong ngành học máy và trí tuệ nhân tạo và áp dụng vào thực tiễn một cách đúng đắn, an toàn và công bằng hơn.
 
 Mục tiêu cụ thể trước mắt tôi đặt ra là học hiểu và lấy được chứng chỉ hoàn thành khoá học
-[Fundamentals of Statistics](https://www.edx.org/course/fundamentals-of-statistics)
-do các giáo sư đại học MIT dạy trên nền tảng trực tuyến edX.
-
-Tài liệu tham khảo chính là quyển "All of Statistics" của @wasserman2010statistics, tài liệu tham khảo cho khoá học @mitx2022fundstats.
+Fundamentals of Statistics của @mitx2022fundstats, giáo sư đại học MIT dạy trên nền tảng trực tuyến edX.
+Tài liệu tham khảo là quyển "All of Statistics" của @wasserman2010statistics,
+cũng chính là tài liệu tham khảo của khoá học nêu trên.
 
 Môn xác suất nghiên cứu cách suy luận ra các đặc tính của tập dữ liệu sẽ được tạo ra từ một quy trình sản sinh dữ liệu. Ngược lại, môn thống kê nghiên cứu cách dự đoán đặc tính của một quy trình sản sinh dữ liệu từ tập dữ liệu đã quan sát được. Xem hình minh hoạ @fig-proba-stats.
 
@@ -31,6 +30,8 @@ Phân tích, khai thác dữ liệu, học máy và khoa học dữ liệu là
 những tên gọi khác của thống kê, tùy theo bối cảnh và trào lưu.
 Một số ứng dụng cụ thể của thống kê là tính toán hồi quy, mật độ, phân loại và giả lập.
 
+Tài liệu này không đi sâu vào các chứng minh chi tiết,
+nhưng sẽ cố gắng ghi rõ các công thức và định nghĩa.
 Thuật ngữ chuyên môn trong tài liệu này chắc chắn có nhiều chỗ không chuẩn chỉnh do vốn tiếng Việt và kiến thức hạn chế của tác giả.
 Xin vui lòng góp ý tại
 [GitHub issues](https://github.com/vochicong/xstk/issues).

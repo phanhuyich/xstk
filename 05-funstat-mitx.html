@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Võ Chí Công">
-<meta name="dcterms.date" content="2022-08-13">
 
-<title>Xác Suất Thống Kê</title>
+<title>Xác Suất Thống Kê - 1&nbsp; MITx 18.6501x</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -46,7 +44,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./05-funstat-mitx.html" rel="next">
+<link href="./10-proba-intro.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -75,9 +74,6 @@ div.csl-indent {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -88,7 +84,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Xác Suất Thống Kê</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">MITx 18.6501x</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -113,12 +109,12 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Lời nói đầu</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Lời nói đầu</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-funstat-mitx.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">MITx 18.6501x</span></a>
+  <a href="./05-funstat-mitx.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">MITx 18.6501x</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -145,7 +141,12 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#lời-nói-đầu" id="toc-lời-nói-đầu" class="nav-link active" data-scroll-target="#lời-nói-đầu">Lời nói đầu</a></li>
+  <li><a href="#unit-0" id="toc-unit-0" class="nav-link active" data-scroll-target="#unit-0"> <span class="header-section-number">1.1</span> Unit 0</a>
+  <ul class="collapse">
+  <li><a href="#kỳ-hạn-nộp-bài" id="toc-kỳ-hạn-nộp-bài" class="nav-link" data-scroll-target="#kỳ-hạn-nộp-bài"> <span class="header-section-number">1.1.1</span> Kỳ hạn nộp bài</a></li>
+  <li><a href="#thời-gian-cần-thiết" id="toc-thời-gian-cần-thiết" class="nav-link" data-scroll-target="#thời-gian-cần-thiết"> <span class="header-section-number">1.1.2</span> Thời gian cần thiết</a></li>
+  <li><a href="#cách-tính-điểm" id="toc-cách-tính-điểm" class="nav-link" data-scroll-target="#cách-tính-điểm"> <span class="header-section-number">1.1.3</span> Cách tính điểm</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -154,72 +155,61 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Xác Suất Thống Kê</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">MITx 18.6501x</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Võ Chí Công </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 13, 2022</p>
-    </div>
-  </div>
     
   </div>
   
 
 </header>
 
-<section id="lời-nói-đầu" class="level1 unnumbered">
-<h1 class="unnumbered">Lời nói đầu</h1>
-<p>“Xác suất” và “thống kê” là hai môn học gây cho tôi nhiều khó khăn nhất. Môn “xác suất” tôi đã học những kiến thức cơ bản vài lần, tính ra là ở cấp 3, trong đại học, và gần đây là học trực tuyến. Môn “thống kê” tôi chưa học được cho ra bài bản lần nào, mấy tháng đầu năm 2022 có thử sức học trực tuyến nhưng đầu tư thời gian không đủ nên thi rớt thảm hại.</p>
-<p>Lần này nhất quyết học lại môn thống kê một cách nghiêm túc hơn, tôi tóm tắt lại kiến thức xác suất thống kê bằng tiếng Việt, mặc dù tài liệu học hầu hết là tiếng Anh, tiếng Nhật. Hy vọng tiếng mẹ đẻ sẽ giúp tôi hiểu rõ hơn các vấn đề, và trau dồi vốn từ vựng để chia sẻ kiến thức với các đồng nghiệp và bạn bè người Việt.</p>
-<p>Động cơ của việc học xác suất thống kê của tôi là để hiểu rõ hơn các lý thuyết căn bản trong ngành học máy và trí tuệ nhân tạo và áp dụng vào thực tiễn một cách đúng đắn, an toàn và công bằng hơn.</p>
-<p>Mục tiêu cụ thể trước mắt tôi đặt ra là học hiểu và lấy được chứng chỉ hoàn thành khoá học Fundamentals of Statistics của <span class="citation" data-cites="mitx2022fundstats">Philippe Rigollet (<a href="references.html#ref-mitx2022fundstats" role="doc-biblioref">2022</a>)</span>, giáo sư đại học MIT dạy trên nền tảng trực tuyến edX. Tài liệu tham khảo là quyển “All of Statistics” của <span class="citation" data-cites="wasserman2010statistics">Wasserman (<a href="references.html#ref-wasserman2010statistics" role="doc-biblioref">2004</a>)</span>, cũng chính là tài liệu tham khảo của khoá học nêu trên.</p>
-<p>Môn xác suất nghiên cứu cách suy luận ra các đặc tính của tập dữ liệu sẽ được tạo ra từ một quy trình sản sinh dữ liệu. Ngược lại, môn thống kê nghiên cứu cách dự đoán đặc tính của một quy trình sản sinh dữ liệu từ tập dữ liệu đã quan sát được. Xem hình minh hoạ <a href="#fig-proba-stats">Figure&nbsp;<span>1</span></a>.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-proba-stats" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p>
-</p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
-  A((Quy luật\n sản sinh))
-  B((Dữ liệu\n quan sát))
-  A--suy luận xác suất--&gt;B
-  B--quy nạp thống kê--&gt; A
-</pre>
-<div id="mermaid-tooltip-1" class="mermaidTooltip">
-
-</div>
-<p></p>
-<p></p><figcaption class="figure-caption">Figure 1: Xác suất và thống kê.</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Phân tích, khai thác dữ liệu, học máy và khoa học dữ liệu là những tên gọi khác của thống kê, tùy theo bối cảnh và trào lưu. Một số ứng dụng cụ thể của thống kê là tính toán hồi quy, mật độ, phân loại và giả lập.</p>
-<p>Tài liệu này không đi sâu vào các chứng minh chi tiết, nhưng sẽ cố gắng ghi rõ các công thức và định nghĩa. Thuật ngữ chuyên môn trong tài liệu này chắc chắn có nhiều chỗ không chuẩn chỉnh do vốn tiếng Việt và kiến thức hạn chế của tác giả. Xin vui lòng góp ý tại <a href="https://github.com/vochicong/xstk/issues">GitHub issues</a>.</p>
-<p>Tài liệu này được viết bằng các công cụ là <a href="https://quarto.org/docs/books">Quarto</a> và <a href="https://code.visualstudio.com">VSCode</a>. Truy cập trực tuyến <a href="https://vochicong.github.io/xstk/">xstk</a> và có thể tải <a href="https://vochicong.github.io/xstk/Xác-Suất-Thống-Kê.pdf">PDF</a>.</p>
+<p>“Fundamentals of Statistics” (MITx 18.6501x ) là khóa học của <span class="citation" data-cites="mitx2022fundstats">Philippe Rigollet (<a href="references.html#ref-mitx2022fundstats" role="doc-biblioref">2022</a>)</span> đại học MIT dạy trên edX.</p>
+<ul>
+<li><a href="https://learning.edx.org/course/course-v1:MITx+18.6501x+2T2022/dates">Important dates</a></li>
+<li><a href="https://calendar.google.com/calendar/u/0?cid=YTZsYXE2b3A4czl1MzMzN3NkbmVwc3MwM3NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">Calendar (private)</a></li>
+</ul>
+<section id="unit-0" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="unit-0"><span class="header-section-number">1.1</span> Unit 0</h2>
+<section id="kỳ-hạn-nộp-bài" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="kỳ-hạn-nộp-bài"><span class="header-section-number">1.1.1</span> Kỳ hạn nộp bài</h3>
+<ul>
+<li>Exercises and homework: Wednesdays 11:59AM UTC (Wed. 20:59 JST)</li>
+<li>Exams (48 hours): Tuesdays 11:59AM UTC(Tue. 20:59 JST)</li>
+</ul>
+</section>
+<section id="thời-gian-cần-thiết" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="thời-gian-cần-thiết"><span class="header-section-number">1.1.2</span> Thời gian cần thiết</h3>
+<p>Mỗi tuần khoảng hơn 12 tiếng</p>
+<ul>
+<li>5-7 hours on exercises, including 3 hours of lecture clips</li>
+<li>1-2 hours watching recitations</li>
+<li>5-7 hours for weekly problem sets</li>
+</ul>
+</section>
+<section id="cách-tính-điểm" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="cách-tính-điểm"><span class="header-section-number">1.1.3</span> Cách tính điểm</h3>
+<p>Điểm thi đậu chứng chỉ là 60% <a href="https://learning.edx.org/course/course-v1:MITx+18.6501x+2T2022/block-v1:MITx+18.6501x+2T2022+type@sequential+block@u0s1_overview/block-v1:MITx+18.6501x+2T2022+type@vertical+block@u0s1_overview-tab5">tổng số điểm</a> tối đa.</p>
+<ul>
+<li>20% for the lecture exercises (divided equally among the 20 out of 23 lectures)</li>
+<li>20% for the homeworks (divided equally among 10 (out of 12) homeworks)</li>
+<li>18% for the first midterm exam (timed)</li>
+<li>18% for the second midterm exam (timed)</li>
+<li>24% for the final exam (timed)</li>
+</ul>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
 <div id="ref-mitx2022fundstats" class="csl-entry" role="doc-biblioentry">
 Philippe Rigollet, Tyler Maunu, Jan Christian Huetter. 2022. <span>“Fundamentals of Statistics.”</span> MITx. <a href="https://www.edx.org/course/fundamentals-of-statistics">https://www.edx.org/course/fundamentals-of-statistics</a>.
 </div>
-<div id="ref-wasserman2010statistics" class="csl-entry" role="doc-biblioentry">
-Wasserman, Larry. 2004. <em>All of Statistics : A Concise Course in Statistical Inference</em>. New York: Springer. <a href="https://archive.org/details/springer_10.1007-978-0-387-21736-9">https://archive.org/details/springer_10.1007-978-0-387-21736-9</a>.
 </div>
-</div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -322,10 +312,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lời nói đầu</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./05-funstat-mitx.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">MITx 18.6501x</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./10-proba-intro.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Xác suất</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

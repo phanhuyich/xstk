@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Xác Suất Thống Kê - 1&nbsp; Xác suất</title>
+<title>Xác Suất Thống Kê - 2&nbsp; Xác suất</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -26,7 +26,7 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./summary.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./05-funstat-mitx.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -66,7 +66,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Xác suất</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Xác suất</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -96,12 +96,17 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10-proba-intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Xác suất</span></a>
+  <a href="./05-funstat-mitx.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">MITx 18.6501x</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tóm tắt</span></a>
+  <a href="./10-proba-intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Xác suất</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tóm tắt</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -118,8 +123,8 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#không-gian-hiện-tượng-và-sự-kiện" id="toc-không-gian-hiện-tượng-và-sự-kiện" class="nav-link active" data-scroll-target="#không-gian-hiện-tượng-và-sự-kiện"> <span class="header-section-number">1.1</span> Không gian hiện tượng và sự kiện</a></li>
-  <li><a href="#xác-suất" id="toc-xác-suất" class="nav-link" data-scroll-target="#xác-suất"> <span class="header-section-number">1.2</span> Xác suất</a></li>
+  <li><a href="#không-gian-hiện-tượng-và-sự-kiện" id="toc-không-gian-hiện-tượng-và-sự-kiện" class="nav-link active" data-scroll-target="#không-gian-hiện-tượng-và-sự-kiện"> <span class="header-section-number">2.1</span> Không gian hiện tượng và sự kiện</a></li>
+  <li><a href="#xác-suất" id="toc-xác-suất" class="nav-link" data-scroll-target="#xác-suất"> <span class="header-section-number">2.2</span> Xác suất</a></li>
   </ul>
 </nav>
     </div>
@@ -133,7 +138,7 @@ $$
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Xác suất</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Xác suất</span></h1>
 </div>
 
 
@@ -147,24 +152,23 @@ $$
 
 </header>
 
-<section id="không-gian-hiện-tượng-và-sự-kiện" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="không-gian-hiện-tượng-và-sự-kiện"><span class="header-section-number">1.1</span> Không gian hiện tượng và sự kiện</h2>
+<section id="không-gian-hiện-tượng-và-sự-kiện" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="không-gian-hiện-tượng-và-sự-kiện"><span class="header-section-number">2.1</span> Không gian hiện tượng và sự kiện</h2>
 <p><strong>Không gian</strong> <span class="math inline">\(\Omega\)</span> là tập hợp chứa tất cả những <strong>hiện tượng</strong> <span class="math inline">\(\omega\)</span> có thể xảy ra từ một <strong>thí nghiệm</strong>. Các tập con của <span class="math inline">\(\Omega\)</span> là các <strong>sự kiện</strong>.</p>
 <p>Ví dụ xem xét thí nghiệm tung một đồng xu đúng hai lần, quan sát đồng xu rớt xuống nằm ngửa (<span class="math inline">\(H\)</span>) hay sấp (<span class="math inline">\(T\)</span>), ta có <span class="math inline">\(\Omega = \{HH, HT, TH, TT\}\)</span> bao gồm 4 kết quả có thể xảy ra. Sự kiện lần tung đầu tiên ra mặt ngửa của đồng xu là tập hợp <span class="math inline">\(\{HH, HT\}.\)</span></p>
 <p>Cho một sự kiện <span class="math inline">\(A\subseteq\Omega\)</span>, ta nói <span class="math inline">\(A\)</span> <strong>xảy ra</strong>, hoặc <span class="math inline">\(A\)</span> là <strong>đúng</strong>, nếu có một hiện tượng <span class="math inline">\(\omega\in A\)</span> <strong>xảy ra</strong>. Sự kiện <strong>ngược lại</strong> với <span class="math inline">\(A\)</span> là <span class="math inline">\(A^c\is\Omega-A\is \{\omega\in\Omega: \omega\notin A\}\)</span>, tức là “không xảy ra <span class="math inline">\(A\)</span>”. Theo định nghĩa, rõ ràng <span class="math inline">\(\Omega\)</span> luôn luôn đúng, còn sự kiện rỗng <span class="math inline">\(\emptyset\equiv\Omega^c\)</span> luôn luôn sai. Cho thêm sự kiện <span class="math inline">\(B\)</span>, ta có <span class="math inline">\(A\cup B\)</span> là sự kiện “<span class="math inline">\(A\)</span> <strong>hoặc</strong> <span class="math inline">\(B\)</span> ít nhất một việc xảy ra”, còn <span class="math inline">\(AB\is A\cap B\)</span> là sự kiện “<span class="math inline">\(A\)</span> <strong>và</strong> <span class="math inline">\(B\)</span> đồng thời xảy ra”.</p>
-<p>Chuỗi sự kiện <span class="math inline">\(A_1, A_2, \ldots\)</span> được gọi là <strong>phân ly</strong> nếu <span class="math inline">\(A_i A_j\equiv\emptyset\)</span> với mọi <span class="math inline">\(i\neq j\)</span>.</p>
+<p>Chuỗi sự kiện <span class="math inline">\(A_1, A_2, \ldots\)</span> được gọi là <strong>phân ly</strong> nếu <span class="math inline">\(A_i A_j\equiv\emptyset\)</span> với mọi <span class="math inline">\(i\neq j\)</span>. Khi đó nếu <span class="math inline">\(A_1\cup A_2\cup\cdots\equiv C\)</span> thì ta nói <span class="math inline">\(A_1, A_2, \ldots\)</span> là một cách <strong>phân hoạch</strong> sự kiện <span class="math inline">\(C\)</span>.</p>
 </section>
-<section id="xác-suất" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="xác-suất"><span class="header-section-number">1.2</span> Xác suất</h2>
-<p>Một xạ ảnh <span class="math inline">\(\P\)</span> từ không gian các sự kiện lên tập hợp số thực <span class="math inline">\(\R\)</span> thỏa mãn các điều kiện:</p>
+<section id="xác-suất" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="xác-suất"><span class="header-section-number">2.2</span> Xác suất</h2>
+<p>Nếu một xạ ảnh <span class="math inline">\(\P\)</span> từ không gian các sự kiện <span class="math inline">\(A\subseteq\Omega\)</span> lên tập hợp số thực <span class="math inline">\(\R\)</span> thỏa mãn các điều kiện:</p>
 <ol type="1">
-<li><span class="math inline">\(\P(A)\geq 1\quad\forall A\subseteq\Omega\)</span></li>
+<li><span class="math inline">\(\P(A)\geq 0\quad\forall A\)</span></li>
 <li><span class="math inline">\(\P(\Omega) = 1\)</span></li>
-<li>Nếu chuỗi <span class="math inline">\(A_1, A_2, \ldots\)</span> là phân ly thì</li>
+<li>Nếu chuỗi <span class="math inline">\(A_1, A_2, \ldots\)</span> phân hoạch <span class="math inline">\(C\)</span> thì <span class="math inline">\(\P(A_1) + \P(A_2) + \cdots = \P(C)\)</span></li>
 </ol>
-<p><span class="math display">\[ \P(A_1\cup A_2\cup\ldots) =
-\P(A_1) + \P(A_2) + \ldots\]</span></p>
-<p>được gọi là một <strong>phân phối xác suất</strong> hoặc <strong>độ đo xác suất</strong>.</p>
+<p>thì ta gọi <span class="math inline">\(\P\)</span> là một <strong>phân phối xác suất</strong> hoặc <strong>độ đo xác suất</strong>.</p>
+<p>Có hai cách cắt nghĩa khái niệm xác suất là tần suất và niềm tin. Theo cách hiểu tần suất thì <span class="math inline">\(\P(A)\)</span> chính là tỷ lệ số lần sự kiện <span class="math inline">\(A\)</span> xảy ra nếu ta thực hiện thí nghiệm vô số lần. Còn theo cách hiểu niềm tin thì <span class="math inline">\(\P(A)\)</span> là thước đo mức độ mà một quan sát viên tin tưởng rằng hiện tượng <span class="math inline">\(A\)</span> sẽ xảy ra.</p>
 
 
 </section>
@@ -269,13 +273,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lời nói đầu</span>
+      <a href="./05-funstat-mitx.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">MITx 18.6501x</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./summary.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tóm tắt</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tóm tắt</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

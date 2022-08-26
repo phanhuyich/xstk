@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
+<meta name="generator" content="quarto-1.1.120">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -119,12 +124,13 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#không-gian-hiện-tượng-và-sự-kiện" id="toc-không-gian-hiện-tượng-và-sự-kiện" class="nav-link active" data-scroll-target="#không-gian-hiện-tượng-và-sự-kiện"> <span class="header-section-number">2.1</span> Không gian hiện tượng và sự kiện</a></li>
-  <li><a href="#xác-suất" id="toc-xác-suất" class="nav-link" data-scroll-target="#xác-suất"> <span class="header-section-number">2.2</span> Xác suất</a></li>
+  <li><a href="#sự-kiện" id="toc-sự-kiện" class="nav-link active" data-scroll-target="#sự-kiện"><span class="toc-section-number">2.1</span>  Sự kiện</a></li>
+  <li><a href="#xác-suất" id="toc-xác-suất" class="nav-link" data-scroll-target="#xác-suất"><span class="toc-section-number">2.2</span>  Xác suất</a></li>
+  <li><a href="#phân-phối" id="toc-phân-phối" class="nav-link" data-scroll-target="#phân-phối"><span class="toc-section-number">2.3</span>  Phân phối</a></li>
   </ul>
 </nav>
     </div>
@@ -133,7 +139,8 @@ ul.task-list{list-style: none;}
 $$
 \def\P{\mathbb{P}}
 \def\R{\mathbb{R}}
-\def\is{\coloneqq}
+\def\N{\mathbb{Z}_+}
+\def\is{:=}
 $$
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -152,8 +159,8 @@ $$
 
 </header>
 
-<section id="không-gian-hiện-tượng-và-sự-kiện" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="không-gian-hiện-tượng-và-sự-kiện"><span class="header-section-number">2.1</span> Không gian hiện tượng và sự kiện</h2>
+<section id="sự-kiện" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sự-kiện"><span class="header-section-number">2.1</span> Sự kiện</h2>
 <p><strong>Không gian</strong> <span class="math inline">\(\Omega\)</span> là tập hợp chứa tất cả những <strong>hiện tượng</strong> <span class="math inline">\(\omega\)</span> có thể xảy ra từ một <strong>thí nghiệm</strong>. Các tập con của <span class="math inline">\(\Omega\)</span> là các <strong>sự kiện</strong>.</p>
 <p>Ví dụ xem xét thí nghiệm tung một đồng xu đúng hai lần, quan sát đồng xu rớt xuống nằm ngửa (<span class="math inline">\(H\)</span>) hay sấp (<span class="math inline">\(T\)</span>), ta có <span class="math inline">\(\Omega = \{HH, HT, TH, TT\}\)</span> bao gồm 4 kết quả có thể xảy ra. Sự kiện lần tung đầu tiên ra mặt ngửa của đồng xu là tập hợp <span class="math inline">\(\{HH, HT\}.\)</span></p>
 <p>Cho một sự kiện <span class="math inline">\(A\subseteq\Omega\)</span>, ta nói <span class="math inline">\(A\)</span> <strong>xảy ra</strong>, hoặc <span class="math inline">\(A\)</span> là <strong>đúng</strong>, nếu có một hiện tượng <span class="math inline">\(\omega\in A\)</span> <strong>xảy ra</strong>. Sự kiện <strong>ngược lại</strong> với <span class="math inline">\(A\)</span> là <span class="math inline">\(A^c\is\Omega-A\is \{\omega\in\Omega: \omega\notin A\}\)</span>, tức là “không xảy ra <span class="math inline">\(A\)</span>”. Theo định nghĩa, rõ ràng <span class="math inline">\(\Omega\)</span> luôn luôn đúng, còn sự kiện rỗng <span class="math inline">\(\emptyset\equiv\Omega^c\)</span> luôn luôn sai. Cho thêm sự kiện <span class="math inline">\(B\)</span>, ta có <span class="math inline">\(A\cup B\)</span> là sự kiện “<span class="math inline">\(A\)</span> <strong>hoặc</strong> <span class="math inline">\(B\)</span> ít nhất một việc xảy ra”, còn <span class="math inline">\(AB\is A\cap B\)</span> là sự kiện “<span class="math inline">\(A\)</span> <strong>và</strong> <span class="math inline">\(B\)</span> đồng thời xảy ra”.</p>
@@ -169,6 +176,20 @@ $$
 </ol>
 <p>thì ta gọi <span class="math inline">\(\P\)</span> là một <strong>phân phối xác suất</strong> hoặc <strong>độ đo xác suất</strong>.</p>
 <p>Có hai cách cắt nghĩa khái niệm xác suất là tần suất và niềm tin. Theo cách hiểu tần suất thì <span class="math inline">\(\P(A)\)</span> chính là tỷ lệ số lần sự kiện <span class="math inline">\(A\)</span> xảy ra nếu ta thực hiện thí nghiệm vô số lần. Còn theo cách hiểu niềm tin thì <span class="math inline">\(\P(A)\)</span> là thước đo mức độ mà một quan sát viên tin tưởng rằng hiện tượng <span class="math inline">\(A\)</span> sẽ xảy ra.</p>
+</section>
+<section id="phân-phối" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="phân-phối"><span class="header-section-number">2.3</span> Phân phối</h2>
+<p>Có một số phân phối xác suất thông dụng.</p>
+<div id="def-bernoulli" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.1 (Phân phối Bernoulli) </strong></span><span class="math inline">\(X\sim\text{Bernoulli}(p)\)</span> với <span class="math inline">\(p\in(0,1)\)</span> nếu: <span class="math display">\[
+\P(X=1) = p = 1-\P(X=0).
+\]</span></p>
+</div>
+<div id="def-binomial" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.2 (Phân phối Binomial) </strong></span><span class="math inline">\(X\sim\text{Binomial}(n, p)\)</span> với <span class="math inline">\(n\in\N, p\in(0,1)\)</span> nếu <span class="math display">\[
+X\is\sum_{i=1}^n{X_i}
+\]</span> và iid <span class="math inline">\(X_i\sim\text{Bernoulli}(p),\,\forall i=1,2,\ldots\)</span></p>
+</div>
 
 
 </section>
@@ -243,7 +264,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

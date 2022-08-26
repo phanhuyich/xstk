@@ -2,21 +2,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
+<meta name="generator" content="quarto-1.1.120">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Võ Chí Công">
-<meta name="dcterms.date" content="2022-08-13">
+<meta name="dcterms.date" content="2022-08-25">
 
 <title>Xác Suất Thống Kê</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
@@ -141,7 +146,7 @@ div.csl-indent {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
@@ -171,7 +176,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 13, 2022</p>
+      <p class="date">August 25, 2022</p>
     </div>
   </div>
     
@@ -186,23 +191,23 @@ div.csl-indent {
 <p>Lần này nhất quyết học lại môn thống kê một cách nghiêm túc hơn, tôi tóm tắt lại kiến thức xác suất thống kê bằng tiếng Việt, mặc dù tài liệu học hầu hết là tiếng Anh, tiếng Nhật. Hy vọng tiếng mẹ đẻ sẽ giúp tôi hiểu rõ hơn các vấn đề, và trau dồi vốn từ vựng để chia sẻ kiến thức với các đồng nghiệp và bạn bè người Việt.</p>
 <p>Động cơ của việc học xác suất thống kê của tôi là để hiểu rõ hơn các lý thuyết căn bản trong ngành học máy và trí tuệ nhân tạo và áp dụng vào thực tiễn một cách đúng đắn, an toàn và công bằng hơn.</p>
 <p>Mục tiêu cụ thể trước mắt tôi đặt ra là học hiểu và lấy được chứng chỉ hoàn thành khoá học Fundamentals of Statistics của <span class="citation" data-cites="mitx2022fundstats">Philippe Rigollet (<a href="references.html#ref-mitx2022fundstats" role="doc-biblioref">2022</a>)</span>, giáo sư đại học MIT dạy trên nền tảng trực tuyến edX. Tài liệu tham khảo là quyển “All of Statistics” của <span class="citation" data-cites="wasserman2010statistics">Wasserman (<a href="references.html#ref-wasserman2010statistics" role="doc-biblioref">2004</a>)</span>, cũng chính là tài liệu tham khảo của khoá học nêu trên.</p>
-<p>Môn xác suất nghiên cứu cách suy luận ra các đặc tính của tập dữ liệu sẽ được tạo ra từ một quy trình sản sinh dữ liệu. Ngược lại, môn thống kê nghiên cứu cách dự đoán đặc tính của một quy trình sản sinh dữ liệu từ tập dữ liệu đã quan sát được. Xem hình minh hoạ <a href="#fig-proba-stats">Figure&nbsp;<span>1</span></a>.</p>
+<p>Môn xác suất nghiên cứu cách suy luận ra các đặc tính của tập dữ liệu sẽ được tạo ra từ một nguyên lý, quy trình sản sinh dữ liệu. Ngược lại, môn thống kê nghiên cứu cách dự đoán đặc tính của một quy trình sản sinh dữ liệu từ tập dữ liệu về hiện tượng đã phát sinh và được quan sát. Xem minh hoạ ở <a href="#fig-proba-stats">hình&nbsp;<span>1</span></a>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-proba-stats" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p>
 </p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
-  A((Quy luật\n sản sinh))
-  B((Dữ liệu\n quan sát))
-  A--suy luận xác suất--&gt;B
-  B--quy nạp thống kê--&gt; A
+  A((Nguyên lý,\n Quy trình))
+  B((Hiện tượng,\n Quan trắc))
+  A-- Xác suất --&gt;B
+  B-- Thống kê --&gt; A
 </pre>
 <div id="mermaid-tooltip-1" class="mermaidTooltip">
 
 </div>
 <p></p>
-<p></p><figcaption class="figure-caption">Figure 1: Xác suất và thống kê.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Xác suất và thống kê.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -292,7 +297,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

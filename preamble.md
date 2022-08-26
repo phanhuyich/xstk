@@ -1,5 +1,6 @@
 $$
 \def\P{\mathbb{P}}
 \def\R{\mathbb{R}}
-\def\is{\coloneqq}
+\def\N{\mathbb{Z}_+}
+\def\is{:=}
 $$

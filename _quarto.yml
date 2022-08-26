@@ -22,4 +22,6 @@ format:
     include-in-header: preamble.tex
 
 crossref:
-  fig-prefix: hình
+  fig-prefix: Hình
+  def-title: Định nghĩa
+  thm-title: Định lý

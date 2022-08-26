@@ -16,7 +16,8 @@ cũng chính là tài liệu tham khảo của khoá học nêu trên.
 
 Môn xác suất nghiên cứu cách suy luận ra các đặc tính của tập dữ liệu sẽ được tạo ra từ một nguyên lý, quy trình sản sinh dữ liệu.
 Ngược lại, môn thống kê nghiên cứu cách dự đoán đặc tính của một quy trình sản sinh dữ liệu từ tập dữ liệu về hiện tượng đã phát sinh và được quan sát.
-Xem minh hoạ ở @fig-proba-stats.
+@fig-proba-stats minh hoạ quan hệ giữa "xác suất" và "thống kê".
+
 
 ```{mermaid}
 %%| label: fig-proba-stats

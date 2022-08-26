@@ -55,14 +55,33 @@ Theo cách hiểu tần suất thì $\P(A)$ chính là tỷ lệ số lần sự
 xảy ra nếu ta thực hiện thí nghiệm vô số lần.
 Còn theo cách hiểu niềm tin thì $\P(A)$ là thước đo mức độ mà một quan sát viên tin tưởng rằng hiện tượng $A$ sẽ xảy ra.
 
+## Biến số
+
+::: {#def-randvar}
+### Biến ngẫu nhiên
+(random variable, rv) là một quy tắc ánh xạ
+$X: \Omega\to\R$
+gán cho mỗi hiện tượng $\omega$ trong
+không gian $\Omega$
+một số thực $X(\omega)$.
+:::
+
 ## Phân phối
 
 Có một số phân phối xác suất thông dụng.
 
+::: {#def-iid}
+### IID
+Các biến ngẫu nhiên $X_1, X_2, \ldotp$ được gọi là
+iid ("independent and identically distributed",
+"độc lập và phân phối giống nhau")
+nếu chúng cùng tuân theo duy nhất một phân phối xác suất,
+và từng cặp biến là độc lập với nhau.
+:::
 
 ::: {#def-bernoulli}
 ### Phân phối Bernoulli
-$X\sim\text{Bernoulli}(p)$
+$X\sim\Bernoulli(p)$
 với $p\in(0,1)$
 nếu:
 $$
@@ -72,11 +91,75 @@ $$
 
 ::: {#def-binomial}
 ### Phân phối Binomial
-$X\sim\text{Binomial}(n, p)$
+$X\sim\Binomial(n, p)$
 với $n\in\N, p\in(0,1)$
 nếu
 $$
 X\is\sum_{i=1}^n{X_i}
 $$
-và iid $X_i\sim\text{Bernoulli}(p),\,\forall i=1,2,\ldots$
+và iid $X_i\sim\Bernoulli(p),\,\forall i=1,2,\ldots$
+:::
+
+## Hội tụ
+
+Có một số kiểu hội tụ của biến ngẫu nhiên.
+
+::: {#def-conv-proba}
+### Hội tụ xác suất
+Cho một chuỗi biến ngẫu nhiên $X_1,X_2,\ldotp$
+và một biến ngẫu nhiên $X$.
+Gọi $F_n$ là CDF của $X_n$ và $F$ là CDF của $X$.
+
+1. $X_n \xrightarrow[n\to\infty]{\P} X$ nếu
+
+$$
+\P(|X_n-X| >\epsilon)
+\xrightarrow[n\to\infty]{}
+0\quad\forall\epsilon>0.
+$$
+
+2. $X_n \xrightarrow[n\to\infty]{\as} X$ nếu
+$$
+\P(\{\omega\in\Omega: X_n(\omega)\to X(\omega)\}) = 1.
+$$
+
+3. $X_n \xrightarrow[n\to\infty]{(d)} X$ nếu
+
+$$
+F_n(t)\xrightarrow[n\to\infty]{} F(t)
+$$
+
+tại mọi điểm $t$ mà $F$ liên tục.
+:::
+
+Cho $n$ biến iid $X_1, X_2,\ldotp,X_n$ có chung
+$\mu=\E[X_i],\sigma^2=\V[X_i]$.
+Lấy giá trị trung bình:
+$$\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}.$$
+
+::: {#thm-lln}
+### Định lý số lớn (LLN)
+$$
+\bar{X}_n\xrightarrow[n\to\infty]{\P,\,\as}\mu
+$$
+:::
+
+::: {#thm-clt}
+### Định lý trung tâm (CLT)
+$$
+\sqrt{n}(\bar{X}_n-\mu)
+\xrightarrow[n\to\infty]{(d)}
+\Normal(0,\sigma^2)
+$$
+:::
+
+::: {#thm-hoeffding}
+### Bất đẳng thức Hoefding
+Nếu có một khoảng cố định $[a,b]$ gần như tuyệt đối (almost surely) chứa các biến $X_i (i=1,2,\ldots,n)$ thì
+
+$$
+\P[|\bar{X}_n-\mu|\geq\epsilon]\leq
+2e^{-\frac{2n\epsilon^2}{(b-a)^2}},\quad\forall\epsilon>0.
+$$
+
 :::

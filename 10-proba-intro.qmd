@@ -55,8 +55,6 @@ Theo cách hiểu tần suất thì $\P(A)$ chính là tỷ lệ số lần sự
 xảy ra nếu ta thực hiện thí nghiệm vô số lần.
 Còn theo cách hiểu niềm tin thì $\P(A)$ là thước đo mức độ mà một quan sát viên tin tưởng rằng hiện tượng $A$ sẽ xảy ra.
 
-## Biến số
-
 ::: {#def-randvar}
 ### Biến ngẫu nhiên
 (random variable, rv) là một quy tắc ánh xạ
@@ -64,6 +62,11 @@ $X: \Omega\to\R$
 gán cho mỗi hiện tượng $\omega$ trong
 không gian $\Omega$
 một số thực $X(\omega)$.
+:::
+
+:::{#def-quantile}
+### Điểm cắt
+Điểm cắt tại mức $1-\alpha$ của biến $X$ là một số $q_\alpha$ mà $\P(X\leq q_\alpha)=1-\alpha.$
 :::
 
 ## Phân phối
@@ -100,6 +103,16 @@ $$
 và iid $X_i\sim\Bernoulli(p),\,\forall i=1,2,\ldots$
 :::
 
+
+:::{#def-gaussian}
+### Phân phối Gaussian
+$X\sim\Normal(\mu,\sigma^2)$ có $\E[X]=\mu,\V[X]=\sigma^2$ và
+mật độ
+$$
+f(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right).
+$$
+:::
+
 ## Hội tụ
 
 Có một số kiểu hội tụ của biến ngẫu nhiên.
@@ -108,29 +121,39 @@ Có một số kiểu hội tụ của biến ngẫu nhiên.
 ### Hội tụ xác suất
 Cho một chuỗi biến ngẫu nhiên $X_1,X_2,\ldotp$
 và một biến ngẫu nhiên $X$.
-Gọi $F_n$ là CDF của $X_n$ và $F$ là CDF của $X$.
 
-1. $X_n \xrightarrow[n\to\infty]{\P} X$ nếu
-
-$$
-\P(|X_n-X| >\epsilon)
-\xrightarrow[n\to\infty]{}
-0\quad\forall\epsilon>0.
-$$
-
-2. $X_n \xrightarrow[n\to\infty]{\as} X$ nếu
+1. Hội tụ gần tuyệt đối: $X_n \xrightarrow[n\to\infty]{\as} X$ nếu
 $$
 \P(\{\omega\in\Omega: X_n(\omega)\to X(\omega)\}) = 1.
 $$
 
-3. $X_n \xrightarrow[n\to\infty]{(d)} X$ nếu
+2. Hội tụ theo xác suất: $X_n \xrightarrow[n\to\infty]{\P} X$ nếu
+$$
+\P(|X_n-X| >\epsilon)
+\xrightarrow[n\to\infty]{}
+0,\quad\forall\epsilon>0.
+$$
+Hệ quả:
+$\P(a\leq X_n\leq b) \xrightarrow[n\to\infty]{} \P(a\leq X\leq b)$.
 
+3. Hội tụ theo phân phối: $X_n \xrightarrow[n\to\infty]{(d)} X$ nếu,
+gọi $F_n$ là CDF của $X_n$, và $F$ là CDF của $X$:
 $$
 F_n(t)\xrightarrow[n\to\infty]{} F(t)
 $$
-
 tại mọi điểm $t$ mà $F$ liên tục.
+Nói cách khác,
+$\E[f(X_n)]\xrightarrow[n\to\infty]{}\E[f(X)]$ đối với mọi hàm $f$ liên tục và bị chặn.
+
 :::
+
+Xếp theo thứ tự từ mạnh đến yếu,
+hội tụ gần tuyệt đối mạnh nhất,
+tiếp theo là hội tụ theo xác suất,
+cuối cùng là hội tụ theo phân phối là yếu nhất.
+Ngược lại, từ hội tụ theo phân phối nếu có thêm thông tin là
+đích hội tụ $X$ có mật độ xác suất, thì có thể suy ra
+được hội tụ là theo xác suất.
 
 Cho $n$ biến iid $X_1, X_2,\ldotp,X_n$ có chung
 $\mu=\E[X_i],\sigma^2=\V[X_i]$.
@@ -147,9 +170,9 @@ $$
 ::: {#thm-clt}
 ### Định lý trung tâm (CLT)
 $$
-\sqrt{n}(\bar{X}_n-\mu)
+\sqrt{n}(\bar{X}_n-\mu)/\sigma
 \xrightarrow[n\to\infty]{(d)}
-\Normal(0,\sigma^2)
+\Normal(0,1)
 $$
 :::
 

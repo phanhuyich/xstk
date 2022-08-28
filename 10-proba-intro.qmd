@@ -122,38 +122,65 @@ Có một số kiểu hội tụ của biến ngẫu nhiên.
 Cho một chuỗi biến ngẫu nhiên $X_1,X_2,\ldotp$
 và một biến ngẫu nhiên $X$.
 
-1. Hội tụ gần tuyệt đối: $X_n \xrightarrow[n\to\infty]{\as} X$ nếu
+1. Hội tụ gần tuyệt đối:
 $$
+X_n \xrightarrow[n\to\infty]{\as} X \iff
 \P(\{\omega\in\Omega: X_n(\omega)\to X(\omega)\}) = 1.
 $$
 
-2. Hội tụ theo xác suất: $X_n \xrightarrow[n\to\infty]{\P} X$ nếu
+2. Hội tụ theo xác suất:
 $$
+X_n \xrightarrow[n\to\infty]{\P} X \iff
 \P(|X_n-X| >\epsilon)
 \xrightarrow[n\to\infty]{}
 0,\quad\forall\epsilon>0.
 $$
-Hệ quả:
-$\P(a\leq X_n\leq b) \xrightarrow[n\to\infty]{} \P(a\leq X\leq b)$.
 
-3. Hội tụ theo phân phối: $X_n \xrightarrow[n\to\infty]{(d)} X$ nếu,
-gọi $F_n$ là CDF của $X_n$, và $F$ là CDF của $X$:
+3. Hội tụ theo phân phối:
+gọi $F_n$ là CDF của $X_n$, và $F$ là CDF của $X$,
 $$
-F_n(t)\xrightarrow[n\to\infty]{} F(t)
+X_n \xrightarrow[n\to\infty]{(d)} X \iff
+F_n(x)\xrightarrow[n\to\infty]{} F(x)
 $$
-tại mọi điểm $t$ mà $F$ liên tục.
-Nói cách khác,
-$\E[f(X_n)]\xrightarrow[n\to\infty]{}\E[f(X)]$ đối với mọi hàm $f$ liên tục và bị chặn.
+tại mọi điểm $x$ mà $F$ liên tục.
 
 :::
 
-Xếp theo thứ tự từ mạnh đến yếu,
-hội tụ gần tuyệt đối mạnh nhất,
-tiếp theo là hội tụ theo xác suất,
-cuối cùng là hội tụ theo phân phối là yếu nhất.
-Ngược lại, từ hội tụ theo phân phối nếu có thêm thông tin là
-đích hội tụ $X$ có mật độ xác suất, thì có thể suy ra
-được hội tụ là theo xác suất.
+### Tính chất
+
+Xếp theo thứ tự từ mạnh đến yếu:
+
+$$
+X_n \xrightarrow[n\to\infty]{\as} X \implies
+X_n \xrightarrow[n\to\infty]{\P} X \implies
+X_n \xrightarrow[n\to\infty]{(d)} X.
+$$
+
+Nếu
+$X_n \xrightarrow[n\to\infty]{(d)} X$,
+và
+$X$ có mật độ xác suất, thì
+$X_n \xrightarrow[n\to\infty]{\P} X$.
+
+Nếu $X_n\xrightarrow[n\to\infty]{\P} X$ thì
+$\P(a\leq X_n\leq b) \xrightarrow[n\to\infty]{} \P(a\leq X\leq b)$
+với mọi khoảng $[a,b]$.
+
+Nếu có hai chuỗi biến ngẫu nhiên $X_n, Y_n$
+hội tụ gần tuyệt đối
+hoặc hội tụ theo xác suất về $X, Y$,
+thì tổng và tích của chúng
+cũng hội tụ theo cùng kiểu (gần tuyệt đối, hoặc theo xác suất)
+về tổng $X+Y$ hoặc tích $XY$ tương ứng.
+
+Nếu $Y_n \xrightarrow[]{\P} y$, $y$ là một số thực cố định thì có thể
+nới lỏng điều kiện đối với $X_n$ thành hội tụ theo phân phối (định lý Slutsky).
+
+Nếu $X_n\xrightarrow[n\to\infty]{\as/\P/(d)} X$ thì
+đối với mọi hàm $f$ liên tục:
+
+- $f(X_n)\xrightarrow[n\to\infty]{\as/\P/(d)} f(X)$.
+- $\E[f(X_n)]\xrightarrow[n\to\infty]{}\E[f(X)]$ nếu $f$ còn bị chặn.
 
 Cho $n$ biến iid $X_1, X_2,\ldotp,X_n$ có chung
 $\mu=\E[X_i],\sigma^2=\V[X_i]$.
@@ -170,9 +197,9 @@ $$
 ::: {#thm-clt}
 ### Định lý trung tâm (CLT)
 $$
-\sqrt{n}(\bar{X}_n-\mu)/\sigma
+\sqrt{n}(\bar{X}_n-\mu)
 \xrightarrow[n\to\infty]{(d)}
-\Normal(0,1)
+\Normal(0,\sigma^2)
 $$
 :::
 

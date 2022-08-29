@@ -137,12 +137,11 @@ X_n \xrightarrow[n\to\infty]{\P} X \iff
 $$
 
 3. Hội tụ theo phân phối:
-gọi $F_n$ là CDF của $X_n$, và $F$ là CDF của $X$,
 $$
 X_n \xrightarrow[n\to\infty]{(d)} X \iff
-F_n(x)\xrightarrow[n\to\infty]{} F(x)
+\P[X_n(x)\leq x]\xrightarrow[n\to\infty]{} \P[X\leq x]
 $$
-tại mọi điểm $x$ mà $F$ liên tục.
+tại mọi điểm $x$ mà cdf của $X$ liên tục.
 
 :::
 
@@ -161,6 +160,11 @@ $X_n \xrightarrow[n\to\infty]{(d)} X$,
 và
 $X$ có mật độ xác suất, thì
 $X_n \xrightarrow[n\to\infty]{\P} X$.
+
+Nếu chuỗi $X_n$ có
+$\E[X_n]\xrightarrow[]{} \mu$ và
+$\V[X_n]\xrightarrow[]{} 0$ thì
+$X_n\xrightarrow[]{\P} \mu$.
 
 Nếu $X_n\xrightarrow[n\to\infty]{\P} X$ thì
 $\P(a\leq X_n\leq b) \xrightarrow[n\to\infty]{} \P(a\leq X\leq b)$

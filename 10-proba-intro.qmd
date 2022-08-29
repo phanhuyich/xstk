@@ -69,6 +69,29 @@ một số thực $X(\omega)$.
 Điểm cắt tại mức $1-\alpha$ của biến $X$ là một số $q_\alpha$ mà $\P(X\leq q_\alpha)=1-\alpha.$
 :::
 
+
+## Tích suất
+
+Tích suất (moment, 積率) thể hiện trọng tâm, độ phân tán, hay độ lệch của phân phối.
+Tích suất hạng $n$ của biến ngẫu nhiên $X$
+với mật độ $f(x)$ là:
+
+$$
+\E[X^n]\is \int x^n f(x) dx
+$$
+
+::: {#def-expectation}
+### Trung bình
+là tích suất hạng 1, tức là $\E[X]$.
+:::
+
+::: {#def-variance}
+### Phương sai
+$$
+\V[X]\is\E[X^2]-(E[X])^2.
+$$
+:::
+
 ## Phân phối
 
 Có một số phân phối xác suất thông dụng.
@@ -84,33 +107,47 @@ và từng cặp biến là độc lập với nhau.
 
 ::: {#def-bernoulli}
 ### Phân phối Bernoulli
-$X\sim\Bernoulli(p)$
-với $p\in(0,1)$
-nếu:
+$X\sim\Ber(p)$
+có
 $$
-\P(X=1) = p = 1-\P(X=0).
+\P(X=1) = p = 1-\P(X=0)
 $$
+và
+$\E[X] = p, \V[X] = p(1-p)$.
 :::
 
 ::: {#def-binomial}
 ### Phân phối Binomial
-$X\sim\Binomial(n, p)$
+$X\sim\Bin(n, p)$
 với $n\in\N, p\in(0,1)$
 nếu
 $$
 X\is\sum_{i=1}^n{X_i}
 $$
-và iid $X_i\sim\Bernoulli(p),\,\forall i=1,2,\ldots$
+và iid $X_i\sim\Ber(p),\,\forall i=1,2,\ldots$
 :::
 
+:::{#def-poisson}
+### Phân phối Poisson
+$X\sim\Poi(\lambda),\lambda>0$
+có
+mật độ
+$$
+\frac{\lambda^k}{e^\lambda k!}, \,k=0,1,2,\ldots
+$$
+và
+$\E[X] = \V[X] = \lambda$.
+:::
 
 :::{#def-gaussian}
 ### Phân phối Gaussian
-$X\sim\Normal(\mu,\sigma^2)$ có $\E[X]=\mu,\V[X]=\sigma^2$ và
+$X\sim\Gaus(\mu,\sigma^2)$ có
 mật độ
 $$
-f(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right).
+\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
 $$
+và
+$\E[X]=\mu,\V[X]=\sigma^2$.
 :::
 
 ## Hội tụ
@@ -203,7 +240,7 @@ $$
 $$
 \sqrt{n}(\bar{X}_n-\mu)
 \xrightarrow[n\to\infty]{(d)}
-\Normal(0,\sigma^2)
+\Gaus(0,\sigma^2)
 $$
 :::
 

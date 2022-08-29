@@ -1,11 +1,12 @@
 $$
 \def\as{\textrm{a.s.}}
-\def\Bernoulli{\text{Ber}}
-\def\Binomial{\text{Bin}}
+\def\Ber{\text{Ber}}
+\def\Bin{\text{Bin}}
 \def\E{\mathbb{E}}
 \def\is{:=}
-\def\Normal{\mathcal{N}}
+\def\Gaus{\mathcal{N}}
 \def\P{\mathbb{P}}
+\def\Poi{\text{Poi}}
 \def\R{\mathbb{R}}
 \def\V{\mathbb{V}}
 \def\N{\mathbb{Z}_+}

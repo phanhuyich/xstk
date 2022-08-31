@@ -120,23 +120,60 @@ $\E[X] = p, \V[X] = p(1-p)$.
 ### Phân phối Binomial
 $X\sim\Bin(n, p)$
 với $n\in\N, p\in(0,1)$
-nếu
+mô tả tổng số lần thành công
+của $n$ thí nghiệm $\Ber(p)$ độc lập.
 $$
-X\is\sum_{i=1}^n{X_i}
+\P(X=k) = \binom{n}{k}p^{k}(1-p)^{n-k}
 $$
-và iid $X_i\sim\Ber(p),\,\forall i=1,2,\ldots$
+và
+$\E[X] = np, \V[X] = np(1-p)$.
 :::
 
 :::{#def-poisson}
 ### Phân phối Poisson
-$X\sim\Poi(\lambda),\lambda>0$
-có
+$X\sim\Poi(\lambda)$
+thường dùng để mô tả số lần $k$ mà sự kiện phát sinh
+trong một giới hạn cố định,
+với giả định tần suất phát sinh sự kiện là
+$\lambda > 0$ cố định,
+và các sự kiện phát sinh độc lập.
+Có
 mật độ
 $$
-\frac{\lambda^k}{e^\lambda k!}, \,k=0,1,2,\ldots
+\P(X=k) = e^{-\lambda}
+\frac{\lambda^k}{k!}, \,k=0,1,2,\ldots
 $$
 và
 $\E[X] = \V[X] = \lambda$.
+:::
+
+Khi $n$ đủ lớn và $p$ đủ nhỏ thì
+$\Poi(np)$ gần với $\Bin(n,p)$.
+
+:::{#def-geomdist}
+### Phân phối Geometric
+$X\sim\text{Geom}(p), p \in (0,1)$
+có mật độ
+$$
+\P(X=k)=p(1-p)^{k-1}, k=1,2,\ldots
+$$
+và
+$\E[X]=1/p,\V[X]=(1-p)/p^2.$
+:::
+
+:::{#def-expdist}
+### Phân phối Exponential
+$X\sim\text{Exp}(\lambda)$
+dùng để mô tả khoảng cách $x$ giữa hai lần phát sinh
+của một chuỗi sự kiện kiểu Poisson
+(hai lần phát sinh sự kiện liên tiếp là độc lập với nhau,
+và tần suất phát sinh $\lambda>0$ là cố định).
+Có mật độ
+$$
+f(x)={\lambda}e^{-\lambda x},x\in\R_+
+$$
+và
+$\E[X]=1/\lambda,\V[X]=1/\lambda^2.$
 :::
 
 :::{#def-gaussian}
@@ -144,7 +181,9 @@ $\E[X] = \V[X] = \lambda$.
 $X\sim\Gaus(\mu,\sigma^2)$ có
 mật độ
 $$
-\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
+f(x) =
+\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right),
+x\in\R
 $$
 và
 $\E[X]=\mu,\V[X]=\sigma^2$.

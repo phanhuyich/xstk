@@ -1,6 +1,4 @@
-_book
-.quarto
-
+/_book/*
 /.quarto/
 .DS_Store
 .Rhistory
@@ -8,3 +6,4 @@ _book
 *.toc
 *.tex
 !preamble.tex
+!/_book/*.pdf

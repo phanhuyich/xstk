@@ -3,3 +3,8 @@ _book
 
 /.quarto/
 .DS_Store
+.Rhistory
+*.Rproj*
+*.toc
+*.tex
+!preamble.tex

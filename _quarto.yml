@@ -4,10 +4,11 @@ project:
 book:
   title: "Xác Suất Thống Kê"
   author: "Võ Chí Công"
-  date: "2022/8/13"
+  date: "2022/8/25"
   chapters:
     - index.qmd
-    - intro.qmd
+    - 05-funstat-mitx.qmd
+    - 10-proba-intro.qmd
     - summary.qmd
     - references.qmd
 
@@ -18,3 +19,9 @@ format:
     theme: cosmo
   pdf:
     documentclass: scrreprt
+    include-in-header: preamble.tex
+
+crossref:
+  fig-prefix: Hình
+  def-title: Định nghĩa
+  thm-title: Định lý

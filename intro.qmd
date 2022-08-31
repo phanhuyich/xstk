@@ -1,5 +1,0 @@
-# Vào bài
-
-Tài liệu tham khảo chính là
-quyển "All of Statistics" của @wasserman2010statistics,
-tài liệu tham khảo cho khoá học @mitx2022fundstats.

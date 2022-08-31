@@ -1,0 +1,13 @@
+$$
+\def\as{\textrm{a.s.}}
+\def\Ber{\text{Ber}}
+\def\Bin{\text{Bin}}
+\def\E{\mathbb{E}}
+\def\is{:=}
+\def\Gaus{\mathcal{N}}
+\def\P{\mathbb{P}}
+\def\Poi{\text{Poi}}
+\def\R{\mathbb{R}}
+\def\V{\mathbb{V}}
+\def\N{\mathbb{Z}_+}
+$$

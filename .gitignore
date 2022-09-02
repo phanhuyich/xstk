@@ -6,4 +6,3 @@
 *.toc
 *.tex
 !preamble.tex
-!/_book/*.pdf

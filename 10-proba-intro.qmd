@@ -103,6 +103,8 @@ iid ("independent and identically distributed",
 "độc lập và phân phối giống nhau")
 nếu chúng cùng tuân theo duy nhất một phân phối xác suất,
 và từng cặp biến là độc lập với nhau.
+Dùng biến $X$ để thể hiện phân phối xác suất chung đó, ta viết
+$$X_1,\ldots,X_n \stackrel{iid}{\sim } X.$$
 :::
 
 ::: {#def-bernoulli}
@@ -121,7 +123,9 @@ $\E[X] = p, \V[X] = p(1-p)$.
 $X\sim\Bin(n, p)$
 với $n\in\N, p\in(0,1)$
 mô tả tổng số lần thành công
-của $n$ thí nghiệm $\Ber(p)$ độc lập.
+của $n$ thí nghiệm độc lập
+$X_1,\ldots,X_n \stackrel{iid}{\sim } \Ber(p).$
+Ta có
 $$
 \P(X=k) = \binom{n}{k}p^{k}(1-p)^{n-k}
 $$

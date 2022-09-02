@@ -5,6 +5,7 @@ book:
   title: "Xác Suất Thống Kê"
   author: "Võ Chí Công"
   date: "2022/8/25"
+  downloads: pdf
   chapters:
     - index.qmd
     - 05-funstat-mitx.qmd

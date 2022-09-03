@@ -1,6 +1,6 @@
 # MITx 18.6501x
 
-"Fundamentals of Statistics" (MITx 18.6501x ) là khóa học của @mitx2022fundstats
+"Fundamentals of Statistics" (MITx 18.6501x ) là khóa học của @mitxStats
 đại học MIT dạy trên edX.
 
 - [Important dates](https://learning.edx.org/course/course-v1:MITx+18.6501x+2T2022/dates)
@@ -30,3 +30,14 @@ Mỗi tuần khoảng hơn 12 tiếng
 - 18% for the first midterm exam (timed)
 - 18% for the second midterm exam (timed)
 - 24% for the final exam (timed)
+
+## Unit 1
+
+Ôn lại kiến thức về xác suất "Probability - The Science of Uncertainty and Data" by @mitxProba.
+
+## Unit 2
+
+Học về nền tảng của suy luận (Foundations of Inference).
+
+- Lecture 3: Mô hình xác suất có số biến hữu hạn (Parametric Statistical Models)
+- Lecture 4: Dự đoán với số biến hữu hạn và khoảng tự tin (Parametric Estimation and Confidence Intervals)

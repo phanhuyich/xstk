@@ -10,7 +10,7 @@ Lần này nhất quyết học lại môn thống kê một cách nghiêm túc 
 Động cơ của việc học xác suất thống kê của tôi là để hiểu rõ hơn các lý thuyết căn bản trong ngành học máy và trí tuệ nhân tạo và áp dụng vào thực tiễn một cách đúng đắn, an toàn và công bằng hơn.
 
 Mục tiêu cụ thể trước mắt tôi đặt ra là học hiểu và lấy được chứng chỉ hoàn thành khoá học
-Fundamentals of Statistics của @mitx2022fundstats, giáo sư đại học MIT dạy trên nền tảng trực tuyến edX.
+Fundamentals of Statistics của @mitxStats, giáo sư đại học MIT dạy trên nền tảng trực tuyến edX.
 Tài liệu tham khảo là quyển "All of Statistics" của @wasserman2010statistics,
 cũng chính là tài liệu tham khảo của khoá học nêu trên.
 

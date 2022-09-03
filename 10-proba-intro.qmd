@@ -69,6 +69,14 @@ một số thực $X(\omega)$.
 Điểm cắt tại mức $1-\alpha$ của biến $X$ là một số $q_\alpha$ mà $\P(X\leq q_\alpha)=1-\alpha.$
 :::
 
+## Độc lập
+
+Hai sự kiện $A$ và $B$ là độc lập nếu
+$\P(AB)\equiv \P(A)\P(B)$.
+
+Hai biến $X$ và $Y$ là độc lập nếu
+hai sự kiện $X\leq x$ và $Y\leq y$ là độc lập
+đối với mọi $x,y$.
 
 ## Tích suất
 
@@ -85,12 +93,48 @@ $$
 là tích suất hạng 1, tức là $\E[X]$.
 :::
 
+Ta có
+$$
+\E[X+Y] \equiv \E[X] + E[Y].
+$$
+
 ::: {#def-variance}
 ### Phương sai
 $$
 \V[X]\is\E[X^2]-(E[X])^2.
 $$
 :::
+
+:::{#def-covar}
+### Hiệp phương sai
+$$
+\textrm{Cov}[X,Y]\is \E[(X-\E[X])(Y-\E[Y])]
+$$
+:::
+
+Ta có
+$$
+\textrm{Cov}[X,Y] \equiv \E[XY] - \E[X]\E[Y],
+$$
+$$
+\V[X+Y] \equiv \V[X]+\V[Y] + 2\textrm{Cov}[X,Y].
+$$
+
+Nếu $X$ và $Y$ độc lập thì $\textrm{Cov}[X,Y] = 0$.
+
+:::{#def-mgf}
+### Hàm tạo tích suất
+"Moment geenration function (MGF)" hoặc "Laplace transform" của biến $X$ là
+$$\psi_X(t)\is\E[e^{tX}]$$
+với $t\in\R$.
+:::
+
+Nếu MGF là "well defined" trên một khoảng mở xung quanh $0$
+thì đạo hàm cấp $k$ của $\psi$ tại $0$
+bằng đúng $\E[X^k]$:
+$$
+\psi^{(k)}(0)\equiv \E[X^k].
+$$
 
 ## Phân phối
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Xác Suất Thống Kê - Giáo trình</title>
+<title>Xác Suất Thống Kê - 2&nbsp; Thống kê</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -15,25 +15,6 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
 </style>
 
 
@@ -44,7 +25,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="prev">
+<link href="./summary.html" rel="next">
+<link href="./10-proba-intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -84,7 +66,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Giáo trình</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Thống kê</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -122,7 +104,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./20-stat-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Thống kê</span></a>
+  <a href="./20-stat-intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Thống kê</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -132,7 +114,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">Giáo trình</a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">Giáo trình</a>
   </div>
 </li>
     </ul>
@@ -140,19 +122,7 @@ div.csl-indent {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#tham-khảo" id="toc-tham-khảo" class="nav-link active" data-scroll-target="#tham-khảo">Tham khảo</a></li>
-  <li><a href="#mitx-18.6501x" id="toc-mitx-18.6501x" class="nav-link" data-scroll-target="#mitx-18.6501x">MITx 18.6501x</a>
-  <ul class="collapse">
-  <li><a href="#quy-định" id="toc-quy-định" class="nav-link" data-scroll-target="#quy-định">Quy định</a></li>
-  <li><a href="#unit-1" id="toc-unit-1" class="nav-link" data-scroll-target="#unit-1">Unit 1</a></li>
-  <li><a href="#unit-2" id="toc-unit-2" class="nav-link" data-scroll-target="#unit-2">Unit 2</a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -172,7 +142,7 @@ $$
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Giáo trình</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Thống kê</span></h1>
 </div>
 
 
@@ -186,72 +156,27 @@ $$
 
 </header>
 
-<section id="tham-khảo" class="level2">
-<h2 class="anchored" data-anchor-id="tham-khảo">Tham khảo</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-mitxProba" class="csl-entry" role="doc-biblioentry">
-John Tsitsiklis, Dimitri Bertsekas, Partick Jaillet. 2022.
-<span>“Probability - the Science of Uncertainty and Data.”</span> MITx.
-<a href="https://www.edx.org/course/probability-the-science-of-uncertainty-and-data">https://www.edx.org/course/probability-the-science-of-uncertainty-and-data</a>.
-</div>
-<div id="ref-mitxStats" class="csl-entry" role="doc-biblioentry">
-Philippe Rigollet, Tyler Maunu, Jan Christian Huetter. 2022.
-<span>“Fundamentals of Statistics.”</span> MITx. <a href="https://www.edx.org/course/fundamentals-of-statistics">https://www.edx.org/course/fundamentals-of-statistics</a>.
-</div>
-<div id="ref-wasserman2010statistics" class="csl-entry" role="doc-biblioentry">
-Wasserman, Larry. 2004. <em>All of Statistics : A Concise Course in
-Statistical Inference</em>. New York: Springer. <a href="https://archive.org/details/springer_10.1007-978-0-387-21736-9">https://archive.org/details/springer_10.1007-978-0-387-21736-9</a>.
-</div>
-</div>
-</section>
-<section id="mitx-18.6501x" class="level2">
-<h2 class="anchored" data-anchor-id="mitx-18.6501x">MITx 18.6501x</h2>
-<p>“Fundamentals of Statistics” (MITx 18.6501x ) là khóa học của <span class="citation" data-cites="mitxStats">Philippe Rigollet (<a href="references.html#ref-mitxStats" role="doc-biblioref">2022</a>)</span> đại học MIT dạy trên edX.</p>
-<section id="quy-định" class="level3">
-<h3 class="anchored" data-anchor-id="quy-định">Quy định</h3>
-<section id="kỳ-hạn" class="level4">
-<h4 class="anchored" data-anchor-id="kỳ-hạn">Kỳ hạn</h4>
-<ul>
-<li>Exercises and homework: <a href="https://learning.edx.org/course/course-v1:MITx+18.6501x+2T2022/dates">Wednesdays 11:59AM UTC (Wed. 20:59 JST)</a></li>
-<li>Exams (48 hours): Tuesdays 11:59AM UTC(Tue. 20:59 JST)</li>
-</ul>
-</section>
-<section id="thời-gian-cần-thiết" class="level4">
-<h4 class="anchored" data-anchor-id="thời-gian-cần-thiết">Thời gian cần thiết</h4>
-<p>Mỗi tuần khoảng hơn 12 tiếng</p>
-<ul>
-<li>5-7 hours on exercises, including 3 hours of lecture clips</li>
-<li>1-2 hours watching recitations</li>
-<li>5-7 hours for weekly problem sets</li>
-</ul>
-</section>
-<section id="tính-điểm" class="level4">
-<h4 class="anchored" data-anchor-id="tính-điểm">Tính điểm</h4>
-<p>Điểm thi đậu chứng chỉ là 60% <a href="https://learning.edx.org/course/course-v1:MITx+18.6501x+2T2022/block-v1:MITx+18.6501x+2T2022+type@sequential+block@u0s1_overview/block-v1:MITx+18.6501x+2T2022+type@vertical+block@u0s1_overview-tab5">tổng số điểm</a> tối đa.</p>
-<ul>
-<li>20% for the lecture exercises (divided equally among the 20 out of 23 lectures)</li>
-<li>20% for the homeworks (divided equally among 10 (out of 12) homeworks)</li>
-<li>18% for the first midterm exam (timed)</li>
-<li>18% for the second midterm exam (timed)</li>
-<li>24% for the final exam (timed)</li>
-</ul>
-</section>
-</section>
-<section id="unit-1" class="level3">
-<h3 class="anchored" data-anchor-id="unit-1">Unit 1</h3>
-<p>Ôn lại kiến thức về xác suất “Probability - The Science of Uncertainty and Data” by <span class="citation" data-cites="mitxProba">John Tsitsiklis (<a href="references.html#ref-mitxProba" role="doc-biblioref">2022</a>)</span>.</p>
-</section>
-<section id="unit-2" class="level3">
-<h3 class="anchored" data-anchor-id="unit-2">Unit 2</h3>
-<p>Học về nền tảng của suy luận (Foundations of Inference).</p>
-<ul>
-<li>Lecture 3: Mô hình xác suất có số biến hữu hạn (Parametric Statistical Models)</li>
-<li>Lecture 4: Dự đoán với số biến hữu hạn và khoảng tự tin (Parametric Estimation and Confidence Intervals) <span class="math inline">\({}\)</span></li>
-</ul>
+<p>Thống kê lượng (statistic) <span class="math inline">\(\theta\)</span> là bất cứ hàm số nào có thể đo được (measurable function) trên tập dữ liệu đối tượng <span class="math inline">\(X_i\)</span>.</p>
+<p>Đánh giá (estimator) <span class="math inline">\(\theta_n\)</span> đối với mục tiêu thống kê <span class="math inline">\(\theta\)</span> là một thống kê khác không phụ thuộc vào <span class="math inline">\(\theta\)</span>.</p>
+<p>Đánh giá được gọi là nhất quán (consistent) nếu nó hội tụ về mục tiêu (<a href="10-proba-intro.html#def-conv-proba">Def&nbsp;<span>1.14</span></a>).</p>
+<p>Đánh giá <span class="math inline">\(\theta_n\)</span> được gọi là tiếng gần chuẩn (asymptotically normal) về <span class="math inline">\(\theta\)</span> nếu</p>
+<p><span class="math display">\[
+\sqrt{n}({\theta}_n-\theta)\xrightarrow[n\to\infty]{(d)}
+\Gaus(0,\sigma^2).
+\]</span></p>
+<p>Độ lệch (bias) giữa đánh giá <span class="math inline">\(\theta_n\)</span> với mục tiêu <span class="math inline">\(\theta\)</span> là</p>
+<p><span class="math display">\[\textrm{bias}_{\theta}({\theta}_n) \is \E[\theta_n] - \theta.\]</span></p>
+<p>Sai số bậc 2 (quadratic risk, mean squared error) giữa đánh giá <span class="math inline">\(\theta_n\)</span> với mục tiêu <span class="math inline">\(\theta\)</span> là</p>
+<p><span class="math display">\[
+\textrm{MSE}(\theta_n)\is\E[(\theta_n-\theta)^2]
+\equiv
+\textrm{bias}_{\theta}(\theta_n)^2
++
+\V[\theta_n]
+\]</span></p>
+<p>bao hàm cả độ lệch và độ nhiễu của đánh giá.</p>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -353,11 +278,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./summary.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tóm tắt</span></span>
+      <a href="./10-proba-intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Xác suất</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tóm tắt</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

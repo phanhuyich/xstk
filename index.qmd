@@ -46,3 +46,4 @@ và [VSCode](https://code.visualstudio.com).
 Truy cập trực tuyến
 [xstk](https://vochicong.github.io/xstk/)
 và có thể tải [PDF](https://vochicong.github.io/xstk/Xác-Suất-Thống-Kê.pdf).
+${}$

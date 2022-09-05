@@ -8,8 +8,8 @@ book:
   downloads: pdf
   chapters:
     - index.qmd
-    - 05-funstat-mitx.qmd
     - 10-proba-intro.qmd
+    - 20-stat-intro.qmd
     - summary.qmd
     - references.qmd
 
@@ -18,11 +18,15 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
+    include-before-body: preamble.md
   pdf:
     documentclass: scrreprt
     include-in-header: preamble.tex
 
 crossref:
-  fig-prefix: Hình
-  def-title: Định nghĩa
-  thm-title: Định lý
+  fig-title: Fig
+  fig-prefix: Fig
+  def-title: Def
+  def-prefix: Def
+  thm-title: Thm
+  thm-prefix: Thm

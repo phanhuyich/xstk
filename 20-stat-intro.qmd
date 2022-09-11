@@ -1,5 +1,41 @@
 # Thống kê
 
+## Mô hình
+
+Trên không gian đo được
+$E\subseteq\R$
+ta quan sát các mẫu
+$X_1,\ldots,X_n\iid\P$.
+Với tập tham số
+$\Theta$
+ta xây dựng bộ độ đo xác suất
+$(\P_\theta)_{\theta\in\Theta}$
+để mô phỏng
+$\P$
+.
+
+Nếu tồn tại
+$\theta\in\Theta$
+để
+$\P_theta\equiv\P$
+thì ta nói mô hình được định nghĩa "hợp lý"
+(well cpecified).
+
+Nếu từ tập $\Theta$,
+ánh xạ
+$\theta\mapsto\P_{\theta}$
+là đơn tính
+thì ta nói $\theta$ là
+"có thể nhận dạng" (identifiable).
+
+
+Nếu
+$\Theta\subseteq\R^d$
+thì mô hình được nói có số biến hữu hạn
+(parametric model).
+
+## Ước lượng
+
 Thống kê lượng (statistic) $\theta$
 là bất cứ hàm số nào có thể đo được (measurable function)
 trên tập dữ liệu đối tượng $X_i$.
@@ -33,3 +69,28 @@ $$
 \V[\theta_n]
 $$
 bao hàm cả độ lệch và độ nhiễu của đánh giá.
+
+## Khoảng tin cậy
+
+Với mô hình thống kê
+$(E,(\P_\theta)_{\theta\in\Theta})$
+xây dựng dựa trên quan sát
+$X_1,\ldots,X_n$,
+giả sử số
+$\alpha\in(0,1).$
+Khoảng tin cậy (confidence interval) cấp
+$1-\alpha$ đối với $\theta$ là một khoảng ngẫu nhiên
+$\mathcal{I}$
+(phụ thuộc vào $X_1,\ldots,X_n$,
+không phụ thuộc vào $\theta$),
+mà xác suất $\mathcal{I}$
+có chứa $\theta$ là đủ cao:
+$$\P_\theta[\mathcal{I}\ni\theta]\geq 1-\alpha,\quad\forall\theta\in\Theta.$$
+
+Nếu
+$$\lim_{n\to\infty}\P_\theta[\mathcal{I}\ni\theta]\geq 1-\alpha,\quad\forall\theta\in\Theta$$
+thì ta gọi $\mathcal{I}$
+là khoảng tin cậy tiệm cận cấp $1-\alpha$
+đối với $\theta$.
+
+## Kiểm định

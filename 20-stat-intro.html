@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.37">
+<meta name="generator" content="quarto-1.1.189">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -159,22 +164,18 @@ $$
 <p>Thống kê lượng (statistic) <span class="math inline">\(\theta\)</span> là bất cứ hàm số nào có thể đo được (measurable function) trên tập dữ liệu đối tượng <span class="math inline">\(X_i\)</span>.</p>
 <p>Đánh giá (estimator) <span class="math inline">\(\theta_n\)</span> đối với mục tiêu thống kê <span class="math inline">\(\theta\)</span> là một thống kê khác không phụ thuộc vào <span class="math inline">\(\theta\)</span>.</p>
 <p>Đánh giá được gọi là nhất quán (consistent) nếu nó hội tụ về mục tiêu (<a href="10-proba-intro.html#def-conv-proba">Def&nbsp;<span>1.14</span></a>).</p>
-<p>Đánh giá <span class="math inline">\(\theta_n\)</span> được gọi là tiến gần chuẩn (asymptotically normal) về <span class="math inline">\(\theta\)</span> nếu</p>
-<p><span class="math display">\[
+<p>Đánh giá <span class="math inline">\(\theta_n\)</span> được gọi là tiến gần chuẩn (asymptotically normal) về <span class="math inline">\(\theta\)</span> nếu <span class="math display">\[
 \sqrt{n}({\theta}_n-\theta)\xrightarrow[n\to\infty]{(d)}
 \Gaus(0,\sigma^2).
 \]</span></p>
-<p>Độ lệch (bias) giữa đánh giá <span class="math inline">\(\theta_n\)</span> với mục tiêu <span class="math inline">\(\theta\)</span> là</p>
-<p><span class="math display">\[\textrm{bias}_{\theta}({\theta}_n) \is \E[\theta_n] - \theta.\]</span></p>
-<p>Sai số bậc 2 (quadratic risk, mean squared error) giữa đánh giá <span class="math inline">\(\theta_n\)</span> với mục tiêu <span class="math inline">\(\theta\)</span> là</p>
-<p><span class="math display">\[
+<p>Độ lệch (bias) giữa đánh giá <span class="math inline">\(\theta_n\)</span> với mục tiêu <span class="math inline">\(\theta\)</span> là <span class="math display">\[\textrm{bias}_{\theta}({\theta}_n) \is \E[\theta_n] - \theta.\]</span></p>
+<p>Sai số bậc 2 (quadratic risk, mean squared error) giữa đánh giá <span class="math inline">\(\theta_n\)</span> với mục tiêu <span class="math inline">\(\theta\)</span> là <span class="math display">\[
 \textrm{MSE}(\theta_n)\is\E[(\theta_n-\theta)^2]
 \equiv
 \textrm{bias}_{\theta}(\theta_n)^2
 +
 \V[\theta_n]
-\]</span></p>
-<p>bao hàm cả độ lệch và độ nhiễu của đánh giá.</p>
+\]</span> bao hàm cả độ lệch và độ nhiễu của đánh giá.</p>
 
 
 
@@ -248,7 +249,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

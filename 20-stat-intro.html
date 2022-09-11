@@ -127,7 +127,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#mô-hình" id="toc-mô-hình" class="nav-link active" data-scroll-target="#mô-hình"><span class="toc-section-number">2.1</span>  Mô hình</a></li>
+  <li><a href="#ước-lượng" id="toc-ước-lượng" class="nav-link" data-scroll-target="#ước-lượng"><span class="toc-section-number">2.2</span>  Ước lượng</a></li>
+  <li><a href="#khoảng-tin-cậy" id="toc-khoảng-tin-cậy" class="nav-link" data-scroll-target="#khoảng-tin-cậy"><span class="toc-section-number">2.3</span>  Khoảng tin cậy</a></li>
+  <li><a href="#kiểm-định" id="toc-kiểm-định" class="nav-link" data-scroll-target="#kiểm-định"><span class="toc-section-number">2.4</span>  Kiểm định</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -136,6 +145,7 @@ $$
 \def\Ber{\text{Ber}}
 \def\Bin{\text{Bin}}
 \def\E{\mathbb{E}}
+\def\iid{\stackrel{iid}{\sim}}
 \def\is{:=}
 \def\Gaus{\mathcal{N}}
 \def\P{\mathbb{P}}
@@ -161,6 +171,15 @@ $$
 
 </header>
 
+<section id="mô-hình" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="mô-hình"><span class="header-section-number">2.1</span> Mô hình</h2>
+<p>Trên không gian đo được <span class="math inline">\(E\subseteq\R\)</span> ta quan sát các mẫu <span class="math inline">\(X_1,\ldots,X_n\iid\P\)</span>. Với tập tham số <span class="math inline">\(\Theta\)</span> ta xây dựng bộ độ đo xác suất <span class="math inline">\((\P_\theta)_{\theta\in\Theta}\)</span> để mô phỏng <span class="math inline">\(\P\)</span> .</p>
+<p>Nếu tồn tại <span class="math inline">\(\theta\in\Theta\)</span> để <span class="math inline">\(\P_theta\equiv\P\)</span> thì ta nói mô hình được định nghĩa “hợp lý” (well cpecified).</p>
+<p>Nếu từ tập <span class="math inline">\(\Theta\)</span>, ánh xạ <span class="math inline">\(\theta\mapsto\P_{\theta}\)</span> là đơn tính thì ta nói <span class="math inline">\(\theta\)</span> là “có thể nhận dạng” (identifiable).</p>
+<p>Nếu <span class="math inline">\(\Theta\subseteq\R^d\)</span> thì mô hình được nói có số biến hữu hạn (parametric model).</p>
+</section>
+<section id="ước-lượng" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="ước-lượng"><span class="header-section-number">2.2</span> Ước lượng</h2>
 <p>Thống kê lượng (statistic) <span class="math inline">\(\theta\)</span> là bất cứ hàm số nào có thể đo được (measurable function) trên tập dữ liệu đối tượng <span class="math inline">\(X_i\)</span>.</p>
 <p>Đánh giá (estimator) <span class="math inline">\(\theta_n\)</span> đối với mục tiêu thống kê <span class="math inline">\(\theta\)</span> là một thống kê khác không phụ thuộc vào <span class="math inline">\(\theta\)</span>.</p>
 <p>Đánh giá được gọi là nhất quán (consistent) nếu nó hội tụ về mục tiêu (<a href="10-proba-intro.html#def-conv-proba">Def&nbsp;<span>1.14</span></a>).</p>
@@ -176,8 +195,17 @@ $$
 +
 \V[\theta_n]
 \]</span> bao hàm cả độ lệch và độ nhiễu của đánh giá.</p>
+</section>
+<section id="khoảng-tin-cậy" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="khoảng-tin-cậy"><span class="header-section-number">2.3</span> Khoảng tin cậy</h2>
+<p>Với mô hình thống kê <span class="math inline">\((E,(\P_\theta)_{\theta\in\Theta})\)</span> xây dựng dựa trên quan sát <span class="math inline">\(X_1,\ldots,X_n\)</span>, giả sử số <span class="math inline">\(\alpha\in(0,1).\)</span> Khoảng tin cậy (confidence interval) cấp <span class="math inline">\(1-\alpha\)</span> đối với <span class="math inline">\(\theta\)</span> là một khoảng ngẫu nhiên <span class="math inline">\(\mathcal{I}\)</span> (phụ thuộc vào <span class="math inline">\(X_1,\ldots,X_n\)</span>, không phụ thuộc vào <span class="math inline">\(\theta\)</span>), mà xác suất <span class="math inline">\(\mathcal{I}\)</span> có chứa <span class="math inline">\(\theta\)</span> là đủ cao: <span class="math display">\[\P_\theta[\mathcal{I}\ni\theta]\geq 1-\alpha,\quad\forall\theta\in\Theta.\]</span></p>
+<p>Nếu <span class="math display">\[\lim_{n\to\infty}\P_\theta[\mathcal{I}\ni\theta]\geq 1-\alpha,\quad\forall\theta\in\Theta\]</span> thì ta gọi <span class="math inline">\(\mathcal{I}\)</span> là khoảng tin cậy tiệm cận cấp <span class="math inline">\(1-\alpha\)</span> đối với <span class="math inline">\(\theta\)</span>.</p>
+</section>
+<section id="kiểm-định" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="kiểm-định"><span class="header-section-number">2.4</span> Kiểm định</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

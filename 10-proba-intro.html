@@ -150,6 +150,7 @@ $$
 \def\Ber{\text{Ber}}
 \def\Bin{\text{Bin}}
 \def\E{\mathbb{E}}
+\def\iid{\stackrel{iid}{\sim}}
 \def\is{:=}
 \def\Gaus{\mathcal{N}}
 \def\P{\mathbb{P}}
@@ -242,7 +243,7 @@ $$
 <h2 data-number="1.5" class="anchored" data-anchor-id="phân-phối"><span class="header-section-number">1.5</span> Phân phối</h2>
 <p>Có một số phân phối xác suất thông dụng.</p>
 <div id="def-iid" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.7 (IID) </strong></span>Các biến ngẫu nhiên <span class="math inline">\(X_1, X_2, \ldotp\)</span> được gọi là iid (“independent and identically distributed”, “độc lập và phân phối giống nhau”) nếu chúng cùng tuân theo duy nhất một phân phối xác suất, và từng cặp biến là độc lập với nhau. Dùng biến <span class="math inline">\(X\)</span> để thể hiện phân phối xác suất chung đó, ta viết <span class="math display">\[X_1,\ldots,X_n \stackrel{iid}{\sim } X.\]</span></p>
+<p><span class="theorem-title"><strong>Def 1.7 (IID) </strong></span>Các biến ngẫu nhiên <span class="math inline">\(X_1, X_2, \ldotp\)</span> được gọi là iid (“independent and identically distributed”, “độc lập và phân phối giống nhau”) nếu chúng cùng tuân theo duy nhất một phân phối xác suất, và từng cặp biến là độc lập với nhau. Dùng biến <span class="math inline">\(X\)</span> để thể hiện phân phối xác suất chung đó, ta viết <span class="math display">\[X_1,\ldots,X_n \iid X.\]</span></p>
 </div>
 <div id="def-bernoulli" class="theorem definition">
 <p><span class="theorem-title"><strong>Def 1.8 (Phân phối Bernoulli) </strong></span><span class="math inline">\(X\sim\Ber(p)\)</span> có <span class="math display">\[
@@ -250,7 +251,7 @@ $$
 \]</span> và <span class="math inline">\(\E[X] = p, \V[X] = p(1-p)\)</span>.</p>
 </div>
 <div id="def-binomial" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.9 (Phân phối Binomial) </strong></span><span class="math inline">\(X\sim\Bin(n, p)\)</span> với <span class="math inline">\(n\in\N, p\in(0,1)\)</span> mô tả tổng số lần thành công của <span class="math inline">\(n\)</span> thí nghiệm độc lập <span class="math inline">\(X_1,\ldots,X_n \stackrel{iid}{\sim } \Ber(p).\)</span> Ta có <span class="math display">\[
+<p><span class="theorem-title"><strong>Def 1.9 (Phân phối Binomial) </strong></span><span class="math inline">\(X\sim\Bin(n, p)\)</span> với <span class="math inline">\(n\in\N, p\in(0,1)\)</span> mô tả tổng số lần thành công của <span class="math inline">\(n\)</span> thí nghiệm độc lập <span class="math inline">\(X_1,\ldots,X_n \iid \Ber(p).\)</span> Ta có <span class="math display">\[
 \P(X=k) = \binom{n}{k}p^{k}(1-p)^{n-k}
 \]</span> và <span class="math inline">\(\E[X] = np, \V[X] = np(1-p)\)</span>.</p>
 </div>

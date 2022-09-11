@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Xác Suất Thống Kê",
     "section": "",
-    "text": "$$\n\\def\\as{\\textrm{a.s.}}\n\\def\\Ber{\\text{Ber}}\n\\def\\Bin{\\text{Bin}}\n\\def\\E{\\mathbb{E}}\n\\def\\is{:=}\n\\def\\Gaus{\\mathcal{N}}\n\\def\\P{\\mathbb{P}}\n\\def\\Poi{\\text{Poi}}\n\\def\\R{\\mathbb{R}}\n\\def\\V{\\mathbb{V}}\n\\def\\N{\\mathbb{Z}_+}\n$$"
+    "text": "$$\n\\def\\as{\\textrm{a.s.}}\n\\def\\Ber{\\text{Ber}}\n\\def\\Bin{\\text{Bin}}\n\\def\\E{\\mathbb{E}}\n\\def\\iid{\\stackrel{iid}{\\sim}}\n\\def\\is{:=}\n\\def\\Gaus{\\mathcal{N}}\n\\def\\P{\\mathbb{P}}\n\\def\\Poi{\\text{Poi}}\n\\def\\R{\\mathbb{R}}\n\\def\\V{\\mathbb{V}}\n\\def\\N{\\mathbb{Z}_+}\n$$"
   },
   {
     "objectID": "10-proba-intro.html",
@@ -39,7 +39,7 @@
     "href": "10-proba-intro.html#phân-phối",
     "title": "1  Xác suất",
     "section": "1.5 Phân phối",
-    "text": "1.5 Phân phối\nCó một số phân phối xác suất thông dụng.\n\nDef 1.7 (IID) Các biến ngẫu nhiên \\(X_1, X_2, \\ldotp\\) được gọi là iid (“independent and identically distributed”, “độc lập và phân phối giống nhau”) nếu chúng cùng tuân theo duy nhất một phân phối xác suất, và từng cặp biến là độc lập với nhau. Dùng biến \\(X\\) để thể hiện phân phối xác suất chung đó, ta viết \\[X_1,\\ldots,X_n \\stackrel{iid}{\\sim } X.\\]\n\n\nDef 1.8 (Phân phối Bernoulli) \\(X\\sim\\Ber(p)\\) có \\[\n\\P(X=1) = p = 1-\\P(X=0)\n\\] và \\(\\E[X] = p, \\V[X] = p(1-p)\\).\n\n\nDef 1.9 (Phân phối Binomial) \\(X\\sim\\Bin(n, p)\\) với \\(n\\in\\N, p\\in(0,1)\\) mô tả tổng số lần thành công của \\(n\\) thí nghiệm độc lập \\(X_1,\\ldots,X_n \\stackrel{iid}{\\sim } \\Ber(p).\\) Ta có \\[\n\\P(X=k) = \\binom{n}{k}p^{k}(1-p)^{n-k}\n\\] và \\(\\E[X] = np, \\V[X] = np(1-p)\\).\n\n\nDef 1.10 (Phân phối Poisson) \\(X\\sim\\Poi(\\lambda)\\) thường dùng để mô tả số lần \\(k\\) mà sự kiện phát sinh trong một giới hạn cố định, với giả định tần suất phát sinh sự kiện là \\(\\lambda > 0\\) cố định, và các sự kiện phát sinh độc lập. Có mật độ \\[\n\\P(X=k) = e^{-\\lambda}\n\\frac{\\lambda^k}{k!}, \\,k=0,1,2,\\ldots\n\\] và \\(\\E[X] = \\V[X] = \\lambda\\).\n\nKhi \\(n\\) đủ lớn và \\(p\\) đủ nhỏ thì \\(\\Poi(np)\\) gần với \\(\\Bin(n,p)\\).\n\nDef 1.11 (Phân phối Geometric) \\(X\\sim\\text{Geom}(p), p \\in (0,1)\\) có mật độ \\[\n\\P(X=k)=p(1-p)^{k-1}, k=1,2,\\ldots\n\\] và \\(\\E[X]=1/p,\\V[X]=(1-p)/p^2.\\)\n\n\nDef 1.12 (Phân phối Exponential) \\(X\\sim\\text{Exp}(\\lambda)\\) dùng để mô tả khoảng cách \\(x\\) giữa hai lần phát sinh của một chuỗi sự kiện kiểu Poisson (hai lần phát sinh sự kiện liên tiếp là độc lập với nhau, và tần suất phát sinh \\(\\lambda>0\\) là cố định). Có mật độ \\[\nf(x)={\\lambda}e^{-\\lambda x},x\\in\\R_+\n\\] và \\(\\E[X]=1/\\lambda,\\V[X]=1/\\lambda^2.\\)\n\n\nDef 1.13 (Phân phối Gaussian) \\(X\\sim\\Gaus(\\mu,\\sigma^2)\\) có mật độ \\[\nf(x) =\n\\frac{1}{\\sigma\\sqrt{2\\pi}}\\exp\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right),\nx\\in\\R\n\\] và \\(\\E[X]=\\mu,\\V[X]=\\sigma^2\\)."
+    "text": "1.5 Phân phối\nCó một số phân phối xác suất thông dụng.\n\nDef 1.7 (IID) Các biến ngẫu nhiên \\(X_1, X_2, \\ldotp\\) được gọi là iid (“independent and identically distributed”, “độc lập và phân phối giống nhau”) nếu chúng cùng tuân theo duy nhất một phân phối xác suất, và từng cặp biến là độc lập với nhau. Dùng biến \\(X\\) để thể hiện phân phối xác suất chung đó, ta viết \\[X_1,\\ldots,X_n \\iid X.\\]\n\n\nDef 1.8 (Phân phối Bernoulli) \\(X\\sim\\Ber(p)\\) có \\[\n\\P(X=1) = p = 1-\\P(X=0)\n\\] và \\(\\E[X] = p, \\V[X] = p(1-p)\\).\n\n\nDef 1.9 (Phân phối Binomial) \\(X\\sim\\Bin(n, p)\\) với \\(n\\in\\N, p\\in(0,1)\\) mô tả tổng số lần thành công của \\(n\\) thí nghiệm độc lập \\(X_1,\\ldots,X_n \\iid \\Ber(p).\\) Ta có \\[\n\\P(X=k) = \\binom{n}{k}p^{k}(1-p)^{n-k}\n\\] và \\(\\E[X] = np, \\V[X] = np(1-p)\\).\n\n\nDef 1.10 (Phân phối Poisson) \\(X\\sim\\Poi(\\lambda)\\) thường dùng để mô tả số lần \\(k\\) mà sự kiện phát sinh trong một giới hạn cố định, với giả định tần suất phát sinh sự kiện là \\(\\lambda > 0\\) cố định, và các sự kiện phát sinh độc lập. Có mật độ \\[\n\\P(X=k) = e^{-\\lambda}\n\\frac{\\lambda^k}{k!}, \\,k=0,1,2,\\ldots\n\\] và \\(\\E[X] = \\V[X] = \\lambda\\).\n\nKhi \\(n\\) đủ lớn và \\(p\\) đủ nhỏ thì \\(\\Poi(np)\\) gần với \\(\\Bin(n,p)\\).\n\nDef 1.11 (Phân phối Geometric) \\(X\\sim\\text{Geom}(p), p \\in (0,1)\\) có mật độ \\[\n\\P(X=k)=p(1-p)^{k-1}, k=1,2,\\ldots\n\\] và \\(\\E[X]=1/p,\\V[X]=(1-p)/p^2.\\)\n\n\nDef 1.12 (Phân phối Exponential) \\(X\\sim\\text{Exp}(\\lambda)\\) dùng để mô tả khoảng cách \\(x\\) giữa hai lần phát sinh của một chuỗi sự kiện kiểu Poisson (hai lần phát sinh sự kiện liên tiếp là độc lập với nhau, và tần suất phát sinh \\(\\lambda>0\\) là cố định). Có mật độ \\[\nf(x)={\\lambda}e^{-\\lambda x},x\\in\\R_+\n\\] và \\(\\E[X]=1/\\lambda,\\V[X]=1/\\lambda^2.\\)\n\n\nDef 1.13 (Phân phối Gaussian) \\(X\\sim\\Gaus(\\mu,\\sigma^2)\\) có mật độ \\[\nf(x) =\n\\frac{1}{\\sigma\\sqrt{2\\pi}}\\exp\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right),\nx\\in\\R\n\\] và \\(\\E[X]=\\mu,\\V[X]=\\sigma^2\\)."
   },
   {
     "objectID": "10-proba-intro.html#hội-tụ",
@@ -53,14 +53,35 @@
     "href": "20-stat-intro.html",
     "title": "2  Thống kê",
     "section": "",
-    "text": "$$\n\\def\\as{\\textrm{a.s.}}\n\\def\\Ber{\\text{Ber}}\n\\def\\Bin{\\text{Bin}}\n\\def\\E{\\mathbb{E}}\n\\def\\is{:=}\n\\def\\Gaus{\\mathcal{N}}\n\\def\\P{\\mathbb{P}}\n\\def\\Poi{\\text{Poi}}\n\\def\\R{\\mathbb{R}}\n\\def\\V{\\mathbb{V}}\n\\def\\N{\\mathbb{Z}_+}\n$$\n\n\n\n\nĐánh giá (estimator) \\(\\theta_n\\) đối với mục tiêu thống kê \\(\\theta\\) là một thống kê khác không phụ thuộc vào \\(\\theta\\).\nĐánh giá được gọi là nhất quán (consistent) nếu nó hội tụ về mục tiêu (Def 1.14).\nĐánh giá \\(\\theta_n\\) được gọi là tiến gần chuẩn (asymptotically normal) về \\(\\theta\\) nếu \\[\n\\sqrt{n}({\\theta}_n-\\theta)\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus(0,\\sigma^2).\n\\]\nĐộ lệch (bias) giữa đánh giá \\(\\theta_n\\) với mục tiêu \\(\\theta\\) là \\[\\textrm{bias}_{\\theta}({\\theta}_n) \\is \\E[\\theta_n] - \\theta.\\]\nSai số bậc 2 (quadratic risk, mean squared error) giữa đánh giá \\(\\theta_n\\) với mục tiêu \\(\\theta\\) là \\[\n\\textrm{MSE}(\\theta_n)\\is\\E[(\\theta_n-\\theta)^2]\n\\equiv\n\\textrm{bias}_{\\theta}(\\theta_n)^2\n+\n\\V[\\theta_n]\n\\] bao hàm cả độ lệch và độ nhiễu của đánh giá."
+    "text": "Trên không gian đo được \\(E\\subseteq\\R\\) ta quan sát các mẫu \\(X_1,\\ldots,X_n\\iid\\P\\). Với tập tham số \\(\\Theta\\) ta xây dựng bộ độ đo xác suất \\((\\P_\\theta)_{\\theta\\in\\Theta}\\) để mô phỏng \\(\\P\\) .\nNếu tồn tại \\(\\theta\\in\\Theta\\) để \\(\\P_theta\\equiv\\P\\) thì ta nói mô hình được định nghĩa “hợp lý” (well cpecified).\nNếu từ tập \\(\\Theta\\), ánh xạ \\(\\theta\\mapsto\\P_{\\theta}\\) là đơn tính thì ta nói \\(\\theta\\) là “có thể nhận dạng” (identifiable).\nNếu \\(\\Theta\\subseteq\\R^d\\) thì mô hình được nói có số biến hữu hạn (parametric model)."
+  },
+  {
+    "objectID": "20-stat-intro.html#ước-lượng",
+    "href": "20-stat-intro.html#ước-lượng",
+    "title": "2  Thống kê",
+    "section": "2.2 Ước lượng",
+    "text": "2.2 Ước lượng\nThống kê lượng (statistic) \\(\\theta\\) là bất cứ hàm số nào có thể đo được (measurable function) trên tập dữ liệu đối tượng \\(X_i\\).\nĐánh giá (estimator) \\(\\theta_n\\) đối với mục tiêu thống kê \\(\\theta\\) là một thống kê khác không phụ thuộc vào \\(\\theta\\).\nĐánh giá được gọi là nhất quán (consistent) nếu nó hội tụ về mục tiêu (Def 1.14).\nĐánh giá \\(\\theta_n\\) được gọi là tiến gần chuẩn (asymptotically normal) về \\(\\theta\\) nếu \\[\n\\sqrt{n}({\\theta}_n-\\theta)\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus(0,\\sigma^2).\n\\]\nĐộ lệch (bias) giữa đánh giá \\(\\theta_n\\) với mục tiêu \\(\\theta\\) là \\[\\textrm{bias}_{\\theta}({\\theta}_n) \\is \\E[\\theta_n] - \\theta.\\]\nSai số bậc 2 (quadratic risk, mean squared error) giữa đánh giá \\(\\theta_n\\) với mục tiêu \\(\\theta\\) là \\[\n\\textrm{MSE}(\\theta_n)\\is\\E[(\\theta_n-\\theta)^2]\n\\equiv\n\\textrm{bias}_{\\theta}(\\theta_n)^2\n+\n\\V[\\theta_n]\n\\] bao hàm cả độ lệch và độ nhiễu của đánh giá."
+  },
+  {
+    "objectID": "20-stat-intro.html#khoảng-tin-cậy",
+    "href": "20-stat-intro.html#khoảng-tin-cậy",
+    "title": "2  Thống kê",
+    "section": "2.3 Khoảng tin cậy",
+    "text": "2.3 Khoảng tin cậy\nVới mô hình thống kê \\((E,(\\P_\\theta)_{\\theta\\in\\Theta})\\) xây dựng dựa trên quan sát \\(X_1,\\ldots,X_n\\), giả sử số \\(\\alpha\\in(0,1).\\) Khoảng tin cậy (confidence interval) cấp \\(1-\\alpha\\) đối với \\(\\theta\\) là một khoảng ngẫu nhiên \\(\\mathcal{I}\\) (phụ thuộc vào \\(X_1,\\ldots,X_n\\), không phụ thuộc vào \\(\\theta\\)), mà xác suất \\(\\mathcal{I}\\) có chứa \\(\\theta\\) là đủ cao: \\[\\P_\\theta[\\mathcal{I}\\ni\\theta]\\geq 1-\\alpha,\\quad\\forall\\theta\\in\\Theta.\\]\nNếu \\[\\lim_{n\\to\\infty}\\P_\\theta[\\mathcal{I}\\ni\\theta]\\geq 1-\\alpha,\\quad\\forall\\theta\\in\\Theta\\] thì ta gọi \\(\\mathcal{I}\\) là khoảng tin cậy tiệm cận cấp \\(1-\\alpha\\) đối với \\(\\theta\\)."
+  },
+  {
+    "objectID": "20-stat-intro.html#kiểm-định",
+    "href": "20-stat-intro.html#kiểm-định",
+    "title": "2  Thống kê",
+    "section": "2.4 Kiểm định",
+    "text": "2.4 Kiểm định"
   },
   {
     "objectID": "summary.html",
     "href": "summary.html",
     "title": "3  Tóm tắt",
     "section": "",
-    "text": "$$\n\\def\\as{\\textrm{a.s.}}\n\\def\\Ber{\\text{Ber}}\n\\def\\Bin{\\text{Bin}}\n\\def\\E{\\mathbb{E}}\n\\def\\is{:=}\n\\def\\Gaus{\\mathcal{N}}\n\\def\\P{\\mathbb{P}}\n\\def\\Poi{\\text{Poi}}\n\\def\\R{\\mathbb{R}}\n\\def\\V{\\mathbb{V}}\n\\def\\N{\\mathbb{Z}_+}\n$$"
+    "text": "$$\n\\def\\as{\\textrm{a.s.}}\n\\def\\Ber{\\text{Ber}}\n\\def\\Bin{\\text{Bin}}\n\\def\\E{\\mathbb{E}}\n\\def\\iid{\\stackrel{iid}{\\sim}}\n\\def\\is{:=}\n\\def\\Gaus{\\mathcal{N}}\n\\def\\P{\\mathbb{P}}\n\\def\\Poi{\\text{Poi}}\n\\def\\R{\\mathbb{R}}\n\\def\\V{\\mathbb{V}}\n\\def\\N{\\mathbb{Z}_+}\n$$"
   },
   {
     "objectID": "references.html",

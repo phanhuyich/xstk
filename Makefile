@@ -9,4 +9,4 @@ render:
 	quarto render --to pdf
 
 publish:
-	quarto publish gh-pages
+	quarto publish gh-pages --no-browser

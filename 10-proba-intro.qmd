@@ -265,7 +265,8 @@ tại mọi điểm $x$ mà cdf của $X$ liên tục.
 
 :::
 
-### Tính chất
+:::{#thm-strength}
+### Độ mạnh
 
 Xếp theo thứ tự từ mạnh đến yếu:
 
@@ -289,37 +290,48 @@ $X_n\xrightarrow[]{\P} \mu$.
 Nếu $X_n\xrightarrow[n\to\infty]{\P} X$ thì
 $\P(a\leq X_n\leq b) \xrightarrow[n\to\infty]{} \P(a\leq X\leq b)$
 với mọi khoảng $[a,b]$.
+:::
 
+::: {#thm-convege}
+### Tổng và tích
 Nếu có hai chuỗi biến ngẫu nhiên $X_n, Y_n$
 hội tụ gần tuyệt đối
 hoặc hội tụ theo xác suất về $X, Y$,
 thì tổng và tích của chúng
 cũng hội tụ theo cùng kiểu (gần tuyệt đối, hoặc theo xác suất)
 về tổng $X+Y$ hoặc tích $XY$ tương ứng.
+:::
 
+::: {#thm-slutsky}
+### Slutsky
 Nếu $Y_n \xrightarrow[]{\P} y$, $y$ là một số thực cố định thì có thể
-nới lỏng điều kiện đối với $X_n$ thành hội tụ theo phân phối (định lý Slutsky).
+nới lỏng điều kiện đối với $X_n$ thành hội tụ theo phân phối.
+:::
 
+:::{#thm-contmap}
+### Ánh xạ liên tục
+(Continuous mapping)
 Nếu $X_n\xrightarrow[n\to\infty]{\as/\P/(d)} X$ thì
 đối với mọi hàm $f$ liên tục:
 
 - $f(X_n)\xrightarrow[n\to\infty]{\as/\P/(d)} f(X)$.
 - $\E[f(X_n)]\xrightarrow[n\to\infty]{}\E[f(X)]$ nếu $f$ còn bị chặn.
+:::
 
+::: {#thm-lln}
+### Đại đa số (Law of Large Numbers)
 Cho $n$ biến iid $X_1, X_2,\ldotp,X_n$ có chung
 $\mu=\E[X_i],\sigma^2=\V[X_i]$.
 Lấy giá trị trung bình:
 $$\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}.$$
 
-::: {#thm-lln}
-### Định lý số lớn (LLN)
 $$
 \bar{X}_n\xrightarrow[n\to\infty]{\P,\,\as}\mu
 $$
 :::
 
 ::: {#thm-clt}
-### Định lý trung tâm (CLT)
+### Hội tụ trung tâm (Central Limit)
 $$
 \sqrt{n}(\bar{X}_n-\mu)
 \xrightarrow[n\to\infty]{(d)}
@@ -335,5 +347,39 @@ $$
 \P[|\bar{X}_n-\mu|\geq\epsilon]\leq
 2e^{-\frac{2n\epsilon^2}{(b-a)^2}},\quad\forall\epsilon>0.
 $$
+:::
 
+:::{#def-asym-norm}
+### Tiệm cận về chuẩn
+Chuỗi biến ngẫu nhiên
+$(\theta_n)_{n\geq 1}$ được gọi là chuẩn tiến
+(asymptotically normal)
+với phương sai
+$\sigma^2$
+về biến $\theta$
+nếu
+$$
+\sqrt{n}({\theta}_n-\theta)\xrightarrow[n\to\infty]{(d)}
+\Gaus(0,\sigma^2).
+$$
+:::
+
+:::{#thm-delta-method}
+### Phương pháp Delta
+Giả sử chuỗi $(\theta_n)_{n\geq 1}$
+chuẩn tiến
+với phương sai
+$\sigma^2$
+về một điểm
+$\theta\in\R$.
+Giả sử $g:\R\to\R$
+có vi phân
+$g'$
+liên tục tại $\theta$.
+Khi đó,
+$$
+\sqrt{n}(g(\theta_n)-g(\theta))
+\xrightarrow[n\to\infty]{(d)}
+\Gaus(0,(g'(\theta))^2\sigma^2)
+$$
 :::

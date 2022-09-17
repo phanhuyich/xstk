@@ -174,7 +174,7 @@ $$
 <section id="mô-hình" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="mô-hình"><span class="header-section-number">2.1</span> Mô hình</h2>
 <p>Trên không gian đo được <span class="math inline">\(E\subseteq\R\)</span> ta quan sát các mẫu <span class="math inline">\(X_1,\ldots,X_n\iid\P\)</span>. Với tập tham số <span class="math inline">\(\Theta\)</span> ta xây dựng bộ độ đo xác suất <span class="math inline">\((\P_\theta)_{\theta\in\Theta}\)</span> để mô phỏng <span class="math inline">\(\P\)</span> .</p>
-<p>Nếu tồn tại <span class="math inline">\(\theta\in\Theta\)</span> để <span class="math inline">\(\P_theta\equiv\P\)</span> thì ta nói mô hình được định nghĩa “hợp lý” (well cpecified).</p>
+<p>Nếu tồn tại <span class="math inline">\(\theta\in\Theta\)</span> để <span class="math inline">\(\P_\theta\equiv\P\)</span> thì ta nói mô hình “hợp lệ” (well cpecified).</p>
 <p>Nếu từ tập <span class="math inline">\(\Theta\)</span>, ánh xạ <span class="math inline">\(\theta\mapsto\P_{\theta}\)</span> là đơn tính thì ta nói <span class="math inline">\(\theta\)</span> là “có thể nhận dạng” (identifiable).</p>
 <p>Nếu <span class="math inline">\(\Theta\subseteq\R^d\)</span> thì mô hình được nói có số biến hữu hạn (parametric model).</p>
 </section>
@@ -183,10 +183,6 @@ $$
 <p>Thống kê lượng (statistic) <span class="math inline">\(\theta\)</span> là bất cứ hàm số nào có thể đo được (measurable function) trên tập dữ liệu đối tượng <span class="math inline">\(X_i\)</span>.</p>
 <p>Đánh giá (estimator) <span class="math inline">\(\theta_n\)</span> đối với mục tiêu thống kê <span class="math inline">\(\theta\)</span> là một thống kê khác không phụ thuộc vào <span class="math inline">\(\theta\)</span>.</p>
 <p>Đánh giá được gọi là nhất quán (consistent) nếu nó hội tụ về mục tiêu (<a href="10-proba-intro.html#def-conv-proba">Def&nbsp;<span>1.14</span></a>).</p>
-<p>Đánh giá <span class="math inline">\(\theta_n\)</span> được gọi là tiến gần chuẩn (asymptotically normal) về <span class="math inline">\(\theta\)</span> nếu <span class="math display">\[
-\sqrt{n}({\theta}_n-\theta)\xrightarrow[n\to\infty]{(d)}
-\Gaus(0,\sigma^2).
-\]</span></p>
 <p>Độ lệch (bias) giữa đánh giá <span class="math inline">\(\theta_n\)</span> với mục tiêu <span class="math inline">\(\theta\)</span> là <span class="math display">\[\textrm{bias}_{\theta}({\theta}_n) \is \E[\theta_n] - \theta.\]</span></p>
 <p>Sai số bậc 2 (quadratic risk, mean squared error) giữa đánh giá <span class="math inline">\(\theta_n\)</span> với mục tiêu <span class="math inline">\(\theta\)</span> là <span class="math display">\[
 \textrm{MSE}(\theta_n)\is\E[(\theta_n-\theta)^2]

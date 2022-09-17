@@ -136,10 +136,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#độc-lập" id="toc-độc-lập" class="nav-link" data-scroll-target="#độc-lập"><span class="toc-section-number">1.3</span>  Độc lập</a></li>
   <li><a href="#tích-suất" id="toc-tích-suất" class="nav-link" data-scroll-target="#tích-suất"><span class="toc-section-number">1.4</span>  Tích suất</a></li>
   <li><a href="#phân-phối" id="toc-phân-phối" class="nav-link" data-scroll-target="#phân-phối"><span class="toc-section-number">1.5</span>  Phân phối</a></li>
-  <li><a href="#hội-tụ" id="toc-hội-tụ" class="nav-link" data-scroll-target="#hội-tụ"><span class="toc-section-number">1.6</span>  Hội tụ</a>
-  <ul class="collapse">
-  <li><a href="#tính-chất" id="toc-tính-chất" class="nav-link" data-scroll-target="#tính-chất"><span class="toc-section-number">1.6.1</span>  Tính chất</a></li>
-  </ul></li>
+  <li><a href="#hội-tụ" id="toc-hội-tụ" class="nav-link" data-scroll-target="#hội-tụ"><span class="toc-section-number">1.6</span>  Hội tụ</a></li>
   </ul>
 </nav>
     </div>
@@ -302,9 +299,8 @@ X_n \xrightarrow[n\to\infty]{(d)} X \iff
 \]</span> tại mọi điểm <span class="math inline">\(x\)</span> mà cdf của <span class="math inline">\(X\)</span> liên tục.</p></li>
 </ol>
 </div>
-<section id="tính-chất" class="level3" data-number="1.6.1">
-<h3 data-number="1.6.1" class="anchored" data-anchor-id="tính-chất"><span class="header-section-number">1.6.1</span> Tính chất</h3>
-<p>Xếp theo thứ tự từ mạnh đến yếu:</p>
+<div id="thm-strength" class="theorem">
+<p><span class="theorem-title"><strong>Thm 1.1 (Độ mạnh) </strong></span>Xếp theo thứ tự từ mạnh đến yếu:</p>
 <p><span class="math display">\[
 X_n \xrightarrow[n\to\infty]{\as} X \implies
 X_n \xrightarrow[n\to\infty]{\P} X \implies
@@ -313,36 +309,55 @@ X_n \xrightarrow[n\to\infty]{(d)} X.
 <p>Nếu <span class="math inline">\(X_n \xrightarrow[n\to\infty]{(d)} X\)</span>, và <span class="math inline">\(X\)</span> có mật độ xác suất, thì <span class="math inline">\(X_n \xrightarrow[n\to\infty]{\P} X\)</span>.</p>
 <p>Nếu chuỗi <span class="math inline">\(X_n\)</span> có <span class="math inline">\(\E[X_n]\xrightarrow[]{} \mu\)</span> và <span class="math inline">\(\V[X_n]\xrightarrow[]{} 0\)</span> thì <span class="math inline">\(X_n\xrightarrow[]{\P} \mu\)</span>.</p>
 <p>Nếu <span class="math inline">\(X_n\xrightarrow[n\to\infty]{\P} X\)</span> thì <span class="math inline">\(\P(a\leq X_n\leq b) \xrightarrow[n\to\infty]{} \P(a\leq X\leq b)\)</span> với mọi khoảng <span class="math inline">\([a,b]\)</span>.</p>
-<p>Nếu có hai chuỗi biến ngẫu nhiên <span class="math inline">\(X_n, Y_n\)</span> hội tụ gần tuyệt đối hoặc hội tụ theo xác suất về <span class="math inline">\(X, Y\)</span>, thì tổng và tích của chúng cũng hội tụ theo cùng kiểu (gần tuyệt đối, hoặc theo xác suất) về tổng <span class="math inline">\(X+Y\)</span> hoặc tích <span class="math inline">\(XY\)</span> tương ứng.</p>
-<p>Nếu <span class="math inline">\(Y_n \xrightarrow[]{\P} y\)</span>, <span class="math inline">\(y\)</span> là một số thực cố định thì có thể nới lỏng điều kiện đối với <span class="math inline">\(X_n\)</span> thành hội tụ theo phân phối (định lý Slutsky).</p>
-<p>Nếu <span class="math inline">\(X_n\xrightarrow[n\to\infty]{\as/\P/(d)} X\)</span> thì đối với mọi hàm <span class="math inline">\(f\)</span> liên tục:</p>
+</div>
+<div id="thm-convege" class="theorem">
+<p><span class="theorem-title"><strong>Thm 1.2 (Tổng và tích) </strong></span>Nếu có hai chuỗi biến ngẫu nhiên <span class="math inline">\(X_n, Y_n\)</span> hội tụ gần tuyệt đối hoặc hội tụ theo xác suất về <span class="math inline">\(X, Y\)</span>, thì tổng và tích của chúng cũng hội tụ theo cùng kiểu (gần tuyệt đối, hoặc theo xác suất) về tổng <span class="math inline">\(X+Y\)</span> hoặc tích <span class="math inline">\(XY\)</span> tương ứng.</p>
+</div>
+<div id="thm-slutsky" class="theorem">
+<p><span class="theorem-title"><strong>Thm 1.3 (Slutsky) </strong></span>Nếu <span class="math inline">\(Y_n \xrightarrow[]{\P} y\)</span>, <span class="math inline">\(y\)</span> là một số thực cố định thì có thể nới lỏng điều kiện đối với <span class="math inline">\(X_n\)</span> thành hội tụ theo phân phối.</p>
+</div>
+<div id="thm-contmap" class="theorem">
+<p><span class="theorem-title"><strong>Thm 1.4 (Ánh xạ liên tục) </strong></span>(Continuous mapping) Nếu <span class="math inline">\(X_n\xrightarrow[n\to\infty]{\as/\P/(d)} X\)</span> thì đối với mọi hàm <span class="math inline">\(f\)</span> liên tục:</p>
 <ul>
 <li><span class="math inline">\(f(X_n)\xrightarrow[n\to\infty]{\as/\P/(d)} f(X)\)</span>.</li>
 <li><span class="math inline">\(\E[f(X_n)]\xrightarrow[n\to\infty]{}\E[f(X)]\)</span> nếu <span class="math inline">\(f\)</span> còn bị chặn.</li>
 </ul>
-<p>Cho <span class="math inline">\(n\)</span> biến iid <span class="math inline">\(X_1, X_2,\ldotp,X_n\)</span> có chung <span class="math inline">\(\mu=\E[X_i],\sigma^2=\V[X_i]\)</span>. Lấy giá trị trung bình: <span class="math display">\[\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}.\]</span></p>
+</div>
 <div id="thm-lln" class="theorem">
-<p><span class="theorem-title"><strong>Thm 1.1 (Định lý số lớn (LLN)) </strong></span><span class="math display">\[
+<p><span class="theorem-title"><strong>Thm 1.5 (Đại đa số (Law of Large Numbers)) </strong></span>Cho <span class="math inline">\(n\)</span> biến iid <span class="math inline">\(X_1, X_2,\ldotp,X_n\)</span> có chung <span class="math inline">\(\mu=\E[X_i],\sigma^2=\V[X_i]\)</span>. Lấy giá trị trung bình: <span class="math display">\[\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}.\]</span></p>
+<p><span class="math display">\[
 \bar{X}_n\xrightarrow[n\to\infty]{\P,\,\as}\mu
 \]</span></p>
 </div>
 <div id="thm-clt" class="theorem">
-<p><span class="theorem-title"><strong>Thm 1.2 (Định lý trung tâm (CLT)) </strong></span><span class="math display">\[
+<p><span class="theorem-title"><strong>Thm 1.6 (Hội tụ trung tâm (Central Limit)) </strong></span><span class="math display">\[
 \sqrt{n}(\bar{X}_n-\mu)
 \xrightarrow[n\to\infty]{(d)}
 \Gaus(0,\sigma^2)
 \]</span></p>
 </div>
 <div id="thm-hoeffding" class="theorem">
-<p><span class="theorem-title"><strong>Thm 1.3 (Bất đẳng thức Hoefding) </strong></span>Nếu có một khoảng cố định <span class="math inline">\([a,b]\)</span> gần như tuyệt đối (almost surely) chứa các biến <span class="math inline">\(X_i (i=1,2,\ldots,n)\)</span> thì</p>
+<p><span class="theorem-title"><strong>Thm 1.7 (Bất đẳng thức Hoefding) </strong></span>Nếu có một khoảng cố định <span class="math inline">\([a,b]\)</span> gần như tuyệt đối (almost surely) chứa các biến <span class="math inline">\(X_i (i=1,2,\ldots,n)\)</span> thì</p>
 <p><span class="math display">\[
 \P[|\bar{X}_n-\mu|\geq\epsilon]\leq
 2e^{-\frac{2n\epsilon^2}{(b-a)^2}},\quad\forall\epsilon&gt;0.
 \]</span></p>
 </div>
+<div id="def-asym-norm" class="theorem definition">
+<p><span class="theorem-title"><strong>Def 1.15 (Tiệm cận về chuẩn) </strong></span>Chuỗi biến ngẫu nhiên <span class="math inline">\((\theta_n)_{n\geq 1}\)</span> được gọi là chuẩn tiến (asymptotically normal) với phương sai <span class="math inline">\(\sigma^2\)</span> về biến <span class="math inline">\(\theta\)</span> nếu <span class="math display">\[
+\sqrt{n}({\theta}_n-\theta)\xrightarrow[n\to\infty]{(d)}
+\Gaus(0,\sigma^2).
+\]</span></p>
+</div>
+<div id="thm-delta-method" class="theorem">
+<p><span class="theorem-title"><strong>Thm 1.8 (Phương pháp Delta) </strong></span>Giả sử chuỗi <span class="math inline">\((\theta_n)_{n\geq 1}\)</span> chuẩn tiến với phương sai <span class="math inline">\(\sigma^2\)</span> về một điểm <span class="math inline">\(\theta\in\R\)</span>. Giả sử <span class="math inline">\(g:\R\to\R\)</span> có vi phân <span class="math inline">\(g'\)</span> liên tục tại <span class="math inline">\(\theta\)</span>. Khi đó, <span class="math display">\[
+\sqrt{n}(g(\theta_n)-g(\theta))
+\xrightarrow[n\to\infty]{(d)}
+\Gaus(0,(g'(\theta))^2\sigma^2)
+\]</span></p>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

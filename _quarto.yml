@@ -4,7 +4,7 @@ project:
 book:
   title: "Xác Suất Thống Kê"
   author: "Võ Chí Công"
-  date: "2022/8/25"
+  # date: "2022/8/25"
   downloads: pdf
   chapters:
     - index.qmd
@@ -12,6 +12,15 @@ book:
     - 20-stat-intro.qmd
     - summary.qmd
     - references.qmd
+  repo-url: https://github.com/vochicong/xstk
+  repo-actions: [edit, issue, source]
+  sharing: [twitter, facebook]
+  # sidebar:
+  #   style: docked
+  #   background: dark
+
+comments:
+  hypothesis: true
 
 bibliography: references.bib
 
@@ -19,6 +28,9 @@ format:
   html:
     theme: cosmo
     include-before-body: preamble.md
+    # toc-title: TOC
+    toc-depth: 3
+    # toc-location: left
   pdf:
     documentclass: scrreprt
     include-in-header: preamble.tex

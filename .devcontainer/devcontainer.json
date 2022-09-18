@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/markdown
 {
-	"name": "Markdown Editing",
+	"name": "xstk",
 	"dockerFile": "Dockerfile",
 	// Configure tool-specific properties.
 	"customizations": {

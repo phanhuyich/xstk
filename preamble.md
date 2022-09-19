@@ -11,4 +11,6 @@ $$
 \def\R{\mathbb{R}}
 \def\V{\mathbb{V}}
 \def\N{\mathbb{Z}_+}
+\def\TV{\textrm{TV}}
+\def\KL{\textrm{KL}}
 $$

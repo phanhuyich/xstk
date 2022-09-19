@@ -10,6 +10,7 @@ book:
     - index.qmd
     - 10-proba-intro.qmd
     - 20-stat-intro.qmd
+    - 30-est-method.qmd
     - summary.qmd
     - references.qmd
   repo-url: https://github.com/vochicong/xstk

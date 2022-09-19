@@ -53,7 +53,7 @@ Còn theo cách hiểu niềm tin thì $\P(A)$ là thước đo mức độ mà 
 
 ::: {#def-randvar}
 ### Biến ngẫu nhiên
-(random variable, rv) là một quy tắc ánh xạ
+("random variable", *rv*) là một quy tắc ánh xạ
 $X: \Omega\to\R$
 gán cho mỗi hiện tượng $\omega$ trong
 không gian $\Omega$

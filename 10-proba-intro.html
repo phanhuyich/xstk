@@ -131,7 +131,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tóm tắt</span></a>
+  <a href="./30-est-method.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Ước lượng</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tóm tắt</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -172,6 +177,8 @@ $$
 \def\R{\mathbb{R}}
 \def\V{\mathbb{V}}
 \def\N{\mathbb{Z}_+}
+\def\TV{\textrm{TV}}
+\def\KL{\textrm{KL}}
 $$
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -208,7 +215,7 @@ $$
 <p>thì ta gọi <span class="math inline">\(\P\)</span> là một <strong>phân phối xác suất</strong> hoặc <strong>độ đo xác suất</strong>.</p>
 <p>Có hai cách cắt nghĩa khái niệm xác suất là tần suất và niềm tin. Theo cách hiểu tần suất thì <span class="math inline">\(\P(A)\)</span> chính là tỷ lệ số lần sự kiện <span class="math inline">\(A\)</span> xảy ra nếu ta thực hiện thí nghiệm vô số lần. Còn theo cách hiểu niềm tin thì <span class="math inline">\(\P(A)\)</span> là thước đo mức độ mà một quan sát viên tin tưởng rằng hiện tượng <span class="math inline">\(A\)</span> sẽ xảy ra.</p>
 <div id="def-randvar" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.1 (Biến ngẫu nhiên) </strong></span>(random variable, rv) là một quy tắc ánh xạ <span class="math inline">\(X: \Omega\to\R\)</span> gán cho mỗi hiện tượng <span class="math inline">\(\omega\)</span> trong không gian <span class="math inline">\(\Omega\)</span> một số thực <span class="math inline">\(X(\omega)\)</span>.</p>
+<p><span class="theorem-title"><strong>Def 1.1 (Biến ngẫu nhiên) </strong></span>(“random variable”, <em>rv</em>) là một quy tắc ánh xạ <span class="math inline">\(X: \Omega\to\R\)</span> gán cho mỗi hiện tượng <span class="math inline">\(\omega\)</span> trong không gian <span class="math inline">\(\Omega\)</span> một số thực <span class="math inline">\(X(\omega)\)</span>.</p>
 </div>
 <div id="def-quantile" class="theorem definition">
 <p><span class="theorem-title"><strong>Def 1.2 (Điểm cắt) </strong></span>Điểm cắt tại mức <span class="math inline">\(1-\alpha\)</span> của biến <span class="math inline">\(X\)</span> là một số <span class="math inline">\(q_\alpha\)</span> mà <span class="math inline">\(\P(X\leq q_\alpha)=1-\alpha.\)</span></p>

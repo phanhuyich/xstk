@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Xác Suất Thống Kê",
     "section": "",
-    "text": "$$\n\\def\\as{\\textrm{a.s.}}\n\\def\\Ber{\\text{Ber}}\n\\def\\Bin{\\text{Bin}}\n\\def\\E{\\mathbb{E}}\n\\def\\iid{\\stackrel{iid}{\\sim}}\n\\def\\is{:=}\n\\def\\Gaus{\\mathcal{N}}\n\\def\\P{\\mathbb{P}}\n\\def\\Poi{\\text{Poi}}\n\\def\\R{\\mathbb{R}}\n\\def\\V{\\mathbb{V}}\n\\def\\N{\\mathbb{Z}_+}\n$$"
+    "text": "$$\n\\def\\as{\\textrm{a.s.}}\n\\def\\Ber{\\text{Ber}}\n\\def\\Bin{\\text{Bin}}\n\\def\\E{\\mathbb{E}}\n\\def\\iid{\\stackrel{iid}{\\sim}}\n\\def\\is{:=}\n\\def\\Gaus{\\mathcal{N}}\n\\def\\P{\\mathbb{P}}\n\\def\\Poi{\\text{Poi}}\n\\def\\R{\\mathbb{R}}\n\\def\\V{\\mathbb{V}}\n\\def\\N{\\mathbb{Z}_+}\n\\def\\TV{\\textrm{TV}}\n\\def\\KL{\\textrm{KL}}\n$$"
   },
   {
     "objectID": "10-proba-intro.html",
@@ -18,7 +18,7 @@
     "href": "10-proba-intro.html#xác-suất",
     "title": "1  Xác suất",
     "section": "1.2 Xác suất",
-    "text": "1.2 Xác suất\nNếu một xạ ảnh \\(\\P\\) từ không gian các sự kiện \\(A\\subseteq\\Omega\\) lên tập hợp số thực \\(\\R\\) thỏa mãn các điều kiện:\n\n\\(\\P(A)\\geq 0\\quad\\forall A\\)\n\\(\\P(\\Omega) = 1\\)\nNếu chuỗi \\(A_1, A_2, \\ldots\\) phân hoạch \\(C\\) thì \\(\\P(A_1) + \\P(A_2) + \\cdots = \\P(C)\\)\n\nthì ta gọi \\(\\P\\) là một phân phối xác suất hoặc độ đo xác suất.\nCó hai cách cắt nghĩa khái niệm xác suất là tần suất và niềm tin. Theo cách hiểu tần suất thì \\(\\P(A)\\) chính là tỷ lệ số lần sự kiện \\(A\\) xảy ra nếu ta thực hiện thí nghiệm vô số lần. Còn theo cách hiểu niềm tin thì \\(\\P(A)\\) là thước đo mức độ mà một quan sát viên tin tưởng rằng hiện tượng \\(A\\) sẽ xảy ra.\n\nDef 1.1 (Biến ngẫu nhiên) (random variable, rv) là một quy tắc ánh xạ \\(X: \\Omega\\to\\R\\) gán cho mỗi hiện tượng \\(\\omega\\) trong không gian \\(\\Omega\\) một số thực \\(X(\\omega)\\).\n\n\nDef 1.2 (Điểm cắt) Điểm cắt tại mức \\(1-\\alpha\\) của biến \\(X\\) là một số \\(q_\\alpha\\) mà \\(\\P(X\\leq q_\\alpha)=1-\\alpha.\\)"
+    "text": "1.2 Xác suất\nNếu một xạ ảnh \\(\\P\\) từ không gian các sự kiện \\(A\\subseteq\\Omega\\) lên tập hợp số thực \\(\\R\\) thỏa mãn các điều kiện:\n\n\\(\\P(A)\\geq 0\\quad\\forall A\\)\n\\(\\P(\\Omega) = 1\\)\nNếu chuỗi \\(A_1, A_2, \\ldots\\) phân hoạch \\(C\\) thì \\(\\P(A_1) + \\P(A_2) + \\cdots = \\P(C)\\)\n\nthì ta gọi \\(\\P\\) là một phân phối xác suất hoặc độ đo xác suất.\nCó hai cách cắt nghĩa khái niệm xác suất là tần suất và niềm tin. Theo cách hiểu tần suất thì \\(\\P(A)\\) chính là tỷ lệ số lần sự kiện \\(A\\) xảy ra nếu ta thực hiện thí nghiệm vô số lần. Còn theo cách hiểu niềm tin thì \\(\\P(A)\\) là thước đo mức độ mà một quan sát viên tin tưởng rằng hiện tượng \\(A\\) sẽ xảy ra.\n\nDef 1.1 (Biến ngẫu nhiên) (“random variable”, rv) là một quy tắc ánh xạ \\(X: \\Omega\\to\\R\\) gán cho mỗi hiện tượng \\(\\omega\\) trong không gian \\(\\Omega\\) một số thực \\(X(\\omega)\\).\n\n\nDef 1.2 (Điểm cắt) Điểm cắt tại mức \\(1-\\alpha\\) của biến \\(X\\) là một số \\(q_\\alpha\\) mà \\(\\P(X\\leq q_\\alpha)=1-\\alpha.\\)"
   },
   {
     "objectID": "10-proba-intro.html#độc-lập",
@@ -77,11 +77,25 @@
     "text": "2.4 Kiểm định"
   },
   {
+    "objectID": "30-est-method.html",
+    "href": "30-est-method.html",
+    "title": "3  Ước lượng",
+    "section": "",
+    "text": "Chiến lược ước lượng phân phối thật (true distribution)"
+  },
+  {
+    "objectID": "30-est-method.html#khoảng-cách-giữa-phân-phối",
+    "href": "30-est-method.html#khoảng-cách-giữa-phân-phối",
+    "title": "3  Ước lượng",
+    "section": "3.1 Khoảng cách giữa phân phối",
+    "text": "3.1 Khoảng cách giữa phân phối\nVới mô hình thống kê \\((E,(\\P_\\theta)_{\\theta\\in\\Theta})\\) xây dựng dựa trên quan sát iid rv \\(X_1,\\ldots,X_n\\) trên tập mẫu \\(E\\) và bộ tham số \\(\\Theta\\) . Ngầm định tồn tại tham số thật \\(\\theta^*\\in\\Theta\\) để \\(X_1\\sim\\P_{\\theta^*}\\) .\n\n3.1.1 Tổng biến động\n\nDef 3.1 Khoảng cách tổng biến động (total variation distance) giữa hai độ đo xác suất \\(\\P_\\theta\\) và \\(\\P_\\eta\\) là\n\\[\n\\TV(\\P_\\theta,\\P_{\\eta})\n=\n\\max_{A\\subset E}{\\mid\\P_\\theta(A)-\\P_\\eta(A)\\mid}.\n\\]\n\n\nThm 3.1 (Nếu tập mẫu \\(E\\) là rời rạc) (discrete: countable or finite), xác suất \\(\\P_\\theta,\\P_{\\eta}\\) có hàm khối lần lượt là \\(p_\\theta,p_{\\eta}\\) thì \\[\n\\TV(\\P_\\theta,\\P_{\\eta}) =\n\\frac{1}{2}\n\\sum_{x\\in E}\\mid p_\\theta(x) - p_\\eta(x)\\mid.\n\\]\n\n\nThm 3.2 (Nếu tập mẫu \\(E\\) là liên tục) (continuous), xác suất \\(\\P_\\theta, \\P_{\\eta}\\) có mật độ lần lượt là \\(f_\\theta, f_{\\eta}\\) thì \\[\n\\TV(\\P_\\theta,\\P_{\\eta}) =\n\\frac{1}{2}\n\\int_{E}\\mid f_\\theta(x) - f_\\eta(x)\\mid dx.\n\\]\n\n\n\n3.1.2 Phân kỳ KL\n\nDef 3.2 (KL divergence)\n\nNếu \\(E\\) là rời rạc \\[\n\\KL(\\P_\\theta, \\P_\\eta) = \\sum_{x\\in E}\np_\\theta(x)\\ln\\frac{p_\\theta(x)}{p_\\eta(x)},\n\\]\nNếu \\(E\\) là liên tục \\[\n\\KL(\\P_\\theta, \\P_\\eta) = \\int_{E}\nf_\\theta(x)\\ln\\frac{f_\\theta(x)}{f_\\eta(x)}dx.\n\\]\n\n\n\nProposition 3.1 Phân kỳ KL có 2 đặc điểm của “khoảng cách” (distance):\n\n\\(\\KL(\\P_\\theta, \\P_\\eta) \\geq 0\\)\n\\(\\KL(\\P_\\theta, \\P_\\eta) \\equiv 0 \\iff \\P_\\theta \\equiv \\P_\\eta\\)\n\ntuy nhiên nó không thỏa mãn:\n\ntính đối xứng\nbất đẳng thức tam giác.\n\nDo đó phân kỳ KL không phải là “khoảng cách”."
+  },
+  {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "3  Tóm tắt",
+    "title": "4  Tóm tắt",
     "section": "",
-    "text": "$$\n\\def\\as{\\textrm{a.s.}}\n\\def\\Ber{\\text{Ber}}\n\\def\\Bin{\\text{Bin}}\n\\def\\E{\\mathbb{E}}\n\\def\\iid{\\stackrel{iid}{\\sim}}\n\\def\\is{:=}\n\\def\\Gaus{\\mathcal{N}}\n\\def\\P{\\mathbb{P}}\n\\def\\Poi{\\text{Poi}}\n\\def\\R{\\mathbb{R}}\n\\def\\V{\\mathbb{V}}\n\\def\\N{\\mathbb{Z}_+}\n$$"
+    "text": "$$\n\\def\\as{\\textrm{a.s.}}\n\\def\\Ber{\\text{Ber}}\n\\def\\Bin{\\text{Bin}}\n\\def\\E{\\mathbb{E}}\n\\def\\iid{\\stackrel{iid}{\\sim}}\n\\def\\is{:=}\n\\def\\Gaus{\\mathcal{N}}\n\\def\\P{\\mathbb{P}}\n\\def\\Poi{\\text{Poi}}\n\\def\\R{\\mathbb{R}}\n\\def\\V{\\mathbb{V}}\n\\def\\N{\\mathbb{Z}_+}\n\\def\\TV{\\textrm{TV}}\n\\def\\KL{\\textrm{KL}}\n$$"
   },
   {
     "objectID": "references.html",

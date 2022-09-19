@@ -181,8 +181,6 @@ trong một giới hạn cố định,
 với giả định tần suất phát sinh sự kiện là
 $\lambda > 0$ cố định,
 và các sự kiện phát sinh độc lập.
-Có
-mật độ
 $$
 \P(X=k) = e^{-\lambda}
 \frac{\lambda^k}{k!}, \,k=0,1,2,\ldots
@@ -197,7 +195,7 @@ $\Poi(np)$ gần với $\Bin(n,p)$.
 :::{#def-geomdist}
 ### Phân phối Geometric
 $X\sim\text{Geom}(p), p \in (0,1)$
-có mật độ
+có
 $$
 \P(X=k)=p(1-p)^{k-1}, k=1,2,\ldots
 $$
@@ -212,7 +210,7 @@ dùng để mô tả khoảng cách $x$ giữa hai lần phát sinh
 của một chuỗi sự kiện kiểu Poisson
 (hai lần phát sinh sự kiện liên tiếp là độc lập với nhau,
 và tần suất phát sinh $\lambda>0$ là cố định).
-Có mật độ
+Có
 $$
 f(x)={\lambda}e^{-\lambda x},x\in\R_+
 $$
@@ -263,6 +261,14 @@ X_n \xrightarrow[n\to\infty]{(d)} X \iff
 $$
 tại mọi điểm $x$ mà cdf của $X$ liên tục.
 
+4. Hội tụ về chuẩn:
+(asymptotically normal)
+với phương sai
+$\sigma^2$
+$$
+\sqrt{n}({X}_n-X)\xrightarrow[n\to\infty]{(d)}
+\Gaus(0,\sigma^2).
+$$
 :::
 
 :::{#thm-strength}
@@ -321,21 +327,22 @@ Nếu $X_n\xrightarrow[n\to\infty]{\as/\P/(d)} X$ thì
 ::: {#thm-lln}
 ### Đại đa số (Law of Large Numbers)
 Cho $n$ biến iid $X_1, X_2,\ldotp,X_n$ có chung
-$\mu=\E[X_i],\sigma^2=\V[X_i]$.
-Lấy giá trị trung bình:
-$$\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}.$$
-
-$$
-\bar{X}_n\xrightarrow[n\to\infty]{\P,\,\as}\mu
+$\E[X_i]=\mu<\infty$.
+Khi đó:
+$$\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}
+\xrightarrow[n\to\infty]{\P,\,\as}\mu.
 $$
 :::
 
 ::: {#thm-clt}
 ### Hội tụ trung tâm (Central Limit)
+Giả sử thêm là
+$\V[X_i]=\sigma^2<\infty$.
+Khi đó
 $$
 \sqrt{n}(\bar{X}_n-\mu)
 \xrightarrow[n\to\infty]{(d)}
-\Gaus(0,\sigma^2)
+\Gaus(0,\sigma^2).
 $$
 :::
 
@@ -349,20 +356,6 @@ $$
 $$
 :::
 
-:::{#def-asym-norm}
-### Tiệm cận về chuẩn
-Chuỗi biến ngẫu nhiên
-$(\theta_n)_{n\geq 1}$ được gọi là chuẩn tiến
-(asymptotically normal)
-với phương sai
-$\sigma^2$
-về biến $\theta$
-nếu
-$$
-\sqrt{n}({\theta}_n-\theta)\xrightarrow[n\to\infty]{(d)}
-\Gaus(0,\sigma^2).
-$$
-:::
 
 :::{#thm-delta-method}
 ### Phương pháp Delta

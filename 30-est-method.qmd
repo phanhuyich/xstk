@@ -6,8 +6,6 @@ Chiến lược ước lượng phân phối *thật* (true distribution)
 - Ước lượng khoảng cách nêu trên (KL divergence)
 - Tìm điểm cực tiểu của ước lượng nêu trên (minimization).
 
-## Khoảng cách giữa phân phối
-
 Với mô hình thống kê
 $(E,(\P_\theta)_{\theta\in\Theta})$
 xây dựng dựa trên quan sát iid rv
@@ -22,9 +20,11 @@ $\theta^*\in\Theta$
 $X_1\sim\P_{\theta^*}$
 .
 
-### Tổng biến động
+## Tổng biến động
 ::: {#def-total-variation}
-Khoảng cách tổng biến động (total variation distance)
+### Khoảng cách
+tổng biến động
+(total variation distance)
 giữa hai độ đo xác suất
 $\P_\theta$ và
 $\P_\eta$
@@ -37,8 +37,10 @@ $$
 $$
 :::
 
-:::{#thm-tv-discrete}
-#### Nếu tập mẫu $E$ là rời rạc
+:::{#thm-total-variation}
+### Công thức tính
+
+Nếu tập mẫu $E$ là rời rạc
 (discrete: countable or finite),
 xác suất
 $\P_\theta,\P_{\eta}$
@@ -50,10 +52,8 @@ $$
 \frac{1}{2}
 \sum_{x\in E}\mid p_\theta(x) - p_\eta(x)\mid.
 $$
-:::
 
-:::{#thm-tv-continuous}
-#### Nếu tập mẫu $E$ là liên tục
+Nếu tập mẫu $E$ là liên tục
 (continuous),
 xác suất
 $\P_\theta, \P_{\eta}$
@@ -67,33 +67,32 @@ $$
 $$
 :::
 
-### Phân kỳ KL
+## Phân kỳ KL
+
 :::{#def-kl-divergence}
+### Phân kỳ KL
 (KL divergence)
+Ký hiệu $f$ là
+mật độ
+hoặc
+hàm khối xác suất:
 
-- Nếu $E$ là rời rạc
 $$
-\KL(\P_\theta, \P_\eta) = \sum_{x\in E}
-p_\theta(x)\ln\frac{p_\theta(x)}{p_\eta(x)},
-$$
-
-- Nếu $E$ là liên tục
-$$
-\KL(\P_\theta, \P_\eta) = \int_{E}
-f_\theta(x)\ln\frac{f_\theta(x)}{f_\eta(x)}dx.
+\KL(\P_\theta, \P_\eta) \is
+\E_\theta\left[ \ln\frac{f_\theta(x)}{f_\eta(x)} \right]
+=
+\E_\theta\left[ \ln{f_\theta(x)} \right]
+-
+\E_\theta\left[ \ln{f_\eta(x)} \right]
+.
 $$
 :::
 
 :::{#prp-kl-properties}
-Phân kỳ KL có 2 đặc điểm của "khoảng cách" (distance):
+### Đặc điểm
+Phân kỳ KL
+thỏa mãn 2/4 đặc điểm của "khoảng cách":
 
 1. $\KL(\P_\theta, \P_\eta) \geq 0$
-2. $\KL(\P_\theta, \P_\eta) \equiv 0 \iff \P_\theta \equiv \P_\eta$
-
-tuy nhiên nó **không thỏa mãn**:
-
-3. tính đối xứng
-4. bất đẳng thức tam giác.
-
-Do đó phân kỳ KL không phải là "khoảng cách".
+2. $\KL(\P_\theta, \P_\eta) \equiv 0 \iff \P_\theta \equiv \P_\eta$.
 :::

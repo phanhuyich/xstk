@@ -153,11 +153,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#khoảng-cách-giữa-phân-phối" id="toc-khoảng-cách-giữa-phân-phối" class="nav-link active" data-scroll-target="#khoảng-cách-giữa-phân-phối"><span class="toc-section-number">3.1</span>  Khoảng cách giữa phân phối</a>
-  <ul class="collapse">
-  <li><a href="#tổng-biến-động" id="toc-tổng-biến-động" class="nav-link" data-scroll-target="#tổng-biến-động"><span class="toc-section-number">3.1.1</span>  Tổng biến động</a></li>
-  <li><a href="#phân-kỳ-kl" id="toc-phân-kỳ-kl" class="nav-link" data-scroll-target="#phân-kỳ-kl"><span class="toc-section-number">3.1.2</span>  Phân kỳ KL</a></li>
-  </ul></li>
+  <li><a href="#tổng-biến-động" id="toc-tổng-biến-động" class="nav-link active" data-scroll-target="#tổng-biến-động"><span class="toc-section-number">3.1</span>  Tổng biến động</a></li>
+  <li><a href="#phân-kỳ-kl" id="toc-phân-kỳ-kl" class="nav-link" data-scroll-target="#phân-kỳ-kl"><span class="toc-section-number">3.2</span>  Phân kỳ KL</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vochicong/xstk/edit/main/30-est-method.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vochicong/xstk/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/vochicong/xstk/blob/main/30-est-method.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
@@ -202,65 +199,53 @@ $$
 <li>Ước lượng khoảng cách nêu trên (KL divergence)</li>
 <li>Tìm điểm cực tiểu của ước lượng nêu trên (minimization).</li>
 </ul>
-<section id="khoảng-cách-giữa-phân-phối" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="khoảng-cách-giữa-phân-phối"><span class="header-section-number">3.1</span> Khoảng cách giữa phân phối</h2>
 <p>Với mô hình thống kê <span class="math inline">\((E,(\P_\theta)_{\theta\in\Theta})\)</span> xây dựng dựa trên quan sát iid rv <span class="math inline">\(X_1,\ldots,X_n\)</span> trên tập mẫu <span class="math inline">\(E\)</span> và bộ tham số <span class="math inline">\(\Theta\)</span> . Ngầm định tồn tại <em>tham số thật</em> <span class="math inline">\(\theta^*\in\Theta\)</span> để <span class="math inline">\(X_1\sim\P_{\theta^*}\)</span> .</p>
-<section id="tổng-biến-động" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="tổng-biến-động"><span class="header-section-number">3.1.1</span> Tổng biến động</h3>
+<section id="tổng-biến-động" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="tổng-biến-động"><span class="header-section-number">3.1</span> Tổng biến động</h2>
 <div id="def-total-variation" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 3.1 </strong></span>Khoảng cách tổng biến động (total variation distance) giữa hai độ đo xác suất <span class="math inline">\(\P_\theta\)</span> và <span class="math inline">\(\P_\eta\)</span> là</p>
+<p><span class="theorem-title"><strong>Def 3.1 (Khoảng cách) </strong></span>tổng biến động (total variation distance) giữa hai độ đo xác suất <span class="math inline">\(\P_\theta\)</span> và <span class="math inline">\(\P_\eta\)</span> là</p>
 <p><span class="math display">\[
 \TV(\P_\theta,\P_{\eta})
 =
 \max_{A\subset E}{\mid\P_\theta(A)-\P_\eta(A)\mid}.
 \]</span></p>
 </div>
-<div id="thm-tv-discrete" class="theorem">
-<p><span class="theorem-title"><strong>Thm 3.1 (Nếu tập mẫu <span class="math inline">\(E\)</span> là rời rạc) </strong></span>(discrete: countable or finite), xác suất <span class="math inline">\(\P_\theta,\P_{\eta}\)</span> có hàm khối lần lượt là <span class="math inline">\(p_\theta,p_{\eta}\)</span> thì <span class="math display">\[
+<div id="thm-total-variation" class="theorem">
+<p><span class="theorem-title"><strong>Thm 3.1 (Công thức tính) </strong></span>Nếu tập mẫu <span class="math inline">\(E\)</span> là rời rạc (discrete: countable or finite), xác suất <span class="math inline">\(\P_\theta,\P_{\eta}\)</span> có hàm khối lần lượt là <span class="math inline">\(p_\theta,p_{\eta}\)</span> thì <span class="math display">\[
 \TV(\P_\theta,\P_{\eta}) =
 \frac{1}{2}
 \sum_{x\in E}\mid p_\theta(x) - p_\eta(x)\mid.
 \]</span></p>
-</div>
-<div id="thm-tv-continuous" class="theorem">
-<p><span class="theorem-title"><strong>Thm 3.2 (Nếu tập mẫu <span class="math inline">\(E\)</span> là liên tục) </strong></span>(continuous), xác suất <span class="math inline">\(\P_\theta, \P_{\eta}\)</span> có mật độ lần lượt là <span class="math inline">\(f_\theta, f_{\eta}\)</span> thì <span class="math display">\[
+<p>Nếu tập mẫu <span class="math inline">\(E\)</span> là liên tục (continuous), xác suất <span class="math inline">\(\P_\theta, \P_{\eta}\)</span> có mật độ lần lượt là <span class="math inline">\(f_\theta, f_{\eta}\)</span> thì <span class="math display">\[
 \TV(\P_\theta,\P_{\eta}) =
 \frac{1}{2}
 \int_{E}\mid f_\theta(x) - f_\eta(x)\mid dx.
 \]</span></p>
 </div>
 </section>
-<section id="phân-kỳ-kl" class="level3" data-number="3.1.2">
-<h3 data-number="3.1.2" class="anchored" data-anchor-id="phân-kỳ-kl"><span class="header-section-number">3.1.2</span> Phân kỳ KL</h3>
+<section id="phân-kỳ-kl" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="phân-kỳ-kl"><span class="header-section-number">3.2</span> Phân kỳ KL</h2>
 <div id="def-kl-divergence" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 3.2 </strong></span>(KL divergence)</p>
-<ul>
-<li><p>Nếu <span class="math inline">\(E\)</span> là rời rạc <span class="math display">\[
-\KL(\P_\theta, \P_\eta) = \sum_{x\in E}
-p_\theta(x)\ln\frac{p_\theta(x)}{p_\eta(x)},
-\]</span></p></li>
-<li><p>Nếu <span class="math inline">\(E\)</span> là liên tục <span class="math display">\[
-\KL(\P_\theta, \P_\eta) = \int_{E}
-f_\theta(x)\ln\frac{f_\theta(x)}{f_\eta(x)}dx.
-\]</span></p></li>
-</ul>
+<p><span class="theorem-title"><strong>Def 3.2 (Phân kỳ KL) </strong></span>(KL divergence) Ký hiệu <span class="math inline">\(f\)</span> là mật độ hoặc hàm khối xác suất:</p>
+<p><span class="math display">\[
+\KL(\P_\theta, \P_\eta) \is
+\E_\theta\left[ \ln\frac{f_\theta(x)}{f_\eta(x)} \right]
+=
+\E_\theta\left[ \ln{f_\theta(x)} \right]
+-
+\E_\theta\left[ \ln{f_\eta(x)} \right]
+.
+\]</span></p>
 </div>
 <div id="prp-kl-properties" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.1 </strong></span>Phân kỳ KL có 2 đặc điểm của “khoảng cách” (distance):</p>
+<p><span class="theorem-title"><strong>Proposition 3.1 (Đặc điểm) </strong></span>Phân kỳ KL thỏa mãn 2/4 đặc điểm của “khoảng cách”:</p>
 <ol type="1">
 <li><span class="math inline">\(\KL(\P_\theta, \P_\eta) \geq 0\)</span></li>
-<li><span class="math inline">\(\KL(\P_\theta, \P_\eta) \equiv 0 \iff \P_\theta \equiv \P_\eta\)</span></li>
+<li><span class="math inline">\(\KL(\P_\theta, \P_\eta) \equiv 0 \iff \P_\theta \equiv \P_\eta\)</span>.</li>
 </ol>
-<p>tuy nhiên nó <strong>không thỏa mãn</strong>:</p>
-<ol start="3" type="1">
-<li>tính đối xứng</li>
-<li>bất đẳng thức tam giác.</li>
-</ol>
-<p>Do đó phân kỳ KL không phải là “khoảng cách”.</p>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

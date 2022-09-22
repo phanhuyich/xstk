@@ -98,13 +98,6 @@
     "text": "3.2 Phân kỳ KL\n\nDef 3.2 (Phân kỳ KL) (KL divergence) Ký hiệu \\(f\\) là mật độ hoặc hàm khối xác suất:\n\\[\n\\KL(\\P_\\theta, \\P_\\eta) \\is\n\\E_\\theta\\left[ \\ln\\frac{f_\\theta(x)}{f_\\eta(x)} \\right]\n=\n\\E_\\theta\\left[ \\ln{f_\\theta(x)} \\right]\n-\n\\E_\\theta\\left[ \\ln{f_\\eta(x)} \\right]\n.\n\\]\n\n\nProposition 3.1 (Đặc điểm) Phân kỳ KL thỏa mãn 2/4 đặc điểm của “khoảng cách”:\n\n\\(\\KL(\\P_\\theta, \\P_\\eta) \\geq 0\\)\n\\(\\KL(\\P_\\theta, \\P_\\eta) \\equiv 0 \\iff \\P_\\theta \\equiv \\P_\\eta\\)."
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "4  Tóm tắt",
-    "section": "",
-    "text": "$$\n\\def\\as{\\textrm{a.s.}}\n\\def\\Ber{\\text{Ber}}\n\\def\\Bin{\\text{Bin}}\n\\def\\E{\\mathbb{E}}\n\\def\\iid{\\stackrel{iid}{\\sim}}\n\\def\\is{:=}\n\\def\\Gaus{\\mathcal{N}}\n\\def\\P{\\mathbb{P}}\n\\def\\Poi{\\text{Poi}}\n\\def\\R{\\mathbb{R}}\n\\def\\V{\\mathbb{V}}\n\\def\\N{\\mathbb{Z}_+}\n\\def\\TV{\\textrm{TV}}\n\\def\\KL{\\textrm{KL}}\n$$"
-  },
-  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Giáo trình",

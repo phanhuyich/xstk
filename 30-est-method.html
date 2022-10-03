@@ -150,6 +150,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#tổng-biến-động" id="toc-tổng-biến-động" class="nav-link active" data-scroll-target="#tổng-biến-động"><span class="toc-section-number">3.1</span>  Tổng biến động</a></li>
   <li><a href="#phân-kỳ-kl" id="toc-phân-kỳ-kl" class="nav-link" data-scroll-target="#phân-kỳ-kl"><span class="toc-section-number">3.2</span>  Phân kỳ KL</a></li>
+  <li><a href="#mle" id="toc-mle" class="nav-link" data-scroll-target="#mle"><span class="toc-section-number">3.3</span>  MLE</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vochicong/xstk/edit/main/30-est-method.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vochicong/xstk/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/vochicong/xstk/blob/main/30-est-method.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
@@ -238,6 +239,35 @@ $$
 <li><span class="math inline">\(\KL(\P_\theta, \P_\eta) \geq 0\)</span></li>
 <li><span class="math inline">\(\KL(\P_\theta, \P_\eta) \equiv 0 \iff \P_\theta \equiv \P_\eta\)</span>.</li>
 </ol>
+</div>
+</section>
+<section id="mle" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="mle"><span class="header-section-number">3.3</span> MLE</h2>
+<p>Maximum Likelihood Estimation</p>
+<div id="def-likelihood" class="theorem definition">
+<p><span class="theorem-title"><strong>Def 3.3 (Likelihood) </strong></span><span class="math display">\[L_\theta(x_1,\ldots,x_n)\is
+\P_\theta(X_1=x_1,\ldots,X_n=x_n)
+=
+\prod_{i=1}^n p_\theta(X_i=x_i)
+.\]</span></p>
+</div>
+<div id="def-likelihood" class="theorem definition">
+<p><span class="theorem-title"><strong>Def 3.4 (Log likelihood) </strong></span><span class="math display">\[
+\ell_\theta(x_1,\ldots,x_n)\is
+\ln
+L_\theta(x_1,\ldots,x_n).
+\]</span></p>
+</div>
+<div id="def-mle" class="theorem definition">
+<p><span class="theorem-title"><strong>Def 3.5 (Maximum Likelihood Estimator) </strong></span><span class="math display">\[
+\hat{\theta}_n \is
+\operatorname*{argmax}_\theta
+L_\theta(x_1,\ldots,x_n)
+\equiv
+\operatorname*{argmax}_\theta
+\ell_\theta(x_1,\ldots,x_n)
+.
+\]</span></p>
 </div>
 
 

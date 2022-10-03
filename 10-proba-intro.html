@@ -150,10 +150,9 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#sự-kiện" id="toc-sự-kiện" class="nav-link active" data-scroll-target="#sự-kiện"><span class="toc-section-number">1.1</span>  Sự kiện</a></li>
   <li><a href="#xác-suất" id="toc-xác-suất" class="nav-link" data-scroll-target="#xác-suất"><span class="toc-section-number">1.2</span>  Xác suất</a></li>
-  <li><a href="#độc-lập" id="toc-độc-lập" class="nav-link" data-scroll-target="#độc-lập"><span class="toc-section-number">1.3</span>  Độc lập</a></li>
-  <li><a href="#tích-suất" id="toc-tích-suất" class="nav-link" data-scroll-target="#tích-suất"><span class="toc-section-number">1.4</span>  Tích suất</a></li>
-  <li><a href="#phân-phối" id="toc-phân-phối" class="nav-link" data-scroll-target="#phân-phối"><span class="toc-section-number">1.5</span>  Phân phối</a></li>
-  <li><a href="#hội-tụ" id="toc-hội-tụ" class="nav-link" data-scroll-target="#hội-tụ"><span class="toc-section-number">1.6</span>  Hội tụ</a></li>
+  <li><a href="#tích-suất" id="toc-tích-suất" class="nav-link" data-scroll-target="#tích-suất"><span class="toc-section-number">1.3</span>  Tích suất</a></li>
+  <li><a href="#phân-phối" id="toc-phân-phối" class="nav-link" data-scroll-target="#phân-phối"><span class="toc-section-number">1.4</span>  Phân phối</a></li>
+  <li><a href="#hội-tụ" id="toc-hội-tụ" class="nav-link" data-scroll-target="#hội-tụ"><span class="toc-section-number">1.5</span>  Hội tụ</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vochicong/xstk/edit/main/10-proba-intro.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vochicong/xstk/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/vochicong/xstk/blob/main/10-proba-intro.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
@@ -210,38 +209,49 @@ $$
 <p>thì ta gọi <span class="math inline">\(\P\)</span> là một <strong>phân phối xác suất</strong> hoặc <strong>độ đo xác suất</strong>.</p>
 <p>Có hai cách cắt nghĩa khái niệm xác suất là tần suất và niềm tin. Theo cách hiểu tần suất thì <span class="math inline">\(\P(A)\)</span> chính là tỷ lệ số lần sự kiện <span class="math inline">\(A\)</span> xảy ra nếu ta thực hiện thí nghiệm vô số lần. Còn theo cách hiểu niềm tin thì <span class="math inline">\(\P(A)\)</span> là thước đo mức độ mà một quan sát viên tin tưởng rằng hiện tượng <span class="math inline">\(A\)</span> sẽ xảy ra.</p>
 <div id="def-randvar" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.1 (Biến ngẫu nhiên) </strong></span>(“random variable”, <em>rv</em>) là một quy tắc ánh xạ <span class="math inline">\(X: \Omega\to\R\)</span> gán cho mỗi hiện tượng <span class="math inline">\(\omega\)</span> trong không gian <span class="math inline">\(\Omega\)</span> một số thực <span class="math inline">\(X(\omega)\)</span>.</p>
+<p><span class="theorem-title"><strong>Def 1.1 (Biến ngẫu nhiên) </strong></span>(“random variable”, <em>rv</em>) là một quy tắc ánh xạ <span class="math inline">\(X: \Omega\to\R\)</span> gán cho mỗi hiện tượng <span class="math inline">\(\omega\)</span> trong không gian <span class="math inline">\(\Omega\)</span> một số thực <span class="math inline">\(X(\omega).\)</span></p>
 </div>
 <div id="def-quantile" class="theorem definition">
 <p><span class="theorem-title"><strong>Def 1.2 (Điểm cắt) </strong></span>Điểm cắt tại mức <span class="math inline">\(1-\alpha\)</span> của biến <span class="math inline">\(X\)</span> là một số <span class="math inline">\(q_\alpha\)</span> mà <span class="math inline">\(\P(X\leq q_\alpha)=1-\alpha.\)</span></p>
 </div>
-</section>
-<section id="độc-lập" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="độc-lập"><span class="header-section-number">1.3</span> Độc lập</h2>
-<p>Hai sự kiện <span class="math inline">\(A\)</span> và <span class="math inline">\(B\)</span> là độc lập nếu <span class="math inline">\(\P(AB)\equiv \P(A)\P(B)\)</span>.</p>
+<div id="def-independent-var" class="theorem definition">
+<p><span class="theorem-title"><strong>Def 1.3 (Độc lập) </strong></span>Hai sự kiện <span class="math inline">\(A\)</span> và <span class="math inline">\(B\)</span> là độc lập nếu <span class="math inline">\(\P(AB)\equiv \P(A)\P(B)\)</span>.</p>
 <p>Hai biến <span class="math inline">\(X\)</span> và <span class="math inline">\(Y\)</span> là độc lập nếu hai sự kiện <span class="math inline">\(X\leq x\)</span> và <span class="math inline">\(Y\leq y\)</span> là độc lập đối với mọi <span class="math inline">\(x,y\)</span>.</p>
+</div>
+<div id="def-joint-proba" class="theorem definition">
+<p><span class="theorem-title"><strong>Def 1.4 (Xác suất hợp) </strong></span>Ký hiệu <span class="math inline">\(\P(A, B)\)</span> hoặc <span class="math inline">\(\P(A\cap B)\)</span> chỉ xác suất sự kiện <span class="math inline">\(A\)</span> và sự kiện <span class="math inline">\(B\)</span> đồng thời xảy ra.</p>
+</div>
+<div id="def-conditional-proba" class="theorem definition">
+<p><span class="theorem-title"><strong>Def 1.5 (Xác suất có điều kiện) </strong></span>Ký hiệu <span class="math inline">\(\P(A|B)\)</span> hoặc <span class="math inline">\(\P_B(A)\)</span> chỉ xác suất của sự kiện <span class="math inline">\(A\)</span>, khi biết sự kiện <span class="math inline">\(B\)</span> đã xảy ra,</p>
+<p><span class="math display">\[\P(A|B) = \frac{\P(A,B)}{\P(B)}.\]</span></p>
+</div>
+<div id="thm-bayes" class="theorem">
+<p><span class="theorem-title"><strong>Thm 1.1 (Định lý Baye) </strong></span><span class="math display">\[\P(A|B) = \frac{\P(B|A)\P(A)}{\P(B)}
+= \frac{\P(B|A)\P(A)}{\P(B|A)\P(A) + \P(B|A^c)\P(A^c)}
+.\]</span></p>
+</div>
 </section>
-<section id="tích-suất" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="tích-suất"><span class="header-section-number">1.4</span> Tích suất</h2>
+<section id="tích-suất" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="tích-suất"><span class="header-section-number">1.3</span> Tích suất</h2>
 <p>Tích suất (moment, 積率) thể hiện trọng tâm, độ phân tán, hay độ lệch của phân phối. Tích suất bậc <span class="math inline">\(n\)</span> của biến ngẫu nhiên <span class="math inline">\(X\)</span> với mật độ <span class="math inline">\(f(x)\)</span> là:</p>
 <p><span class="math display">\[
 \E[X^n]\is \int x^n f(x) dx
 \]</span></p>
 <div id="def-expectation" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.3 (Trung bình) </strong></span>là tích suất bậc 1, tức là <span class="math inline">\(\E[X]\)</span>.</p>
+<p><span class="theorem-title"><strong>Def 1.6 (Trung bình) </strong></span>là tích suất bậc 1, tức là <span class="math inline">\(\E[X]\)</span>.</p>
 </div>
 <p>Ta có <span class="math display">\[
 \E[X+Y] \equiv \E[X] + E[Y].
 \]</span></p>
 <div id="def-covar" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.4 (Hiệp phương sai) </strong></span><span class="math display">\[\begin{align}
+<p><span class="theorem-title"><strong>Def 1.7 (Hiệp phương sai) </strong></span><span class="math display">\[\begin{align}
 \textrm{Cov}[X,Y] &amp;\is \E[(X-\E[X])(Y-\E[Y])] \\
 &amp;\equiv \E[XY] - \E[X]\E[Y]
 \end{align}\]</span></p>
 </div>
 <p>Nếu <span class="math inline">\(X\)</span> và <span class="math inline">\(Y\)</span> độc lập thì <span class="math inline">\(\textrm{Cov}[X,Y] = 0\)</span>.</p>
 <div id="def-variance" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.5 (Phương sai) </strong></span>Phương sai, hay phân tán (variance, 分散) là <span class="math display">\[
+<p><span class="theorem-title"><strong>Def 1.8 (Phương sai) </strong></span>Phương sai, hay phân tán (variance, 分散) là <span class="math display">\[
 \V[X]\is\textrm{Cov}[X,Y]\equiv\E[X^2]-\E^2[X].
 \]</span></p>
 </div>
@@ -249,58 +259,58 @@ $$
 \V[X+Y] \equiv \V[X]+\V[Y] + 2\textrm{Cov}[X,Y].
 \]</span></p>
 <div id="def-mgf" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.6 (Hàm tạo tích suất) </strong></span>“Moment geenration function (MGF)” hoặc “Laplace transform” của biến <span class="math inline">\(X\)</span> là <span class="math display">\[\psi_X(t)\is\E[e^{tX}]\]</span> với <span class="math inline">\(t\in\R\)</span>.</p>
+<p><span class="theorem-title"><strong>Def 1.9 (Hàm tạo tích suất) </strong></span>“Moment geenration function (MGF)” hoặc “Laplace transform” của biến <span class="math inline">\(X\)</span> là <span class="math display">\[\psi_X(t)\is\E[e^{tX}]\]</span> với <span class="math inline">\(t\in\R\)</span>.</p>
 </div>
 <p>Nếu MGF là “well defined” trên một khoảng mở xung quanh <span class="math inline">\(0\)</span> thì đạo hàm cấp <span class="math inline">\(k\)</span> của <span class="math inline">\(\psi\)</span> tại <span class="math inline">\(0\)</span> bằng đúng <span class="math inline">\(\E[X^k]\)</span>: <span class="math display">\[
 \psi^{(k)}(0)\equiv \E[X^k].
 \]</span></p>
 </section>
-<section id="phân-phối" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="phân-phối"><span class="header-section-number">1.5</span> Phân phối</h2>
+<section id="phân-phối" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="phân-phối"><span class="header-section-number">1.4</span> Phân phối</h2>
 <p>Có một số phân phối xác suất thông dụng.</p>
 <div id="def-iid" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.7 (IID) </strong></span>Các biến ngẫu nhiên <span class="math inline">\(X_1, X_2, \ldotp\)</span> được gọi là iid (“independent and identically distributed”, “độc lập và phân phối giống nhau”) nếu chúng cùng tuân theo duy nhất một phân phối xác suất, và từng cặp biến là độc lập với nhau. Dùng biến <span class="math inline">\(X\)</span> để thể hiện phân phối xác suất chung đó, ta viết <span class="math display">\[X_1,\ldots,X_n \iid X.\]</span></p>
+<p><span class="theorem-title"><strong>Def 1.10 (IID) </strong></span>Các biến ngẫu nhiên <span class="math inline">\(X_1, X_2, \ldotp\)</span> được gọi là iid (“independent and identically distributed”, “độc lập và phân phối giống nhau”) nếu chúng cùng tuân theo duy nhất một phân phối xác suất, và từng cặp biến là độc lập với nhau. Dùng biến <span class="math inline">\(X\)</span> để thể hiện phân phối xác suất chung đó, ta viết <span class="math display">\[X_1,\ldots,X_n \iid X.\]</span></p>
 </div>
 <div id="def-bernoulli" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.8 (Phân phối Bernoulli) </strong></span><span class="math inline">\(X\sim\Ber(p)\)</span> có <span class="math display">\[
+<p><span class="theorem-title"><strong>Def 1.11 (Phân phối Bernoulli) </strong></span><span class="math inline">\(X\sim\Ber(p)\)</span> có <span class="math display">\[
 \P(X=1) = p = 1-\P(X=0)
 \]</span> và <span class="math inline">\(\E[X] = p, \V[X] = p(1-p)\)</span>.</p>
 </div>
 <div id="def-binomial" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.9 (Phân phối Binomial) </strong></span><span class="math inline">\(X\sim\Bin(n, p)\)</span> với <span class="math inline">\(n\in\N, p\in(0,1)\)</span> mô tả tổng số lần thành công của <span class="math inline">\(n\)</span> thí nghiệm độc lập <span class="math inline">\(X_1,\ldots,X_n \iid \Ber(p).\)</span> Ta có <span class="math display">\[
+<p><span class="theorem-title"><strong>Def 1.12 (Phân phối Binomial) </strong></span><span class="math inline">\(X\sim\Bin(n, p)\)</span> với <span class="math inline">\(n\in\N, p\in(0,1)\)</span> mô tả tổng số lần thành công của <span class="math inline">\(n\)</span> thí nghiệm độc lập <span class="math inline">\(X_1,\ldots,X_n \iid \Ber(p).\)</span> Ta có <span class="math display">\[
 \P(X=k) = \binom{n}{k}p^{k}(1-p)^{n-k}
 \]</span> và <span class="math inline">\(\E[X] = np, \V[X] = np(1-p)\)</span>.</p>
 </div>
 <div id="def-poisson" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.10 (Phân phối Poisson) </strong></span><span class="math inline">\(X\sim\Poi(\lambda)\)</span> thường dùng để mô tả số lần <span class="math inline">\(k\)</span> mà sự kiện phát sinh trong một giới hạn cố định, với giả định tần suất phát sinh sự kiện là <span class="math inline">\(\lambda &gt; 0\)</span> cố định, và các sự kiện phát sinh độc lập. <span class="math display">\[
+<p><span class="theorem-title"><strong>Def 1.13 (Phân phối Poisson) </strong></span><span class="math inline">\(X\sim\Poi(\lambda)\)</span> thường dùng để mô tả số lần <span class="math inline">\(k\)</span> mà sự kiện phát sinh trong một giới hạn cố định, với giả định tần suất phát sinh sự kiện là <span class="math inline">\(\lambda &gt; 0\)</span> cố định, và các sự kiện phát sinh độc lập. <span class="math display">\[
 \P(X=k) = e^{-\lambda}
 \frac{\lambda^k}{k!}, \,k=0,1,2,\ldots
 \]</span> và <span class="math inline">\(\E[X] = \V[X] = \lambda\)</span>.</p>
 </div>
 <p>Khi <span class="math inline">\(n\)</span> đủ lớn và <span class="math inline">\(p\)</span> đủ nhỏ thì <span class="math inline">\(\Poi(np)\)</span> gần với <span class="math inline">\(\Bin(n,p)\)</span>.</p>
 <div id="def-geomdist" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.11 (Phân phối Geometric) </strong></span><span class="math inline">\(X\sim\text{Geom}(p), p \in (0,1)\)</span> có <span class="math display">\[
+<p><span class="theorem-title"><strong>Def 1.14 (Phân phối Geometric) </strong></span><span class="math inline">\(X\sim\text{Geom}(p), p \in (0,1)\)</span> có <span class="math display">\[
 \P(X=k)=p(1-p)^{k-1}, k=1,2,\ldots
 \]</span> và <span class="math inline">\(\E[X]=1/p,\V[X]=(1-p)/p^2.\)</span></p>
 </div>
 <div id="def-expdist" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.12 (Phân phối Exponential) </strong></span><span class="math inline">\(X\sim\text{Exp}(\lambda)\)</span> dùng để mô tả khoảng cách <span class="math inline">\(x\)</span> giữa hai lần phát sinh của một chuỗi sự kiện kiểu Poisson (hai lần phát sinh sự kiện liên tiếp là độc lập với nhau, và tần suất phát sinh <span class="math inline">\(\lambda&gt;0\)</span> là cố định). Có <span class="math display">\[
+<p><span class="theorem-title"><strong>Def 1.15 (Phân phối Exponential) </strong></span><span class="math inline">\(X\sim\text{Exp}(\lambda)\)</span> dùng để mô tả khoảng cách <span class="math inline">\(x\)</span> giữa hai lần phát sinh của một chuỗi sự kiện kiểu Poisson (hai lần phát sinh sự kiện liên tiếp là độc lập với nhau, và tần suất phát sinh <span class="math inline">\(\lambda&gt;0\)</span> là cố định). Có <span class="math display">\[
 f(x)={\lambda}e^{-\lambda x},x\in\R_+
 \]</span> và <span class="math inline">\(\E[X]=1/\lambda,\V[X]=1/\lambda^2.\)</span></p>
 </div>
 <div id="def-gaussian" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.13 (Phân phối Gaussian) </strong></span><span class="math inline">\(X\sim\Gaus(\mu,\sigma^2)\)</span> có mật độ <span class="math display">\[
+<p><span class="theorem-title"><strong>Def 1.16 (Phân phối Gaussian) </strong></span><span class="math inline">\(X\sim\Gaus(\mu,\sigma^2)\)</span> có mật độ <span class="math display">\[
 f(x) =
-\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right),
+\frac{1}{\sqrt{\pi 2\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right),
 x\in\R
 \]</span> và <span class="math inline">\(\E[X]=\mu,\V[X]=\sigma^2\)</span>.</p>
 </div>
 </section>
-<section id="hội-tụ" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="hội-tụ"><span class="header-section-number">1.6</span> Hội tụ</h2>
+<section id="hội-tụ" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="hội-tụ"><span class="header-section-number">1.5</span> Hội tụ</h2>
 <p>Có một số kiểu hội tụ của biến ngẫu nhiên.</p>
 <div id="def-conv-proba" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.14 (Hội tụ xác suất) </strong></span>Cho một chuỗi biến ngẫu nhiên <span class="math inline">\(X_1,X_2,\ldotp\)</span> và một biến ngẫu nhiên <span class="math inline">\(X\)</span>.</p>
+<p><span class="theorem-title"><strong>Def 1.17 (Hội tụ xác suất) </strong></span>Cho một chuỗi biến ngẫu nhiên <span class="math inline">\(X_1,X_2,\ldotp\)</span> và một biến ngẫu nhiên <span class="math inline">\(X\)</span>.</p>
 <ol type="1">
 <li><p>Hội tụ gần tuyệt đối: <span class="math display">\[
 X_n \xrightarrow[n\to\infty]{\as} X \iff
@@ -323,7 +333,7 @@ X_n \xrightarrow[n\to\infty]{(d)} X \iff
 </ol>
 </div>
 <div id="thm-strength" class="theorem">
-<p><span class="theorem-title"><strong>Thm 1.1 (Độ mạnh) </strong></span>Xếp theo thứ tự từ mạnh đến yếu:</p>
+<p><span class="theorem-title"><strong>Thm 1.2 (Độ mạnh) </strong></span>Xếp theo thứ tự từ mạnh đến yếu:</p>
 <p><span class="math display">\[
 X_n \xrightarrow[n\to\infty]{\as} X \implies
 X_n \xrightarrow[n\to\infty]{\P} X \implies
@@ -334,39 +344,39 @@ X_n \xrightarrow[n\to\infty]{(d)} X.
 <p>Nếu <span class="math inline">\(X_n\xrightarrow[n\to\infty]{\P} X\)</span> thì <span class="math inline">\(\P(a\leq X_n\leq b) \xrightarrow[n\to\infty]{} \P(a\leq X\leq b)\)</span> với mọi khoảng <span class="math inline">\([a,b]\)</span>.</p>
 </div>
 <div id="thm-convege" class="theorem">
-<p><span class="theorem-title"><strong>Thm 1.2 (Tổng và tích) </strong></span>Nếu có hai chuỗi biến ngẫu nhiên <span class="math inline">\(X_n, Y_n\)</span> hội tụ gần tuyệt đối hoặc hội tụ theo xác suất về <span class="math inline">\(X, Y\)</span>, thì tổng và tích của chúng cũng hội tụ theo cùng kiểu (gần tuyệt đối, hoặc theo xác suất) về tổng <span class="math inline">\(X+Y\)</span> hoặc tích <span class="math inline">\(XY\)</span> tương ứng.</p>
+<p><span class="theorem-title"><strong>Thm 1.3 (Tổng và tích) </strong></span>Nếu có hai chuỗi biến ngẫu nhiên <span class="math inline">\(X_n, Y_n\)</span> hội tụ gần tuyệt đối hoặc hội tụ theo xác suất về <span class="math inline">\(X, Y\)</span>, thì tổng và tích của chúng cũng hội tụ theo cùng kiểu (gần tuyệt đối, hoặc theo xác suất) về tổng <span class="math inline">\(X+Y\)</span> hoặc tích <span class="math inline">\(XY\)</span> tương ứng.</p>
 </div>
 <div id="thm-slutsky" class="theorem">
-<p><span class="theorem-title"><strong>Thm 1.3 (Slutsky) </strong></span>Nếu <span class="math inline">\(Y_n \xrightarrow[]{\P} y\)</span>, <span class="math inline">\(y\)</span> là một số thực cố định thì có thể nới lỏng điều kiện đối với <span class="math inline">\(X_n\)</span> thành hội tụ theo phân phối.</p>
+<p><span class="theorem-title"><strong>Thm 1.4 (Slutsky) </strong></span>Nếu <span class="math inline">\(Y_n \xrightarrow[]{\P} y\)</span>, <span class="math inline">\(y\)</span> là một số thực cố định thì có thể nới lỏng điều kiện đối với <span class="math inline">\(X_n\)</span> thành hội tụ theo phân phối.</p>
 </div>
 <div id="thm-contmap" class="theorem">
-<p><span class="theorem-title"><strong>Thm 1.4 (Ánh xạ liên tục) </strong></span>(Continuous mapping) Nếu <span class="math inline">\(X_n\xrightarrow[n\to\infty]{\as/\P/(d)} X\)</span> thì đối với mọi hàm <span class="math inline">\(f\)</span> liên tục:</p>
+<p><span class="theorem-title"><strong>Thm 1.5 (Ánh xạ liên tục) </strong></span>(Continuous mapping) Nếu <span class="math inline">\(X_n\xrightarrow[n\to\infty]{\as/\P/(d)} X\)</span> thì đối với mọi hàm <span class="math inline">\(f\)</span> liên tục:</p>
 <ul>
 <li><span class="math inline">\(f(X_n)\xrightarrow[n\to\infty]{\as/\P/(d)} f(X)\)</span>.</li>
 <li><span class="math inline">\(\E[f(X_n)]\xrightarrow[n\to\infty]{}\E[f(X)]\)</span> nếu <span class="math inline">\(f\)</span> còn bị chặn.</li>
 </ul>
 </div>
 <div id="thm-lln" class="theorem">
-<p><span class="theorem-title"><strong>Thm 1.5 (Đại đa số (Law of Large Numbers)) </strong></span>Cho <span class="math inline">\(n\)</span> biến iid <span class="math inline">\(X_1, X_2,\ldotp,X_n\)</span> có chung <span class="math inline">\(\E[X_i]=\mu&lt;\infty\)</span>. Khi đó: <span class="math display">\[\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}
+<p><span class="theorem-title"><strong>Thm 1.6 (Đại đa số (Law of Large Numbers)) </strong></span>Cho <span class="math inline">\(n\)</span> biến iid <span class="math inline">\(X_1, X_2,\ldotp,X_n\)</span> có chung <span class="math inline">\(\E[X_i]=\mu&lt;\infty\)</span>. Khi đó: <span class="math display">\[\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}
 \xrightarrow[n\to\infty]{\P,\,\as}\mu.
 \]</span></p>
 </div>
 <div id="thm-clt" class="theorem">
-<p><span class="theorem-title"><strong>Thm 1.6 (Hội tụ trung tâm (Central Limit)) </strong></span>Giả sử thêm là <span class="math inline">\(\V[X_i]=\sigma^2&lt;\infty\)</span>. Khi đó <span class="math display">\[
+<p><span class="theorem-title"><strong>Thm 1.7 (Hội tụ trung tâm (Central Limit)) </strong></span>Giả sử thêm là <span class="math inline">\(\V[X_i]=\sigma^2&lt;\infty\)</span>. Khi đó <span class="math display">\[
 \sqrt{n}(\bar{X}_n-\mu)
 \xrightarrow[n\to\infty]{(d)}
 \Gaus(0,\sigma^2).
 \]</span></p>
 </div>
 <div id="thm-hoeffding" class="theorem">
-<p><span class="theorem-title"><strong>Thm 1.7 (Bất đẳng thức Hoefding) </strong></span>Nếu có một khoảng cố định <span class="math inline">\([a,b]\)</span> gần như tuyệt đối (almost surely) chứa các biến <span class="math inline">\(X_i (i=1,2,\ldots,n)\)</span> thì</p>
+<p><span class="theorem-title"><strong>Thm 1.8 (Bất đẳng thức Hoefding) </strong></span>Nếu có một khoảng cố định <span class="math inline">\([a,b]\)</span> gần như tuyệt đối (almost surely) chứa các biến <span class="math inline">\(X_i (i=1,2,\ldots,n)\)</span> thì</p>
 <p><span class="math display">\[
 \P[|\bar{X}_n-\mu|\geq\epsilon]\leq
 2e^{-\frac{2n\epsilon^2}{(b-a)^2}},\quad\forall\epsilon&gt;0.
 \]</span></p>
 </div>
 <div id="thm-delta-method" class="theorem">
-<p><span class="theorem-title"><strong>Thm 1.8 (Phương pháp Delta) </strong></span>Giả sử chuỗi <span class="math inline">\((\theta_n)_{n\geq 1}\)</span> chuẩn tiến với phương sai <span class="math inline">\(\sigma^2\)</span> về một điểm <span class="math inline">\(\theta\in\R\)</span>. Giả sử <span class="math inline">\(g:\R\to\R\)</span> có vi phân <span class="math inline">\(g'\)</span> liên tục tại <span class="math inline">\(\theta\)</span>. Khi đó, <span class="math display">\[
+<p><span class="theorem-title"><strong>Thm 1.9 (Phương pháp Delta) </strong></span>Giả sử chuỗi <span class="math inline">\((\theta_n)_{n\geq 1}\)</span> chuẩn tiến với phương sai <span class="math inline">\(\sigma^2\)</span> về một điểm <span class="math inline">\(\theta\in\R\)</span>. Giả sử <span class="math inline">\(g:\R\to\R\)</span> có vi phân <span class="math inline">\(g'\)</span> liên tục tại <span class="math inline">\(\theta\)</span>. Khi đó, <span class="math display">\[
 \sqrt{n}(g(\theta_n)-g(\theta))
 \xrightarrow[n\to\infty]{(d)}
 \Gaus(0,(g'(\theta))^2\sigma^2)

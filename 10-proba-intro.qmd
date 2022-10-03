@@ -57,7 +57,7 @@ Còn theo cách hiểu niềm tin thì $\P(A)$ là thước đo mức độ mà 
 $X: \Omega\to\R$
 gán cho mỗi hiện tượng $\omega$ trong
 không gian $\Omega$
-một số thực $X(\omega)$.
+một số thực $X(\omega).$
 :::
 
 :::{#def-quantile}
@@ -65,7 +65,8 @@ một số thực $X(\omega)$.
 Điểm cắt tại mức $1-\alpha$ của biến $X$ là một số $q_\alpha$ mà $\P(X\leq q_\alpha)=1-\alpha.$
 :::
 
-## Độc lập
+:::{#def-independent-var}
+### Độc lập
 
 Hai sự kiện $A$ và $B$ là độc lập nếu
 $\P(AB)\equiv \P(A)\P(B)$.
@@ -73,6 +74,36 @@ $\P(AB)\equiv \P(A)\P(B)$.
 Hai biến $X$ và $Y$ là độc lập nếu
 hai sự kiện $X\leq x$ và $Y\leq y$ là độc lập
 đối với mọi $x,y$.
+:::
+
+:::{#def-joint-proba}
+### Xác suất hợp
+Ký hiệu
+$\P(A, B)$
+hoặc
+$\P(A\cap B)$
+chỉ
+xác suất sự kiện $A$ và sự kiện $B$ đồng thời xảy ra.
+:::
+
+:::{#def-conditional-proba}
+### Xác suất có điều kiện
+Ký hiệu
+$\P(A|B)$
+hoặc
+$\P_B(A)$
+chỉ
+xác suất của sự kiện $A$, khi biết sự kiện $B$ đã xảy ra,
+
+$$\P(A|B) = \frac{\P(A,B)}{\P(B)}.$$
+:::
+
+:::{#thm-bayes}
+### Định lý Baye
+$$\P(A|B) = \frac{\P(B|A)\P(A)}{\P(B)}
+= \frac{\P(B|A)\P(A)}{\P(B|A)\P(A) + \P(B|A^c)\P(A^c)}
+.$$
+:::
 
 ## Tích suất
 

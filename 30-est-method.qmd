@@ -96,3 +96,39 @@ thỏa mãn 2/4 đặc điểm của "khoảng cách":
 1. $\KL(\P_\theta, \P_\eta) \geq 0$
 2. $\KL(\P_\theta, \P_\eta) \equiv 0 \iff \P_\theta \equiv \P_\eta$.
 :::
+
+## MLE
+
+Maximum Likelihood Estimation
+
+:::{#def-likelihood}
+### Likelihood
+$$L_\theta(x_1,\ldots,x_n)\is
+\P_\theta(X_1=x_1,\ldots,X_n=x_n)
+=
+\prod_{i=1}^n p_\theta(X_i=x_i)
+.$$
+:::
+
+:::{#def-likelihood}
+### Log likelihood
+$$
+\ell_\theta(x_1,\ldots,x_n)\is
+\ln
+L_\theta(x_1,\ldots,x_n).
+$$
+:::
+
+:::{#def-mle}
+### Maximum Likelihood Estimator
+
+$$
+\hat{\theta}_n \is
+\operatorname*{argmax}_\theta
+L_\theta(x_1,\ldots,x_n)
+\equiv
+\operatorname*{argmax}_\theta
+\ell_\theta(x_1,\ldots,x_n)
+.
+$$
+:::

@@ -279,8 +279,8 @@ X = \sum_{k=1}^K
 .
 \]</span></p>
 </div>
-<div id="thm-em-alg" class="theorem">
-<p><span class="theorem-title"><strong>Thm 3.2 (Giải thuật EM) </strong></span>(Estimation Maximization) để tìm các tham số của mô hình hỗn hợp. Nhập liệu là các quan sát <span class="math inline">\(X_1, \ldots, X_n\)</span>. Gọi các trọng số tiềm ẩn là <span class="math inline">\(Z_1, \ldots, Z_n.\)</span> Sau khi khởi tạo các tham số bằng giá trị ngẫu nhiên, ta lặp lại 2 bước E, M như sau để cập nhật các tham số cho đến khi chúng hội tụ.</p>
+<div id="def-em-alg" class="theorem definition">
+<p><span class="theorem-title"><strong>Def 3.7 (Giải thuật EM) </strong></span>(Estimation Maximization) để tìm các tham số của mô hình hỗn hợp <a href="#def-mix-model">Def&nbsp;<span>3.6</span></a>. Nhập liệu là các quan sát <span class="math inline">\(X_1, \ldots, X_n\)</span>. Gọi các trọng số tiềm ẩn là <span class="math inline">\(Z_1, \ldots, Z_n.\)</span> Sau khi khởi tạo các tham số bằng giá trị ngẫu nhiên, ta lặp lại 2 bước E, M như sau để cập nhật các tham số cho đến khi chúng hội tụ.</p>
 <ul>
 <li>Bước E: Ước lượng <span class="math inline">\(Z_i\approx\omega_i\is\E[Z|X_i], i=1,\ldots,n.\)</span></li>
 <li>Bước M: Thay <span class="math inline">\(Z_i\)</span> bởi <span class="math inline">\(\omega_i\)</span> vào log likelihood để tìm MLE cho <span class="math inline">\(X\)</span>.</li>

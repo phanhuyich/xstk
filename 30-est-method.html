@@ -151,6 +151,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#tổng-biến-động" id="toc-tổng-biến-động" class="nav-link active" data-scroll-target="#tổng-biến-động"><span class="toc-section-number">3.1</span>  Tổng biến động</a></li>
   <li><a href="#phân-kỳ-kl" id="toc-phân-kỳ-kl" class="nav-link" data-scroll-target="#phân-kỳ-kl"><span class="toc-section-number">3.2</span>  Phân kỳ KL</a></li>
   <li><a href="#mle" id="toc-mle" class="nav-link" data-scroll-target="#mle"><span class="toc-section-number">3.3</span>  MLE</a></li>
+  <li><a href="#thông-tin-fisher" id="toc-thông-tin-fisher" class="nav-link" data-scroll-target="#thông-tin-fisher"><span class="toc-section-number">3.4</span>  Thông tin Fisher</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vochicong/xstk/edit/main/30-est-method.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vochicong/xstk/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/vochicong/xstk/blob/main/30-est-method.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
@@ -280,11 +281,24 @@ X = \sum_{k=1}^K
 \]</span></p>
 </div>
 <div id="def-em-alg" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 3.7 (Giải thuật EM) </strong></span>(Estimation Maximization) để tìm các tham số của mô hình hỗn hợp <a href="#def-mix-model">Def&nbsp;<span>3.6</span></a>. Nhập liệu là các quan sát <span class="math inline">\(X_1, \ldots, X_n\)</span>. Gọi các trọng số tiềm ẩn là <span class="math inline">\(Z_1, \ldots, Z_n.\)</span> Sau khi khởi tạo các tham số bằng giá trị ngẫu nhiên, ta lặp lại 2 bước E, M như sau để cập nhật các tham số cho đến khi chúng hội tụ.</p>
+<p><span class="theorem-title"><strong>Def 3.7 (Giải thuật EM) </strong></span>(Estimation Maximization) để tìm các tham số của mô hình hỗn hợp <a href="#def-mix-model">Def&nbsp;<span>3.6</span></a>.</p>
+<p>Giả sử ta quan sát được <span class="math inline">\(X_1=x_1, \ldots, X_n=x_n\)</span>. Gọi các trọng số tiềm ẩn tương ứng là <span class="math inline">\(Z_1=z_1, \ldots, Z_n=z_n.\)</span></p>
+<p>Sau khi khởi tạo các tham số bằng giá trị ngẫu nhiên, ta lặp lại 2 bước E, M như sau để cập nhật các tham số cho đến khi chúng hội tụ.</p>
 <ul>
 <li>Bước E: Ước lượng <span class="math inline">\(Z_i\approx\omega_i\is\E[Z|X_i], i=1,\ldots,n.\)</span></li>
 <li>Bước M: Thay <span class="math inline">\(Z_i\)</span> bởi <span class="math inline">\(\omega_i\)</span> vào log likelihood để tìm MLE cho <span class="math inline">\(X\)</span>.</li>
 </ul>
+</div>
+</section>
+<section id="thông-tin-fisher" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="thông-tin-fisher"><span class="header-section-number">3.4</span> Thông tin Fisher</h2>
+<div id="def-fisher-info" class="theorem definition">
+<p><span class="theorem-title"><strong>Def 3.8 </strong></span>Giả sử log likelihood đối với một quan sát <span class="math inline">\(X\)</span> theo mô hình <span class="math inline">\(\theta\)</span> là <span class="math inline">\(\ell(\theta) = \ln L_1(X,\theta), \theta\in\Theta\subset\R.\)</span> Giả sử <span class="math inline">\(\ell(\theta)\)</span> có đạo hàm bậc hai. Dưới một số điều kiện chuẩn, thông tin Fisher của mô hình được định nghĩa là</p>
+<p><span class="math display">\[
+I(\theta)
+= \V[\ell^{\prime}(\theta)]
+= -\E[\ell^{\prime\prime}(\theta)].
+\]</span></p>
 </div>
 
 

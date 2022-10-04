@@ -1,0 +1,145 @@
+# Hội tụ xác suất
+
+Có một số kiểu hội tụ của biến ngẫu nhiên.
+
+## Hội tụ xác suất
+::: {#def-conv-proba}
+Cho một chuỗi biến ngẫu nhiên $X_1,X_2,\ldotp$
+và một biến ngẫu nhiên $X$.
+
+1. Hội tụ gần tuyệt đối:
+$$
+X_n \xrightarrow[n\to\infty]{\as} X \iff
+\P(\{\omega\in\Omega: X_n(\omega)\to X(\omega)\}) = 1.
+$$
+
+2. Hội tụ theo xác suất:
+$$
+X_n \xrightarrow[n\to\infty]{\P} X \iff
+\P(|X_n-X| >\epsilon)
+\xrightarrow[n\to\infty]{}
+0,\quad\forall\epsilon>0.
+$$
+
+3. Hội tụ theo phân phối:
+$$
+X_n \xrightarrow[n\to\infty]{(d)} X \iff
+\P[X_n(x)\leq x]\xrightarrow[n\to\infty]{} \P[X\leq x]
+$$
+tại mọi điểm $x$ mà cdf của $X$ liên tục.
+
+4. Hội tụ về chuẩn:
+(asymptotically normal)
+với phương sai
+$\sigma^2$
+$$
+\sqrt{n}({X}_n-X)\xrightarrow[n\to\infty]{(d)}
+\Gaus(0,\sigma^2).
+$$
+:::
+
+## Độ mạnh
+:::{#thm-strength}
+
+Xếp theo thứ tự từ mạnh đến yếu:
+
+$$
+X_n \xrightarrow[n\to\infty]{\as} X \implies
+X_n \xrightarrow[n\to\infty]{\P} X \implies
+X_n \xrightarrow[n\to\infty]{(d)} X.
+$$
+
+Nếu
+$X_n \xrightarrow[n\to\infty]{(d)} X$,
+và
+$X$ có mật độ xác suất, thì
+$X_n \xrightarrow[n\to\infty]{\P} X$.
+
+Nếu chuỗi $X_n$ có
+$\E[X_n]\xrightarrow[]{} \mu$ và
+$\V[X_n]\xrightarrow[]{} 0$ thì
+$X_n\xrightarrow[]{\P} \mu$.
+
+Nếu $X_n\xrightarrow[n\to\infty]{\P} X$ thì
+$\P(a\leq X_n\leq b) \xrightarrow[n\to\infty]{} \P(a\leq X\leq b)$
+với mọi khoảng $[a,b]$.
+:::
+
+## Tổng và tích
+::: {#thm-convege}
+Nếu có hai chuỗi biến ngẫu nhiên $X_n, Y_n$
+hội tụ gần tuyệt đối
+hoặc hội tụ theo xác suất về $X, Y$,
+thì tổng $X_n+Y_n$ và tích $X_n Y_n$
+cũng hội tụ tương tự (gần tuyệt đối, hoặc theo xác suất)
+về tổng $X+Y$ và tích $XY$.
+:::
+
+## Slutsky
+::: {#thm-slutsky}
+Nếu $Y_n \xrightarrow[]{\P} y$, $y$ là một số thực cố định thì có thể
+nới lỏng điều kiện đối với $X_n$ thành hội tụ theo phân phối.
+:::
+
+## Ánh xạ liên tục
+:::{#thm-contmap}
+(Continuous mapping)
+Nếu $X_n\xrightarrow[n\to\infty]{\as/\P/(d)} X$ thì
+đối với mọi hàm $f$ liên tục:
+
+- $f(X_n)\xrightarrow[n\to\infty]{\as/\P/(d)} f(X)$.
+- $\E[f(X_n)]\xrightarrow[n\to\infty]{}\E[f(X)]$ nếu $f$ còn bị chặn.
+:::
+
+## Đại đa số (Law of Large Numbers)
+::: {#thm-lln}
+Cho $n$ biến iid $X_1, X_2,\ldotp,X_n$ có chung
+$\E[X_i]=\mu<\infty$.
+Khi đó:
+$$\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}
+\xrightarrow[n\to\infty]{\P,\,\as}\mu.
+$$
+:::
+
+## Hội tụ trung tâm (Central Limit)
+::: {#thm-clt}
+Giả sử thêm là
+$\V[X_i]=\sigma^2<\infty$.
+Khi đó
+$$
+\sqrt{n}(\bar{X}_n-\mu)
+\xrightarrow[n\to\infty]{(d)}
+\Gaus(0,\sigma^2).
+$$
+:::
+
+## Bất đẳng thức Hoefding
+::: {#thm-hoeffding}
+Nếu có một khoảng cố định $[a,b]$ gần như tuyệt đối (almost surely) chứa các biến $X_i (i=1,2,\ldots,n)$ thì
+
+$$
+\P[|\bar{X}_n-\mu|\geq\epsilon]\leq
+2e^{-\frac{2n\epsilon^2}{(b-a)^2}},\quad\forall\epsilon>0.
+$$
+:::
+
+
+## Phương pháp Delta
+:::{#thm-delta-method}
+Giả sử chuỗi $(\theta_n)_{n\geq 1}$
+chuẩn tiến
+với phương sai
+$\sigma^2$
+về một điểm
+$\theta\in\R$.
+Giả sử $g:\R\to\R$
+có vi phân
+$g^\prime$
+liên tục tại $\theta$.
+Khi đó,
+$$
+\sqrt{n}(g(\theta_n)-g(\theta))
+\xrightarrow[n\to\infty]{(d)}
+\Gaus\left(0,\left(\sigma g^\prime(\theta)\right)^2\right)
+$$
+:::

@@ -51,8 +51,8 @@ Theo cách hiểu tần suất thì $\P(A)$ chính là tỷ lệ số lần sự
 xảy ra nếu ta thực hiện thí nghiệm vô số lần.
 Còn theo cách hiểu niềm tin thì $\P(A)$ là thước đo mức độ mà một quan sát viên tin tưởng rằng hiện tượng $A$ sẽ xảy ra.
 
-::: {#def-randvar}
 ### Biến ngẫu nhiên
+::: {#def-randvar}
 ("random variable", *rv*) là một quy tắc ánh xạ
 $X: \Omega\to\R$
 gán cho mỗi hiện tượng $\omega$ trong
@@ -60,13 +60,13 @@ không gian $\Omega$
 một số thực $X(\omega).$
 :::
 
-:::{#def-quantile}
 ### Điểm cắt
+:::{#def-quantile}
 Điểm cắt tại mức $1-\alpha$ của biến $X$ là một số $q_\alpha$ mà $\P(X\leq q_\alpha)=1-\alpha.$
 :::
 
-:::{#def-independent-var}
 ### Độc lập
+:::{#def-independent-var}
 
 Hai sự kiện $A$ và $B$ là độc lập nếu
 $\P(AB)\equiv \P(A)\P(B)$.
@@ -76,8 +76,8 @@ hai sự kiện $X\leq x$ và $Y\leq y$ là độc lập
 đối với mọi $x,y$.
 :::
 
-:::{#def-joint-proba}
 ### Xác suất hợp
+:::{#def-joint-proba}
 Ký hiệu
 $\P(A, B)$
 hoặc
@@ -86,8 +86,8 @@ chỉ
 xác suất sự kiện $A$ và sự kiện $B$ đồng thời xảy ra.
 :::
 
-:::{#def-conditional-proba}
 ### Xác suất có điều kiện
+:::{#def-conditional-proba}
 Ký hiệu
 $\P(A|B)$
 hoặc
@@ -98,8 +98,8 @@ xác suất của sự kiện $A$, khi biết sự kiện $B$ đã xảy ra,
 $$\P(A|B) = \frac{\P(A,B)}{\P(B)}.$$
 :::
 
-:::{#thm-bayes}
 ### Định lý Baye
+:::{#thm-bayes}
 $$\P(A|B) = \frac{\P(B|A)\P(A)}{\P(B)}
 = \frac{\P(B|A)\P(A)}{\P(B|A)\P(A) + \P(B|A^c)\P(A^c)}
 .$$
@@ -115,8 +115,8 @@ $$
 \E[X^n]\is \int x^n f(x) dx
 $$
 
-::: {#def-expectation}
 ### Trung bình
+::: {#def-expectation}
 là tích suất bậc 1, tức là $\E[X]$.
 :::
 
@@ -125,8 +125,8 @@ $$
 \E[X+Y] \equiv \E[X] + E[Y].
 $$
 
-:::{#def-covar}
 ### Hiệp phương sai
+:::{#def-covar}
 \begin{align}
 \textrm{Cov}[X,Y] &\is \E[(X-\E[X])(Y-\E[Y])] \\
 &\equiv \E[XY] - \E[X]\E[Y]
@@ -135,12 +135,12 @@ $$
 
 Nếu $X$ và $Y$ độc lập thì $\textrm{Cov}[X,Y] = 0$.
 
-::: {#def-variance}
 ### Phương sai
+::: {#def-variance}
 
 Phương sai, hay phân tán (variance, 分散) là
 $$
-\V[X]\is\textrm{Cov}[X,Y]\equiv\E[X^2]-\E^2[X].
+\V[X]\is\textrm{Cov}[X,X]\equiv\E[X^2]-\E^2[X].
 $$
 :::
 
@@ -149,8 +149,8 @@ $$
 \V[X+Y] \equiv \V[X]+\V[Y] + 2\textrm{Cov}[X,Y].
 $$
 
-:::{#def-mgf}
 ### Hàm tạo tích suất
+:::{#def-mgf}
 "Moment geenration function (MGF)" hoặc "Laplace transform" của biến $X$ là
 $$\psi_X(t)\is\E[e^{tX}]$$
 với $t\in\R$.
@@ -167,8 +167,8 @@ $$
 
 Có một số phân phối xác suất thông dụng.
 
-::: {#def-iid}
 ### IID
+::: {#def-iid}
 Các biến ngẫu nhiên $X_1, X_2, \ldotp$ được gọi là
 iid ("independent and identically distributed",
 "độc lập và phân phối giống nhau")
@@ -178,8 +178,8 @@ Dùng biến $X$ để thể hiện phân phối xác suất chung đó, ta vi�
 $$X_1,\ldots,X_n \iid X.$$
 :::
 
-::: {#def-bernoulli}
 ### Phân phối Bernoulli
+::: {#def-bernoulli}
 $X\sim\Ber(p)$
 có
 $$
@@ -189,8 +189,8 @@ và
 $\E[X] = p, \V[X] = p(1-p)$.
 :::
 
-::: {#def-binomial}
 ### Phân phối Binomial
+::: {#def-binomial}
 $X\sim\Bin(n, p)$
 với $n\in\N, p\in(0,1)$
 mô tả tổng số lần thành công
@@ -204,8 +204,8 @@ và
 $\E[X] = np, \V[X] = np(1-p)$.
 :::
 
-:::{#def-poisson}
 ### Phân phối Poisson
+:::{#def-poisson}
 $X\sim\Poi(\lambda)$
 thường dùng để mô tả số lần $k$ mà sự kiện phát sinh
 trong một giới hạn cố định,
@@ -223,8 +223,8 @@ $\E[X] = \V[X] = \lambda$.
 Khi $n$ đủ lớn và $p$ đủ nhỏ thì
 $\Poi(np)$ gần với $\Bin(n,p)$.
 
-:::{#def-geomdist}
 ### Phân phối Geometric
+:::{#def-geomdist}
 $X\sim\text{Geom}(p), p \in (0,1)$
 có
 $$
@@ -234,8 +234,8 @@ và
 $\E[X]=1/p,\V[X]=(1-p)/p^2.$
 :::
 
-:::{#def-expdist}
 ### Phân phối Exponential
+:::{#def-expdist}
 $X\sim\text{Exp}(\lambda)$
 dùng để mô tả khoảng cách $x$ giữa hai lần phát sinh
 của một chuỗi sự kiện kiểu Poisson
@@ -249,8 +249,8 @@ và
 $\E[X]=1/\lambda,\V[X]=1/\lambda^2.$
 :::
 
-:::{#def-gaussian}
 ### Phân phối Gaussian
+:::{#def-gaussian}
 $X\sim\Gaus(\mu,\sigma^2)$ có
 mật độ
 $$
@@ -260,150 +260,4 @@ x\in\R
 $$
 và
 $\E[X]=\mu,\V[X]=\sigma^2$.
-:::
-
-## Hội tụ
-
-Có một số kiểu hội tụ của biến ngẫu nhiên.
-
-::: {#def-conv-proba}
-### Hội tụ xác suất
-Cho một chuỗi biến ngẫu nhiên $X_1,X_2,\ldotp$
-và một biến ngẫu nhiên $X$.
-
-1. Hội tụ gần tuyệt đối:
-$$
-X_n \xrightarrow[n\to\infty]{\as} X \iff
-\P(\{\omega\in\Omega: X_n(\omega)\to X(\omega)\}) = 1.
-$$
-
-2. Hội tụ theo xác suất:
-$$
-X_n \xrightarrow[n\to\infty]{\P} X \iff
-\P(|X_n-X| >\epsilon)
-\xrightarrow[n\to\infty]{}
-0,\quad\forall\epsilon>0.
-$$
-
-3. Hội tụ theo phân phối:
-$$
-X_n \xrightarrow[n\to\infty]{(d)} X \iff
-\P[X_n(x)\leq x]\xrightarrow[n\to\infty]{} \P[X\leq x]
-$$
-tại mọi điểm $x$ mà cdf của $X$ liên tục.
-
-4. Hội tụ về chuẩn:
-(asymptotically normal)
-với phương sai
-$\sigma^2$
-$$
-\sqrt{n}({X}_n-X)\xrightarrow[n\to\infty]{(d)}
-\Gaus(0,\sigma^2).
-$$
-:::
-
-:::{#thm-strength}
-### Độ mạnh
-
-Xếp theo thứ tự từ mạnh đến yếu:
-
-$$
-X_n \xrightarrow[n\to\infty]{\as} X \implies
-X_n \xrightarrow[n\to\infty]{\P} X \implies
-X_n \xrightarrow[n\to\infty]{(d)} X.
-$$
-
-Nếu
-$X_n \xrightarrow[n\to\infty]{(d)} X$,
-và
-$X$ có mật độ xác suất, thì
-$X_n \xrightarrow[n\to\infty]{\P} X$.
-
-Nếu chuỗi $X_n$ có
-$\E[X_n]\xrightarrow[]{} \mu$ và
-$\V[X_n]\xrightarrow[]{} 0$ thì
-$X_n\xrightarrow[]{\P} \mu$.
-
-Nếu $X_n\xrightarrow[n\to\infty]{\P} X$ thì
-$\P(a\leq X_n\leq b) \xrightarrow[n\to\infty]{} \P(a\leq X\leq b)$
-với mọi khoảng $[a,b]$.
-:::
-
-::: {#thm-convege}
-### Tổng và tích
-Nếu có hai chuỗi biến ngẫu nhiên $X_n, Y_n$
-hội tụ gần tuyệt đối
-hoặc hội tụ theo xác suất về $X, Y$,
-thì tổng và tích của chúng
-cũng hội tụ theo cùng kiểu (gần tuyệt đối, hoặc theo xác suất)
-về tổng $X+Y$ hoặc tích $XY$ tương ứng.
-:::
-
-::: {#thm-slutsky}
-### Slutsky
-Nếu $Y_n \xrightarrow[]{\P} y$, $y$ là một số thực cố định thì có thể
-nới lỏng điều kiện đối với $X_n$ thành hội tụ theo phân phối.
-:::
-
-:::{#thm-contmap}
-### Ánh xạ liên tục
-(Continuous mapping)
-Nếu $X_n\xrightarrow[n\to\infty]{\as/\P/(d)} X$ thì
-đối với mọi hàm $f$ liên tục:
-
-- $f(X_n)\xrightarrow[n\to\infty]{\as/\P/(d)} f(X)$.
-- $\E[f(X_n)]\xrightarrow[n\to\infty]{}\E[f(X)]$ nếu $f$ còn bị chặn.
-:::
-
-::: {#thm-lln}
-### Đại đa số (Law of Large Numbers)
-Cho $n$ biến iid $X_1, X_2,\ldotp,X_n$ có chung
-$\E[X_i]=\mu<\infty$.
-Khi đó:
-$$\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}
-\xrightarrow[n\to\infty]{\P,\,\as}\mu.
-$$
-:::
-
-::: {#thm-clt}
-### Hội tụ trung tâm (Central Limit)
-Giả sử thêm là
-$\V[X_i]=\sigma^2<\infty$.
-Khi đó
-$$
-\sqrt{n}(\bar{X}_n-\mu)
-\xrightarrow[n\to\infty]{(d)}
-\Gaus(0,\sigma^2).
-$$
-:::
-
-::: {#thm-hoeffding}
-### Bất đẳng thức Hoefding
-Nếu có một khoảng cố định $[a,b]$ gần như tuyệt đối (almost surely) chứa các biến $X_i (i=1,2,\ldots,n)$ thì
-
-$$
-\P[|\bar{X}_n-\mu|\geq\epsilon]\leq
-2e^{-\frac{2n\epsilon^2}{(b-a)^2}},\quad\forall\epsilon>0.
-$$
-:::
-
-
-:::{#thm-delta-method}
-### Phương pháp Delta
-Giả sử chuỗi $(\theta_n)_{n\geq 1}$
-chuẩn tiến
-với phương sai
-$\sigma^2$
-về một điểm
-$\theta\in\R$.
-Giả sử $g:\R\to\R$
-có vi phân
-$g'$
-liên tục tại $\theta$.
-Khi đó,
-$$
-\sqrt{n}(g(\theta_n)-g(\theta))
-\xrightarrow[n\to\infty]{(d)}
-\Gaus(0,(g'(\theta))^2\sigma^2)
-$$
 :::

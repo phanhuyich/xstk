@@ -9,6 +9,7 @@ book:
   chapters:
     - index.qmd
     - 10-proba-intro.qmd
+    - 15-proba-converge.qmd
     - 20-stat-intro.qmd
     - 30-est-method.qmd
     - references.qmd

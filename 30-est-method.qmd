@@ -187,6 +187,8 @@ thông tin Fisher của mô hình được định nghĩa là
 $$
 I(\theta)
 = \V[\ell^{\prime}(\theta)]
-= -\E[\ell^{\prime\prime}(\theta)].
+= \E[(\ell^{\prime}(\theta))^2]
+= -\E[\ell^{\prime\prime}(\theta)]
+.
 $$
 :::

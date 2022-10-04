@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Xác Suất Thống Kê - 2&nbsp; Thống kê</title>
+<title>Xác Suất Thống Kê - 3&nbsp; Thống kê</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./30-est-method.html" rel="next">
-<link href="./10-proba-intro.html" rel="prev">
+<link href="./15-proba-converge.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Thống kê</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Thống kê</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -126,12 +126,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./20-stat-intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Thống kê</span></a>
+  <a href="./15-proba-converge.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hội tụ xác suất</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./30-est-method.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Ước lượng</span></a>
+  <a href="./20-stat-intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Thống kê</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./30-est-method.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ước lượng</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -148,10 +153,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#mô-hình" id="toc-mô-hình" class="nav-link active" data-scroll-target="#mô-hình"><span class="toc-section-number">2.1</span>  Mô hình</a></li>
-  <li><a href="#ước-lượng" id="toc-ước-lượng" class="nav-link" data-scroll-target="#ước-lượng"><span class="toc-section-number">2.2</span>  Ước lượng</a></li>
-  <li><a href="#khoảng-tin-cậy" id="toc-khoảng-tin-cậy" class="nav-link" data-scroll-target="#khoảng-tin-cậy"><span class="toc-section-number">2.3</span>  Khoảng tin cậy</a></li>
-  <li><a href="#kiểm-định" id="toc-kiểm-định" class="nav-link" data-scroll-target="#kiểm-định"><span class="toc-section-number">2.4</span>  Kiểm định</a></li>
+  <li><a href="#mô-hình" id="toc-mô-hình" class="nav-link active" data-scroll-target="#mô-hình"><span class="toc-section-number">3.1</span>  Mô hình</a></li>
+  <li><a href="#ước-lượng" id="toc-ước-lượng" class="nav-link" data-scroll-target="#ước-lượng"><span class="toc-section-number">3.2</span>  Ước lượng</a></li>
+  <li><a href="#khoảng-tin-cậy" id="toc-khoảng-tin-cậy" class="nav-link" data-scroll-target="#khoảng-tin-cậy"><span class="toc-section-number">3.3</span>  Khoảng tin cậy</a></li>
+  <li><a href="#kiểm-định" id="toc-kiểm-định" class="nav-link" data-scroll-target="#kiểm-định"><span class="toc-section-number">3.4</span>  Kiểm định</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vochicong/xstk/edit/main/20-stat-intro.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vochicong/xstk/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/vochicong/xstk/blob/main/20-stat-intro.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
@@ -176,7 +181,7 @@ $$
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Thống kê</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Thống kê</span></h1>
 </div>
 
 
@@ -190,18 +195,18 @@ $$
 
 </header>
 
-<section id="mô-hình" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="mô-hình"><span class="header-section-number">2.1</span> Mô hình</h2>
+<section id="mô-hình" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="mô-hình"><span class="header-section-number">3.1</span> Mô hình</h2>
 <p>Trên không gian đo được <span class="math inline">\(E\subseteq\R\)</span> ta quan sát các mẫu <span class="math inline">\(X_1,\ldots,X_n\iid\P\)</span>. Với tập tham số <span class="math inline">\(\Theta\)</span> ta xây dựng bộ độ đo xác suất <span class="math inline">\((\P_\theta)_{\theta\in\Theta}\)</span> để mô phỏng <span class="math inline">\(\P\)</span> .</p>
 <p>Nếu tồn tại <span class="math inline">\(\theta\in\Theta\)</span> để <span class="math inline">\(\P_\theta\equiv\P\)</span> thì ta nói mô hình “hợp lệ” (well cpecified).</p>
 <p>Nếu từ tập <span class="math inline">\(\Theta\)</span>, ánh xạ <span class="math inline">\(\theta\mapsto\P_{\theta}\)</span> là đơn tính thì ta nói <span class="math inline">\(\theta\)</span> là “có thể nhận dạng” (identifiable).</p>
 <p>Nếu <span class="math inline">\(\Theta\subseteq\R^d\)</span> thì mô hình được nói có số biến hữu hạn (parametric model).</p>
 </section>
-<section id="ước-lượng" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="ước-lượng"><span class="header-section-number">2.2</span> Ước lượng</h2>
+<section id="ước-lượng" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="ước-lượng"><span class="header-section-number">3.2</span> Ước lượng</h2>
 <p>Thống kê lượng (statistic) <span class="math inline">\(\theta\)</span> là bất cứ hàm số nào có thể đo được (measurable function) trên tập dữ liệu đối tượng <span class="math inline">\(X_i\)</span>.</p>
 <p>Đánh giá (estimator) <span class="math inline">\(\theta_n\)</span> đối với mục tiêu thống kê <span class="math inline">\(\theta\)</span> là một thống kê khác không phụ thuộc vào <span class="math inline">\(\theta\)</span>.</p>
-<p>Đánh giá được gọi là nhất quán (consistent) nếu nó hội tụ về mục tiêu (<a href="10-proba-intro.html#def-conv-proba">Def&nbsp;<span>1.17</span></a>).</p>
+<p>Đánh giá được gọi là nhất quán (consistent) nếu nó hội tụ về mục tiêu (<a href="15-proba-converge.html#def-conv-proba">Def&nbsp;<span>2.1</span></a>).</p>
 <p>Độ lệch (bias) giữa đánh giá <span class="math inline">\(\theta_n\)</span> với mục tiêu <span class="math inline">\(\theta\)</span> là <span class="math display">\[\textrm{bias}_{\theta}({\theta}_n) \is \E[\theta_n] - \theta.\]</span></p>
 <p>Sai số bậc 2 (quadratic risk, mean squared error) giữa đánh giá <span class="math inline">\(\theta_n\)</span> với mục tiêu <span class="math inline">\(\theta\)</span> là <span class="math display">\[
 \textrm{MSE}(\theta_n)\is\E[(\theta_n-\theta)^2]
@@ -211,13 +216,13 @@ $$
 \V[\theta_n]
 \]</span> bao hàm cả độ lệch và độ nhiễu của đánh giá.</p>
 </section>
-<section id="khoảng-tin-cậy" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="khoảng-tin-cậy"><span class="header-section-number">2.3</span> Khoảng tin cậy</h2>
+<section id="khoảng-tin-cậy" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="khoảng-tin-cậy"><span class="header-section-number">3.3</span> Khoảng tin cậy</h2>
 <p>Với mô hình thống kê <span class="math inline">\((E,(\P_\theta)_{\theta\in\Theta})\)</span> xây dựng dựa trên quan sát <span class="math inline">\(X_1,\ldots,X_n\)</span>, giả sử số <span class="math inline">\(\alpha\in(0,1).\)</span> Khoảng tin cậy (confidence interval) cấp <span class="math inline">\(1-\alpha\)</span> đối với <span class="math inline">\(\theta\)</span> là một khoảng ngẫu nhiên <span class="math inline">\(\mathcal{I}\)</span> (phụ thuộc vào <span class="math inline">\(X_1,\ldots,X_n\)</span>, không phụ thuộc vào <span class="math inline">\(\theta\)</span>), mà xác suất <span class="math inline">\(\mathcal{I}\)</span> có chứa <span class="math inline">\(\theta\)</span> là đủ cao: <span class="math display">\[\P_\theta[\mathcal{I}\ni\theta]\geq 1-\alpha,\quad\forall\theta\in\Theta.\]</span></p>
 <p>Nếu <span class="math display">\[\lim_{n\to\infty}\P_\theta[\mathcal{I}\ni\theta]\geq 1-\alpha,\quad\forall\theta\in\Theta\]</span> thì ta gọi <span class="math inline">\(\mathcal{I}\)</span> là khoảng tin cậy tiệm cận cấp <span class="math inline">\(1-\alpha\)</span> đối với <span class="math inline">\(\theta\)</span>.</p>
 </section>
-<section id="kiểm-định" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="kiểm-định"><span class="header-section-number">2.4</span> Kiểm định</h2>
+<section id="kiểm-định" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="kiểm-định"><span class="header-section-number">3.4</span> Kiểm định</h2>
 
 
 </section>
@@ -323,13 +328,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./10-proba-intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Xác suất</span></span>
+      <a href="./15-proba-converge.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hội tụ xác suất</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./30-est-method.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Ước lượng</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ước lượng</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

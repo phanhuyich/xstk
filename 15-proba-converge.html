@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Xác Suất Thống Kê - 2&nbsp; Hội tụ xác suất</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./20-stat-intro.html" rel="next">
+<link href="./10-proba-intro.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hội tụ xác suất</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Xác Suất Thống Kê</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/vochicong/xstk" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="./Xác-Suất-Thống-Kê.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
+    <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+            <i class="bi bi-bi-twitter pe-1"></i>
+          Twitter
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+            <i class="bi bi-bi-facebook pe-1"></i>
+          Facebook
+          </a>
+        </li>
+    </ul>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Lời nói đầu</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-proba-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Xác suất</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-proba-converge.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hội tụ xác suất</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-stat-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Thống kê</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./30-est-method.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ước lượng</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">Giáo trình</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#hội-tụ-xác-suất" id="toc-hội-tụ-xác-suất" class="nav-link active" data-scroll-target="#hội-tụ-xác-suất"><span class="toc-section-number">2.1</span>  Hội tụ xác suất</a></li>
+  <li><a href="#độ-mạnh" id="toc-độ-mạnh" class="nav-link" data-scroll-target="#độ-mạnh"><span class="toc-section-number">2.2</span>  Độ mạnh</a></li>
+  <li><a href="#tổng-và-tích" id="toc-tổng-và-tích" class="nav-link" data-scroll-target="#tổng-và-tích"><span class="toc-section-number">2.3</span>  Tổng và tích</a></li>
+  <li><a href="#slutsky" id="toc-slutsky" class="nav-link" data-scroll-target="#slutsky"><span class="toc-section-number">2.4</span>  Slutsky</a></li>
+  <li><a href="#ánh-xạ-liên-tục" id="toc-ánh-xạ-liên-tục" class="nav-link" data-scroll-target="#ánh-xạ-liên-tục"><span class="toc-section-number">2.5</span>  Ánh xạ liên tục</a></li>
+  <li><a href="#đại-đa-số-law-of-large-numbers" id="toc-đại-đa-số-law-of-large-numbers" class="nav-link" data-scroll-target="#đại-đa-số-law-of-large-numbers"><span class="toc-section-number">2.6</span>  Đại đa số (Law of Large Numbers)</a></li>
+  <li><a href="#hội-tụ-trung-tâm-central-limit" id="toc-hội-tụ-trung-tâm-central-limit" class="nav-link" data-scroll-target="#hội-tụ-trung-tâm-central-limit"><span class="toc-section-number">2.7</span>  Hội tụ trung tâm (Central Limit)</a></li>
+  <li><a href="#bất-đẳng-thức-hoefding" id="toc-bất-đẳng-thức-hoefding" class="nav-link" data-scroll-target="#bất-đẳng-thức-hoefding"><span class="toc-section-number">2.8</span>  Bất đẳng thức Hoefding</a></li>
+  <li><a href="#phương-pháp-delta" id="toc-phương-pháp-delta" class="nav-link" data-scroll-target="#phương-pháp-delta"><span class="toc-section-number">2.9</span>  Phương pháp Delta</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vochicong/xstk/edit/main/15-proba-converge.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vochicong/xstk/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/vochicong/xstk/blob/main/15-proba-converge.qmd" class="toc-action">View source</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+$$
+\def\as{\textrm{a.s.}}
+\def\Ber{\text{Ber}}
+\def\Bin{\text{Bin}}
+\def\E{\mathbb{E}}
+\def\iid{\stackrel{iid}{\sim}}
+\def\is{:=}
+\def\Gaus{\mathcal{N}}
+\def\P{\mathbb{P}}
+\def\Poi{\text{Poi}}
+\def\R{\mathbb{R}}
+\def\V{\mathbb{V}}
+\def\N{\mathbb{Z}_+}
+\def\TV{\textrm{TV}}
+\def\KL{\textrm{KL}}
+$$
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hội tụ xác suất</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>Có một số kiểu hội tụ của biến ngẫu nhiên.</p>
+<section id="hội-tụ-xác-suất" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="hội-tụ-xác-suất"><span class="header-section-number">2.1</span> Hội tụ xác suất</h2>
+<div id="def-conv-proba" class="theorem definition">
+<p><span class="theorem-title"><strong>Def 2.1 </strong></span>Cho một chuỗi biến ngẫu nhiên <span class="math inline">\(X_1,X_2,\ldotp\)</span> và một biến ngẫu nhiên <span class="math inline">\(X\)</span>.</p>
+<ol type="1">
+<li><p>Hội tụ gần tuyệt đối: <span class="math display">\[
+X_n \xrightarrow[n\to\infty]{\as} X \iff
+\P(\{\omega\in\Omega: X_n(\omega)\to X(\omega)\}) = 1.
+\]</span></p></li>
+<li><p>Hội tụ theo xác suất: <span class="math display">\[
+X_n \xrightarrow[n\to\infty]{\P} X \iff
+\P(|X_n-X| &gt;\epsilon)
+\xrightarrow[n\to\infty]{}
+0,\quad\forall\epsilon&gt;0.
+\]</span></p></li>
+<li><p>Hội tụ theo phân phối: <span class="math display">\[
+X_n \xrightarrow[n\to\infty]{(d)} X \iff
+\P[X_n(x)\leq x]\xrightarrow[n\to\infty]{} \P[X\leq x]
+\]</span> tại mọi điểm <span class="math inline">\(x\)</span> mà cdf của <span class="math inline">\(X\)</span> liên tục.</p></li>
+<li><p>Hội tụ về chuẩn: (asymptotically normal) với phương sai <span class="math inline">\(\sigma^2\)</span> <span class="math display">\[
+\sqrt{n}({X}_n-X)\xrightarrow[n\to\infty]{(d)}
+\Gaus(0,\sigma^2).
+\]</span></p></li>
+</ol>
+</div>
+</section>
+<section id="độ-mạnh" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="độ-mạnh"><span class="header-section-number">2.2</span> Độ mạnh</h2>
+<div id="thm-strength" class="theorem">
+<p><span class="theorem-title"><strong>Thm 2.1 </strong></span>Xếp theo thứ tự từ mạnh đến yếu:</p>
+<p><span class="math display">\[
+X_n \xrightarrow[n\to\infty]{\as} X \implies
+X_n \xrightarrow[n\to\infty]{\P} X \implies
+X_n \xrightarrow[n\to\infty]{(d)} X.
+\]</span></p>
+<p>Nếu <span class="math inline">\(X_n \xrightarrow[n\to\infty]{(d)} X\)</span>, và <span class="math inline">\(X\)</span> có mật độ xác suất, thì <span class="math inline">\(X_n \xrightarrow[n\to\infty]{\P} X\)</span>.</p>
+<p>Nếu chuỗi <span class="math inline">\(X_n\)</span> có <span class="math inline">\(\E[X_n]\xrightarrow[]{} \mu\)</span> và <span class="math inline">\(\V[X_n]\xrightarrow[]{} 0\)</span> thì <span class="math inline">\(X_n\xrightarrow[]{\P} \mu\)</span>.</p>
+<p>Nếu <span class="math inline">\(X_n\xrightarrow[n\to\infty]{\P} X\)</span> thì <span class="math inline">\(\P(a\leq X_n\leq b) \xrightarrow[n\to\infty]{} \P(a\leq X\leq b)\)</span> với mọi khoảng <span class="math inline">\([a,b]\)</span>.</p>
+</div>
+</section>
+<section id="tổng-và-tích" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="tổng-và-tích"><span class="header-section-number">2.3</span> Tổng và tích</h2>
+<div id="thm-convege" class="theorem">
+<p><span class="theorem-title"><strong>Thm 2.2 </strong></span>Nếu có hai chuỗi biến ngẫu nhiên <span class="math inline">\(X_n, Y_n\)</span> hội tụ gần tuyệt đối hoặc hội tụ theo xác suất về <span class="math inline">\(X, Y\)</span>, thì tổng <span class="math inline">\(X_n+Y_n\)</span> và tích <span class="math inline">\(X_n Y_n\)</span> cũng hội tụ tương tự (gần tuyệt đối, hoặc theo xác suất) về tổng <span class="math inline">\(X+Y\)</span> và tích <span class="math inline">\(XY\)</span>.</p>
+</div>
+</section>
+<section id="slutsky" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="slutsky"><span class="header-section-number">2.4</span> Slutsky</h2>
+<div id="thm-slutsky" class="theorem">
+<p><span class="theorem-title"><strong>Thm 2.3 </strong></span>Nếu <span class="math inline">\(Y_n \xrightarrow[]{\P} y\)</span>, <span class="math inline">\(y\)</span> là một số thực cố định thì có thể nới lỏng điều kiện đối với <span class="math inline">\(X_n\)</span> thành hội tụ theo phân phối.</p>
+</div>
+</section>
+<section id="ánh-xạ-liên-tục" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="ánh-xạ-liên-tục"><span class="header-section-number">2.5</span> Ánh xạ liên tục</h2>
+<div id="thm-contmap" class="theorem">
+<p><span class="theorem-title"><strong>Thm 2.4 </strong></span>(Continuous mapping) Nếu <span class="math inline">\(X_n\xrightarrow[n\to\infty]{\as/\P/(d)} X\)</span> thì đối với mọi hàm <span class="math inline">\(f\)</span> liên tục:</p>
+<ul>
+<li><span class="math inline">\(f(X_n)\xrightarrow[n\to\infty]{\as/\P/(d)} f(X)\)</span>.</li>
+<li><span class="math inline">\(\E[f(X_n)]\xrightarrow[n\to\infty]{}\E[f(X)]\)</span> nếu <span class="math inline">\(f\)</span> còn bị chặn.</li>
+</ul>
+</div>
+</section>
+<section id="đại-đa-số-law-of-large-numbers" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="đại-đa-số-law-of-large-numbers"><span class="header-section-number">2.6</span> Đại đa số (Law of Large Numbers)</h2>
+<div id="thm-lln" class="theorem">
+<p><span class="theorem-title"><strong>Thm 2.5 </strong></span>Cho <span class="math inline">\(n\)</span> biến iid <span class="math inline">\(X_1, X_2,\ldotp,X_n\)</span> có chung <span class="math inline">\(\E[X_i]=\mu&lt;\infty\)</span>. Khi đó: <span class="math display">\[\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}
+\xrightarrow[n\to\infty]{\P,\,\as}\mu.
+\]</span></p>
+</div>
+</section>
+<section id="hội-tụ-trung-tâm-central-limit" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="hội-tụ-trung-tâm-central-limit"><span class="header-section-number">2.7</span> Hội tụ trung tâm (Central Limit)</h2>
+<div id="thm-clt" class="theorem">
+<p><span class="theorem-title"><strong>Thm 2.6 </strong></span>Giả sử thêm là <span class="math inline">\(\V[X_i]=\sigma^2&lt;\infty\)</span>. Khi đó <span class="math display">\[
+\sqrt{n}(\bar{X}_n-\mu)
+\xrightarrow[n\to\infty]{(d)}
+\Gaus(0,\sigma^2).
+\]</span></p>
+</div>
+</section>
+<section id="bất-đẳng-thức-hoefding" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="bất-đẳng-thức-hoefding"><span class="header-section-number">2.8</span> Bất đẳng thức Hoefding</h2>
+<div id="thm-hoeffding" class="theorem">
+<p><span class="theorem-title"><strong>Thm 2.7 </strong></span>Nếu có một khoảng cố định <span class="math inline">\([a,b]\)</span> gần như tuyệt đối (almost surely) chứa các biến <span class="math inline">\(X_i (i=1,2,\ldots,n)\)</span> thì</p>
+<p><span class="math display">\[
+\P[|\bar{X}_n-\mu|\geq\epsilon]\leq
+2e^{-\frac{2n\epsilon^2}{(b-a)^2}},\quad\forall\epsilon&gt;0.
+\]</span></p>
+</div>
+</section>
+<section id="phương-pháp-delta" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="phương-pháp-delta"><span class="header-section-number">2.9</span> Phương pháp Delta</h2>
+<div id="thm-delta-method" class="theorem">
+<p><span class="theorem-title"><strong>Thm 2.8 </strong></span>Giả sử chuỗi <span class="math inline">\((\theta_n)_{n\geq 1}\)</span> chuẩn tiến với phương sai <span class="math inline">\(\sigma^2\)</span> về một điểm <span class="math inline">\(\theta\in\R\)</span>. Giả sử <span class="math inline">\(g:\R\to\R\)</span> có vi phân <span class="math inline">\(g^\prime\)</span> liên tục tại <span class="math inline">\(\theta\)</span>. Khi đó, <span class="math display">\[
+\sqrt{n}(g(\theta_n)-g(\theta))
+\xrightarrow[n\to\infty]{(d)}
+\Gaus\left(0,\left(\sigma g^\prime(\theta)\right)^2\right)
+\]</span></p>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./10-proba-intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Xác suất</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./20-stat-intro.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Thống kê</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

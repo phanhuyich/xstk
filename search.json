@@ -18,91 +18,154 @@
     "href": "10-proba-intro.html#xác-suất",
     "title": "1  Xác suất",
     "section": "1.2 Xác suất",
-    "text": "1.2 Xác suất\nNếu một xạ ảnh \\(\\P\\) từ không gian các sự kiện \\(A\\subseteq\\Omega\\) lên tập hợp số thực \\(\\R\\) thỏa mãn các điều kiện:\n\n\\(\\P(A)\\geq 0\\quad\\forall A\\)\n\\(\\P(\\Omega) = 1\\)\nNếu chuỗi \\(A_1, A_2, \\ldots\\) phân hoạch \\(C\\) thì \\(\\P(A_1) + \\P(A_2) + \\cdots = \\P(C)\\)\n\nthì ta gọi \\(\\P\\) là một phân phối xác suất hoặc độ đo xác suất.\nCó hai cách cắt nghĩa khái niệm xác suất là tần suất và niềm tin. Theo cách hiểu tần suất thì \\(\\P(A)\\) chính là tỷ lệ số lần sự kiện \\(A\\) xảy ra nếu ta thực hiện thí nghiệm vô số lần. Còn theo cách hiểu niềm tin thì \\(\\P(A)\\) là thước đo mức độ mà một quan sát viên tin tưởng rằng hiện tượng \\(A\\) sẽ xảy ra.\n\nDef 1.1 (Biến ngẫu nhiên) (“random variable”, rv) là một quy tắc ánh xạ \\(X: \\Omega\\to\\R\\) gán cho mỗi hiện tượng \\(\\omega\\) trong không gian \\(\\Omega\\) một số thực \\(X(\\omega).\\)\n\n\nDef 1.2 (Điểm cắt) Điểm cắt tại mức \\(1-\\alpha\\) của biến \\(X\\) là một số \\(q_\\alpha\\) mà \\(\\P(X\\leq q_\\alpha)=1-\\alpha.\\)\n\n\nDef 1.3 (Độc lập) Hai sự kiện \\(A\\) và \\(B\\) là độc lập nếu \\(\\P(AB)\\equiv \\P(A)\\P(B)\\).\nHai biến \\(X\\) và \\(Y\\) là độc lập nếu hai sự kiện \\(X\\leq x\\) và \\(Y\\leq y\\) là độc lập đối với mọi \\(x,y\\).\n\n\nDef 1.4 (Xác suất hợp) Ký hiệu \\(\\P(A, B)\\) hoặc \\(\\P(A\\cap B)\\) chỉ xác suất sự kiện \\(A\\) và sự kiện \\(B\\) đồng thời xảy ra.\n\n\nDef 1.5 (Xác suất có điều kiện) Ký hiệu \\(\\P(A|B)\\) hoặc \\(\\P_B(A)\\) chỉ xác suất của sự kiện \\(A\\), khi biết sự kiện \\(B\\) đã xảy ra,\n\\[\\P(A|B) = \\frac{\\P(A,B)}{\\P(B)}.\\]\n\n\nThm 1.1 (Định lý Baye) \\[\\P(A|B) = \\frac{\\P(B|A)\\P(A)}{\\P(B)}\n= \\frac{\\P(B|A)\\P(A)}{\\P(B|A)\\P(A) + \\P(B|A^c)\\P(A^c)}\n.\\]"
+    "text": "1.2 Xác suất\nNếu một xạ ảnh \\(\\P\\) từ không gian các sự kiện \\(A\\subseteq\\Omega\\) lên tập hợp số thực \\(\\R\\) thỏa mãn các điều kiện:\n\n\\(\\P(A)\\geq 0\\quad\\forall A\\)\n\\(\\P(\\Omega) = 1\\)\nNếu chuỗi \\(A_1, A_2, \\ldots\\) phân hoạch \\(C\\) thì \\(\\P(A_1) + \\P(A_2) + \\cdots = \\P(C)\\)\n\nthì ta gọi \\(\\P\\) là một phân phối xác suất hoặc độ đo xác suất.\nCó hai cách cắt nghĩa khái niệm xác suất là tần suất và niềm tin. Theo cách hiểu tần suất thì \\(\\P(A)\\) chính là tỷ lệ số lần sự kiện \\(A\\) xảy ra nếu ta thực hiện thí nghiệm vô số lần. Còn theo cách hiểu niềm tin thì \\(\\P(A)\\) là thước đo mức độ mà một quan sát viên tin tưởng rằng hiện tượng \\(A\\) sẽ xảy ra.\n\n1.2.1 Biến ngẫu nhiên\n\nDef 1.1 (“random variable”, rv) là một quy tắc ánh xạ \\(X: \\Omega\\to\\R\\) gán cho mỗi hiện tượng \\(\\omega\\) trong không gian \\(\\Omega\\) một số thực \\(X(\\omega).\\)\n\n\n\n1.2.2 Điểm cắt\n\nDef 1.2 Điểm cắt tại mức \\(1-\\alpha\\) của biến \\(X\\) là một số \\(q_\\alpha\\) mà \\(\\P(X\\leq q_\\alpha)=1-\\alpha.\\)\n\n\n\n1.2.3 Độc lập\n\nDef 1.3 Hai sự kiện \\(A\\) và \\(B\\) là độc lập nếu \\(\\P(AB)\\equiv \\P(A)\\P(B)\\).\nHai biến \\(X\\) và \\(Y\\) là độc lập nếu hai sự kiện \\(X\\leq x\\) và \\(Y\\leq y\\) là độc lập đối với mọi \\(x,y\\).\n\n\n\n1.2.4 Xác suất hợp\n\nDef 1.4 Ký hiệu \\(\\P(A, B)\\) hoặc \\(\\P(A\\cap B)\\) chỉ xác suất sự kiện \\(A\\) và sự kiện \\(B\\) đồng thời xảy ra.\n\n\n\n1.2.5 Xác suất có điều kiện\n\nDef 1.5 Ký hiệu \\(\\P(A|B)\\) hoặc \\(\\P_B(A)\\) chỉ xác suất của sự kiện \\(A\\), khi biết sự kiện \\(B\\) đã xảy ra,\n\\[\\P(A|B) = \\frac{\\P(A,B)}{\\P(B)}.\\]\n\n\n\n1.2.6 Định lý Baye\n\nThm 1.1 \\[\\P(A|B) = \\frac{\\P(B|A)\\P(A)}{\\P(B)}\n= \\frac{\\P(B|A)\\P(A)}{\\P(B|A)\\P(A) + \\P(B|A^c)\\P(A^c)}\n.\\]"
   },
   {
     "objectID": "10-proba-intro.html#tích-suất",
     "href": "10-proba-intro.html#tích-suất",
     "title": "1  Xác suất",
     "section": "1.3 Tích suất",
-    "text": "1.3 Tích suất\nTích suất (moment, 積率) thể hiện trọng tâm, độ phân tán, hay độ lệch của phân phối. Tích suất bậc \\(n\\) của biến ngẫu nhiên \\(X\\) với mật độ \\(f(x)\\) là:\n\\[\n\\E[X^n]\\is \\int x^n f(x) dx\n\\]\n\nDef 1.6 (Trung bình) là tích suất bậc 1, tức là \\(\\E[X]\\).\n\nTa có \\[\n\\E[X+Y] \\equiv \\E[X] + E[Y].\n\\]\n\nDef 1.7 (Hiệp phương sai) \\[\\begin{align}\n\\textrm{Cov}[X,Y] &\\is \\E[(X-\\E[X])(Y-\\E[Y])] \\\\\n&\\equiv \\E[XY] - \\E[X]\\E[Y]\n\\end{align}\\]\n\nNếu \\(X\\) và \\(Y\\) độc lập thì \\(\\textrm{Cov}[X,Y] = 0\\).\n\nDef 1.8 (Phương sai) Phương sai, hay phân tán (variance, 分散) là \\[\n\\V[X]\\is\\textrm{Cov}[X,Y]\\equiv\\E[X^2]-\\E^2[X].\n\\]\n\nTa có \\[\n\\V[X+Y] \\equiv \\V[X]+\\V[Y] + 2\\textrm{Cov}[X,Y].\n\\]\n\nDef 1.9 (Hàm tạo tích suất) “Moment geenration function (MGF)” hoặc “Laplace transform” của biến \\(X\\) là \\[\\psi_X(t)\\is\\E[e^{tX}]\\] với \\(t\\in\\R\\).\n\nNếu MGF là “well defined” trên một khoảng mở xung quanh \\(0\\) thì đạo hàm cấp \\(k\\) của \\(\\psi\\) tại \\(0\\) bằng đúng \\(\\E[X^k]\\): \\[\n\\psi^{(k)}(0)\\equiv \\E[X^k].\n\\]"
+    "text": "1.3 Tích suất\nTích suất (moment, 積率) thể hiện trọng tâm, độ phân tán, hay độ lệch của phân phối. Tích suất bậc \\(n\\) của biến ngẫu nhiên \\(X\\) với mật độ \\(f(x)\\) là:\n\\[\n\\E[X^n]\\is \\int x^n f(x) dx\n\\]\n\n1.3.1 Trung bình\n\nDef 1.6 là tích suất bậc 1, tức là \\(\\E[X]\\).\n\nTa có \\[\n\\E[X+Y] \\equiv \\E[X] + E[Y].\n\\]\n\n\n1.3.2 Hiệp phương sai\n\nDef 1.7 \\[\\begin{align}\n\\textrm{Cov}[X,Y] &\\is \\E[(X-\\E[X])(Y-\\E[Y])] \\\\\n&\\equiv \\E[XY] - \\E[X]\\E[Y]\n\\end{align}\\]\n\nNếu \\(X\\) và \\(Y\\) độc lập thì \\(\\textrm{Cov}[X,Y] = 0\\).\n\n\n1.3.3 Phương sai\n\nDef 1.8 Phương sai, hay phân tán (variance, 分散) là \\[\n\\V[X]\\is\\textrm{Cov}[X,X]\\equiv\\E[X^2]-\\E^2[X].\n\\]\n\nTa có \\[\n\\V[X+Y] \\equiv \\V[X]+\\V[Y] + 2\\textrm{Cov}[X,Y].\n\\]\n\n\n1.3.4 Hàm tạo tích suất\n\nDef 1.9 “Moment geenration function (MGF)” hoặc “Laplace transform” của biến \\(X\\) là \\[\\psi_X(t)\\is\\E[e^{tX}]\\] với \\(t\\in\\R\\).\n\nNếu MGF là “well defined” trên một khoảng mở xung quanh \\(0\\) thì đạo hàm cấp \\(k\\) của \\(\\psi\\) tại \\(0\\) bằng đúng \\(\\E[X^k]\\): \\[\n\\psi^{(k)}(0)\\equiv \\E[X^k].\n\\]"
   },
   {
     "objectID": "10-proba-intro.html#phân-phối",
     "href": "10-proba-intro.html#phân-phối",
     "title": "1  Xác suất",
     "section": "1.4 Phân phối",
-    "text": "1.4 Phân phối\nCó một số phân phối xác suất thông dụng.\n\nDef 1.10 (IID) Các biến ngẫu nhiên \\(X_1, X_2, \\ldotp\\) được gọi là iid (“independent and identically distributed”, “độc lập và phân phối giống nhau”) nếu chúng cùng tuân theo duy nhất một phân phối xác suất, và từng cặp biến là độc lập với nhau. Dùng biến \\(X\\) để thể hiện phân phối xác suất chung đó, ta viết \\[X_1,\\ldots,X_n \\iid X.\\]\n\n\nDef 1.11 (Phân phối Bernoulli) \\(X\\sim\\Ber(p)\\) có \\[\n\\P(X=1) = p = 1-\\P(X=0)\n\\] và \\(\\E[X] = p, \\V[X] = p(1-p)\\).\n\n\nDef 1.12 (Phân phối Binomial) \\(X\\sim\\Bin(n, p)\\) với \\(n\\in\\N, p\\in(0,1)\\) mô tả tổng số lần thành công của \\(n\\) thí nghiệm độc lập \\(X_1,\\ldots,X_n \\iid \\Ber(p).\\) Ta có \\[\n\\P(X=k) = \\binom{n}{k}p^{k}(1-p)^{n-k}\n\\] và \\(\\E[X] = np, \\V[X] = np(1-p)\\).\n\n\nDef 1.13 (Phân phối Poisson) \\(X\\sim\\Poi(\\lambda)\\) thường dùng để mô tả số lần \\(k\\) mà sự kiện phát sinh trong một giới hạn cố định, với giả định tần suất phát sinh sự kiện là \\(\\lambda > 0\\) cố định, và các sự kiện phát sinh độc lập. \\[\n\\P(X=k) = e^{-\\lambda}\n\\frac{\\lambda^k}{k!}, \\,k=0,1,2,\\ldots\n\\] và \\(\\E[X] = \\V[X] = \\lambda\\).\n\nKhi \\(n\\) đủ lớn và \\(p\\) đủ nhỏ thì \\(\\Poi(np)\\) gần với \\(\\Bin(n,p)\\).\n\nDef 1.14 (Phân phối Geometric) \\(X\\sim\\text{Geom}(p), p \\in (0,1)\\) có \\[\n\\P(X=k)=p(1-p)^{k-1}, k=1,2,\\ldots\n\\] và \\(\\E[X]=1/p,\\V[X]=(1-p)/p^2.\\)\n\n\nDef 1.15 (Phân phối Exponential) \\(X\\sim\\text{Exp}(\\lambda)\\) dùng để mô tả khoảng cách \\(x\\) giữa hai lần phát sinh của một chuỗi sự kiện kiểu Poisson (hai lần phát sinh sự kiện liên tiếp là độc lập với nhau, và tần suất phát sinh \\(\\lambda>0\\) là cố định). Có \\[\nf(x)={\\lambda}e^{-\\lambda x},x\\in\\R_+\n\\] và \\(\\E[X]=1/\\lambda,\\V[X]=1/\\lambda^2.\\)\n\n\nDef 1.16 (Phân phối Gaussian) \\(X\\sim\\Gaus(\\mu,\\sigma^2)\\) có mật độ \\[\nf(x) =\n\\frac{1}{\\sqrt{\\pi 2\\sigma^2}}\\exp\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right),\nx\\in\\R\n\\] và \\(\\E[X]=\\mu,\\V[X]=\\sigma^2\\)."
+    "text": "1.4 Phân phối\nCó một số phân phối xác suất thông dụng.\n\n1.4.1 IID\n\nDef 1.10 Các biến ngẫu nhiên \\(X_1, X_2, \\ldotp\\) được gọi là iid (“independent and identically distributed”, “độc lập và phân phối giống nhau”) nếu chúng cùng tuân theo duy nhất một phân phối xác suất, và từng cặp biến là độc lập với nhau. Dùng biến \\(X\\) để thể hiện phân phối xác suất chung đó, ta viết \\[X_1,\\ldots,X_n \\iid X.\\]\n\n\n\n1.4.2 Phân phối Bernoulli\n\nDef 1.11 \\(X\\sim\\Ber(p)\\) có \\[\n\\P(X=1) = p = 1-\\P(X=0)\n\\] và \\(\\E[X] = p, \\V[X] = p(1-p)\\).\n\n\n\n1.4.3 Phân phối Binomial\n\nDef 1.12 \\(X\\sim\\Bin(n, p)\\) với \\(n\\in\\N, p\\in(0,1)\\) mô tả tổng số lần thành công của \\(n\\) thí nghiệm độc lập \\(X_1,\\ldots,X_n \\iid \\Ber(p).\\) Ta có \\[\n\\P(X=k) = \\binom{n}{k}p^{k}(1-p)^{n-k}\n\\] và \\(\\E[X] = np, \\V[X] = np(1-p)\\).\n\n\n\n1.4.4 Phân phối Poisson\n\nDef 1.13 \\(X\\sim\\Poi(\\lambda)\\) thường dùng để mô tả số lần \\(k\\) mà sự kiện phát sinh trong một giới hạn cố định, với giả định tần suất phát sinh sự kiện là \\(\\lambda > 0\\) cố định, và các sự kiện phát sinh độc lập. \\[\n\\P(X=k) = e^{-\\lambda}\n\\frac{\\lambda^k}{k!}, \\,k=0,1,2,\\ldots\n\\] và \\(\\E[X] = \\V[X] = \\lambda\\).\n\nKhi \\(n\\) đủ lớn và \\(p\\) đủ nhỏ thì \\(\\Poi(np)\\) gần với \\(\\Bin(n,p)\\).\n\n\n1.4.5 Phân phối Geometric\n\nDef 1.14 \\(X\\sim\\text{Geom}(p), p \\in (0,1)\\) có \\[\n\\P(X=k)=p(1-p)^{k-1}, k=1,2,\\ldots\n\\] và \\(\\E[X]=1/p,\\V[X]=(1-p)/p^2.\\)\n\n\n\n1.4.6 Phân phối Exponential\n\nDef 1.15 \\(X\\sim\\text{Exp}(\\lambda)\\) dùng để mô tả khoảng cách \\(x\\) giữa hai lần phát sinh của một chuỗi sự kiện kiểu Poisson (hai lần phát sinh sự kiện liên tiếp là độc lập với nhau, và tần suất phát sinh \\(\\lambda>0\\) là cố định). Có \\[\nf(x)={\\lambda}e^{-\\lambda x},x\\in\\R_+\n\\] và \\(\\E[X]=1/\\lambda,\\V[X]=1/\\lambda^2.\\)\n\n\n\n1.4.7 Phân phối Gaussian\n\nDef 1.16 \\(X\\sim\\Gaus(\\mu,\\sigma^2)\\) có mật độ \\[\nf(x) =\n\\frac{1}{\\sqrt{\\pi 2\\sigma^2}}\\exp\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right),\nx\\in\\R\n\\] và \\(\\E[X]=\\mu,\\V[X]=\\sigma^2\\)."
   },
   {
-    "objectID": "10-proba-intro.html#hội-tụ",
-    "href": "10-proba-intro.html#hội-tụ",
-    "title": "1  Xác suất",
-    "section": "1.5 Hội tụ",
-    "text": "1.5 Hội tụ\nCó một số kiểu hội tụ của biến ngẫu nhiên.\n\nDef 1.17 (Hội tụ xác suất) Cho một chuỗi biến ngẫu nhiên \\(X_1,X_2,\\ldotp\\) và một biến ngẫu nhiên \\(X\\).\n\nHội tụ gần tuyệt đối: \\[\nX_n \\xrightarrow[n\\to\\infty]{\\as} X \\iff\n\\P(\\{\\omega\\in\\Omega: X_n(\\omega)\\to X(\\omega)\\}) = 1.\n\\]\nHội tụ theo xác suất: \\[\nX_n \\xrightarrow[n\\to\\infty]{\\P} X \\iff\n\\P(|X_n-X| >\\epsilon)\n\\xrightarrow[n\\to\\infty]{}\n0,\\quad\\forall\\epsilon>0.\n\\]\nHội tụ theo phân phối: \\[\nX_n \\xrightarrow[n\\to\\infty]{(d)} X \\iff\n\\P[X_n(x)\\leq x]\\xrightarrow[n\\to\\infty]{} \\P[X\\leq x]\n\\] tại mọi điểm \\(x\\) mà cdf của \\(X\\) liên tục.\nHội tụ về chuẩn: (asymptotically normal) với phương sai \\(\\sigma^2\\) \\[\n\\sqrt{n}({X}_n-X)\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus(0,\\sigma^2).\n\\]\n\n\n\nThm 1.2 (Độ mạnh) Xếp theo thứ tự từ mạnh đến yếu:\n\\[\nX_n \\xrightarrow[n\\to\\infty]{\\as} X \\implies\nX_n \\xrightarrow[n\\to\\infty]{\\P} X \\implies\nX_n \\xrightarrow[n\\to\\infty]{(d)} X.\n\\]\nNếu \\(X_n \\xrightarrow[n\\to\\infty]{(d)} X\\), và \\(X\\) có mật độ xác suất, thì \\(X_n \\xrightarrow[n\\to\\infty]{\\P} X\\).\nNếu chuỗi \\(X_n\\) có \\(\\E[X_n]\\xrightarrow[]{} \\mu\\) và \\(\\V[X_n]\\xrightarrow[]{} 0\\) thì \\(X_n\\xrightarrow[]{\\P} \\mu\\).\nNếu \\(X_n\\xrightarrow[n\\to\\infty]{\\P} X\\) thì \\(\\P(a\\leq X_n\\leq b) \\xrightarrow[n\\to\\infty]{} \\P(a\\leq X\\leq b)\\) với mọi khoảng \\([a,b]\\).\n\n\nThm 1.3 (Tổng và tích) Nếu có hai chuỗi biến ngẫu nhiên \\(X_n, Y_n\\) hội tụ gần tuyệt đối hoặc hội tụ theo xác suất về \\(X, Y\\), thì tổng và tích của chúng cũng hội tụ theo cùng kiểu (gần tuyệt đối, hoặc theo xác suất) về tổng \\(X+Y\\) hoặc tích \\(XY\\) tương ứng.\n\n\nThm 1.4 (Slutsky) Nếu \\(Y_n \\xrightarrow[]{\\P} y\\), \\(y\\) là một số thực cố định thì có thể nới lỏng điều kiện đối với \\(X_n\\) thành hội tụ theo phân phối.\n\n\nThm 1.5 (Ánh xạ liên tục) (Continuous mapping) Nếu \\(X_n\\xrightarrow[n\\to\\infty]{\\as/\\P/(d)} X\\) thì đối với mọi hàm \\(f\\) liên tục:\n\n\\(f(X_n)\\xrightarrow[n\\to\\infty]{\\as/\\P/(d)} f(X)\\).\n\\(\\E[f(X_n)]\\xrightarrow[n\\to\\infty]{}\\E[f(X)]\\) nếu \\(f\\) còn bị chặn.\n\n\n\nThm 1.6 (Đại đa số (Law of Large Numbers)) Cho \\(n\\) biến iid \\(X_1, X_2,\\ldotp,X_n\\) có chung \\(\\E[X_i]=\\mu<\\infty\\). Khi đó: \\[\\bar{X}_n\\is\\frac{1}{n}\\sum_{i=1}^n{X_i}\n\\xrightarrow[n\\to\\infty]{\\P,\\,\\as}\\mu.\n\\]\n\n\nThm 1.7 (Hội tụ trung tâm (Central Limit)) Giả sử thêm là \\(\\V[X_i]=\\sigma^2<\\infty\\). Khi đó \\[\n\\sqrt{n}(\\bar{X}_n-\\mu)\n\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus(0,\\sigma^2).\n\\]\n\n\nThm 1.8 (Bất đẳng thức Hoefding) Nếu có một khoảng cố định \\([a,b]\\) gần như tuyệt đối (almost surely) chứa các biến \\(X_i (i=1,2,\\ldots,n)\\) thì\n\\[\n\\P[|\\bar{X}_n-\\mu|\\geq\\epsilon]\\leq\n2e^{-\\frac{2n\\epsilon^2}{(b-a)^2}},\\quad\\forall\\epsilon>0.\n\\]\n\n\nThm 1.9 (Phương pháp Delta) Giả sử chuỗi \\((\\theta_n)_{n\\geq 1}\\) chuẩn tiến với phương sai \\(\\sigma^2\\) về một điểm \\(\\theta\\in\\R\\). Giả sử \\(g:\\R\\to\\R\\) có vi phân \\(g'\\) liên tục tại \\(\\theta\\). Khi đó, \\[\n\\sqrt{n}(g(\\theta_n)-g(\\theta))\n\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus(0,(g'(\\theta))^2\\sigma^2)\n\\]"
+    "objectID": "15-proba-converge.html",
+    "href": "15-proba-converge.html",
+    "title": "2  Hội tụ xác suất",
+    "section": "",
+    "text": "Có một số kiểu hội tụ của biến ngẫu nhiên."
+  },
+  {
+    "objectID": "15-proba-converge.html#hội-tụ-xác-suất",
+    "href": "15-proba-converge.html#hội-tụ-xác-suất",
+    "title": "2  Hội tụ xác suất",
+    "section": "2.1 Hội tụ xác suất",
+    "text": "2.1 Hội tụ xác suất\n\nDef 2.1 Cho một chuỗi biến ngẫu nhiên \\(X_1,X_2,\\ldotp\\) và một biến ngẫu nhiên \\(X\\).\n\nHội tụ gần tuyệt đối: \\[\nX_n \\xrightarrow[n\\to\\infty]{\\as} X \\iff\n\\P(\\{\\omega\\in\\Omega: X_n(\\omega)\\to X(\\omega)\\}) = 1.\n\\]\nHội tụ theo xác suất: \\[\nX_n \\xrightarrow[n\\to\\infty]{\\P} X \\iff\n\\P(|X_n-X| >\\epsilon)\n\\xrightarrow[n\\to\\infty]{}\n0,\\quad\\forall\\epsilon>0.\n\\]\nHội tụ theo phân phối: \\[\nX_n \\xrightarrow[n\\to\\infty]{(d)} X \\iff\n\\P[X_n(x)\\leq x]\\xrightarrow[n\\to\\infty]{} \\P[X\\leq x]\n\\] tại mọi điểm \\(x\\) mà cdf của \\(X\\) liên tục.\nHội tụ về chuẩn: (asymptotically normal) với phương sai \\(\\sigma^2\\) \\[\n\\sqrt{n}({X}_n-X)\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus(0,\\sigma^2).\n\\]"
+  },
+  {
+    "objectID": "15-proba-converge.html#độ-mạnh",
+    "href": "15-proba-converge.html#độ-mạnh",
+    "title": "2  Hội tụ xác suất",
+    "section": "2.2 Độ mạnh",
+    "text": "2.2 Độ mạnh\n\nThm 2.1 Xếp theo thứ tự từ mạnh đến yếu:\n\\[\nX_n \\xrightarrow[n\\to\\infty]{\\as} X \\implies\nX_n \\xrightarrow[n\\to\\infty]{\\P} X \\implies\nX_n \\xrightarrow[n\\to\\infty]{(d)} X.\n\\]\nNếu \\(X_n \\xrightarrow[n\\to\\infty]{(d)} X\\), và \\(X\\) có mật độ xác suất, thì \\(X_n \\xrightarrow[n\\to\\infty]{\\P} X\\).\nNếu chuỗi \\(X_n\\) có \\(\\E[X_n]\\xrightarrow[]{} \\mu\\) và \\(\\V[X_n]\\xrightarrow[]{} 0\\) thì \\(X_n\\xrightarrow[]{\\P} \\mu\\).\nNếu \\(X_n\\xrightarrow[n\\to\\infty]{\\P} X\\) thì \\(\\P(a\\leq X_n\\leq b) \\xrightarrow[n\\to\\infty]{} \\P(a\\leq X\\leq b)\\) với mọi khoảng \\([a,b]\\)."
+  },
+  {
+    "objectID": "15-proba-converge.html#tổng-và-tích",
+    "href": "15-proba-converge.html#tổng-và-tích",
+    "title": "2  Hội tụ xác suất",
+    "section": "2.3 Tổng và tích",
+    "text": "2.3 Tổng và tích\n\nThm 2.2 Nếu có hai chuỗi biến ngẫu nhiên \\(X_n, Y_n\\) hội tụ gần tuyệt đối hoặc hội tụ theo xác suất về \\(X, Y\\), thì tổng \\(X_n+Y_n\\) và tích \\(X_n Y_n\\) cũng hội tụ tương tự (gần tuyệt đối, hoặc theo xác suất) về tổng \\(X+Y\\) và tích \\(XY\\)."
+  },
+  {
+    "objectID": "15-proba-converge.html#slutsky",
+    "href": "15-proba-converge.html#slutsky",
+    "title": "2  Hội tụ xác suất",
+    "section": "2.4 Slutsky",
+    "text": "2.4 Slutsky\n\nThm 2.3 Nếu \\(Y_n \\xrightarrow[]{\\P} y\\), \\(y\\) là một số thực cố định thì có thể nới lỏng điều kiện đối với \\(X_n\\) thành hội tụ theo phân phối."
+  },
+  {
+    "objectID": "15-proba-converge.html#ánh-xạ-liên-tục",
+    "href": "15-proba-converge.html#ánh-xạ-liên-tục",
+    "title": "2  Hội tụ xác suất",
+    "section": "2.5 Ánh xạ liên tục",
+    "text": "2.5 Ánh xạ liên tục\n\nThm 2.4 (Continuous mapping) Nếu \\(X_n\\xrightarrow[n\\to\\infty]{\\as/\\P/(d)} X\\) thì đối với mọi hàm \\(f\\) liên tục:\n\n\\(f(X_n)\\xrightarrow[n\\to\\infty]{\\as/\\P/(d)} f(X)\\).\n\\(\\E[f(X_n)]\\xrightarrow[n\\to\\infty]{}\\E[f(X)]\\) nếu \\(f\\) còn bị chặn."
+  },
+  {
+    "objectID": "15-proba-converge.html#đại-đa-số-law-of-large-numbers",
+    "href": "15-proba-converge.html#đại-đa-số-law-of-large-numbers",
+    "title": "2  Hội tụ xác suất",
+    "section": "2.6 Đại đa số (Law of Large Numbers)",
+    "text": "2.6 Đại đa số (Law of Large Numbers)\n\nThm 2.5 Cho \\(n\\) biến iid \\(X_1, X_2,\\ldotp,X_n\\) có chung \\(\\E[X_i]=\\mu<\\infty\\). Khi đó: \\[\\bar{X}_n\\is\\frac{1}{n}\\sum_{i=1}^n{X_i}\n\\xrightarrow[n\\to\\infty]{\\P,\\,\\as}\\mu.\n\\]"
+  },
+  {
+    "objectID": "15-proba-converge.html#hội-tụ-trung-tâm-central-limit",
+    "href": "15-proba-converge.html#hội-tụ-trung-tâm-central-limit",
+    "title": "2  Hội tụ xác suất",
+    "section": "2.7 Hội tụ trung tâm (Central Limit)",
+    "text": "2.7 Hội tụ trung tâm (Central Limit)\n\nThm 2.6 Giả sử thêm là \\(\\V[X_i]=\\sigma^2<\\infty\\). Khi đó \\[\n\\sqrt{n}(\\bar{X}_n-\\mu)\n\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus(0,\\sigma^2).\n\\]"
+  },
+  {
+    "objectID": "15-proba-converge.html#bất-đẳng-thức-hoefding",
+    "href": "15-proba-converge.html#bất-đẳng-thức-hoefding",
+    "title": "2  Hội tụ xác suất",
+    "section": "2.8 Bất đẳng thức Hoefding",
+    "text": "2.8 Bất đẳng thức Hoefding\n\nThm 2.7 Nếu có một khoảng cố định \\([a,b]\\) gần như tuyệt đối (almost surely) chứa các biến \\(X_i (i=1,2,\\ldots,n)\\) thì\n\\[\n\\P[|\\bar{X}_n-\\mu|\\geq\\epsilon]\\leq\n2e^{-\\frac{2n\\epsilon^2}{(b-a)^2}},\\quad\\forall\\epsilon>0.\n\\]"
+  },
+  {
+    "objectID": "15-proba-converge.html#phương-pháp-delta",
+    "href": "15-proba-converge.html#phương-pháp-delta",
+    "title": "2  Hội tụ xác suất",
+    "section": "2.9 Phương pháp Delta",
+    "text": "2.9 Phương pháp Delta\n\nThm 2.8 Giả sử chuỗi \\((\\theta_n)_{n\\geq 1}\\) chuẩn tiến với phương sai \\(\\sigma^2\\) về một điểm \\(\\theta\\in\\R\\). Giả sử \\(g:\\R\\to\\R\\) có vi phân \\(g^\\prime\\) liên tục tại \\(\\theta\\). Khi đó, \\[\n\\sqrt{n}(g(\\theta_n)-g(\\theta))\n\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus\\left(0,\\left(\\sigma g^\\prime(\\theta)\\right)^2\\right)\n\\]"
   },
   {
     "objectID": "20-stat-intro.html",
     "href": "20-stat-intro.html",
-    "title": "2  Thống kê",
+    "title": "3  Thống kê",
     "section": "",
     "text": "Trên không gian đo được \\(E\\subseteq\\R\\) ta quan sát các mẫu \\(X_1,\\ldots,X_n\\iid\\P\\). Với tập tham số \\(\\Theta\\) ta xây dựng bộ độ đo xác suất \\((\\P_\\theta)_{\\theta\\in\\Theta}\\) để mô phỏng \\(\\P\\) .\nNếu tồn tại \\(\\theta\\in\\Theta\\) để \\(\\P_\\theta\\equiv\\P\\) thì ta nói mô hình “hợp lệ” (well cpecified).\nNếu từ tập \\(\\Theta\\), ánh xạ \\(\\theta\\mapsto\\P_{\\theta}\\) là đơn tính thì ta nói \\(\\theta\\) là “có thể nhận dạng” (identifiable).\nNếu \\(\\Theta\\subseteq\\R^d\\) thì mô hình được nói có số biến hữu hạn (parametric model)."
   },
   {
     "objectID": "20-stat-intro.html#ước-lượng",
     "href": "20-stat-intro.html#ước-lượng",
-    "title": "2  Thống kê",
-    "section": "2.2 Ước lượng",
-    "text": "2.2 Ước lượng\nThống kê lượng (statistic) \\(\\theta\\) là bất cứ hàm số nào có thể đo được (measurable function) trên tập dữ liệu đối tượng \\(X_i\\).\nĐánh giá (estimator) \\(\\theta_n\\) đối với mục tiêu thống kê \\(\\theta\\) là một thống kê khác không phụ thuộc vào \\(\\theta\\).\nĐánh giá được gọi là nhất quán (consistent) nếu nó hội tụ về mục tiêu (Def 1.17).\nĐộ lệch (bias) giữa đánh giá \\(\\theta_n\\) với mục tiêu \\(\\theta\\) là \\[\\textrm{bias}_{\\theta}({\\theta}_n) \\is \\E[\\theta_n] - \\theta.\\]\nSai số bậc 2 (quadratic risk, mean squared error) giữa đánh giá \\(\\theta_n\\) với mục tiêu \\(\\theta\\) là \\[\n\\textrm{MSE}(\\theta_n)\\is\\E[(\\theta_n-\\theta)^2]\n\\equiv\n\\textrm{bias}_{\\theta}(\\theta_n)^2\n+\n\\V[\\theta_n]\n\\] bao hàm cả độ lệch và độ nhiễu của đánh giá."
+    "title": "3  Thống kê",
+    "section": "3.2 Ước lượng",
+    "text": "3.2 Ước lượng\nThống kê lượng (statistic) \\(\\theta\\) là bất cứ hàm số nào có thể đo được (measurable function) trên tập dữ liệu đối tượng \\(X_i\\).\nĐánh giá (estimator) \\(\\theta_n\\) đối với mục tiêu thống kê \\(\\theta\\) là một thống kê khác không phụ thuộc vào \\(\\theta\\).\nĐánh giá được gọi là nhất quán (consistent) nếu nó hội tụ về mục tiêu (Def 2.1).\nĐộ lệch (bias) giữa đánh giá \\(\\theta_n\\) với mục tiêu \\(\\theta\\) là \\[\\textrm{bias}_{\\theta}({\\theta}_n) \\is \\E[\\theta_n] - \\theta.\\]\nSai số bậc 2 (quadratic risk, mean squared error) giữa đánh giá \\(\\theta_n\\) với mục tiêu \\(\\theta\\) là \\[\n\\textrm{MSE}(\\theta_n)\\is\\E[(\\theta_n-\\theta)^2]\n\\equiv\n\\textrm{bias}_{\\theta}(\\theta_n)^2\n+\n\\V[\\theta_n]\n\\] bao hàm cả độ lệch và độ nhiễu của đánh giá."
   },
   {
     "objectID": "20-stat-intro.html#khoảng-tin-cậy",
     "href": "20-stat-intro.html#khoảng-tin-cậy",
-    "title": "2  Thống kê",
-    "section": "2.3 Khoảng tin cậy",
-    "text": "2.3 Khoảng tin cậy\nVới mô hình thống kê \\((E,(\\P_\\theta)_{\\theta\\in\\Theta})\\) xây dựng dựa trên quan sát \\(X_1,\\ldots,X_n\\), giả sử số \\(\\alpha\\in(0,1).\\) Khoảng tin cậy (confidence interval) cấp \\(1-\\alpha\\) đối với \\(\\theta\\) là một khoảng ngẫu nhiên \\(\\mathcal{I}\\) (phụ thuộc vào \\(X_1,\\ldots,X_n\\), không phụ thuộc vào \\(\\theta\\)), mà xác suất \\(\\mathcal{I}\\) có chứa \\(\\theta\\) là đủ cao: \\[\\P_\\theta[\\mathcal{I}\\ni\\theta]\\geq 1-\\alpha,\\quad\\forall\\theta\\in\\Theta.\\]\nNếu \\[\\lim_{n\\to\\infty}\\P_\\theta[\\mathcal{I}\\ni\\theta]\\geq 1-\\alpha,\\quad\\forall\\theta\\in\\Theta\\] thì ta gọi \\(\\mathcal{I}\\) là khoảng tin cậy tiệm cận cấp \\(1-\\alpha\\) đối với \\(\\theta\\)."
+    "title": "3  Thống kê",
+    "section": "3.3 Khoảng tin cậy",
+    "text": "3.3 Khoảng tin cậy\nVới mô hình thống kê \\((E,(\\P_\\theta)_{\\theta\\in\\Theta})\\) xây dựng dựa trên quan sát \\(X_1,\\ldots,X_n\\), giả sử số \\(\\alpha\\in(0,1).\\) Khoảng tin cậy (confidence interval) cấp \\(1-\\alpha\\) đối với \\(\\theta\\) là một khoảng ngẫu nhiên \\(\\mathcal{I}\\) (phụ thuộc vào \\(X_1,\\ldots,X_n\\), không phụ thuộc vào \\(\\theta\\)), mà xác suất \\(\\mathcal{I}\\) có chứa \\(\\theta\\) là đủ cao: \\[\\P_\\theta[\\mathcal{I}\\ni\\theta]\\geq 1-\\alpha,\\quad\\forall\\theta\\in\\Theta.\\]\nNếu \\[\\lim_{n\\to\\infty}\\P_\\theta[\\mathcal{I}\\ni\\theta]\\geq 1-\\alpha,\\quad\\forall\\theta\\in\\Theta\\] thì ta gọi \\(\\mathcal{I}\\) là khoảng tin cậy tiệm cận cấp \\(1-\\alpha\\) đối với \\(\\theta\\)."
   },
   {
     "objectID": "20-stat-intro.html#kiểm-định",
     "href": "20-stat-intro.html#kiểm-định",
-    "title": "2  Thống kê",
-    "section": "2.4 Kiểm định",
-    "text": "2.4 Kiểm định"
+    "title": "3  Thống kê",
+    "section": "3.4 Kiểm định",
+    "text": "3.4 Kiểm định"
   },
   {
     "objectID": "30-est-method.html",
     "href": "30-est-method.html",
-    "title": "3  Ước lượng",
+    "title": "4  Ước lượng",
     "section": "",
     "text": "Chiến lược ước lượng phân phối thật (true distribution)\nVới mô hình thống kê \\((E,(\\P_\\theta)_{\\theta\\in\\Theta})\\) xây dựng dựa trên quan sát iid rv \\(X_1,\\ldots,X_n\\) trên tập mẫu \\(E\\) và bộ tham số \\(\\Theta\\) . Ngầm định tồn tại tham số thật \\(\\theta^*\\in\\Theta\\) để \\(X_1\\sim\\P_{\\theta^*}\\) ."
   },
   {
     "objectID": "30-est-method.html#tổng-biến-động",
     "href": "30-est-method.html#tổng-biến-động",
-    "title": "3  Ước lượng",
-    "section": "3.1 Tổng biến động",
-    "text": "3.1 Tổng biến động\n\nDef 3.1 (Khoảng cách) tổng biến động (total variation distance) giữa hai độ đo xác suất \\(\\P_\\theta\\) và \\(\\P_\\eta\\) là\n\\[\n\\TV(\\P_\\theta,\\P_{\\eta})\n=\n\\max_{A\\subset E}{\\mid\\P_\\theta(A)-\\P_\\eta(A)\\mid}.\n\\]\n\n\nThm 3.1 (Công thức tính) Nếu tập mẫu \\(E\\) là rời rạc (discrete: countable or finite), xác suất \\(\\P_\\theta,\\P_{\\eta}\\) có hàm khối lần lượt là \\(p_\\theta,p_{\\eta}\\) thì \\[\n\\TV(\\P_\\theta,\\P_{\\eta}) =\n\\frac{1}{2}\n\\sum_{x\\in E}\\mid p_\\theta(x) - p_\\eta(x)\\mid.\n\\]\nNếu tập mẫu \\(E\\) là liên tục (continuous), xác suất \\(\\P_\\theta, \\P_{\\eta}\\) có mật độ lần lượt là \\(f_\\theta, f_{\\eta}\\) thì \\[\n\\TV(\\P_\\theta,\\P_{\\eta}) =\n\\frac{1}{2}\n\\int_{E}\\mid f_\\theta(x) - f_\\eta(x)\\mid dx.\n\\]"
+    "title": "4  Ước lượng",
+    "section": "4.1 Tổng biến động",
+    "text": "4.1 Tổng biến động\n\nDef 4.1 (Khoảng cách) tổng biến động (total variation distance) giữa hai độ đo xác suất \\(\\P_\\theta\\) và \\(\\P_\\eta\\) là\n\\[\n\\TV(\\P_\\theta,\\P_{\\eta})\n=\n\\max_{A\\subset E}{\\mid\\P_\\theta(A)-\\P_\\eta(A)\\mid}.\n\\]\n\n\nThm 4.1 (Công thức tính) Nếu tập mẫu \\(E\\) là rời rạc (discrete: countable or finite), xác suất \\(\\P_\\theta,\\P_{\\eta}\\) có hàm khối lần lượt là \\(p_\\theta,p_{\\eta}\\) thì \\[\n\\TV(\\P_\\theta,\\P_{\\eta}) =\n\\frac{1}{2}\n\\sum_{x\\in E}\\mid p_\\theta(x) - p_\\eta(x)\\mid.\n\\]\nNếu tập mẫu \\(E\\) là liên tục (continuous), xác suất \\(\\P_\\theta, \\P_{\\eta}\\) có mật độ lần lượt là \\(f_\\theta, f_{\\eta}\\) thì \\[\n\\TV(\\P_\\theta,\\P_{\\eta}) =\n\\frac{1}{2}\n\\int_{E}\\mid f_\\theta(x) - f_\\eta(x)\\mid dx.\n\\]"
   },
   {
     "objectID": "30-est-method.html#phân-kỳ-kl",
     "href": "30-est-method.html#phân-kỳ-kl",
-    "title": "3  Ước lượng",
-    "section": "3.2 Phân kỳ KL",
-    "text": "3.2 Phân kỳ KL\n\nDef 3.2 (Phân kỳ KL) (KL divergence) Ký hiệu \\(f\\) là mật độ hoặc hàm khối xác suất:\n\\[\n\\KL(\\P_\\theta, \\P_\\eta) \\is\n\\E_\\theta\\left[ \\ln\\frac{f_\\theta(x)}{f_\\eta(x)} \\right]\n=\n\\E_\\theta\\left[ \\ln{f_\\theta(x)} \\right]\n-\n\\E_\\theta\\left[ \\ln{f_\\eta(x)} \\right]\n.\n\\]\n\n\nProposition 3.1 (Đặc điểm) Phân kỳ KL thỏa mãn 2/4 đặc điểm của “khoảng cách”:\n\n\\(\\KL(\\P_\\theta, \\P_\\eta) \\geq 0\\)\n\\(\\KL(\\P_\\theta, \\P_\\eta) \\equiv 0 \\iff \\P_\\theta \\equiv \\P_\\eta\\)."
+    "title": "4  Ước lượng",
+    "section": "4.2 Phân kỳ KL",
+    "text": "4.2 Phân kỳ KL\n\nDef 4.2 (Phân kỳ KL) (KL divergence) Ký hiệu \\(f\\) là mật độ hoặc hàm khối xác suất:\n\\[\n\\KL(\\P_\\theta, \\P_\\eta) \\is\n\\E_\\theta\\left[ \\ln\\frac{f_\\theta(x)}{f_\\eta(x)} \\right]\n=\n\\E_\\theta\\left[ \\ln{f_\\theta(x)} \\right]\n-\n\\E_\\theta\\left[ \\ln{f_\\eta(x)} \\right]\n.\n\\]\n\n\nProposition 4.1 (Đặc điểm) Phân kỳ KL thỏa mãn 2/4 đặc điểm của “khoảng cách”:\n\n\\(\\KL(\\P_\\theta, \\P_\\eta) \\geq 0\\)\n\\(\\KL(\\P_\\theta, \\P_\\eta) \\equiv 0 \\iff \\P_\\theta \\equiv \\P_\\eta\\)."
   },
   {
     "objectID": "30-est-method.html#mle",
     "href": "30-est-method.html#mle",
-    "title": "3  Ước lượng",
-    "section": "3.3 MLE",
-    "text": "3.3 MLE\nMaximum Likelihood Estimation\n\nDef 3.3 (Likelihood) \\[L_\\theta(x_1,\\ldots,x_n)\\is\n\\P_\\theta(X_1=x_1,\\ldots,X_n=x_n)\n=\n\\prod_{i=1}^n p_\\theta(X_i=x_i)\n.\\]\n\n\nDef 3.4 (Log likelihood) \\[\n\\ell_\\theta(x_1,\\ldots,x_n)\\is\n\\ln\nL_\\theta(x_1,\\ldots,x_n)\n=\n\\sum_{i=1}^n \\ln p_\\theta(X_i=x_i)\n.\n\\]\n\n\nDef 3.5 (Maximum Likelihood Estimator) \\[\n\\hat{\\theta}_n \\is\n\\operatorname*{argmax}_\\theta\nL_\\theta(x_1,\\ldots,x_n)\n\\equiv\n\\operatorname*{argmax}_\\theta\n\\ell_\\theta(x_1,\\ldots,x_n)\n.\n\\]\n\n\nDef 3.6 (Mix model) Cho các mô hình gốc \\(X^{(k)}, k= 1,\\ldots,K,\\) lấy biến tiềm ẩn \\(Z\\) trên \\(\\{1,\\ldots,K\\}\\) làm trọng số, ta có mô hình hỗn hợp \\[\nX = \\sum_{k=1}^K\n\\P(Z=k) X^{(k)}\n.\n\\]\n\n\nDef 3.7 (Giải thuật EM) (Estimation Maximization) để tìm các tham số của mô hình hỗn hợp Def 3.6.\nGiả sử ta quan sát được \\(X_1=x_1, \\ldots, X_n=x_n\\). Gọi các trọng số tiềm ẩn tương ứng là \\(Z_1=z_1, \\ldots, Z_n=z_n.\\)\nSau khi khởi tạo các tham số bằng giá trị ngẫu nhiên, ta lặp lại 2 bước E, M như sau để cập nhật các tham số cho đến khi chúng hội tụ.\n\nBước E: Ước lượng \\(Z_i\\approx\\omega_i\\is\\E[Z|X_i], i=1,\\ldots,n.\\)\nBước M: Thay \\(Z_i\\) bởi \\(\\omega_i\\) vào log likelihood để tìm MLE cho \\(X\\)."
+    "title": "4  Ước lượng",
+    "section": "4.3 MLE",
+    "text": "4.3 MLE\nMaximum Likelihood Estimation\n\nDef 4.3 (Likelihood) \\[L_\\theta(x_1,\\ldots,x_n)\\is\n\\P_\\theta(X_1=x_1,\\ldots,X_n=x_n)\n=\n\\prod_{i=1}^n p_\\theta(X_i=x_i)\n.\\]\n\n\nDef 4.4 (Log likelihood) \\[\n\\ell_\\theta(x_1,\\ldots,x_n)\\is\n\\ln\nL_\\theta(x_1,\\ldots,x_n)\n=\n\\sum_{i=1}^n \\ln p_\\theta(X_i=x_i)\n.\n\\]\n\n\nDef 4.5 (Maximum Likelihood Estimator) \\[\n\\hat{\\theta}_n \\is\n\\operatorname*{argmax}_\\theta\nL_\\theta(x_1,\\ldots,x_n)\n\\equiv\n\\operatorname*{argmax}_\\theta\n\\ell_\\theta(x_1,\\ldots,x_n)\n.\n\\]\n\n\nDef 4.6 (Mix model) Cho các mô hình gốc \\(X^{(k)}, k= 1,\\ldots,K,\\) lấy biến tiềm ẩn \\(Z\\) trên \\(\\{1,\\ldots,K\\}\\) làm trọng số, ta có mô hình hỗn hợp \\[\nX = \\sum_{k=1}^K\n\\P(Z=k) X^{(k)}\n.\n\\]\n\n\nDef 4.7 (Giải thuật EM) (Estimation Maximization) để tìm các tham số của mô hình hỗn hợp Def 4.6.\nGiả sử ta quan sát được \\(X_1=x_1, \\ldots, X_n=x_n\\). Gọi các trọng số tiềm ẩn tương ứng là \\(Z_1=z_1, \\ldots, Z_n=z_n.\\)\nSau khi khởi tạo các tham số bằng giá trị ngẫu nhiên, ta lặp lại 2 bước E, M như sau để cập nhật các tham số cho đến khi chúng hội tụ.\n\nBước E: Ước lượng \\(Z_i\\approx\\omega_i\\is\\E[Z|X_i], i=1,\\ldots,n.\\)\nBước M: Thay \\(Z_i\\) bởi \\(\\omega_i\\) vào log likelihood để tìm MLE cho \\(X\\)."
   },
   {
     "objectID": "30-est-method.html#thông-tin-fisher",
     "href": "30-est-method.html#thông-tin-fisher",
-    "title": "3  Ước lượng",
-    "section": "3.4 Thông tin Fisher",
-    "text": "3.4 Thông tin Fisher\n\nDef 3.8 Giả sử log likelihood đối với một quan sát \\(X\\) theo mô hình \\(\\theta\\) là \\(\\ell(\\theta) = \\ln L_1(X,\\theta), \\theta\\in\\Theta\\subset\\R.\\) Giả sử \\(\\ell(\\theta)\\) có đạo hàm bậc hai. Dưới một số điều kiện chuẩn, thông tin Fisher của mô hình được định nghĩa là\n\\[\nI(\\theta)\n= \\V[\\ell^{\\prime}(\\theta)]\n= -\\E[\\ell^{\\prime\\prime}(\\theta)].\n\\]"
+    "title": "4  Ước lượng",
+    "section": "4.4 Thông tin Fisher",
+    "text": "4.4 Thông tin Fisher\n\nDef 4.8 Giả sử log likelihood đối với một quan sát \\(X\\) theo mô hình \\(\\theta\\) là \\(\\ell(\\theta) = \\ln L_1(X,\\theta), \\theta\\in\\Theta\\subset\\R.\\) Giả sử \\(\\ell(\\theta)\\) có đạo hàm bậc hai. Dưới một số điều kiện chuẩn, thông tin Fisher của mô hình được định nghĩa là\n\\[\nI(\\theta)\n= \\V[\\ell^{\\prime}(\\theta)]\n= \\E[(\\ell^{\\prime}(\\theta))^2]\n= -\\E[\\ell^{\\prime\\prime}(\\theta)]\n.\n\\]"
   },
   {
     "objectID": "references.html",

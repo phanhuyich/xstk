@@ -161,10 +161,12 @@ $$
 để tìm các
 tham số của
 mô hình hỗn hợp @def-mix-model.
-Nhập liệu là các quan sát
-$X_1, \ldots, X_n$.
-Gọi các trọng số tiềm ẩn là
-$Z_1, \ldots, Z_n.$
+
+Giả sử ta quan sát được
+$X_1=x_1, \ldots, X_n=x_n$.
+Gọi các trọng số tiềm ẩn tương ứng là
+$Z_1=z_1, \ldots, Z_n=z_n.$
+
 Sau khi khởi tạo các tham số bằng giá trị ngẫu nhiên,
 ta
 lặp lại 2 bước E, M như sau
@@ -173,4 +175,18 @@ cho đến khi chúng hội tụ.
 
 - Bước E: Ước lượng $Z_i\approx\omega_i\is\E[Z|X_i], i=1,\ldots,n.$
 - Bước M: Thay $Z_i$ bởi $\omega_i$ vào log likelihood để tìm MLE cho $X$.
+:::
+
+## Thông tin Fisher
+:::{#def-fisher-info}
+Giả sử log likelihood đối với một quan sát $X$ theo mô hình $\theta$ là
+$\ell(\theta) = \ln L_1(X,\theta), \theta\in\Theta\subset\R.$
+Giả sử $\ell(\theta)$ có đạo hàm bậc hai. Dưới một số điều kiện chuẩn,
+thông tin Fisher của mô hình được định nghĩa là
+
+$$
+I(\theta)
+= \V[\ell^{\prime}(\theta)]
+= -\E[\ell^{\prime\prime}(\theta)].
+$$
 :::

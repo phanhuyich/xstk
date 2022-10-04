@@ -115,7 +115,10 @@ $$L_\theta(x_1,\ldots,x_n)\is
 $$
 \ell_\theta(x_1,\ldots,x_n)\is
 \ln
-L_\theta(x_1,\ldots,x_n).
+L_\theta(x_1,\ldots,x_n)
+=
+\sum_{i=1}^n \ln p_\theta(X_i=x_i)
+.
 $$
 :::
 
@@ -131,4 +134,43 @@ L_\theta(x_1,\ldots,x_n)
 \ell_\theta(x_1,\ldots,x_n)
 .
 $$
+:::
+
+:::{#def-mix-model}
+### Mix model
+Cho
+các mô hình gốc
+$X^{(k)}, k= 1,\ldots,K,$
+lấy
+biến tiềm ẩn
+$Z$
+trên
+$\{1,\ldots,K\}$
+làm trọng số,
+ta có mô hình hỗn hợp
+$$
+X = \sum_{k=1}^K
+\P(Z=k) X^{(k)}
+.
+$$
+:::
+
+:::{#def-em-alg}
+### Giải thuật EM
+(Estimation Maximization)
+để tìm các
+tham số của
+mô hình hỗn hợp @def-mix-model.
+Nhập liệu là các quan sát
+$X_1, \ldots, X_n$.
+Gọi các trọng số tiềm ẩn là
+$Z_1, \ldots, Z_n.$
+Sau khi khởi tạo các tham số bằng giá trị ngẫu nhiên,
+ta
+lặp lại 2 bước E, M như sau
+để cập nhật các tham số
+cho đến khi chúng hội tụ.
+
+- Bước E: Ước lượng $Z_i\approx\omega_i\is\E[Z|X_i], i=1,\ldots,n.$
+- Bước M: Thay $Z_i$ bởi $\omega_i$ vào log likelihood để tìm MLE cho $X$.
 :::

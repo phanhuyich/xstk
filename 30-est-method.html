@@ -255,7 +255,10 @@ $$
 <p><span class="theorem-title"><strong>Def 3.4 (Log likelihood) </strong></span><span class="math display">\[
 \ell_\theta(x_1,\ldots,x_n)\is
 \ln
-L_\theta(x_1,\ldots,x_n).
+L_\theta(x_1,\ldots,x_n)
+=
+\sum_{i=1}^n \ln p_\theta(X_i=x_i)
+.
 \]</span></p>
 </div>
 <div id="def-mle" class="theorem definition">
@@ -268,6 +271,20 @@ L_\theta(x_1,\ldots,x_n)
 \ell_\theta(x_1,\ldots,x_n)
 .
 \]</span></p>
+</div>
+<div id="def-mix-model" class="theorem definition">
+<p><span class="theorem-title"><strong>Def 3.6 (Mix model) </strong></span>Cho các mô hình có thể quan sát <span class="math inline">\(X^{(k)}, k= 1,\ldots,K,\)</span> và biến tiềm ẩn <span class="math inline">\(Z\)</span> trên <span class="math inline">\(\{1,\ldots,K\},\)</span> ta có mô hình hỗn hợp <span class="math display">\[
+X = \sum_{k=1}^K
+\P(Z=k) X^{(k)}
+.
+\]</span></p>
+</div>
+<div id="thm-em-alg" class="theorem">
+<p><span class="theorem-title"><strong>Thm 3.2 (Giải thuật EM) </strong></span>(Estimation Maximization) đối với mô hình hỗn hợp có các tham số cần tìm, có quan sát nhập liệu <span class="math inline">\(X_1, \ldots, X_n\)</span> , và các giá trị tiềm ẩn <span class="math inline">\(Z_1, \ldots, Z_n,\)</span> ta lặp lại 2 bước E, M như sau cho đến khi hội tụ.</p>
+<ul>
+<li>Bước E: Ước lượng <span class="math inline">\(Z_i\approx\omega_i\is\E[Z|X_i], i=1,\ldots,n.\)</span></li>
+<li>Bước M: Thay <span class="math inline">\(Z_i\)</span> bởi <span class="math inline">\(\omega_i\)</span> vào log likelihood để tìm MLE cho <span class="math inline">\(X\)</span>.</li>
+</ul>
 </div>
 
 

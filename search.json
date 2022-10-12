@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Xác Suất Thống Kê",
+    "title": "XSTK",
     "section": "",
     "text": "$$\n\\def\\argmax{\\operatorname*{argmax}}\n\\def\\argmin{\\operatorname*{argmin}}\n\\def\\as{\\textrm{a.s.}}\n\\def\\Ber{\\text{Ber}}\n\\def\\Bin{\\text{Bin}}\n\\def\\E{\\mathbb{E}}\n\\def\\iid{\\stackrel{iid}{\\sim}}\n\\def\\is{:=}\n\\def\\Gaus{\\mathcal{N}}\n\\def\\P{\\mathbb{P}}\n\\def\\Poi{\\text{Poi}}\n\\def\\R{\\mathbb{R}}\n\\def\\V{\\mathbb{V}}\n\\def\\N{\\mathbb{Z}_+}\n\\def\\TV{\\textrm{TV}}\n\\def\\KL{\\textrm{KL}}\n\\def\\vec#1{\\boldsymbol{#1}}\n$$"
   },

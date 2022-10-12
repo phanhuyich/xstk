@@ -220,7 +220,7 @@ ta tìm một "hàm tổn thất" $\rho(X,\mu)$ có giá trị kỳ vọng
 đạt cực tiểu tại $\mu = \mu^*:$
 $$
 \mathcal{Q}(\mu)
-\is \E_\P[\rho(X,\mu)]
+\is \E_{\P}[\rho(X,\mu)]
 .
 $$
 

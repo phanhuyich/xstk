@@ -3,6 +3,7 @@ project:
 
 book:
   title: "Xác Suất Thống Kê"
+  output-file: xstk
   author: "Võ Chí Công"
   # date: "2022/8/25"
   downloads: pdf

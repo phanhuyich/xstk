@@ -114,8 +114,8 @@ $$
 \int x dF(x)
 \is
 \begin{cases}
-\sum_x x p(x) && \textrm{ if } X \textrm{ is discrete}\\
-\int x f(x) dx && \textrm{ if } X \textrm{ is continuous}.
+\sum_x x p(x) & \textrm{ if } X \textrm{ is discrete}\\
+\int x f(x) dx & \textrm{ if } X \textrm{ is continuous}.
 \end{cases}
 $$
 :::

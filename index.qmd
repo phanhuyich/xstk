@@ -43,7 +43,7 @@ Xin vui lòng góp ý tại
 Tài liệu này được viết bằng các công cụ là
 [Quarto](https://quarto.org/docs/books)
 và [VSCode](https://code.visualstudio.com).
-Truy cập trực tuyến
+Truy cập trực tuyến tại
 [xstk](https://vochicong.github.io/xstk/)
-và có thể tải [PDF](https://vochicong.github.io/xstk/Xác-Suất-Thống-Kê.pdf).
+.
 ${}$

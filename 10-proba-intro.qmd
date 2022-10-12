@@ -105,27 +105,32 @@ $$\P(A|B) = \frac{\P(B|A)\P(A)}{\P(B)}
 .$$
 :::
 
-## Tích suất
-
-Tích suất (moment, 積率) thể hiện trọng tâm, độ phân tán, hay độ lệch của phân phối.
-Tích suất bậc $n$ của biến ngẫu nhiên $X$
-với mật độ $f(x)$ là:
-
-$$
-\E[X^n]\is \int x^n f(x) dx
-$$
-
-### Trung bình
+## Trung bình
 ::: {#def-expectation}
-là tích suất bậc 1, tức là $\E[X]$.
+**Trung bình**, hay **giá trị kỳ vọng** của biến X là
+
+$$
+\E[X]\is
+\int x dF(x)
+\is
+\begin{cases}
+\sum_x x p(x) && \textrm{ if } X \textrm{ is discrete}\\
+\int x f(x) dx && \textrm{ if } X \textrm{ is continuous}.
+\end{cases}
+$$
 :::
+
+Nếu giá trị
+$\int |x| dF(x) < \infty$
+ta nói là $\E[X]$ "tồn tại" (well-defined).
 
 Ta có
 $$
 \E[X+Y] \equiv \E[X] + E[Y].
 $$
 
-### Hiệp phương sai
+
+## Hiệp phương sai
 :::{#def-covar}
 \begin{align}
 \textrm{Cov}[X,Y] &\is \E[(X-\E[X])(Y-\E[Y])] \\
@@ -135,7 +140,7 @@ $$
 
 Nếu $X$ và $Y$ độc lập thì $\textrm{Cov}[X,Y] = 0$.
 
-### Phương sai
+## Phương sai
 ::: {#def-variance}
 
 Phương sai, hay phân tán (variance, 分散) là
@@ -149,18 +154,27 @@ $$
 \V[X+Y] \equiv \V[X]+\V[Y] + 2\textrm{Cov}[X,Y].
 $$
 
+## Tích suất
+
+Tích suất (moment, 積率) thể hiện trọng tâm, độ phân tán, hay độ lệch của phân phối.
+Tích suất bậc $n$ của biến $X$
+với mật độ $f(x)$ là:
+
+$$
+\E[X^n]\is \int x^n f(x) dx
+$$
+
 ### Hàm tạo tích suất
 :::{#def-mgf}
-"Moment geenration function (MGF)" hoặc "Laplace transform" của biến $X$ là
-$$\psi_X(t)\is\E[e^{tX}]$$
-với $t\in\R$.
+"Moment generation function (MGF)" của biến $X$ là
+$$\psi_X(t)\is\E[e^{tX}], t\in\R.$$
 :::
 
-Nếu MGF là "well defined" trên một khoảng mở xung quanh $0$
+Nếu MGF "tồn tại" xung quanh $0$
 thì đạo hàm cấp $k$ của $\psi$ tại $0$
-bằng đúng $\E[X^k]$:
+chính là:
 $$
-\psi^{(k)}(0)\equiv \E[X^k].
+\psi_X^{(k)}(0)\equiv \E[X^k].
 $$
 
 ## Phân phối

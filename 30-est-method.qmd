@@ -21,8 +21,9 @@ $X_1\sim\P_{\theta^*}$
 .
 
 ## Tổng biến động
-::: {#def-total-variation}
+
 ### Khoảng cách
+::: {#def-total-variation}
 tổng biến động
 (total variation distance)
 giữa hai độ đo xác suất
@@ -69,8 +70,8 @@ $$
 
 ## Phân kỳ KL
 
-:::{#def-kl-divergence}
 ### Phân kỳ KL
+:::{#def-kl-divergence}
 (KL divergence)
 Ký hiệu $f$ là
 mật độ
@@ -88,8 +89,8 @@ $$
 $$
 :::
 
-:::{#prp-kl-properties}
 ### Đặc điểm
+:::{#prp-kl-properties}
 Phân kỳ KL
 thỏa mãn 2/4 đặc điểm của "khoảng cách":
 
@@ -101,8 +102,8 @@ thỏa mãn 2/4 đặc điểm của "khoảng cách":
 
 Maximum Likelihood Estimation
 
-:::{#def-likelihood}
 ### Likelihood
+:::{#def-likelihood}
 $$L_\theta(x_1,\ldots,x_n)\is
 \P_\theta(X_1=x_1,\ldots,X_n=x_n)
 =
@@ -110,8 +111,8 @@ $$L_\theta(x_1,\ldots,x_n)\is
 .$$
 :::
 
-:::{#def-likelihood}
 ### Log likelihood
+:::{#def-likelihood}
 $$
 \ell_\theta(x_1,\ldots,x_n)\is
 \ln
@@ -122,22 +123,22 @@ L_\theta(x_1,\ldots,x_n)
 $$
 :::
 
-:::{#def-mle}
 ### Maximum Likelihood Estimator
+:::{#def-mle}
 
 $$
 \hat{\theta}_n \is
-\operatorname*{argmax}_\theta
+\argmax_\theta
 L_\theta(x_1,\ldots,x_n)
 \equiv
-\operatorname*{argmax}_\theta
+\argmax_\theta
 \ell_\theta(x_1,\ldots,x_n)
 .
 $$
 :::
 
-:::{#def-mix-model}
 ### Mix model
+:::{#def-mix-model}
 Cho
 các mô hình gốc
 $X^{(k)}, k= 1,\ldots,K,$
@@ -155,8 +156,8 @@ X = \sum_{k=1}^K
 $$
 :::
 
-:::{#def-em-alg}
 ### Giải thuật EM
+:::{#def-em-alg}
 (Estimation Maximization)
 để tìm các
 tham số của
@@ -177,7 +178,7 @@ cho đến khi chúng hội tụ.
 - Bước M: Thay $Z_i$ bởi $\omega_i$ vào log likelihood để tìm MLE cho $X$.
 :::
 
-## Thông tin Fisher
+### Thông tin Fisher
 :::{#def-fisher-info}
 Giả sử log likelihood đối với một quan sát $X$ theo mô hình $\theta$ là
 $\ell(\theta) = \ln L_1(X,\theta), \theta\in\Theta\subset\R.$
@@ -192,3 +193,60 @@ I(\theta)
 .
 $$
 :::
+
+### Chuẩn tính của MLE
+:::{#thm-mle-asym}
+Gọi $\theta^*\in\Theta$ là tham số *thật* cần tìm. Giả sử
+
+1. Các tham số là indentifiable
+2. Support của $\P_\theta$ không phụ thuộc vào $\theta$ với mọi $\theta\in\Theta$
+3. $\theta^*$ không nằm trên biên giới của $\Theta$
+4. Thông tin Fisher $I(\theta)\neq 0$ xung quanh $\theta^*$
+5. Một số điều kiện kỹ thuật khác
+
+Khi đó, chuỗi $\hat{\theta}_n^{MLE}$ thỏa mãn:
+
+$$\hat{\theta}_n^{MLE} \xrightarrow[n\to\infty]{\P_{\theta^*}}\theta^*$$
+$$\sqrt{n}\left(\hat{\theta}_n^{MLE}-\theta^*\right)
+\xrightarrow[n\to\infty]{(d)\textrm{ w.r.t.}\P_{\theta^*}}
+\Gaus(0, I(\theta^*)^{-1}).$$
+
+:::
+
+## M-estimatior
+:::{#def-m-est}
+Với mục tiêu ước lượng thuộc tính $\mu^*$ của xác suất $\P(X)$,
+ta tìm một "hàm tổn thất" $\rho(X,\mu)$ có giá trị kỳ vọng
+đạt cực tiểu tại $\mu = \mu^*:$
+$$
+\mathcal{Q}(\mu)
+\is \E_\P[\rho(X,\mu)]
+.
+$$
+
+Nếu quan sát được $X_1,\ldots,X_n\iid\P(X),$ ta ước lượng
+$$
+\mathcal{Q}(\mu)
+\approx
+\mathcal{Q}_n(\mu)
+\is
+\frac{1}{n} \sum_{i=1}^n{\rho(X_i,\mu)}
+.$$
+
+Khi đó $\mu^*\approx\hat{\mu}$ với "M-estimator"
+$\hat{\mu}$ là
+
+$$
+\hat{\mu}
+\is\argmin_{\mu}
+\mathcal{Q}_n(\mu)
+.
+$$
+:::
+
+Ví dụ,
+
+- với $\rho(x,\theta) = -\ln p_\theta(x)$ ta có MLE để ước lượng tham số $\theta^*$ của mô hình $\P$
+- với $\vec x,\vec\mu\in\R^d$,
+dùng $\rho(\vec x,\vec\mu) = \|\vec x-\vec\mu\|^2$
+ta ước lượng được $\vec\mu^*=\E[\vec x].$

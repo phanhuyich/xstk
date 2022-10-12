@@ -1,4 +1,6 @@
 $$
+\def\argmax{\operatorname*{argmax}}
+\def\argmin{\operatorname*{argmin}}
 \def\as{\textrm{a.s.}}
 \def\Ber{\text{Ber}}
 \def\Bin{\text{Bin}}
@@ -13,4 +15,5 @@ $$
 \def\N{\mathbb{Z}_+}
 \def\TV{\textrm{TV}}
 \def\KL{\textrm{KL}}
+\def\vec#1{\boldsymbol{#1}}
 $$

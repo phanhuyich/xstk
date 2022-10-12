@@ -163,6 +163,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 $$
+\def\argmax{\operatorname*{argmax}}
+\def\argmin{\operatorname*{argmin}}
 \def\as{\textrm{a.s.}}
 \def\Ber{\text{Ber}}
 \def\Bin{\text{Bin}}
@@ -177,6 +179,7 @@ $$
 \def\N{\mathbb{Z}_+}
 \def\TV{\textrm{TV}}
 \def\KL{\textrm{KL}}
+\def\vec#1{\boldsymbol{#1}}
 $$
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -198,8 +201,8 @@ $$
 <section id="mô-hình" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="mô-hình"><span class="header-section-number">3.1</span> Mô hình</h2>
 <p>Trên không gian đo được <span class="math inline">\(E\subseteq\R\)</span> ta quan sát các mẫu <span class="math inline">\(X_1,\ldots,X_n\iid\P\)</span>. Với tập tham số <span class="math inline">\(\Theta\)</span> ta xây dựng bộ độ đo xác suất <span class="math inline">\((\P_\theta)_{\theta\in\Theta}\)</span> để mô phỏng <span class="math inline">\(\P\)</span> .</p>
-<p>Nếu tồn tại <span class="math inline">\(\theta\in\Theta\)</span> để <span class="math inline">\(\P_\theta\equiv\P\)</span> thì ta nói mô hình “hợp lệ” (well cpecified).</p>
-<p>Nếu từ tập <span class="math inline">\(\Theta\)</span>, ánh xạ <span class="math inline">\(\theta\mapsto\P_{\theta}\)</span> là đơn tính thì ta nói <span class="math inline">\(\theta\)</span> là “có thể nhận dạng” (identifiable).</p>
+<p>Nếu tồn tại <span class="math inline">\(\theta\in\Theta\)</span> để <span class="math inline">\(\P_\theta\equiv\P\)</span> thì ta nói mô hình “hợp lệ” (well specified).</p>
+<p>Nếu từ tập <span class="math inline">\(\Theta\)</span>, ánh xạ <span class="math inline">\(\theta\mapsto\P_{\theta}\)</span> là đơn ánh thì ta nói <span class="math inline">\(\theta\)</span> (hoặc <span class="math inline">\(\P_\theta\)</span>) là “có thể xác định” (identifiable).</p>
 <p>Nếu <span class="math inline">\(\Theta\subseteq\R^d\)</span> thì mô hình được nói có số biến hữu hạn (parametric model).</p>
 </section>
 <section id="ước-lượng" class="level2" data-number="3.2">

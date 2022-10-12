@@ -2,7 +2,8 @@ project:
   type: book
 
 book:
-  title: "Xác Suất Thống Kê"
+  title: XSTK
+  subtitle: "Xác Suất Thống Kê"
   output-file: xstk
   author: "Võ Chí Công"
   # date: "2022/8/25"

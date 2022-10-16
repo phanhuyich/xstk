@@ -158,9 +158,9 @@ $$
 
 ### Giải thuật EM
 :::{#def-em-alg}
-(Estimation Maximization)
-để tìm các
-tham số của
+(**E**stimation **M**aximization)
+*có thể* tìm được
+tham số $\theta$ của
 mô hình hỗn hợp @def-mix-model.
 
 Giả sử ta quan sát được
@@ -168,14 +168,14 @@ $X_1=x_1, \ldots, X_n=x_n$.
 Gọi các trọng số tiềm ẩn tương ứng là
 $Z_1=z_1, \ldots, Z_n=z_n.$
 
-Sau khi khởi tạo các tham số bằng giá trị ngẫu nhiên,
+Sau khi khởi tạo $\theta = \theta_0$ ngẫu nhiên,
 ta
-lặp lại 2 bước E, M như sau
-để cập nhật các tham số
-cho đến khi chúng hội tụ.
+lặp lại 2 bước **E, M** như sau
+để cập nhật $\theta_k, k=1,2,\ldots$
+cho đến khi hội tụ.
 
-- Bước E: Ước lượng $Z_i\approx\omega_i\is\E[Z|X_i], i=1,\ldots,n.$
-- Bước M: Thay $Z_i$ bởi $\omega_i$ vào log likelihood để tìm MLE cho $X$.
+- **E**stimate: Ước lượng $Z_i\approx\omega_i\is\E[Z|X_i=x_i, \theta=\theta_{k-1}], i=1,\ldots,n.$
+- **M**aximize: Thay $Z_i$ bởi $\omega_i$ vào công thức likelihood để tối ưu MLE $\theta = \theta_k$
 :::
 
 ### Thông tin Fisher

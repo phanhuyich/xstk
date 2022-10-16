@@ -328,12 +328,12 @@ X = \sum_{k=1}^K
 <section id="giải-thuật-em" class="level3" data-number="4.3.5">
 <h3 data-number="4.3.5" class="anchored" data-anchor-id="giải-thuật-em"><span class="header-section-number">4.3.5</span> Giải thuật EM</h3>
 <div id="def-em-alg" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 4.7 </strong></span>(Estimation Maximization) để tìm các tham số của mô hình hỗn hợp <a href="#def-mix-model">Def&nbsp;<span>4.6</span></a>.</p>
+<p><span class="theorem-title"><strong>Def 4.7 </strong></span>(<strong>E</strong>stimation <strong>M</strong>aximization) <em>có thể</em> tìm được tham số <span class="math inline">\(\theta\)</span> của mô hình hỗn hợp <a href="#def-mix-model">Def&nbsp;<span>4.6</span></a>.</p>
 <p>Giả sử ta quan sát được <span class="math inline">\(X_1=x_1, \ldots, X_n=x_n\)</span>. Gọi các trọng số tiềm ẩn tương ứng là <span class="math inline">\(Z_1=z_1, \ldots, Z_n=z_n.\)</span></p>
-<p>Sau khi khởi tạo các tham số bằng giá trị ngẫu nhiên, ta lặp lại 2 bước E, M như sau để cập nhật các tham số cho đến khi chúng hội tụ.</p>
+<p>Sau khi khởi tạo <span class="math inline">\(\theta = \theta_0\)</span> ngẫu nhiên, ta lặp lại 2 bước <strong>E, M</strong> như sau để cập nhật <span class="math inline">\(\theta_k, k=1,2,\ldots\)</span> cho đến khi hội tụ.</p>
 <ul>
-<li>Bước E: Ước lượng <span class="math inline">\(Z_i\approx\omega_i\is\E[Z|X_i], i=1,\ldots,n.\)</span></li>
-<li>Bước M: Thay <span class="math inline">\(Z_i\)</span> bởi <span class="math inline">\(\omega_i\)</span> vào log likelihood để tìm MLE cho <span class="math inline">\(X\)</span>.</li>
+<li><strong>E</strong>stimate: Ước lượng <span class="math inline">\(Z_i\approx\omega_i\is\E[Z|X_i=x_i, \theta=\theta_{k-1}], i=1,\ldots,n.\)</span></li>
+<li><strong>M</strong>aximize: Thay <span class="math inline">\(Z_i\)</span> bởi <span class="math inline">\(\omega_i\)</span> vào công thức likelihood để tối ưu MLE <span class="math inline">\(\theta = \theta_k\)</span></li>
 </ul>
 </div>
 </section>

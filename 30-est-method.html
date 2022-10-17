@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>XSTK - 4&nbsp; Ước lượng</title>
+<title>XSTK - 5&nbsp; Ước lượng</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ước lượng</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ước lượng</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -126,17 +126,22 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./15-proba-converge.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hội tụ xác suất</span></a>
+  <a href="./13-distributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Phân phối thường gặp</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./20-stat-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Thống kê</span></a>
+  <a href="./15-proba-converge.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Hội tụ xác suất</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./30-est-method.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ước lượng</span></a>
+  <a href="./20-stat-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Thống kê</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./30-est-method.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ước lượng</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -153,26 +158,30 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#tổng-biến-động" id="toc-tổng-biến-động" class="nav-link active" data-scroll-target="#tổng-biến-động"><span class="toc-section-number">4.1</span>  Tổng biến động</a>
+  <li><a href="#tổng-biến-động" id="toc-tổng-biến-động" class="nav-link active" data-scroll-target="#tổng-biến-động"><span class="toc-section-number">5.1</span>  Tổng biến động</a>
   <ul class="collapse">
-  <li><a href="#khoảng-cách" id="toc-khoảng-cách" class="nav-link" data-scroll-target="#khoảng-cách"><span class="toc-section-number">4.1.1</span>  Khoảng cách</a></li>
+  <li><a href="#khoảng-cách" id="toc-khoảng-cách" class="nav-link" data-scroll-target="#khoảng-cách"><span class="toc-section-number">5.1.1</span>  Khoảng cách</a></li>
   </ul></li>
-  <li><a href="#phân-kỳ-kl" id="toc-phân-kỳ-kl" class="nav-link" data-scroll-target="#phân-kỳ-kl"><span class="toc-section-number">4.2</span>  Phân kỳ KL</a>
+  <li><a href="#phân-kỳ-kl" id="toc-phân-kỳ-kl" class="nav-link" data-scroll-target="#phân-kỳ-kl"><span class="toc-section-number">5.2</span>  Phân kỳ KL</a>
   <ul class="collapse">
-  <li><a href="#phân-kỳ-kl-1" id="toc-phân-kỳ-kl-1" class="nav-link" data-scroll-target="#phân-kỳ-kl-1"><span class="toc-section-number">4.2.1</span>  Phân kỳ KL</a></li>
-  <li><a href="#đặc-điểm" id="toc-đặc-điểm" class="nav-link" data-scroll-target="#đặc-điểm"><span class="toc-section-number">4.2.2</span>  Đặc điểm</a></li>
+  <li><a href="#phân-kỳ-kl-1" id="toc-phân-kỳ-kl-1" class="nav-link" data-scroll-target="#phân-kỳ-kl-1"><span class="toc-section-number">5.2.1</span>  Phân kỳ KL</a></li>
+  <li><a href="#đặc-điểm" id="toc-đặc-điểm" class="nav-link" data-scroll-target="#đặc-điểm"><span class="toc-section-number">5.2.2</span>  Đặc điểm</a></li>
   </ul></li>
-  <li><a href="#mle" id="toc-mle" class="nav-link" data-scroll-target="#mle"><span class="toc-section-number">4.3</span>  MLE</a>
+  <li><a href="#mle" id="toc-mle" class="nav-link" data-scroll-target="#mle"><span class="toc-section-number">5.3</span>  MLE</a>
   <ul class="collapse">
-  <li><a href="#likelihood" id="toc-likelihood" class="nav-link" data-scroll-target="#likelihood"><span class="toc-section-number">4.3.1</span>  Likelihood</a></li>
-  <li><a href="#log-likelihood" id="toc-log-likelihood" class="nav-link" data-scroll-target="#log-likelihood"><span class="toc-section-number">4.3.2</span>  Log likelihood</a></li>
-  <li><a href="#maximum-likelihood-estimator" id="toc-maximum-likelihood-estimator" class="nav-link" data-scroll-target="#maximum-likelihood-estimator"><span class="toc-section-number">4.3.3</span>  Maximum Likelihood Estimator</a></li>
-  <li><a href="#mix-model" id="toc-mix-model" class="nav-link" data-scroll-target="#mix-model"><span class="toc-section-number">4.3.4</span>  Mix model</a></li>
-  <li><a href="#giải-thuật-em" id="toc-giải-thuật-em" class="nav-link" data-scroll-target="#giải-thuật-em"><span class="toc-section-number">4.3.5</span>  Giải thuật EM</a></li>
-  <li><a href="#thông-tin-fisher" id="toc-thông-tin-fisher" class="nav-link" data-scroll-target="#thông-tin-fisher"><span class="toc-section-number">4.3.6</span>  Thông tin Fisher</a></li>
-  <li><a href="#chuẩn-tính-của-mle" id="toc-chuẩn-tính-của-mle" class="nav-link" data-scroll-target="#chuẩn-tính-của-mle"><span class="toc-section-number">4.3.7</span>  Chuẩn tính của MLE</a></li>
+  <li><a href="#likelihood" id="toc-likelihood" class="nav-link" data-scroll-target="#likelihood"><span class="toc-section-number">5.3.1</span>  Likelihood</a></li>
+  <li><a href="#log-likelihood" id="toc-log-likelihood" class="nav-link" data-scroll-target="#log-likelihood"><span class="toc-section-number">5.3.2</span>  Log likelihood</a></li>
+  <li><a href="#maximum-likelihood-estimator" id="toc-maximum-likelihood-estimator" class="nav-link" data-scroll-target="#maximum-likelihood-estimator"><span class="toc-section-number">5.3.3</span>  Maximum Likelihood Estimator</a></li>
   </ul></li>
-  <li><a href="#m-estimatior" id="toc-m-estimatior" class="nav-link" data-scroll-target="#m-estimatior"><span class="toc-section-number">4.4</span>  M-estimatior</a></li>
+  <li><a href="#mix-model" id="toc-mix-model" class="nav-link" data-scroll-target="#mix-model"><span class="toc-section-number">5.4</span>  Mix model</a>
+  <ul class="collapse">
+  <li><a href="#giải-thuật-em" id="toc-giải-thuật-em" class="nav-link" data-scroll-target="#giải-thuật-em"><span class="toc-section-number">5.4.1</span>  Giải thuật EM</a></li>
+  </ul></li>
+  <li><a href="#thông-tin-fisher" id="toc-thông-tin-fisher" class="nav-link" data-scroll-target="#thông-tin-fisher"><span class="toc-section-number">5.5</span>  Thông tin Fisher</a>
+  <ul class="collapse">
+  <li><a href="#chuẩn-tính-của-mle" id="toc-chuẩn-tính-của-mle" class="nav-link" data-scroll-target="#chuẩn-tính-của-mle"><span class="toc-section-number">5.5.1</span>  Chuẩn tính của MLE</a></li>
+  </ul></li>
+  <li><a href="#m-estimatior" id="toc-m-estimatior" class="nav-link" data-scroll-target="#m-estimatior"><span class="toc-section-number">5.6</span>  M-estimatior</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vochicong/xstk/edit/main/30-est-method.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vochicong/xstk/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/vochicong/xstk/blob/main/30-est-method.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
@@ -200,7 +209,7 @@ $$
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ước lượng</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ước lượng</span></h1>
 </div>
 
 
@@ -221,12 +230,12 @@ $$
 <li>Tìm điểm cực tiểu của ước lượng nêu trên (minimization).</li>
 </ul>
 <p>Với mô hình thống kê <span class="math inline">\((E,(\P_\theta)_{\theta\in\Theta})\)</span> xây dựng dựa trên quan sát iid rv <span class="math inline">\(X_1,\ldots,X_n\)</span> trên tập mẫu <span class="math inline">\(E\)</span> và bộ tham số <span class="math inline">\(\Theta\)</span> . Ngầm định tồn tại <em>tham số thật</em> <span class="math inline">\(\theta^*\in\Theta\)</span> để <span class="math inline">\(X_1\sim\P_{\theta^*}\)</span> .</p>
-<section id="tổng-biến-động" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="tổng-biến-động"><span class="header-section-number">4.1</span> Tổng biến động</h2>
-<section id="khoảng-cách" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="khoảng-cách"><span class="header-section-number">4.1.1</span> Khoảng cách</h3>
+<section id="tổng-biến-động" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="tổng-biến-động"><span class="header-section-number">5.1</span> Tổng biến động</h2>
+<section id="khoảng-cách" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="khoảng-cách"><span class="header-section-number">5.1.1</span> Khoảng cách</h3>
 <div id="def-total-variation" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 4.1 </strong></span>tổng biến động (total variation distance) giữa hai độ đo xác suất <span class="math inline">\(\P_\theta\)</span> và <span class="math inline">\(\P_\eta\)</span> là</p>
+<p><span class="theorem-title"><strong>Def 5.1 </strong></span>tổng biến động (total variation distance) giữa hai độ đo xác suất <span class="math inline">\(\P_\theta\)</span> và <span class="math inline">\(\P_\eta\)</span> là</p>
 <p><span class="math display">\[
 \TV(\P_\theta,\P_{\eta})
 =
@@ -234,7 +243,7 @@ $$
 \]</span></p>
 </div>
 <div id="thm-total-variation" class="theorem">
-<p><span class="theorem-title"><strong>Thm 4.1 (Công thức tính) </strong></span>Nếu tập mẫu <span class="math inline">\(E\)</span> là rời rạc (discrete: countable or finite), xác suất <span class="math inline">\(\P_\theta,\P_{\eta}\)</span> có hàm khối lần lượt là <span class="math inline">\(p_\theta,p_{\eta}\)</span> thì <span class="math display">\[
+<p><span class="theorem-title"><strong>Thm 5.1 (Công thức tính) </strong></span>Nếu tập mẫu <span class="math inline">\(E\)</span> là rời rạc (discrete: countable or finite), xác suất <span class="math inline">\(\P_\theta,\P_{\eta}\)</span> có hàm khối lần lượt là <span class="math inline">\(p_\theta,p_{\eta}\)</span> thì <span class="math display">\[
 \TV(\P_\theta,\P_{\eta}) =
 \frac{1}{2}
 \sum_{x\in E}\mid p_\theta(x) - p_\eta(x)\mid.
@@ -247,12 +256,12 @@ $$
 </div>
 </section>
 </section>
-<section id="phân-kỳ-kl" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="phân-kỳ-kl"><span class="header-section-number">4.2</span> Phân kỳ KL</h2>
-<section id="phân-kỳ-kl-1" class="level3" data-number="4.2.1">
-<h3 data-number="4.2.1" class="anchored" data-anchor-id="phân-kỳ-kl-1"><span class="header-section-number">4.2.1</span> Phân kỳ KL</h3>
+<section id="phân-kỳ-kl" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="phân-kỳ-kl"><span class="header-section-number">5.2</span> Phân kỳ KL</h2>
+<section id="phân-kỳ-kl-1" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="phân-kỳ-kl-1"><span class="header-section-number">5.2.1</span> Phân kỳ KL</h3>
 <div id="def-kl-divergence" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 4.2 </strong></span>(KL divergence) Ký hiệu <span class="math inline">\(f\)</span> là mật độ hoặc hàm khối xác suất:</p>
+<p><span class="theorem-title"><strong>Def 5.2 </strong></span>(KL divergence) Ký hiệu <span class="math inline">\(f\)</span> là mật độ hoặc hàm khối xác suất:</p>
 <p><span class="math display">\[
 \KL(\P_\theta, \P_\eta) \is
 \E_\theta\left[ \ln\frac{f_\theta(x)}{f_\eta(x)} \right]
@@ -264,10 +273,10 @@ $$
 \]</span></p>
 </div>
 </section>
-<section id="đặc-điểm" class="level3" data-number="4.2.2">
-<h3 data-number="4.2.2" class="anchored" data-anchor-id="đặc-điểm"><span class="header-section-number">4.2.2</span> Đặc điểm</h3>
+<section id="đặc-điểm" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="đặc-điểm"><span class="header-section-number">5.2.2</span> Đặc điểm</h3>
 <div id="prp-kl-properties" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.1 </strong></span>Phân kỳ KL thỏa mãn 2/4 đặc điểm của “khoảng cách”:</p>
+<p><span class="theorem-title"><strong>Proposition 5.1 </strong></span>Phân kỳ KL thỏa mãn 2/4 đặc điểm của “khoảng cách”:</p>
 <ol type="1">
 <li><span class="math inline">\(\KL(\P_\theta, \P_\eta) \geq 0\)</span></li>
 <li><span class="math inline">\(\KL(\P_\theta, \P_\eta) \equiv 0 \iff \P_\theta \equiv \P_\eta\)</span>.</li>
@@ -275,23 +284,23 @@ $$
 </div>
 </section>
 </section>
-<section id="mle" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="mle"><span class="header-section-number">4.3</span> MLE</h2>
+<section id="mle" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="mle"><span class="header-section-number">5.3</span> MLE</h2>
 <p>Maximum Likelihood Estimation</p>
-<section id="likelihood" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="likelihood"><span class="header-section-number">4.3.1</span> Likelihood</h3>
+<section id="likelihood" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="likelihood"><span class="header-section-number">5.3.1</span> Likelihood</h3>
 <div id="def-likelihood" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 4.3 </strong></span><span class="math display">\[L_\theta(x_1,\ldots,x_n)\is
+<p><span class="theorem-title"><strong>Def 5.3 </strong></span><span class="math display">\[L_\theta(x_1,\ldots,x_n)\is
 \P_\theta(X_1=x_1,\ldots,X_n=x_n)
 =
 \prod_{i=1}^n p_\theta(X_i=x_i)
 .\]</span></p>
 </div>
 </section>
-<section id="log-likelihood" class="level3" data-number="4.3.2">
-<h3 data-number="4.3.2" class="anchored" data-anchor-id="log-likelihood"><span class="header-section-number">4.3.2</span> Log likelihood</h3>
+<section id="log-likelihood" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="log-likelihood"><span class="header-section-number">5.3.2</span> Log likelihood</h3>
 <div id="def-likelihood" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 4.4 </strong></span><span class="math display">\[
+<p><span class="theorem-title"><strong>Def 5.4 </strong></span><span class="math display">\[
 \ell_\theta(x_1,\ldots,x_n)\is
 \ln
 L_\theta(x_1,\ldots,x_n)
@@ -301,10 +310,10 @@ L_\theta(x_1,\ldots,x_n)
 \]</span></p>
 </div>
 </section>
-<section id="maximum-likelihood-estimator" class="level3" data-number="4.3.3">
-<h3 data-number="4.3.3" class="anchored" data-anchor-id="maximum-likelihood-estimator"><span class="header-section-number">4.3.3</span> Maximum Likelihood Estimator</h3>
+<section id="maximum-likelihood-estimator" class="level3" data-number="5.3.3">
+<h3 data-number="5.3.3" class="anchored" data-anchor-id="maximum-likelihood-estimator"><span class="header-section-number">5.3.3</span> Maximum Likelihood Estimator</h3>
 <div id="def-mle" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 4.5 </strong></span><span class="math display">\[
+<p><span class="theorem-title"><strong>Def 5.5 </strong></span><span class="math display">\[
 \hat{\theta}_n \is
 \argmax_\theta
 L_\theta(x_1,\ldots,x_n)
@@ -315,20 +324,20 @@ L_\theta(x_1,\ldots,x_n)
 \]</span></p>
 </div>
 </section>
-<section id="mix-model" class="level3" data-number="4.3.4">
-<h3 data-number="4.3.4" class="anchored" data-anchor-id="mix-model"><span class="header-section-number">4.3.4</span> Mix model</h3>
+</section>
+<section id="mix-model" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="mix-model"><span class="header-section-number">5.4</span> Mix model</h2>
 <div id="def-mix-model" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 4.6 </strong></span>Cho các mô hình gốc <span class="math inline">\(X^{(k)}, k= 1,\ldots,K,\)</span> lấy biến tiềm ẩn <span class="math inline">\(Z\)</span> trên <span class="math inline">\(\{1,\ldots,K\}\)</span> làm trọng số, ta có mô hình hỗn hợp <span class="math display">\[
+<p><span class="theorem-title"><strong>Def 5.6 </strong></span>Cho các mô hình gốc <span class="math inline">\(X^{(k)}, k= 1,\ldots,K,\)</span> lấy biến tiềm ẩn <span class="math inline">\(Z\)</span> trên <span class="math inline">\(\{1,\ldots,K\}\)</span> làm trọng số, ta có mô hình hỗn hợp <span class="math display">\[
 X = \sum_{k=1}^K
 \P(Z=k) X^{(k)}
 .
 \]</span></p>
 </div>
-</section>
-<section id="giải-thuật-em" class="level3" data-number="4.3.5">
-<h3 data-number="4.3.5" class="anchored" data-anchor-id="giải-thuật-em"><span class="header-section-number">4.3.5</span> Giải thuật EM</h3>
+<section id="giải-thuật-em" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="giải-thuật-em"><span class="header-section-number">5.4.1</span> Giải thuật EM</h3>
 <div id="def-em-alg" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 4.7 </strong></span>(<strong>E</strong>stimation <strong>M</strong>aximization) <em>có thể</em> tìm được tham số <span class="math inline">\(\theta\)</span> của mô hình hỗn hợp <a href="#def-mix-model">Def&nbsp;<span>4.6</span></a>.</p>
+<p><span class="theorem-title"><strong>Def 5.7 </strong></span>(<strong>E</strong>stimation <strong>M</strong>aximization) <em>có thể</em> tìm được tham số <span class="math inline">\(\theta\)</span> của mô hình hỗn hợp <a href="#def-mix-model">Def&nbsp;<span>5.6</span></a>.</p>
 <p>Giả sử ta quan sát được <span class="math inline">\(X_1=x_1, \ldots, X_n=x_n\)</span>. Gọi các trọng số tiềm ẩn tương ứng là <span class="math inline">\(Z_1=z_1, \ldots, Z_n=z_n.\)</span></p>
 <p>Sau khi khởi tạo <span class="math inline">\(\theta = \theta_0\)</span> ngẫu nhiên, ta lặp lại 2 bước <strong>E, M</strong> như sau để cập nhật <span class="math inline">\(\theta_k, k=1,2,\ldots\)</span> cho đến khi hội tụ.</p>
 <ul>
@@ -337,10 +346,11 @@ X = \sum_{k=1}^K
 </ul>
 </div>
 </section>
-<section id="thông-tin-fisher" class="level3" data-number="4.3.6">
-<h3 data-number="4.3.6" class="anchored" data-anchor-id="thông-tin-fisher"><span class="header-section-number">4.3.6</span> Thông tin Fisher</h3>
+</section>
+<section id="thông-tin-fisher" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="thông-tin-fisher"><span class="header-section-number">5.5</span> Thông tin Fisher</h2>
 <div id="def-fisher-info" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 4.8 </strong></span>Giả sử log likelihood đối với một quan sát <span class="math inline">\(X\)</span> theo mô hình <span class="math inline">\(\theta\)</span> là <span class="math inline">\(\ell(\theta) = \ln L_1(X,\theta), \theta\in\Theta\subset\R.\)</span> Giả sử <span class="math inline">\(\ell(\theta)\)</span> có đạo hàm bậc hai. Dưới một số điều kiện chuẩn, thông tin Fisher của mô hình được định nghĩa là</p>
+<p><span class="theorem-title"><strong>Def 5.8 </strong></span>Giả sử log likelihood đối với một quan sát <span class="math inline">\(X\)</span> theo mô hình <span class="math inline">\(\theta\)</span> là <span class="math inline">\(\ell(\theta) = \ln L_1(X,\theta), \theta\in\Theta\subset\R.\)</span> Giả sử <span class="math inline">\(\ell(\theta)\)</span> có đạo hàm bậc hai. Dưới một số điều kiện chuẩn, thông tin Fisher của mô hình được định nghĩa là</p>
 <p><span class="math display">\[
 I(\theta)
 = \V[\ell^{\prime}(\theta)]
@@ -349,11 +359,10 @@ I(\theta)
 .
 \]</span></p>
 </div>
-</section>
-<section id="chuẩn-tính-của-mle" class="level3" data-number="4.3.7">
-<h3 data-number="4.3.7" class="anchored" data-anchor-id="chuẩn-tính-của-mle"><span class="header-section-number">4.3.7</span> Chuẩn tính của MLE</h3>
+<section id="chuẩn-tính-của-mle" class="level3" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="chuẩn-tính-của-mle"><span class="header-section-number">5.5.1</span> Chuẩn tính của MLE</h3>
 <div id="thm-mle-asym" class="theorem">
-<p><span class="theorem-title"><strong>Thm 4.2 </strong></span>Gọi <span class="math inline">\(\theta^*\in\Theta\)</span> là tham số <em>thật</em> cần tìm. Giả sử</p>
+<p><span class="theorem-title"><strong>Thm 5.2 </strong></span>Gọi <span class="math inline">\(\theta^*\in\Theta\)</span> là tham số <em>thật</em> cần tìm. Giả sử</p>
 <ol type="1">
 <li>Các tham số là indentifiable</li>
 <li>Support của <span class="math inline">\(\P_\theta\)</span> không phụ thuộc vào <span class="math inline">\(\theta\)</span> với mọi <span class="math inline">\(\theta\in\Theta\)</span></li>
@@ -368,10 +377,10 @@ I(\theta)
 </div>
 </section>
 </section>
-<section id="m-estimatior" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="m-estimatior"><span class="header-section-number">4.4</span> M-estimatior</h2>
+<section id="m-estimatior" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="m-estimatior"><span class="header-section-number">5.6</span> M-estimatior</h2>
 <div id="def-m-est" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 4.9 </strong></span>Với mục tiêu ước lượng thuộc tính <span class="math inline">\(\mu^*\)</span> của xác suất <span class="math inline">\(\P(X)\)</span>, ta tìm một “hàm tổn thất” <span class="math inline">\(\rho(X,\mu)\)</span> có giá trị kỳ vọng đạt cực tiểu tại <span class="math inline">\(\mu = \mu^*:\)</span> <span class="math display">\[
+<p><span class="theorem-title"><strong>Def 5.9 </strong></span>Với mục tiêu ước lượng thuộc tính <span class="math inline">\(\mu^*\)</span> của xác suất <span class="math inline">\(\P(X)\)</span>, ta tìm một “hàm tổn thất” <span class="math inline">\(\rho(X,\mu)\)</span> có giá trị kỳ vọng đạt cực tiểu tại <span class="math inline">\(\mu = \mu^*:\)</span> <span class="math display">\[
 \mathcal{Q}(\mu)
 \is \E_{\P}[\rho(X,\mu)]
 .
@@ -502,7 +511,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./20-stat-intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Thống kê</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Thống kê</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

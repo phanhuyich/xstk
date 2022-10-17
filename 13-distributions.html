@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>XSTK - Giáo trình</title>
+<title>XSTK - 2&nbsp; Phân phối thường gặp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
 </style>
 
 
@@ -49,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./30-est-method.html" rel="prev">
+<link href="./15-proba-converge.html" rel="next">
+<link href="./10-proba-intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -90,7 +72,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Giáo trình</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Phân phối thường gặp</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -144,7 +126,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13-distributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Phân phối thường gặp</span></a>
+  <a href="./13-distributions.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Phân phối thường gặp</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -164,7 +146,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">Giáo trình</a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">Giáo trình</a>
   </div>
 </li>
     </ul>
@@ -176,15 +158,14 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#tham-khảo" id="toc-tham-khảo" class="nav-link active" data-scroll-target="#tham-khảo">Tham khảo</a></li>
-  <li><a href="#mitx-18.6501x" id="toc-mitx-18.6501x" class="nav-link" data-scroll-target="#mitx-18.6501x">MITx 18.6501x</a>
-  <ul class="collapse">
-  <li><a href="#quy-định" id="toc-quy-định" class="nav-link" data-scroll-target="#quy-định">Quy định</a></li>
-  <li><a href="#unit-1" id="toc-unit-1" class="nav-link" data-scroll-target="#unit-1">Unit 1</a></li>
-  <li><a href="#unit-2" id="toc-unit-2" class="nav-link" data-scroll-target="#unit-2">Unit 2</a></li>
-  </ul></li>
+  <li><a href="#phân-phối-bernoulli" id="toc-phân-phối-bernoulli" class="nav-link active" data-scroll-target="#phân-phối-bernoulli"><span class="toc-section-number">2.1</span>  Phân phối Bernoulli</a></li>
+  <li><a href="#phân-phối-binomial" id="toc-phân-phối-binomial" class="nav-link" data-scroll-target="#phân-phối-binomial"><span class="toc-section-number">2.2</span>  Phân phối Binomial</a></li>
+  <li><a href="#phân-phối-poisson" id="toc-phân-phối-poisson" class="nav-link" data-scroll-target="#phân-phối-poisson"><span class="toc-section-number">2.3</span>  Phân phối Poisson</a></li>
+  <li><a href="#phân-phối-geometric" id="toc-phân-phối-geometric" class="nav-link" data-scroll-target="#phân-phối-geometric"><span class="toc-section-number">2.4</span>  Phân phối Geometric</a></li>
+  <li><a href="#phân-phối-exponential" id="toc-phân-phối-exponential" class="nav-link" data-scroll-target="#phân-phối-exponential"><span class="toc-section-number">2.5</span>  Phân phối Exponential</a></li>
+  <li><a href="#phân-phối-gaussian" id="toc-phân-phối-gaussian" class="nav-link" data-scroll-target="#phân-phối-gaussian"><span class="toc-section-number">2.6</span>  Phân phối Gaussian</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vochicong/xstk/edit/main/references.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vochicong/xstk/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/vochicong/xstk/blob/main/references.qmd" class="toc-action">View source</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vochicong/xstk/edit/main/13-distributions.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vochicong/xstk/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/vochicong/xstk/blob/main/13-distributions.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -210,7 +191,7 @@ $$
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Giáo trình</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Phân phối thường gặp</span></h1>
 </div>
 
 
@@ -224,71 +205,64 @@ $$
 
 </header>
 
-<section id="tham-khảo" class="level2">
-<h2 class="anchored" data-anchor-id="tham-khảo">Tham khảo</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-mitxProba" class="csl-entry" role="doc-biblioentry">
-John Tsitsiklis, Dimitri Bertsekas, Partick Jaillet. 2022.
-<span>“Probability - the Science of Uncertainty and Data.”</span> MITx.
-<a href="https://www.edx.org/course/probability-the-science-of-uncertainty-and-data">https://www.edx.org/course/probability-the-science-of-uncertainty-and-data</a>.
-</div>
-<div id="ref-mitxStats" class="csl-entry" role="doc-biblioentry">
-Philippe Rigollet, Tyler Maunu, Jan Christian Huetter. 2022.
-<span>“Fundamentals of Statistics.”</span> MITx. <a href="https://www.edx.org/course/fundamentals-of-statistics">https://www.edx.org/course/fundamentals-of-statistics</a>.
-</div>
-<div id="ref-wasserman2010statistics" class="csl-entry" role="doc-biblioentry">
-Wasserman, Larry. 2004. <em>All of Statistics : A Concise Course in
-Statistical Inference</em>. New York: Springer. <a href="https://archive.org/details/springer_10.1007-978-0-387-21736-9">https://archive.org/details/springer_10.1007-978-0-387-21736-9</a>.
-</div>
+<p>Có một số phân phối xác suất thông dụng.</p>
+<section id="phân-phối-bernoulli" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="phân-phối-bernoulli"><span class="header-section-number">2.1</span> Phân phối Bernoulli</h2>
+<div id="def-bernoulli" class="theorem definition">
+<p><span class="theorem-title"><strong>Def 2.1 </strong></span><span class="math inline">\(X\sim\Ber(p)\)</span> có <span class="math display">\[
+\P(X=1) = p = 1-\P(X=0)
+\]</span> và <span class="math inline">\(\E[X] = p, \V[X] = p(1-p)\)</span>.</p>
 </div>
 </section>
-<section id="mitx-18.6501x" class="level2">
-<h2 class="anchored" data-anchor-id="mitx-18.6501x">MITx 18.6501x</h2>
-<p>“Fundamentals of Statistics” (MITx 18.6501x ) là khóa học của <span class="citation" data-cites="mitxStats">Philippe Rigollet (<a href="references.html#ref-mitxStats" role="doc-biblioref">2022</a>)</span> đại học MIT dạy trên edX.</p>
-<section id="quy-định" class="level3">
-<h3 class="anchored" data-anchor-id="quy-định">Quy định</h3>
-<section id="kỳ-hạn" class="level4">
-<h4 class="anchored" data-anchor-id="kỳ-hạn">Kỳ hạn</h4>
-<ul>
-<li>Exercises and homework: <a href="https://learning.edx.org/course/course-v1:MITx+18.6501x+2T2022/dates">Wednesdays 11:59AM UTC (Wed. 20:59 JST)</a></li>
-<li>Exams (48 hours): Tuesdays 11:59AM UTC(Tue. 20:59 JST)</li>
-</ul>
+<section id="phân-phối-binomial" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="phân-phối-binomial"><span class="header-section-number">2.2</span> Phân phối Binomial</h2>
+<div id="def-binomial" class="theorem definition">
+<p><span class="theorem-title"><strong>Def 2.2 </strong></span><span class="math inline">\(X\sim\Bin(n, p)\)</span> với <span class="math inline">\(n\in\N, p\in(0,1)\)</span> mô tả tổng số lần thành công của <span class="math inline">\(n\)</span> thí nghiệm độc lập <span class="math inline">\(X_1,\ldots,X_n \iid \Ber(p).\)</span> Ta có <span class="math display">\[
+\P(X=k) = \binom{n}{k}p^{k}(1-p)^{n-k}
+\]</span> và <span class="math inline">\(\E[X] = np, \V[X] = np(1-p)\)</span>.</p>
+</div>
 </section>
-<section id="thời-gian-cần-thiết" class="level4">
-<h4 class="anchored" data-anchor-id="thời-gian-cần-thiết">Thời gian cần thiết</h4>
-<p>Mỗi tuần khoảng hơn 12 tiếng</p>
-<ul>
-<li>5-7 hours on exercises, including 3 hours of lecture clips</li>
-<li>1-2 hours watching recitations</li>
-<li>5-7 hours for weekly problem sets</li>
-</ul>
+<section id="phân-phối-poisson" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="phân-phối-poisson"><span class="header-section-number">2.3</span> Phân phối Poisson</h2>
+<div id="def-poisson" class="theorem definition">
+<p><span class="theorem-title"><strong>Def 2.3 </strong></span><span class="math inline">\(X\sim\Poi(\lambda)\)</span> thường dùng để mô tả số lần <span class="math inline">\(k\)</span> mà sự kiện phát sinh trong một giới hạn cố định, với giả định tần suất phát sinh sự kiện là <span class="math inline">\(\lambda &gt; 0\)</span> cố định, và các sự kiện phát sinh độc lập. <span class="math display">\[
+\P(X=k) = e^{-\lambda}
+\frac{\lambda^k}{k!}, \,k=0,1,2,\ldots
+\]</span> và <span class="math inline">\(\E[X] = \V[X] = \lambda\)</span>.</p>
+</div>
+<p>Khi <span class="math inline">\(n\)</span> đủ lớn và <span class="math inline">\(p\)</span> đủ nhỏ thì <span class="math inline">\(\Poi(np)\)</span> gần với <span class="math inline">\(\Bin(n,p)\)</span>.</p>
 </section>
-<section id="tính-điểm" class="level4">
-<h4 class="anchored" data-anchor-id="tính-điểm">Tính điểm</h4>
-<p>Điểm thi đậu chứng chỉ là 60% <a href="https://learning.edx.org/course/course-v1:MITx+18.6501x+2T2022/block-v1:MITx+18.6501x+2T2022+type@sequential+block@u0s1_overview/block-v1:MITx+18.6501x+2T2022+type@vertical+block@u0s1_overview-tab5">tổng số điểm</a> tối đa.</p>
-<ul>
-<li>20% for the lecture exercises (divided equally among the 20 out of 23 lectures)</li>
-<li>20% for the homeworks (divided equally among 10 (out of 12) homeworks)</li>
-<li>18% for the first midterm exam (timed)</li>
-<li>18% for the second midterm exam (timed)</li>
-<li>24% for the final exam (timed)</li>
-</ul>
+<section id="phân-phối-geometric" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="phân-phối-geometric"><span class="header-section-number">2.4</span> Phân phối Geometric</h2>
+<div id="def-geomdist" class="theorem definition">
+<p><span class="theorem-title"><strong>Def 2.4 </strong></span><span class="math inline">\(X\sim\text{Geom}(p), p \in (0,1)\)</span> có <span class="math display">\[
+\P(X=k)=p(1-p)^{k-1}, k=1,2,\ldots
+\]</span> và <span class="math inline">\(\E[X]=1/p,\V[X]=(1-p)/p^2.\)</span></p>
+</div>
 </section>
+<section id="phân-phối-exponential" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="phân-phối-exponential"><span class="header-section-number">2.5</span> Phân phối Exponential</h2>
+<div id="def-expdist" class="theorem definition">
+<p><span class="theorem-title"><strong>Def 2.5 </strong></span><span class="math inline">\(X\sim\text{Exp}(\lambda)\)</span> dùng để mô tả khoảng cách <span class="math inline">\(x\)</span> giữa hai lần phát sinh của một chuỗi sự kiện kiểu Poisson (hai lần phát sinh sự kiện liên tiếp là độc lập với nhau, và tần suất phát sinh <span class="math inline">\(\lambda&gt;0\)</span> là cố định). Có <span class="math display">\[
+f(x)={\lambda}e^{-\lambda x},x\in\R_+
+\]</span> và <span class="math inline">\(\E[X]=1/\lambda,\V[X]=1/\lambda^2.\)</span></p>
+</div>
 </section>
-<section id="unit-1" class="level3">
-<h3 class="anchored" data-anchor-id="unit-1">Unit 1</h3>
-<p>Ôn lại kiến thức về xác suất “Probability - The Science of Uncertainty and Data” by <span class="citation" data-cites="mitxProba">John Tsitsiklis (<a href="references.html#ref-mitxProba" role="doc-biblioref">2022</a>)</span>.</p>
-</section>
-<section id="unit-2" class="level3">
-<h3 class="anchored" data-anchor-id="unit-2">Unit 2</h3>
-<p>Học về nền tảng của suy luận (Foundations of Inference).</p>
-<ul>
-<li>Lecture 3: Mô hình xác suất có số biến hữu hạn (Parametric Statistical Models)</li>
-<li>Lecture 4: Dự đoán với số biến hữu hạn và khoảng tự tin (Parametric Estimation and Confidence Intervals) <span class="math inline">\({}\)</span></li>
-</ul>
+<section id="phân-phối-gaussian" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="phân-phối-gaussian"><span class="header-section-number">2.6</span> Phân phối Gaussian</h2>
+<div id="def-gaussian" class="theorem definition">
+<p><span class="theorem-title"><strong>Def 2.6 </strong></span><span class="math inline">\(X\sim\Gaus(\mu,\sigma^2)\)</span> có mật độ <span class="math display">\[
+f(x) =
+\frac{1}{\sqrt{\pi 2\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right),
+x\in\R
+\]</span> và <span class="math inline">\(\E[X]=\mu,\V[X]=\sigma^2\)</span>.</p>
+</div>
+<div id="thm-sum-gaussian" class="theorem">
+<p><span class="theorem-title"><strong>Thm 2.1 </strong></span>Nếu <span class="math inline">\(X_i \sim\Gaus(\mu_i,\sigma_i^2) (i=1,\ldots,n)\)</span> thì</p>
+<p><span class="math display">\[\sum_{i=1}^n X_i\sim\Gaus\left(\sum_{i=1}^n \mu_i,\sum_{i=1}^n \sigma_i^2\right)\]</span></p>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -392,11 +366,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./30-est-method.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ước lượng</span></span>
+      <a href="./10-proba-intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Xác suất</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./15-proba-converge.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Hội tụ xác suất</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

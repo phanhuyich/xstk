@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>XSTK - 2&nbsp; Hội tụ xác suất</title>
+<title>XSTK - 3&nbsp; Hội tụ xác suất</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./20-stat-intro.html" rel="next">
-<link href="./10-proba-intro.html" rel="prev">
+<link href="./13-distributions.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hội tụ xác suất</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Hội tụ xác suất</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -126,17 +126,22 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./15-proba-converge.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hội tụ xác suất</span></a>
+  <a href="./13-distributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Phân phối thường gặp</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./20-stat-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Thống kê</span></a>
+  <a href="./15-proba-converge.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Hội tụ xác suất</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./30-est-method.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ước lượng</span></a>
+  <a href="./20-stat-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Thống kê</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./30-est-method.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ước lượng</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -153,15 +158,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#hội-tụ-xác-suất" id="toc-hội-tụ-xác-suất" class="nav-link active" data-scroll-target="#hội-tụ-xác-suất"><span class="toc-section-number">2.1</span>  Hội tụ xác suất</a></li>
-  <li><a href="#độ-mạnh" id="toc-độ-mạnh" class="nav-link" data-scroll-target="#độ-mạnh"><span class="toc-section-number">2.2</span>  Độ mạnh</a></li>
-  <li><a href="#tổng-và-tích" id="toc-tổng-và-tích" class="nav-link" data-scroll-target="#tổng-và-tích"><span class="toc-section-number">2.3</span>  Tổng và tích</a></li>
-  <li><a href="#slutsky" id="toc-slutsky" class="nav-link" data-scroll-target="#slutsky"><span class="toc-section-number">2.4</span>  Slutsky</a></li>
-  <li><a href="#ánh-xạ-liên-tục" id="toc-ánh-xạ-liên-tục" class="nav-link" data-scroll-target="#ánh-xạ-liên-tục"><span class="toc-section-number">2.5</span>  Ánh xạ liên tục</a></li>
-  <li><a href="#đại-đa-số-law-of-large-numbers" id="toc-đại-đa-số-law-of-large-numbers" class="nav-link" data-scroll-target="#đại-đa-số-law-of-large-numbers"><span class="toc-section-number">2.6</span>  Đại đa số (Law of Large Numbers)</a></li>
-  <li><a href="#hội-tụ-trung-tâm-central-limit" id="toc-hội-tụ-trung-tâm-central-limit" class="nav-link" data-scroll-target="#hội-tụ-trung-tâm-central-limit"><span class="toc-section-number">2.7</span>  Hội tụ trung tâm (Central Limit)</a></li>
-  <li><a href="#bất-đẳng-thức-hoefding" id="toc-bất-đẳng-thức-hoefding" class="nav-link" data-scroll-target="#bất-đẳng-thức-hoefding"><span class="toc-section-number">2.8</span>  Bất đẳng thức Hoefding</a></li>
-  <li><a href="#phương-pháp-delta" id="toc-phương-pháp-delta" class="nav-link" data-scroll-target="#phương-pháp-delta"><span class="toc-section-number">2.9</span>  Phương pháp Delta</a></li>
+  <li><a href="#hội-tụ-xác-suất" id="toc-hội-tụ-xác-suất" class="nav-link active" data-scroll-target="#hội-tụ-xác-suất"><span class="toc-section-number">3.1</span>  Hội tụ xác suất</a></li>
+  <li><a href="#độ-mạnh" id="toc-độ-mạnh" class="nav-link" data-scroll-target="#độ-mạnh"><span class="toc-section-number">3.2</span>  Độ mạnh</a></li>
+  <li><a href="#tổng-và-tích" id="toc-tổng-và-tích" class="nav-link" data-scroll-target="#tổng-và-tích"><span class="toc-section-number">3.3</span>  Tổng và tích</a></li>
+  <li><a href="#slutsky" id="toc-slutsky" class="nav-link" data-scroll-target="#slutsky"><span class="toc-section-number">3.4</span>  Slutsky</a></li>
+  <li><a href="#ánh-xạ-liên-tục" id="toc-ánh-xạ-liên-tục" class="nav-link" data-scroll-target="#ánh-xạ-liên-tục"><span class="toc-section-number">3.5</span>  Ánh xạ liên tục</a></li>
+  <li><a href="#đại-đa-số-law-of-large-numbers" id="toc-đại-đa-số-law-of-large-numbers" class="nav-link" data-scroll-target="#đại-đa-số-law-of-large-numbers"><span class="toc-section-number">3.6</span>  Đại đa số (Law of Large Numbers)</a></li>
+  <li><a href="#hội-tụ-trung-tâm-central-limit" id="toc-hội-tụ-trung-tâm-central-limit" class="nav-link" data-scroll-target="#hội-tụ-trung-tâm-central-limit"><span class="toc-section-number">3.7</span>  Hội tụ trung tâm (Central Limit)</a></li>
+  <li><a href="#bất-đẳng-thức-hoefding" id="toc-bất-đẳng-thức-hoefding" class="nav-link" data-scroll-target="#bất-đẳng-thức-hoefding"><span class="toc-section-number">3.8</span>  Bất đẳng thức Hoefding</a></li>
+  <li><a href="#phương-pháp-delta" id="toc-phương-pháp-delta" class="nav-link" data-scroll-target="#phương-pháp-delta"><span class="toc-section-number">3.9</span>  Phương pháp Delta</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vochicong/xstk/edit/main/15-proba-converge.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vochicong/xstk/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/vochicong/xstk/blob/main/15-proba-converge.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
@@ -189,7 +194,7 @@ $$
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hội tụ xác suất</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Hội tụ xác suất</span></h1>
 </div>
 
 
@@ -204,10 +209,10 @@ $$
 </header>
 
 <p>Có một số kiểu hội tụ của biến ngẫu nhiên.</p>
-<section id="hội-tụ-xác-suất" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="hội-tụ-xác-suất"><span class="header-section-number">2.1</span> Hội tụ xác suất</h2>
+<section id="hội-tụ-xác-suất" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="hội-tụ-xác-suất"><span class="header-section-number">3.1</span> Hội tụ xác suất</h2>
 <div id="def-conv-proba" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 2.1 </strong></span>Cho một chuỗi biến ngẫu nhiên <span class="math inline">\(X_1,X_2,\ldotp\)</span> và một biến ngẫu nhiên <span class="math inline">\(X\)</span>.</p>
+<p><span class="theorem-title"><strong>Def 3.1 </strong></span>Cho một chuỗi biến ngẫu nhiên <span class="math inline">\(X_1,X_2,\ldotp\)</span> và một biến ngẫu nhiên <span class="math inline">\(X\)</span>.</p>
 <ol type="1">
 <li><p>Hội tụ gần tuyệt đối: <span class="math display">\[
 X_n \xrightarrow[n\to\infty]{\as} X \iff
@@ -230,10 +235,10 @@ X_n \xrightarrow[n\to\infty]{(d)} X \iff
 </ol>
 </div>
 </section>
-<section id="độ-mạnh" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="độ-mạnh"><span class="header-section-number">2.2</span> Độ mạnh</h2>
+<section id="độ-mạnh" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="độ-mạnh"><span class="header-section-number">3.2</span> Độ mạnh</h2>
 <div id="thm-strength" class="theorem">
-<p><span class="theorem-title"><strong>Thm 2.1 </strong></span>Xếp theo thứ tự từ mạnh đến yếu:</p>
+<p><span class="theorem-title"><strong>Thm 3.1 </strong></span>Xếp theo thứ tự từ mạnh đến yếu:</p>
 <p><span class="math display">\[
 X_n \xrightarrow[n\to\infty]{\as} X \implies
 X_n \xrightarrow[n\to\infty]{\P} X \implies
@@ -244,60 +249,60 @@ X_n \xrightarrow[n\to\infty]{(d)} X.
 <p>Nếu <span class="math inline">\(X_n\xrightarrow[n\to\infty]{\P} X\)</span> thì <span class="math inline">\(\P(a\leq X_n\leq b) \xrightarrow[n\to\infty]{} \P(a\leq X\leq b)\)</span> với mọi khoảng <span class="math inline">\([a,b]\)</span>.</p>
 </div>
 </section>
-<section id="tổng-và-tích" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="tổng-và-tích"><span class="header-section-number">2.3</span> Tổng và tích</h2>
+<section id="tổng-và-tích" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="tổng-và-tích"><span class="header-section-number">3.3</span> Tổng và tích</h2>
 <div id="thm-convege" class="theorem">
-<p><span class="theorem-title"><strong>Thm 2.2 </strong></span>Nếu có hai chuỗi biến ngẫu nhiên <span class="math inline">\(X_n, Y_n\)</span> hội tụ gần tuyệt đối hoặc hội tụ theo xác suất về <span class="math inline">\(X, Y\)</span>, thì tổng <span class="math inline">\(X_n+Y_n\)</span> và tích <span class="math inline">\(X_n Y_n\)</span> cũng hội tụ tương tự (gần tuyệt đối, hoặc theo xác suất) về tổng <span class="math inline">\(X+Y\)</span> và tích <span class="math inline">\(XY\)</span>.</p>
+<p><span class="theorem-title"><strong>Thm 3.2 </strong></span>Nếu có hai chuỗi biến ngẫu nhiên <span class="math inline">\(X_n, Y_n\)</span> hội tụ gần tuyệt đối hoặc hội tụ theo xác suất về <span class="math inline">\(X, Y\)</span>, thì tổng <span class="math inline">\(X_n+Y_n\)</span> và tích <span class="math inline">\(X_n Y_n\)</span> cũng hội tụ tương tự (gần tuyệt đối, hoặc theo xác suất) về tổng <span class="math inline">\(X+Y\)</span> và tích <span class="math inline">\(XY\)</span>.</p>
 </div>
 </section>
-<section id="slutsky" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="slutsky"><span class="header-section-number">2.4</span> Slutsky</h2>
+<section id="slutsky" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="slutsky"><span class="header-section-number">3.4</span> Slutsky</h2>
 <div id="thm-slutsky" class="theorem">
-<p><span class="theorem-title"><strong>Thm 2.3 </strong></span>Nếu <span class="math inline">\(Y_n \xrightarrow[]{\P} y\)</span>, <span class="math inline">\(y\)</span> là một số thực cố định thì có thể nới lỏng điều kiện đối với <span class="math inline">\(X_n\)</span> thành hội tụ theo phân phối.</p>
+<p><span class="theorem-title"><strong>Thm 3.3 </strong></span>Nếu <span class="math inline">\(Y_n \xrightarrow[]{\P} y\)</span>, <span class="math inline">\(y\)</span> là một số thực cố định thì có thể nới lỏng điều kiện đối với <span class="math inline">\(X_n\)</span> thành hội tụ theo phân phối.</p>
 </div>
 </section>
-<section id="ánh-xạ-liên-tục" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="ánh-xạ-liên-tục"><span class="header-section-number">2.5</span> Ánh xạ liên tục</h2>
+<section id="ánh-xạ-liên-tục" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="ánh-xạ-liên-tục"><span class="header-section-number">3.5</span> Ánh xạ liên tục</h2>
 <div id="thm-contmap" class="theorem">
-<p><span class="theorem-title"><strong>Thm 2.4 </strong></span>(Continuous mapping) Nếu <span class="math inline">\(X_n\xrightarrow[n\to\infty]{\as/\P/(d)} X\)</span> thì đối với mọi hàm <span class="math inline">\(f\)</span> liên tục:</p>
+<p><span class="theorem-title"><strong>Thm 3.4 </strong></span>(Continuous mapping) Nếu <span class="math inline">\(X_n\xrightarrow[n\to\infty]{\as/\P/(d)} X\)</span> thì đối với mọi hàm <span class="math inline">\(f\)</span> liên tục:</p>
 <ul>
 <li><span class="math inline">\(f(X_n)\xrightarrow[n\to\infty]{\as/\P/(d)} f(X)\)</span>.</li>
 <li><span class="math inline">\(\E[f(X_n)]\xrightarrow[n\to\infty]{}\E[f(X)]\)</span> nếu <span class="math inline">\(f\)</span> còn bị chặn.</li>
 </ul>
 </div>
 </section>
-<section id="đại-đa-số-law-of-large-numbers" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="đại-đa-số-law-of-large-numbers"><span class="header-section-number">2.6</span> Đại đa số (Law of Large Numbers)</h2>
+<section id="đại-đa-số-law-of-large-numbers" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="đại-đa-số-law-of-large-numbers"><span class="header-section-number">3.6</span> Đại đa số (Law of Large Numbers)</h2>
 <div id="thm-lln" class="theorem">
-<p><span class="theorem-title"><strong>Thm 2.5 </strong></span>Cho <span class="math inline">\(n\)</span> biến iid <span class="math inline">\(X_1, X_2,\ldotp,X_n\)</span> có chung <span class="math inline">\(\E[X_i]=\mu&lt;\infty\)</span>. Khi đó: <span class="math display">\[\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}
+<p><span class="theorem-title"><strong>Thm 3.5 </strong></span>Cho <span class="math inline">\(n\)</span> biến iid <span class="math inline">\(X_1, X_2,\ldotp,X_n\)</span> có chung <span class="math inline">\(\E[X_i]=\mu&lt;\infty\)</span>. Khi đó: <span class="math display">\[\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}
 \xrightarrow[n\to\infty]{\P,\,\as}\mu.
 \]</span></p>
 </div>
 </section>
-<section id="hội-tụ-trung-tâm-central-limit" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="hội-tụ-trung-tâm-central-limit"><span class="header-section-number">2.7</span> Hội tụ trung tâm (Central Limit)</h2>
+<section id="hội-tụ-trung-tâm-central-limit" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="hội-tụ-trung-tâm-central-limit"><span class="header-section-number">3.7</span> Hội tụ trung tâm (Central Limit)</h2>
 <div id="thm-clt" class="theorem">
-<p><span class="theorem-title"><strong>Thm 2.6 </strong></span>Giả sử thêm là <span class="math inline">\(\V[X_i]=\sigma^2&lt;\infty\)</span>. Khi đó <span class="math display">\[
+<p><span class="theorem-title"><strong>Thm 3.6 </strong></span>Giả sử thêm là <span class="math inline">\(\V[X_i]=\sigma^2&lt;\infty\)</span>. Khi đó <span class="math display">\[
 \sqrt{n}(\bar{X}_n-\mu)
 \xrightarrow[n\to\infty]{(d)}
 \Gaus(0,\sigma^2).
 \]</span></p>
 </div>
 </section>
-<section id="bất-đẳng-thức-hoefding" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="bất-đẳng-thức-hoefding"><span class="header-section-number">2.8</span> Bất đẳng thức Hoefding</h2>
+<section id="bất-đẳng-thức-hoefding" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="bất-đẳng-thức-hoefding"><span class="header-section-number">3.8</span> Bất đẳng thức Hoefding</h2>
 <div id="thm-hoeffding" class="theorem">
-<p><span class="theorem-title"><strong>Thm 2.7 </strong></span>Nếu có một khoảng cố định <span class="math inline">\([a,b]\)</span> gần như tuyệt đối (almost surely) chứa các biến <span class="math inline">\(X_i (i=1,2,\ldots,n)\)</span> thì</p>
+<p><span class="theorem-title"><strong>Thm 3.7 </strong></span>Nếu có một khoảng cố định <span class="math inline">\([a,b]\)</span> gần như tuyệt đối (almost surely) chứa các biến <span class="math inline">\(X_i (i=1,2,\ldots,n)\)</span> thì</p>
 <p><span class="math display">\[
 \P[|\bar{X}_n-\mu|\geq\epsilon]\leq
 2e^{-\frac{2n\epsilon^2}{(b-a)^2}},\quad\forall\epsilon&gt;0.
 \]</span></p>
 </div>
 </section>
-<section id="phương-pháp-delta" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="phương-pháp-delta"><span class="header-section-number">2.9</span> Phương pháp Delta</h2>
+<section id="phương-pháp-delta" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="phương-pháp-delta"><span class="header-section-number">3.9</span> Phương pháp Delta</h2>
 <div id="thm-delta-method" class="theorem">
-<p><span class="theorem-title"><strong>Thm 2.8 </strong></span>Giả sử chuỗi <span class="math inline">\((\theta_n)_{n\geq 1}\)</span> chuẩn tiến với phương sai <span class="math inline">\(\sigma^2\)</span> về một điểm <span class="math inline">\(\theta\in\R\)</span>. Giả sử <span class="math inline">\(g:\R\to\R\)</span> có vi phân <span class="math inline">\(g^\prime\)</span> liên tục tại <span class="math inline">\(\theta\)</span>. Khi đó, <span class="math display">\[
+<p><span class="theorem-title"><strong>Thm 3.8 </strong></span>Giả sử chuỗi <span class="math inline">\((\theta_n)_{n\geq 1}\)</span> chuẩn tiến với phương sai <span class="math inline">\(\sigma^2\)</span> về một điểm <span class="math inline">\(\theta\in\R\)</span>. Giả sử <span class="math inline">\(g:\R\to\R\)</span> có vi phân <span class="math inline">\(g^\prime\)</span> liên tục tại <span class="math inline">\(\theta\)</span>. Khi đó, <span class="math display">\[
 \sqrt{n}(g(\theta_n)-g(\theta))
 \xrightarrow[n\to\infty]{(d)}
 \Gaus\left(0,\left(\sigma g^\prime(\theta)\right)^2\right)
@@ -408,13 +413,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./10-proba-intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Xác suất</span></span>
+      <a href="./13-distributions.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Phân phối thường gặp</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./20-stat-intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Thống kê</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Thống kê</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

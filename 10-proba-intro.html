@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./15-proba-converge.html" rel="next">
+<link href="./13-distributions.html" rel="next">
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -126,17 +126,22 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./15-proba-converge.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hội tụ xác suất</span></a>
+  <a href="./13-distributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Phân phối thường gặp</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./20-stat-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Thống kê</span></a>
+  <a href="./15-proba-converge.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Hội tụ xác suất</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./30-est-method.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ước lượng</span></a>
+  <a href="./20-stat-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Thống kê</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./30-est-method.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ước lượng</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -159,9 +164,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#biến-ngẫu-nhiên" id="toc-biến-ngẫu-nhiên" class="nav-link" data-scroll-target="#biến-ngẫu-nhiên"><span class="toc-section-number">1.2.1</span>  Biến ngẫu nhiên</a></li>
   <li><a href="#điểm-cắt" id="toc-điểm-cắt" class="nav-link" data-scroll-target="#điểm-cắt"><span class="toc-section-number">1.2.2</span>  Điểm cắt</a></li>
   <li><a href="#độc-lập" id="toc-độc-lập" class="nav-link" data-scroll-target="#độc-lập"><span class="toc-section-number">1.2.3</span>  Độc lập</a></li>
-  <li><a href="#xác-suất-hợp" id="toc-xác-suất-hợp" class="nav-link" data-scroll-target="#xác-suất-hợp"><span class="toc-section-number">1.2.4</span>  Xác suất hợp</a></li>
-  <li><a href="#xác-suất-có-điều-kiện" id="toc-xác-suất-có-điều-kiện" class="nav-link" data-scroll-target="#xác-suất-có-điều-kiện"><span class="toc-section-number">1.2.5</span>  Xác suất có điều kiện</a></li>
-  <li><a href="#định-lý-baye" id="toc-định-lý-baye" class="nav-link" data-scroll-target="#định-lý-baye"><span class="toc-section-number">1.2.6</span>  Định lý Baye</a></li>
+  <li><a href="#iid" id="toc-iid" class="nav-link" data-scroll-target="#iid"><span class="toc-section-number">1.2.4</span>  IID</a></li>
+  <li><a href="#xác-suất-hợp" id="toc-xác-suất-hợp" class="nav-link" data-scroll-target="#xác-suất-hợp"><span class="toc-section-number">1.2.5</span>  Xác suất hợp</a></li>
+  <li><a href="#xác-suất-có-điều-kiện" id="toc-xác-suất-có-điều-kiện" class="nav-link" data-scroll-target="#xác-suất-có-điều-kiện"><span class="toc-section-number">1.2.6</span>  Xác suất có điều kiện</a></li>
+  <li><a href="#định-lý-baye" id="toc-định-lý-baye" class="nav-link" data-scroll-target="#định-lý-baye"><span class="toc-section-number">1.2.7</span>  Định lý Baye</a></li>
   </ul></li>
   <li><a href="#trung-bình" id="toc-trung-bình" class="nav-link" data-scroll-target="#trung-bình"><span class="toc-section-number">1.3</span>  Trung bình</a></li>
   <li><a href="#hiệp-phương-sai" id="toc-hiệp-phương-sai" class="nav-link" data-scroll-target="#hiệp-phương-sai"><span class="toc-section-number">1.4</span>  Hiệp phương sai</a></li>
@@ -169,16 +175,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#tích-suất" id="toc-tích-suất" class="nav-link" data-scroll-target="#tích-suất"><span class="toc-section-number">1.6</span>  Tích suất</a>
   <ul class="collapse">
   <li><a href="#hàm-tạo-tích-suất" id="toc-hàm-tạo-tích-suất" class="nav-link" data-scroll-target="#hàm-tạo-tích-suất"><span class="toc-section-number">1.6.1</span>  Hàm tạo tích suất</a></li>
-  </ul></li>
-  <li><a href="#phân-phối" id="toc-phân-phối" class="nav-link" data-scroll-target="#phân-phối"><span class="toc-section-number">1.7</span>  Phân phối</a>
-  <ul class="collapse">
-  <li><a href="#iid" id="toc-iid" class="nav-link" data-scroll-target="#iid"><span class="toc-section-number">1.7.1</span>  IID</a></li>
-  <li><a href="#phân-phối-bernoulli" id="toc-phân-phối-bernoulli" class="nav-link" data-scroll-target="#phân-phối-bernoulli"><span class="toc-section-number">1.7.2</span>  Phân phối Bernoulli</a></li>
-  <li><a href="#phân-phối-binomial" id="toc-phân-phối-binomial" class="nav-link" data-scroll-target="#phân-phối-binomial"><span class="toc-section-number">1.7.3</span>  Phân phối Binomial</a></li>
-  <li><a href="#phân-phối-poisson" id="toc-phân-phối-poisson" class="nav-link" data-scroll-target="#phân-phối-poisson"><span class="toc-section-number">1.7.4</span>  Phân phối Poisson</a></li>
-  <li><a href="#phân-phối-geometric" id="toc-phân-phối-geometric" class="nav-link" data-scroll-target="#phân-phối-geometric"><span class="toc-section-number">1.7.5</span>  Phân phối Geometric</a></li>
-  <li><a href="#phân-phối-exponential" id="toc-phân-phối-exponential" class="nav-link" data-scroll-target="#phân-phối-exponential"><span class="toc-section-number">1.7.6</span>  Phân phối Exponential</a></li>
-  <li><a href="#phân-phối-gaussian" id="toc-phân-phối-gaussian" class="nav-link" data-scroll-target="#phân-phối-gaussian"><span class="toc-section-number">1.7.7</span>  Phân phối Gaussian</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vochicong/xstk/edit/main/10-proba-intro.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vochicong/xstk/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/vochicong/xstk/blob/main/10-proba-intro.qmd" class="toc-action">View source</a></p></div></div></nav>
@@ -257,21 +253,27 @@ $$
 <p>Hai biến <span class="math inline">\(X\)</span> và <span class="math inline">\(Y\)</span> là độc lập nếu hai sự kiện <span class="math inline">\(X\leq x\)</span> và <span class="math inline">\(Y\leq y\)</span> là độc lập đối với mọi <span class="math inline">\(x,y\)</span>.</p>
 </div>
 </section>
-<section id="xác-suất-hợp" class="level3" data-number="1.2.4">
-<h3 data-number="1.2.4" class="anchored" data-anchor-id="xác-suất-hợp"><span class="header-section-number">1.2.4</span> Xác suất hợp</h3>
-<div id="def-joint-proba" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.4 </strong></span>Ký hiệu <span class="math inline">\(\P(A, B)\)</span> hoặc <span class="math inline">\(\P(A\cap B)\)</span> chỉ xác suất sự kiện <span class="math inline">\(A\)</span> và sự kiện <span class="math inline">\(B\)</span> đồng thời xảy ra.</p>
+<section id="iid" class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="iid"><span class="header-section-number">1.2.4</span> IID</h3>
+<div id="def-iid" class="theorem definition">
+<p><span class="theorem-title"><strong>Def 1.4 </strong></span>Các biến ngẫu nhiên <span class="math inline">\(X_1, X_2, \ldotp\)</span> được gọi là iid (“independent and identically distributed”, “độc lập và phân phối giống nhau”) nếu chúng cùng tuân theo duy nhất một phân phối xác suất, và từng cặp biến là độc lập với nhau. Dùng biến <span class="math inline">\(X\)</span> để thể hiện phân phối xác suất chung đó, ta viết <span class="math display">\[X_1,\ldots,X_n \iid X.\]</span></p>
 </div>
 </section>
-<section id="xác-suất-có-điều-kiện" class="level3" data-number="1.2.5">
-<h3 data-number="1.2.5" class="anchored" data-anchor-id="xác-suất-có-điều-kiện"><span class="header-section-number">1.2.5</span> Xác suất có điều kiện</h3>
+<section id="xác-suất-hợp" class="level3" data-number="1.2.5">
+<h3 data-number="1.2.5" class="anchored" data-anchor-id="xác-suất-hợp"><span class="header-section-number">1.2.5</span> Xác suất hợp</h3>
+<div id="def-joint-proba" class="theorem definition">
+<p><span class="theorem-title"><strong>Def 1.5 </strong></span>Ký hiệu <span class="math inline">\(\P(A, B)\)</span> hoặc <span class="math inline">\(\P(A\cap B)\)</span> chỉ xác suất sự kiện <span class="math inline">\(A\)</span> và sự kiện <span class="math inline">\(B\)</span> đồng thời xảy ra.</p>
+</div>
+</section>
+<section id="xác-suất-có-điều-kiện" class="level3" data-number="1.2.6">
+<h3 data-number="1.2.6" class="anchored" data-anchor-id="xác-suất-có-điều-kiện"><span class="header-section-number">1.2.6</span> Xác suất có điều kiện</h3>
 <div id="def-conditional-proba" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.5 </strong></span>Ký hiệu <span class="math inline">\(\P(A|B)\)</span> hoặc <span class="math inline">\(\P_B(A)\)</span> chỉ xác suất của sự kiện <span class="math inline">\(A\)</span>, khi biết sự kiện <span class="math inline">\(B\)</span> đã xảy ra,</p>
+<p><span class="theorem-title"><strong>Def 1.6 </strong></span>Ký hiệu <span class="math inline">\(\P(A|B)\)</span> hoặc <span class="math inline">\(\P_B(A)\)</span> chỉ xác suất của sự kiện <span class="math inline">\(A\)</span>, khi biết sự kiện <span class="math inline">\(B\)</span> đã xảy ra,</p>
 <p><span class="math display">\[\P(A|B) = \frac{\P(A,B)}{\P(B)}.\]</span></p>
 </div>
 </section>
-<section id="định-lý-baye" class="level3" data-number="1.2.6">
-<h3 data-number="1.2.6" class="anchored" data-anchor-id="định-lý-baye"><span class="header-section-number">1.2.6</span> Định lý Baye</h3>
+<section id="định-lý-baye" class="level3" data-number="1.2.7">
+<h3 data-number="1.2.7" class="anchored" data-anchor-id="định-lý-baye"><span class="header-section-number">1.2.7</span> Định lý Baye</h3>
 <div id="thm-bayes" class="theorem">
 <p><span class="theorem-title"><strong>Thm 1.1 </strong></span><span class="math display">\[\P(A|B) = \frac{\P(B|A)\P(A)}{\P(B)}
 = \frac{\P(B|A)\P(A)}{\P(B|A)\P(A) + \P(B|A^c)\P(A^c)}
@@ -282,7 +284,7 @@ $$
 <section id="trung-bình" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="trung-bình"><span class="header-section-number">1.3</span> Trung bình</h2>
 <div id="def-expectation" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.6 </strong></span><strong>Trung bình</strong>, hay <strong>giá trị kỳ vọng</strong> của biến X là</p>
+<p><span class="theorem-title"><strong>Def 1.7 </strong></span><strong>Trung bình</strong>, hay <strong>giá trị kỳ vọng</strong> của biến X là</p>
 <p><span class="math display">\[
 \E[X]\is
 \int x dF(x)
@@ -301,7 +303,7 @@ $$
 <section id="hiệp-phương-sai" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="hiệp-phương-sai"><span class="header-section-number">1.4</span> Hiệp phương sai</h2>
 <div id="def-covar" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.7 </strong></span><span class="math display">\[\begin{align}
+<p><span class="theorem-title"><strong>Def 1.8 </strong></span><span class="math display">\[\begin{align}
 \textrm{Cov}[X,Y] &amp;\is \E[(X-\E[X])(Y-\E[Y])] \\
 &amp;\equiv \E[XY] - \E[X]\E[Y]
 \end{align}\]</span></p>
@@ -311,7 +313,7 @@ $$
 <section id="phương-sai" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="phương-sai"><span class="header-section-number">1.5</span> Phương sai</h2>
 <div id="def-variance" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.8 </strong></span>Phương sai, hay phân tán (variance, 分散) là <span class="math display">\[
+<p><span class="theorem-title"><strong>Def 1.9 </strong></span>Phương sai, hay phân tán (variance, 分散) là <span class="math display">\[
 \V[X]\is\textrm{Cov}[X,X]\equiv\E[X^2]-\E^2[X].
 \]</span></p>
 </div>
@@ -328,73 +330,11 @@ $$
 <section id="hàm-tạo-tích-suất" class="level3" data-number="1.6.1">
 <h3 data-number="1.6.1" class="anchored" data-anchor-id="hàm-tạo-tích-suất"><span class="header-section-number">1.6.1</span> Hàm tạo tích suất</h3>
 <div id="def-mgf" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.9 </strong></span>“Moment generation function (MGF)” của biến <span class="math inline">\(X\)</span> là <span class="math display">\[\psi_X(t)\is\E[e^{tX}], t\in\R.\]</span></p>
+<p><span class="theorem-title"><strong>Def 1.10 </strong></span>“Moment generation function (MGF)” của biến <span class="math inline">\(X\)</span> là <span class="math display">\[\psi_X(t)\is\E[e^{tX}], t\in\R.\]</span></p>
 </div>
 <p>Nếu MGF “tồn tại” xung quanh <span class="math inline">\(0\)</span> thì đạo hàm cấp <span class="math inline">\(k\)</span> của <span class="math inline">\(\psi\)</span> tại <span class="math inline">\(0\)</span> chính là: <span class="math display">\[
 \psi_X^{(k)}(0)\equiv \E[X^k].
 \]</span></p>
-</section>
-</section>
-<section id="phân-phối" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="phân-phối"><span class="header-section-number">1.7</span> Phân phối</h2>
-<p>Có một số phân phối xác suất thông dụng.</p>
-<section id="iid" class="level3" data-number="1.7.1">
-<h3 data-number="1.7.1" class="anchored" data-anchor-id="iid"><span class="header-section-number">1.7.1</span> IID</h3>
-<div id="def-iid" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.10 </strong></span>Các biến ngẫu nhiên <span class="math inline">\(X_1, X_2, \ldotp\)</span> được gọi là iid (“independent and identically distributed”, “độc lập và phân phối giống nhau”) nếu chúng cùng tuân theo duy nhất một phân phối xác suất, và từng cặp biến là độc lập với nhau. Dùng biến <span class="math inline">\(X\)</span> để thể hiện phân phối xác suất chung đó, ta viết <span class="math display">\[X_1,\ldots,X_n \iid X.\]</span></p>
-</div>
-</section>
-<section id="phân-phối-bernoulli" class="level3" data-number="1.7.2">
-<h3 data-number="1.7.2" class="anchored" data-anchor-id="phân-phối-bernoulli"><span class="header-section-number">1.7.2</span> Phân phối Bernoulli</h3>
-<div id="def-bernoulli" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.11 </strong></span><span class="math inline">\(X\sim\Ber(p)\)</span> có <span class="math display">\[
-\P(X=1) = p = 1-\P(X=0)
-\]</span> và <span class="math inline">\(\E[X] = p, \V[X] = p(1-p)\)</span>.</p>
-</div>
-</section>
-<section id="phân-phối-binomial" class="level3" data-number="1.7.3">
-<h3 data-number="1.7.3" class="anchored" data-anchor-id="phân-phối-binomial"><span class="header-section-number">1.7.3</span> Phân phối Binomial</h3>
-<div id="def-binomial" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.12 </strong></span><span class="math inline">\(X\sim\Bin(n, p)\)</span> với <span class="math inline">\(n\in\N, p\in(0,1)\)</span> mô tả tổng số lần thành công của <span class="math inline">\(n\)</span> thí nghiệm độc lập <span class="math inline">\(X_1,\ldots,X_n \iid \Ber(p).\)</span> Ta có <span class="math display">\[
-\P(X=k) = \binom{n}{k}p^{k}(1-p)^{n-k}
-\]</span> và <span class="math inline">\(\E[X] = np, \V[X] = np(1-p)\)</span>.</p>
-</div>
-</section>
-<section id="phân-phối-poisson" class="level3" data-number="1.7.4">
-<h3 data-number="1.7.4" class="anchored" data-anchor-id="phân-phối-poisson"><span class="header-section-number">1.7.4</span> Phân phối Poisson</h3>
-<div id="def-poisson" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.13 </strong></span><span class="math inline">\(X\sim\Poi(\lambda)\)</span> thường dùng để mô tả số lần <span class="math inline">\(k\)</span> mà sự kiện phát sinh trong một giới hạn cố định, với giả định tần suất phát sinh sự kiện là <span class="math inline">\(\lambda &gt; 0\)</span> cố định, và các sự kiện phát sinh độc lập. <span class="math display">\[
-\P(X=k) = e^{-\lambda}
-\frac{\lambda^k}{k!}, \,k=0,1,2,\ldots
-\]</span> và <span class="math inline">\(\E[X] = \V[X] = \lambda\)</span>.</p>
-</div>
-<p>Khi <span class="math inline">\(n\)</span> đủ lớn và <span class="math inline">\(p\)</span> đủ nhỏ thì <span class="math inline">\(\Poi(np)\)</span> gần với <span class="math inline">\(\Bin(n,p)\)</span>.</p>
-</section>
-<section id="phân-phối-geometric" class="level3" data-number="1.7.5">
-<h3 data-number="1.7.5" class="anchored" data-anchor-id="phân-phối-geometric"><span class="header-section-number">1.7.5</span> Phân phối Geometric</h3>
-<div id="def-geomdist" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.14 </strong></span><span class="math inline">\(X\sim\text{Geom}(p), p \in (0,1)\)</span> có <span class="math display">\[
-\P(X=k)=p(1-p)^{k-1}, k=1,2,\ldots
-\]</span> và <span class="math inline">\(\E[X]=1/p,\V[X]=(1-p)/p^2.\)</span></p>
-</div>
-</section>
-<section id="phân-phối-exponential" class="level3" data-number="1.7.6">
-<h3 data-number="1.7.6" class="anchored" data-anchor-id="phân-phối-exponential"><span class="header-section-number">1.7.6</span> Phân phối Exponential</h3>
-<div id="def-expdist" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.15 </strong></span><span class="math inline">\(X\sim\text{Exp}(\lambda)\)</span> dùng để mô tả khoảng cách <span class="math inline">\(x\)</span> giữa hai lần phát sinh của một chuỗi sự kiện kiểu Poisson (hai lần phát sinh sự kiện liên tiếp là độc lập với nhau, và tần suất phát sinh <span class="math inline">\(\lambda&gt;0\)</span> là cố định). Có <span class="math display">\[
-f(x)={\lambda}e^{-\lambda x},x\in\R_+
-\]</span> và <span class="math inline">\(\E[X]=1/\lambda,\V[X]=1/\lambda^2.\)</span></p>
-</div>
-</section>
-<section id="phân-phối-gaussian" class="level3" data-number="1.7.7">
-<h3 data-number="1.7.7" class="anchored" data-anchor-id="phân-phối-gaussian"><span class="header-section-number">1.7.7</span> Phân phối Gaussian</h3>
-<div id="def-gaussian" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 1.16 </strong></span><span class="math inline">\(X\sim\Gaus(\mu,\sigma^2)\)</span> có mật độ <span class="math display">\[
-f(x) =
-\frac{1}{\sqrt{\pi 2\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right),
-x\in\R
-\]</span> và <span class="math inline">\(\E[X]=\mu,\V[X]=\sigma^2\)</span>.</p>
-</div>
 
 
 </section>
@@ -506,8 +446,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./15-proba-converge.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hội tụ xác suất</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./13-distributions.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Phân phối thường gặp</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

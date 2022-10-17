@@ -76,6 +76,17 @@ hai sự kiện $X\leq x$ và $Y\leq y$ là độc lập
 đối với mọi $x,y$.
 :::
 
+### IID
+::: {#def-iid}
+Các biến ngẫu nhiên $X_1, X_2, \ldotp$ được gọi là
+iid ("independent and identically distributed",
+"độc lập và phân phối giống nhau")
+nếu chúng cùng tuân theo duy nhất một phân phối xác suất,
+và từng cặp biến là độc lập với nhau.
+Dùng biến $X$ để thể hiện phân phối xác suất chung đó, ta viết
+$$X_1,\ldots,X_n \iid X.$$
+:::
+
 ### Xác suất hợp
 :::{#def-joint-proba}
 Ký hiệu
@@ -176,102 +187,3 @@ chính là:
 $$
 \psi_X^{(k)}(0)\equiv \E[X^k].
 $$
-
-## Phân phối
-
-Có một số phân phối xác suất thông dụng.
-
-### IID
-::: {#def-iid}
-Các biến ngẫu nhiên $X_1, X_2, \ldotp$ được gọi là
-iid ("independent and identically distributed",
-"độc lập và phân phối giống nhau")
-nếu chúng cùng tuân theo duy nhất một phân phối xác suất,
-và từng cặp biến là độc lập với nhau.
-Dùng biến $X$ để thể hiện phân phối xác suất chung đó, ta viết
-$$X_1,\ldots,X_n \iid X.$$
-:::
-
-### Phân phối Bernoulli
-::: {#def-bernoulli}
-$X\sim\Ber(p)$
-có
-$$
-\P(X=1) = p = 1-\P(X=0)
-$$
-và
-$\E[X] = p, \V[X] = p(1-p)$.
-:::
-
-### Phân phối Binomial
-::: {#def-binomial}
-$X\sim\Bin(n, p)$
-với $n\in\N, p\in(0,1)$
-mô tả tổng số lần thành công
-của $n$ thí nghiệm độc lập
-$X_1,\ldots,X_n \iid \Ber(p).$
-Ta có
-$$
-\P(X=k) = \binom{n}{k}p^{k}(1-p)^{n-k}
-$$
-và
-$\E[X] = np, \V[X] = np(1-p)$.
-:::
-
-### Phân phối Poisson
-:::{#def-poisson}
-$X\sim\Poi(\lambda)$
-thường dùng để mô tả số lần $k$ mà sự kiện phát sinh
-trong một giới hạn cố định,
-với giả định tần suất phát sinh sự kiện là
-$\lambda > 0$ cố định,
-và các sự kiện phát sinh độc lập.
-$$
-\P(X=k) = e^{-\lambda}
-\frac{\lambda^k}{k!}, \,k=0,1,2,\ldots
-$$
-và
-$\E[X] = \V[X] = \lambda$.
-:::
-
-Khi $n$ đủ lớn và $p$ đủ nhỏ thì
-$\Poi(np)$ gần với $\Bin(n,p)$.
-
-### Phân phối Geometric
-:::{#def-geomdist}
-$X\sim\text{Geom}(p), p \in (0,1)$
-có
-$$
-\P(X=k)=p(1-p)^{k-1}, k=1,2,\ldots
-$$
-và
-$\E[X]=1/p,\V[X]=(1-p)/p^2.$
-:::
-
-### Phân phối Exponential
-:::{#def-expdist}
-$X\sim\text{Exp}(\lambda)$
-dùng để mô tả khoảng cách $x$ giữa hai lần phát sinh
-của một chuỗi sự kiện kiểu Poisson
-(hai lần phát sinh sự kiện liên tiếp là độc lập với nhau,
-và tần suất phát sinh $\lambda>0$ là cố định).
-Có
-$$
-f(x)={\lambda}e^{-\lambda x},x\in\R_+
-$$
-và
-$\E[X]=1/\lambda,\V[X]=1/\lambda^2.$
-:::
-
-### Phân phối Gaussian
-:::{#def-gaussian}
-$X\sim\Gaus(\mu,\sigma^2)$ có
-mật độ
-$$
-f(x) =
-\frac{1}{\sqrt{\pi 2\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right),
-x\in\R
-$$
-và
-$\E[X]=\mu,\V[X]=\sigma^2$.
-:::

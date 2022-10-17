@@ -84,5 +84,3 @@ $$\lim_{n\to\infty}\P_\theta[\mathcal{I}\ni\theta]\geq 1-\alpha,\quad\forall\the
 thì ta gọi $\mathcal{I}$
 là khoảng tin cậy tiệm cận cấp $1-\alpha$
 đối với $\theta$.
-
-## Kiểm định

@@ -137,7 +137,7 @@ L_\theta(x_1,\ldots,x_n)
 $$
 :::
 
-### Mix model
+## Mix model
 :::{#def-mix-model}
 Cho
 các mô hình gốc
@@ -178,7 +178,7 @@ cho đến khi hội tụ.
 - **M**aximize: Thay $Z_i$ bởi $\omega_i$ vào công thức likelihood để tối ưu MLE $\theta = \theta_k$
 :::
 
-### Thông tin Fisher
+## Thông tin Fisher
 :::{#def-fisher-info}
 Giả sử log likelihood đối với một quan sát $X$ theo mô hình $\theta$ là
 $\ell(\theta) = \ln L_1(X,\theta), \theta\in\Theta\subset\R.$

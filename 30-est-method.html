@@ -177,10 +177,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#giải-thuật-em" id="toc-giải-thuật-em" class="nav-link" data-scroll-target="#giải-thuật-em"><span class="toc-section-number">5.4.1</span>  Giải thuật EM</a></li>
   </ul></li>
-  <li><a href="#thông-tin-fisher" id="toc-thông-tin-fisher" class="nav-link" data-scroll-target="#thông-tin-fisher"><span class="toc-section-number">5.5</span>  Thông tin Fisher</a>
-  <ul class="collapse">
-  <li><a href="#chuẩn-tính-của-mle" id="toc-chuẩn-tính-của-mle" class="nav-link" data-scroll-target="#chuẩn-tính-của-mle"><span class="toc-section-number">5.5.1</span>  Chuẩn tính của MLE</a></li>
-  </ul></li>
+  <li><a href="#chuẩn-tính-của-mle" id="toc-chuẩn-tính-của-mle" class="nav-link" data-scroll-target="#chuẩn-tính-của-mle"><span class="toc-section-number">5.5</span>  Chuẩn tính của MLE</a></li>
   <li><a href="#m-estimatior" id="toc-m-estimatior" class="nav-link" data-scroll-target="#m-estimatior"><span class="toc-section-number">5.6</span>  M-estimatior</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vochicong/xstk/edit/main/30-est-method.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vochicong/xstk/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/vochicong/xstk/blob/main/30-est-method.qmd" class="toc-action">View source</a></p></div></div></nav>
@@ -193,6 +190,7 @@ $$
 \def\as{\textrm{a.s.}}
 \def\Ber{\text{Ber}}
 \def\Bin{\text{Bin}}
+\def\Unif{\text{Unif}}
 \def\E{\mathbb{E}}
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{:=}
@@ -347,10 +345,10 @@ X = \sum_{k=1}^K
 </div>
 </section>
 </section>
-<section id="thông-tin-fisher" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="thông-tin-fisher"><span class="header-section-number">5.5</span> Thông tin Fisher</h2>
+<section id="chuẩn-tính-của-mle" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="chuẩn-tính-của-mle"><span class="header-section-number">5.5</span> Chuẩn tính của MLE</h2>
 <div id="def-fisher-info" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 5.8 </strong></span>Giả sử log likelihood đối với một quan sát <span class="math inline">\(X\)</span> theo mô hình <span class="math inline">\(\theta\)</span> là <span class="math inline">\(\ell(\theta) = \ln L_1(X,\theta), \theta\in\Theta\subset\R.\)</span> Giả sử <span class="math inline">\(\ell(\theta)\)</span> có đạo hàm bậc hai. Dưới một số điều kiện chuẩn, thông tin Fisher của mô hình được định nghĩa là</p>
+<p><span class="theorem-title"><strong>Def 5.8 </strong></span>Giả sử log likelihood đối với một quan sát <span class="math inline">\(X\)</span> theo mô hình <span class="math inline">\(\theta\)</span> là <span class="math inline">\(\ell(\theta) = \ln L_1(X,\theta), \theta\in\Theta\subset\R.\)</span> Giả sử <span class="math inline">\(\ell(\theta)\)</span> có đạo hàm bậc hai. Dưới một số điều kiện chuẩn, <strong>thông tin Fisher</strong> của mô hình được định nghĩa là</p>
 <p><span class="math display">\[
 I(\theta)
 = \V[\ell^{\prime}(\theta)]
@@ -359,8 +357,6 @@ I(\theta)
 .
 \]</span></p>
 </div>
-<section id="chuẩn-tính-của-mle" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="chuẩn-tính-của-mle"><span class="header-section-number">5.5.1</span> Chuẩn tính của MLE</h3>
 <div id="thm-mle-asym" class="theorem">
 <p><span class="theorem-title"><strong>Thm 5.2 </strong></span>Gọi <span class="math inline">\(\theta^*\in\Theta\)</span> là tham số <em>thật</em> cần tìm. Giả sử</p>
 <ol type="1">
@@ -371,11 +367,11 @@ I(\theta)
 <li>Một số điều kiện kỹ thuật khác</li>
 </ol>
 <p>Khi đó, chuỗi <span class="math inline">\(\hat{\theta}_n^{MLE}\)</span> thỏa mãn:</p>
-<p><span class="math display">\[\hat{\theta}_n^{MLE} \xrightarrow[n\to\infty]{\P_{\theta^*}}\theta^*\]</span> <span class="math display">\[\sqrt{n}\left(\hat{\theta}_n^{MLE}-\theta^*\right)
+<p><span class="math display">\[\hat{\theta}_n^{MLE} \xrightarrow[n\to\infty]{\P_{\theta^*}}\theta^*\]</span> <span class="math display">\[\sqrt{n I(\theta^*)}\left(\hat{\theta}_n^{MLE}-\theta^*\right)
 \xrightarrow[n\to\infty]{(d)\textrm{ w.r.t.}\P_{\theta^*}}
-\Gaus(0, I(\theta^*)^{-1}).\]</span></p>
+\Gaus(0, 1).\]</span></p>
+<p>Chú ý là điều kiện số 2 dễ bị vi phạm, ví dụ <span class="math inline">\(X_i\iid\Unif[0, \theta]\)</span> mà lại cần tìm tham số <span class="math inline">\(\theta.\)</span></p>
 </div>
-</section>
 </section>
 <section id="m-estimatior" class="level2" data-number="5.6">
 <h2 data-number="5.6" class="anchored" data-anchor-id="m-estimatior"><span class="header-section-number">5.6</span> M-estimatior</h2>

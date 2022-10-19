@@ -1,4 +1,4 @@
-# Phân phối thường gặp
+# Phân phối
 
 Có một số phân phối xác suất thông dụng.
 

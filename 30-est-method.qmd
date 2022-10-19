@@ -178,12 +178,13 @@ cho đến khi hội tụ.
 - **M**aximize: Thay $Z_i$ bởi $\omega_i$ vào công thức likelihood để tối ưu MLE $\theta = \theta_k$
 :::
 
-## Thông tin Fisher
+## Chuẩn tính của MLE
+
 :::{#def-fisher-info}
 Giả sử log likelihood đối với một quan sát $X$ theo mô hình $\theta$ là
 $\ell(\theta) = \ln L_1(X,\theta), \theta\in\Theta\subset\R.$
 Giả sử $\ell(\theta)$ có đạo hàm bậc hai. Dưới một số điều kiện chuẩn,
-thông tin Fisher của mô hình được định nghĩa là
+**thông tin Fisher** của mô hình được định nghĩa là
 
 $$
 I(\theta)
@@ -194,7 +195,6 @@ I(\theta)
 $$
 :::
 
-### Chuẩn tính của MLE
 :::{#thm-mle-asym}
 Gọi $\theta^*\in\Theta$ là tham số *thật* cần tìm. Giả sử
 
@@ -207,9 +207,13 @@ Gọi $\theta^*\in\Theta$ là tham số *thật* cần tìm. Giả sử
 Khi đó, chuỗi $\hat{\theta}_n^{MLE}$ thỏa mãn:
 
 $$\hat{\theta}_n^{MLE} \xrightarrow[n\to\infty]{\P_{\theta^*}}\theta^*$$
-$$\sqrt{n}\left(\hat{\theta}_n^{MLE}-\theta^*\right)
+$$\sqrt{n I(\theta^*)}\left(\hat{\theta}_n^{MLE}-\theta^*\right)
 \xrightarrow[n\to\infty]{(d)\textrm{ w.r.t.}\P_{\theta^*}}
-\Gaus(0, I(\theta^*)^{-1}).$$
+\Gaus(0, 1).$$
+
+Chú ý là điều kiện số 2 dễ bị vi phạm,
+ví dụ $X_i\iid\Unif[0, \theta]$
+mà lại cần tìm tham số $\theta.$
 
 :::
 

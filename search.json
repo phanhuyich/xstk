@@ -51,119 +51,119 @@
   {
     "objectID": "13-distributions.html",
     "href": "13-distributions.html",
-    "title": "2  Phân phối thường gặp",
+    "title": "2  Phân phối",
     "section": "",
     "text": "Có một số phân phối xác suất thông dụng."
   },
   {
     "objectID": "13-distributions.html#phân-phối-bernoulli",
     "href": "13-distributions.html#phân-phối-bernoulli",
-    "title": "2  Phân phối thường gặp",
+    "title": "2  Phân phối",
     "section": "2.1 Phân phối Bernoulli",
     "text": "2.1 Phân phối Bernoulli\n\nDef 2.1 \\(X\\sim\\Ber(p)\\) có \\[\n\\P(X=1) = p = 1-\\P(X=0)\n\\] và \\(\\E[X] = p, \\V[X] = p(1-p)\\)."
   },
   {
     "objectID": "13-distributions.html#phân-phối-binomial",
     "href": "13-distributions.html#phân-phối-binomial",
-    "title": "2  Phân phối thường gặp",
+    "title": "2  Phân phối",
     "section": "2.2 Phân phối Binomial",
     "text": "2.2 Phân phối Binomial\n\nDef 2.2 \\(X\\sim\\Bin(n, p)\\) với \\(n\\in\\N, p\\in(0,1)\\) mô tả tổng số lần thành công của \\(n\\) thí nghiệm độc lập \\(X_1,\\ldots,X_n \\iid \\Ber(p).\\) Ta có \\[\n\\P(X=k) = \\binom{n}{k}p^{k}(1-p)^{n-k}\n\\] và \\(\\E[X] = np, \\V[X] = np(1-p)\\)."
   },
   {
     "objectID": "13-distributions.html#phân-phối-poisson",
     "href": "13-distributions.html#phân-phối-poisson",
-    "title": "2  Phân phối thường gặp",
+    "title": "2  Phân phối",
     "section": "2.3 Phân phối Poisson",
     "text": "2.3 Phân phối Poisson\n\nDef 2.3 \\(X\\sim\\Poi(\\lambda)\\) thường dùng để mô tả số lần \\(k\\) mà sự kiện phát sinh trong một giới hạn cố định, với giả định tần suất phát sinh sự kiện là \\(\\lambda > 0\\) cố định, và các sự kiện phát sinh độc lập. \\[\n\\P(X=k) = e^{-\\lambda}\n\\frac{\\lambda^k}{k!}, \\,k=0,1,2,\\ldots\n\\] và \\(\\E[X] = \\V[X] = \\lambda\\).\n\nKhi \\(n\\) đủ lớn và \\(p\\) đủ nhỏ thì \\(\\Poi(np)\\) gần với \\(\\Bin(n,p)\\)."
   },
   {
     "objectID": "13-distributions.html#phân-phối-geometric",
     "href": "13-distributions.html#phân-phối-geometric",
-    "title": "2  Phân phối thường gặp",
+    "title": "2  Phân phối",
     "section": "2.4 Phân phối Geometric",
     "text": "2.4 Phân phối Geometric\n\nDef 2.4 \\(X\\sim\\text{Geom}(p), p \\in (0,1)\\) có \\[\n\\P(X=k)=p(1-p)^{k-1}, k=1,2,\\ldots\n\\] và \\(\\E[X]=1/p,\\V[X]=(1-p)/p^2.\\)"
   },
   {
     "objectID": "13-distributions.html#phân-phối-exponential",
     "href": "13-distributions.html#phân-phối-exponential",
-    "title": "2  Phân phối thường gặp",
+    "title": "2  Phân phối",
     "section": "2.5 Phân phối Exponential",
     "text": "2.5 Phân phối Exponential\n\nDef 2.5 \\(X\\sim\\text{Exp}(\\lambda)\\) dùng để mô tả khoảng cách \\(x\\) giữa hai lần phát sinh của một chuỗi sự kiện kiểu Poisson (hai lần phát sinh sự kiện liên tiếp là độc lập với nhau, và tần suất phát sinh \\(\\lambda>0\\) là cố định). Có \\[\nf(x)={\\lambda}e^{-\\lambda x},x\\in\\R_+\n\\] và \\(\\E[X]=1/\\lambda,\\V[X]=1/\\lambda^2.\\)"
   },
   {
     "objectID": "13-distributions.html#phân-phối-gaussian",
     "href": "13-distributions.html#phân-phối-gaussian",
-    "title": "2  Phân phối thường gặp",
+    "title": "2  Phân phối",
     "section": "2.6 Phân phối Gaussian",
     "text": "2.6 Phân phối Gaussian\n\nDef 2.6 \\(X\\sim\\Gaus(\\mu,\\sigma^2)\\) có mật độ \\[\nf(x) =\n\\frac{1}{\\sqrt{\\pi 2\\sigma^2}}\\exp\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right),\nx\\in\\R\n\\] và \\(\\E[X]=\\mu,\\V[X]=\\sigma^2\\).\n\n\nThm 2.1 Nếu \\(X_i \\sim\\Gaus(\\mu_i,\\sigma_i^2) (i=1,\\ldots,n)\\) thì\n\\[\\sum_{i=1}^n X_i\\sim\\Gaus\\left(\\sum_{i=1}^n \\mu_i,\\sum_{i=1}^n \\sigma_i^2\\right)\\]"
   },
   {
     "objectID": "15-proba-converge.html",
     "href": "15-proba-converge.html",
-    "title": "3  Hội tụ xác suất",
+    "title": "3  Hội tụ",
     "section": "",
     "text": "Có một số kiểu hội tụ của biến ngẫu nhiên."
   },
   {
     "objectID": "15-proba-converge.html#hội-tụ-xác-suất",
     "href": "15-proba-converge.html#hội-tụ-xác-suất",
-    "title": "3  Hội tụ xác suất",
+    "title": "3  Hội tụ",
     "section": "3.1 Hội tụ xác suất",
     "text": "3.1 Hội tụ xác suất\n\nDef 3.1 Cho một chuỗi biến ngẫu nhiên \\(X_1,X_2,\\ldotp\\) và một biến ngẫu nhiên \\(X\\).\n\nHội tụ gần tuyệt đối: \\[\nX_n \\xrightarrow[n\\to\\infty]{\\as} X \\iff\n\\P(\\{\\omega\\in\\Omega: X_n(\\omega)\\to X(\\omega)\\}) = 1.\n\\]\nHội tụ theo xác suất: \\[\nX_n \\xrightarrow[n\\to\\infty]{\\P} X \\iff\n\\P(|X_n-X| >\\epsilon)\n\\xrightarrow[n\\to\\infty]{}\n0,\\quad\\forall\\epsilon>0.\n\\]\nHội tụ theo phân phối: \\[\nX_n \\xrightarrow[n\\to\\infty]{(d)} X \\iff\n\\P[X_n(x)\\leq x]\\xrightarrow[n\\to\\infty]{} \\P[X\\leq x]\n\\] tại mọi điểm \\(x\\) mà cdf của \\(X\\) liên tục.\nHội tụ về chuẩn: (asymptotically normal) với phương sai \\(\\sigma^2\\) \\[\n\\sqrt{n}({X}_n-X)\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus(0,\\sigma^2).\n\\]"
   },
   {
     "objectID": "15-proba-converge.html#độ-mạnh",
     "href": "15-proba-converge.html#độ-mạnh",
-    "title": "3  Hội tụ xác suất",
+    "title": "3  Hội tụ",
     "section": "3.2 Độ mạnh",
     "text": "3.2 Độ mạnh\n\nThm 3.1 Xếp theo thứ tự từ mạnh đến yếu:\n\\[\nX_n \\xrightarrow[n\\to\\infty]{\\as} X \\implies\nX_n \\xrightarrow[n\\to\\infty]{\\P} X \\implies\nX_n \\xrightarrow[n\\to\\infty]{(d)} X.\n\\]\nNếu \\(X_n \\xrightarrow[n\\to\\infty]{(d)} X\\), và \\(X\\) có mật độ xác suất, thì \\(X_n \\xrightarrow[n\\to\\infty]{\\P} X\\).\nNếu chuỗi \\(X_n\\) có \\(\\E[X_n]\\xrightarrow[]{} \\mu\\) và \\(\\V[X_n]\\xrightarrow[]{} 0\\) thì \\(X_n\\xrightarrow[]{\\P} \\mu\\).\nNếu \\(X_n\\xrightarrow[n\\to\\infty]{\\P} X\\) thì \\(\\P(a\\leq X_n\\leq b) \\xrightarrow[n\\to\\infty]{} \\P(a\\leq X\\leq b)\\) với mọi khoảng \\([a,b]\\)."
   },
   {
     "objectID": "15-proba-converge.html#tổng-và-tích",
     "href": "15-proba-converge.html#tổng-và-tích",
-    "title": "3  Hội tụ xác suất",
+    "title": "3  Hội tụ",
     "section": "3.3 Tổng và tích",
     "text": "3.3 Tổng và tích\n\nThm 3.2 Nếu có hai chuỗi biến ngẫu nhiên \\(X_n, Y_n\\) hội tụ gần tuyệt đối hoặc hội tụ theo xác suất về \\(X, Y\\), thì tổng \\(X_n+Y_n\\) và tích \\(X_n Y_n\\) cũng hội tụ tương tự (gần tuyệt đối, hoặc theo xác suất) về tổng \\(X+Y\\) và tích \\(XY\\)."
   },
   {
     "objectID": "15-proba-converge.html#slutsky",
     "href": "15-proba-converge.html#slutsky",
-    "title": "3  Hội tụ xác suất",
+    "title": "3  Hội tụ",
     "section": "3.4 Slutsky",
     "text": "3.4 Slutsky\n\nThm 3.3 Nếu \\(Y_n \\xrightarrow[]{\\P} y\\), \\(y\\) là một số thực cố định thì có thể nới lỏng điều kiện đối với \\(X_n\\) thành hội tụ theo phân phối."
   },
   {
     "objectID": "15-proba-converge.html#ánh-xạ-liên-tục",
     "href": "15-proba-converge.html#ánh-xạ-liên-tục",
-    "title": "3  Hội tụ xác suất",
+    "title": "3  Hội tụ",
     "section": "3.5 Ánh xạ liên tục",
     "text": "3.5 Ánh xạ liên tục\n\nThm 3.4 (Continuous mapping) Nếu \\(X_n\\xrightarrow[n\\to\\infty]{\\as/\\P/(d)} X\\) thì đối với mọi hàm \\(f\\) liên tục:\n\n\\(f(X_n)\\xrightarrow[n\\to\\infty]{\\as/\\P/(d)} f(X)\\).\n\\(\\E[f(X_n)]\\xrightarrow[n\\to\\infty]{}\\E[f(X)]\\) nếu \\(f\\) còn bị chặn."
   },
   {
     "objectID": "15-proba-converge.html#đại-đa-số-law-of-large-numbers",
     "href": "15-proba-converge.html#đại-đa-số-law-of-large-numbers",
-    "title": "3  Hội tụ xác suất",
+    "title": "3  Hội tụ",
     "section": "3.6 Đại đa số (Law of Large Numbers)",
     "text": "3.6 Đại đa số (Law of Large Numbers)\n\nThm 3.5 Cho \\(n\\) biến iid \\(X_1, X_2,\\ldotp,X_n\\) có chung \\(\\E[X_i]=\\mu<\\infty\\). Khi đó: \\[\\bar{X}_n\\is\\frac{1}{n}\\sum_{i=1}^n{X_i}\n\\xrightarrow[n\\to\\infty]{\\P,\\,\\as}\\mu.\n\\]"
   },
   {
     "objectID": "15-proba-converge.html#hội-tụ-trung-tâm-central-limit",
     "href": "15-proba-converge.html#hội-tụ-trung-tâm-central-limit",
-    "title": "3  Hội tụ xác suất",
+    "title": "3  Hội tụ",
     "section": "3.7 Hội tụ trung tâm (Central Limit)",
     "text": "3.7 Hội tụ trung tâm (Central Limit)\n\nThm 3.6 Giả sử thêm là \\(\\V[X_i]=\\sigma^2<\\infty\\). Khi đó \\[\n\\sqrt{n}(\\bar{X}_n-\\mu)\n\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus(0,\\sigma^2).\n\\]"
   },
   {
     "objectID": "15-proba-converge.html#bất-đẳng-thức-hoefding",
     "href": "15-proba-converge.html#bất-đẳng-thức-hoefding",
-    "title": "3  Hội tụ xác suất",
+    "title": "3  Hội tụ",
     "section": "3.8 Bất đẳng thức Hoefding",
     "text": "3.8 Bất đẳng thức Hoefding\n\nThm 3.7 Nếu có một khoảng cố định \\([a,b]\\) gần như tuyệt đối (almost surely) chứa các biến \\(X_i (i=1,2,\\ldots,n)\\) thì\n\\[\n\\P[|\\bar{X}_n-\\mu|\\geq\\epsilon]\\leq\n2e^{-\\frac{2n\\epsilon^2}{(b-a)^2}},\\quad\\forall\\epsilon>0.\n\\]"
   },
   {
     "objectID": "15-proba-converge.html#phương-pháp-delta",
     "href": "15-proba-converge.html#phương-pháp-delta",
-    "title": "3  Hội tụ xác suất",
+    "title": "3  Hội tụ",
     "section": "3.9 Phương pháp Delta",
     "text": "3.9 Phương pháp Delta\n\nThm 3.8 Giả sử chuỗi \\((\\theta_n)_{n\\geq 1}\\) chuẩn tiến với phương sai \\(\\sigma^2\\) về một điểm \\(\\theta\\in\\R\\). Giả sử \\(g:\\R\\to\\R\\) có vi phân \\(g^\\prime\\) liên tục tại \\(\\theta\\). Khi đó, \\[\n\\sqrt{n}(g(\\theta_n)-g(\\theta))\n\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus\\left(0,\\left(\\sigma g^\\prime(\\theta)\\right)^2\\right)\n\\]"
   },

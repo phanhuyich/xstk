@@ -1,0 +1,256 @@
+# Ước lượng
+
+Chiến lược ước lượng phân phối *thật* (true distribution)
+
+- Định nghĩa khoảng cách giữa các phân phối (TV distance)
+- Ước lượng khoảng cách nêu trên (KL divergence)
+- Tìm điểm cực tiểu của ước lượng nêu trên (minimization).
+
+Với mô hình thống kê
+$(E,(\P_\theta)_{\theta\in\Theta})$
+xây dựng dựa trên quan sát iid rv
+$X_1,\ldots,X_n$
+trên tập mẫu $E$
+và bộ tham số $\Theta$
+.
+Ngầm định tồn tại
+*tham số thật*
+$\theta^*\in\Theta$
+để
+$X_1\sim\P_{\theta^*}$
+.
+
+## Tổng biến động
+
+### Khoảng cách
+::: {#def-total-variation}
+tổng biến động
+(total variation distance)
+giữa hai độ đo xác suất
+$\P_\theta$ và
+$\P_\eta$
+là
+
+$$
+\TV(\P_\theta,\P_{\eta})
+=
+\max_{A\subset E}{\mid\P_\theta(A)-\P_\eta(A)\mid}.
+$$
+:::
+
+:::{#thm-total-variation}
+### Công thức tính
+
+Nếu tập mẫu $E$ là rời rạc
+(discrete: countable or finite),
+xác suất
+$\P_\theta,\P_{\eta}$
+có hàm khối lần lượt là
+$p_\theta,p_{\eta}$
+thì
+$$
+\TV(\P_\theta,\P_{\eta}) =
+\frac{1}{2}
+\sum_{x\in E}\mid p_\theta(x) - p_\eta(x)\mid.
+$$
+
+Nếu tập mẫu $E$ là liên tục
+(continuous),
+xác suất
+$\P_\theta, \P_{\eta}$
+có mật độ lần lượt là
+$f_\theta, f_{\eta}$
+thì
+$$
+\TV(\P_\theta,\P_{\eta}) =
+\frac{1}{2}
+\int_{E}\mid f_\theta(x) - f_\eta(x)\mid dx.
+$$
+:::
+
+## Phân kỳ KL
+
+### Phân kỳ KL
+:::{#def-kl-divergence}
+(KL divergence)
+Ký hiệu $f$ là
+mật độ
+hoặc
+hàm khối xác suất:
+
+$$
+\KL(\P_\theta, \P_\eta) \is
+\E_\theta\left[ \ln\frac{f_\theta(x)}{f_\eta(x)} \right]
+=
+\E_\theta\left[ \ln{f_\theta(x)} \right]
+-
+\E_\theta\left[ \ln{f_\eta(x)} \right]
+.
+$$
+:::
+
+### Đặc điểm
+:::{#prp-kl-properties}
+Phân kỳ KL
+thỏa mãn 2/4 đặc điểm của "khoảng cách":
+
+1. $\KL(\P_\theta, \P_\eta) \geq 0$
+2. $\KL(\P_\theta, \P_\eta) \equiv 0 \iff \P_\theta \equiv \P_\eta$.
+:::
+
+## MLE
+
+Maximum Likelihood Estimation
+
+### Likelihood
+:::{#def-likelihood}
+$$L_\theta(x_1,\ldots,x_n)\is
+\P_\theta(X_1=x_1,\ldots,X_n=x_n)
+=
+\prod_{i=1}^n p_\theta(X_i=x_i)
+.$$
+:::
+
+### Log likelihood
+:::{#def-likelihood}
+$$
+\ell_\theta(x_1,\ldots,x_n)\is
+\ln
+L_\theta(x_1,\ldots,x_n)
+=
+\sum_{i=1}^n \ln p_\theta(X_i=x_i)
+.
+$$
+:::
+
+### Maximum Likelihood Estimator
+:::{#def-mle}
+
+$$
+\hat{\theta}_n \is
+\argmax_\theta
+L_\theta(x_1,\ldots,x_n)
+\equiv
+\argmax_\theta
+\ell_\theta(x_1,\ldots,x_n)
+.
+$$
+:::
+
+## Mix model
+:::{#def-mix-model}
+Cho
+các mô hình gốc
+$X^{(k)}, k= 1,\ldots,K,$
+lấy
+biến tiềm ẩn
+$Z$
+trên
+$\{1,\ldots,K\}$
+làm trọng số,
+ta có mô hình hỗn hợp
+$$
+X = \sum_{k=1}^K
+\P(Z=k) X^{(k)}
+.
+$$
+:::
+
+### Giải thuật EM
+:::{#def-em-alg}
+(**E**stimation **M**aximization)
+*có thể* tìm được
+tham số $\theta$ của
+mô hình hỗn hợp @def-mix-model.
+
+Giả sử ta quan sát được
+$X_1=x_1, \ldots, X_n=x_n$.
+Gọi các trọng số tiềm ẩn tương ứng là
+$Z_1=z_1, \ldots, Z_n=z_n.$
+
+Sau khi khởi tạo $\theta = \theta_0$ ngẫu nhiên,
+ta
+lặp lại 2 bước **E, M** như sau
+để cập nhật $\theta_k, k=1,2,\ldots$
+cho đến khi hội tụ.
+
+- **E**stimate: Ước lượng $Z_i\approx\omega_i\is\E[Z|X_i=x_i, \theta=\theta_{k-1}], i=1,\ldots,n.$
+- **M**aximize: Thay $Z_i$ bởi $\omega_i$ vào công thức likelihood để tối ưu MLE $\theta = \theta_k$
+:::
+
+## Chuẩn tính của MLE
+
+:::{#def-fisher-info}
+Giả sử log likelihood đối với một quan sát $X$ theo mô hình $\theta$ là
+$\ell(\theta) = \ln L_1(X,\theta), \theta\in\Theta\subset\R.$
+Giả sử $\ell(\theta)$ có đạo hàm bậc hai. Dưới một số điều kiện chuẩn,
+**thông tin Fisher** của mô hình được định nghĩa là
+
+$$
+I(\theta)
+= \V[\ell^{\prime}(\theta)]
+= \E[(\ell^{\prime}(\theta))^2]
+= -\E[\ell^{\prime\prime}(\theta)]
+.
+$$
+:::
+
+:::{#thm-mle-asym}
+Gọi $\theta^*\in\Theta$ là tham số *thật* cần tìm. Giả sử
+
+1. Các tham số là indentifiable
+2. Support của $\P_\theta$ không phụ thuộc vào $\theta$ với mọi $\theta\in\Theta$
+3. $\theta^*$ không nằm trên biên giới của $\Theta$
+4. Thông tin Fisher $I(\theta)\neq 0$ xung quanh $\theta^*$
+5. Một số điều kiện kỹ thuật khác
+
+Khi đó, chuỗi $\hat{\theta}_n^{MLE}$ thỏa mãn:
+
+$$\hat{\theta}_n^{MLE} \xrightarrow[n\to\infty]{\P_{\theta^*}}\theta^*$$
+$$\sqrt{n I(\theta^*)}\left(\hat{\theta}_n^{MLE}-\theta^*\right)
+\xrightarrow[n\to\infty]{(d)\textrm{ w.r.t.}\P_{\theta^*}}
+\Gaus(0, 1).$$
+
+Chú ý là điều kiện số 2 dễ bị vi phạm,
+ví dụ $X_i\iid\Unif[0, \theta]$
+mà lại cần tìm tham số $\theta.$
+
+:::
+
+## M-estimatior
+:::{#def-m-est}
+Với mục tiêu ước lượng thuộc tính $\mu^*$ của xác suất $\P(X)$,
+ta tìm một "hàm tổn thất" $\rho(X,\mu)$ có giá trị kỳ vọng
+đạt cực tiểu tại $\mu = \mu^*:$
+$$
+\mathcal{Q}(\mu)
+\is \E_{\P}[\rho(X,\mu)]
+.
+$$
+
+Nếu quan sát được $X_1,\ldots,X_n\iid\P(X),$ ta ước lượng
+$$
+\mathcal{Q}(\mu)
+\approx
+\mathcal{Q}_n(\mu)
+\is
+\frac{1}{n} \sum_{i=1}^n{\rho(X_i,\mu)}
+.$$
+
+Khi đó $\mu^*\approx\hat{\mu}$ với "M-estimator"
+$\hat{\mu}$ là
+
+$$
+\hat{\mu}
+\is\argmin_{\mu}
+\mathcal{Q}_n(\mu)
+.
+$$
+:::
+
+Ví dụ,
+
+- với $\rho(x,\theta) = -\ln p_\theta(x)$ ta có MLE để ước lượng tham số $\theta^*$ của mô hình $\P$
+- với $\vec x,\vec\mu\in\R^d$,
+dùng $\rho(\vec x,\vec\mu) = \|\vec x-\vec\mu\|^2$
+ta ước lượng được $\vec\mu^*=\E[\vec x].$

@@ -1,7 +1,7 @@
 # Lời nói đầu {.unnumbered}
 
-"Xác suất" và "thống kê" là hai môn học gây cho tôi
-nhiều khó khăn nhất.
+Xác suất thống kê là nền tảng giúp ích cho việc phân tích dữ liệu, tổ chức thực hành thí nghiệm, chạy các mô hình giả lập, giải các bài toán tìm nghiệm tối ưu, nghiên cứu và ứng dụng học máy.
+
 Môn "xác suất" tôi đã học những kiến thức cơ bản vài lần, tính ra là ở cấp 3, trong đại học, và gần đây là học trực tuyến.
 Môn "thống kê" tôi chưa học được cho ra bài bản lần nào, mấy tháng đầu năm 2022 có thử sức học trực tuyến nhưng đầu tư thời gian không đủ nên thi rớt thảm hại.
 
@@ -43,7 +43,7 @@ Xin vui lòng góp ý tại
 Tài liệu này được viết bằng các công cụ là
 [Quarto](https://quarto.org/docs/books)
 và [VSCode](https://code.visualstudio.com).
-Truy cập trực tuyến
+Truy cập trực tuyến tại
 [xstk](https://vochicong.github.io/xstk/)
-và có thể tải [PDF](https://vochicong.github.io/xstk/Xác-Suất-Thống-Kê.pdf).
+.
 ${}$

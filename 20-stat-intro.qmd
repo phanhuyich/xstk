@@ -19,14 +19,14 @@ $\theta\in\Theta$
 để
 $\P_\theta\equiv\P$
 thì ta nói mô hình "hợp lệ"
-(well cpecified).
+(well specified).
 
 Nếu từ tập $\Theta$,
 ánh xạ
 $\theta\mapsto\P_{\theta}$
-là đơn tính
-thì ta nói $\theta$ là
-"có thể nhận dạng" (identifiable).
+là đơn ánh
+thì ta nói $\theta$ (hoặc $\P_\theta$) là
+"có thể xác định" (identifiable).
 
 
 Nếu
@@ -84,5 +84,3 @@ $$\lim_{n\to\infty}\P_\theta[\mathcal{I}\ni\theta]\geq 1-\alpha,\quad\forall\the
 thì ta gọi $\mathcal{I}$
 là khoảng tin cậy tiệm cận cấp $1-\alpha$
 đối với $\theta$.
-
-## Kiểm định

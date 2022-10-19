@@ -1,0 +1,95 @@
+# Phân phối thường gặp
+
+Có một số phân phối xác suất thông dụng.
+
+## Phân phối Bernoulli
+::: {#def-bernoulli}
+$X\sim\Ber(p)$
+có
+$$
+\P(X=1) = p = 1-\P(X=0)
+$$
+và
+$\E[X] = p, \V[X] = p(1-p)$.
+:::
+
+## Phân phối Binomial
+::: {#def-binomial}
+$X\sim\Bin(n, p)$
+với $n\in\N, p\in(0,1)$
+mô tả tổng số lần thành công
+của $n$ thí nghiệm độc lập
+$X_1,\ldots,X_n \iid \Ber(p).$
+Ta có
+$$
+\P(X=k) = \binom{n}{k}p^{k}(1-p)^{n-k}
+$$
+và
+$\E[X] = np, \V[X] = np(1-p)$.
+:::
+
+## Phân phối Poisson
+:::{#def-poisson}
+$X\sim\Poi(\lambda)$
+thường dùng để mô tả số lần $k$ mà sự kiện phát sinh
+trong một giới hạn cố định,
+với giả định tần suất phát sinh sự kiện là
+$\lambda > 0$ cố định,
+và các sự kiện phát sinh độc lập.
+$$
+\P(X=k) = e^{-\lambda}
+\frac{\lambda^k}{k!}, \,k=0,1,2,\ldots
+$$
+và
+$\E[X] = \V[X] = \lambda$.
+:::
+
+Khi $n$ đủ lớn và $p$ đủ nhỏ thì
+$\Poi(np)$ gần với $\Bin(n,p)$.
+
+## Phân phối Geometric
+:::{#def-geomdist}
+$X\sim\text{Geom}(p), p \in (0,1)$
+có
+$$
+\P(X=k)=p(1-p)^{k-1}, k=1,2,\ldots
+$$
+và
+$\E[X]=1/p,\V[X]=(1-p)/p^2.$
+:::
+
+## Phân phối Exponential
+:::{#def-expdist}
+$X\sim\text{Exp}(\lambda)$
+dùng để mô tả khoảng cách $x$ giữa hai lần phát sinh
+của một chuỗi sự kiện kiểu Poisson
+(hai lần phát sinh sự kiện liên tiếp là độc lập với nhau,
+và tần suất phát sinh $\lambda>0$ là cố định).
+Có
+$$
+f(x)={\lambda}e^{-\lambda x},x\in\R_+
+$$
+và
+$\E[X]=1/\lambda,\V[X]=1/\lambda^2.$
+:::
+
+## Phân phối Gaussian
+:::{#def-gaussian}
+$X\sim\Gaus(\mu,\sigma^2)$ có
+mật độ
+$$
+f(x) =
+\frac{1}{\sqrt{\pi 2\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right),
+x\in\R
+$$
+và
+$\E[X]=\mu,\V[X]=\sigma^2$.
+:::
+
+:::{#thm-sum-gaussian}
+Nếu
+$X_i \sim\Gaus(\mu_i,\sigma_i^2) (i=1,\ldots,n)$
+thì
+
+$$\sum_{i=1}^n X_i\sim\Gaus\left(\sum_{i=1}^n \mu_i,\sum_{i=1}^n \sigma_i^2\right)$$
+:::

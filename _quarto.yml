@@ -2,15 +2,19 @@ project:
   type: book
 
 book:
-  title: "Xác Suất Thống Kê"
+  title: XSTK
+  subtitle: "Xác Suất Thống Kê"
+  output-file: xstk
   author: "Võ Chí Công"
   # date: "2022/8/25"
   downloads: pdf
   chapters:
     - index.qmd
     - 10-proba-intro.qmd
+    - 13-distributions.qmd
+    - 15-proba-converge.qmd
     - 20-stat-intro.qmd
-    - summary.qmd
+    - 30-est-method.qmd
     - references.qmd
   repo-url: https://github.com/vochicong/xstk
   repo-actions: [edit, issue, source]

@@ -1,7 +1,10 @@
 $$
+\def\argmax{\operatorname*{argmax}}
+\def\argmin{\operatorname*{argmin}}
 \def\as{\textrm{a.s.}}
 \def\Ber{\text{Ber}}
 \def\Bin{\text{Bin}}
+\def\Unif{\text{Unif}}
 \def\E{\mathbb{E}}
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{:=}
@@ -11,4 +14,7 @@ $$
 \def\R{\mathbb{R}}
 \def\V{\mathbb{V}}
 \def\N{\mathbb{Z}_+}
+\def\TV{\textrm{TV}}
+\def\KL{\textrm{KL}}
+\def\vec#1{\boldsymbol{#1}}
 $$

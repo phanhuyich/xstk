@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>XSTK - 2&nbsp; Phân phối</title>
+<title>XSTK - 6&nbsp; Giả thuyết</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./15-proba-converge.html" rel="next">
-<link href="./10-proba-intro.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./30-est-method.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Phân phối</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Giả thuyết</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -126,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13-distributions.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Phân phối</span></a>
+  <a href="./13-distributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Phân phối</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -146,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./40-hypothesis-test.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Giả thuyết</span></a>
+  <a href="./40-hypothesis-test.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Giả thuyết</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -163,14 +163,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#phân-phối-bernoulli" id="toc-phân-phối-bernoulli" class="nav-link active" data-scroll-target="#phân-phối-bernoulli"><span class="toc-section-number">2.1</span>  Phân phối Bernoulli</a></li>
-  <li><a href="#phân-phối-binomial" id="toc-phân-phối-binomial" class="nav-link" data-scroll-target="#phân-phối-binomial"><span class="toc-section-number">2.2</span>  Phân phối Binomial</a></li>
-  <li><a href="#phân-phối-poisson" id="toc-phân-phối-poisson" class="nav-link" data-scroll-target="#phân-phối-poisson"><span class="toc-section-number">2.3</span>  Phân phối Poisson</a></li>
-  <li><a href="#phân-phối-geometric" id="toc-phân-phối-geometric" class="nav-link" data-scroll-target="#phân-phối-geometric"><span class="toc-section-number">2.4</span>  Phân phối Geometric</a></li>
-  <li><a href="#phân-phối-exponential" id="toc-phân-phối-exponential" class="nav-link" data-scroll-target="#phân-phối-exponential"><span class="toc-section-number">2.5</span>  Phân phối Exponential</a></li>
-  <li><a href="#phân-phối-gaussian" id="toc-phân-phối-gaussian" class="nav-link" data-scroll-target="#phân-phối-gaussian"><span class="toc-section-number">2.6</span>  Phân phối Gaussian</a></li>
+  <li><a href="#giả-thuyết-không-và-đối" id="toc-giả-thuyết-không-và-đối" class="nav-link active" data-scroll-target="#giả-thuyết-không-và-đối"><span class="toc-section-number">6.1</span>  Giả thuyết không và đối</a></li>
+  <li><a href="#neyman-pearson-paradigm" id="toc-neyman-pearson-paradigm" class="nav-link" data-scroll-target="#neyman-pearson-paradigm"><span class="toc-section-number">6.2</span>  Neyman-Pearson paradigm</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vochicong/xstk/edit/main/13-distributions.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vochicong/xstk/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/vochicong/xstk/blob/main/13-distributions.qmd" class="toc-action">View source</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vochicong/xstk/edit/main/40-hypothesis-test.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vochicong/xstk/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/vochicong/xstk/blob/main/40-hypothesis-test.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -197,7 +193,7 @@ $$
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Phân phối</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Giả thuyết</span></h1>
 </div>
 
 
@@ -211,62 +207,33 @@ $$
 
 </header>
 
-<p>Có một số phân phối xác suất thông dụng.</p>
-<section id="phân-phối-bernoulli" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="phân-phối-bernoulli"><span class="header-section-number">2.1</span> Phân phối Bernoulli</h2>
-<div id="def-bernoulli" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 2.1 </strong></span><span class="math inline">\(X\sim\Ber(p)\)</span> có <span class="math display">\[
-\P(X=1) = p = 1-\P(X=0)
-\]</span> và <span class="math inline">\(\E[X] = p, \V[X] = p(1-p)\)</span>.</p>
-</div>
+<p>Hypothesis testing</p>
+<ul>
+<li>Định nghĩa giả thuyết không và giả thuyết đối.</li>
+<li>Thiết kế kiểm định thống kê</li>
+<li>Phân loại lỗi Loại 1 và Loại 2</li>
+<li>Tính hàm công suất của kiểm định</li>
+<li>Định mức đối với kiểm định</li>
+<li>Tính toán và giải thích giá trị p</li>
+</ul>
+<section id="giả-thuyết-không-và-đối" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="giả-thuyết-không-và-đối"><span class="header-section-number">6.1</span> Giả thuyết không và đối</h2>
+<p>Với mô hình thống kê <span class="math inline">\(\left(E,(\P_\theta)_{\theta\in\Theta}\right),\)</span> sử dụng bộ mẫu dữ liệu iid <span class="math inline">\(X_1,\ldots,X_n,\)</span> ta xem xét hai giả thuyết sau đối với tham số <span class="math inline">\(\theta:\)</span></p>
+<p><span class="math display">\[
+\begin{cases}
+H_0:&amp;\theta\in\Theta_0\\
+H_1:&amp;\theta\in\Theta_1
+\end{cases}
+\]</span></p>
+<p>với <span class="math inline">\(\Theta_0,\Theta_1\)</span> là phân mảnh (không giao nhau) của <span class="math inline">\(\Theta,\)</span> <span class="math inline">\(\Theta_0\)</span> là “thường thức” (status quo), còn <span class="math inline">\(\Theta_1\)</span> là “phát hiện” (discovery) mới. Ta gọi <span class="math inline">\(H_0\)</span> là giả thuyết không, còn <span class="math inline">\(H_1\)</span> là giả thuyết đối (thay thế). Ta sẽ <strong>kiểm định <span class="math inline">\(H_0\)</span> đối với <span class="math inline">\(H_1\)</span></strong>, và sẽ đi đến kết quả là <strong>loại trừ <span class="math inline">\(H_0\)</span></strong> hoặc là <strong>không thể loại trừ <span class="math inline">\(H_0\)</span></strong>.</p>
 </section>
-<section id="phân-phối-binomial" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="phân-phối-binomial"><span class="header-section-number">2.2</span> Phân phối Binomial</h2>
-<div id="def-binomial" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 2.2 </strong></span><span class="math inline">\(X\sim\Bin(n, p)\)</span> với <span class="math inline">\(n\in\N, p\in(0,1)\)</span> mô tả tổng số lần thành công của <span class="math inline">\(n\)</span> thí nghiệm độc lập <span class="math inline">\(X_1,\ldots,X_n \iid \Ber(p).\)</span> Ta có <span class="math display">\[
-\P(X=k) = \binom{n}{k}p^{k}(1-p)^{n-k}
-\]</span> và <span class="math inline">\(\E[X] = np, \V[X] = np(1-p)\)</span>.</p>
-</div>
-</section>
-<section id="phân-phối-poisson" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="phân-phối-poisson"><span class="header-section-number">2.3</span> Phân phối Poisson</h2>
-<div id="def-poisson" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 2.3 </strong></span><span class="math inline">\(X\sim\Poi(\lambda)\)</span> thường dùng để mô tả số lần <span class="math inline">\(k\)</span> mà sự kiện phát sinh trong một giới hạn cố định, với giả định tần suất phát sinh sự kiện là <span class="math inline">\(\lambda &gt; 0\)</span> cố định, và các sự kiện phát sinh độc lập. <span class="math display">\[
-\P(X=k) = e^{-\lambda}
-\frac{\lambda^k}{k!}, \,k=0,1,2,\ldots
-\]</span> và <span class="math inline">\(\E[X] = \V[X] = \lambda\)</span>.</p>
-</div>
-<p>Khi <span class="math inline">\(n\)</span> đủ lớn và <span class="math inline">\(p\)</span> đủ nhỏ thì <span class="math inline">\(\Poi(np)\)</span> gần với <span class="math inline">\(\Bin(n,p)\)</span>.</p>
-</section>
-<section id="phân-phối-geometric" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="phân-phối-geometric"><span class="header-section-number">2.4</span> Phân phối Geometric</h2>
-<div id="def-geomdist" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 2.4 </strong></span><span class="math inline">\(X\sim\text{Geom}(p), p \in (0,1)\)</span> có <span class="math display">\[
-\P(X=k)=p(1-p)^{k-1}, k=1,2,\ldots
-\]</span> và <span class="math inline">\(\E[X]=1/p,\V[X]=(1-p)/p^2.\)</span></p>
-</div>
-</section>
-<section id="phân-phối-exponential" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="phân-phối-exponential"><span class="header-section-number">2.5</span> Phân phối Exponential</h2>
-<div id="def-expdist" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 2.5 </strong></span><span class="math inline">\(X\sim\text{Exp}(\lambda)\)</span> dùng để mô tả khoảng cách <span class="math inline">\(x\)</span> giữa hai lần phát sinh của một chuỗi sự kiện kiểu Poisson (hai lần phát sinh sự kiện liên tiếp là độc lập với nhau, và tần suất phát sinh <span class="math inline">\(\lambda&gt;0\)</span> là cố định). Có <span class="math display">\[
-f(x)={\lambda}e^{-\lambda x},x\in\R_+
-\]</span> và <span class="math inline">\(\E[X]=1/\lambda,\V[X]=1/\lambda^2.\)</span></p>
-</div>
-</section>
-<section id="phân-phối-gaussian" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="phân-phối-gaussian"><span class="header-section-number">2.6</span> Phân phối Gaussian</h2>
-<div id="def-gaussian" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 2.6 </strong></span><span class="math inline">\(X\sim\Gaus(\mu,\sigma^2)\)</span> có mật độ <span class="math display">\[
-f(x) =
-\frac{1}{\sqrt{\pi 2\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right),
-x\in\R
-\]</span> và <span class="math inline">\(\E[X]=\mu,\V[X]=\sigma^2\)</span>.</p>
-</div>
-<div id="thm-sum-gaussian" class="theorem">
-<p><span class="theorem-title"><strong>Thm 2.1 </strong></span>Nếu <span class="math inline">\(X_i \sim\Gaus(\mu_i,\sigma_i^2) (i=1,\ldots,n)\)</span> thì</p>
-<p><span class="math display">\[\sum_{i=1}^n X_i\sim\Gaus\left(\sum_{i=1}^n \mu_i,\sum_{i=1}^n \sigma_i^2\right)\]</span></p>
-</div>
+<section id="neyman-pearson-paradigm" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="neyman-pearson-paradigm"><span class="header-section-number">6.2</span> Neyman-Pearson paradigm</h2>
+<p>Phương thức Neyman-Pearson</p>
+<ul>
+<li>Đảm bảo xác suất lỗi Loại 1 nhỏ hơn một mức độ <span class="math inline">\(\theta\in (0,1)\)</span></li>
+<li>Tối thiểu hóa xác suất lỗi Loại 2 trong điều kiện giới hạn trên</li>
+</ul>
 
 
 </section>
@@ -372,13 +339,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./10-proba-intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Xác suất</span></span>
+      <a href="./30-est-method.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ước lượng</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./15-proba-converge.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Hội tụ</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">Giáo trình</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

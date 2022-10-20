@@ -238,6 +238,27 @@
     "text": "5.6 M-estimatior\n\nDef 5.9 Với mục tiêu ước lượng thuộc tính \\(\\mu^*\\) của xác suất \\(\\P(X)\\), ta tìm một “hàm tổn thất” \\(\\rho(X,\\mu)\\) có giá trị kỳ vọng đạt cực tiểu tại \\(\\mu = \\mu^*:\\) \\[\n\\mathcal{Q}(\\mu)\n\\is \\E_{\\P}[\\rho(X,\\mu)]\n.\n\\]\nNếu quan sát được \\(X_1,\\ldots,X_n\\iid\\P(X),\\) ta ước lượng \\[\n\\mathcal{Q}(\\mu)\n\\approx\n\\mathcal{Q}_n(\\mu)\n\\is\n\\frac{1}{n} \\sum_{i=1}^n{\\rho(X_i,\\mu)}\n.\\]\nKhi đó \\(\\mu^*\\approx\\hat{\\mu}\\) với “M-estimator” \\(\\hat{\\mu}\\) là\n\\[\n\\hat{\\mu}\n\\is\\argmin_{\\mu}\n\\mathcal{Q}_n(\\mu)\n.\n\\]\n\nVí dụ,\n\nvới \\(\\rho(x,\\theta) = -\\ln p_\\theta(x)\\) ta có MLE để ước lượng tham số \\(\\theta^*\\) của mô hình \\(\\P\\)\nvới \\(\\vec x,\\vec\\mu\\in\\R^d\\), dùng \\(\\rho(\\vec x,\\vec\\mu) = \\|\\vec x-\\vec\\mu\\|^2\\) ta ước lượng được \\(\\vec\\mu^*=\\E[\\vec x].\\)"
   },
   {
+    "objectID": "40-hypothesis-test.html",
+    "href": "40-hypothesis-test.html",
+    "title": "6  Giả thuyết",
+    "section": "",
+    "text": "Hypothesis testing"
+  },
+  {
+    "objectID": "40-hypothesis-test.html#giả-thuyết-không-và-đối",
+    "href": "40-hypothesis-test.html#giả-thuyết-không-và-đối",
+    "title": "6  Giả thuyết",
+    "section": "6.1 Giả thuyết không và đối",
+    "text": "6.1 Giả thuyết không và đối\nVới mô hình thống kê \\(\\left(E,(\\P_\\theta)_{\\theta\\in\\Theta}\\right),\\) sử dụng bộ mẫu dữ liệu iid \\(X_1,\\ldots,X_n,\\) ta xem xét hai giả thuyết sau đối với tham số \\(\\theta:\\)\n\\[\n\\begin{cases}\nH_0:&\\theta\\in\\Theta_0\\\\\nH_1:&\\theta\\in\\Theta_1\n\\end{cases}\n\\]\nvới \\(\\Theta_0,\\Theta_1\\) là phân mảnh (không giao nhau) của \\(\\Theta,\\) \\(\\Theta_0\\) là “thường thức” (status quo), còn \\(\\Theta_1\\) là “phát hiện” (discovery) mới. Ta gọi \\(H_0\\) là giả thuyết không, còn \\(H_1\\) là giả thuyết đối (thay thế). Ta sẽ kiểm định \\(H_0\\) đối với \\(H_1\\), và sẽ đi đến kết quả là loại trừ \\(H_0\\) hoặc là không thể loại trừ \\(H_0\\)."
+  },
+  {
+    "objectID": "40-hypothesis-test.html#neyman-pearson-paradigm",
+    "href": "40-hypothesis-test.html#neyman-pearson-paradigm",
+    "title": "6  Giả thuyết",
+    "section": "6.2 Neyman-Pearson paradigm",
+    "text": "6.2 Neyman-Pearson paradigm\nPhương thức Neyman-Pearson\n\nĐảm bảo xác suất lỗi Loại 1 nhỏ hơn một mức độ \\(\\theta\\in (0,1)\\)\nTối thiểu hóa xác suất lỗi Loại 2 trong điều kiện giới hạn trên"
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Giáo trình",

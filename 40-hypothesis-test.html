@@ -164,7 +164,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#giả-thuyết-không-và-đối" id="toc-giả-thuyết-không-và-đối" class="nav-link active" data-scroll-target="#giả-thuyết-không-và-đối"><span class="toc-section-number">6.1</span>  Giả thuyết không và đối</a></li>
-  <li><a href="#neyman-pearson-paradigm" id="toc-neyman-pearson-paradigm" class="nav-link" data-scroll-target="#neyman-pearson-paradigm"><span class="toc-section-number">6.2</span>  Neyman-Pearson paradigm</a></li>
+  <li><a href="#kiểm-định" id="toc-kiểm-định" class="nav-link" data-scroll-target="#kiểm-định"><span class="toc-section-number">6.2</span>  Kiểm định</a></li>
+  <li><a href="#neyman-pearson-paradigm" id="toc-neyman-pearson-paradigm" class="nav-link" data-scroll-target="#neyman-pearson-paradigm"><span class="toc-section-number">6.3</span>  Neyman-Pearson paradigm</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vochicong/xstk/edit/main/40-hypothesis-test.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vochicong/xstk/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/vochicong/xstk/blob/main/40-hypothesis-test.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
@@ -218,22 +219,68 @@ $$
 </ul>
 <section id="giả-thuyết-không-và-đối" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="giả-thuyết-không-và-đối"><span class="header-section-number">6.1</span> Giả thuyết không và đối</h2>
-<p>Với mô hình thống kê <span class="math inline">\(\left(E,(\P_\theta)_{\theta\in\Theta}\right),\)</span> sử dụng bộ mẫu dữ liệu iid <span class="math inline">\(X_1,\ldots,X_n,\)</span> ta xem xét hai giả thuyết sau đối với tham số <span class="math inline">\(\theta:\)</span></p>
+<p>Với mô hình thống kê <span class="math inline">\(\left(E,(\P_\theta)_{\theta\in\Theta}\right),\)</span> sử dụng bộ mẫu dữ liệu iid <span class="math inline">\(X_1,\ldots,X_n,\)</span> ta xem xét hai giả thuyết về tham số <span class="math inline">\(\theta\)</span> như sau:</p>
 <p><span class="math display">\[
 \begin{cases}
 H_0:&amp;\theta\in\Theta_0\\
 H_1:&amp;\theta\in\Theta_1
 \end{cases}
 \]</span></p>
-<p>với <span class="math inline">\(\Theta_0,\Theta_1\)</span> là phân mảnh (không giao nhau) của <span class="math inline">\(\Theta,\)</span> <span class="math inline">\(\Theta_0\)</span> là “thường thức” (status quo), còn <span class="math inline">\(\Theta_1\)</span> là “phát hiện” (discovery) mới. Ta gọi <span class="math inline">\(H_0\)</span> là giả thuyết không, còn <span class="math inline">\(H_1\)</span> là giả thuyết đối (thay thế). Ta sẽ <strong>kiểm định <span class="math inline">\(H_0\)</span> đối với <span class="math inline">\(H_1\)</span></strong>, và sẽ đi đến kết quả là <strong>loại trừ <span class="math inline">\(H_0\)</span></strong> hoặc là <strong>không thể loại trừ <span class="math inline">\(H_0\)</span></strong>.</p>
+<p>với <span class="math inline">\(\Theta_0,\Theta_1\)</span> là phân mảnh (không giao nhau) của <span class="math inline">\(\Theta,\)</span> <span class="math inline">\(\Theta_0\)</span> là “thường thức” (status quo), còn <span class="math inline">\(\Theta_1\)</span> là “phát hiện” (discovery) mới. Ta gọi <span class="math inline">\(H_0\)</span> là giả thuyết không, còn <span class="math inline">\(H_1\)</span> là giả thuyết đối (thay thế).</p>
 </section>
-<section id="neyman-pearson-paradigm" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="neyman-pearson-paradigm"><span class="header-section-number">6.2</span> Neyman-Pearson paradigm</h2>
-<p>Phương thức Neyman-Pearson</p>
+<section id="kiểm-định" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="kiểm-định"><span class="header-section-number">6.2</span> Kiểm định</h2>
+<p>Ta sẽ <strong>kiểm định <span class="math inline">\(H_0\)</span> đối với <span class="math inline">\(H_1\)</span></strong> bằng cách chọn và sử dụng một lượng thống kê <span class="math inline">\(\psi\in\{0,1\}\)</span> để đi đến 1 trong 2 kết quả sau:</p>
 <ul>
-<li>Đảm bảo xác suất lỗi Loại 1 nhỏ hơn một mức độ <span class="math inline">\(\theta\in (0,1)\)</span></li>
-<li>Tối thiểu hóa xác suất lỗi Loại 2 trong điều kiện giới hạn trên</li>
+<li>Nếu <span class="math inline">\(\psi=0:\)</span> <strong>phủ định <span class="math inline">\(H_0\)</span></strong></li>
+<li>Nếu <span class="math inline">\(\psi=1:\)</span> <strong>không phủ định <span class="math inline">\(H_0\)</span></strong>.</li>
 </ul>
+<table class="table">
+<caption>Phân loại lỗi kiểm định</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">không phủ định <span class="math inline">\(H_0\)</span></th>
+<th style="text-align: center;">phủ định <span class="math inline">\(H_0\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\theta\in\Theta_0\)</span></td>
+<td style="text-align: center;">Đúng</td>
+<td style="text-align: center;">Lỗi loại 1</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\theta\in\Theta_1\)</span></td>
+<td style="text-align: center;">Lỗi loại 2</td>
+<td style="text-align: center;">Đúng</td>
+</tr>
+</tbody>
+</table>
+<p>Ta sử dụng hàm công suất để tính hai loại lỗi trên: <span class="math display">\[
+\beta(\theta) = \P_\theta(\psi=1)
+.
+\]</span></p>
+</section>
+<section id="neyman-pearson-paradigm" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="neyman-pearson-paradigm"><span class="header-section-number">6.3</span> Neyman-Pearson paradigm</h2>
+<p>Phương thức Neyman-Pearson chọn một mức <span class="math inline">\(\alpha\in (0,1)\)</span> rồi</p>
+<ul>
+<li>Đảm bảo xác suất lỗi loại 1 không vượt quá <span class="math inline">\(\alpha\)</span></li>
+<li>Tối thiểu hóa xác suất lỗi loại 2 trong điều kiện giới hạn trên</li>
+</ul>
+<p>Kiểm định <span class="math inline">\(\psi\)</span> được gọi là ở mức <span class="math inline">\(\alpha\)</span> nếu <span class="math display">\[
+\max_{\theta\in\Theta_0}
+\P_\theta(\psi=1)\leq\alpha
+.
+\]</span></p>
+<p>Chuỗi kiểm định <span class="math inline">\((\psi_n)_{n=1,2,\ldots}\)</span> được gọi là tiệm cận về mức <span class="math inline">\(\alpha\)</span> nếu <span class="math display">\[
+\lim_{n\to\infty}
+\max_{\theta\in\Theta_0}
+\P_{\theta}(\psi_n=1)
+\leq\alpha
+.
+\]</span></p>
 
 
 </section>

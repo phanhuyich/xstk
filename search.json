@@ -249,14 +249,21 @@
     "href": "40-hypothesis-test.html#giả-thuyết-không-và-đối",
     "title": "6  Giả thuyết",
     "section": "6.1 Giả thuyết không và đối",
-    "text": "6.1 Giả thuyết không và đối\nVới mô hình thống kê \\(\\left(E,(\\P_\\theta)_{\\theta\\in\\Theta}\\right),\\) sử dụng bộ mẫu dữ liệu iid \\(X_1,\\ldots,X_n,\\) ta xem xét hai giả thuyết sau đối với tham số \\(\\theta:\\)\n\\[\n\\begin{cases}\nH_0:&\\theta\\in\\Theta_0\\\\\nH_1:&\\theta\\in\\Theta_1\n\\end{cases}\n\\]\nvới \\(\\Theta_0,\\Theta_1\\) là phân mảnh (không giao nhau) của \\(\\Theta,\\) \\(\\Theta_0\\) là “thường thức” (status quo), còn \\(\\Theta_1\\) là “phát hiện” (discovery) mới. Ta gọi \\(H_0\\) là giả thuyết không, còn \\(H_1\\) là giả thuyết đối (thay thế). Ta sẽ kiểm định \\(H_0\\) đối với \\(H_1\\), và sẽ đi đến kết quả là loại trừ \\(H_0\\) hoặc là không thể loại trừ \\(H_0\\)."
+    "text": "6.1 Giả thuyết không và đối\nVới mô hình thống kê \\(\\left(E,(\\P_\\theta)_{\\theta\\in\\Theta}\\right),\\) sử dụng bộ mẫu dữ liệu iid \\(X_1,\\ldots,X_n,\\) ta xem xét hai giả thuyết về tham số \\(\\theta\\) như sau:\n\\[\n\\begin{cases}\nH_0:&\\theta\\in\\Theta_0\\\\\nH_1:&\\theta\\in\\Theta_1\n\\end{cases}\n\\]\nvới \\(\\Theta_0,\\Theta_1\\) là phân mảnh (không giao nhau) của \\(\\Theta,\\) \\(\\Theta_0\\) là “thường thức” (status quo), còn \\(\\Theta_1\\) là “phát hiện” (discovery) mới. Ta gọi \\(H_0\\) là giả thuyết không, còn \\(H_1\\) là giả thuyết đối (thay thế)."
+  },
+  {
+    "objectID": "40-hypothesis-test.html#kiểm-định",
+    "href": "40-hypothesis-test.html#kiểm-định",
+    "title": "6  Giả thuyết",
+    "section": "6.2 Kiểm định",
+    "text": "6.2 Kiểm định\nTa sẽ kiểm định \\(H_0\\) đối với \\(H_1\\) bằng cách chọn và sử dụng một lượng thống kê \\(\\psi\\in\\{0,1\\}\\) để đi đến 1 trong 2 kết quả sau:\n\nNếu \\(\\psi=0:\\) phủ định \\(H_0\\)\nNếu \\(\\psi=1:\\) không phủ định \\(H_0\\).\n\n\nPhân loại lỗi kiểm định\n\n\n\nkhông phủ định \\(H_0\\)\nphủ định \\(H_0\\)\n\n\n\n\n\\(\\theta\\in\\Theta_0\\)\nĐúng\nLỗi loại 1\n\n\n\\(\\theta\\in\\Theta_1\\)\nLỗi loại 2\nĐúng\n\n\n\nTa sử dụng hàm công suất để tính hai loại lỗi trên: \\[\n\\beta(\\theta) = \\P_\\theta(\\psi=1)\n.\n\\]"
   },
   {
     "objectID": "40-hypothesis-test.html#neyman-pearson-paradigm",
     "href": "40-hypothesis-test.html#neyman-pearson-paradigm",
     "title": "6  Giả thuyết",
-    "section": "6.2 Neyman-Pearson paradigm",
-    "text": "6.2 Neyman-Pearson paradigm\nPhương thức Neyman-Pearson\n\nĐảm bảo xác suất lỗi Loại 1 nhỏ hơn một mức độ \\(\\theta\\in (0,1)\\)\nTối thiểu hóa xác suất lỗi Loại 2 trong điều kiện giới hạn trên"
+    "section": "6.3 Neyman-Pearson paradigm",
+    "text": "6.3 Neyman-Pearson paradigm\nPhương thức Neyman-Pearson chọn một mức \\(\\alpha\\in (0,1)\\) rồi\n\nĐảm bảo xác suất lỗi loại 1 không vượt quá \\(\\alpha\\)\nTối thiểu hóa xác suất lỗi loại 2 trong điều kiện giới hạn trên\n\nKiểm định \\(\\psi\\) được gọi là ở mức \\(\\alpha\\) nếu \\[\n\\max_{\\theta\\in\\Theta_0}\n\\P_\\theta(\\psi=1)\\leq\\alpha\n.\n\\]\nChuỗi kiểm định \\((\\psi_n)_{n=1,2,\\ldots}\\) được gọi là tiệm cận về mức \\(\\alpha\\) nếu \\[\n\\lim_{n\\to\\infty}\n\\max_{\\theta\\in\\Theta_0}\n\\P_{\\theta}(\\psi_n=1)\n\\leq\\alpha\n.\n\\]"
   },
   {
     "objectID": "references.html",

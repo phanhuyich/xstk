@@ -13,7 +13,7 @@ Hypothesis testing
 
 Với mô hình thống kê $\left(E,(\P_\theta)_{\theta\in\Theta}\right),$
 sử dụng bộ mẫu dữ liệu iid $X_1,\ldots,X_n,$
-ta xem xét hai giả thuyết sau đối với tham số $\theta:$
+ta xem xét hai giả thuyết về tham số $\theta$ như sau:
 
 $$
 \begin{cases}
@@ -28,14 +28,50 @@ $\Theta_0$ là "thường thức" (status quo),
 còn $\Theta_1$ là "phát hiện" (discovery) mới.
 Ta gọi $H_0$ là giả thuyết không,
 còn $H_1$ là giả thuyết đối (thay thế).
-Ta sẽ **kiểm định $H_0$ đối với $H_1$**,
-và sẽ đi đến kết quả là
-**loại trừ $H_0$** hoặc là
-**không thể loại trừ $H_0$**.
+
+## Kiểm định
+
+Ta sẽ **kiểm định $H_0$ đối với $H_1$**
+bằng cách chọn và sử dụng một lượng thống kê
+$\psi\in\{0,1\}$
+để đi đến 1 trong 2 kết quả sau:
+
+- Nếu $\psi=0:$ **phủ định $H_0$**
+- Nếu $\psi=1:$ **không phủ định $H_0$**.
+
+| | không phủ định $H_0$ | phủ định $H_0$ |
+|---------------------|:-----:|:------:|
+| $\theta\in\Theta_0$ | Đúng | Lỗi loại 1 |
+| $\theta\in\Theta_1$ | Lỗi loại 2 | Đúng |
+
+:Phân loại lỗi kiểm định
+
+Ta sử dụng hàm công suất để tính hai loại lỗi trên:
+$$
+\beta(\theta) = \P_\theta(\psi=1)
+.
+$$
 
 ## Neyman-Pearson paradigm
 
 Phương thức Neyman-Pearson
+chọn một mức $\alpha\in (0,1)$ rồi
 
-- Đảm bảo xác suất lỗi Loại 1 nhỏ hơn một mức độ $\theta\in (0,1)$
-- Tối thiểu hóa xác suất lỗi Loại 2 trong điều kiện giới hạn trên
+- Đảm bảo xác suất lỗi loại 1 không vượt quá $\alpha$
+- Tối thiểu hóa xác suất lỗi loại 2 trong điều kiện giới hạn trên
+
+Kiểm định $\psi$ được gọi là ở mức $\alpha$ nếu
+$$
+\max_{\theta\in\Theta_0}
+\P_\theta(\psi=1)\leq\alpha
+.
+$$
+
+Chuỗi kiểm định $(\psi_n)_{n=1,2,\ldots}$ được gọi là tiệm cận về mức $\alpha$ nếu
+$$
+\lim_{n\to\infty}
+\max_{\theta\in\Theta_0}
+\P_{\theta}(\psi_n=1)
+\leq\alpha
+.
+$$

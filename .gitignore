@@ -3,6 +3,9 @@
 .DS_Store
 .Rhistory
 *.Rproj*
+*.aux
+*.idx
+*.log
 *.toc
 *.tex
 !preamble.tex

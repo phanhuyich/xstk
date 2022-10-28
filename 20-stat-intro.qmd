@@ -70,7 +70,9 @@ xây dựng dựa trên quan sát
 $X_1,\ldots,X_n$,
 giả sử số
 $\alpha\in(0,1).$
-Khoảng tin cậy (confidence interval) cấp
+Khoảng tin cậy (confidence interval)
+\index{khoảng tin cậy}
+cấp
 $1-\alpha$ đối với $\theta$ là một khoảng ngẫu nhiên
 $\mathcal{I}$
 (phụ thuộc vào $X_1,\ldots,X_n$,

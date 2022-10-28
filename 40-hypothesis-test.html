@@ -119,36 +119,56 @@ ul.task-list li input[type="checkbox"] {
   <a href="./index.html" class="sidebar-item-text sidebar-link">Lời nói đầu</a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Xác suất</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10-proba-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Xác suất</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13-distributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Phân phối</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15-proba-converge.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Hội tụ</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Thống kê</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./20-stat-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Thống kê</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./30-est-method.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ước lượng</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./40-hypothesis-test.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Giả thuyết</span></a>
   </div>
 </li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">Giáo trình</a>
@@ -166,8 +186,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#giả-thuyết-không-và-đối" id="toc-giả-thuyết-không-và-đối" class="nav-link active" data-scroll-target="#giả-thuyết-không-và-đối"><span class="toc-section-number">6.1</span>  Giả thuyết không và đối</a></li>
   <li><a href="#kiểm-định" id="toc-kiểm-định" class="nav-link" data-scroll-target="#kiểm-định"><span class="toc-section-number">6.2</span>  Kiểm định</a></li>
   <li><a href="#neyman-pearson-paradigm" id="toc-neyman-pearson-paradigm" class="nav-link" data-scroll-target="#neyman-pearson-paradigm"><span class="toc-section-number">6.3</span>  Neyman-Pearson paradigm</a></li>
+  <li><a href="#p-value" id="toc-p-value" class="nav-link" data-scroll-target="#p-value"><span class="toc-section-number">6.4</span>  p-value</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vochicong/xstk/edit/main/40-hypothesis-test.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vochicong/xstk/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/vochicong/xstk/blob/main/40-hypothesis-test.qmd" class="toc-action">View source</a></p></div></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -230,37 +251,30 @@ H_1:&amp;\theta\in\Theta_1
 </section>
 <section id="kiểm-định" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="kiểm-định"><span class="header-section-number">6.2</span> Kiểm định</h2>
-<p>Ta sẽ <strong>kiểm định <span class="math inline">\(H_0\)</span> đối với <span class="math inline">\(H_1\)</span></strong> bằng cách chọn và sử dụng một lượng thống kê <span class="math inline">\(\psi\in\{0,1\}\)</span> để đi đến 1 trong 2 kết quả sau:</p>
-<ul>
-<li>Nếu <span class="math inline">\(\psi=0:\)</span> <strong>phủ định <span class="math inline">\(H_0\)</span></strong></li>
-<li>Nếu <span class="math inline">\(\psi=1:\)</span> <strong>không phủ định <span class="math inline">\(H_0\)</span></strong>.</li>
-</ul>
+<p>Ta sẽ <strong>kiểm định <span class="math inline">\(H_0\)</span> đối với <span class="math inline">\(H_1\)</span></strong> bằng cách chọn và sử dụng một định lượng thống kê <span class="math inline">\(\psi\in\{0,1\}.\)</span></p>
 <table class="table">
-<caption>Phân loại lỗi kiểm định</caption>
 <thead>
 <tr class="header">
 <th></th>
-<th style="text-align: center;">không phủ định <span class="math inline">\(H_0\)</span></th>
-<th style="text-align: center;">phủ định <span class="math inline">\(H_0\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\psi=0:\)</span> chấp nhận <span class="math inline">\(H_0\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\psi=1:\)</span> phủ nhận <span class="math inline">\(H_0\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><span class="math inline">\(\theta\in\Theta_0\)</span></td>
-<td style="text-align: center;">Đúng</td>
+<td style="text-align: center;">Kiểm định đúng</td>
 <td style="text-align: center;">Lỗi loại 1</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(\theta\in\Theta_1\)</span></td>
 <td style="text-align: center;">Lỗi loại 2</td>
-<td style="text-align: center;">Đúng</td>
+<td style="text-align: center;">Kiểm định đúng</td>
 </tr>
 </tbody>
 </table>
-<p>Ta sử dụng hàm công suất để tính hai loại lỗi trên: <span class="math display">\[
-\beta(\theta) = \P_\theta(\psi=1)
-.
-\]</span></p>
+<p><strong>Công suất</strong> <span class="math inline">\(\beta(\theta) = \P_\theta(\psi=1)\)</span> nên có giá trị nhỏ nếu <span class="math inline">\(\theta\in\Theta_0\)</span> và lớn nếu <span class="math inline">\(\theta\in\Theta_1 .\)</span></p>
+<p>Có thể viết <span class="math inline">\(\psi=\mathbb{1}\{R\}\)</span> với <span class="math inline">\(R\)</span> là <strong>vùng phủ nhận</strong>, còn <span class="math inline">\(R^c\)</span> là <strong>vùng chấp nhận</strong> . Nếu ta có khoảng tin cậy <span class="math inline">\(\mathcal{I}\)</span> ở mức <span class="math inline">\(1-\alpha\)</span> thì <span class="math inline">\(\psi=\mathbb{1}\{\theta_0\in\mathcal{I}^c\}\)</span> là kiểm định mức <span class="math inline">\(\alpha\)</span> cho <span class="math inline">\(H_0: \theta=\theta_0, H_1: \theta\neq\theta_0.\)</span></p>
 </section>
 <section id="neyman-pearson-paradigm" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="neyman-pearson-paradigm"><span class="header-section-number">6.3</span> Neyman-Pearson paradigm</h2>
@@ -269,7 +283,7 @@ H_1:&amp;\theta\in\Theta_1
 <li>Đảm bảo xác suất lỗi loại 1 không vượt quá <span class="math inline">\(\alpha\)</span></li>
 <li>Tối thiểu hóa xác suất lỗi loại 2 trong điều kiện giới hạn trên</li>
 </ul>
-<p>Kiểm định <span class="math inline">\(\psi\)</span> được gọi là ở mức <span class="math inline">\(\alpha\)</span> nếu <span class="math display">\[
+<p>Kiểm định <span class="math inline">\(\psi\)</span> được gọi là ở mức <span class="math inline">\(\alpha\)</span> nếu có xác suất lỗi loại 1 không vượt quá <span class="math inline">\(\alpha:\)</span> <span class="math display">\[
 \max_{\theta\in\Theta_0}
 \P_\theta(\psi=1)\leq\alpha
 .
@@ -281,6 +295,10 @@ H_1:&amp;\theta\in\Theta_1
 \leq\alpha
 .
 \]</span></p>
+</section>
+<section id="p-value" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="p-value"><span class="header-section-number">6.4</span> p-value</h2>
+<p>Từ dữ liệu quan sát <span class="math inline">\(X_1, \ldots, X_n\)</span> ta tính giá trị mức <span class="math inline">\(\alpha\)</span> (tiệm cận) nhỏ nhất tại đó kiểm định <span class="math inline">\(\psi\)</span> phủ nhận <span class="math inline">\(H_0,\)</span> gọi nó là p-value (tiệm cận) của <span class="math inline">\(\psi.\)</span> Nếu p-value càng nhỏ thì ta càng tự tin phủ nhận <span class="math inline">\(H_0.\)</span></p>
 
 
 </section>

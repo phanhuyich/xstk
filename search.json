@@ -256,14 +256,21 @@
     "href": "40-hypothesis-test.html#kiểm-định",
     "title": "6  Giả thuyết",
     "section": "6.2 Kiểm định",
-    "text": "6.2 Kiểm định\nTa sẽ kiểm định \\(H_0\\) đối với \\(H_1\\) bằng cách chọn và sử dụng một lượng thống kê \\(\\psi\\in\\{0,1\\}\\) để đi đến 1 trong 2 kết quả sau:\n\nNếu \\(\\psi=0:\\) phủ định \\(H_0\\)\nNếu \\(\\psi=1:\\) không phủ định \\(H_0\\).\n\n\nPhân loại lỗi kiểm định\n\n\n\nkhông phủ định \\(H_0\\)\nphủ định \\(H_0\\)\n\n\n\n\n\\(\\theta\\in\\Theta_0\\)\nĐúng\nLỗi loại 1\n\n\n\\(\\theta\\in\\Theta_1\\)\nLỗi loại 2\nĐúng\n\n\n\nTa sử dụng hàm công suất để tính hai loại lỗi trên: \\[\n\\beta(\\theta) = \\P_\\theta(\\psi=1)\n.\n\\]"
+    "text": "6.2 Kiểm định\nTa sẽ kiểm định \\(H_0\\) đối với \\(H_1\\) bằng cách chọn và sử dụng một định lượng thống kê \\(\\psi\\in\\{0,1\\}.\\)\n\n\n\n\n\\(\\psi=0:\\) chấp nhận \\(H_0\\)\n\\(\\psi=1:\\) phủ nhận \\(H_0\\)\n\n\n\n\n\\(\\theta\\in\\Theta_0\\)\nKiểm định đúng\nLỗi loại 1\n\n\n\\(\\theta\\in\\Theta_1\\)\nLỗi loại 2\nKiểm định đúng\n\n\n\nCông suất \\(\\beta(\\theta) = \\P_\\theta(\\psi=1)\\) nên có giá trị nhỏ nếu \\(\\theta\\in\\Theta_0\\) và lớn nếu \\(\\theta\\in\\Theta_1 .\\)\nCó thể viết \\(\\psi=\\mathbb{1}\\{R\\}\\) với \\(R\\) là vùng phủ nhận, còn \\(R^c\\) là vùng chấp nhận . Nếu ta có khoảng tin cậy \\(\\mathcal{I}\\) ở mức \\(1-\\alpha\\) thì \\(\\psi=\\mathbb{1}\\{\\theta_0\\in\\mathcal{I}^c\\}\\) là kiểm định mức \\(\\alpha\\) cho \\(H_0: \\theta=\\theta_0, H_1: \\theta\\neq\\theta_0.\\)"
   },
   {
     "objectID": "40-hypothesis-test.html#neyman-pearson-paradigm",
     "href": "40-hypothesis-test.html#neyman-pearson-paradigm",
     "title": "6  Giả thuyết",
     "section": "6.3 Neyman-Pearson paradigm",
-    "text": "6.3 Neyman-Pearson paradigm\nPhương thức Neyman-Pearson chọn một mức \\(\\alpha\\in (0,1)\\) rồi\n\nĐảm bảo xác suất lỗi loại 1 không vượt quá \\(\\alpha\\)\nTối thiểu hóa xác suất lỗi loại 2 trong điều kiện giới hạn trên\n\nKiểm định \\(\\psi\\) được gọi là ở mức \\(\\alpha\\) nếu \\[\n\\max_{\\theta\\in\\Theta_0}\n\\P_\\theta(\\psi=1)\\leq\\alpha\n.\n\\]\nChuỗi kiểm định \\((\\psi_n)_{n=1,2,\\ldots}\\) được gọi là tiệm cận về mức \\(\\alpha\\) nếu \\[\n\\lim_{n\\to\\infty}\n\\max_{\\theta\\in\\Theta_0}\n\\P_{\\theta}(\\psi_n=1)\n\\leq\\alpha\n.\n\\]"
+    "text": "6.3 Neyman-Pearson paradigm\nPhương thức Neyman-Pearson chọn một mức \\(\\alpha\\in (0,1)\\) rồi\n\nĐảm bảo xác suất lỗi loại 1 không vượt quá \\(\\alpha\\)\nTối thiểu hóa xác suất lỗi loại 2 trong điều kiện giới hạn trên\n\nKiểm định \\(\\psi\\) được gọi là ở mức \\(\\alpha\\) nếu có xác suất lỗi loại 1 không vượt quá \\(\\alpha:\\) \\[\n\\max_{\\theta\\in\\Theta_0}\n\\P_\\theta(\\psi=1)\\leq\\alpha\n.\n\\]\nChuỗi kiểm định \\((\\psi_n)_{n=1,2,\\ldots}\\) được gọi là tiệm cận về mức \\(\\alpha\\) nếu \\[\n\\lim_{n\\to\\infty}\n\\max_{\\theta\\in\\Theta_0}\n\\P_{\\theta}(\\psi_n=1)\n\\leq\\alpha\n.\n\\]"
+  },
+  {
+    "objectID": "40-hypothesis-test.html#p-value",
+    "href": "40-hypothesis-test.html#p-value",
+    "title": "6  Giả thuyết",
+    "section": "6.4 p-value",
+    "text": "6.4 p-value\nTừ dữ liệu quan sát \\(X_1, \\ldots, X_n\\) ta tính giá trị mức \\(\\alpha\\) (tiệm cận) nhỏ nhất tại đó kiểm định \\(\\psi\\) phủ nhận \\(H_0,\\) gọi nó là p-value (tiệm cận) của \\(\\psi.\\) Nếu p-value càng nhỏ thì ta càng tự tin phủ nhận \\(H_0.\\)"
   },
   {
     "objectID": "references.html",

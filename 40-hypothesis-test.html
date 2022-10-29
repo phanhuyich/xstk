@@ -186,7 +186,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#giả-thuyết-không-và-đối" id="toc-giả-thuyết-không-và-đối" class="nav-link active" data-scroll-target="#giả-thuyết-không-và-đối"><span class="toc-section-number">6.1</span>  Giả thuyết không và đối</a></li>
   <li><a href="#kiểm-định" id="toc-kiểm-định" class="nav-link" data-scroll-target="#kiểm-định"><span class="toc-section-number">6.2</span>  Kiểm định</a></li>
   <li><a href="#neyman-pearson-paradigm" id="toc-neyman-pearson-paradigm" class="nav-link" data-scroll-target="#neyman-pearson-paradigm"><span class="toc-section-number">6.3</span>  Neyman-Pearson paradigm</a></li>
-  <li><a href="#p-value" id="toc-p-value" class="nav-link" data-scroll-target="#p-value"><span class="toc-section-number">6.4</span>  p-value</a></li>
+  <li><a href="#khoảng-tin-cậy" id="toc-khoảng-tin-cậy" class="nav-link" data-scroll-target="#khoảng-tin-cậy"><span class="toc-section-number">6.4</span>  Khoảng tin cậy</a></li>
+  <li><a href="#p-value" id="toc-p-value" class="nav-link" data-scroll-target="#p-value"><span class="toc-section-number">6.5</span>  p-value</a></li>
   </ul>
 </nav>
     </div>
@@ -251,7 +252,7 @@ H_1:&amp;\theta\in\Theta_1
 </section>
 <section id="kiểm-định" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="kiểm-định"><span class="header-section-number">6.2</span> Kiểm định</h2>
-<p>Ta sẽ <strong>kiểm định <span class="math inline">\(H_0\)</span> đối với <span class="math inline">\(H_1\)</span></strong> bằng cách chọn và sử dụng một định lượng thống kê <span class="math inline">\(\psi\in\{0,1\}.\)</span></p>
+<p>Ta sẽ <strong>kiểm định <span class="math inline">\(H_0\)</span> đối với <span class="math inline">\(H_1\)</span></strong> bằng cách chọn và sử dụng một định lượng thống kê <span class="math inline">\(\psi(X_1,\ldots,X_n)\in\{0,1\}.\)</span></p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -273,31 +274,39 @@ H_1:&amp;\theta\in\Theta_1
 </tr>
 </tbody>
 </table>
-<p><strong>Công suất</strong> <span class="math inline">\(\beta(\theta) = \P_\theta(\psi=1)\)</span> nên có giá trị nhỏ nếu <span class="math inline">\(\theta\in\Theta_0\)</span> và lớn nếu <span class="math inline">\(\theta\in\Theta_1 .\)</span></p>
-<p>Có thể viết <span class="math inline">\(\psi=\mathbb{1}\{R\}\)</span> với <span class="math inline">\(R\)</span> là <strong>vùng phủ nhận</strong>, còn <span class="math inline">\(R^c\)</span> là <strong>vùng chấp nhận</strong> . Nếu ta có khoảng tin cậy <span class="math inline">\(\mathcal{I}\)</span> ở mức <span class="math inline">\(1-\alpha\)</span> thì <span class="math inline">\(\psi=\mathbb{1}\{\theta_0\in\mathcal{I}^c\}\)</span> là kiểm định mức <span class="math inline">\(\alpha\)</span> cho <span class="math inline">\(H_0: \theta=\theta_0, H_1: \theta\neq\theta_0.\)</span></p>
+<p>Có thể viết <span class="math inline">\(\psi=\mathbb{1}\{R_\psi\}\)</span> với sự kiện <span class="math inline">\(R_\psi\)</span> là <strong>vùng phủ nhận</strong>, còn <span class="math inline">\(R_\psi^c\)</span> là <strong>vùng chấp nhận</strong> .</p>
+<p>Ta thiết kế kiểm định sao cho hàm <strong>công suất</strong> sau đây có giá trị nhỏ khi <span class="math inline">\(\theta\in\Theta_0\)</span> và lớn khi <span class="math inline">\(\theta\in\Theta_1:\)</span></p>
+<p><span class="math display">\[\beta_\psi(\theta) \is \P_\theta(\psi=1) \equiv \P_\theta(R_\psi)\in[0,1]\]</span></p>
+<p>Vùng phủ nhận thường có dạng <span class="math display">\[
+R_\psi = \{X_i: T(X_i)\geq c\}
+\]</span> với <span class="math inline">\(T\)</span> là một lượng thống kê còn <span class="math inline">\(c\)</span> là một giá trị biên.</p>
 </section>
 <section id="neyman-pearson-paradigm" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="neyman-pearson-paradigm"><span class="header-section-number">6.3</span> Neyman-Pearson paradigm</h2>
-<p>Phương thức Neyman-Pearson chọn một mức <span class="math inline">\(\alpha\in (0,1)\)</span> rồi</p>
-<ul>
-<li>Đảm bảo xác suất lỗi loại 1 không vượt quá <span class="math inline">\(\alpha\)</span></li>
-<li>Tối thiểu hóa xác suất lỗi loại 2 trong điều kiện giới hạn trên</li>
-</ul>
-<p>Kiểm định <span class="math inline">\(\psi\)</span> được gọi là ở mức <span class="math inline">\(\alpha\)</span> nếu có xác suất lỗi loại 1 không vượt quá <span class="math inline">\(\alpha:\)</span> <span class="math display">\[
-\max_{\theta\in\Theta_0}
-\P_\theta(\psi=1)\leq\alpha
+<p>Kiểm định <span class="math inline">\(\psi\)</span> là ở mức <span class="math inline">\(\alpha\)</span> nếu có xác suất lỗi loại 1 không vượt quá <span class="math inline">\(\alpha:\)</span> <span class="math display">\[
+\sup_{\theta\in\Theta_0}
+\beta_\psi(\theta)
+\leq\alpha
 .
 \]</span></p>
 <p>Chuỗi kiểm định <span class="math inline">\((\psi_n)_{n=1,2,\ldots}\)</span> được gọi là tiệm cận về mức <span class="math inline">\(\alpha\)</span> nếu <span class="math display">\[
 \lim_{n\to\infty}
-\max_{\theta\in\Theta_0}
-\P_{\theta}(\psi_n=1)
+\sup_{\theta\in\Theta_0}
+\beta_{\psi_n}(\theta)
 \leq\alpha
 .
 \]</span></p>
+<p>Phương thức Neyman-Pearson chọn một mức <span class="math inline">\(\alpha\)</span>, đảm bảo xác suất lỗi loại 1 không vượt quá <span class="math inline">\(\alpha\)</span> rồi tối thiểu hóa xác suất lỗi loại 2. Nói cách khác là giữ cho công suất <span class="math inline">\(\beta_\psi(\theta)\)</span> đủ nhỏ khi <span class="math inline">\(\psi\in\Theta_0,\)</span> rồi tối đại hóa công suất khi <span class="math inline">\(\psi\in\Theta_1.\)</span></p>
 </section>
-<section id="p-value" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="p-value"><span class="header-section-number">6.4</span> p-value</h2>
+<section id="khoảng-tin-cậy" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="khoảng-tin-cậy"><span class="header-section-number">6.4</span> Khoảng tin cậy</h2>
+<p>Thông thường ta có thể xây dựng được kiểm định từ khoảng tin cậy. Ví dụ, ta muốn kiếm định tham số <span class="math inline">\(\theta\)</span>, <span class="math inline">\(H_0: \theta=\theta_0,\)</span> đối <span class="math inline">\(H_1: \theta\neq\theta_0.\)</span> Giả sử ta có khoảng tin cậy <span class="math inline">\(\mathcal{I}\)</span> ở mức <span class="math inline">\(1-\alpha\)</span>, tức là <span class="math display">\[\P_\theta(I\ni \theta)\geq 1-\alpha.\]</span> Khi đó, <span class="math inline">\(\psi=\mathbb{1}\{\theta_0\notin\mathcal{I}\}\)</span> là kiểm định mức <span class="math inline">\(\alpha\)</span></p>
+<p><span class="math display">\[
+\beta_\psi(\theta_0) = \P_{\theta_0}(\theta_0\notin I) \leq \alpha.
+\]</span></p>
+</section>
+<section id="p-value" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="p-value"><span class="header-section-number">6.5</span> p-value</h2>
 <p>Từ dữ liệu quan sát <span class="math inline">\(X_1, \ldots, X_n\)</span> ta tính giá trị mức <span class="math inline">\(\alpha\)</span> (tiệm cận) nhỏ nhất tại đó kiểm định <span class="math inline">\(\psi\)</span> phủ nhận <span class="math inline">\(H_0,\)</span> gọi nó là p-value (tiệm cận) của <span class="math inline">\(\psi.\)</span> Nếu p-value càng nhỏ thì ta càng tự tin phủ nhận <span class="math inline">\(H_0.\)</span></p>
 
 

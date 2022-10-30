@@ -33,8 +33,9 @@ tại mọi điểm $x$ mà cdf của $X$ liên tục.
 với phương sai
 $\sigma^2$
 $$
-\sqrt{n}({X}_n-X)\xrightarrow[n\to\infty]{(d)}
-\Gaus(0,\sigma^2).
+\sqrt{n}\left(\frac{{X}_n-X}{|\sigma|}\right)
+\xrightarrow[n\to\infty]{(d)}
+\Gaus(0,1).
 $$
 :::
 
@@ -107,9 +108,12 @@ Giả sử thêm là
 $\V[X_i]=\sigma^2<\infty$.
 Khi đó
 $$
-\sqrt{n}(\bar{X}_n-\mu)
+\sqrt{n}
+\left(
+\frac{\bar{X}_n-\mu}{|\sigma|}
+\right)
 \xrightarrow[n\to\infty]{(d)}
-\Gaus(0,\sigma^2).
+\Gaus(0,1).
 $$
 :::
 
@@ -138,8 +142,9 @@ $g^\prime$
 liên tục tại $\theta$.
 Khi đó,
 $$
-\sqrt{n}(g(\theta_n)-g(\theta))
+\sqrt{n}\left(\frac{g(\theta_n)-g(\theta)}
+{\left|\sigma g^\prime(\theta)\right|}\right)
 \xrightarrow[n\to\infty]{(d)}
-\Gaus\left(0,\left(\sigma g^\prime(\theta)\right)^2\right)
+\Gaus\left(0,1\right)
 $$
 :::

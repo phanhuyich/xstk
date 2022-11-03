@@ -1,7 +1,9 @@
 on:
   workflow_dispatch:
   push:
-    branches: main
+    branches:
+      - main
+      - publish
 
 name: Quarto Publish
 
@@ -16,6 +18,8 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2

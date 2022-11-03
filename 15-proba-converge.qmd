@@ -1,4 +1,4 @@
-# Hội tụ xác suất
+# Hội tụ
 
 Có một số kiểu hội tụ của biến ngẫu nhiên.
 

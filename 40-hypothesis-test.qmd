@@ -2,18 +2,18 @@
 
 Hypothesis testing
 
-- Định nghĩa giả thuyết không và giả thuyết đối.
-- Thiết kế kiểm định thống kê
-- Phân loại lỗi Loại 1 và Loại 2
-- Tính hàm công suất của kiểm định
-- Định mức đối với kiểm định
-- Tính toán và giải thích giá trị p
+-   Định nghĩa giả thuyết không và giả thuyết đối.
+-   Thiết kế kiểm định thống kê
+-   Phân loại lỗi Loại 1 và Loại 2
+-   Tính hàm công suất của kiểm định
+-   Định mức đối với kiểm định
+-   Tính toán và giải thích giá trị p
 
 ## Giả thuyết không và đối
 
-Với mô hình thống kê $\left(E,(\P_\theta)_{\theta\in\Theta}\right),$
-sử dụng bộ mẫu dữ liệu iid $X_1,\ldots,X_n,$
-ta xem xét hai giả thuyết về tham số $\theta$ như sau:
+Với mô hình thống kê $\left(E,(\P_\theta)_{\theta\in\Theta}\right),$ sử
+dụng bộ mẫu dữ liệu iid $X_1,\ldots,X_n,$ ta xem xét hai giả thuyết về
+tham số $\theta$ như sau:
 
 $$
 \begin{cases}
@@ -22,59 +22,46 @@ H_1:&\theta\in\Theta_1
 \end{cases}
 $$
 
-với $\Theta_0,\Theta_1$
-là phân mảnh (không giao nhau) của $\Theta,$
-$\Theta_0$ là "thường thức" (status quo),
-còn $\Theta_1$ là "phát hiện" (discovery) mới.
-Ta gọi $H_0$ là giả thuyết không,
-còn $H_1$ là giả thuyết đối (thay thế).
+với $\Theta_0,\Theta_1$ là phân mảnh (không giao nhau) của $\Theta,$
+$\Theta_0$ là "thường thức" (status quo), còn $\Theta_1$ là "phát hiện"
+(discovery) mới. Ta gọi $H_0$ là giả thuyết không, còn $H_1$ là giả
+thuyết đối (thay thế).
 
 ## Kiểm định
 
-Ta sẽ **kiểm định $H_0$ đối với $H_1$**
-bằng cách chọn và sử dụng một định lượng thống kê
-$\psi(X_1,\ldots,X_n)\in\{0,1\}.$
+Ta sẽ **kiểm định** $H_0$ đối với $H_1$ bằng cách chọn và sử dụng một
+định lượng thống kê $\psi(X_1,\ldots,X_n)\in\{0,1\}.$
 
-| | $\psi=0:$ chấp nhận $H_0$ | $\psi=1:$ phủ nhận $H_0$ |
-|---------------------|:-----:|:------:|
-| $\theta\in\Theta_0$ | Kiểm định đúng | Lỗi loại 1 |
-| $\theta\in\Theta_1$ | Lỗi loại 2 | Kiểm định đúng |
+|                     | $\psi=0:$ chấp nhận $H_0$ | $\psi=1:$ phủ nhận $H_0$ |
+|---------------------|:-------------------------:|:------------------------:|
+| $\theta\in\Theta_0$ |      Kiểm định đúng       |        Lỗi loại 1        |
+| $\theta\in\Theta_1$ |        Lỗi loại 2         |      Kiểm định đúng      |
 
-Có thể viết
-$\psi=\mathbb{1}\{R_\psi\}$
-với sự kiện $R_\psi$ là **vùng phủ nhận\index{vùng phủ nhận}**,
-còn $R_\psi^c$ là **vùng chấp nhận**
-.
+Có thể viết $\psi=\fone{R_\psi}$ với sự kiện $R_\psi$ là **vùng phủ
+nhận**\index{vùng phủ nhận}, còn $R_\psi^c$ là **vùng chấp nhận** .
 
-Ta thiết kế kiểm định sao cho hàm
-**công suất\index{hàm công suất}**
-sau đây
-có giá trị nhỏ khi
-$\theta\in\Theta_0$
-và lớn khi
+Ta thiết kế kiểm định sao cho hàm **công suất**\index{hàm công suất} sau
+đây có giá trị nhỏ khi $\theta\in\Theta_0$ và lớn khi
 $\theta\in\Theta_1:$
 
 $$\beta_\psi(\theta) \is \P_\theta(\psi=1) \equiv \P_\theta(R_\psi)\in[0,1]$$
 
-Vùng phủ nhận thường có dạng
-$$
+Vùng phủ nhận thường có dạng $$
 R_\psi = \{X_i: T(X_i)\geq c\}
-$$
-với $T$ là một lượng thống kê còn $c$ là một giá trị biên.
+$$ với $T$ là một lượng thống kê còn $c$ là một giá trị biên.
 
 ## Neyman-Pearson paradigm
 
-Kiểm định $\psi$ là ở mức $\alpha$ nếu
-có xác suất lỗi loại 1 không vượt quá $\alpha:$
-$$
+Kiểm định $\psi$ là ở mức $\alpha\in(0,1)$ nếu có xác suất lỗi loại 1
+không vượt quá $\alpha:$ $$
 \sup_{\theta\in\Theta_0}
 \beta_\psi(\theta)
 \leq\alpha
 .
 $$
 
-Chuỗi kiểm định $(\psi_n)_{n=1,2,\ldots}$ được gọi là tiệm cận về mức $\alpha$ nếu
-$$
+Chuỗi kiểm định $(\psi_n)_{n=1,2,\ldots}$ được gọi là tiệm cận về mức
+$\alpha$ nếu $$
 \lim_{n\to\infty}
 \sup_{\theta\in\Theta_0}
 \beta_{\psi_n}(\theta)
@@ -82,43 +69,53 @@ $$
 .
 $$
 
-Phương thức Neyman-Pearson
-chọn một mức $\alpha$,
-đảm bảo xác suất lỗi loại 1 không vượt quá $\alpha$
-rồi tối thiểu hóa xác suất lỗi loại 2.
-Nói cách khác là
-giữ cho công suất $\beta_\psi(\theta)$
-đủ nhỏ
-khi $\psi\in\Theta_0,$
-rồi tối đại hóa công suất khi
-$\psi\in\Theta_1.$
+Phương thức Neyman-Pearson chọn một mức $\alpha$, đảm bảo xác suất lỗi
+loại 1 không vượt quá $\alpha$ rồi tối thiểu hóa xác suất lỗi loại 2.
+Nói cách khác là giữ cho công suất $\beta_\psi(\theta)$ đủ nhỏ khi
+$\psi\in\Theta_0,$ rồi tối đại hóa công suất khi $\psi\in\Theta_1.$
 
+## p-value
+
+Từ dữ liệu quan sát $X_1, \ldots, X_n$ ta tính giá trị mức $\alpha$
+(tiệm cận) nhỏ nhất tại đó kiểm định $\psi$ phủ nhận $H_0,$ gọi nó là
+p-value (tiệm cận) của $\psi.$ Nếu p-value càng nhỏ thì ta càng tự tin
+phủ nhận $H_0.$
 
 ## Khoảng tin cậy
 
-Thông thường ta có thể xây dựng được kiểm định từ khoảng tin cậy.
-Ví dụ,
-ta muốn kiếm định
-tham số $\theta$,
-$H_0: \theta=\theta_0,$
-đối
-$H_1: \theta\neq\theta_0.$
-Giả sử ta có khoảng tin cậy $\mathcal{I}$ ở mức $1-\alpha$,
-tức là
-$$\P_\theta(I\ni \theta)\geq 1-\alpha.$$
-Khi đó,
-$\psi=\mathbb{1}\{\theta_0\notin\mathcal{I}\}$
-là kiểm định
-mức $\alpha$
+Thông thường ta có thể xây dựng được kiểm định từ khoảng tin cậy. Ví dụ,
+ta muốn kiếm định tham số $\theta$, $H_0: \theta=\theta_0,$ đối
+$H_1: \theta\neq\theta_0.$ Giả sử ta có khoảng tin cậy $\mathcal{I}$ ở
+mức $1-\alpha$, tức là $$\P_\theta(I\ni \theta)\geq 1-\alpha.$$ Khi đó,
+$\psi=\fone{\theta_0\notin\mathcal{I}}$ là kiểm định mức $\alpha$
 
 $$
 \beta_\psi(\theta_0) = \P_{\theta_0}(\theta_0\notin I) \leq \alpha.
 $$
 
-## p-value
+## Wald Test
 
-Từ dữ liệu quan sát $X_1, \ldots, X_n$ ta tính
-giá trị mức $\alpha$ (tiệm cận) nhỏ nhất
-tại đó kiểm định $\psi$ phủ nhận $H_0,$
-gọi nó là p-value (tiệm cận) của $\psi.$
-Nếu p-value càng nhỏ thì ta càng tự tin phủ nhận $H_0.$
+Giả sử $\hat{\theta}$ là ước lượng của tham số $\theta$, và
+$\hat{\V}[\hat{\theta}]$ là ước lượng phương sai của $\hat{\theta}$, sao
+cho $$
+\frac{\hat{\theta}-\theta}
+{\sqrt{\hat{\V}[\hat{\theta}]}}
+\xrightarrow[n\to\infty]{(d)}
+\Gaus(0,1).
+$$
+
+Đặt $$
+W \is \frac{\hat{\theta}-\theta_0}
+{\sqrt{\hat{\V}[\hat{\theta}]}}
+,
+$$ ta có thể xây dựng các kiểm định Wald có mức tiệm cận là $\alpha,$
+tức là $\P_{H_0}(\psi_\alpha) \xrightarrow[n\to\infty]{} \alpha.$
+
+| Giả thuyết                                      | Kiểm định Wald                        | asymp. p-value      |
+|---------------------------|-----------------------|-----------------------|
+| $H_0: \theta=\theta_0, H_1: \theta\neq\theta_0$ | $\psi_\alpha=\fone{|W|>q_{\alpha/2}}$ | $\P(|Z|>|W^{obs}|)$ |
+| $H_0: \theta\leq\theta_0, H_1: \theta>\theta_0$ | $\psi_\alpha=\fone{W>q_\alpha}$       | $\P(Z>W^{obs})$     |
+| $H_0: \theta\geq\theta_0, H_1: \theta<\theta_0$ | $\psi_\alpha=\fone{W<-q_\alpha}$      | $\P(Z<W^{obs})$     |
+
+Trong bảng trên, p-value được tính từ $W^{obs}$ là một quan sát đối với
+$W.$

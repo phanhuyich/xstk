@@ -3,6 +3,7 @@
 .DS_Store
 .Rhistory
 *.Rproj*
+.Rproj.user
 *.aux
 *.idx
 *.log

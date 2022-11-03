@@ -78,7 +78,7 @@ về tổng $X+Y$ và tích $XY$.
 
 ## Slutsky
 ::: {#thm-slutsky}
-Nếu $Y_n \xrightarrow[]{\P} y$, $y$ là một số thực cố định thì có thể
+Hơn nữa, ở @thm-convege nếu $Y_n \xrightarrow[]{\P} y$, $y$ là một số thực cố định thì có thể
 nới lỏng điều kiện đối với $X_n$ thành hội tụ theo phân phối.
 :::
 

@@ -2,121 +2,107 @@
 
 ## Sự kiện
 
-**Không gian** $\Omega$ là tập hợp chứa tất cả những
-**hiện tượng** $\omega$ có thể xảy ra
-từ một **thí nghiệm**.
-Các tập con của $\Omega$ là các **sự kiện**.
+**Không gian** $\Omega$ là tập hợp chứa tất cả những **hiện tượng**
+$\omega$ có thể xảy ra từ một **thí nghiệm**. Các tập con của $\Omega$
+là các **sự kiện**.
 
-Ví dụ xem xét thí nghiệm
-tung một đồng xu đúng hai lần,
-quan sát đồng xu rớt xuống nằm ngửa ($H$) hay sấp ($T$),
-ta có $\Omega = \{HH, HT, TH, TT\}$ bao gồm 4 kết quả có thể xảy ra.
-Sự kiện lần tung đầu tiên ra mặt ngửa của đồng xu là
-tập hợp $\{HH, HT\}.$
+Ví dụ xem xét thí nghiệm tung một đồng xu đúng hai lần, quan sát đồng xu
+rớt xuống nằm ngửa ($H$) hay sấp ($T$), ta có
+$\Omega = \{HH, HT, TH, TT\}$ bao gồm 4 kết quả có thể xảy ra. Sự kiện
+lần tung đầu tiên ra mặt ngửa của đồng xu là tập hợp $\{HH, HT\}.$
 
-Cho một sự kiện $A\subseteq\Omega$,
-ta nói $A$ **xảy ra**, hoặc $A$ là **đúng**,
-nếu có một hiện tượng $\omega\in A$ **xảy ra**.
-Sự kiện **ngược lại** với $A$ là
-$A^c\is\Omega-A\is \{\omega\in\Omega: \omega\notin A\}$,
-tức là "không xảy ra $A$".
-Theo định nghĩa, rõ ràng $\Omega$ luôn luôn đúng,
-còn sự kiện rỗng $\emptyset\equiv\Omega^c$ luôn luôn sai.
-Cho thêm sự kiện $B$, ta có
-$A\cup B$ là sự kiện "$A$ **hoặc** $B$ ít nhất một việc xảy ra",
-còn
-$AB\is A\cap B$ là sự kiện "$A$ **và** $B$ đồng thời xảy ra".
+Cho một sự kiện $A\subseteq\Omega$, ta nói $A$ **xảy ra**, hoặc $A$ là
+**đúng**, nếu có một hiện tượng $\omega\in A$ **xảy ra**. Sự kiện
+**ngược lại** với $A$ là
+$A^c\is\Omega-A\is \{\omega\in\Omega: \omega\notin A\}$, tức là "không
+xảy ra $A$". Theo định nghĩa, rõ ràng $\Omega$ luôn luôn đúng, còn sự
+kiện rỗng $\emptyset\equiv\Omega^c$ luôn luôn sai. Cho thêm sự kiện $B$,
+ta có $A\cup B$ là sự kiện "$A$ **hoặc** $B$ ít nhất một việc xảy ra",
+còn $AB\is A\cap B$ là sự kiện "$A$ **và** $B$ đồng thời xảy ra".
 
-Chuỗi sự kiện $A_1, A_2, \ldots$ được gọi là **phân ly**
-nếu $A_i A_j\equiv\emptyset$ với mọi $i\neq j$.
-Khi đó nếu $A_1\cup A_2\cup\cdots\equiv C$ thì ta nói $A_1, A_2, \ldots$ là một cách **phân hoạch** sự kiện $C$.
+Chuỗi sự kiện $A_1, A_2, \ldots$ được gọi là **phân ly** nếu
+$A_i A_j\equiv\emptyset$ với mọi $i\neq j$. Khi đó nếu
+$A_1\cup A_2\cup\cdots\equiv C$ thì ta nói $A_1, A_2, \ldots$ là một
+cách **phân hoạch** sự kiện $C$.
 
 ## Xác suất
 
-Nếu một xạ ảnh
-$\P$
-từ không gian các sự kiện
-$A\subseteq\Omega$ lên tập hợp số thực $\R$
-thỏa mãn các điều kiện:
+Nếu một xạ ảnh $\P$ từ không gian các sự kiện $A\subseteq\Omega$ lên tập
+hợp số thực $\R$ thỏa mãn các điều kiện:
 
-1. $\P(A)\geq 0\quad\forall A$
-2. $\P(\Omega) = 1$
-3. Nếu chuỗi $A_1, A_2, \ldots$ phân hoạch $C$ thì
-$\P(A_1) + \P(A_2) + \cdots = \P(C)$
+1.  $\P(A)\geq 0\quad\forall A$
+2.  $\P(\Omega) = 1$
+3.  Nếu chuỗi $A_1, A_2, \ldots$ phân hoạch $C$ thì
+    $\P(A_1) + \P(A_2) + \cdots = \P(C)$
 
 thì ta gọi $\P$ là một **phân phối xác suất** hoặc **độ đo xác suất**.
 
-Có hai cách cắt nghĩa khái niệm xác suất là tần suất và niềm tin.
-Theo cách hiểu tần suất thì $\P(A)$ chính là tỷ lệ số lần sự kiện $A$
-xảy ra nếu ta thực hiện thí nghiệm vô số lần.
-Còn theo cách hiểu niềm tin thì $\P(A)$ là thước đo mức độ mà một quan sát viên tin tưởng rằng hiện tượng $A$ sẽ xảy ra.
+Có hai cách cắt nghĩa khái niệm xác suất là tần suất và niềm tin. Theo
+cách hiểu tần suất thì $\P(A)$ chính là tỷ lệ số lần sự kiện $A$ xảy ra
+nếu ta thực hiện thí nghiệm vô số lần. Còn theo cách hiểu niềm tin thì
+$\P(A)$ là thước đo mức độ mà một quan sát viên tin tưởng rằng hiện
+tượng $A$ sẽ xảy ra.
 
 ### Biến ngẫu nhiên
+
 ::: {#def-randvar}
-("random variable", *rv*) là một quy tắc ánh xạ
-$X: \Omega\to\R$
-gán cho mỗi hiện tượng $\omega$ trong
-không gian $\Omega$
-một số thực $X(\omega).$
+("random variable", *rv*) là một quy tắc ánh xạ $X: \Omega\to\R$ gán cho
+mỗi hiện tượng $\omega$ trong không gian $\Omega$ một số thực
+$X(\omega).$
 :::
 
 ### Điểm cắt
-:::{#def-quantile}
-Điểm cắt tại mức $1-\alpha$ của biến $X$ là một số $q_\alpha$ mà $\P(X\leq q_\alpha)=1-\alpha.$
+
+::: {#def-quantile}
+Điểm cắt tại mức $1-\alpha$ của biến $X$ là một số $q_\alpha$ mà
+$\P(X\leq q_\alpha)=1-\alpha.$
 :::
 
 ### Độc lập
-:::{#def-independent-var}
 
-Hai sự kiện $A$ và $B$ là độc lập nếu
-$\P(AB)\equiv \P(A)\P(B)$.
+::: {#def-independent-var}
+Hai sự kiện $A$ và $B$ là độc lập nếu $\P(AB)\equiv \P(A)\P(B)$.
 
-Hai biến $X$ và $Y$ là độc lập nếu
-hai sự kiện $X\leq x$ và $Y\leq y$ là độc lập
-đối với mọi $x,y$.
+Hai biến $X$ và $Y$ là độc lập nếu hai sự kiện $X\leq x$ và $Y\leq y$ là
+độc lập đối với mọi $x,y$.
 :::
 
 ### IID
+
 ::: {#def-iid}
-Các biến ngẫu nhiên $X_1, X_2, \ldotp$ được gọi là
-iid ("independent and identically distributed",
-"độc lập và phân phối giống nhau")
-nếu chúng cùng tuân theo duy nhất một phân phối xác suất,
-và từng cặp biến là độc lập với nhau.
-Dùng biến $X$ để thể hiện phân phối xác suất chung đó, ta viết
-$$X_1,\ldots,X_n \iid X.$$
+Các biến ngẫu nhiên $X_1, X_2, \ldotp$ được gọi là iid ("independent and
+identically distributed", "độc lập và phân phối giống nhau") nếu chúng
+cùng tuân theo duy nhất một phân phối xác suất, và từng cặp biến là độc
+lập với nhau. Dùng biến $X$ để thể hiện phân phối xác suất chung đó, ta
+viết $$X_1,\ldots,X_n \iid X.$$
 :::
 
 ### Xác suất hợp
-:::{#def-joint-proba}
-Ký hiệu
-$\P(A, B)$
-hoặc
-$\P(A\cap B)$
-chỉ
-xác suất sự kiện $A$ và sự kiện $B$ đồng thời xảy ra.
+
+::: {#def-joint-proba}
+Ký hiệu $\P(A, B)$ hoặc $\P(A\cap B)$ chỉ xác suất sự kiện $A$ và sự
+kiện $B$ đồng thời xảy ra.
 :::
 
 ### Xác suất có điều kiện
-:::{#def-conditional-proba}
-Ký hiệu
-$\P(A|B)$
-hoặc
-$\P_B(A)$
-chỉ
-xác suất của sự kiện $A$, khi biết sự kiện $B$ đã xảy ra,
+
+::: {#def-conditional-proba}
+Ký hiệu $\P(A|B)$ hoặc $\P_B(A)$ chỉ xác suất của sự kiện $A$, khi biết
+sự kiện $B$ đã xảy ra,
 
 $$\P(A|B) = \frac{\P(A,B)}{\P(B)}.$$
 :::
 
 ### Định lý Baye
-:::{#thm-bayes}
+
+::: {#thm-bayes}
 $$\P(A|B) = \frac{\P(B|A)\P(A)}{\P(B)}
 = \frac{\P(B|A)\P(A)}{\P(B|A)\P(A) + \P(B|A^c)\P(A^c)}
 .$$
 :::
 
 ## Trung bình
+
 ::: {#def-expectation}
 **Trung bình**, hay **giá trị kỳ vọng** của biến X là
 
@@ -131,59 +117,55 @@ $$
 $$
 :::
 
-Nếu giá trị
-$\int |x| dF(x) < \infty$
-ta nói là $\E[X]$ "tồn tại" (well-defined).
+Nếu giá trị $\int |x| dF(x) < \infty$ ta nói là $\E[X]$ "tồn tại"
+(well-defined).
 
-Ta có
-$$
+Ta có $$
 \E[X+Y] \equiv \E[X] + E[Y].
 $$
 
-
 ## Hiệp phương sai
-:::{#def-covar}
+
+::: {#def-covar}
+```{=tex}
 \begin{align}
 \textrm{Cov}[X,Y] &\is \E[(X-\E[X])(Y-\E[Y])] \\
 &\equiv \E[XY] - \E[X]\E[Y]
 \end{align}
+```
 :::
 
 Nếu $X$ và $Y$ độc lập thì $\textrm{Cov}[X,Y] = 0$.
 
 ## Phương sai
-::: {#def-variance}
 
-Phương sai, hay phân tán (variance, 分散) là
-$$
+::: {#def-variance}
+Phương sai, hay phân tán (variance, 分散) là $$
 \V[X]\is\textrm{Cov}[X,X]\equiv\E[X^2]-\E^2[X].
 $$
 :::
 
-Ta có
-$$
+Ta có $$
 \V[X+Y] \equiv \V[X]+\V[Y] + 2\textrm{Cov}[X,Y].
 $$
 
 ## Tích suất
 
-Tích suất (moment, 積率) thể hiện trọng tâm, độ phân tán, hay độ lệch của phân phối.
-Tích suất bậc $n$ của biến $X$
-với mật độ $f(x)$ là:
+Tích suất (moment, 積率) thể hiện trọng tâm, độ phân tán, hay độ lệch
+của phân phối. Tích suất bậc $n$ của biến $X$ với mật độ $f(x)$ là:
 
 $$
 \E[X^n]\is \int x^n f(x) dx
 $$
 
 ### Hàm tạo tích suất
-:::{#def-mgf}
+
+::: {#def-mgf}
 "Moment generation function (MGF)" của biến $X$ là
 $$\psi_X(t)\is\E[e^{tX}], t\in\R.$$
 :::
 
-Nếu MGF "tồn tại" xung quanh $0$
-thì đạo hàm cấp $k$ của $\psi$ tại $0$
-chính là:
-$$
+Nếu MGF "tồn tại" xung quanh $0$ thì đạo hàm cấp $k$ của $\psi$ tại $0$
+chính là: $$
 \psi_X^{(k)}(0)\equiv \E[X^k].
 $$

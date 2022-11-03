@@ -108,3 +108,13 @@ tuân theo
 phân phối $\chi_k^2$
 và có
 $\E[X]=k,\V[X]=2k$.
+
+## Phân phối Student's t
+
+Nếu có $Z\sim\Gaus(0,1), V\sim \chi_k^2$ độc lập với nhau thì
+
+$$
+X \is \frac{Z}{\sqrt{V/k}}
+$$
+
+tuân theo phân bố Student's t.

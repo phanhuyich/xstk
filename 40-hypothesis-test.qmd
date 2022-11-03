@@ -44,16 +44,21 @@ Ta thiết kế kiểm định sao cho hàm **công suất**\index{hàm công su
 đây có giá trị nhỏ khi $\theta\in\Theta_0$ và lớn khi
 $\theta\in\Theta_1:$
 
-$$\beta_\psi(\theta) \is \P_\theta(\psi=1) \equiv \P_\theta(R_\psi)\in[0,1]$$
+$$
+\beta_\psi(\theta) \is \P_\theta(\psi=1) \equiv \P_\theta(R_\psi)\in[0,1]
+$$
 
-Vùng phủ nhận thường có dạng $$
+Vùng phủ nhận thường có dạng
+$$
 R_\psi = \{X_i: T(X_i)\geq c\}
-$$ với $T$ là một lượng thống kê còn $c$ là một giá trị biên.
+$$
+với $T$ là một lượng thống kê còn $c$ là một giá trị biên.
 
 ## Neyman-Pearson paradigm
 
 Kiểm định $\psi$ là ở mức $\alpha\in(0,1)$ nếu có xác suất lỗi loại 1
-không vượt quá $\alpha:$ $$
+không vượt quá $\alpha:$
+$$
 \sup_{\theta\in\Theta_0}
 \beta_\psi(\theta)
 \leq\alpha
@@ -61,7 +66,8 @@ không vượt quá $\alpha:$ $$
 $$
 
 Chuỗi kiểm định $(\psi_n)_{n=1,2,\ldots}$ được gọi là tiệm cận về mức
-$\alpha$ nếu $$
+$\alpha$ nếu
+$$
 \lim_{n\to\infty}
 \sup_{\theta\in\Theta_0}
 \beta_{\psi_n}(\theta)
@@ -81,6 +87,14 @@ Từ dữ liệu quan sát $X_1, \ldots, X_n$ ta tính giá trị mức $\alpha$
 p-value (tiệm cận) của $\psi.$ Nếu p-value càng nhỏ thì ta càng tự tin
 phủ nhận $H_0.$
 
+| p-value | phân lớp độ mạnh của chứng cứ
+| --------| --------
+| $<1\%$  | chứng cứ rất mạnh phủ nhận $H_0$
+| $1\%\textemdash 5\%$  | chứng cứ mạnh phủ nhận $H_0$
+| $5\%\textemdash 10\%$ | chứng cứ yếu ớt phủ nhận $H_0$
+| $>10\%$ | không phải chứng cứ phủ nhận $H_0$
+
+
 ## Khoảng tin cậy
 
 Thông thường ta có thể xây dựng được kiểm định từ khoảng tin cậy. Ví dụ,
@@ -97,18 +111,23 @@ $$
 
 Giả sử $\hat{\theta}$ là ước lượng của tham số $\theta$, và
 $\hat{\V}[\hat{\theta}]$ là ước lượng phương sai của $\hat{\theta}$, sao
-cho $$
+cho
+$$
 \frac{\hat{\theta}-\theta}
 {\sqrt{\hat{\V}[\hat{\theta}]}}
 \xrightarrow[n\to\infty]{(d)}
 \Gaus(0,1).
 $$
 
-Đặt $$
+Đặt
+
+$$
 W \is \frac{\hat{\theta}-\theta_0}
 {\sqrt{\hat{\V}[\hat{\theta}]}}
 ,
-$$ ta có thể xây dựng các kiểm định Wald có mức tiệm cận là $\alpha,$
+$$
+
+ta có thể xây dựng các kiểm định Wald có mức tiệm cận là $\alpha,$
 tức là $\P_{H_0}(\psi_\alpha) \xrightarrow[n\to\infty]{} \alpha.$
 
 | Giả thuyết                                      | Kiểm định Wald                        | asymp. p-value      |
@@ -117,5 +136,80 @@ tức là $\P_{H_0}(\psi_\alpha) \xrightarrow[n\to\infty]{} \alpha.$
 | $H_0: \theta\leq\theta_0, H_1: \theta>\theta_0$ | $\psi_\alpha=\fone{W>q_\alpha}$       | $\P(Z>W^{obs})$     |
 | $H_0: \theta\geq\theta_0, H_1: \theta<\theta_0$ | $\psi_\alpha=\fone{W<-q_\alpha}$      | $\P(Z<W^{obs})$     |
 
-Trong bảng trên, p-value được tính từ $W^{obs}$ là một quan sát đối với
-$W.$
+Trong bảng trên, p-value được tính từ $W^{obs}$
+là một quan sát đối với $W.$
+
+## Định lý Cochoran
+
+:::{#thm-cochoran}
+Giả sử $X_1,\ldots,X_n\iid\Gaus(\mu,\sigma^2).$
+Đặt
+$$ S_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2 , $$
+
+Khi đó $\E[S_n^2] \equiv \sigma^2,$
+$$
+\frac{(n-1)*S_n^2}{\sigma^2}\sim\chi_{n-1}^2,
+$$
+
+và $\bar{X}_n, S_n^2$ độc lập với nhau.
+:::
+
+## Student's T test
+
+Giả sử $X_1,\ldots,X_n\iid\Gaus(\mu,\sigma^2),$
+$\mu,\sigma$ chưa biết, và ta muốn kiểm định $\mu.$
+Theo @thm-cochoran,
+$$
+T\is\sqrt{n}\frac{\bar{X}_n-\mu}{S_n}\sim t_{n-1}
+$$
+tuân theo phân bố Student's t.
+Ta có thể xây dựng các kiểm định Student có mức $\alpha,$
+tức là $\P_{H_0}(\psi_\alpha) \equiv \alpha.$
+
+| Giả thuyết                                      | Kiểm định Student                        | p-value      |
+|---------------------------|-----------------------|-----------------------|
+| $H_0: \mu=\mu_0, H_1: \mu\neq\mu_0$ | $\psi_\alpha=\fone{|T| >q_{\alpha/2}^{t_{n-1}}}$ | $\P_{t_{n-1}}(|Z|>|T^{obs}|)$ |
+| $H_0: \mu\leq\mu_0, H_1: \mu>\mu_0$ | $\psi_\alpha=\fone{T>q_\alpha^{t_{n-1}}}$       | $\P_{t_{n-1}}(Z>T^{obs})$     |
+| $H_0: \mu\geq\mu_0, H_1: \mu<\mu_0$ | $\psi_\alpha=\fone{T<-q_\alpha^{t_{n-1}}}$      | $\P_{t_{n-1}}(Z<T^{obs})$     |
+
+Trong bảng trên, p-value được tính từ $T^{obs}$ là một quan sát đối với
+$T.$
+
+## Two-sample T-test
+
+Giả sử
+$X_1,\ldots,X_n\iid\Gaus(\mu_x,\sigma_x^2),$
+$Y_1,\ldots,Y_m\iid\Gaus(\mu_y,\sigma_y^2),$
+với
+$\mu_x,\sigma_x, \mu_y,\sigma_y$
+chưa biết, và ta muốn kiểm định $\mu_x-\mu_y.$
+Đặt
+$$
+S_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2 , $$
+$$
+S_m^2\is\frac{1}{m-1}\sum_{i=1}^{n}(Y_i-\bar{Y}_m)^2 , $$
+Ta có gần đúng
+$$
+\frac{(\bar{X}_n-\bar{Y}_m)-(\mu_x-\mu_y)}
+{\sqrt{S_n^2/n + S_m^2/m}}
+\sim t_N
+$$
+là phân phối Student's t với độ tự do
+tuân theo công thức WS (Welch-Satterthwaite):
+$$
+N =
+\frac{\sqrt{S_n^2/n + S_m^2/m}}
+{\sqrt{\frac{S_n^4}{n^2(n-1)}  + \frac{S_m^4}{m^2(m-1)}}}
+\geq \min(n, m)
+$$
+Đặt
+$$
+T = \frac{\bar{X}_n-\bar{Y}_m}
+{\sqrt{S_n^2/n + S_m^2/m}}
+$$
+
+| Giả thuyết                                      | Kiểm định 2 mẫu                        | p-value      |
+|---------------------------|-----------------------|-----------------------|
+| $H_0: \mu_x=\mu_y, H_1: \mu_x\neq\mu_y$ | $\psi_\alpha=\fone{|T| >q_{\alpha/2}^{t_{N}}}$ | $\P_{t_{N}}(|Z|>|T^{obs}|)$ |
+| $H_0: \mu_x\leq\mu_y, H_1: \mu_x>\mu_y$ | $\psi_\alpha=\fone{T>q_\alpha^{t_{N}}}$       | $\P_{t_{N}}(Z>T^{obs})$     |
+| $H_0: \mu_x\geq\mu_y, H_1: \mu_x<\mu_y$ | $\psi_\alpha=\fone{T<-q_\alpha^{t_{N}}}$      | $\P_{t_{N}}(Z<T^{obs})$     |

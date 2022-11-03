@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.242">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -119,31 +119,56 @@ ul.task-list li input[type="checkbox"] {
   <a href="./index.html" class="sidebar-item-text sidebar-link">Lời nói đầu</a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Xác suất</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10-proba-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Xác suất</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13-distributions.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Phân phối</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15-proba-converge.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Hội tụ</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Thống kê</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./20-stat-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Thống kê</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./30-est-method.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ước lượng</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./40-hypothesis-test.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Giả thuyết</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">Giáo trình</a>
@@ -164,8 +189,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#phân-phối-geometric" id="toc-phân-phối-geometric" class="nav-link" data-scroll-target="#phân-phối-geometric"><span class="toc-section-number">2.4</span>  Phân phối Geometric</a></li>
   <li><a href="#phân-phối-exponential" id="toc-phân-phối-exponential" class="nav-link" data-scroll-target="#phân-phối-exponential"><span class="toc-section-number">2.5</span>  Phân phối Exponential</a></li>
   <li><a href="#phân-phối-gaussian" id="toc-phân-phối-gaussian" class="nav-link" data-scroll-target="#phân-phối-gaussian"><span class="toc-section-number">2.6</span>  Phân phối Gaussian</a></li>
+  <li><a href="#phân-phối-chi2" id="toc-phân-phối-chi2" class="nav-link" data-scroll-target="#phân-phối-chi2"><span class="toc-section-number">2.7</span>  Phân phối <span class="math inline">\(\chi^2\)</span></a></li>
+  <li><a href="#phân-phối-students-t" id="toc-phân-phối-students-t" class="nav-link" data-scroll-target="#phân-phối-students-t"><span class="toc-section-number">2.8</span>  Phân phối Student’s t</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/vochicong/xstk/edit/main/13-distributions.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/vochicong/xstk/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/vochicong/xstk/blob/main/13-distributions.qmd" class="toc-action">View source</a></p></div></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -180,6 +207,7 @@ $$
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{:=}
 \def\Gaus{\mathcal{N}}
+\def\fone#1{\mathbb{1}\{#1\}}
 \def\P{\mathbb{P}}
 \def\Poi{\text{Poi}}
 \def\R{\mathbb{R}}
@@ -200,6 +228,7 @@ $$
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -262,6 +291,23 @@ x\in\R
 <p><span class="theorem-title"><strong>Thm 2.1 </strong></span>Nếu <span class="math inline">\(X_i \sim\Gaus(\mu_i,\sigma_i^2) (i=1,\ldots,n)\)</span> thì</p>
 <p><span class="math display">\[\sum_{i=1}^n X_i\sim\Gaus\left(\sum_{i=1}^n \mu_i,\sum_{i=1}^n \sigma_i^2\right)\]</span></p>
 </div>
+</section>
+<section id="phân-phối-chi2" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="phân-phối-chi2"><span class="header-section-number">2.7</span> Phân phối <span class="math inline">\(\chi^2\)</span></h2>
+<p>Nếu <span class="math inline">\(X_1,\ldots,X_k\iid\Gaus(0,1)\)</span> thì tổng bình phương của chúng</p>
+<p><span class="math display">\[
+X \is \sum_{i=0}^k X_i^2
+.
+\]</span></p>
+<p>tuân theo phân phối <span class="math inline">\(\chi_k^2\)</span> và có <span class="math inline">\(\E[X]=k,\V[X]=2k\)</span>.</p>
+</section>
+<section id="phân-phối-students-t" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="phân-phối-students-t"><span class="header-section-number">2.8</span> Phân phối Student’s t</h2>
+<p>Nếu có <span class="math inline">\(Z\sim\Gaus(0,1), V\sim \chi_k^2\)</span> độc lập với nhau thì</p>
+<p><span class="math display">\[
+X \is \frac{Z}{\sqrt{V/k}}
+\]</span></p>
+<p>tuân theo phân bố Student’s t.</p>
 
 
 </section>
@@ -308,7 +354,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -344,24 +407,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

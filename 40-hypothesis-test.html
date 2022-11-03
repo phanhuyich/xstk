@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.242">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -186,8 +186,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#giả-thuyết-không-và-đối" id="toc-giả-thuyết-không-và-đối" class="nav-link active" data-scroll-target="#giả-thuyết-không-và-đối"><span class="toc-section-number">6.1</span>  Giả thuyết không và đối</a></li>
   <li><a href="#kiểm-định" id="toc-kiểm-định" class="nav-link" data-scroll-target="#kiểm-định"><span class="toc-section-number">6.2</span>  Kiểm định</a></li>
   <li><a href="#neyman-pearson-paradigm" id="toc-neyman-pearson-paradigm" class="nav-link" data-scroll-target="#neyman-pearson-paradigm"><span class="toc-section-number">6.3</span>  Neyman-Pearson paradigm</a></li>
-  <li><a href="#khoảng-tin-cậy" id="toc-khoảng-tin-cậy" class="nav-link" data-scroll-target="#khoảng-tin-cậy"><span class="toc-section-number">6.4</span>  Khoảng tin cậy</a></li>
-  <li><a href="#p-value" id="toc-p-value" class="nav-link" data-scroll-target="#p-value"><span class="toc-section-number">6.5</span>  p-value</a></li>
+  <li><a href="#p-value" id="toc-p-value" class="nav-link" data-scroll-target="#p-value"><span class="toc-section-number">6.4</span>  p-value</a></li>
+  <li><a href="#khoảng-tin-cậy" id="toc-khoảng-tin-cậy" class="nav-link" data-scroll-target="#khoảng-tin-cậy"><span class="toc-section-number">6.5</span>  Khoảng tin cậy</a></li>
+  <li><a href="#wald-test" id="toc-wald-test" class="nav-link" data-scroll-target="#wald-test"><span class="toc-section-number">6.6</span>  Wald Test</a></li>
   </ul>
 </nav>
     </div>
@@ -204,6 +205,7 @@ $$
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{:=}
 \def\Gaus{\mathcal{N}}
+\def\fone#1{\mathbb{1}\{#1\}}
 \def\P{\mathbb{P}}
 \def\Poi{\text{Poi}}
 \def\R{\mathbb{R}}
@@ -224,6 +226,7 @@ $$
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -252,8 +255,13 @@ H_1:&amp;\theta\in\Theta_1
 </section>
 <section id="kiểm-định" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="kiểm-định"><span class="header-section-number">6.2</span> Kiểm định</h2>
-<p>Ta sẽ <strong>kiểm định <span class="math inline">\(H_0\)</span> đối với <span class="math inline">\(H_1\)</span></strong> bằng cách chọn và sử dụng một định lượng thống kê <span class="math inline">\(\psi(X_1,\ldots,X_n)\in\{0,1\}.\)</span></p>
+<p>Ta sẽ <strong>kiểm định</strong> <span class="math inline">\(H_0\)</span> đối với <span class="math inline">\(H_1\)</span> bằng cách chọn và sử dụng một định lượng thống kê <span class="math inline">\(\psi(X_1,\ldots,X_n)\in\{0,1\}.\)</span></p>
 <table class="table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 36%">
+<col style="width: 35%">
+</colgroup>
 <thead>
 <tr class="header">
 <th></th>
@@ -274,7 +282,7 @@ H_1:&amp;\theta\in\Theta_1
 </tr>
 </tbody>
 </table>
-<p>Có thể viết <span class="math inline">\(\psi=\mathbb{1}\{R_\psi\}\)</span> với sự kiện <span class="math inline">\(R_\psi\)</span> là <strong>vùng phủ nhận</strong>, còn <span class="math inline">\(R_\psi^c\)</span> là <strong>vùng chấp nhận</strong> .</p>
+<p>Có thể viết <span class="math inline">\(\psi=\fone{R_\psi}\)</span> với sự kiện <span class="math inline">\(R_\psi\)</span> là <strong>vùng phủ nhận</strong>, còn <span class="math inline">\(R_\psi^c\)</span> là <strong>vùng chấp nhận</strong> .</p>
 <p>Ta thiết kế kiểm định sao cho hàm <strong>công suất</strong> sau đây có giá trị nhỏ khi <span class="math inline">\(\theta\in\Theta_0\)</span> và lớn khi <span class="math inline">\(\theta\in\Theta_1:\)</span></p>
 <p><span class="math display">\[\beta_\psi(\theta) \is \P_\theta(\psi=1) \equiv \P_\theta(R_\psi)\in[0,1]\]</span></p>
 <p>Vùng phủ nhận thường có dạng <span class="math display">\[
@@ -283,7 +291,7 @@ R_\psi = \{X_i: T(X_i)\geq c\}
 </section>
 <section id="neyman-pearson-paradigm" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="neyman-pearson-paradigm"><span class="header-section-number">6.3</span> Neyman-Pearson paradigm</h2>
-<p>Kiểm định <span class="math inline">\(\psi\)</span> là ở mức <span class="math inline">\(\alpha\)</span> nếu có xác suất lỗi loại 1 không vượt quá <span class="math inline">\(\alpha:\)</span> <span class="math display">\[
+<p>Kiểm định <span class="math inline">\(\psi\)</span> là ở mức <span class="math inline">\(\alpha\in(0,1)\)</span> nếu có xác suất lỗi loại 1 không vượt quá <span class="math inline">\(\alpha:\)</span> <span class="math display">\[
 \sup_{\theta\in\Theta_0}
 \beta_\psi(\theta)
 \leq\alpha
@@ -298,16 +306,62 @@ R_\psi = \{X_i: T(X_i)\geq c\}
 \]</span></p>
 <p>Phương thức Neyman-Pearson chọn một mức <span class="math inline">\(\alpha\)</span>, đảm bảo xác suất lỗi loại 1 không vượt quá <span class="math inline">\(\alpha\)</span> rồi tối thiểu hóa xác suất lỗi loại 2. Nói cách khác là giữ cho công suất <span class="math inline">\(\beta_\psi(\theta)\)</span> đủ nhỏ khi <span class="math inline">\(\psi\in\Theta_0,\)</span> rồi tối đại hóa công suất khi <span class="math inline">\(\psi\in\Theta_1.\)</span></p>
 </section>
-<section id="khoảng-tin-cậy" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="khoảng-tin-cậy"><span class="header-section-number">6.4</span> Khoảng tin cậy</h2>
-<p>Thông thường ta có thể xây dựng được kiểm định từ khoảng tin cậy. Ví dụ, ta muốn kiếm định tham số <span class="math inline">\(\theta\)</span>, <span class="math inline">\(H_0: \theta=\theta_0,\)</span> đối <span class="math inline">\(H_1: \theta\neq\theta_0.\)</span> Giả sử ta có khoảng tin cậy <span class="math inline">\(\mathcal{I}\)</span> ở mức <span class="math inline">\(1-\alpha\)</span>, tức là <span class="math display">\[\P_\theta(I\ni \theta)\geq 1-\alpha.\]</span> Khi đó, <span class="math inline">\(\psi=\mathbb{1}\{\theta_0\notin\mathcal{I}\}\)</span> là kiểm định mức <span class="math inline">\(\alpha\)</span></p>
+<section id="p-value" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="p-value"><span class="header-section-number">6.4</span> p-value</h2>
+<p>Từ dữ liệu quan sát <span class="math inline">\(X_1, \ldots, X_n\)</span> ta tính giá trị mức <span class="math inline">\(\alpha\)</span> (tiệm cận) nhỏ nhất tại đó kiểm định <span class="math inline">\(\psi\)</span> phủ nhận <span class="math inline">\(H_0,\)</span> gọi nó là p-value (tiệm cận) của <span class="math inline">\(\psi.\)</span> Nếu p-value càng nhỏ thì ta càng tự tin phủ nhận <span class="math inline">\(H_0.\)</span></p>
+</section>
+<section id="khoảng-tin-cậy" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="khoảng-tin-cậy"><span class="header-section-number">6.5</span> Khoảng tin cậy</h2>
+<p>Thông thường ta có thể xây dựng được kiểm định từ khoảng tin cậy. Ví dụ, ta muốn kiếm định tham số <span class="math inline">\(\theta\)</span>, <span class="math inline">\(H_0: \theta=\theta_0,\)</span> đối <span class="math inline">\(H_1: \theta\neq\theta_0.\)</span> Giả sử ta có khoảng tin cậy <span class="math inline">\(\mathcal{I}\)</span> ở mức <span class="math inline">\(1-\alpha\)</span>, tức là <span class="math display">\[\P_\theta(I\ni \theta)\geq 1-\alpha.\]</span> Khi đó, <span class="math inline">\(\psi=\fone{\theta_0\notin\mathcal{I}}\)</span> là kiểm định mức <span class="math inline">\(\alpha\)</span></p>
 <p><span class="math display">\[
 \beta_\psi(\theta_0) = \P_{\theta_0}(\theta_0\notin I) \leq \alpha.
 \]</span></p>
 </section>
-<section id="p-value" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="p-value"><span class="header-section-number">6.5</span> p-value</h2>
-<p>Từ dữ liệu quan sát <span class="math inline">\(X_1, \ldots, X_n\)</span> ta tính giá trị mức <span class="math inline">\(\alpha\)</span> (tiệm cận) nhỏ nhất tại đó kiểm định <span class="math inline">\(\psi\)</span> phủ nhận <span class="math inline">\(H_0,\)</span> gọi nó là p-value (tiệm cận) của <span class="math inline">\(\psi.\)</span> Nếu p-value càng nhỏ thì ta càng tự tin phủ nhận <span class="math inline">\(H_0.\)</span></p>
+<section id="wald-test" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="wald-test"><span class="header-section-number">6.6</span> Wald Test</h2>
+<p>Giả sử <span class="math inline">\(\hat{\theta}\)</span> là ước lượng của tham số <span class="math inline">\(\theta\)</span>, và <span class="math inline">\(\hat{\V}[\hat{\theta}]\)</span> là ước lượng phương sai của <span class="math inline">\(\hat{\theta}\)</span>, sao cho <span class="math display">\[
+\frac{\hat{\theta}-\theta}
+{\sqrt{\hat{\V}[\hat{\theta}]}}
+\xrightarrow[n\to\infty]{(d)}
+\Gaus(0,1).
+\]</span></p>
+<p>Đặt <span class="math display">\[
+W \is \frac{\hat{\theta}-\theta_0}
+{\sqrt{\hat{\V}[\hat{\theta}]}}
+,
+\]</span> ta có thể xây dựng các kiểm định Wald có mức tiệm cận là <span class="math inline">\(\alpha,\)</span> tức là <span class="math inline">\(\P_{H_0}(\psi_\alpha) \xrightarrow[n\to\infty]{} \alpha.\)</span></p>
+<table class="table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 31%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giả thuyết</th>
+<th>Kiểm định Wald</th>
+<th>asymp. p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(H_0: \theta=\theta_0, H_1: \theta\neq\theta_0\)</span></td>
+<td><span class="math inline">\(\psi_\alpha=\fone{|W|&gt;q_{\alpha/2}}\)</span></td>
+<td><span class="math inline">\(\P(|Z|&gt;|W^{obs}|)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(H_0: \theta\leq\theta_0, H_1: \theta&gt;\theta_0\)</span></td>
+<td><span class="math inline">\(\psi_\alpha=\fone{W&gt;q_\alpha}\)</span></td>
+<td><span class="math inline">\(\P(Z&gt;W^{obs})\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(H_0: \theta\geq\theta_0, H_1: \theta&lt;\theta_0\)</span></td>
+<td><span class="math inline">\(\psi_\alpha=\fone{W&lt;-q_\alpha}\)</span></td>
+<td><span class="math inline">\(\P(Z&lt;W^{obs})\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Trong bảng trên, p-value được tính từ <span class="math inline">\(W^{obs}\)</span> là một quan sát đối với <span class="math inline">\(W.\)</span></p>
 
 
 </section>
@@ -354,7 +408,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -390,24 +461,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

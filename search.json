@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "XSTK",
     "section": "",
-    "text": "$$\n\\def\\argmax{\\operatorname*{argmax}}\n\\def\\argmin{\\operatorname*{argmin}}\n\\def\\as{\\textrm{a.s.}}\n\\def\\Ber{\\text{Ber}}\n\\def\\Bin{\\text{Bin}}\n\\def\\Unif{\\text{Unif}}\n\\def\\E{\\mathbb{E}}\n\\def\\iid{\\stackrel{iid}{\\sim}}\n\\def\\is{:=}\n\\def\\Gaus{\\mathcal{N}}\n\\def\\P{\\mathbb{P}}\n\\def\\Poi{\\text{Poi}}\n\\def\\R{\\mathbb{R}}\n\\def\\V{\\mathbb{V}}\n\\def\\N{\\mathbb{Z}_+}\n\\def\\TV{\\textrm{TV}}\n\\def\\KL{\\textrm{KL}}\n\\def\\vec#1{\\boldsymbol{#1}}\n$$"
+    "text": "$$\n\\def\\argmax{\\operatorname*{argmax}}\n\\def\\argmin{\\operatorname*{argmin}}\n\\def\\as{\\textrm{a.s.}}\n\\def\\Ber{\\text{Ber}}\n\\def\\Bin{\\text{Bin}}\n\\def\\Unif{\\text{Unif}}\n\\def\\E{\\mathbb{E}}\n\\def\\iid{\\stackrel{iid}{\\sim}}\n\\def\\is{:=}\n\\def\\Gaus{\\mathcal{N}}\n\\def\\fone#1{\\mathbb{1}\\{#1\\}}\n\\def\\P{\\mathbb{P}}\n\\def\\Poi{\\text{Poi}}\n\\def\\R{\\mathbb{R}}\n\\def\\V{\\mathbb{V}}\n\\def\\N{\\mathbb{Z}_+}\n\\def\\TV{\\textrm{TV}}\n\\def\\KL{\\textrm{KL}}\n\\def\\vec#1{\\boldsymbol{#1}}\n$$\n\n\n\n\nLời nói đầu\nXác suất thống kê là nền tảng giúp ích cho việc phân tích dữ liệu, tổ chức thực hành thí nghiệm, chạy các mô hình giả lập, giải các bài toán tìm nghiệm tối ưu, nghiên cứu và ứng dụng học máy.\nMôn “xác suất” tôi đã học những kiến thức cơ bản vài lần, tính ra là ở cấp 3, trong đại học, và gần đây là học trực tuyến. Môn “thống kê” tôi chưa học được cho ra bài bản lần nào, mấy tháng đầu năm 2022 có thử sức học trực tuyến nhưng đầu tư thời gian không đủ nên thi rớt thảm hại.\nLần này nhất quyết học lại môn thống kê một cách nghiêm túc hơn, tôi tóm tắt lại kiến thức xác suất thống kê bằng tiếng Việt, mặc dù tài liệu học hầu hết là tiếng Anh, tiếng Nhật. Hy vọng tiếng mẹ đẻ sẽ giúp tôi hiểu rõ hơn các vấn đề, và trau dồi vốn từ vựng để chia sẻ kiến thức với các đồng nghiệp và bạn bè người Việt.\nĐộng cơ của việc học xác suất thống kê của tôi là để hiểu rõ hơn các lý thuyết căn bản trong ngành học máy và trí tuệ nhân tạo và áp dụng vào thực tiễn một cách đúng đắn, an toàn và công bằng hơn.\nMục tiêu cụ thể trước mắt tôi đặt ra là học hiểu và lấy được chứng chỉ hoàn thành khoá học Fundamentals of Statistics của Philippe Rigollet (2022), giáo sư đại học MIT dạy trên nền tảng trực tuyến edX. Tài liệu tham khảo là quyển “All of Statistics” của Wasserman (2004), cũng chính là tài liệu tham khảo của khoá học nêu trên.\nMôn xác suất nghiên cứu cách suy luận ra các đặc tính của tập dữ liệu sẽ được tạo ra từ một nguyên lý, quy trình sản sinh dữ liệu. Ngược lại, môn thống kê nghiên cứu cách dự đoán đặc tính của một quy trình sản sinh dữ liệu từ tập dữ liệu về hiện tượng đã phát sinh và được quan sát. Fig 1 minh hoạ quan hệ giữa “xác suất” và “thống kê”.\n\n\n\n\n\nflowchart LR\n  A((Nguyên lý,\\n Quy trình))\n  B((Hiện tượng,\\n Quan trắc))\n  A-- Xác suất -->B\n  B-- Thống kê --> A\n\n\n\n\n\nFig 1: Xác suất và thống kê.\n\n\n\n\nPhân tích, khai thác dữ liệu, học máy và khoa học dữ liệu là những tên gọi khác của thống kê, tùy theo bối cảnh và trào lưu. Một số ứng dụng cụ thể của thống kê là tính toán hồi quy, mật độ, phân loại và giả lập.\nTài liệu này không đi sâu vào các chứng minh chi tiết, nhưng sẽ cố gắng ghi rõ các công thức và định nghĩa. Thuật ngữ chuyên môn trong tài liệu này chắc chắn có nhiều chỗ không chuẩn chỉnh do vốn tiếng Việt và kiến thức hạn chế của tác giả. Xin vui lòng góp ý tại GitHub issues.\nTài liệu này được viết bằng các công cụ là Quarto và VSCode. Truy cập trực tuyến tại xstk . \\({}\\)\n\n\n\n\nPhilippe Rigollet, Tyler Maunu, Jan Christian Huetter. 2022. “Fundamentals of Statistics.” MITx. https://www.edx.org/course/fundamentals-of-statistics.\n\n\nWasserman, Larry. 2004. All of Statistics : A Concise Course in Statistical Inference. New York: Springer. https://archive.org/details/springer_10.1007-978-0-387-21736-9."
   },
   {
-    "objectID": "10-proba-intro.html",
-    "href": "10-proba-intro.html",
+    "objectID": "10-proba-intro.html#sự-kiện",
+    "href": "10-proba-intro.html#sự-kiện",
     "title": "1  Xác suất",
-    "section": "",
-    "text": "Không gian \\(\\Omega\\) là tập hợp chứa tất cả những hiện tượng \\(\\omega\\) có thể xảy ra từ một thí nghiệm. Các tập con của \\(\\Omega\\) là các sự kiện.\nVí dụ xem xét thí nghiệm tung một đồng xu đúng hai lần, quan sát đồng xu rớt xuống nằm ngửa (\\(H\\)) hay sấp (\\(T\\)), ta có \\(\\Omega = \\{HH, HT, TH, TT\\}\\) bao gồm 4 kết quả có thể xảy ra. Sự kiện lần tung đầu tiên ra mặt ngửa của đồng xu là tập hợp \\(\\{HH, HT\\}.\\)\nCho một sự kiện \\(A\\subseteq\\Omega\\), ta nói \\(A\\) xảy ra, hoặc \\(A\\) là đúng, nếu có một hiện tượng \\(\\omega\\in A\\) xảy ra. Sự kiện ngược lại với \\(A\\) là \\(A^c\\is\\Omega-A\\is \\{\\omega\\in\\Omega: \\omega\\notin A\\}\\), tức là “không xảy ra \\(A\\)”. Theo định nghĩa, rõ ràng \\(\\Omega\\) luôn luôn đúng, còn sự kiện rỗng \\(\\emptyset\\equiv\\Omega^c\\) luôn luôn sai. Cho thêm sự kiện \\(B\\), ta có \\(A\\cup B\\) là sự kiện “\\(A\\) hoặc \\(B\\) ít nhất một việc xảy ra”, còn \\(AB\\is A\\cap B\\) là sự kiện “\\(A\\) và \\(B\\) đồng thời xảy ra”.\nChuỗi sự kiện \\(A_1, A_2, \\ldots\\) được gọi là phân ly nếu \\(A_i A_j\\equiv\\emptyset\\) với mọi \\(i\\neq j\\). Khi đó nếu \\(A_1\\cup A_2\\cup\\cdots\\equiv C\\) thì ta nói \\(A_1, A_2, \\ldots\\) là một cách phân hoạch sự kiện \\(C\\)."
+    "section": "1.1 Sự kiện",
+    "text": "1.1 Sự kiện\nKhông gian \\(\\Omega\\) là tập hợp chứa tất cả những hiện tượng \\(\\omega\\) có thể xảy ra từ một thí nghiệm. Các tập con của \\(\\Omega\\) là các sự kiện.\nVí dụ xem xét thí nghiệm tung một đồng xu đúng hai lần, quan sát đồng xu rớt xuống nằm ngửa (\\(H\\)) hay sấp (\\(T\\)), ta có \\(\\Omega = \\{HH, HT, TH, TT\\}\\) bao gồm 4 kết quả có thể xảy ra. Sự kiện lần tung đầu tiên ra mặt ngửa của đồng xu là tập hợp \\(\\{HH, HT\\}.\\)\nCho một sự kiện \\(A\\subseteq\\Omega\\), ta nói \\(A\\) xảy ra, hoặc \\(A\\) là đúng, nếu có một hiện tượng \\(\\omega\\in A\\) xảy ra. Sự kiện ngược lại với \\(A\\) là \\(A^c\\is\\Omega-A\\is \\{\\omega\\in\\Omega: \\omega\\notin A\\}\\), tức là “không xảy ra \\(A\\)”. Theo định nghĩa, rõ ràng \\(\\Omega\\) luôn luôn đúng, còn sự kiện rỗng \\(\\emptyset\\equiv\\Omega^c\\) luôn luôn sai. Cho thêm sự kiện \\(B\\), ta có \\(A\\cup B\\) là sự kiện “\\(A\\) hoặc \\(B\\) ít nhất một việc xảy ra”, còn \\(AB\\is A\\cap B\\) là sự kiện “\\(A\\) và \\(B\\) đồng thời xảy ra”.\nChuỗi sự kiện \\(A_1, A_2, \\ldots\\) được gọi là phân ly nếu \\(A_i A_j\\equiv\\emptyset\\) với mọi \\(i\\neq j\\). Khi đó nếu \\(A_1\\cup A_2\\cup\\cdots\\equiv C\\) thì ta nói \\(A_1, A_2, \\ldots\\) là một cách phân hoạch sự kiện \\(C\\)."
   },
   {
     "objectID": "10-proba-intro.html#xác-suất",
@@ -32,7 +32,7 @@
     "href": "10-proba-intro.html#hiệp-phương-sai",
     "title": "1  Xác suất",
     "section": "1.4 Hiệp phương sai",
-    "text": "1.4 Hiệp phương sai\n\nDef 1.8 \\[\\begin{align}\n\\textrm{Cov}[X,Y] &\\is \\E[(X-\\E[X])(Y-\\E[Y])] \\\\\n&\\equiv \\E[XY] - \\E[X]\\E[Y]\n\\end{align}\\]\n\nNếu \\(X\\) và \\(Y\\) độc lập thì \\(\\textrm{Cov}[X,Y] = 0\\)."
+    "text": "1.4 Hiệp phương sai\n\nDef 1.8  \n\\[\\begin{align}\n\\textrm{Cov}[X,Y] &\\is \\E[(X-\\E[X])(Y-\\E[Y])] \\\\\n&\\equiv \\E[XY] - \\E[X]\\E[Y]\n\\end{align}\\]\n\nNếu \\(X\\) và \\(Y\\) độc lập thì \\(\\textrm{Cov}[X,Y] = 0\\)."
   },
   {
     "objectID": "10-proba-intro.html#phương-sai",
@@ -47,13 +47,6 @@
     "title": "1  Xác suất",
     "section": "1.6 Tích suất",
     "text": "1.6 Tích suất\nTích suất (moment, 積率) thể hiện trọng tâm, độ phân tán, hay độ lệch của phân phối. Tích suất bậc \\(n\\) của biến \\(X\\) với mật độ \\(f(x)\\) là:\n\\[\n\\E[X^n]\\is \\int x^n f(x) dx\n\\]\n\n1.6.1 Hàm tạo tích suất\n\nDef 1.10 “Moment generation function (MGF)” của biến \\(X\\) là \\[\\psi_X(t)\\is\\E[e^{tX}], t\\in\\R.\\]\n\nNếu MGF “tồn tại” xung quanh \\(0\\) thì đạo hàm cấp \\(k\\) của \\(\\psi\\) tại \\(0\\) chính là: \\[\n\\psi_X^{(k)}(0)\\equiv \\E[X^k].\n\\]"
-  },
-  {
-    "objectID": "13-distributions.html",
-    "href": "13-distributions.html",
-    "title": "2  Phân phối",
-    "section": "",
-    "text": "Có một số phân phối xác suất thông dụng."
   },
   {
     "objectID": "13-distributions.html#phân-phối-bernoulli",
@@ -98,18 +91,25 @@
     "text": "2.6 Phân phối Gaussian\n\nDef 2.6 \\(X\\sim\\Gaus(\\mu,\\sigma^2)\\) có mật độ \\[\nf(x) =\n\\frac{1}{\\sqrt{\\pi 2\\sigma^2}}\\exp\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right),\nx\\in\\R\n\\] và \\(\\E[X]=\\mu,\\V[X]=\\sigma^2\\).\n\n\nThm 2.1 Nếu \\(X_i \\sim\\Gaus(\\mu_i,\\sigma_i^2) (i=1,\\ldots,n)\\) thì\n\\[\\sum_{i=1}^n X_i\\sim\\Gaus\\left(\\sum_{i=1}^n \\mu_i,\\sum_{i=1}^n \\sigma_i^2\\right)\\]"
   },
   {
-    "objectID": "15-proba-converge.html",
-    "href": "15-proba-converge.html",
-    "title": "3  Hội tụ",
-    "section": "",
-    "text": "Có một số kiểu hội tụ của biến ngẫu nhiên."
+    "objectID": "13-distributions.html#phân-phối-chi2",
+    "href": "13-distributions.html#phân-phối-chi2",
+    "title": "2  Phân phối",
+    "section": "2.7 Phân phối \\(\\chi^2\\)",
+    "text": "2.7 Phân phối \\(\\chi^2\\)\nNếu \\(X_1,\\ldots,X_k\\iid\\Gaus(0,1)\\) thì tổng bình phương của chúng\n\\[\nX \\is \\sum_{i=0}^k X_i^2\n.\n\\]\ntuân theo phân phối \\(\\chi_k^2\\) và có \\(\\E[X]=k,\\V[X]=2k\\)."
+  },
+  {
+    "objectID": "13-distributions.html#phân-phối-students-t",
+    "href": "13-distributions.html#phân-phối-students-t",
+    "title": "2  Phân phối",
+    "section": "2.8 Phân phối Student’s t",
+    "text": "2.8 Phân phối Student’s t\nNếu có \\(Z\\sim\\Gaus(0,1), V\\sim \\chi_k^2\\) độc lập với nhau thì\n\\[\nX \\is \\frac{Z}{\\sqrt{V/k}}\n\\]\ntuân theo phân bố Student’s t."
   },
   {
     "objectID": "15-proba-converge.html#hội-tụ-xác-suất",
     "href": "15-proba-converge.html#hội-tụ-xác-suất",
     "title": "3  Hội tụ",
     "section": "3.1 Hội tụ xác suất",
-    "text": "3.1 Hội tụ xác suất\n\nDef 3.1 Cho một chuỗi biến ngẫu nhiên \\(X_1,X_2,\\ldotp\\) và một biến ngẫu nhiên \\(X\\).\n\nHội tụ gần tuyệt đối: \\[\nX_n \\xrightarrow[n\\to\\infty]{\\as} X \\iff\n\\P(\\{\\omega\\in\\Omega: X_n(\\omega)\\to X(\\omega)\\}) = 1.\n\\]\nHội tụ theo xác suất: \\[\nX_n \\xrightarrow[n\\to\\infty]{\\P} X \\iff\n\\P(|X_n-X| >\\epsilon)\n\\xrightarrow[n\\to\\infty]{}\n0,\\quad\\forall\\epsilon>0.\n\\]\nHội tụ theo phân phối: \\[\nX_n \\xrightarrow[n\\to\\infty]{(d)} X \\iff\n\\P[X_n(x)\\leq x]\\xrightarrow[n\\to\\infty]{} \\P[X\\leq x]\n\\] tại mọi điểm \\(x\\) mà cdf của \\(X\\) liên tục.\nHội tụ về chuẩn: (asymptotically normal) với phương sai \\(\\sigma^2\\) \\[\n\\sqrt{n}({X}_n-X)\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus(0,\\sigma^2).\n\\]"
+    "text": "3.1 Hội tụ xác suất\n\nDef 3.1 Cho một chuỗi biến ngẫu nhiên \\(X_1,X_2,\\ldotp\\) và một biến ngẫu nhiên \\(X\\).\n\nHội tụ gần tuyệt đối: \\[\nX_n \\xrightarrow[n\\to\\infty]{\\as} X \\iff\n\\P(\\{\\omega\\in\\Omega: X_n(\\omega)\\to X(\\omega)\\}) = 1.\n\\]\nHội tụ theo xác suất: \\[\nX_n \\xrightarrow[n\\to\\infty]{\\P} X \\iff\n\\P(|X_n-X| >\\epsilon)\n\\xrightarrow[n\\to\\infty]{}\n0,\\quad\\forall\\epsilon>0.\n\\]\nHội tụ theo phân phối: \\[\nX_n \\xrightarrow[n\\to\\infty]{(d)} X \\iff\n\\P[X_n(x)\\leq x]\\xrightarrow[n\\to\\infty]{} \\P[X\\leq x]\n\\] tại mọi điểm \\(x\\) mà cdf của \\(X\\) liên tục.\nHội tụ về chuẩn: (asymptotically normal) với phương sai \\(\\sigma^2\\) \\[\n\\sqrt{n}\\left(\\frac{{X}_n-X}{|\\sigma|}\\right)\n\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus(0,1).\n\\]"
   },
   {
     "objectID": "15-proba-converge.html#độ-mạnh",
@@ -130,7 +130,7 @@
     "href": "15-proba-converge.html#slutsky",
     "title": "3  Hội tụ",
     "section": "3.4 Slutsky",
-    "text": "3.4 Slutsky\n\nThm 3.3 Nếu \\(Y_n \\xrightarrow[]{\\P} y\\), \\(y\\) là một số thực cố định thì có thể nới lỏng điều kiện đối với \\(X_n\\) thành hội tụ theo phân phối."
+    "text": "3.4 Slutsky\n\nThm 3.3 Hơn nữa, ở Thm 3.2 nếu \\(Y_n \\xrightarrow[]{\\P} y\\), \\(y\\) là một số thực cố định thì có thể nới lỏng điều kiện đối với \\(X_n\\) thành hội tụ theo phân phối."
   },
   {
     "objectID": "15-proba-converge.html#ánh-xạ-liên-tục",
@@ -151,7 +151,7 @@
     "href": "15-proba-converge.html#hội-tụ-trung-tâm-central-limit",
     "title": "3  Hội tụ",
     "section": "3.7 Hội tụ trung tâm (Central Limit)",
-    "text": "3.7 Hội tụ trung tâm (Central Limit)\n\nThm 3.6 Giả sử thêm là \\(\\V[X_i]=\\sigma^2<\\infty\\). Khi đó \\[\n\\sqrt{n}(\\bar{X}_n-\\mu)\n\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus(0,\\sigma^2).\n\\]"
+    "text": "3.7 Hội tụ trung tâm (Central Limit)\n\nThm 3.6 Giả sử thêm là \\(\\V[X_i]=\\sigma^2<\\infty\\). Khi đó \\[\n\\sqrt{n}\n\\left(\n\\frac{\\bar{X}_n-\\mu}{|\\sigma|}\n\\right)\n\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus(0,1).\n\\]"
   },
   {
     "objectID": "15-proba-converge.html#bất-đẳng-thức-hoefding",
@@ -165,14 +165,14 @@
     "href": "15-proba-converge.html#phương-pháp-delta",
     "title": "3  Hội tụ",
     "section": "3.9 Phương pháp Delta",
-    "text": "3.9 Phương pháp Delta\n\nThm 3.8 Giả sử chuỗi \\((\\theta_n)_{n\\geq 1}\\) chuẩn tiến với phương sai \\(\\sigma^2\\) về một điểm \\(\\theta\\in\\R\\). Giả sử \\(g:\\R\\to\\R\\) có vi phân \\(g^\\prime\\) liên tục tại \\(\\theta\\). Khi đó, \\[\n\\sqrt{n}(g(\\theta_n)-g(\\theta))\n\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus\\left(0,\\left(\\sigma g^\\prime(\\theta)\\right)^2\\right)\n\\]"
+    "text": "3.9 Phương pháp Delta\n\nThm 3.8 Giả sử chuỗi \\((\\theta_n)_{n\\geq 1}\\) chuẩn tiến với phương sai \\(\\sigma^2\\) về một điểm \\(\\theta\\in\\R\\). Giả sử \\(g:\\R\\to\\R\\) có vi phân \\(g^\\prime\\) liên tục tại \\(\\theta\\). Khi đó, \\[\n\\sqrt{n}\\left(\\frac{g(\\theta_n)-g(\\theta)}\n{\\left|\\sigma g^\\prime(\\theta)\\right|}\\right)\n\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus\\left(0,1\\right)\n\\]"
   },
   {
-    "objectID": "20-stat-intro.html",
-    "href": "20-stat-intro.html",
+    "objectID": "20-stat-intro.html#mô-hình",
+    "href": "20-stat-intro.html#mô-hình",
     "title": "4  Thống kê",
-    "section": "",
-    "text": "Trên không gian đo được \\(E\\subseteq\\R\\) ta quan sát các mẫu \\(X_1,\\ldots,X_n\\iid\\P\\). Với tập tham số \\(\\Theta\\) ta xây dựng bộ độ đo xác suất \\((\\P_\\theta)_{\\theta\\in\\Theta}\\) để mô phỏng \\(\\P\\) .\nNếu tồn tại \\(\\theta\\in\\Theta\\) để \\(\\P_\\theta\\equiv\\P\\) thì ta nói mô hình “hợp lệ” (well specified).\nNếu từ tập \\(\\Theta\\), ánh xạ \\(\\theta\\mapsto\\P_{\\theta}\\) là đơn ánh thì ta nói \\(\\theta\\) (hoặc \\(\\P_\\theta\\)) là “có thể xác định” (identifiable).\nNếu \\(\\Theta\\subseteq\\R^d\\) thì mô hình được nói có số biến hữu hạn (parametric model)."
+    "section": "4.1 Mô hình",
+    "text": "4.1 Mô hình\nTrên không gian đo được \\(E\\subseteq\\R\\) ta quan sát các mẫu \\(X_1,\\ldots,X_n\\iid\\P\\). Với tập tham số \\(\\Theta\\) ta xây dựng bộ độ đo xác suất \\((\\P_\\theta)_{\\theta\\in\\Theta}\\) để mô phỏng \\(\\P\\) .\nNếu tồn tại \\(\\theta\\in\\Theta\\) để \\(\\P_\\theta\\equiv\\P\\) thì ta nói mô hình “hợp lệ” (well specified).\nNếu từ tập \\(\\Theta\\), ánh xạ \\(\\theta\\mapsto\\P_{\\theta}\\) là đơn ánh thì ta nói \\(\\theta\\) (hoặc \\(\\P_\\theta\\)) là “có thể xác định” (identifiable).\nNếu \\(\\Theta\\subseteq\\R^d\\) thì mô hình được nói có số biến hữu hạn (parametric model)."
   },
   {
     "objectID": "20-stat-intro.html#ước-lượng",
@@ -189,66 +189,108 @@
     "text": "4.3 Khoảng tin cậy\nVới mô hình thống kê \\((E,(\\P_\\theta)_{\\theta\\in\\Theta})\\) xây dựng dựa trên quan sát \\(X_1,\\ldots,X_n\\), giả sử số \\(\\alpha\\in(0,1).\\) Khoảng tin cậy (confidence interval) cấp \\(1-\\alpha\\) đối với \\(\\theta\\) là một khoảng ngẫu nhiên \\(\\mathcal{I}\\) (phụ thuộc vào \\(X_1,\\ldots,X_n\\), không phụ thuộc vào \\(\\theta\\)), mà xác suất \\(\\mathcal{I}\\) có chứa \\(\\theta\\) là đủ cao: \\[\\P_\\theta[\\mathcal{I}\\ni\\theta]\\geq 1-\\alpha,\\quad\\forall\\theta\\in\\Theta.\\]\nNếu \\[\\lim_{n\\to\\infty}\\P_\\theta[\\mathcal{I}\\ni\\theta]\\geq 1-\\alpha,\\quad\\forall\\theta\\in\\Theta\\] thì ta gọi \\(\\mathcal{I}\\) là khoảng tin cậy tiệm cận cấp \\(1-\\alpha\\) đối với \\(\\theta\\)."
   },
   {
-    "objectID": "30-est-method.html",
-    "href": "30-est-method.html",
+    "objectID": "30-est-method.html#pivotal-statistic",
+    "href": "30-est-method.html#pivotal-statistic",
     "title": "5  Ước lượng",
-    "section": "",
-    "text": "Chiến lược ước lượng phân phối thật (true distribution)\nVới mô hình thống kê \\((E,(\\P_\\theta)_{\\theta\\in\\Theta})\\) xây dựng dựa trên quan sát iid rv \\(X_1,\\ldots,X_n\\) trên tập mẫu \\(E\\) và bộ tham số \\(\\Theta\\) . Ngầm định tồn tại tham số thật \\(\\theta^*\\in\\Theta\\) để \\(X_1\\sim\\P_{\\theta^*}\\) ."
+    "section": "5.1 Pivotal statistic",
+    "text": "5.1 Pivotal statistic\nMột phân phối hay một ước lượng được gọi là pivotal nếu nó không phụ thuộc vào giá trị cụ thể của tham số thật."
   },
   {
     "objectID": "30-est-method.html#tổng-biến-động",
     "href": "30-est-method.html#tổng-biến-động",
     "title": "5  Ước lượng",
-    "section": "5.1 Tổng biến động",
-    "text": "5.1 Tổng biến động\n\n5.1.1 Khoảng cách\n\nDef 5.1 tổng biến động (total variation distance) giữa hai độ đo xác suất \\(\\P_\\theta\\) và \\(\\P_\\eta\\) là\n\\[\n\\TV(\\P_\\theta,\\P_{\\eta})\n=\n\\max_{A\\subset E}{\\mid\\P_\\theta(A)-\\P_\\eta(A)\\mid}.\n\\]\n\n\nThm 5.1 (Công thức tính) Nếu tập mẫu \\(E\\) là rời rạc (discrete: countable or finite), xác suất \\(\\P_\\theta,\\P_{\\eta}\\) có hàm khối lần lượt là \\(p_\\theta,p_{\\eta}\\) thì \\[\n\\TV(\\P_\\theta,\\P_{\\eta}) =\n\\frac{1}{2}\n\\sum_{x\\in E}\\mid p_\\theta(x) - p_\\eta(x)\\mid.\n\\]\nNếu tập mẫu \\(E\\) là liên tục (continuous), xác suất \\(\\P_\\theta, \\P_{\\eta}\\) có mật độ lần lượt là \\(f_\\theta, f_{\\eta}\\) thì \\[\n\\TV(\\P_\\theta,\\P_{\\eta}) =\n\\frac{1}{2}\n\\int_{E}\\mid f_\\theta(x) - f_\\eta(x)\\mid dx.\n\\]"
+    "section": "5.2 Tổng biến động",
+    "text": "5.2 Tổng biến động\n\n5.2.1 Khoảng cách\n\nDef 5.1 tổng biến động (total variation distance) giữa hai độ đo xác suất \\(\\P_\\theta\\) và \\(\\P_\\eta\\) là\n\\[\n\\TV(\\P_\\theta,\\P_{\\eta})\n=\n\\max_{A\\subset E}{\\mid\\P_\\theta(A)-\\P_\\eta(A)\\mid}.\n\\]\n\n\nThm 5.1 (Công thức tính) Nếu tập mẫu \\(E\\) là rời rạc (discrete: countable or finite), xác suất \\(\\P_\\theta,\\P_{\\eta}\\) có hàm khối lần lượt là \\(p_\\theta,p_{\\eta}\\) thì \\[\n\\TV(\\P_\\theta,\\P_{\\eta}) =\n\\frac{1}{2}\n\\sum_{x\\in E}\\mid p_\\theta(x) - p_\\eta(x)\\mid.\n\\]\nNếu tập mẫu \\(E\\) là liên tục (continuous), xác suất \\(\\P_\\theta, \\P_{\\eta}\\) có mật độ lần lượt là \\(f_\\theta, f_{\\eta}\\) thì \\[\n\\TV(\\P_\\theta,\\P_{\\eta}) =\n\\frac{1}{2}\n\\int_{E}\\mid f_\\theta(x) - f_\\eta(x)\\mid dx.\n\\]"
   },
   {
     "objectID": "30-est-method.html#phân-kỳ-kl",
     "href": "30-est-method.html#phân-kỳ-kl",
     "title": "5  Ước lượng",
-    "section": "5.2 Phân kỳ KL",
-    "text": "5.2 Phân kỳ KL\n\n5.2.1 Phân kỳ KL\n\nDef 5.2 (KL divergence) Ký hiệu \\(f\\) là mật độ hoặc hàm khối xác suất:\n\\[\n\\KL(\\P_\\theta, \\P_\\eta) \\is\n\\E_\\theta\\left[ \\ln\\frac{f_\\theta(x)}{f_\\eta(x)} \\right]\n=\n\\E_\\theta\\left[ \\ln{f_\\theta(x)} \\right]\n-\n\\E_\\theta\\left[ \\ln{f_\\eta(x)} \\right]\n.\n\\]\n\n\n\n5.2.2 Đặc điểm\n\nProposition 5.1 Phân kỳ KL thỏa mãn 2/4 đặc điểm của “khoảng cách”:\n\n\\(\\KL(\\P_\\theta, \\P_\\eta) \\geq 0\\)\n\\(\\KL(\\P_\\theta, \\P_\\eta) \\equiv 0 \\iff \\P_\\theta \\equiv \\P_\\eta\\)."
+    "section": "5.3 Phân kỳ KL",
+    "text": "5.3 Phân kỳ KL\n\n5.3.1 Phân kỳ KL\n\nDef 5.2 (KL divergence) Ký hiệu \\(f\\) là mật độ hoặc hàm khối xác suất:\n\\[\n\\KL(\\P_\\theta, \\P_\\eta) \\is\n\\E_\\theta\\left[ \\ln\\frac{f_\\theta(x)}{f_\\eta(x)} \\right]\n=\n\\E_\\theta\\left[ \\ln{f_\\theta(x)} \\right]\n-\n\\E_\\theta\\left[ \\ln{f_\\eta(x)} \\right]\n.\n\\]\n\n\n\n5.3.2 Đặc điểm\n\nProposition 5.1 Phân kỳ KL thỏa mãn 2/4 đặc điểm của “khoảng cách”:\n\n\\(\\KL(\\P_\\theta, \\P_\\eta) \\geq 0\\)\n\\(\\KL(\\P_\\theta, \\P_\\eta) \\equiv 0 \\iff \\P_\\theta \\equiv \\P_\\eta\\)."
   },
   {
     "objectID": "30-est-method.html#mle",
     "href": "30-est-method.html#mle",
     "title": "5  Ước lượng",
-    "section": "5.3 MLE",
-    "text": "5.3 MLE\nMaximum Likelihood Estimation\n\n5.3.1 Likelihood\n\nDef 5.3 \\[L_\\theta(x_1,\\ldots,x_n)\\is\n\\P_\\theta(X_1=x_1,\\ldots,X_n=x_n)\n=\n\\prod_{i=1}^n p_\\theta(X_i=x_i)\n.\\]\n\n\n\n5.3.2 Log likelihood\n\nDef 5.4 \\[\n\\ell_\\theta(x_1,\\ldots,x_n)\\is\n\\ln\nL_\\theta(x_1,\\ldots,x_n)\n=\n\\sum_{i=1}^n \\ln p_\\theta(X_i=x_i)\n.\n\\]\n\n\n\n5.3.3 Maximum Likelihood Estimator\n\nDef 5.5 \\[\n\\hat{\\theta}_n \\is\n\\argmax_\\theta\nL_\\theta(x_1,\\ldots,x_n)\n\\equiv\n\\argmax_\\theta\n\\ell_\\theta(x_1,\\ldots,x_n)\n.\n\\]"
+    "section": "5.4 MLE",
+    "text": "5.4 MLE\nMaximum Likelihood Estimation\n\n5.4.1 Likelihood\n\nDef 5.3 \\[L_\\theta(x_1,\\ldots,x_n)\\is\n\\P_\\theta(X_1=x_1,\\ldots,X_n=x_n)\n=\n\\prod_{i=1}^n p_\\theta(X_i=x_i)\n.\\]\n\n\n\n5.4.2 Log likelihood\n\nDef 5.4 \\[\n\\ell_\\theta(x_1,\\ldots,x_n)\\is\n\\ln\nL_\\theta(x_1,\\ldots,x_n)\n=\n\\sum_{i=1}^n \\ln p_\\theta(X_i=x_i)\n.\n\\]\n\n\n\n5.4.3 Maximum Likelihood Estimator\n\nDef 5.5 \\[\n\\hat{\\theta}_n \\is\n\\argmax_\\theta\nL_\\theta(x_1,\\ldots,x_n)\n\\equiv\n\\argmax_\\theta\n\\ell_\\theta(x_1,\\ldots,x_n)\n.\n\\]"
   },
   {
     "objectID": "30-est-method.html#mix-model",
     "href": "30-est-method.html#mix-model",
     "title": "5  Ước lượng",
-    "section": "5.4 Mix model",
-    "text": "5.4 Mix model\n\nDef 5.6 Cho các mô hình gốc \\(X^{(k)}, k= 1,\\ldots,K,\\) lấy biến tiềm ẩn \\(Z\\) trên \\(\\{1,\\ldots,K\\}\\) làm trọng số, ta có mô hình hỗn hợp \\[\nX = \\sum_{k=1}^K\n\\P(Z=k) X^{(k)}\n.\n\\]\n\n\n5.4.1 Giải thuật EM\n\nDef 5.7 (Estimation Maximization) có thể tìm được tham số \\(\\theta\\) của mô hình hỗn hợp Def 5.6.\nGiả sử ta quan sát được \\(X_1=x_1, \\ldots, X_n=x_n\\). Gọi các trọng số tiềm ẩn tương ứng là \\(Z_1=z_1, \\ldots, Z_n=z_n.\\)\nSau khi khởi tạo \\(\\theta = \\theta_0\\) ngẫu nhiên, ta lặp lại 2 bước E, M như sau để cập nhật \\(\\theta_k, k=1,2,\\ldots\\) cho đến khi hội tụ.\n\nEstimate: Ước lượng \\(Z_i\\approx\\omega_i\\is\\E[Z|X_i=x_i, \\theta=\\theta_{k-1}], i=1,\\ldots,n.\\)\nMaximize: Thay \\(Z_i\\) bởi \\(\\omega_i\\) vào công thức likelihood để tối ưu MLE \\(\\theta = \\theta_k\\)"
+    "section": "5.5 Mix model",
+    "text": "5.5 Mix model\n\nDef 5.6 Cho các mô hình gốc \\(X^{(k)}, k= 1,\\ldots,K,\\) lấy biến tiềm ẩn \\(Z\\) trên \\(\\{1,\\ldots,K\\}\\) làm trọng số, ta có mô hình hỗn hợp \\[\nX = \\sum_{k=1}^K\n\\P(Z=k) X^{(k)}\n.\n\\]\n\n\n5.5.1 Giải thuật EM\n\nDef 5.7 (Estimation Maximization) có thể tìm được tham số \\(\\theta\\) của mô hình hỗn hợp Def 5.6.\nGiả sử ta quan sát được \\(X_1=x_1, \\ldots, X_n=x_n\\). Gọi các trọng số tiềm ẩn tương ứng là \\(Z_1=z_1, \\ldots, Z_n=z_n.\\)\nSau khi khởi tạo \\(\\theta = \\theta_0\\) ngẫu nhiên, ta lặp lại 2 bước E, M như sau để cập nhật \\(\\theta_k, k=1,2,\\ldots\\) cho đến khi hội tụ.\n\nEstimate: Ước lượng \\(Z_i\\approx\\omega_i\\is\\E[Z|X_i=x_i, \\theta=\\theta_{k-1}], i=1,\\ldots,n.\\)\nMaximize: Thay \\(Z_i\\) bởi \\(\\omega_i\\) vào công thức likelihood để tối ưu MLE \\(\\theta = \\theta_k\\)"
   },
   {
     "objectID": "30-est-method.html#chuẩn-tính-của-mle",
     "href": "30-est-method.html#chuẩn-tính-của-mle",
     "title": "5  Ước lượng",
-    "section": "5.5 Chuẩn tính của MLE",
-    "text": "5.5 Chuẩn tính của MLE\n\nDef 5.8 Giả sử log likelihood đối với một quan sát \\(X\\) theo mô hình \\(\\theta\\) là \\(\\ell(\\theta) = \\ln L_1(X,\\theta), \\theta\\in\\Theta\\subset\\R.\\) Giả sử \\(\\ell(\\theta)\\) có đạo hàm bậc hai. Dưới một số điều kiện chuẩn, thông tin Fisher của mô hình được định nghĩa là\n\\[\nI(\\theta)\n= \\V[\\ell^{\\prime}(\\theta)]\n= \\E[(\\ell^{\\prime}(\\theta))^2]\n= -\\E[\\ell^{\\prime\\prime}(\\theta)]\n.\n\\]\n\n\nThm 5.2 Gọi \\(\\theta^*\\in\\Theta\\) là tham số thật cần tìm. Giả sử\n\nCác tham số là indentifiable\nSupport của \\(\\P_\\theta\\) không phụ thuộc vào \\(\\theta\\) với mọi \\(\\theta\\in\\Theta\\)\n\\(\\theta^*\\) không nằm trên biên giới của \\(\\Theta\\)\nThông tin Fisher \\(I(\\theta)\\neq 0\\) xung quanh \\(\\theta^*\\)\nMột số điều kiện kỹ thuật khác\n\nKhi đó, chuỗi \\(\\hat{\\theta}_n^{MLE}\\) thỏa mãn:\n\\[\\hat{\\theta}_n^{MLE} \\xrightarrow[n\\to\\infty]{\\P_{\\theta^*}}\\theta^*\\] \\[\\sqrt{n I(\\theta^*)}\\left(\\hat{\\theta}_n^{MLE}-\\theta^*\\right)\n\\xrightarrow[n\\to\\infty]{(d)\\textrm{ w.r.t.}\\P_{\\theta^*}}\n\\Gaus(0, 1).\\]\nChú ý là điều kiện số 2 dễ bị vi phạm, ví dụ \\(X_i\\iid\\Unif[0, \\theta]\\) mà lại cần tìm tham số \\(\\theta.\\)"
+    "section": "5.6 Chuẩn tính của MLE",
+    "text": "5.6 Chuẩn tính của MLE\n\nDef 5.8 Giả sử log likelihood đối với một quan sát \\(X\\) theo mô hình \\(\\theta\\) là \\(\\ell(\\theta) = \\ln L_1(X,\\theta), \\theta\\in\\Theta\\subset\\R.\\) Giả sử \\(\\ell(\\theta)\\) có đạo hàm bậc hai. Dưới một số điều kiện chuẩn, thông tin Fisher của mô hình được định nghĩa là\n\\[\nI(\\theta)\n= \\V[\\ell^{\\prime}(\\theta)]\n= \\E[(\\ell^{\\prime}(\\theta))^2]\n= -\\E[\\ell^{\\prime\\prime}(\\theta)]\n.\n\\]\n\n\nThm 5.2 Gọi \\(\\theta^*\\in\\Theta\\) là tham số thật cần tìm. Giả sử\n\nCác tham số là indentifiable\nSupport của \\(\\P_\\theta\\) không phụ thuộc vào \\(\\theta\\) với mọi \\(\\theta\\in\\Theta\\)\n\\(\\theta^*\\) không nằm trên biên giới của \\(\\Theta\\)\nThông tin Fisher \\(I(\\theta)\\neq 0\\) xung quanh \\(\\theta^*\\)\nMột số điều kiện kỹ thuật khác\n\nKhi đó, chuỗi \\(\\hat{\\theta}_n^{MLE}\\) thỏa mãn:\n\\[\\hat{\\theta}_n^{MLE} \\xrightarrow[n\\to\\infty]{\\P_{\\theta^*}}\\theta^*\\] \\[\\sqrt{n I(\\theta^*)}\\left(\\hat{\\theta}_n^{MLE}-\\theta^*\\right)\n\\xrightarrow[n\\to\\infty]{(d)\\textrm{ w.r.t.}\\P_{\\theta^*}}\n\\Gaus(0, 1).\\]\nChú ý là điều kiện số 2 dễ bị vi phạm, ví dụ \\(X_i\\iid\\Unif[0, \\theta]\\) mà lại cần tìm tham số \\(\\theta.\\)"
   },
   {
     "objectID": "30-est-method.html#m-estimatior",
     "href": "30-est-method.html#m-estimatior",
     "title": "5  Ước lượng",
-    "section": "5.6 M-estimatior",
-    "text": "5.6 M-estimatior\n\nDef 5.9 Với mục tiêu ước lượng thuộc tính \\(\\mu^*\\) của xác suất \\(\\P(X)\\), ta tìm một “hàm tổn thất” \\(\\rho(X,\\mu)\\) có giá trị kỳ vọng đạt cực tiểu tại \\(\\mu = \\mu^*:\\) \\[\n\\mathcal{Q}(\\mu)\n\\is \\E_{\\P}[\\rho(X,\\mu)]\n.\n\\]\nNếu quan sát được \\(X_1,\\ldots,X_n\\iid\\P(X),\\) ta ước lượng \\[\n\\mathcal{Q}(\\mu)\n\\approx\n\\mathcal{Q}_n(\\mu)\n\\is\n\\frac{1}{n} \\sum_{i=1}^n{\\rho(X_i,\\mu)}\n.\\]\nKhi đó \\(\\mu^*\\approx\\hat{\\mu}\\) với “M-estimator” \\(\\hat{\\mu}\\) là\n\\[\n\\hat{\\mu}\n\\is\\argmin_{\\mu}\n\\mathcal{Q}_n(\\mu)\n.\n\\]\n\nVí dụ,\n\nvới \\(\\rho(x,\\theta) = -\\ln p_\\theta(x)\\) ta có MLE để ước lượng tham số \\(\\theta^*\\) của mô hình \\(\\P\\)\nvới \\(\\vec x,\\vec\\mu\\in\\R^d\\), dùng \\(\\rho(\\vec x,\\vec\\mu) = \\|\\vec x-\\vec\\mu\\|^2\\) ta ước lượng được \\(\\vec\\mu^*=\\E[\\vec x].\\)"
+    "section": "5.7 M-estimatior",
+    "text": "5.7 M-estimatior\n\nDef 5.9 Với mục tiêu ước lượng thuộc tính \\(\\mu^*\\) của xác suất \\(\\P(X)\\), ta tìm một “hàm tổn thất” \\(\\rho(X,\\mu)\\) có giá trị kỳ vọng đạt cực tiểu tại \\(\\mu = \\mu^*:\\) \\[\n\\mathcal{Q}(\\mu)\n\\is \\E_{\\P}[\\rho(X,\\mu)]\n.\n\\]\nNếu quan sát được \\(X_1,\\ldots,X_n\\iid\\P(X),\\) ta ước lượng \\[\n\\mathcal{Q}(\\mu)\n\\approx\n\\mathcal{Q}_n(\\mu)\n\\is\n\\frac{1}{n} \\sum_{i=1}^n{\\rho(X_i,\\mu)}\n.\\]\nKhi đó \\(\\mu^*\\approx\\hat{\\mu}\\) với “M-estimator” \\(\\hat{\\mu}\\) là\n\\[\n\\hat{\\mu}\n\\is\\argmin_{\\mu}\n\\mathcal{Q}_n(\\mu)\n.\n\\]\n\nVí dụ,\n\nvới \\(\\rho(x,\\theta) = -\\ln p_\\theta(x)\\) ta có MLE để ước lượng tham số \\(\\theta^*\\) của mô hình \\(\\P\\)\nvới \\(\\vec x,\\vec\\mu\\in\\R^d\\), dùng \\(\\rho(\\vec x,\\vec\\mu) = \\|\\vec x-\\vec\\mu\\|^2\\) ta ước lượng được \\(\\vec\\mu^*=\\E[\\vec x].\\)"
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
+    "objectID": "40-hypothesis-test.html#giả-thuyết-không-và-đối",
+    "href": "40-hypothesis-test.html#giả-thuyết-không-và-đối",
+    "title": "6  Giả thuyết",
+    "section": "6.1 Giả thuyết không và đối",
+    "text": "6.1 Giả thuyết không và đối\nVới mô hình thống kê \\(\\left(E,(\\P_\\theta)_{\\theta\\in\\Theta}\\right),\\) sử dụng bộ mẫu dữ liệu iid \\(X_1,\\ldots,X_n,\\) ta xem xét hai giả thuyết về tham số \\(\\theta\\) như sau:\n\\[\n\\begin{cases}\nH_0:&\\theta\\in\\Theta_0\\\\\nH_1:&\\theta\\in\\Theta_1\n\\end{cases}\n\\]\nvới \\(\\Theta_0,\\Theta_1\\) là phân mảnh (không giao nhau) của \\(\\Theta,\\) \\(\\Theta_0\\) là “thường thức” (status quo), còn \\(\\Theta_1\\) là “phát hiện” (discovery) mới. Ta gọi \\(H_0\\) là giả thuyết không, còn \\(H_1\\) là giả thuyết đối (thay thế)."
+  },
+  {
+    "objectID": "40-hypothesis-test.html#kiểm-định",
+    "href": "40-hypothesis-test.html#kiểm-định",
+    "title": "6  Giả thuyết",
+    "section": "6.2 Kiểm định",
+    "text": "6.2 Kiểm định\nTa sẽ kiểm định \\(H_0\\) đối với \\(H_1\\) bằng cách chọn và sử dụng một định lượng thống kê \\(\\psi(X_1,\\ldots,X_n)\\in\\{0,1\\}.\\)\n\n\n\n\n\n\n\n\n\n\\(\\psi=0:\\) chấp nhận \\(H_0\\)\n\\(\\psi=1:\\) phủ nhận \\(H_0\\)\n\n\n\n\n\\(\\theta\\in\\Theta_0\\)\nKiểm định đúng\nLỗi loại 1\n\n\n\\(\\theta\\in\\Theta_1\\)\nLỗi loại 2\nKiểm định đúng\n\n\n\nCó thể viết \\(\\psi=\\fone{R_\\psi}\\) với sự kiện \\(R_\\psi\\) là vùng phủ nhận, còn \\(R_\\psi^c\\) là vùng chấp nhận .\nTa thiết kế kiểm định sao cho hàm công suất sau đây có giá trị nhỏ khi \\(\\theta\\in\\Theta_0\\) và lớn khi \\(\\theta\\in\\Theta_1:\\)\n\\[\\beta_\\psi(\\theta) \\is \\P_\\theta(\\psi=1) \\equiv \\P_\\theta(R_\\psi)\\in[0,1]\\]\nVùng phủ nhận thường có dạng \\[\nR_\\psi = \\{X_i: T(X_i)\\geq c\\}\n\\] với \\(T\\) là một lượng thống kê còn \\(c\\) là một giá trị biên."
+  },
+  {
+    "objectID": "40-hypothesis-test.html#neyman-pearson-paradigm",
+    "href": "40-hypothesis-test.html#neyman-pearson-paradigm",
+    "title": "6  Giả thuyết",
+    "section": "6.3 Neyman-Pearson paradigm",
+    "text": "6.3 Neyman-Pearson paradigm\nKiểm định \\(\\psi\\) là ở mức \\(\\alpha\\in(0,1)\\) nếu có xác suất lỗi loại 1 không vượt quá \\(\\alpha:\\) \\[\n\\sup_{\\theta\\in\\Theta_0}\n\\beta_\\psi(\\theta)\n\\leq\\alpha\n.\n\\]\nChuỗi kiểm định \\((\\psi_n)_{n=1,2,\\ldots}\\) được gọi là tiệm cận về mức \\(\\alpha\\) nếu \\[\n\\lim_{n\\to\\infty}\n\\sup_{\\theta\\in\\Theta_0}\n\\beta_{\\psi_n}(\\theta)\n\\leq\\alpha\n.\n\\]\nPhương thức Neyman-Pearson chọn một mức \\(\\alpha\\), đảm bảo xác suất lỗi loại 1 không vượt quá \\(\\alpha\\) rồi tối thiểu hóa xác suất lỗi loại 2. Nói cách khác là giữ cho công suất \\(\\beta_\\psi(\\theta)\\) đủ nhỏ khi \\(\\psi\\in\\Theta_0,\\) rồi tối đại hóa công suất khi \\(\\psi\\in\\Theta_1.\\)"
+  },
+  {
+    "objectID": "40-hypothesis-test.html#p-value",
+    "href": "40-hypothesis-test.html#p-value",
+    "title": "6  Giả thuyết",
+    "section": "6.4 p-value",
+    "text": "6.4 p-value\nTừ dữ liệu quan sát \\(X_1, \\ldots, X_n\\) ta tính giá trị mức \\(\\alpha\\) (tiệm cận) nhỏ nhất tại đó kiểm định \\(\\psi\\) phủ nhận \\(H_0,\\) gọi nó là p-value (tiệm cận) của \\(\\psi.\\) Nếu p-value càng nhỏ thì ta càng tự tin phủ nhận \\(H_0.\\)"
+  },
+  {
+    "objectID": "40-hypothesis-test.html#khoảng-tin-cậy",
+    "href": "40-hypothesis-test.html#khoảng-tin-cậy",
+    "title": "6  Giả thuyết",
+    "section": "6.5 Khoảng tin cậy",
+    "text": "6.5 Khoảng tin cậy\nThông thường ta có thể xây dựng được kiểm định từ khoảng tin cậy. Ví dụ, ta muốn kiếm định tham số \\(\\theta\\), \\(H_0: \\theta=\\theta_0,\\) đối \\(H_1: \\theta\\neq\\theta_0.\\) Giả sử ta có khoảng tin cậy \\(\\mathcal{I}\\) ở mức \\(1-\\alpha\\), tức là \\[\\P_\\theta(I\\ni \\theta)\\geq 1-\\alpha.\\] Khi đó, \\(\\psi=\\fone{\\theta_0\\notin\\mathcal{I}}\\) là kiểm định mức \\(\\alpha\\)\n\\[\n\\beta_\\psi(\\theta_0) = \\P_{\\theta_0}(\\theta_0\\notin I) \\leq \\alpha.\n\\]"
+  },
+  {
+    "objectID": "40-hypothesis-test.html#wald-test",
+    "href": "40-hypothesis-test.html#wald-test",
+    "title": "6  Giả thuyết",
+    "section": "6.6 Wald Test",
+    "text": "6.6 Wald Test\nGiả sử \\(\\hat{\\theta}\\) là ước lượng của tham số \\(\\theta\\), và \\(\\hat{\\V}[\\hat{\\theta}]\\) là ước lượng phương sai của \\(\\hat{\\theta}\\), sao cho \\[\n\\frac{\\hat{\\theta}-\\theta}\n{\\sqrt{\\hat{\\V}[\\hat{\\theta}]}}\n\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus(0,1).\n\\]\nĐặt \\[\nW \\is \\frac{\\hat{\\theta}-\\theta_0}\n{\\sqrt{\\hat{\\V}[\\hat{\\theta}]}}\n,\n\\] ta có thể xây dựng các kiểm định Wald có mức tiệm cận là \\(\\alpha,\\) tức là \\(\\P_{H_0}(\\psi_\\alpha) \\xrightarrow[n\\to\\infty]{} \\alpha.\\)\n\n\n\n\n\n\n\n\nGiả thuyết\nKiểm định Wald\nasymp. p-value\n\n\n\n\n\\(H_0: \\theta=\\theta_0, H_1: \\theta\\neq\\theta_0\\)\n\\(\\psi_\\alpha=\\fone{|W|>q_{\\alpha/2}}\\)\n\\(\\P(|Z|>|W^{obs}|)\\)\n\n\n\\(H_0: \\theta\\leq\\theta_0, H_1: \\theta>\\theta_0\\)\n\\(\\psi_\\alpha=\\fone{W>q_\\alpha}\\)\n\\(\\P(Z>W^{obs})\\)\n\n\n\\(H_0: \\theta\\geq\\theta_0, H_1: \\theta<\\theta_0\\)\n\\(\\psi_\\alpha=\\fone{W<-q_\\alpha}\\)\n\\(\\P(Z<W^{obs})\\)\n\n\n\nTrong bảng trên, p-value được tính từ \\(W^{obs}\\) là một quan sát đối với \\(W.\\)"
+  },
+  {
+    "objectID": "references.html#tham-khảo",
+    "href": "references.html#tham-khảo",
     "title": "Giáo trình",
-    "section": "",
-    "text": "John Tsitsiklis, Dimitri Bertsekas, Partick Jaillet. 2022.\n“Probability - the Science of Uncertainty and Data.” MITx.\nhttps://www.edx.org/course/probability-the-science-of-uncertainty-and-data.\n\n\nPhilippe Rigollet, Tyler Maunu, Jan Christian Huetter. 2022.\n“Fundamentals of Statistics.” MITx. https://www.edx.org/course/fundamentals-of-statistics.\n\n\nWasserman, Larry. 2004. All of Statistics : A Concise Course in\nStatistical Inference. New York: Springer. https://archive.org/details/springer_10.1007-978-0-387-21736-9."
+    "section": "Tham khảo",
+    "text": "Tham khảo\n\n\nJohn Tsitsiklis, Dimitri Bertsekas, Partick Jaillet. 2022.\n“Probability - the Science of Uncertainty and Data.” MITx.\nhttps://www.edx.org/course/probability-the-science-of-uncertainty-and-data.\n\n\nPhilippe Rigollet, Tyler Maunu, Jan Christian Huetter. 2022.\n“Fundamentals of Statistics.” MITx. https://www.edx.org/course/fundamentals-of-statistics.\n\n\nWasserman, Larry. 2004. All of Statistics : A Concise Course in\nStatistical Inference. New York: Springer. https://archive.org/details/springer_10.1007-978-0-387-21736-9."
   },
   {
     "objectID": "references.html#mitx-18.6501x",
     "href": "references.html#mitx-18.6501x",
     "title": "Giáo trình",
     "section": "MITx 18.6501x",
-    "text": "MITx 18.6501x\n“Fundamentals of Statistics” (MITx 18.6501x ) là khóa học của Philippe Rigollet (2022) đại học MIT dạy trên edX.\n\nQuy định\n\nKỳ hạn\n\nExercises and homework: Wednesdays 11:59AM UTC (Wed. 20:59 JST)\nExams (48 hours): Tuesdays 11:59AM UTC(Tue. 20:59 JST)\n\n\n\nThời gian cần thiết\nMỗi tuần khoảng hơn 12 tiếng\n\n5-7 hours on exercises, including 3 hours of lecture clips\n1-2 hours watching recitations\n5-7 hours for weekly problem sets\n\n\n\nTính điểm\nĐiểm thi đậu chứng chỉ là 60% tổng số điểm tối đa.\n\n20% for the lecture exercises (divided equally among the 20 out of 23 lectures)\n20% for the homeworks (divided equally among 10 (out of 12) homeworks)\n18% for the first midterm exam (timed)\n18% for the second midterm exam (timed)\n24% for the final exam (timed)\n\n\n\n\nUnit 1\nÔn lại kiến thức về xác suất “Probability - The Science of Uncertainty and Data” by John Tsitsiklis (2022).\n\n\nUnit 2\nHọc về nền tảng của suy luận (Foundations of Inference).\n\nLecture 3: Mô hình xác suất có số biến hữu hạn (Parametric Statistical Models)\nLecture 4: Dự đoán với số biến hữu hạn và khoảng tự tin (Parametric Estimation and Confidence Intervals) \\({}\\)"
+    "text": "MITx 18.6501x\n“Fundamentals of Statistics” (MITx 18.6501x ) là khóa học của Philippe Rigollet (2022) đại học MIT dạy trên edX.\n\nQuy định\n\nKỳ hạn\n\nExercises and homework: Wednesdays 11:59AM UTC (Wed. 20:59 JST)\nExams (48 hours): Tuesdays 11:59AM UTC(Tue. 20:59 JST)\n\n\n\nThời gian cần thiết\nMỗi tuần khoảng hơn 12 tiếng\n\n5-7 hours on exercises, including 3 hours of lecture clips\n1-2 hours watching recitations\n5-7 hours for weekly problem sets\n\n\n\nTính điểm\nĐiểm thi đậu chứng chỉ là 60% tổng số điểm tối đa.\n\n20% for the lecture exercises (divided equally among the 20 out of 23 lectures)\n20% for the homeworks (divided equally among 10 (out of 12) homeworks)\n18% for the first midterm exam (timed)\n18% for the second midterm exam (timed)\n24% for the final exam (timed)\n\n\n\n\nUnit 1\nÔn lại kiến thức về xác suất “Probability - The Science of Uncertainty and Data” by John Tsitsiklis (2022).\n\n\nUnit 2\nHọc về nền tảng của suy luận (Foundations of Inference).\n\nLecture 3: Mô hình xác suất có số biến hữu hạn (Parametric Statistical Models)\nLecture 4: Dự đoán với số biến hữu hạn và vùng tự tin (Parametric Estimation and Confidence Intervals) \\({}\\)\nLecture 5: Vùng tự tin và phương pháp Delta (Confidence Intervals and Delta Method)\n\n\n\nUnit 3\nPhương pháp ước lượng tham số của mô hình xác suất\n\nLecture 6: Khoảng cách giữa các phân phối xác suất\nLecture 7: Maximum Likelihood Estimator\nLecture 8: Ví dụ cho Maximum Likelihood Estimator\nLecture 9: Các tính chất thống kê của Maximum Likelihood Estimator\nLecture 10: Phương pháp tích suất và M-Estimation\n\n\n\nUnit 4\nKiểm định thống kê\n\nLecture 11: Introduction to Parametric Hypothesis Testing\nLecture 12: The Wald Test and Likelihood Ratio Test\nLecture 13: The T-test\nLecture 14: Multiple Hypothesis Testing"
   }
 ]

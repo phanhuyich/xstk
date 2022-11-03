@@ -93,3 +93,18 @@ thì
 
 $$\sum_{i=1}^n X_i\sim\Gaus\left(\sum_{i=1}^n \mu_i,\sum_{i=1}^n \sigma_i^2\right)$$
 :::
+
+## Phân phối $\chi^2$
+
+Nếu $X_1,\ldots,X_k\iid\Gaus(0,1)$ thì
+tổng bình phương của chúng
+
+$$
+X \is \sum_{i=0}^k X_i^2
+.
+$$
+
+tuân theo
+phân phối $\chi_k^2$
+và có
+$\E[X]=k,\V[X]=2k$.

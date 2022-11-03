@@ -1,4 +1,4 @@
-# Giả thuyết
+# Kiểm định
 
 Hypothesis testing
 
@@ -54,9 +54,9 @@ R_\psi = \{X_i: T(X_i)\geq c\}
 $$
 với $T$ là một lượng thống kê còn $c$ là một giá trị biên.
 
-## Neyman-Pearson paradigm
+## Mức độ lỗi
 
-Kiểm định $\psi$ là ở mức $\alpha\in(0,1)$ nếu có xác suất lỗi loại 1
+Kiểm định $\psi$ là ở mức (significance level) $\alpha\in(0,1)$ nếu có xác suất lỗi loại 1
 không vượt quá $\alpha:$
 $$
 \sup_{\theta\in\Theta_0}
@@ -80,20 +80,25 @@ loại 1 không vượt quá $\alpha$ rồi tối thiểu hóa xác suất lỗi
 Nói cách khác là giữ cho công suất $\beta_\psi(\theta)$ đủ nhỏ khi
 $\psi\in\Theta_0,$ rồi tối đại hóa công suất khi $\psi\in\Theta_1.$
 
-## p-value
+### p-value
 
-Từ dữ liệu quan sát $X_1, \ldots, X_n$ ta tính giá trị mức $\alpha$
+Từ quan sát $X_1, \ldots, X_n$ ta tính giá trị mức $\alpha$
 (tiệm cận) nhỏ nhất tại đó kiểm định $\psi$ phủ nhận $H_0,$ gọi nó là
 p-value (tiệm cận) của $\psi.$ Nếu p-value càng nhỏ thì ta càng tự tin
 phủ nhận $H_0.$
 
-| p-value | phân lớp độ mạnh của chứng cứ
-| --------| --------
-| $<1\%$  | chứng cứ rất mạnh phủ nhận $H_0$
-| $1\%\textemdash 5\%$  | chứng cứ mạnh phủ nhận $H_0$
-| $5\%\textemdash 10\%$ | chứng cứ yếu ớt phủ nhận $H_0$
-| $>10\%$ | không phải chứng cứ phủ nhận $H_0$
+$$
+\textrm{p-value} \is
+\inf_{X_1, \ldots, X_n; \theta\in H_0}\beta_\psi(\theta)
+$$
 
+| p-value | chứng cứ phủ nhận $H_0$
+| --------| --------
+| $<0.1\%$  | vô cùng mạnh
+| $0.1\%\textemdash 1\%$  | rất mạnh
+| $1\%\textemdash 5\%$  | mạnh
+| $5\%\textemdash 10\%$ | yếu
+| $>10\%$ | không có
 
 ## Khoảng tin cậy
 
@@ -213,3 +218,18 @@ $$
 | $H_0: \mu_x=\mu_y, H_1: \mu_x\neq\mu_y$ | $\psi_\alpha=\fone{|T| >q_{\alpha/2}^{t_{N}}}$ | $\P_{t_{N}}(|Z|>|T^{obs}|)$ |
 | $H_0: \mu_x\leq\mu_y, H_1: \mu_x>\mu_y$ | $\psi_\alpha=\fone{T>q_\alpha^{t_{N}}}$       | $\P_{t_{N}}(Z>T^{obs})$     |
 | $H_0: \mu_x\geq\mu_y, H_1: \mu_x<\mu_y$ | $\psi_\alpha=\fone{T<-q_\alpha^{t_{N}}}$      | $\P_{t_{N}}(Z<T^{obs})$     |
+
+## Kiểm định nhiều lần
+
+Gọi số lần thực hiện và quan sát kết quả kiểm định là $t,$
+mức độ lỗi loại 1 cho phép là $\alpha.$
+Nếu $H_0$ là đúng thì
+lỗi loại 1 sẽ xuất hiện khoảng $\alpha t$ lần,
+số lần này sẽ càng lớn nếu $t$ càng lớn.
+
+Gọi tỷ lệ p-value không vượt quá ngưỡng $\alpha$ là
+$F(\alpha)\is\P(\textrm{p-value}\leq \alpha).$
+Ta có $F(\alpha)\leq \alpha$ với mọi loại kiểm định.
+Hơn nữa,
+$F(\alpha)=\alpha$
+với kiểm định Student's T.

@@ -238,48 +238,6 @@
     "text": "5.6 M-estimatior\n\nDef 5.9 Với mục tiêu ước lượng thuộc tính \\(\\mu^*\\) của xác suất \\(\\P(X)\\), ta tìm một “hàm tổn thất” \\(\\rho(X,\\mu)\\) có giá trị kỳ vọng đạt cực tiểu tại \\(\\mu = \\mu^*:\\) \\[\n\\mathcal{Q}(\\mu)\n\\is \\E_{\\P}[\\rho(X,\\mu)]\n.\n\\]\nNếu quan sát được \\(X_1,\\ldots,X_n\\iid\\P(X),\\) ta ước lượng \\[\n\\mathcal{Q}(\\mu)\n\\approx\n\\mathcal{Q}_n(\\mu)\n\\is\n\\frac{1}{n} \\sum_{i=1}^n{\\rho(X_i,\\mu)}\n.\\]\nKhi đó \\(\\mu^*\\approx\\hat{\\mu}\\) với “M-estimator” \\(\\hat{\\mu}\\) là\n\\[\n\\hat{\\mu}\n\\is\\argmin_{\\mu}\n\\mathcal{Q}_n(\\mu)\n.\n\\]\n\nVí dụ,\n\nvới \\(\\rho(x,\\theta) = -\\ln p_\\theta(x)\\) ta có MLE để ước lượng tham số \\(\\theta^*\\) của mô hình \\(\\P\\)\nvới \\(\\vec x,\\vec\\mu\\in\\R^d\\), dùng \\(\\rho(\\vec x,\\vec\\mu) = \\|\\vec x-\\vec\\mu\\|^2\\) ta ước lượng được \\(\\vec\\mu^*=\\E[\\vec x].\\)"
   },
   {
-    "objectID": "40-hypothesis-test.html",
-    "href": "40-hypothesis-test.html",
-    "title": "6  Giả thuyết",
-    "section": "",
-    "text": "Hypothesis testing"
-  },
-  {
-    "objectID": "40-hypothesis-test.html#giả-thuyết-không-và-đối",
-    "href": "40-hypothesis-test.html#giả-thuyết-không-và-đối",
-    "title": "6  Giả thuyết",
-    "section": "6.1 Giả thuyết không và đối",
-    "text": "6.1 Giả thuyết không và đối\nVới mô hình thống kê \\(\\left(E,(\\P_\\theta)_{\\theta\\in\\Theta}\\right),\\) sử dụng bộ mẫu dữ liệu iid \\(X_1,\\ldots,X_n,\\) ta xem xét hai giả thuyết về tham số \\(\\theta\\) như sau:\n\\[\n\\begin{cases}\nH_0:&\\theta\\in\\Theta_0\\\\\nH_1:&\\theta\\in\\Theta_1\n\\end{cases}\n\\]\nvới \\(\\Theta_0,\\Theta_1\\) là phân mảnh (không giao nhau) của \\(\\Theta,\\) \\(\\Theta_0\\) là “thường thức” (status quo), còn \\(\\Theta_1\\) là “phát hiện” (discovery) mới. Ta gọi \\(H_0\\) là giả thuyết không, còn \\(H_1\\) là giả thuyết đối (thay thế)."
-  },
-  {
-    "objectID": "40-hypothesis-test.html#kiểm-định",
-    "href": "40-hypothesis-test.html#kiểm-định",
-    "title": "6  Giả thuyết",
-    "section": "6.2 Kiểm định",
-    "text": "6.2 Kiểm định\nTa sẽ kiểm định \\(H_0\\) đối với \\(H_1\\) bằng cách chọn và sử dụng một định lượng thống kê \\(\\psi(X_1,\\ldots,X_n)\\in\\{0,1\\}.\\)\n\n\n\n\n\\(\\psi=0:\\) chấp nhận \\(H_0\\)\n\\(\\psi=1:\\) phủ nhận \\(H_0\\)\n\n\n\n\n\\(\\theta\\in\\Theta_0\\)\nKiểm định đúng\nLỗi loại 1\n\n\n\\(\\theta\\in\\Theta_1\\)\nLỗi loại 2\nKiểm định đúng\n\n\n\nCó thể viết \\(\\psi=\\mathbb{1}\\{R_\\psi\\}\\) với sự kiện \\(R_\\psi\\) là vùng phủ nhận, còn \\(R_\\psi^c\\) là vùng chấp nhận .\nTa thiết kế kiểm định sao cho hàm công suất sau đây có giá trị nhỏ khi \\(\\theta\\in\\Theta_0\\) và lớn khi \\(\\theta\\in\\Theta_1:\\)\n\\[\\beta_\\psi(\\theta) \\is \\P_\\theta(\\psi=1) \\equiv \\P_\\theta(R_\\psi)\\in[0,1]\\]\nVùng phủ nhận thường có dạng \\[\nR_\\psi = \\{X_i: T(X_i)\\geq c\\}\n\\] với \\(T\\) là một lượng thống kê còn \\(c\\) là một giá trị biên."
-  },
-  {
-    "objectID": "40-hypothesis-test.html#neyman-pearson-paradigm",
-    "href": "40-hypothesis-test.html#neyman-pearson-paradigm",
-    "title": "6  Giả thuyết",
-    "section": "6.3 Neyman-Pearson paradigm",
-    "text": "6.3 Neyman-Pearson paradigm\nKiểm định \\(\\psi\\) là ở mức \\(\\alpha\\) nếu có xác suất lỗi loại 1 không vượt quá \\(\\alpha:\\) \\[\n\\sup_{\\theta\\in\\Theta_0}\n\\beta_\\psi(\\theta)\n\\leq\\alpha\n.\n\\]\nChuỗi kiểm định \\((\\psi_n)_{n=1,2,\\ldots}\\) được gọi là tiệm cận về mức \\(\\alpha\\) nếu \\[\n\\lim_{n\\to\\infty}\n\\sup_{\\theta\\in\\Theta_0}\n\\beta_{\\psi_n}(\\theta)\n\\leq\\alpha\n.\n\\]\nPhương thức Neyman-Pearson chọn một mức \\(\\alpha\\), đảm bảo xác suất lỗi loại 1 không vượt quá \\(\\alpha\\) rồi tối thiểu hóa xác suất lỗi loại 2. Nói cách khác là giữ cho công suất \\(\\beta_\\psi(\\theta)\\) đủ nhỏ khi \\(\\psi\\in\\Theta_0,\\) rồi tối đại hóa công suất khi \\(\\psi\\in\\Theta_1.\\)"
-  },
-  {
-    "objectID": "40-hypothesis-test.html#khoảng-tin-cậy",
-    "href": "40-hypothesis-test.html#khoảng-tin-cậy",
-    "title": "6  Giả thuyết",
-    "section": "6.4 Khoảng tin cậy",
-    "text": "6.4 Khoảng tin cậy\nThông thường ta có thể xây dựng được kiểm định từ khoảng tin cậy. Ví dụ, ta muốn kiếm định tham số \\(\\theta\\), \\(H_0: \\theta=\\theta_0,\\) đối \\(H_1: \\theta\\neq\\theta_0.\\) Giả sử ta có khoảng tin cậy \\(\\mathcal{I}\\) ở mức \\(1-\\alpha\\), tức là \\[\\P_\\theta(I\\ni \\theta)\\geq 1-\\alpha.\\] Khi đó, \\(\\psi=\\mathbb{1}\\{\\theta_0\\notin\\mathcal{I}\\}\\) là kiểm định mức \\(\\alpha\\)\n\\[\n\\beta_\\psi(\\theta_0) = \\P_{\\theta_0}(\\theta_0\\notin I) \\leq \\alpha.\n\\]"
-  },
-  {
-    "objectID": "40-hypothesis-test.html#p-value",
-    "href": "40-hypothesis-test.html#p-value",
-    "title": "6  Giả thuyết",
-    "section": "6.5 p-value",
-    "text": "6.5 p-value\nTừ dữ liệu quan sát \\(X_1, \\ldots, X_n\\) ta tính giá trị mức \\(\\alpha\\) (tiệm cận) nhỏ nhất tại đó kiểm định \\(\\psi\\) phủ nhận \\(H_0,\\) gọi nó là p-value (tiệm cận) của \\(\\psi.\\) Nếu p-value càng nhỏ thì ta càng tự tin phủ nhận \\(H_0.\\)"
-  },
-  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Giáo trình",
@@ -291,6 +249,6 @@
     "href": "references.html#mitx-18.6501x",
     "title": "Giáo trình",
     "section": "MITx 18.6501x",
-    "text": "MITx 18.6501x\n“Fundamentals of Statistics” (MITx 18.6501x ) là khóa học của Philippe Rigollet (2022) đại học MIT dạy trên edX.\n\nQuy định\n\nKỳ hạn\n\nExercises and homework: Wednesdays 11:59AM UTC (Wed. 20:59 JST)\nExams (48 hours): Tuesdays 11:59AM UTC(Tue. 20:59 JST)\n\n\n\nThời gian cần thiết\nMỗi tuần khoảng hơn 12 tiếng\n\n5-7 hours on exercises, including 3 hours of lecture clips\n1-2 hours watching recitations\n5-7 hours for weekly problem sets\n\n\n\nTính điểm\nĐiểm thi đậu chứng chỉ là 60% tổng số điểm tối đa.\n\n20% for the lecture exercises (divided equally among the 20 out of 23 lectures)\n20% for the homeworks (divided equally among 10 (out of 12) homeworks)\n18% for the first midterm exam (timed)\n18% for the second midterm exam (timed)\n24% for the final exam (timed)\n\n\n\n\nUnit 1\nÔn lại kiến thức về xác suất “Probability - The Science of Uncertainty and Data” by John Tsitsiklis (2022).\n\n\nUnit 2\nHọc về nền tảng của suy luận (Foundations of Inference).\n\nLecture 3: Mô hình xác suất có số biến hữu hạn (Parametric Statistical Models)\nLecture 4: Dự đoán với số biến hữu hạn và vùng tự tin (Parametric Estimation and Confidence Intervals) \\({}\\)\nLecture 5: Vùng tự tin và phương pháp Delta (Confidence Intervals and Delta Method)\n\n\n\nUnit 3\nPhương pháp ước lượng tham số của mô hình xác suất\n\nLecture 6: Khoảng cách giữa các phân phối xác suất\nLecture 7: Maximum Likelihood Estimator\nLecture 8: Ví dụ cho Maximum Likelihood Estimator\nLecture 9: Các tính chất thống kê của Maximum Likelihood Estimator\nLecture 10: Phương pháp tích suất và M-Estimation\n\n\n\nUnit 4\nKiểm định thống kê\n\nLecture 11: Introduction to Parametric Hypothesis Testing\nLecture 12: The Wald Test and Likelihood Ratio Test\nLecture 13: The T-test\nLecture 14: Multiple Hypothesis Testing"
+    "text": "MITx 18.6501x\n“Fundamentals of Statistics” (MITx 18.6501x ) là khóa học của Philippe Rigollet (2022) đại học MIT dạy trên edX.\n\nQuy định\n\nKỳ hạn\n\nExercises and homework: Wednesdays 11:59AM UTC (Wed. 20:59 JST)\nExams (48 hours): Tuesdays 11:59AM UTC(Tue. 20:59 JST)\n\n\n\nThời gian cần thiết\nMỗi tuần khoảng hơn 12 tiếng\n\n5-7 hours on exercises, including 3 hours of lecture clips\n1-2 hours watching recitations\n5-7 hours for weekly problem sets\n\n\n\nTính điểm\nĐiểm thi đậu chứng chỉ là 60% tổng số điểm tối đa.\n\n20% for the lecture exercises (divided equally among the 20 out of 23 lectures)\n20% for the homeworks (divided equally among 10 (out of 12) homeworks)\n18% for the first midterm exam (timed)\n18% for the second midterm exam (timed)\n24% for the final exam (timed)\n\n\n\n\nUnit 1\nÔn lại kiến thức về xác suất “Probability - The Science of Uncertainty and Data” by John Tsitsiklis (2022).\n\n\nUnit 2\nHọc về nền tảng của suy luận (Foundations of Inference).\n\nLecture 3: Mô hình xác suất có số biến hữu hạn (Parametric Statistical Models)\nLecture 4: Dự đoán với số biến hữu hạn và khoảng tự tin (Parametric Estimation and Confidence Intervals) \\({}\\)"
   }
 ]

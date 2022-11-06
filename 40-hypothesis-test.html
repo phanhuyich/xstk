@@ -399,7 +399,7 @@ W \is \frac{\hat{\theta}-\theta_0}
 <section id="định-lý-cochran" class="level2" data-number="6.6">
 <h2 data-number="6.6" class="anchored" data-anchor-id="định-lý-cochran"><span class="header-section-number">6.6</span> Định lý Cochran</h2>
 <div id="thm-cochoran" class="theorem">
-<p><span class="theorem-title"><strong>Thm 6.1 </strong></span>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus(\mu,\sigma^2).\)</span> Đặt <span class="math display">\[
+<p><span class="theorem-title"><strong>Định lý 6.1 </strong></span>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus(\mu,\sigma^2).\)</span> Đặt <span class="math display">\[
 S_n^2:=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2.
 \]</span></p>
 <p>Khi đó <span class="math inline">\(\E[S_n^2] \equiv \sigma^2,\)</span> <span class="math display">\[
@@ -413,7 +413,7 @@ S_n^2:=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2.
 </section>
 <section id="students-t-test" class="level2" data-number="6.7">
 <h2 data-number="6.7" class="anchored" data-anchor-id="students-t-test"><span class="header-section-number">6.7</span> Student’s T test</h2>
-<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus(\mu,\sigma^2),\)</span> <span class="math inline">\(\mu,\sigma\)</span> chưa biết, và ta muốn kiểm định <span class="math inline">\(\mu.\)</span> Theo <a href="#thm-cochoran">Thm&nbsp;<span>6.1</span></a>, <span class="math display">\[
+<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus(\mu,\sigma^2),\)</span> <span class="math inline">\(\mu,\sigma\)</span> chưa biết, và ta muốn kiểm định <span class="math inline">\(\mu.\)</span> Theo <a href="#thm-cochoran">Định lý&nbsp;<span>6.1</span></a>, <span class="math display">\[
 T:=
 \frac{\bar{X}_n-\mu}{\sqrt{S_n^2/n}}
 \equiv
@@ -518,7 +518,7 @@ T_n =
 =
 \left(\theta_{q+1}^{(0)},\ldots,\theta_{q+r}^{(0)}\right)
 \right\}
-\]</span> với <span class="math inline">\(\left(\theta_{q+1}^{(0)},\ldots,\theta_r^{(0)}\right)\in\R^r\)</span> là cố định. Nếu <span class="math inline">\(H_0\)</span> đúng và các điều kiện hội tụ của MLE (<a href="30-est-method.html#thm-mle-asym">Thm&nbsp;<span>5.2</span></a>) được thỏa mãn thì: <span class="math display">\[
+\]</span> với <span class="math inline">\(\left(\theta_{q+1}^{(0)},\ldots,\theta_r^{(0)}\right)\in\R^r\)</span> là cố định. Nếu <span class="math inline">\(H_0\)</span> đúng và các điều kiện hội tụ của MLE (<a href="30-est-method.html#thm-mle-asym">Định lý&nbsp;<span>5.2</span></a>) được thỏa mãn thì: <span class="math display">\[
 T_n\todist\chi_{r}^2.
 \]</span></p>
 </section>

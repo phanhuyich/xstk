@@ -250,7 +250,7 @@ $$
 <section id="khoảng-cách" class="level3" data-number="5.2.1">
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="khoảng-cách"><span class="header-section-number">5.2.1</span> Khoảng cách</h3>
 <div id="def-total-variation" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 5.1 </strong></span>tổng biến động (total variation distance) giữa hai độ đo xác suất <span class="math inline">\(\P_\theta\)</span> và <span class="math inline">\(\P_\eta\)</span> là</p>
+<p><span class="theorem-title"><strong>Định nghĩa 5.1 </strong></span>tổng biến động (total variation distance) giữa hai độ đo xác suất <span class="math inline">\(\P_\theta\)</span> và <span class="math inline">\(\P_\eta\)</span> là</p>
 <p><span class="math display">\[
 \TV(\P_\theta,\P_{\eta})
 =
@@ -258,7 +258,7 @@ $$
 \]</span></p>
 </div>
 <div id="thm-total-variation" class="theorem">
-<p><span class="theorem-title"><strong>Thm 5.1 (Công thức tính) </strong></span>Nếu tập mẫu <span class="math inline">\(E\)</span> là rời rạc (discrete: countable or finite), xác suất <span class="math inline">\(\P_\theta,\P_{\eta}\)</span> có hàm khối lần lượt là <span class="math inline">\(p_\theta,p_{\eta}\)</span> thì <span class="math display">\[
+<p><span class="theorem-title"><strong>Định lý 5.1 (Công thức tính) </strong></span>Nếu tập mẫu <span class="math inline">\(E\)</span> là rời rạc (discrete: countable or finite), xác suất <span class="math inline">\(\P_\theta,\P_{\eta}\)</span> có hàm khối lần lượt là <span class="math inline">\(p_\theta,p_{\eta}\)</span> thì <span class="math display">\[
 \TV(\P_\theta,\P_{\eta}) =
 \frac{1}{2}
 \sum_{x\in E}\mid p_\theta(x) - p_\eta(x)\mid.
@@ -276,7 +276,7 @@ $$
 <section id="phân-kỳ-kl-1" class="level3" data-number="5.3.1">
 <h3 data-number="5.3.1" class="anchored" data-anchor-id="phân-kỳ-kl-1"><span class="header-section-number">5.3.1</span> Phân kỳ KL</h3>
 <div id="def-kl-divergence" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 5.2 </strong></span>(KL divergence) Ký hiệu <span class="math inline">\(f\)</span> là mật độ hoặc hàm khối xác suất:</p>
+<p><span class="theorem-title"><strong>Định nghĩa 5.2 </strong></span>(KL divergence) Ký hiệu <span class="math inline">\(f\)</span> là mật độ hoặc hàm khối xác suất:</p>
 <p><span class="math display">\[
 \KL(\P_\theta, \P_\eta) \is
 \E_\theta\left[ \ln\frac{f_\theta(x)}{f_\eta(x)} \right]
@@ -305,7 +305,7 @@ $$
 <section id="likelihood" class="level3" data-number="5.4.1">
 <h3 data-number="5.4.1" class="anchored" data-anchor-id="likelihood"><span class="header-section-number">5.4.1</span> Likelihood</h3>
 <div id="def-likelihood" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 5.3 </strong></span><span class="math display">\[L_\theta(x_1,\ldots,x_n)\is
+<p><span class="theorem-title"><strong>Định nghĩa 5.3 </strong></span><span class="math display">\[L_\theta(x_1,\ldots,x_n)\is
 \P_\theta(X_1=x_1,\ldots,X_n=x_n)
 =
 \prod_{i=1}^n p_\theta(X_i=x_i)
@@ -315,7 +315,7 @@ $$
 <section id="log-likelihood" class="level3" data-number="5.4.2">
 <h3 data-number="5.4.2" class="anchored" data-anchor-id="log-likelihood"><span class="header-section-number">5.4.2</span> Log likelihood</h3>
 <div id="def-likelihood" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 5.4 </strong></span><span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 5.4 </strong></span><span class="math display">\[
 \ell_\theta(x_1,\ldots,x_n)\is
 \ln
 L_\theta(x_1,\ldots,x_n)
@@ -328,7 +328,7 @@ L_\theta(x_1,\ldots,x_n)
 <section id="maximum-likelihood-estimator" class="level3" data-number="5.4.3">
 <h3 data-number="5.4.3" class="anchored" data-anchor-id="maximum-likelihood-estimator"><span class="header-section-number">5.4.3</span> Maximum Likelihood Estimator</h3>
 <div id="def-mle" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 5.5 </strong></span><span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 5.5 </strong></span><span class="math display">\[
 \hat{\theta}_n \is
 \argmax_\theta
 L_\theta(x_1,\ldots,x_n)
@@ -343,7 +343,7 @@ L_\theta(x_1,\ldots,x_n)
 <section id="mix-model" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="mix-model"><span class="header-section-number">5.5</span> Mix model</h2>
 <div id="def-mix-model" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 5.6 </strong></span>Cho các mô hình gốc <span class="math inline">\(X^{(k)}, k= 1,\ldots,K,\)</span> lấy biến tiềm ẩn <span class="math inline">\(Z\)</span> trên <span class="math inline">\(\{1,\ldots,K\}\)</span> làm trọng số, ta có mô hình hỗn hợp <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 5.6 </strong></span>Cho các mô hình gốc <span class="math inline">\(X^{(k)}, k= 1,\ldots,K,\)</span> lấy biến tiềm ẩn <span class="math inline">\(Z\)</span> trên <span class="math inline">\(\{1,\ldots,K\}\)</span> làm trọng số, ta có mô hình hỗn hợp <span class="math display">\[
 X = \sum_{k=1}^K
 \P(Z=k) X^{(k)}
 .
@@ -352,7 +352,7 @@ X = \sum_{k=1}^K
 <section id="giải-thuật-em" class="level3" data-number="5.5.1">
 <h3 data-number="5.5.1" class="anchored" data-anchor-id="giải-thuật-em"><span class="header-section-number">5.5.1</span> Giải thuật EM</h3>
 <div id="def-em-alg" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 5.7 </strong></span>(<strong>E</strong>stimation <strong>M</strong>aximization) <em>có thể</em> tìm được tham số <span class="math inline">\(\theta\)</span> của mô hình hỗn hợp <a href="#def-mix-model">Def&nbsp;<span>5.6</span></a>.</p>
+<p><span class="theorem-title"><strong>Định nghĩa 5.7 </strong></span>(<strong>E</strong>stimation <strong>M</strong>aximization) <em>có thể</em> tìm được tham số <span class="math inline">\(\theta\)</span> của mô hình hỗn hợp <a href="#def-mix-model">Định nghĩa&nbsp;<span>5.6</span></a>.</p>
 <p>Giả sử ta quan sát được <span class="math inline">\(X_1=x_1, \ldots, X_n=x_n\)</span>. Gọi các trọng số tiềm ẩn tương ứng là <span class="math inline">\(Z_1=z_1, \ldots, Z_n=z_n.\)</span></p>
 <p>Sau khi khởi tạo <span class="math inline">\(\theta = \theta_0\)</span> ngẫu nhiên, ta lặp lại 2 bước <strong>E, M</strong> như sau để cập nhật <span class="math inline">\(\theta_k, k=1,2,\ldots\)</span> cho đến khi hội tụ.</p>
 <ul>
@@ -365,7 +365,7 @@ X = \sum_{k=1}^K
 <section id="chuẩn-tính-của-mle" class="level2" data-number="5.6">
 <h2 data-number="5.6" class="anchored" data-anchor-id="chuẩn-tính-của-mle"><span class="header-section-number">5.6</span> Chuẩn tính của MLE</h2>
 <div id="def-fisher-info" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 5.8 </strong></span>Giả sử log likelihood đối với một quan sát <span class="math inline">\(X\)</span> theo mô hình <span class="math inline">\(\theta\)</span> là <span class="math inline">\(\ell(\theta) = \ln L_1(X,\theta), \theta\in\Theta\subset\R.\)</span> Giả sử <span class="math inline">\(\ell(\theta)\)</span> có đạo hàm bậc hai. Dưới một số điều kiện chuẩn, <strong>thông tin Fisher</strong> của mô hình được định nghĩa là</p>
+<p><span class="theorem-title"><strong>Định nghĩa 5.8 </strong></span>Giả sử log likelihood đối với một quan sát <span class="math inline">\(X\)</span> theo mô hình <span class="math inline">\(\theta\)</span> là <span class="math inline">\(\ell(\theta) = \ln L_1(X,\theta), \theta\in\Theta\subset\R.\)</span> Giả sử <span class="math inline">\(\ell(\theta)\)</span> có đạo hàm bậc hai. Dưới một số điều kiện chuẩn, <strong>thông tin Fisher</strong> của mô hình được định nghĩa là</p>
 <p><span class="math display">\[
 I(\theta)
 = \V[\ell^{\prime}(\theta)]
@@ -375,7 +375,7 @@ I(\theta)
 \]</span></p>
 </div>
 <div id="thm-mle-asym" class="theorem">
-<p><span class="theorem-title"><strong>Thm 5.2 </strong></span>Gọi <span class="math inline">\(\theta^*\in\Theta\)</span> là tham số <em>thật</em> cần tìm. Giả sử</p>
+<p><span class="theorem-title"><strong>Định lý 5.2 </strong></span>Gọi <span class="math inline">\(\theta^*\in\Theta\)</span> là tham số <em>thật</em> cần tìm. Giả sử</p>
 <ol type="1">
 <li>Các tham số là indentifiable</li>
 <li>Support của <span class="math inline">\(\P_\theta\)</span> không phụ thuộc vào <span class="math inline">\(\theta\)</span> với mọi <span class="math inline">\(\theta\in\Theta\)</span></li>
@@ -393,7 +393,7 @@ I(\theta)
 <section id="m-estimatior" class="level2" data-number="5.7">
 <h2 data-number="5.7" class="anchored" data-anchor-id="m-estimatior"><span class="header-section-number">5.7</span> M-estimatior</h2>
 <div id="def-m-est" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 5.9 </strong></span>Với mục tiêu ước lượng thuộc tính <span class="math inline">\(\mu^*\)</span> của xác suất <span class="math inline">\(\P(X)\)</span>, ta tìm một “hàm tổn thất” <span class="math inline">\(\rho(X,\mu)\)</span> có giá trị kỳ vọng đạt cực tiểu tại <span class="math inline">\(\mu = \mu^*:\)</span> <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 5.9 </strong></span>Với mục tiêu ước lượng thuộc tính <span class="math inline">\(\mu^*\)</span> của xác suất <span class="math inline">\(\P(X)\)</span>, ta tìm một “hàm tổn thất” <span class="math inline">\(\rho(X,\mu)\)</span> có giá trị kỳ vọng đạt cực tiểu tại <span class="math inline">\(\mu = \mu^*:\)</span> <span class="math display">\[
 \mathcal{Q}(\mu)
 \is \E_{\P}[\rho(X,\mu)]
 .

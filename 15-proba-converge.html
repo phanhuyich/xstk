@@ -225,7 +225,7 @@ $$
 <section id="hội-tụ-xác-suất" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="hội-tụ-xác-suất"><span class="header-section-number">3.1</span> Hội tụ xác suất</h2>
 <div id="def-conv-proba" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 3.1 </strong></span>Cho một chuỗi biến ngẫu nhiên <span class="math inline">\(X_1,X_2,\ldotp\)</span> và một biến ngẫu nhiên <span class="math inline">\(X\)</span>.</p>
+<p><span class="theorem-title"><strong>Định nghĩa 3.1 </strong></span>Cho một chuỗi biến ngẫu nhiên <span class="math inline">\(X_1,X_2,\ldotp\)</span> và một biến ngẫu nhiên <span class="math inline">\(X\)</span>.</p>
 <ol type="1">
 <li><p>Hội tụ gần tuyệt đối: <span class="math display">\[
 X_n \xrightarrow[n\to\infty]{\as} X \iff
@@ -252,7 +252,7 @@ X_n \todist X \iff
 <section id="độ-mạnh" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="độ-mạnh"><span class="header-section-number">3.2</span> Độ mạnh</h2>
 <div id="thm-strength" class="theorem">
-<p><span class="theorem-title"><strong>Thm 3.1 </strong></span>Xếp theo thứ tự từ mạnh đến yếu:</p>
+<p><span class="theorem-title"><strong>Định lý 3.1 </strong></span>Xếp theo thứ tự từ mạnh đến yếu:</p>
 <p><span class="math display">\[
 X_n \xrightarrow[n\to\infty]{\as} X \implies
 X_n \xrightarrow[n\to\infty]{\P} X \implies
@@ -266,19 +266,19 @@ X_n \todist X.
 <section id="tổng-và-tích" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="tổng-và-tích"><span class="header-section-number">3.3</span> Tổng và tích</h2>
 <div id="thm-convege" class="theorem">
-<p><span class="theorem-title"><strong>Thm 3.2 </strong></span>Nếu có hai chuỗi biến ngẫu nhiên <span class="math inline">\(X_n, Y_n\)</span> hội tụ gần tuyệt đối hoặc hội tụ theo xác suất về <span class="math inline">\(X, Y\)</span>, thì tổng <span class="math inline">\(X_n+Y_n\)</span> và tích <span class="math inline">\(X_n Y_n\)</span> cũng hội tụ tương tự (gần tuyệt đối, hoặc theo xác suất) về tổng <span class="math inline">\(X+Y\)</span> và tích <span class="math inline">\(XY\)</span>.</p>
+<p><span class="theorem-title"><strong>Định lý 3.2 </strong></span>Nếu có hai chuỗi biến ngẫu nhiên <span class="math inline">\(X_n, Y_n\)</span> hội tụ gần tuyệt đối hoặc hội tụ theo xác suất về <span class="math inline">\(X, Y\)</span>, thì tổng <span class="math inline">\(X_n+Y_n\)</span> và tích <span class="math inline">\(X_n Y_n\)</span> cũng hội tụ tương tự (gần tuyệt đối, hoặc theo xác suất) về tổng <span class="math inline">\(X+Y\)</span> và tích <span class="math inline">\(XY\)</span>.</p>
 </div>
 </section>
 <section id="slutsky" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="slutsky"><span class="header-section-number">3.4</span> Slutsky</h2>
 <div id="thm-slutsky" class="theorem">
-<p><span class="theorem-title"><strong>Thm 3.3 </strong></span>Hơn nữa, ở <a href="#thm-convege">Thm&nbsp;<span>3.2</span></a> nếu <span class="math inline">\(Y_n \xrightarrow[]{\P} y\)</span>, <span class="math inline">\(y\)</span> là một số thực cố định thì có thể nới lỏng điều kiện đối với <span class="math inline">\(X_n\)</span> thành hội tụ theo phân phối.</p>
+<p><span class="theorem-title"><strong>Định lý 3.3 </strong></span>Hơn nữa, ở <a href="#thm-convege">Định lý&nbsp;<span>3.2</span></a> nếu <span class="math inline">\(Y_n \xrightarrow[]{\P} y\)</span>, <span class="math inline">\(y\)</span> là một số thực cố định thì có thể nới lỏng điều kiện đối với <span class="math inline">\(X_n\)</span> thành hội tụ theo phân phối.</p>
 </div>
 </section>
 <section id="ánh-xạ-liên-tục" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="ánh-xạ-liên-tục"><span class="header-section-number">3.5</span> Ánh xạ liên tục</h2>
 <div id="thm-contmap" class="theorem">
-<p><span class="theorem-title"><strong>Thm 3.4 </strong></span>(Continuous mapping) Nếu <span class="math inline">\(X_n\xrightarrow[n\to\infty]{\as/\P/(d)} X\)</span> thì đối với mọi hàm <span class="math inline">\(f\)</span> liên tục:</p>
+<p><span class="theorem-title"><strong>Định lý 3.4 </strong></span>(Continuous mapping) Nếu <span class="math inline">\(X_n\xrightarrow[n\to\infty]{\as/\P/(d)} X\)</span> thì đối với mọi hàm <span class="math inline">\(f\)</span> liên tục:</p>
 <ul>
 <li><span class="math inline">\(f(X_n)\xrightarrow[n\to\infty]{\as/\P/(d)} f(X)\)</span>.</li>
 <li><span class="math inline">\(\E[f(X_n)]\xrightarrow[n\to\infty]{}\E[f(X)]\)</span> nếu <span class="math inline">\(f\)</span> còn bị chặn.</li>
@@ -288,7 +288,7 @@ X_n \todist X.
 <section id="đại-đa-số-law-of-large-numbers" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="đại-đa-số-law-of-large-numbers"><span class="header-section-number">3.6</span> Đại đa số (Law of Large Numbers)</h2>
 <div id="thm-lln" class="theorem">
-<p><span class="theorem-title"><strong>Thm 3.5 </strong></span>Cho <span class="math inline">\(n\)</span> biến iid <span class="math inline">\(X_1, X_2,\ldotp,X_n\)</span> có chung <span class="math inline">\(\E[X_i]=\mu&lt;\infty\)</span>. Khi đó: <span class="math display">\[\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}
+<p><span class="theorem-title"><strong>Định lý 3.5 </strong></span>Cho <span class="math inline">\(n\)</span> biến iid <span class="math inline">\(X_1, X_2,\ldotp,X_n\)</span> có chung <span class="math inline">\(\E[X_i]=\mu&lt;\infty\)</span>. Khi đó: <span class="math display">\[\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}
 \xrightarrow[n\to\infty]{\P,\,\as}\mu.
 \]</span></p>
 </div>
@@ -296,7 +296,7 @@ X_n \todist X.
 <section id="hội-tụ-trung-tâm-central-limit" class="level2" data-number="3.7">
 <h2 data-number="3.7" class="anchored" data-anchor-id="hội-tụ-trung-tâm-central-limit"><span class="header-section-number">3.7</span> Hội tụ trung tâm (Central Limit)</h2>
 <div id="thm-clt" class="theorem">
-<p><span class="theorem-title"><strong>Thm 3.6 </strong></span>Giả sử thêm là <span class="math inline">\(\V[X_i]=\sigma^2&lt;\infty\)</span>. Khi đó <span class="math display">\[
+<p><span class="theorem-title"><strong>Định lý 3.6 </strong></span>Giả sử thêm là <span class="math inline">\(\V[X_i]=\sigma^2&lt;\infty\)</span>. Khi đó <span class="math display">\[
 \sqrt{n}
 \left(
 \frac{\bar{X}_n-\mu}{|\sigma|}
@@ -309,7 +309,7 @@ X_n \todist X.
 <section id="bất-đẳng-thức-hoefding" class="level2" data-number="3.8">
 <h2 data-number="3.8" class="anchored" data-anchor-id="bất-đẳng-thức-hoefding"><span class="header-section-number">3.8</span> Bất đẳng thức Hoefding</h2>
 <div id="thm-hoeffding" class="theorem">
-<p><span class="theorem-title"><strong>Thm 3.7 </strong></span>Nếu có một khoảng cố định <span class="math inline">\([a,b]\)</span> gần như tuyệt đối (almost surely) chứa các biến <span class="math inline">\(X_i (i=1,2,\ldots,n)\)</span> thì</p>
+<p><span class="theorem-title"><strong>Định lý 3.7 </strong></span>Nếu có một khoảng cố định <span class="math inline">\([a,b]\)</span> gần như tuyệt đối (almost surely) chứa các biến <span class="math inline">\(X_i (i=1,2,\ldots,n)\)</span> thì</p>
 <p><span class="math display">\[
 \P[|\bar{X}_n-\mu|\geq\epsilon]\leq
 2e^{-\frac{2n\epsilon^2}{(b-a)^2}},\quad\forall\epsilon&gt;0.
@@ -319,7 +319,7 @@ X_n \todist X.
 <section id="phương-pháp-delta" class="level2" data-number="3.9">
 <h2 data-number="3.9" class="anchored" data-anchor-id="phương-pháp-delta"><span class="header-section-number">3.9</span> Phương pháp Delta</h2>
 <div id="thm-delta-method" class="theorem">
-<p><span class="theorem-title"><strong>Thm 3.8 </strong></span>Giả sử chuỗi <span class="math inline">\((\theta_n)_{n\geq 1}\)</span> chuẩn tiến với phương sai <span class="math inline">\(\sigma^2\)</span> về một điểm <span class="math inline">\(\theta\in\R\)</span>. Giả sử <span class="math inline">\(g:\R\to\R\)</span> có vi phân <span class="math inline">\(g^\prime\)</span> liên tục tại <span class="math inline">\(\theta\)</span>. Khi đó, <span class="math display">\[
+<p><span class="theorem-title"><strong>Định lý 3.8 </strong></span>Giả sử chuỗi <span class="math inline">\((\theta_n)_{n\geq 1}\)</span> chuẩn tiến với phương sai <span class="math inline">\(\sigma^2\)</span> về một điểm <span class="math inline">\(\theta\in\R\)</span>. Giả sử <span class="math inline">\(g:\R\to\R\)</span> có vi phân <span class="math inline">\(g^\prime\)</span> liên tục tại <span class="math inline">\(\theta\)</span>. Khi đó, <span class="math display">\[
 \sqrt{n}\left(\frac{g(\theta_n)-g(\theta)}
 {\left|\sigma g^\prime(\theta)\right|}\right)
 \todist

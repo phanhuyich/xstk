@@ -1,0 +1,284 @@
+# Kiểm định
+
+Hypothesis testing
+
+-   Định nghĩa giả thuyết không và giả thuyết đối.
+-   Thiết kế kiểm định thống kê
+-   Phân loại lỗi Loại 1 và Loại 2
+-   Tính hàm công suất của kiểm định
+-   Định mức đối với kiểm định
+-   Tính toán và giải thích giá trị p
+
+## Giả thuyết không và đối
+
+Với mô hình thống kê $\left(E,(\P_\theta)_{\theta\in\Theta}\right),$ sử
+dụng bộ mẫu dữ liệu iid $X_1,\ldots,X_n,$ ta xem xét hai giả thuyết về
+tham số $\theta$ như sau:
+
+$$
+\begin{cases}
+H_0:&\theta\in\Theta_0\\
+H_1:&\theta\in\Theta_1
+\end{cases}
+$$
+
+với $\Theta_0,\Theta_1$ là phân mảnh (không giao nhau) của $\Theta,$
+$\Theta_0$ là "thường thức" (status quo), còn $\Theta_1$ là "phát hiện"
+(discovery) mới. Ta gọi $H_0$ là giả thuyết không, còn $H_1$ là giả
+thuyết đối (thay thế).
+
+## Kiểm định
+
+Ta sẽ **kiểm định** $H_0$ đối với $H_1$ bằng cách chọn và sử dụng một
+định lượng thống kê $\psi(X_1,\ldots,X_n)\in\{0,1\}.$
+
+|                     | $\psi=0:$ chấp nhận $H_0$ | $\psi=1:$ phủ nhận $H_0$ |
+|---------------------|:-------------------------:|:------------------------:|
+| $\theta\in\Theta_0$ |      Kiểm định đúng       |        Lỗi loại 1        |
+| $\theta\in\Theta_1$ |        Lỗi loại 2         |      Kiểm định đúng      |
+
+Có thể viết $\psi=\fone{R_\psi}$ với sự kiện $R_\psi$ là **vùng phủ
+nhận**, còn $R_\psi^c$ là **vùng chấp nhận** .
+
+Ta thiết kế kiểm định sao cho hàm **công suất** sau
+đây có giá trị nhỏ khi $\theta\in\Theta_0$ và lớn khi
+$\theta\in\Theta_1:$
+
+$$
+\beta_\psi(\theta) \is \P_\theta(\psi=1) \equiv \P_\theta(R_\psi)\in[0,1]
+$$
+
+Vùng phủ nhận thường có dạng
+$$
+R_\psi = \{X_i: T(X_i)\geq c\}
+$$
+với $T$ là một lượng thống kê còn $c$ là một giá trị biên.
+
+## Mức độ lỗi
+
+Kiểm định $\psi$ là ở mức (significance level) $\alpha\in(0,1)$ nếu có xác suất lỗi loại 1
+không vượt quá $\alpha:$
+$$
+\sup_{\theta\in\Theta_0}
+\beta_\psi(\theta)
+\leq\alpha
+.
+$$
+
+Chuỗi kiểm định $(\psi_n)_{n=1,2,\ldots}$ được gọi là tiệm cận về mức
+$\alpha$ nếu
+$$
+\lim_{n\to\infty}
+\sup_{\theta\in\Theta_0}
+\beta_{\psi_n}(\theta)
+\leq\alpha
+.
+$$
+
+Phương thức Neyman-Pearson chọn một mức $\alpha$, đảm bảo xác suất lỗi
+loại 1 không vượt quá $\alpha$ rồi tối thiểu hóa xác suất lỗi loại 2.
+Nói cách khác là giữ cho công suất $\beta_\psi(\theta)$ đủ nhỏ khi
+$\psi\in\Theta_0,$ rồi tối đại hóa công suất khi $\psi\in\Theta_1.$
+
+### p-value
+
+Từ quan sát $X_1, \ldots, X_n$ ta tính giá trị mức $\alpha$
+(tiệm cận) nhỏ nhất tại đó kiểm định $\psi$ phủ nhận $H_0,$ gọi nó là
+p-value (tiệm cận) của $\psi.$ Nếu p-value càng nhỏ thì ta càng tự tin
+phủ nhận $H_0.$
+
+$$
+\textrm{p-value} \is
+\inf_{X_1, \ldots, X_n; \theta\in H_0}\beta_\psi(\theta)
+$$
+
+| p-value | chứng cứ phủ nhận $H_0$
+| --------| --------
+| $<0.1\%$  | vô cùng mạnh
+| $0.1\%\textemdash 1\%$  | rất mạnh
+| $1\%\textemdash 5\%$  | mạnh
+| $5\%\textemdash 10\%$ | yếu
+| $>10\%$ | không có
+
+## Khoảng tin cậy
+
+Thông thường ta có thể xây dựng được kiểm định từ khoảng tin cậy. Ví dụ,
+ta muốn kiếm định tham số $\theta$, $H_0: \theta=\theta_0,$ đối
+$H_1: \theta\neq\theta_0.$ Giả sử ta có khoảng tin cậy $\mathcal{I}$ ở
+mức $1-\alpha$, tức là $$\P_\theta(I\ni \theta)\geq 1-\alpha.$$ Khi đó,
+$\psi=\fone{\theta_0\notin\mathcal{I}}$ là kiểm định mức $\alpha$
+
+$$
+\beta_\psi(\theta_0) = \P_{\theta_0}(\theta_0\notin I) \leq \alpha.
+$$
+
+## Wald Test
+
+Giả sử $\hat{\theta}$ là ước lượng của tham số $\theta$, và
+$\hat{\V}[\hat{\theta}]$ là ước lượng phương sai của $\hat{\theta}$, sao
+cho
+$$
+\frac{\hat{\theta}-\theta}
+{\sqrt{\hat{\V}[\hat{\theta}]}}
+\todist
+\Gaus(0,1).
+$$
+
+Đặt
+
+$$
+W \is \frac{\hat{\theta}-\theta_0}
+{\sqrt{\hat{\V}[\hat{\theta}]}}
+,
+$$
+
+ta có thể xây dựng các kiểm định Wald có mức tiệm cận là $\alpha,$
+tức là $\P_{H_0}(\psi_\alpha) \xrightarrow[n\to\infty]{} \alpha.$
+
+| Giả thuyết                                      | Kiểm định Wald                        | asymp. p-value      |
+|---------------------------|-----------------------|-----------------------|
+| $H_0: \theta=\theta_0, H_1: \theta\neq\theta_0$ | $\psi_\alpha=\fone{|W|>q_{\alpha/2}}$ | $\P(|Z|>|W^{obs}|)$ |
+| $H_0: \theta\leq\theta_0, H_1: \theta>\theta_0$ | $\psi_\alpha=\fone{W>q_\alpha}$       | $\P(Z>W^{obs})$     |
+| $H_0: \theta\geq\theta_0, H_1: \theta<\theta_0$ | $\psi_\alpha=\fone{W<-q_\alpha}$      | $\P(Z<W^{obs})$     |
+
+Trong bảng trên, p-value được tính từ $W^{obs}$
+là một quan sát đối với $W.$
+
+## Định lý Cochran
+
+:::{#thm-cochoran}
+Giả sử $X_1,\ldots,X_n\iid\Gaus(\mu,\sigma^2).$
+Đặt
+$$
+S_n^2:=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2.
+$$
+
+Khi đó $\E[S_n^2] \equiv \sigma^2,$
+$$
+\frac{S_n^2}{\sigma^2}
+\sim
+\frac{\chi_{n-1}^2}{n-1}
+,
+$$
+
+và $\bar{X}_n, S_n^2$ độc lập với nhau.
+:::
+
+## Student's T test
+
+Giả sử $X_1,\ldots,X_n\iid\Gaus(\mu,\sigma^2),$
+$\mu,\sigma$ chưa biết, và ta muốn kiểm định $\mu.$
+Theo @thm-cochoran,
+$$
+T:=
+\frac{\bar{X}_n-\mu}{\sqrt{S_n^2/n}}
+\equiv
+\frac{\sqrt{n}{(\bar{X}_n-\mu)}{/\sigma}}
+{\sqrt{{S_n^2}{/\sigma^2}}}
+\sim t_{n-1}
+$$
+tuân theo phân phối Student's T.
+Ta có thể xây dựng các kiểm định Student có mức $\alpha,$
+tức là $\P_{H_0}(\psi_\alpha) \equiv \alpha.$
+
+| Giả thuyết                                      | Kiểm định Student                        | p-value      |
+|---------------------------|-----------------------|-----------------------|
+| $H_0: \mu=\mu_0, H_1: \mu\neq\mu_0$ | $\psi_\alpha=\fone{|T| >q_{\alpha/2}^{t_{n-1}}}$ | $\P_{t_{n-1}}(|Z|>|T^{obs}|)$ |
+| $H_0: \mu\leq\mu_0, H_1: \mu>\mu_0$ | $\psi_\alpha=\fone{T>q_\alpha^{t_{n-1}}}$       | $\P_{t_{n-1}}(Z>T^{obs})$     |
+| $H_0: \mu\geq\mu_0, H_1: \mu<\mu_0$ | $\psi_\alpha=\fone{T<-q_\alpha^{t_{n-1}}}$      | $\P_{t_{n-1}}(Z<T^{obs})$     |
+
+Trong bảng trên, p-value được tính từ $T^{obs}$ là một quan sát đối với
+$T.$
+
+## Two-sample T-test
+
+Giả sử
+$X_1,\ldots,X_n\iid\Gaus(\mu_x,\sigma_x^2),$
+$Y_1,\ldots,Y_m\iid\Gaus(\mu_y,\sigma_y^2),$
+với
+$\mu_x,\sigma_x, \mu_y,\sigma_y$
+chưa biết, và ta muốn kiểm định $\mu_x-\mu_y.$
+Đặt
+$$
+S_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2 , $$
+$$
+S_m^2\is\frac{1}{m-1}\sum_{i=1}^{n}(Y_i-\bar{Y}_m)^2 , $$
+Ta có gần đúng
+$$
+\frac{(\bar{X}_n-\bar{Y}_m)-(\mu_x-\mu_y)}
+{\sqrt{S_n^2/n + S_m^2/m}}
+\sim t_N
+$$
+là phân phối Student's T với độ tự do
+tuân theo công thức WS (Welch-Satterthwaite):
+$$
+N =
+\frac{\sqrt{S_n^2/n + S_m^2/m}}
+{\sqrt{\frac{S_n^4}{n^2(n-1)}  + \frac{S_m^4}{m^2(m-1)}}}
+\geq \min(n, m)
+$$
+Đặt
+$$
+T = \frac{\bar{X}_n-\bar{Y}_m}
+{\sqrt{S_n^2/n + S_m^2/m}}
+$$
+
+| Giả thuyết                                      | Kiểm định 2 mẫu                        | p-value      |
+|---------------------------|-----------------------|-----------------------|
+| $H_0: \mu_x=\mu_y, H_1: \mu_x\neq\mu_y$ | $\psi_\alpha=\fone{|T| >q_{\alpha/2}^{t_{N}}}$ | $\P_{t_{N}}(|Z|>|T^{obs}|)$ |
+| $H_0: \mu_x\leq\mu_y, H_1: \mu_x>\mu_y$ | $\psi_\alpha=\fone{T>q_\alpha^{t_{N}}}$       | $\P_{t_{N}}(Z>T^{obs})$     |
+| $H_0: \mu_x\geq\mu_y, H_1: \mu_x<\mu_y$ | $\psi_\alpha=\fone{T<-q_\alpha^{t_{N}}}$      | $\P_{t_{N}}(Z<T^{obs})$     |
+
+## Kiểm định tỷ lệ hợp lý
+
+*Likelihood ratio test*
+
+Với dữ liệu
+$X_1,\ldots,X_n\iid \P_\theta,$
+để kiểm định
+$H_0: \theta \in \Theta_0,$
+$H_1: \theta \notin \Theta_0,$
+định lượng tỷ lệ hợp lý là
+$$
+T_n =
+2\ln\frac{{L_n}(\hat{\theta})}{{L_n}(\hat{\theta}_0)}
+$$
+với $L(\hat{\theta})$ là hợp lý cực đại tổng quát,
+còn
+$L(\hat{\theta}_0)$ là hợp lý cực đại khi $H_0$ đúng.
+
+### Định lý Wilks
+
+Giả sử
+$\theta=\left(\theta_1,\ldots,\theta_{q+r}\right) \in\Theta\subset\R^{q+r},$
+$$
+\Theta_0=\left\{\theta\in\Theta:
+\left(\theta_{q+1},\ldots,\theta_{q+r}\right)
+=
+\left(\theta_{q+1}^{(0)},\ldots,\theta_{q+r}^{(0)}\right)
+\right\}
+$$
+với
+$\left(\theta_{q+1}^{(0)},\ldots,\theta_r^{(0)}\right)\in\R^r$
+là cố định.
+Nếu $H_0$ đúng và các điều kiện hội tụ của MLE
+(@thm-mle-asym)
+được thỏa mãn thì:
+$$
+T_n\todist\chi_{r}^2.
+$$
+
+## Kiểm định nhiều lần
+
+Gọi số lần thực hiện và quan sát kết quả kiểm định là $t,$
+mức độ lỗi loại 1 cho phép là $\alpha.$
+Nếu $H_0$ là đúng thì
+lỗi loại 1 sẽ xuất hiện khoảng $\alpha t$ lần,
+số lần này sẽ càng lớn nếu $t$ càng lớn.
+
+Gọi tỷ lệ p-value không vượt quá ngưỡng $\alpha$ là
+$F(\alpha)\is\P(\textrm{p-value}\leq \alpha).$
+Ta có $F(\alpha)\leq \alpha$ với mọi loại kiểm định.
+Hơn nữa,
+$F(\alpha)=\alpha$
+với kiểm định Student's T.

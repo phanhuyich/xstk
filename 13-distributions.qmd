@@ -73,8 +73,12 @@ và
 $\E[X]=1/\lambda,\V[X]=1/\lambda^2.$
 :::
 
-## Phân phối Gaussian
+## Phân phối chuẩn
+
+*Gaussian Distribution*
+
 :::{#def-gaussian}
+### Phân phối chuẩn 1 biến
 $X\sim\Gaus(\mu,\sigma^2)$ có
 mật độ
 $$
@@ -87,9 +91,45 @@ $\E[X]=\mu,\V[X]=\sigma^2$.
 :::
 
 :::{#thm-sum-gaussian}
+### Tổng của các phân phối chuẩn
 Nếu
 $X_i \sim\Gaus(\mu_i,\sigma_i^2) (i=1,\ldots,n)$
 thì
 
-$$\sum_{i=1}^n X_i\sim\Gaus\left(\sum_{i=1}^n \mu_i,\sum_{i=1}^n \sigma_i^2\right)$$
+$$\sum_{i=1}^n X_i\sim\Gaus\left(\sum_{i=1}^n \mu_i,\sum_{i=1}^n \sigma_i^2\right)
+.$$
 :::
+
+:::{#def-normal-vector}
+### Vector phân phối chuẩn
+Nếu mọi tổ hợp tuyến tính các yếu tố của
+vector $\boldsymbol{v}$ đều
+thuộc phân phối chuẩn 1 biến thì
+$\boldsymbol{v}$
+được gọi là một vector phân phối chuẩn.
+:::
+
+## Phân phối $\chi^2$
+
+Nếu $X_1,\ldots,X_k\iid\Gaus(0,1)$ thì
+tổng bình phương của chúng
+
+$$
+X \is \sum_{i=0}^k X_i^2
+.
+$$
+
+tuân theo
+phân phối $\chi_k^2$
+và có
+$\E[X]=k,\V[X]=2k$.
+
+## Phân phối Student's T
+
+Nếu có $Z\sim\Gaus(0,1), V\sim \chi_k^2$ độc lập với nhau thì
+
+$$
+X \is \frac{Z}{\sqrt{V/k}}
+$$
+
+tuân theo phân phối Student's $t_k$.

@@ -2,8 +2,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
-      - publish
+      - '**' # every branch
 
 name: Quarto Publish
 

@@ -20,6 +20,12 @@ $\theta^*\in\Theta$
 $X_1\sim\P_{\theta^*}$
 .
 
+## Pivotal statistic
+
+Một phân phối hay một ước lượng
+được gọi là pivotal nếu nó không phụ thuộc vào
+giá trị cụ thể của tham số thật.
+
 ## Tổng biến động
 
 ### Khoảng cách
@@ -100,7 +106,8 @@ thỏa mãn 2/4 đặc điểm của "khoảng cách":
 
 ## MLE
 
-Maximum Likelihood Estimation
+**Ước lượng hợp lý cực đại**
+(Maximum Likelihood Estimation)
 
 ### Likelihood
 :::{#def-likelihood}

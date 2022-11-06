@@ -2,22 +2,15 @@
 
 Xác suất thống kê là nền tảng giúp ích cho việc phân tích dữ liệu, tổ chức thực hành thí nghiệm, chạy các mô hình giả lập, giải các bài toán tìm nghiệm tối ưu, nghiên cứu và ứng dụng học máy.
 
-Môn "xác suất" tôi đã học những kiến thức cơ bản vài lần, tính ra là ở cấp 3, trong đại học, và gần đây là học trực tuyến.
-Môn "thống kê" tôi chưa học được cho ra bài bản lần nào, mấy tháng đầu năm 2022 có thử sức học trực tuyến nhưng đầu tư thời gian không đủ nên thi rớt thảm hại.
+Môn "xác suất" tôi đã học những kiến thức cơ bản vài lần, tính ra là ở cấp 3, trong đại học, và gần đây là học trực tuyến. Môn "thống kê" tôi chưa học được cho ra bài bản lần nào, mấy tháng đầu năm 2022 có thử sức học trực tuyến nhưng đầu tư thời gian không đủ nên thi rớt thảm hại.
 
 Lần này nhất quyết học lại môn thống kê một cách nghiêm túc hơn, tôi tóm tắt lại kiến thức xác suất thống kê bằng tiếng Việt, mặc dù tài liệu học hầu hết là tiếng Anh, tiếng Nhật. Hy vọng tiếng mẹ đẻ sẽ giúp tôi hiểu rõ hơn các vấn đề, và trau dồi vốn từ vựng để chia sẻ kiến thức với các đồng nghiệp và bạn bè người Việt.
 
 Động cơ của việc học xác suất thống kê của tôi là để hiểu rõ hơn các lý thuyết căn bản trong ngành học máy và trí tuệ nhân tạo và áp dụng vào thực tiễn một cách đúng đắn, an toàn và công bằng hơn.
 
-Mục tiêu cụ thể trước mắt tôi đặt ra là học hiểu và lấy được chứng chỉ hoàn thành khoá học
-Fundamentals of Statistics của @mitxStats, giáo sư đại học MIT dạy trên nền tảng trực tuyến edX.
-Tài liệu tham khảo là quyển "All of Statistics" của @wasserman2010statistics,
-cũng chính là tài liệu tham khảo của khoá học nêu trên.
+Mục tiêu cụ thể trước mắt tôi đặt ra là học hiểu và lấy được chứng chỉ hoàn thành khoá học Fundamentals of Statistics của @mitxStats, giáo sư đại học MIT dạy trên nền tảng trực tuyến edX. Tài liệu tham khảo là quyển "All of Statistics" của @wasserman2010statistics, cũng chính là tài liệu tham khảo của khoá học nêu trên.
 
-Môn xác suất nghiên cứu cách suy luận ra các đặc tính của tập dữ liệu sẽ được tạo ra từ một nguyên lý, quy trình sản sinh dữ liệu.
-Ngược lại, môn thống kê nghiên cứu cách dự đoán đặc tính của một quy trình sản sinh dữ liệu từ tập dữ liệu về hiện tượng đã phát sinh và được quan sát.
-@fig-proba-stats minh hoạ quan hệ giữa "xác suất" và "thống kê".
-
+Môn xác suất nghiên cứu cách suy luận ra các đặc tính của tập dữ liệu sẽ được tạo ra từ một nguyên lý, quy trình sản sinh dữ liệu. Ngược lại, môn thống kê nghiên cứu cách dự đoán đặc tính của một quy trình sản sinh dữ liệu từ tập dữ liệu về hiện tượng đã phát sinh và được quan sát. @fig-proba-stats minh hoạ quan hệ giữa "xác suất" và "thống kê".
 
 ```{mermaid}
 %%| label: fig-proba-stats
@@ -29,21 +22,8 @@ flowchart LR
   B-- Thống kê --> A
 ```
 
-Phân tích, khai thác dữ liệu, học máy và khoa học dữ liệu là
-những tên gọi khác của thống kê, tùy theo bối cảnh và trào lưu.
-Một số ứng dụng cụ thể của thống kê là tính toán hồi quy, mật độ, phân loại và giả lập.
+Phân tích, khai thác dữ liệu, học máy và khoa học dữ liệu là những tên gọi khác của thống kê, tùy theo bối cảnh và trào lưu. Một số ứng dụng cụ thể của thống kê là tính toán hồi quy, mật độ, phân loại và giả lập.
 
-Tài liệu này không đi sâu vào các chứng minh chi tiết,
-nhưng sẽ cố gắng ghi rõ các công thức và định nghĩa.
-Thuật ngữ chuyên môn trong tài liệu này chắc chắn có nhiều chỗ không chuẩn chỉnh do vốn tiếng Việt và kiến thức hạn chế của tác giả.
-Xin vui lòng góp ý tại
-[GitHub issues](https://github.com/vochicong/xstk/issues).
+Tài liệu này không đi sâu vào các chứng minh chi tiết, nhưng sẽ cố gắng ghi rõ các công thức và định nghĩa. Thuật ngữ chuyên môn trong tài liệu này chắc chắn có nhiều chỗ không chuẩn chỉnh do vốn tiếng Việt và kiến thức hạn chế của tác giả. Xin vui lòng góp ý tại [GitHub issues](https://github.com/vochicong/xstk/issues).
 
-
-Tài liệu này được viết bằng các công cụ là
-[Quarto](https://quarto.org/docs/books)
-và [VSCode](https://code.visualstudio.com).
-Truy cập trực tuyến tại
-[xstk](https://vochicong.github.io/xstk/)
-.
-${}$
+Tài liệu này được viết bằng các công cụ là [Quarto](https://quarto.org/docs/books) và [VSCode](https://code.visualstudio.com). Truy cập trực tuyến tại [xstk](https://vochicong.github.io/xstk/) . ${}$

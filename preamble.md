@@ -9,6 +9,7 @@ $$
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{:=}
 \def\Gaus{\mathcal{N}}
+\def\fone#1{\mathbb{1}\{#1\}}
 \def\P{\mathbb{P}}
 \def\Poi{\text{Poi}}
 \def\R{\mathbb{R}}
@@ -17,4 +18,5 @@ $$
 \def\TV{\textrm{TV}}
 \def\KL{\textrm{KL}}
 \def\vec#1{\boldsymbol{#1}}
+\def\todist{\xrightarrow[n\to\infty]{(d)}}
 $$

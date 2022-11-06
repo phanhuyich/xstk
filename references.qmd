@@ -44,5 +44,25 @@ Mỗi tuần khoảng hơn 12 tiếng
 Học về nền tảng của suy luận (Foundations of Inference).
 
 - Lecture 3: Mô hình xác suất có số biến hữu hạn (Parametric Statistical Models)
-- Lecture 4: Dự đoán với số biến hữu hạn và khoảng tự tin (Parametric Estimation and Confidence Intervals)
+- Lecture 4: Dự đoán với số biến hữu hạn và vùng tự tin (Parametric Estimation and Confidence Intervals)
 ${}$
+- Lecture 5: Vùng tự tin và phương pháp Delta (Confidence Intervals and Delta Method)
+
+### Unit 3
+
+Phương pháp ước lượng tham số của mô hình xác suất
+
+- Lecture 6: Khoảng cách giữa các phân phối xác suất
+- Lecture 7: Maximum Likelihood Estimator
+- Lecture 8: Ví dụ cho Maximum Likelihood Estimator
+- Lecture 9: Các tính chất thống kê của Maximum Likelihood Estimator
+- Lecture 10: Phương pháp tích suất và M-Estimation
+
+### Unit 4
+
+Kiểm định thống kê
+
+- Lecture 11: Introduction to Parametric Hypothesis Testing
+- Lecture 12: The Wald Test and Likelihood Ratio Test
+- Lecture 13: The T-test
+- Lecture 14: Multiple Hypothesis Testing

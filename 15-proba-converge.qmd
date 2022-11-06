@@ -23,7 +23,7 @@ $$
 
 3. Hội tụ theo phân phối:
 $$
-X_n \xrightarrow[n\to\infty]{(d)} X \iff
+X_n \todist X \iff
 \P[X_n(x)\leq x]\xrightarrow[n\to\infty]{} \P[X\leq x]
 $$
 tại mọi điểm $x$ mà cdf của $X$ liên tục.
@@ -34,7 +34,7 @@ với phương sai
 $\sigma^2$
 $$
 \sqrt{n}\left(\frac{{X}_n-X}{|\sigma|}\right)
-\xrightarrow[n\to\infty]{(d)}
+\todist
 \Gaus(0,1).
 $$
 :::
@@ -47,11 +47,11 @@ Xếp theo thứ tự từ mạnh đến yếu:
 $$
 X_n \xrightarrow[n\to\infty]{\as} X \implies
 X_n \xrightarrow[n\to\infty]{\P} X \implies
-X_n \xrightarrow[n\to\infty]{(d)} X.
+X_n \todist X.
 $$
 
 Nếu
-$X_n \xrightarrow[n\to\infty]{(d)} X$,
+$X_n \todist X$,
 và
 $X$ có mật độ xác suất, thì
 $X_n \xrightarrow[n\to\infty]{\P} X$.
@@ -112,7 +112,7 @@ $$
 \left(
 \frac{\bar{X}_n-\mu}{|\sigma|}
 \right)
-\xrightarrow[n\to\infty]{(d)}
+\todist
 \Gaus(0,1).
 $$
 :::
@@ -144,7 +144,7 @@ Khi đó,
 $$
 \sqrt{n}\left(\frac{g(\theta_n)-g(\theta)}
 {\left|\sigma g^\prime(\theta)\right|}\right)
-\xrightarrow[n\to\infty]{(d)}
+\todist
 \Gaus\left(0,1\right)
 $$
 :::

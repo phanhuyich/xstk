@@ -74,7 +74,10 @@ Các biến ngẫu nhiên $X_1, X_2, \ldotp$ được gọi là iid ("independen
 identically distributed", "độc lập và phân phối giống nhau") nếu chúng
 cùng tuân theo duy nhất một phân phối xác suất, và từng cặp biến là độc
 lập với nhau. Dùng biến $X$ để thể hiện phân phối xác suất chung đó, ta
-viết $$X_1,\ldots,X_n \iid X.$$
+viết
+$$
+X_1,\ldots,X_n \iid X.
+$$
 :::
 
 ### Xác suất hợp
@@ -90,15 +93,19 @@ kiện $B$ đồng thời xảy ra.
 Ký hiệu $\P(A|B)$ hoặc $\P_B(A)$ chỉ xác suất của sự kiện $A$, khi biết
 sự kiện $B$ đã xảy ra,
 
-$$\P(A|B) = \frac{\P(A,B)}{\P(B)}.$$
+$$
+\P(A|B) = \frac{\P(A,B)}{\P(B)}.
+$$
 :::
 
-### Định lý Baye
 
 ::: {#thm-bayes}
-$$\P(A|B) = \frac{\P(B|A)\P(A)}{\P(B)}
+### Định lý Bayes
+$$
+\P(A|B) = \frac{\P(B|A)\P(A)}{\P(B)}
 = \frac{\P(B|A)\P(A)}{\P(B|A)\P(A) + \P(B|A^c)\P(A^c)}
-.$$
+.
+$$
 :::
 
 ## Trung bình
@@ -120,7 +127,8 @@ $$
 Nếu giá trị $\int |x| dF(x) < \infty$ ta nói là $\E[X]$ "tồn tại"
 (well-defined).
 
-Ta có $$
+Ta có
+$$
 \E[X+Y] \equiv \E[X] + E[Y].
 $$
 
@@ -140,12 +148,14 @@ Nếu $X$ và $Y$ độc lập thì $\textrm{Cov}[X,Y] = 0$.
 ## Phương sai
 
 ::: {#def-variance}
-Phương sai, hay phân tán (variance, 分散) là $$
+Phương sai, hay phân tán (variance, 分散) là
+$$
 \V[X]\is\textrm{Cov}[X,X]\equiv\E[X^2]-\E^2[X].
 $$
 :::
 
-Ta có $$
+Ta có
+$$
 \V[X+Y] \equiv \V[X]+\V[Y] + 2\textrm{Cov}[X,Y].
 $$
 
@@ -162,10 +172,13 @@ $$
 
 ::: {#def-mgf}
 "Moment generation function (MGF)" của biến $X$ là
-$$\psi_X(t)\is\E[e^{tX}], t\in\R.$$
+$$
+\psi_X(t)\is\E[e^{tX}], t\in\R.
+$$
 :::
 
 Nếu MGF "tồn tại" xung quanh $0$ thì đạo hàm cấp $k$ của $\psi$ tại $0$
-chính là: $$
+chính là:
+$$
 \psi_X^{(k)}(0)\equiv \E[X^k].
 $$

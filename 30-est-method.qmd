@@ -106,7 +106,8 @@ thỏa mãn 2/4 đặc điểm của "khoảng cách":
 
 ## MLE
 
-Maximum Likelihood Estimation
+**Ước lượng hợp lý cực đại**
+(Maximum Likelihood Estimation)
 
 ### Likelihood
 :::{#def-likelihood}

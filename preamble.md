@@ -18,4 +18,5 @@ $$
 \def\TV{\textrm{TV}}
 \def\KL{\textrm{KL}}
 \def\vec#1{\boldsymbol{#1}}
+\def\todist{\xrightarrow[n\to\infty]{(d)}}
 $$

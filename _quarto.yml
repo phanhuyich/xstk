@@ -22,13 +22,13 @@ book:
         - 40-hypothesis-test.qmd
     - references.qmd
   repo-url: https://github.com/vochicong/xstk
-  sharing: [twitter, facebook]
+  # sharing: [twitter, facebook]
   # sidebar:
   #   style: docked
   #   background: dark
 
-comments:
-  hypothesis: true
+# comments:
+#   hypothesis: true
 
 bibliography: references.bib
 
@@ -42,12 +42,15 @@ format:
     # Using katex solve the xrightarrow problem, but
     # html-math-method: katex
   pdf:
-    documentclass: scrreprt
+    # documentclass: scrreprt
+    geometry:
+      - top=5mm
+      - bottom=25mm
+      - left=5mm
+      - right=5mm
     colorlinks: true
     include-in-header: preamble.tex
-    include-after-body:
-      text: |
-        \printindex
+    fontsize: 14pt
 
 crossref:
   fig-title: Fig

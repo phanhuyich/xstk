@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "XSTK",
     "section": "",
-    "text": "$$\n\\def\\argmax{\\operatorname*{argmax}}\n\\def\\argmin{\\operatorname*{argmin}}\n\\def\\as{\\textrm{a.s.}}\n\\def\\Ber{\\text{Ber}}\n\\def\\Bin{\\text{Bin}}\n\\def\\Unif{\\text{Unif}}\n\\def\\E{\\mathbb{E}}\n\\def\\iid{\\stackrel{iid}{\\sim}}\n\\def\\is{:=}\n\\def\\Gaus{\\mathcal{N}}\n\\def\\fone#1{\\mathbb{1}\\{#1\\}}\n\\def\\P{\\mathbb{P}}\n\\def\\Poi{\\text{Poi}}\n\\def\\R{\\mathbb{R}}\n\\def\\V{\\mathbb{V}}\n\\def\\N{\\mathbb{Z}_+}\n\\def\\TV{\\textrm{TV}}\n\\def\\KL{\\textrm{KL}}\n\\def\\vec#1{\\boldsymbol{#1}}\n$$\n\n\n\n\nLời nói đầu\nXác suất thống kê là nền tảng giúp ích cho việc phân tích dữ liệu, tổ chức thực hành thí nghiệm, chạy các mô hình giả lập, giải các bài toán tìm nghiệm tối ưu, nghiên cứu và ứng dụng học máy.\nMôn “xác suất” tôi đã học những kiến thức cơ bản vài lần, tính ra là ở cấp 3, trong đại học, và gần đây là học trực tuyến. Môn “thống kê” tôi chưa học được cho ra bài bản lần nào, mấy tháng đầu năm 2022 có thử sức học trực tuyến nhưng đầu tư thời gian không đủ nên thi rớt thảm hại.\nLần này nhất quyết học lại môn thống kê một cách nghiêm túc hơn, tôi tóm tắt lại kiến thức xác suất thống kê bằng tiếng Việt, mặc dù tài liệu học hầu hết là tiếng Anh, tiếng Nhật. Hy vọng tiếng mẹ đẻ sẽ giúp tôi hiểu rõ hơn các vấn đề, và trau dồi vốn từ vựng để chia sẻ kiến thức với các đồng nghiệp và bạn bè người Việt.\nĐộng cơ của việc học xác suất thống kê của tôi là để hiểu rõ hơn các lý thuyết căn bản trong ngành học máy và trí tuệ nhân tạo và áp dụng vào thực tiễn một cách đúng đắn, an toàn và công bằng hơn.\nMục tiêu cụ thể trước mắt tôi đặt ra là học hiểu và lấy được chứng chỉ hoàn thành khoá học Fundamentals of Statistics của Philippe Rigollet (2022), giáo sư đại học MIT dạy trên nền tảng trực tuyến edX. Tài liệu tham khảo là quyển “All of Statistics” của Wasserman (2004), cũng chính là tài liệu tham khảo của khoá học nêu trên.\nMôn xác suất nghiên cứu cách suy luận ra các đặc tính của tập dữ liệu sẽ được tạo ra từ một nguyên lý, quy trình sản sinh dữ liệu. Ngược lại, môn thống kê nghiên cứu cách dự đoán đặc tính của một quy trình sản sinh dữ liệu từ tập dữ liệu về hiện tượng đã phát sinh và được quan sát. Fig 1 minh hoạ quan hệ giữa “xác suất” và “thống kê”.\n\n\n\n\n\nflowchart LR\n  A((Nguyên lý,\\n Quy trình))\n  B((Hiện tượng,\\n Quan trắc))\n  A-- Xác suất -->B\n  B-- Thống kê --> A\n\n\n\n\n\nFig 1: Xác suất và thống kê.\n\n\n\n\nPhân tích, khai thác dữ liệu, học máy và khoa học dữ liệu là những tên gọi khác của thống kê, tùy theo bối cảnh và trào lưu. Một số ứng dụng cụ thể của thống kê là tính toán hồi quy, mật độ, phân loại và giả lập.\nTài liệu này không đi sâu vào các chứng minh chi tiết, nhưng sẽ cố gắng ghi rõ các công thức và định nghĩa. Thuật ngữ chuyên môn trong tài liệu này chắc chắn có nhiều chỗ không chuẩn chỉnh do vốn tiếng Việt và kiến thức hạn chế của tác giả. Xin vui lòng góp ý tại GitHub issues.\nTài liệu này được viết bằng các công cụ là Quarto và VSCode. Truy cập trực tuyến tại xstk . \\({}\\)\n\n\n\n\nPhilippe Rigollet, Tyler Maunu, Jan Christian Huetter. 2022. “Fundamentals of Statistics.” MITx. https://www.edx.org/course/fundamentals-of-statistics.\n\n\nWasserman, Larry. 2004. All of Statistics : A Concise Course in Statistical Inference. New York: Springer. https://archive.org/details/springer_10.1007-978-0-387-21736-9."
+    "text": "$$\n\\def\\argmax{\\operatorname*{argmax}}\n\\def\\argmin{\\operatorname*{argmin}}\n\\def\\as{\\textrm{a.s.}}\n\\def\\Ber{\\text{Ber}}\n\\def\\Bin{\\text{Bin}}\n\\def\\Unif{\\text{Unif}}\n\\def\\E{\\mathbb{E}}\n\\def\\iid{\\stackrel{iid}{\\sim}}\n\\def\\is{:=}\n\\def\\Gaus{\\mathcal{N}}\n\\def\\fone#1{\\mathbb{1}\\{#1\\}}\n\\def\\P{\\mathbb{P}}\n\\def\\Poi{\\text{Poi}}\n\\def\\R{\\mathbb{R}}\n\\def\\V{\\mathbb{V}}\n\\def\\N{\\mathbb{Z}_+}\n\\def\\TV{\\textrm{TV}}\n\\def\\KL{\\textrm{KL}}\n\\def\\vec#1{\\boldsymbol{#1}}\n\\def\\todist{\\xrightarrow[n\\to\\infty]{(d)}}\n$$\n\n\n\n\nLời nói đầu\nXác suất thống kê là nền tảng giúp ích cho việc phân tích dữ liệu, tổ chức thực hành thí nghiệm, chạy các mô hình giả lập, giải các bài toán tìm nghiệm tối ưu, nghiên cứu và ứng dụng học máy.\nMôn “xác suất” tôi đã học những kiến thức cơ bản vài lần, tính ra là ở cấp 3, trong đại học, và gần đây là học trực tuyến. Môn “thống kê” tôi chưa học được cho ra bài bản lần nào, mấy tháng đầu năm 2022 có thử sức học trực tuyến nhưng đầu tư thời gian không đủ nên thi rớt thảm hại.\nLần này nhất quyết học lại môn thống kê một cách nghiêm túc hơn, tôi tóm tắt lại kiến thức xác suất thống kê bằng tiếng Việt, mặc dù tài liệu học hầu hết là tiếng Anh, tiếng Nhật. Hy vọng tiếng mẹ đẻ sẽ giúp tôi hiểu rõ hơn các vấn đề, và trau dồi vốn từ vựng để chia sẻ kiến thức với các đồng nghiệp và bạn bè người Việt.\nĐộng cơ của việc học xác suất thống kê của tôi là để hiểu rõ hơn các lý thuyết căn bản trong ngành học máy và trí tuệ nhân tạo và áp dụng vào thực tiễn một cách đúng đắn, an toàn và công bằng hơn.\nMục tiêu cụ thể trước mắt tôi đặt ra là học hiểu và lấy được chứng chỉ hoàn thành khoá học Fundamentals of Statistics của Philippe Rigollet (2022), giáo sư đại học MIT dạy trên nền tảng trực tuyến edX. Tài liệu tham khảo là quyển “All of Statistics” của Wasserman (2004), cũng chính là tài liệu tham khảo của khoá học nêu trên.\nMôn xác suất nghiên cứu cách suy luận ra các đặc tính của tập dữ liệu sẽ được tạo ra từ một nguyên lý, quy trình sản sinh dữ liệu. Ngược lại, môn thống kê nghiên cứu cách dự đoán đặc tính của một quy trình sản sinh dữ liệu từ tập dữ liệu về hiện tượng đã phát sinh và được quan sát. Fig 1 minh hoạ quan hệ giữa “xác suất” và “thống kê”.\n\n\n\n\n\nflowchart LR\n  A((Nguyên lý,\\n Quy trình))\n  B((Hiện tượng,\\n Quan trắc))\n  A-- Xác suất -->B\n  B-- Thống kê --> A\n\n\n\n\n\nFig 1: Xác suất và thống kê.\n\n\n\n\nPhân tích, khai thác dữ liệu, học máy và khoa học dữ liệu là những tên gọi khác của thống kê, tùy theo bối cảnh và trào lưu. Một số ứng dụng cụ thể của thống kê là tính toán hồi quy, mật độ, phân loại và giả lập.\nTài liệu này không đi sâu vào các chứng minh chi tiết, nhưng sẽ cố gắng ghi rõ các công thức và định nghĩa. Thuật ngữ chuyên môn trong tài liệu này chắc chắn có nhiều chỗ không chuẩn chỉnh do vốn tiếng Việt và kiến thức hạn chế của tác giả. Xin vui lòng góp ý tại GitHub issues.\nTài liệu này được viết bằng các công cụ là Quarto và VSCode. Truy cập trực tuyến tại xstk . \\({}\\)\n\n\n\n\nPhilippe Rigollet, Tyler Maunu, Jan Christian Huetter. 2022. “Fundamentals of Statistics.” MITx. https://www.edx.org/course/fundamentals-of-statistics.\n\n\nWasserman, Larry. 2004. All of Statistics : A Concise Course in Statistical Inference. New York: Springer. https://archive.org/details/springer_10.1007-978-0-387-21736-9."
   },
   {
     "objectID": "10-proba-intro.html#sự-kiện",
@@ -18,7 +18,7 @@
     "href": "10-proba-intro.html#xác-suất",
     "title": "1  Xác suất",
     "section": "1.2 Xác suất",
-    "text": "1.2 Xác suất\nNếu một xạ ảnh \\(\\P\\) từ không gian các sự kiện \\(A\\subseteq\\Omega\\) lên tập hợp số thực \\(\\R\\) thỏa mãn các điều kiện:\n\n\\(\\P(A)\\geq 0\\quad\\forall A\\)\n\\(\\P(\\Omega) = 1\\)\nNếu chuỗi \\(A_1, A_2, \\ldots\\) phân hoạch \\(C\\) thì \\(\\P(A_1) + \\P(A_2) + \\cdots = \\P(C)\\)\n\nthì ta gọi \\(\\P\\) là một phân phối xác suất hoặc độ đo xác suất.\nCó hai cách cắt nghĩa khái niệm xác suất là tần suất và niềm tin. Theo cách hiểu tần suất thì \\(\\P(A)\\) chính là tỷ lệ số lần sự kiện \\(A\\) xảy ra nếu ta thực hiện thí nghiệm vô số lần. Còn theo cách hiểu niềm tin thì \\(\\P(A)\\) là thước đo mức độ mà một quan sát viên tin tưởng rằng hiện tượng \\(A\\) sẽ xảy ra.\n\n1.2.1 Biến ngẫu nhiên\n\nDef 1.1 (“random variable”, rv) là một quy tắc ánh xạ \\(X: \\Omega\\to\\R\\) gán cho mỗi hiện tượng \\(\\omega\\) trong không gian \\(\\Omega\\) một số thực \\(X(\\omega).\\)\n\n\n\n1.2.2 Điểm cắt\n\nDef 1.2 Điểm cắt tại mức \\(1-\\alpha\\) của biến \\(X\\) là một số \\(q_\\alpha\\) mà \\(\\P(X\\leq q_\\alpha)=1-\\alpha.\\)\n\n\n\n1.2.3 Độc lập\n\nDef 1.3 Hai sự kiện \\(A\\) và \\(B\\) là độc lập nếu \\(\\P(AB)\\equiv \\P(A)\\P(B)\\).\nHai biến \\(X\\) và \\(Y\\) là độc lập nếu hai sự kiện \\(X\\leq x\\) và \\(Y\\leq y\\) là độc lập đối với mọi \\(x,y\\).\n\n\n\n1.2.4 IID\n\nDef 1.4 Các biến ngẫu nhiên \\(X_1, X_2, \\ldotp\\) được gọi là iid (“independent and identically distributed”, “độc lập và phân phối giống nhau”) nếu chúng cùng tuân theo duy nhất một phân phối xác suất, và từng cặp biến là độc lập với nhau. Dùng biến \\(X\\) để thể hiện phân phối xác suất chung đó, ta viết \\[X_1,\\ldots,X_n \\iid X.\\]\n\n\n\n1.2.5 Xác suất hợp\n\nDef 1.5 Ký hiệu \\(\\P(A, B)\\) hoặc \\(\\P(A\\cap B)\\) chỉ xác suất sự kiện \\(A\\) và sự kiện \\(B\\) đồng thời xảy ra.\n\n\n\n1.2.6 Xác suất có điều kiện\n\nDef 1.6 Ký hiệu \\(\\P(A|B)\\) hoặc \\(\\P_B(A)\\) chỉ xác suất của sự kiện \\(A\\), khi biết sự kiện \\(B\\) đã xảy ra,\n\\[\\P(A|B) = \\frac{\\P(A,B)}{\\P(B)}.\\]\n\n\n\n1.2.7 Định lý Baye\n\nThm 1.1 \\[\\P(A|B) = \\frac{\\P(B|A)\\P(A)}{\\P(B)}\n= \\frac{\\P(B|A)\\P(A)}{\\P(B|A)\\P(A) + \\P(B|A^c)\\P(A^c)}\n.\\]"
+    "text": "1.2 Xác suất\nNếu một xạ ảnh \\(\\P\\) từ không gian các sự kiện \\(A\\subseteq\\Omega\\) lên tập hợp số thực \\(\\R\\) thỏa mãn các điều kiện:\n\n\\(\\P(A)\\geq 0\\quad\\forall A\\)\n\\(\\P(\\Omega) = 1\\)\nNếu chuỗi \\(A_1, A_2, \\ldots\\) phân hoạch \\(C\\) thì \\(\\P(A_1) + \\P(A_2) + \\cdots = \\P(C)\\)\n\nthì ta gọi \\(\\P\\) là một phân phối xác suất hoặc độ đo xác suất.\nCó hai cách cắt nghĩa khái niệm xác suất là tần suất và niềm tin. Theo cách hiểu tần suất thì \\(\\P(A)\\) chính là tỷ lệ số lần sự kiện \\(A\\) xảy ra nếu ta thực hiện thí nghiệm vô số lần. Còn theo cách hiểu niềm tin thì \\(\\P(A)\\) là thước đo mức độ mà một quan sát viên tin tưởng rằng hiện tượng \\(A\\) sẽ xảy ra.\n\n1.2.1 Biến ngẫu nhiên\n\nDef 1.1 (“random variable”, rv) là một quy tắc ánh xạ \\(X: \\Omega\\to\\R\\) gán cho mỗi hiện tượng \\(\\omega\\) trong không gian \\(\\Omega\\) một số thực \\(X(\\omega).\\)\n\n\n\n1.2.2 Điểm cắt\n\nDef 1.2 Điểm cắt tại mức \\(1-\\alpha\\) của biến \\(X\\) là một số \\(q_\\alpha\\) mà \\(\\P(X\\leq q_\\alpha)=1-\\alpha.\\)\n\n\n\n1.2.3 Độc lập\n\nDef 1.3 Hai sự kiện \\(A\\) và \\(B\\) là độc lập nếu \\(\\P(AB)\\equiv \\P(A)\\P(B)\\).\nHai biến \\(X\\) và \\(Y\\) là độc lập nếu hai sự kiện \\(X\\leq x\\) và \\(Y\\leq y\\) là độc lập đối với mọi \\(x,y\\).\n\n\n\n1.2.4 IID\n\nDef 1.4 Các biến ngẫu nhiên \\(X_1, X_2, \\ldotp\\) được gọi là iid (“independent and identically distributed”, “độc lập và phân phối giống nhau”) nếu chúng cùng tuân theo duy nhất một phân phối xác suất, và từng cặp biến là độc lập với nhau. Dùng biến \\(X\\) để thể hiện phân phối xác suất chung đó, ta viết \\[\nX_1,\\ldots,X_n \\iid X.\n\\]\n\n\n\n1.2.5 Xác suất hợp\n\nDef 1.5 Ký hiệu \\(\\P(A, B)\\) hoặc \\(\\P(A\\cap B)\\) chỉ xác suất sự kiện \\(A\\) và sự kiện \\(B\\) đồng thời xảy ra.\n\n\n\n1.2.6 Xác suất có điều kiện\n\nDef 1.6 Ký hiệu \\(\\P(A|B)\\) hoặc \\(\\P_B(A)\\) chỉ xác suất của sự kiện \\(A\\), khi biết sự kiện \\(B\\) đã xảy ra,\n\\[\n\\P(A|B) = \\frac{\\P(A,B)}{\\P(B)}.\n\\]\n\n\nThm 1.1 (Định lý Bayes) \\[\n\\P(A|B) = \\frac{\\P(B|A)\\P(A)}{\\P(B)}\n= \\frac{\\P(B|A)\\P(A)}{\\P(B|A)\\P(A) + \\P(B|A^c)\\P(A^c)}\n.\n\\]"
   },
   {
     "objectID": "10-proba-intro.html#trung-bình",
@@ -46,7 +46,7 @@
     "href": "10-proba-intro.html#tích-suất",
     "title": "1  Xác suất",
     "section": "1.6 Tích suất",
-    "text": "1.6 Tích suất\nTích suất (moment, 積率) thể hiện trọng tâm, độ phân tán, hay độ lệch của phân phối. Tích suất bậc \\(n\\) của biến \\(X\\) với mật độ \\(f(x)\\) là:\n\\[\n\\E[X^n]\\is \\int x^n f(x) dx\n\\]\n\n1.6.1 Hàm tạo tích suất\n\nDef 1.10 “Moment generation function (MGF)” của biến \\(X\\) là \\[\\psi_X(t)\\is\\E[e^{tX}], t\\in\\R.\\]\n\nNếu MGF “tồn tại” xung quanh \\(0\\) thì đạo hàm cấp \\(k\\) của \\(\\psi\\) tại \\(0\\) chính là: \\[\n\\psi_X^{(k)}(0)\\equiv \\E[X^k].\n\\]"
+    "text": "1.6 Tích suất\nTích suất (moment, 積率) thể hiện trọng tâm, độ phân tán, hay độ lệch của phân phối. Tích suất bậc \\(n\\) của biến \\(X\\) với mật độ \\(f(x)\\) là:\n\\[\n\\E[X^n]\\is \\int x^n f(x) dx\n\\]\n\n1.6.1 Hàm tạo tích suất\n\nDef 1.10 “Moment generation function (MGF)” của biến \\(X\\) là \\[\n\\psi_X(t)\\is\\E[e^{tX}], t\\in\\R.\n\\]\n\nNếu MGF “tồn tại” xung quanh \\(0\\) thì đạo hàm cấp \\(k\\) của \\(\\psi\\) tại \\(0\\) chính là: \\[\n\\psi_X^{(k)}(0)\\equiv \\E[X^k].\n\\]"
   },
   {
     "objectID": "13-distributions.html#phân-phối-bernoulli",
@@ -84,11 +84,11 @@
     "text": "2.5 Phân phối Exponential\n\nDef 2.5 \\(X\\sim\\text{Exp}(\\lambda)\\) dùng để mô tả khoảng cách \\(x\\) giữa hai lần phát sinh của một chuỗi sự kiện kiểu Poisson (hai lần phát sinh sự kiện liên tiếp là độc lập với nhau, và tần suất phát sinh \\(\\lambda>0\\) là cố định). Có \\[\nf(x)={\\lambda}e^{-\\lambda x},x\\in\\R_+\n\\] và \\(\\E[X]=1/\\lambda,\\V[X]=1/\\lambda^2.\\)"
   },
   {
-    "objectID": "13-distributions.html#phân-phối-gaussian",
-    "href": "13-distributions.html#phân-phối-gaussian",
+    "objectID": "13-distributions.html#phân-phối-chuẩn",
+    "href": "13-distributions.html#phân-phối-chuẩn",
     "title": "2  Phân phối",
-    "section": "2.6 Phân phối Gaussian",
-    "text": "2.6 Phân phối Gaussian\n\nDef 2.6 \\(X\\sim\\Gaus(\\mu,\\sigma^2)\\) có mật độ \\[\nf(x) =\n\\frac{1}{\\sqrt{\\pi 2\\sigma^2}}\\exp\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right),\nx\\in\\R\n\\] và \\(\\E[X]=\\mu,\\V[X]=\\sigma^2\\).\n\n\nThm 2.1 Nếu \\(X_i \\sim\\Gaus(\\mu_i,\\sigma_i^2) (i=1,\\ldots,n)\\) thì\n\\[\\sum_{i=1}^n X_i\\sim\\Gaus\\left(\\sum_{i=1}^n \\mu_i,\\sum_{i=1}^n \\sigma_i^2\\right)\\]"
+    "section": "2.6 Phân phối chuẩn",
+    "text": "2.6 Phân phối chuẩn\nGaussian Distribution\n\nDef 2.6 (Phân phối chuẩn 1 biến) \\(X\\sim\\Gaus(\\mu,\\sigma^2)\\) có mật độ \\[\nf(x) =\n\\frac{1}{\\sqrt{\\pi 2\\sigma^2}}\\exp\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right),\nx\\in\\R\n\\] và \\(\\E[X]=\\mu,\\V[X]=\\sigma^2\\).\n\n\nThm 2.1 (Tổng của các phân phối chuẩn) Nếu \\(X_i \\sim\\Gaus(\\mu_i,\\sigma_i^2) (i=1,\\ldots,n)\\) thì\n\\[\\sum_{i=1}^n X_i\\sim\\Gaus\\left(\\sum_{i=1}^n \\mu_i,\\sum_{i=1}^n \\sigma_i^2\\right)\n.\\]\n\n\nDef 2.7 (Vector phân phối chuẩn) Nếu mọi tổ hợp tuyến tính các yếu tố của vector \\(\\boldsymbol{v}\\) đều thuộc phân phối chuẩn 1 biến thì \\(\\boldsymbol{v}\\) được gọi là một vector phân phối chuẩn."
   },
   {
     "objectID": "13-distributions.html#phân-phối-chi2",
@@ -101,22 +101,22 @@
     "objectID": "13-distributions.html#phân-phối-students-t",
     "href": "13-distributions.html#phân-phối-students-t",
     "title": "2  Phân phối",
-    "section": "2.8 Phân phối Student’s t",
-    "text": "2.8 Phân phối Student’s t\nNếu có \\(Z\\sim\\Gaus(0,1), V\\sim \\chi_k^2\\) độc lập với nhau thì\n\\[\nX \\is \\frac{Z}{\\sqrt{V/k}}\n\\]\ntuân theo phân bố Student’s t."
+    "section": "2.8 Phân phối Student’s T",
+    "text": "2.8 Phân phối Student’s T\nNếu có \\(Z\\sim\\Gaus(0,1), V\\sim \\chi_k^2\\) độc lập với nhau thì\n\\[\nX \\is \\frac{Z}{\\sqrt{V/k}}\n\\]\ntuân theo phân phối Student’s \\(t_k\\)."
   },
   {
     "objectID": "15-proba-converge.html#hội-tụ-xác-suất",
     "href": "15-proba-converge.html#hội-tụ-xác-suất",
     "title": "3  Hội tụ",
     "section": "3.1 Hội tụ xác suất",
-    "text": "3.1 Hội tụ xác suất\n\nDef 3.1 Cho một chuỗi biến ngẫu nhiên \\(X_1,X_2,\\ldotp\\) và một biến ngẫu nhiên \\(X\\).\n\nHội tụ gần tuyệt đối: \\[\nX_n \\xrightarrow[n\\to\\infty]{\\as} X \\iff\n\\P(\\{\\omega\\in\\Omega: X_n(\\omega)\\to X(\\omega)\\}) = 1.\n\\]\nHội tụ theo xác suất: \\[\nX_n \\xrightarrow[n\\to\\infty]{\\P} X \\iff\n\\P(|X_n-X| >\\epsilon)\n\\xrightarrow[n\\to\\infty]{}\n0,\\quad\\forall\\epsilon>0.\n\\]\nHội tụ theo phân phối: \\[\nX_n \\xrightarrow[n\\to\\infty]{(d)} X \\iff\n\\P[X_n(x)\\leq x]\\xrightarrow[n\\to\\infty]{} \\P[X\\leq x]\n\\] tại mọi điểm \\(x\\) mà cdf của \\(X\\) liên tục.\nHội tụ về chuẩn: (asymptotically normal) với phương sai \\(\\sigma^2\\) \\[\n\\sqrt{n}\\left(\\frac{{X}_n-X}{|\\sigma|}\\right)\n\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus(0,1).\n\\]"
+    "text": "3.1 Hội tụ xác suất\n\nDef 3.1 Cho một chuỗi biến ngẫu nhiên \\(X_1,X_2,\\ldotp\\) và một biến ngẫu nhiên \\(X\\).\n\nHội tụ gần tuyệt đối: \\[\nX_n \\xrightarrow[n\\to\\infty]{\\as} X \\iff\n\\P(\\{\\omega\\in\\Omega: X_n(\\omega)\\to X(\\omega)\\}) = 1.\n\\]\nHội tụ theo xác suất: \\[\nX_n \\xrightarrow[n\\to\\infty]{\\P} X \\iff\n\\P(|X_n-X| >\\epsilon)\n\\xrightarrow[n\\to\\infty]{}\n0,\\quad\\forall\\epsilon>0.\n\\]\nHội tụ theo phân phối: \\[\nX_n \\todist X \\iff\n\\P[X_n(x)\\leq x]\\xrightarrow[n\\to\\infty]{} \\P[X\\leq x]\n\\] tại mọi điểm \\(x\\) mà cdf của \\(X\\) liên tục.\nHội tụ về chuẩn: (asymptotically normal) với phương sai \\(\\sigma^2\\) \\[\n\\sqrt{n}\\left(\\frac{{X}_n-X}{|\\sigma|}\\right)\n\\todist\n\\Gaus(0,1).\n\\]"
   },
   {
     "objectID": "15-proba-converge.html#độ-mạnh",
     "href": "15-proba-converge.html#độ-mạnh",
     "title": "3  Hội tụ",
     "section": "3.2 Độ mạnh",
-    "text": "3.2 Độ mạnh\n\nThm 3.1 Xếp theo thứ tự từ mạnh đến yếu:\n\\[\nX_n \\xrightarrow[n\\to\\infty]{\\as} X \\implies\nX_n \\xrightarrow[n\\to\\infty]{\\P} X \\implies\nX_n \\xrightarrow[n\\to\\infty]{(d)} X.\n\\]\nNếu \\(X_n \\xrightarrow[n\\to\\infty]{(d)} X\\), và \\(X\\) có mật độ xác suất, thì \\(X_n \\xrightarrow[n\\to\\infty]{\\P} X\\).\nNếu chuỗi \\(X_n\\) có \\(\\E[X_n]\\xrightarrow[]{} \\mu\\) và \\(\\V[X_n]\\xrightarrow[]{} 0\\) thì \\(X_n\\xrightarrow[]{\\P} \\mu\\).\nNếu \\(X_n\\xrightarrow[n\\to\\infty]{\\P} X\\) thì \\(\\P(a\\leq X_n\\leq b) \\xrightarrow[n\\to\\infty]{} \\P(a\\leq X\\leq b)\\) với mọi khoảng \\([a,b]\\)."
+    "text": "3.2 Độ mạnh\n\nThm 3.1 Xếp theo thứ tự từ mạnh đến yếu:\n\\[\nX_n \\xrightarrow[n\\to\\infty]{\\as} X \\implies\nX_n \\xrightarrow[n\\to\\infty]{\\P} X \\implies\nX_n \\todist X.\n\\]\nNếu \\(X_n \\todist X\\), và \\(X\\) có mật độ xác suất, thì \\(X_n \\xrightarrow[n\\to\\infty]{\\P} X\\).\nNếu chuỗi \\(X_n\\) có \\(\\E[X_n]\\xrightarrow[]{} \\mu\\) và \\(\\V[X_n]\\xrightarrow[]{} 0\\) thì \\(X_n\\xrightarrow[]{\\P} \\mu\\).\nNếu \\(X_n\\xrightarrow[n\\to\\infty]{\\P} X\\) thì \\(\\P(a\\leq X_n\\leq b) \\xrightarrow[n\\to\\infty]{} \\P(a\\leq X\\leq b)\\) với mọi khoảng \\([a,b]\\)."
   },
   {
     "objectID": "15-proba-converge.html#tổng-và-tích",
@@ -151,7 +151,7 @@
     "href": "15-proba-converge.html#hội-tụ-trung-tâm-central-limit",
     "title": "3  Hội tụ",
     "section": "3.7 Hội tụ trung tâm (Central Limit)",
-    "text": "3.7 Hội tụ trung tâm (Central Limit)\n\nThm 3.6 Giả sử thêm là \\(\\V[X_i]=\\sigma^2<\\infty\\). Khi đó \\[\n\\sqrt{n}\n\\left(\n\\frac{\\bar{X}_n-\\mu}{|\\sigma|}\n\\right)\n\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus(0,1).\n\\]"
+    "text": "3.7 Hội tụ trung tâm (Central Limit)\n\nThm 3.6 Giả sử thêm là \\(\\V[X_i]=\\sigma^2<\\infty\\). Khi đó \\[\n\\sqrt{n}\n\\left(\n\\frac{\\bar{X}_n-\\mu}{|\\sigma|}\n\\right)\n\\todist\n\\Gaus(0,1).\n\\]"
   },
   {
     "objectID": "15-proba-converge.html#bất-đẳng-thức-hoefding",
@@ -165,7 +165,7 @@
     "href": "15-proba-converge.html#phương-pháp-delta",
     "title": "3  Hội tụ",
     "section": "3.9 Phương pháp Delta",
-    "text": "3.9 Phương pháp Delta\n\nThm 3.8 Giả sử chuỗi \\((\\theta_n)_{n\\geq 1}\\) chuẩn tiến với phương sai \\(\\sigma^2\\) về một điểm \\(\\theta\\in\\R\\). Giả sử \\(g:\\R\\to\\R\\) có vi phân \\(g^\\prime\\) liên tục tại \\(\\theta\\). Khi đó, \\[\n\\sqrt{n}\\left(\\frac{g(\\theta_n)-g(\\theta)}\n{\\left|\\sigma g^\\prime(\\theta)\\right|}\\right)\n\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus\\left(0,1\\right)\n\\]"
+    "text": "3.9 Phương pháp Delta\n\nThm 3.8 Giả sử chuỗi \\((\\theta_n)_{n\\geq 1}\\) chuẩn tiến với phương sai \\(\\sigma^2\\) về một điểm \\(\\theta\\in\\R\\). Giả sử \\(g:\\R\\to\\R\\) có vi phân \\(g^\\prime\\) liên tục tại \\(\\theta\\). Khi đó, \\[\n\\sqrt{n}\\left(\\frac{g(\\theta_n)-g(\\theta)}\n{\\left|\\sigma g^\\prime(\\theta)\\right|}\\right)\n\\todist\n\\Gaus\\left(0,1\\right)\n\\]"
   },
   {
     "objectID": "20-stat-intro.html#mô-hình",
@@ -214,7 +214,7 @@
     "href": "30-est-method.html#mle",
     "title": "5  Ước lượng",
     "section": "5.4 MLE",
-    "text": "5.4 MLE\nMaximum Likelihood Estimation\n\n5.4.1 Likelihood\n\nDef 5.3 \\[L_\\theta(x_1,\\ldots,x_n)\\is\n\\P_\\theta(X_1=x_1,\\ldots,X_n=x_n)\n=\n\\prod_{i=1}^n p_\\theta(X_i=x_i)\n.\\]\n\n\n\n5.4.2 Log likelihood\n\nDef 5.4 \\[\n\\ell_\\theta(x_1,\\ldots,x_n)\\is\n\\ln\nL_\\theta(x_1,\\ldots,x_n)\n=\n\\sum_{i=1}^n \\ln p_\\theta(X_i=x_i)\n.\n\\]\n\n\n\n5.4.3 Maximum Likelihood Estimator\n\nDef 5.5 \\[\n\\hat{\\theta}_n \\is\n\\argmax_\\theta\nL_\\theta(x_1,\\ldots,x_n)\n\\equiv\n\\argmax_\\theta\n\\ell_\\theta(x_1,\\ldots,x_n)\n.\n\\]"
+    "text": "5.4 MLE\nƯớc lượng hợp lý cực đại (Maximum Likelihood Estimation)\n\n5.4.1 Likelihood\n\nDef 5.3 \\[L_\\theta(x_1,\\ldots,x_n)\\is\n\\P_\\theta(X_1=x_1,\\ldots,X_n=x_n)\n=\n\\prod_{i=1}^n p_\\theta(X_i=x_i)\n.\\]\n\n\n\n5.4.2 Log likelihood\n\nDef 5.4 \\[\n\\ell_\\theta(x_1,\\ldots,x_n)\\is\n\\ln\nL_\\theta(x_1,\\ldots,x_n)\n=\n\\sum_{i=1}^n \\ln p_\\theta(X_i=x_i)\n.\n\\]\n\n\n\n5.4.3 Maximum Likelihood Estimator\n\nDef 5.5 \\[\n\\hat{\\theta}_n \\is\n\\argmax_\\theta\nL_\\theta(x_1,\\ldots,x_n)\n\\equiv\n\\argmax_\\theta\n\\ell_\\theta(x_1,\\ldots,x_n)\n.\n\\]"
   },
   {
     "objectID": "30-est-method.html#mix-model",
@@ -240,44 +240,72 @@
   {
     "objectID": "40-hypothesis-test.html#giả-thuyết-không-và-đối",
     "href": "40-hypothesis-test.html#giả-thuyết-không-và-đối",
-    "title": "6  Giả thuyết",
+    "title": "6  Kiểm định",
     "section": "6.1 Giả thuyết không và đối",
     "text": "6.1 Giả thuyết không và đối\nVới mô hình thống kê \\(\\left(E,(\\P_\\theta)_{\\theta\\in\\Theta}\\right),\\) sử dụng bộ mẫu dữ liệu iid \\(X_1,\\ldots,X_n,\\) ta xem xét hai giả thuyết về tham số \\(\\theta\\) như sau:\n\\[\n\\begin{cases}\nH_0:&\\theta\\in\\Theta_0\\\\\nH_1:&\\theta\\in\\Theta_1\n\\end{cases}\n\\]\nvới \\(\\Theta_0,\\Theta_1\\) là phân mảnh (không giao nhau) của \\(\\Theta,\\) \\(\\Theta_0\\) là “thường thức” (status quo), còn \\(\\Theta_1\\) là “phát hiện” (discovery) mới. Ta gọi \\(H_0\\) là giả thuyết không, còn \\(H_1\\) là giả thuyết đối (thay thế)."
   },
   {
     "objectID": "40-hypothesis-test.html#kiểm-định",
     "href": "40-hypothesis-test.html#kiểm-định",
-    "title": "6  Giả thuyết",
+    "title": "6  Kiểm định",
     "section": "6.2 Kiểm định",
-    "text": "6.2 Kiểm định\nTa sẽ kiểm định \\(H_0\\) đối với \\(H_1\\) bằng cách chọn và sử dụng một định lượng thống kê \\(\\psi(X_1,\\ldots,X_n)\\in\\{0,1\\}.\\)\n\n\n\n\n\n\n\n\n\n\\(\\psi=0:\\) chấp nhận \\(H_0\\)\n\\(\\psi=1:\\) phủ nhận \\(H_0\\)\n\n\n\n\n\\(\\theta\\in\\Theta_0\\)\nKiểm định đúng\nLỗi loại 1\n\n\n\\(\\theta\\in\\Theta_1\\)\nLỗi loại 2\nKiểm định đúng\n\n\n\nCó thể viết \\(\\psi=\\fone{R_\\psi}\\) với sự kiện \\(R_\\psi\\) là vùng phủ nhận, còn \\(R_\\psi^c\\) là vùng chấp nhận .\nTa thiết kế kiểm định sao cho hàm công suất sau đây có giá trị nhỏ khi \\(\\theta\\in\\Theta_0\\) và lớn khi \\(\\theta\\in\\Theta_1:\\)\n\\[\\beta_\\psi(\\theta) \\is \\P_\\theta(\\psi=1) \\equiv \\P_\\theta(R_\\psi)\\in[0,1]\\]\nVùng phủ nhận thường có dạng \\[\nR_\\psi = \\{X_i: T(X_i)\\geq c\\}\n\\] với \\(T\\) là một lượng thống kê còn \\(c\\) là một giá trị biên."
+    "text": "6.2 Kiểm định\nTa sẽ kiểm định \\(H_0\\) đối với \\(H_1\\) bằng cách chọn và sử dụng một định lượng thống kê \\(\\psi(X_1,\\ldots,X_n)\\in\\{0,1\\}.\\)\n\n\n\n\n\n\n\n\n\n\\(\\psi=0:\\) chấp nhận \\(H_0\\)\n\\(\\psi=1:\\) phủ nhận \\(H_0\\)\n\n\n\n\n\\(\\theta\\in\\Theta_0\\)\nKiểm định đúng\nLỗi loại 1\n\n\n\\(\\theta\\in\\Theta_1\\)\nLỗi loại 2\nKiểm định đúng\n\n\n\nCó thể viết \\(\\psi=\\fone{R_\\psi}\\) với sự kiện \\(R_\\psi\\) là vùng phủ nhận, còn \\(R_\\psi^c\\) là vùng chấp nhận .\nTa thiết kế kiểm định sao cho hàm công suất sau đây có giá trị nhỏ khi \\(\\theta\\in\\Theta_0\\) và lớn khi \\(\\theta\\in\\Theta_1:\\)\n\\[\n\\beta_\\psi(\\theta) \\is \\P_\\theta(\\psi=1) \\equiv \\P_\\theta(R_\\psi)\\in[0,1]\n\\]\nVùng phủ nhận thường có dạng \\[\nR_\\psi = \\{X_i: T(X_i)\\geq c\\}\n\\] với \\(T\\) là một lượng thống kê còn \\(c\\) là một giá trị biên."
   },
   {
-    "objectID": "40-hypothesis-test.html#neyman-pearson-paradigm",
-    "href": "40-hypothesis-test.html#neyman-pearson-paradigm",
-    "title": "6  Giả thuyết",
-    "section": "6.3 Neyman-Pearson paradigm",
-    "text": "6.3 Neyman-Pearson paradigm\nKiểm định \\(\\psi\\) là ở mức \\(\\alpha\\in(0,1)\\) nếu có xác suất lỗi loại 1 không vượt quá \\(\\alpha:\\) \\[\n\\sup_{\\theta\\in\\Theta_0}\n\\beta_\\psi(\\theta)\n\\leq\\alpha\n.\n\\]\nChuỗi kiểm định \\((\\psi_n)_{n=1,2,\\ldots}\\) được gọi là tiệm cận về mức \\(\\alpha\\) nếu \\[\n\\lim_{n\\to\\infty}\n\\sup_{\\theta\\in\\Theta_0}\n\\beta_{\\psi_n}(\\theta)\n\\leq\\alpha\n.\n\\]\nPhương thức Neyman-Pearson chọn một mức \\(\\alpha\\), đảm bảo xác suất lỗi loại 1 không vượt quá \\(\\alpha\\) rồi tối thiểu hóa xác suất lỗi loại 2. Nói cách khác là giữ cho công suất \\(\\beta_\\psi(\\theta)\\) đủ nhỏ khi \\(\\psi\\in\\Theta_0,\\) rồi tối đại hóa công suất khi \\(\\psi\\in\\Theta_1.\\)"
-  },
-  {
-    "objectID": "40-hypothesis-test.html#p-value",
-    "href": "40-hypothesis-test.html#p-value",
-    "title": "6  Giả thuyết",
-    "section": "6.4 p-value",
-    "text": "6.4 p-value\nTừ dữ liệu quan sát \\(X_1, \\ldots, X_n\\) ta tính giá trị mức \\(\\alpha\\) (tiệm cận) nhỏ nhất tại đó kiểm định \\(\\psi\\) phủ nhận \\(H_0,\\) gọi nó là p-value (tiệm cận) của \\(\\psi.\\) Nếu p-value càng nhỏ thì ta càng tự tin phủ nhận \\(H_0.\\)"
+    "objectID": "40-hypothesis-test.html#mức-độ-lỗi",
+    "href": "40-hypothesis-test.html#mức-độ-lỗi",
+    "title": "6  Kiểm định",
+    "section": "6.3 Mức độ lỗi",
+    "text": "6.3 Mức độ lỗi\nKiểm định \\(\\psi\\) là ở mức (significance level) \\(\\alpha\\in(0,1)\\) nếu có xác suất lỗi loại 1 không vượt quá \\(\\alpha:\\) \\[\n\\sup_{\\theta\\in\\Theta_0}\n\\beta_\\psi(\\theta)\n\\leq\\alpha\n.\n\\]\nChuỗi kiểm định \\((\\psi_n)_{n=1,2,\\ldots}\\) được gọi là tiệm cận về mức \\(\\alpha\\) nếu \\[\n\\lim_{n\\to\\infty}\n\\sup_{\\theta\\in\\Theta_0}\n\\beta_{\\psi_n}(\\theta)\n\\leq\\alpha\n.\n\\]\nPhương thức Neyman-Pearson chọn một mức \\(\\alpha\\), đảm bảo xác suất lỗi loại 1 không vượt quá \\(\\alpha\\) rồi tối thiểu hóa xác suất lỗi loại 2. Nói cách khác là giữ cho công suất \\(\\beta_\\psi(\\theta)\\) đủ nhỏ khi \\(\\psi\\in\\Theta_0,\\) rồi tối đại hóa công suất khi \\(\\psi\\in\\Theta_1.\\)\n\n6.3.1 p-value\nTừ quan sát \\(X_1, \\ldots, X_n\\) ta tính giá trị mức \\(\\alpha\\) (tiệm cận) nhỏ nhất tại đó kiểm định \\(\\psi\\) phủ nhận \\(H_0,\\) gọi nó là p-value (tiệm cận) của \\(\\psi.\\) Nếu p-value càng nhỏ thì ta càng tự tin phủ nhận \\(H_0.\\)\n\\[\n\\textrm{p-value} \\is\n\\inf_{X_1, \\ldots, X_n; \\theta\\in H_0}\\beta_\\psi(\\theta)\n\\]\n\n\n\np-value\nchứng cứ phủ nhận \\(H_0\\)\n\n\n\n\n\\(<0.1\\%\\)\nvô cùng mạnh\n\n\n\\(0.1\\%\\textemdash 1\\%\\)\nrất mạnh\n\n\n\\(1\\%\\textemdash 5\\%\\)\nmạnh\n\n\n\\(5\\%\\textemdash 10\\%\\)\nyếu\n\n\n\\(>10\\%\\)\nkhông có"
   },
   {
     "objectID": "40-hypothesis-test.html#khoảng-tin-cậy",
     "href": "40-hypothesis-test.html#khoảng-tin-cậy",
-    "title": "6  Giả thuyết",
-    "section": "6.5 Khoảng tin cậy",
-    "text": "6.5 Khoảng tin cậy\nThông thường ta có thể xây dựng được kiểm định từ khoảng tin cậy. Ví dụ, ta muốn kiếm định tham số \\(\\theta\\), \\(H_0: \\theta=\\theta_0,\\) đối \\(H_1: \\theta\\neq\\theta_0.\\) Giả sử ta có khoảng tin cậy \\(\\mathcal{I}\\) ở mức \\(1-\\alpha\\), tức là \\[\\P_\\theta(I\\ni \\theta)\\geq 1-\\alpha.\\] Khi đó, \\(\\psi=\\fone{\\theta_0\\notin\\mathcal{I}}\\) là kiểm định mức \\(\\alpha\\)\n\\[\n\\beta_\\psi(\\theta_0) = \\P_{\\theta_0}(\\theta_0\\notin I) \\leq \\alpha.\n\\]"
+    "title": "6  Kiểm định",
+    "section": "6.4 Khoảng tin cậy",
+    "text": "6.4 Khoảng tin cậy\nThông thường ta có thể xây dựng được kiểm định từ khoảng tin cậy. Ví dụ, ta muốn kiếm định tham số \\(\\theta\\), \\(H_0: \\theta=\\theta_0,\\) đối \\(H_1: \\theta\\neq\\theta_0.\\) Giả sử ta có khoảng tin cậy \\(\\mathcal{I}\\) ở mức \\(1-\\alpha\\), tức là \\[\\P_\\theta(I\\ni \\theta)\\geq 1-\\alpha.\\] Khi đó, \\(\\psi=\\fone{\\theta_0\\notin\\mathcal{I}}\\) là kiểm định mức \\(\\alpha\\)\n\\[\n\\beta_\\psi(\\theta_0) = \\P_{\\theta_0}(\\theta_0\\notin I) \\leq \\alpha.\n\\]"
   },
   {
     "objectID": "40-hypothesis-test.html#wald-test",
     "href": "40-hypothesis-test.html#wald-test",
-    "title": "6  Giả thuyết",
-    "section": "6.6 Wald Test",
-    "text": "6.6 Wald Test\nGiả sử \\(\\hat{\\theta}\\) là ước lượng của tham số \\(\\theta\\), và \\(\\hat{\\V}[\\hat{\\theta}]\\) là ước lượng phương sai của \\(\\hat{\\theta}\\), sao cho \\[\n\\frac{\\hat{\\theta}-\\theta}\n{\\sqrt{\\hat{\\V}[\\hat{\\theta}]}}\n\\xrightarrow[n\\to\\infty]{(d)}\n\\Gaus(0,1).\n\\]\nĐặt \\[\nW \\is \\frac{\\hat{\\theta}-\\theta_0}\n{\\sqrt{\\hat{\\V}[\\hat{\\theta}]}}\n,\n\\] ta có thể xây dựng các kiểm định Wald có mức tiệm cận là \\(\\alpha,\\) tức là \\(\\P_{H_0}(\\psi_\\alpha) \\xrightarrow[n\\to\\infty]{} \\alpha.\\)\n\n\n\n\n\n\n\n\nGiả thuyết\nKiểm định Wald\nasymp. p-value\n\n\n\n\n\\(H_0: \\theta=\\theta_0, H_1: \\theta\\neq\\theta_0\\)\n\\(\\psi_\\alpha=\\fone{|W|>q_{\\alpha/2}}\\)\n\\(\\P(|Z|>|W^{obs}|)\\)\n\n\n\\(H_0: \\theta\\leq\\theta_0, H_1: \\theta>\\theta_0\\)\n\\(\\psi_\\alpha=\\fone{W>q_\\alpha}\\)\n\\(\\P(Z>W^{obs})\\)\n\n\n\\(H_0: \\theta\\geq\\theta_0, H_1: \\theta<\\theta_0\\)\n\\(\\psi_\\alpha=\\fone{W<-q_\\alpha}\\)\n\\(\\P(Z<W^{obs})\\)\n\n\n\nTrong bảng trên, p-value được tính từ \\(W^{obs}\\) là một quan sát đối với \\(W.\\)"
+    "title": "6  Kiểm định",
+    "section": "6.5 Wald Test",
+    "text": "6.5 Wald Test\nGiả sử \\(\\hat{\\theta}\\) là ước lượng của tham số \\(\\theta\\), và \\(\\hat{\\V}[\\hat{\\theta}]\\) là ước lượng phương sai của \\(\\hat{\\theta}\\), sao cho \\[\n\\frac{\\hat{\\theta}-\\theta}\n{\\sqrt{\\hat{\\V}[\\hat{\\theta}]}}\n\\todist\n\\Gaus(0,1).\n\\]\nĐặt\n\\[\nW \\is \\frac{\\hat{\\theta}-\\theta_0}\n{\\sqrt{\\hat{\\V}[\\hat{\\theta}]}}\n,\n\\]\nta có thể xây dựng các kiểm định Wald có mức tiệm cận là \\(\\alpha,\\) tức là \\(\\P_{H_0}(\\psi_\\alpha) \\xrightarrow[n\\to\\infty]{} \\alpha.\\)\n\n\n\n\n\n\n\n\nGiả thuyết\nKiểm định Wald\nasymp. p-value\n\n\n\n\n\\(H_0: \\theta=\\theta_0, H_1: \\theta\\neq\\theta_0\\)\n\\(\\psi_\\alpha=\\fone{|W|>q_{\\alpha/2}}\\)\n\\(\\P(|Z|>|W^{obs}|)\\)\n\n\n\\(H_0: \\theta\\leq\\theta_0, H_1: \\theta>\\theta_0\\)\n\\(\\psi_\\alpha=\\fone{W>q_\\alpha}\\)\n\\(\\P(Z>W^{obs})\\)\n\n\n\\(H_0: \\theta\\geq\\theta_0, H_1: \\theta<\\theta_0\\)\n\\(\\psi_\\alpha=\\fone{W<-q_\\alpha}\\)\n\\(\\P(Z<W^{obs})\\)\n\n\n\nTrong bảng trên, p-value được tính từ \\(W^{obs}\\) là một quan sát đối với \\(W.\\)"
+  },
+  {
+    "objectID": "40-hypothesis-test.html#định-lý-cochran",
+    "href": "40-hypothesis-test.html#định-lý-cochran",
+    "title": "6  Kiểm định",
+    "section": "6.6 Định lý Cochran",
+    "text": "6.6 Định lý Cochran\n\nThm 6.1 Giả sử \\(X_1,\\ldots,X_n\\iid\\Gaus(\\mu,\\sigma^2).\\) Đặt \\[\nS_n^2:=\\frac{1}{n-1}\\sum_{i=1}^{n}(X_i-\\bar{X}_n)^2.\n\\]\nKhi đó \\(\\E[S_n^2] \\equiv \\sigma^2,\\) \\[\n\\frac{S_n^2}{\\sigma^2}\n\\sim\n\\frac{\\chi_{n-1}^2}{n-1}\n,\n\\]\nvà \\(\\bar{X}_n, S_n^2\\) độc lập với nhau."
+  },
+  {
+    "objectID": "40-hypothesis-test.html#students-t-test",
+    "href": "40-hypothesis-test.html#students-t-test",
+    "title": "6  Kiểm định",
+    "section": "6.7 Student’s T test",
+    "text": "6.7 Student’s T test\nGiả sử \\(X_1,\\ldots,X_n\\iid\\Gaus(\\mu,\\sigma^2),\\) \\(\\mu,\\sigma\\) chưa biết, và ta muốn kiểm định \\(\\mu.\\) Theo Thm 6.1, \\[\nT:=\n\\frac{\\bar{X}_n-\\mu}{\\sqrt{S_n^2/n}}\n\\equiv\n\\frac{\\sqrt{n}{(\\bar{X}_n-\\mu)}{/\\sigma}}\n{\\sqrt{{S_n^2}{/\\sigma^2}}}\n\\sim t_{n-1}\n\\] tuân theo phân phối Student’s T. Ta có thể xây dựng các kiểm định Student có mức \\(\\alpha,\\) tức là \\(\\P_{H_0}(\\psi_\\alpha) \\equiv \\alpha.\\)\n\n\n\n\n\n\n\n\nGiả thuyết\nKiểm định Student\np-value\n\n\n\n\n\\(H_0: \\mu=\\mu_0, H_1: \\mu\\neq\\mu_0\\)\n\\(\\psi_\\alpha=\\fone{|T| >q_{\\alpha/2}^{t_{n-1}}}\\)\n\\(\\P_{t_{n-1}}(|Z|>|T^{obs}|)\\)\n\n\n\\(H_0: \\mu\\leq\\mu_0, H_1: \\mu>\\mu_0\\)\n\\(\\psi_\\alpha=\\fone{T>q_\\alpha^{t_{n-1}}}\\)\n\\(\\P_{t_{n-1}}(Z>T^{obs})\\)\n\n\n\\(H_0: \\mu\\geq\\mu_0, H_1: \\mu<\\mu_0\\)\n\\(\\psi_\\alpha=\\fone{T<-q_\\alpha^{t_{n-1}}}\\)\n\\(\\P_{t_{n-1}}(Z<T^{obs})\\)\n\n\n\nTrong bảng trên, p-value được tính từ \\(T^{obs}\\) là một quan sát đối với \\(T.\\)"
+  },
+  {
+    "objectID": "40-hypothesis-test.html#two-sample-t-test",
+    "href": "40-hypothesis-test.html#two-sample-t-test",
+    "title": "6  Kiểm định",
+    "section": "6.8 Two-sample T-test",
+    "text": "6.8 Two-sample T-test\nGiả sử \\(X_1,\\ldots,X_n\\iid\\Gaus(\\mu_x,\\sigma_x^2),\\) \\(Y_1,\\ldots,Y_m\\iid\\Gaus(\\mu_y,\\sigma_y^2),\\) với \\(\\mu_x,\\sigma_x, \\mu_y,\\sigma_y\\) chưa biết, và ta muốn kiểm định \\(\\mu_x-\\mu_y.\\) Đặt \\[\nS_n^2\\is\\frac{1}{n-1}\\sum_{i=1}^{n}(X_i-\\bar{X}_n)^2 , \\] \\[\nS_m^2\\is\\frac{1}{m-1}\\sum_{i=1}^{n}(Y_i-\\bar{Y}_m)^2 , \\] Ta có gần đúng \\[\n\\frac{(\\bar{X}_n-\\bar{Y}_m)-(\\mu_x-\\mu_y)}\n{\\sqrt{S_n^2/n + S_m^2/m}}\n\\sim t_N\n\\] là phân phối Student’s T với độ tự do tuân theo công thức WS (Welch-Satterthwaite): \\[\nN =\n\\frac{\\sqrt{S_n^2/n + S_m^2/m}}\n{\\sqrt{\\frac{S_n^4}{n^2(n-1)}  + \\frac{S_m^4}{m^2(m-1)}}}\n\\geq \\min(n, m)\n\\] Đặt \\[\nT = \\frac{\\bar{X}_n-\\bar{Y}_m}\n{\\sqrt{S_n^2/n + S_m^2/m}}\n\\]\n\n\n\n\n\n\n\n\nGiả thuyết\nKiểm định 2 mẫu\np-value\n\n\n\n\n\\(H_0: \\mu_x=\\mu_y, H_1: \\mu_x\\neq\\mu_y\\)\n\\(\\psi_\\alpha=\\fone{|T| >q_{\\alpha/2}^{t_{N}}}\\)\n\\(\\P_{t_{N}}(|Z|>|T^{obs}|)\\)\n\n\n\\(H_0: \\mu_x\\leq\\mu_y, H_1: \\mu_x>\\mu_y\\)\n\\(\\psi_\\alpha=\\fone{T>q_\\alpha^{t_{N}}}\\)\n\\(\\P_{t_{N}}(Z>T^{obs})\\)\n\n\n\\(H_0: \\mu_x\\geq\\mu_y, H_1: \\mu_x<\\mu_y\\)\n\\(\\psi_\\alpha=\\fone{T<-q_\\alpha^{t_{N}}}\\)\n\\(\\P_{t_{N}}(Z<T^{obs})\\)"
+  },
+  {
+    "objectID": "40-hypothesis-test.html#kiểm-định-tỷ-lệ-hợp-lý",
+    "href": "40-hypothesis-test.html#kiểm-định-tỷ-lệ-hợp-lý",
+    "title": "6  Kiểm định",
+    "section": "6.9 Kiểm định tỷ lệ hợp lý",
+    "text": "6.9 Kiểm định tỷ lệ hợp lý\nLikelihood ratio test\nVới dữ liệu \\(X_1,\\ldots,X_n\\iid \\P_\\theta,\\) để kiểm định \\(H_0: \\theta \\in \\Theta_0,\\) \\(H_1: \\theta \\notin \\Theta_0,\\) định lượng tỷ lệ hợp lý là \\[\nT_n =\n2\\ln\\frac{{L_n}(\\hat{\\theta})}{{L_n}(\\hat{\\theta}_0)}\n\\] với \\(L(\\hat{\\theta})\\) là hợp lý cực đại tổng quát, còn \\(L(\\hat{\\theta}_0)\\) là hợp lý cực đại khi \\(H_0\\) đúng.\n\n6.9.1 Định lý Wilks\nGiả sử \\(\\theta=\\left(\\theta_1,\\ldots,\\theta_{q+r}\\right) \\in\\Theta\\subset\\R^{q+r},\\) \\[\n\\Theta_0=\\left\\{\\theta\\in\\Theta:\n\\left(\\theta_{q+1},\\ldots,\\theta_{q+r}\\right)\n=\n\\left(\\theta_{q+1}^{(0)},\\ldots,\\theta_{q+r}^{(0)}\\right)\n\\right\\}\n\\] với \\(\\left(\\theta_{q+1}^{(0)},\\ldots,\\theta_r^{(0)}\\right)\\in\\R^r\\) là cố định. Nếu \\(H_0\\) đúng và các điều kiện hội tụ của MLE (Thm 5.2) được thỏa mãn thì: \\[\nT_n\\todist\\chi_{r}^2.\n\\]"
+  },
+  {
+    "objectID": "40-hypothesis-test.html#kiểm-định-nhiều-lần",
+    "href": "40-hypothesis-test.html#kiểm-định-nhiều-lần",
+    "title": "6  Kiểm định",
+    "section": "6.10 Kiểm định nhiều lần",
+    "text": "6.10 Kiểm định nhiều lần\nGọi số lần thực hiện và quan sát kết quả kiểm định là \\(t,\\) mức độ lỗi loại 1 cho phép là \\(\\alpha.\\) Nếu \\(H_0\\) là đúng thì lỗi loại 1 sẽ xuất hiện khoảng \\(\\alpha t\\) lần, số lần này sẽ càng lớn nếu \\(t\\) càng lớn.\nGọi tỷ lệ p-value không vượt quá ngưỡng \\(\\alpha\\) là \\(F(\\alpha)\\is\\P(\\textrm{p-value}\\leq \\alpha).\\) Ta có \\(F(\\alpha)\\leq \\alpha\\) với mọi loại kiểm định. Hơn nữa, \\(F(\\alpha)=\\alpha\\) với kiểm định Student’s T."
   },
   {
     "objectID": "references.html#tham-khảo",

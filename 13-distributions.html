@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.242">
+<meta name="generator" content="quarto-1.2.262">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -60,7 +60,6 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script async="" src="https://hypothes.is/embed.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
@@ -86,24 +85,9 @@ ul.task-list li input[type="checkbox"] {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">XSTK</a> 
-        <div class="sidebar-tools-main tools-wide">
+        <div class="sidebar-tools-main">
     <a href="https://github.com/vochicong/xstk" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="./xstk.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
-    <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
-            <i class="bi bi-bi-twitter pe-1"></i>
-          Twitter
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
-            <i class="bi bi-bi-facebook pe-1"></i>
-          Facebook
-          </a>
-        </li>
-    </ul>
 </div>
     </div>
       </div>
@@ -164,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./40-hypothesis-test.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Giả thuyết</span></a>
+  <a href="./40-hypothesis-test.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kiểm định</span></a>
   </div>
 </li>
       </ul>
@@ -188,9 +172,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#phân-phối-poisson" id="toc-phân-phối-poisson" class="nav-link" data-scroll-target="#phân-phối-poisson"><span class="toc-section-number">2.3</span>  Phân phối Poisson</a></li>
   <li><a href="#phân-phối-geometric" id="toc-phân-phối-geometric" class="nav-link" data-scroll-target="#phân-phối-geometric"><span class="toc-section-number">2.4</span>  Phân phối Geometric</a></li>
   <li><a href="#phân-phối-exponential" id="toc-phân-phối-exponential" class="nav-link" data-scroll-target="#phân-phối-exponential"><span class="toc-section-number">2.5</span>  Phân phối Exponential</a></li>
-  <li><a href="#phân-phối-gaussian" id="toc-phân-phối-gaussian" class="nav-link" data-scroll-target="#phân-phối-gaussian"><span class="toc-section-number">2.6</span>  Phân phối Gaussian</a></li>
+  <li><a href="#phân-phối-chuẩn" id="toc-phân-phối-chuẩn" class="nav-link" data-scroll-target="#phân-phối-chuẩn"><span class="toc-section-number">2.6</span>  Phân phối chuẩn</a></li>
   <li><a href="#phân-phối-chi2" id="toc-phân-phối-chi2" class="nav-link" data-scroll-target="#phân-phối-chi2"><span class="toc-section-number">2.7</span>  Phân phối <span class="math inline">\(\chi^2\)</span></a></li>
-  <li><a href="#phân-phối-students-t" id="toc-phân-phối-students-t" class="nav-link" data-scroll-target="#phân-phối-students-t"><span class="toc-section-number">2.8</span>  Phân phối Student’s t</a></li>
+  <li><a href="#phân-phối-students-t" id="toc-phân-phối-students-t" class="nav-link" data-scroll-target="#phân-phối-students-t"><span class="toc-section-number">2.8</span>  Phân phối Student’s T</a></li>
   </ul>
 </nav>
     </div>
@@ -216,6 +200,7 @@ $$
 \def\TV{\textrm{TV}}
 \def\KL{\textrm{KL}}
 \def\vec#1{\boldsymbol{#1}}
+\def\todist{\xrightarrow[n\to\infty]{(d)}}
 $$
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -278,18 +263,23 @@ f(x)={\lambda}e^{-\lambda x},x\in\R_+
 \]</span> và <span class="math inline">\(\E[X]=1/\lambda,\V[X]=1/\lambda^2.\)</span></p>
 </div>
 </section>
-<section id="phân-phối-gaussian" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="phân-phối-gaussian"><span class="header-section-number">2.6</span> Phân phối Gaussian</h2>
+<section id="phân-phối-chuẩn" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="phân-phối-chuẩn"><span class="header-section-number">2.6</span> Phân phối chuẩn</h2>
+<p><em>Gaussian Distribution</em></p>
 <div id="def-gaussian" class="theorem definition">
-<p><span class="theorem-title"><strong>Def 2.6 </strong></span><span class="math inline">\(X\sim\Gaus(\mu,\sigma^2)\)</span> có mật độ <span class="math display">\[
+<p><span class="theorem-title"><strong>Def 2.6 (Phân phối chuẩn 1 biến) </strong></span><span class="math inline">\(X\sim\Gaus(\mu,\sigma^2)\)</span> có mật độ <span class="math display">\[
 f(x) =
 \frac{1}{\sqrt{\pi 2\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right),
 x\in\R
 \]</span> và <span class="math inline">\(\E[X]=\mu,\V[X]=\sigma^2\)</span>.</p>
 </div>
 <div id="thm-sum-gaussian" class="theorem">
-<p><span class="theorem-title"><strong>Thm 2.1 </strong></span>Nếu <span class="math inline">\(X_i \sim\Gaus(\mu_i,\sigma_i^2) (i=1,\ldots,n)\)</span> thì</p>
-<p><span class="math display">\[\sum_{i=1}^n X_i\sim\Gaus\left(\sum_{i=1}^n \mu_i,\sum_{i=1}^n \sigma_i^2\right)\]</span></p>
+<p><span class="theorem-title"><strong>Thm 2.1 (Tổng của các phân phối chuẩn) </strong></span>Nếu <span class="math inline">\(X_i \sim\Gaus(\mu_i,\sigma_i^2) (i=1,\ldots,n)\)</span> thì</p>
+<p><span class="math display">\[\sum_{i=1}^n X_i\sim\Gaus\left(\sum_{i=1}^n \mu_i,\sum_{i=1}^n \sigma_i^2\right)
+.\]</span></p>
+</div>
+<div id="def-normal-vector" class="theorem definition">
+<p><span class="theorem-title"><strong>Def 2.7 (Vector phân phối chuẩn) </strong></span>Nếu mọi tổ hợp tuyến tính các yếu tố của vector <span class="math inline">\(\boldsymbol{v}\)</span> đều thuộc phân phối chuẩn 1 biến thì <span class="math inline">\(\boldsymbol{v}\)</span> được gọi là một vector phân phối chuẩn.</p>
 </div>
 </section>
 <section id="phân-phối-chi2" class="level2" data-number="2.7">
@@ -302,12 +292,12 @@ X \is \sum_{i=0}^k X_i^2
 <p>tuân theo phân phối <span class="math inline">\(\chi_k^2\)</span> và có <span class="math inline">\(\E[X]=k,\V[X]=2k\)</span>.</p>
 </section>
 <section id="phân-phối-students-t" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="phân-phối-students-t"><span class="header-section-number">2.8</span> Phân phối Student’s t</h2>
+<h2 data-number="2.8" class="anchored" data-anchor-id="phân-phối-students-t"><span class="header-section-number">2.8</span> Phân phối Student’s T</h2>
 <p>Nếu có <span class="math inline">\(Z\sim\Gaus(0,1), V\sim \chi_k^2\)</span> độc lập với nhau thì</p>
 <p><span class="math display">\[
 X \is \frac{Z}{\sqrt{V/k}}
 \]</span></p>
-<p>tuân theo phân bố Student’s t.</p>
+<p>tuân theo phân phối Student’s <span class="math inline">\(t_k\)</span>.</p>
 
 
 </section>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.242">
+<meta name="generator" content="quarto-1.2.262">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -60,7 +60,6 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script async="" src="https://hypothes.is/embed.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
@@ -86,24 +85,9 @@ ul.task-list li input[type="checkbox"] {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">XSTK</a> 
-        <div class="sidebar-tools-main tools-wide">
+        <div class="sidebar-tools-main">
     <a href="https://github.com/vochicong/xstk" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="./xstk.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
-    <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
-            <i class="bi bi-bi-twitter pe-1"></i>
-          Twitter
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
-            <i class="bi bi-bi-facebook pe-1"></i>
-          Facebook
-          </a>
-        </li>
-    </ul>
 </div>
     </div>
       </div>
@@ -164,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./40-hypothesis-test.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Giả thuyết</span></a>
+  <a href="./40-hypothesis-test.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kiểm định</span></a>
   </div>
 </li>
       </ul>
@@ -217,6 +201,7 @@ $$
 \def\TV{\textrm{TV}}
 \def\KL{\textrm{KL}}
 \def\vec#1{\boldsymbol{#1}}
+\def\todist{\xrightarrow[n\to\infty]{(d)}}
 $$
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -253,12 +238,12 @@ X_n \xrightarrow[n\to\infty]{\P} X \iff
 0,\quad\forall\epsilon&gt;0.
 \]</span></p></li>
 <li><p>Hội tụ theo phân phối: <span class="math display">\[
-X_n \xrightarrow[n\to\infty]{(d)} X \iff
+X_n \todist X \iff
 \P[X_n(x)\leq x]\xrightarrow[n\to\infty]{} \P[X\leq x]
 \]</span> tại mọi điểm <span class="math inline">\(x\)</span> mà cdf của <span class="math inline">\(X\)</span> liên tục.</p></li>
 <li><p>Hội tụ về chuẩn: (asymptotically normal) với phương sai <span class="math inline">\(\sigma^2\)</span> <span class="math display">\[
 \sqrt{n}\left(\frac{{X}_n-X}{|\sigma|}\right)
-\xrightarrow[n\to\infty]{(d)}
+\todist
 \Gaus(0,1).
 \]</span></p></li>
 </ol>
@@ -271,9 +256,9 @@ X_n \xrightarrow[n\to\infty]{(d)} X \iff
 <p><span class="math display">\[
 X_n \xrightarrow[n\to\infty]{\as} X \implies
 X_n \xrightarrow[n\to\infty]{\P} X \implies
-X_n \xrightarrow[n\to\infty]{(d)} X.
+X_n \todist X.
 \]</span></p>
-<p>Nếu <span class="math inline">\(X_n \xrightarrow[n\to\infty]{(d)} X\)</span>, và <span class="math inline">\(X\)</span> có mật độ xác suất, thì <span class="math inline">\(X_n \xrightarrow[n\to\infty]{\P} X\)</span>.</p>
+<p>Nếu <span class="math inline">\(X_n \todist X\)</span>, và <span class="math inline">\(X\)</span> có mật độ xác suất, thì <span class="math inline">\(X_n \xrightarrow[n\to\infty]{\P} X\)</span>.</p>
 <p>Nếu chuỗi <span class="math inline">\(X_n\)</span> có <span class="math inline">\(\E[X_n]\xrightarrow[]{} \mu\)</span> và <span class="math inline">\(\V[X_n]\xrightarrow[]{} 0\)</span> thì <span class="math inline">\(X_n\xrightarrow[]{\P} \mu\)</span>.</p>
 <p>Nếu <span class="math inline">\(X_n\xrightarrow[n\to\infty]{\P} X\)</span> thì <span class="math inline">\(\P(a\leq X_n\leq b) \xrightarrow[n\to\infty]{} \P(a\leq X\leq b)\)</span> với mọi khoảng <span class="math inline">\([a,b]\)</span>.</p>
 </div>
@@ -316,7 +301,7 @@ X_n \xrightarrow[n\to\infty]{(d)} X.
 \left(
 \frac{\bar{X}_n-\mu}{|\sigma|}
 \right)
-\xrightarrow[n\to\infty]{(d)}
+\todist
 \Gaus(0,1).
 \]</span></p>
 </div>
@@ -337,7 +322,7 @@ X_n \xrightarrow[n\to\infty]{(d)} X.
 <p><span class="theorem-title"><strong>Thm 3.8 </strong></span>Giả sử chuỗi <span class="math inline">\((\theta_n)_{n\geq 1}\)</span> chuẩn tiến với phương sai <span class="math inline">\(\sigma^2\)</span> về một điểm <span class="math inline">\(\theta\in\R\)</span>. Giả sử <span class="math inline">\(g:\R\to\R\)</span> có vi phân <span class="math inline">\(g^\prime\)</span> liên tục tại <span class="math inline">\(\theta\)</span>. Khi đó, <span class="math display">\[
 \sqrt{n}\left(\frac{g(\theta_n)-g(\theta)}
 {\left|\sigma g^\prime(\theta)\right|}\right)
-\xrightarrow[n\to\infty]{(d)}
+\todist
 \Gaus\left(0,1\right)
 \]</span></p>
 </div>

@@ -111,18 +111,19 @@ $\boldsymbol{v}$
 
 ## Phân phối $\chi^2$
 
-Nếu $X_1,\ldots,X_k\iid\Gaus(0,1)$ thì
-tổng bình phương của chúng
+:::{#def-chi-dist}
+### Phân phối $\chi^2$
+$X\sim\chi_k^2$ là
+tổng bình phương của
+$X_1,\ldots,X_k\iid\Gaus(0,1)$
 
 $$
 X \is \sum_{i=0}^k X_i^2
-.
 $$
 
-tuân theo
-phân phối $\chi_k^2$
 và có
 $\E[X]=k,\V[X]=2k$.
+:::
 
 ## Phân phối Student's T
 

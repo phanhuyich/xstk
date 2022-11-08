@@ -59,8 +59,8 @@ format:
 
 crossref:
   fig-title: Hình
-  fig-prefix: Hình
+  fig-prefix: H
   def-title: Định nghĩa
-  def-prefix: Định nghĩa
+  def-prefix: ĐN
   thm-title: Định lý
-  thm-prefix: Định lý
+  thm-prefix: ĐL

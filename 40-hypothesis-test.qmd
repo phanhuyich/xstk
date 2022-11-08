@@ -200,9 +200,12 @@ $\mu_x,\sigma_x, \mu_y,\sigma_y$
 chưa biết, và ta muốn kiểm định $\mu_x-\mu_y.$
 Đặt
 $$ \hat{\mu}_n\is\frac{1}{n}\sum_{i=1}^{n}X_i,\quad
-\hat{\sigma}_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\hat{\mu}_n)^2 , $$
+\hat{\sigma}_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\hat{\mu}_n)^2
+,
+$$
 $$ \hat{\mu}_m\is\frac{1}{m}\sum_{i=1}^{m}Y_i,\quad
-\hat{\sigma}_m^2\is\frac{1}{m-1}\sum_{i=1}^{m}(Y_i-\hat{\mu}_m)^2.$$
+\hat{\sigma}_m^2\is\frac{1}{m-1}\sum_{i=1}^{m}(Y_i-\hat{\mu}_m)^2
+.$$
 Ta có gần đúng
 $$
 \frac{(\hat{\mu}_n-\hat{\mu}_m)-(\mu_x-\mu_y)}
@@ -283,3 +286,39 @@ Ta có $F(\alpha)\leq \alpha$ với mọi loại kiểm định.
 Hơn nữa,
 $F(\alpha)=\alpha$
 với kiểm định Student's T.
+
+## Kiểm định $\chi^2$
+
+:::{.hidden}
+$$
+\def\p{\vec{p}}
+$$
+:::
+
+:::{thm-chi-test}
+### Kiểm định $\chi^2$
+Gọi
+$\hat{\p}$
+là MLE (@def-mle),
+$\p^*$
+là tham số thật
+của mô hình phân loại
+$$
+\left(
+    \left\{a_1,\ldots,a_K\right\},
+    \{\P_{\p}\}_{\p\in\Delta_K}
+\right)
+.
+$$
+Khi đó
+$\sqrt{n}(\hat{\p}-\p^*)$
+tiến về phân phối chuẩn (@def-asymp-normal),
+còn
+$$
+n\sum_{i=1}^K\frac{(\hat{p}_i-p^*_i)^2}{p^*_i}
+\todist
+\chi_{K-1}^2
+$$
+tiến về phân phối $\chi^2$
+(@def-chi-dist).
+:::

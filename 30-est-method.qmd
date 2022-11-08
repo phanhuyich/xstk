@@ -104,13 +104,10 @@ thỏa mãn 2/4 đặc điểm của "khoảng cách":
 2. $\KL(\P_\theta, \P_\eta) \equiv 0 \iff \P_\theta \equiv \P_\eta$.
 :::
 
-## MLE
+## Hợp lý cực đại
 
-**Ước lượng hợp lý cực đại**
-(Maximum Likelihood Estimation)
-
-### Likelihood
 :::{#def-likelihood}
+#### Hợp lý, Likelihood
 $$L_\theta(x_1,\ldots,x_n)\is
 \P_\theta(X_1=x_1,\ldots,X_n=x_n)
 =
@@ -118,8 +115,8 @@ $$L_\theta(x_1,\ldots,x_n)\is
 .$$
 :::
 
-### Log likelihood
 :::{#def-likelihood}
+#### Log likelihood
 $$
 \ell_\theta(x_1,\ldots,x_n)\is
 \ln
@@ -130,9 +127,8 @@ L_\theta(x_1,\ldots,x_n)
 $$
 :::
 
-### Maximum Likelihood Estimator
 :::{#def-mle}
-
+#### Maximum Likelihood Estimator, MLE
 $$
 \hat{\theta}_n \is
 \argmax_\theta

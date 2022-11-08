@@ -183,6 +183,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#định-lý-wilks" id="toc-định-lý-wilks" class="nav-link" data-scroll-target="#định-lý-wilks"><span class="toc-section-number">6.9.1</span>  Định lý Wilks</a></li>
   </ul></li>
   <li><a href="#kiểm-định-nhiều-lần" id="toc-kiểm-định-nhiều-lần" class="nav-link" data-scroll-target="#kiểm-định-nhiều-lần"><span class="toc-section-number">6.10</span>  Kiểm định nhiều lần</a></li>
+  <li><a href="#kiểm-định-chi2" id="toc-kiểm-định-chi2" class="nav-link" data-scroll-target="#kiểm-định-chi2"><span class="toc-section-number">6.11</span>  Kiểm định <span class="math inline">\(\chi^2\)</span></a>
+  <ul class="collapse">
+  <li><a href="#kiểm-định-chi2-1" id="toc-kiểm-định-chi2-1" class="nav-link" data-scroll-target="#kiểm-định-chi2-1"><span class="toc-section-number">6.11.1</span>  Kiểm định <span class="math inline">\(\chi^2\)</span></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -200,6 +204,7 @@ $$
 \def\is{:=}
 \def\Gaus{\mathcal{N}}
 \def\fone#1{\mathbb{1}\{#1\}}
+\def\p{\vec{p}}
 \def\P{\mathbb{P}}
 \def\Poi{\text{Poi}}
 \def\R{\mathbb{R}}
@@ -413,7 +418,7 @@ S_n^2:=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2.
 </section>
 <section id="students-t-test" class="level2" data-number="6.7">
 <h2 data-number="6.7" class="anchored" data-anchor-id="students-t-test"><span class="header-section-number">6.7</span> Student’s T test</h2>
-<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus(\mu,\sigma^2),\)</span> <span class="math inline">\(\mu,\sigma\)</span> chưa biết, và ta muốn kiểm định <span class="math inline">\(\mu.\)</span> Theo <a href="#thm-cochoran">Định lý&nbsp;<span>6.1</span></a>, <span class="math display">\[
+<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus(\mu,\sigma^2),\)</span> <span class="math inline">\(\mu,\sigma\)</span> chưa biết, và ta muốn kiểm định <span class="math inline">\(\mu.\)</span> Theo <a href="#thm-cochoran">ĐL&nbsp;<span>6.1</span></a>, <span class="math display">\[
 T:=
 \frac{\bar{X}_n-\mu}{\sqrt{S_n^2/n}}
 \equiv
@@ -456,21 +461,25 @@ T:=
 </section>
 <section id="two-sample-t-test" class="level2" data-number="6.8">
 <h2 data-number="6.8" class="anchored" data-anchor-id="two-sample-t-test"><span class="header-section-number">6.8</span> Two-sample T-test</h2>
-<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus(\mu_x,\sigma_x^2),\)</span> <span class="math inline">\(Y_1,\ldots,Y_m\iid\Gaus(\mu_y,\sigma_y^2),\)</span> với <span class="math inline">\(\mu_x,\sigma_x, \mu_y,\sigma_y\)</span> chưa biết, và ta muốn kiểm định <span class="math inline">\(\mu_x-\mu_y.\)</span> Đặt <span class="math display">\[
-S_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2 , \]</span> <span class="math display">\[
-S_m^2\is\frac{1}{m-1}\sum_{i=1}^{n}(Y_i-\bar{Y}_m)^2 , \]</span> Ta có gần đúng <span class="math display">\[
-\frac{(\bar{X}_n-\bar{Y}_m)-(\mu_x-\mu_y)}
-{\sqrt{S_n^2/n + S_m^2/m}}
+<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus(\mu_x,\sigma_x^2),\)</span> <span class="math inline">\(Y_1,\ldots,Y_m\iid\Gaus(\mu_y,\sigma_y^2),\)</span> với <span class="math inline">\(\mu_x,\sigma_x, \mu_y,\sigma_y\)</span> chưa biết, và ta muốn kiểm định <span class="math inline">\(\mu_x-\mu_y.\)</span> Đặt <span class="math display">\[ \hat{\mu}_n\is\frac{1}{n}\sum_{i=1}^{n}X_i,\quad
+\hat{\sigma}_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\hat{\mu}_n)^2
+,
+\]</span> <span class="math display">\[ \hat{\mu}_m\is\frac{1}{m}\sum_{i=1}^{m}Y_i,\quad
+\hat{\sigma}_m^2\is\frac{1}{m-1}\sum_{i=1}^{m}(Y_i-\hat{\mu}_m)^2
+.\]</span> Ta có gần đúng <span class="math display">\[
+\frac{(\hat{\mu}_n-\hat{\mu}_m)-(\mu_x-\mu_y)}
+{\sqrt{\hat{\sigma}_n^2/n + \hat{\sigma}_m^2/m}}
 \sim t_N
 \]</span> là phân phối Student’s T với độ tự do tuân theo công thức WS (Welch-Satterthwaite): <span class="math display">\[
 N =
-\frac{\sqrt{S_n^2/n + S_m^2/m}}
-{\sqrt{\frac{S_n^4}{n^2(n-1)}  + \frac{S_m^4}{m^2(m-1)}}}
+\frac{(\hat{\sigma}_n^2/n + \hat{\sigma}_m^2/m)^2}
+{{{\hat{\sigma}_n^4}/{\left(n^2(n-1)\right)}  +
+{\hat{\sigma}_m^4}/{\left(m^2(m-1)\right)}}}
 \geq \min(n, m)
 \]</span> Đặt <span class="math display">\[
-T = \frac{\bar{X}_n-\bar{Y}_m}
-{\sqrt{S_n^2/n + S_m^2/m}}
-\]</span></p>
+T = \frac{\hat{\mu}_n-\hat{\mu}_m}
+{\sqrt{\hat{\sigma}_n^2/n + \hat{\sigma}_m^2/m}}
+.\]</span></p>
 <table class="table">
 <colgroup>
 <col style="width: 36%">
@@ -518,7 +527,7 @@ T_n =
 =
 \left(\theta_{q+1}^{(0)},\ldots,\theta_{q+r}^{(0)}\right)
 \right\}
-\]</span> với <span class="math inline">\(\left(\theta_{q+1}^{(0)},\ldots,\theta_r^{(0)}\right)\in\R^r\)</span> là cố định. Nếu <span class="math inline">\(H_0\)</span> đúng và các điều kiện hội tụ của MLE (<a href="30-est-method.html#thm-mle-asym">Định lý&nbsp;<span>5.2</span></a>) được thỏa mãn thì: <span class="math display">\[
+\]</span> với <span class="math inline">\(\left(\theta_{q+1}^{(0)},\ldots,\theta_r^{(0)}\right)\in\R^r\)</span> là cố định. Nếu <span class="math inline">\(H_0\)</span> đúng và các điều kiện hội tụ của MLE (<a href="30-est-method.html#thm-mle-asym">ĐL&nbsp;<span>5.2</span></a>) được thỏa mãn thì: <span class="math display">\[
 T_n\todist\chi_{r}^2.
 \]</span></p>
 </section>
@@ -527,6 +536,23 @@ T_n\todist\chi_{r}^2.
 <h2 data-number="6.10" class="anchored" data-anchor-id="kiểm-định-nhiều-lần"><span class="header-section-number">6.10</span> Kiểm định nhiều lần</h2>
 <p>Gọi số lần thực hiện và quan sát kết quả kiểm định là <span class="math inline">\(t,\)</span> mức độ lỗi loại 1 cho phép là <span class="math inline">\(\alpha.\)</span> Nếu <span class="math inline">\(H_0\)</span> là đúng thì lỗi loại 1 sẽ xuất hiện khoảng <span class="math inline">\(\alpha t\)</span> lần, số lần này sẽ càng lớn nếu <span class="math inline">\(t\)</span> càng lớn.</p>
 <p>Gọi tỷ lệ p-value không vượt quá ngưỡng <span class="math inline">\(\alpha\)</span> là <span class="math inline">\(F(\alpha)\is\P(\textrm{p-value}\leq \alpha).\)</span> Ta có <span class="math inline">\(F(\alpha)\leq \alpha\)</span> với mọi loại kiểm định. Hơn nữa, <span class="math inline">\(F(\alpha)=\alpha\)</span> với kiểm định Student’s T.</p>
+</section>
+<section id="kiểm-định-chi2" class="level2" data-number="6.11">
+<h2 data-number="6.11" class="anchored" data-anchor-id="kiểm-định-chi2"><span class="header-section-number">6.11</span> Kiểm định <span class="math inline">\(\chi^2\)</span></h2>
+<section id="kiểm-định-chi2-1" class="level3 {thm-chi-test}" data-number="6.11.1">
+<h3 data-number="6.11.1" class="anchored" data-anchor-id="kiểm-định-chi2-1"><span class="header-section-number">6.11.1</span> Kiểm định <span class="math inline">\(\chi^2\)</span></h3>
+<p>Gọi <span class="math inline">\(\hat{\p}\)</span> là MLE (<a href="30-est-method.html#def-mle">ĐN&nbsp;<span>5.5</span></a>), <span class="math inline">\(\p^{*}\)</span> là tham số thật của mô hình phân loại <span class="math display">\[
+\left(
+    \left\{a_1,\ldots,a_K\right\},
+    \{\P_{\p}\}_{\p\in\Delta_K}
+\right)
+.
+\]</span> Khi đó <span class="math inline">\(\sqrt{n}(\hat{\p}-\p^*)\)</span> tiến về phân phối chuẩn (<a href="15-proba-converge.html#def-asymp-normal">ĐN&nbsp;<span>3.4</span></a>), còn <span class="math display">\[
+n\sum_{i=1}^K\frac{(\hat{p}_i-p^*_i)^2}{p^*_i}
+\todist
+\chi_{K-1}^2
+\]</span> tiến về phân phối <span class="math inline">\(\chi^2\)</span> (<a href="13-distributions.html#def-chi-dist">ĐN&nbsp;<span>2.8</span></a>).</p>
+</section>
 
 
 </section>

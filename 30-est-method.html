@@ -177,12 +177,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#phân-kỳ-kl-1" id="toc-phân-kỳ-kl-1" class="nav-link" data-scroll-target="#phân-kỳ-kl-1"><span class="toc-section-number">5.3.1</span>  Phân kỳ KL</a></li>
   <li><a href="#đặc-điểm" id="toc-đặc-điểm" class="nav-link" data-scroll-target="#đặc-điểm"><span class="toc-section-number">5.3.2</span>  Đặc điểm</a></li>
   </ul></li>
-  <li><a href="#mle" id="toc-mle" class="nav-link" data-scroll-target="#mle"><span class="toc-section-number">5.4</span>  MLE</a>
-  <ul class="collapse">
-  <li><a href="#likelihood" id="toc-likelihood" class="nav-link" data-scroll-target="#likelihood"><span class="toc-section-number">5.4.1</span>  Likelihood</a></li>
-  <li><a href="#log-likelihood" id="toc-log-likelihood" class="nav-link" data-scroll-target="#log-likelihood"><span class="toc-section-number">5.4.2</span>  Log likelihood</a></li>
-  <li><a href="#maximum-likelihood-estimator" id="toc-maximum-likelihood-estimator" class="nav-link" data-scroll-target="#maximum-likelihood-estimator"><span class="toc-section-number">5.4.3</span>  Maximum Likelihood Estimator</a></li>
-  </ul></li>
+  <li><a href="#hợp-lý-cực-đại" id="toc-hợp-lý-cực-đại" class="nav-link" data-scroll-target="#hợp-lý-cực-đại"><span class="toc-section-number">5.4</span>  Hợp lý cực đại</a></li>
   <li><a href="#mix-model" id="toc-mix-model" class="nav-link" data-scroll-target="#mix-model"><span class="toc-section-number">5.5</span>  Mix model</a>
   <ul class="collapse">
   <li><a href="#giải-thuật-em" id="toc-giải-thuật-em" class="nav-link" data-scroll-target="#giải-thuật-em"><span class="toc-section-number">5.5.1</span>  Giải thuật EM</a></li>
@@ -206,6 +201,7 @@ $$
 \def\is{:=}
 \def\Gaus{\mathcal{N}}
 \def\fone#1{\mathbb{1}\{#1\}}
+\def\p{\vec{p}}
 \def\P{\mathbb{P}}
 \def\Poi{\text{Poi}}
 \def\R{\mathbb{R}}
@@ -299,23 +295,17 @@ $$
 </div>
 </section>
 </section>
-<section id="mle" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="mle"><span class="header-section-number">5.4</span> MLE</h2>
-<p><strong>Ước lượng hợp lý cực đại</strong> (Maximum Likelihood Estimation)</p>
-<section id="likelihood" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="likelihood"><span class="header-section-number">5.4.1</span> Likelihood</h3>
+<section id="hợp-lý-cực-đại" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="hợp-lý-cực-đại"><span class="header-section-number">5.4</span> Hợp lý cực đại</h2>
 <div id="def-likelihood" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 5.3 </strong></span><span class="math display">\[L_\theta(x_1,\ldots,x_n)\is
+<p><span class="theorem-title"><strong>Định nghĩa 5.3 (Hợp lý, Likelihood) </strong></span><span class="math display">\[L_\theta(x_1,\ldots,x_n)\is
 \P_\theta(X_1=x_1,\ldots,X_n=x_n)
 =
 \prod_{i=1}^n p_\theta(X_i=x_i)
 .\]</span></p>
 </div>
-</section>
-<section id="log-likelihood" class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="log-likelihood"><span class="header-section-number">5.4.2</span> Log likelihood</h3>
 <div id="def-likelihood" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 5.4 </strong></span><span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 5.4 (Log likelihood) </strong></span><span class="math display">\[
 \ell_\theta(x_1,\ldots,x_n)\is
 \ln
 L_\theta(x_1,\ldots,x_n)
@@ -324,11 +314,8 @@ L_\theta(x_1,\ldots,x_n)
 .
 \]</span></p>
 </div>
-</section>
-<section id="maximum-likelihood-estimator" class="level3" data-number="5.4.3">
-<h3 data-number="5.4.3" class="anchored" data-anchor-id="maximum-likelihood-estimator"><span class="header-section-number">5.4.3</span> Maximum Likelihood Estimator</h3>
 <div id="def-mle" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 5.5 </strong></span><span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 5.5 (Maximum Likelihood Estimator, MLE) </strong></span><span class="math display">\[
 \hat{\theta}_n \is
 \argmax_\theta
 L_\theta(x_1,\ldots,x_n)
@@ -338,7 +325,6 @@ L_\theta(x_1,\ldots,x_n)
 .
 \]</span></p>
 </div>
-</section>
 </section>
 <section id="mix-model" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="mix-model"><span class="header-section-number">5.5</span> Mix model</h2>
@@ -352,7 +338,7 @@ X = \sum_{k=1}^K
 <section id="giải-thuật-em" class="level3" data-number="5.5.1">
 <h3 data-number="5.5.1" class="anchored" data-anchor-id="giải-thuật-em"><span class="header-section-number">5.5.1</span> Giải thuật EM</h3>
 <div id="def-em-alg" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 5.7 </strong></span>(<strong>E</strong>stimation <strong>M</strong>aximization) <em>có thể</em> tìm được tham số <span class="math inline">\(\theta\)</span> của mô hình hỗn hợp <a href="#def-mix-model">Định nghĩa&nbsp;<span>5.6</span></a>.</p>
+<p><span class="theorem-title"><strong>Định nghĩa 5.7 </strong></span>(<strong>E</strong>stimation <strong>M</strong>aximization) <em>có thể</em> tìm được tham số <span class="math inline">\(\theta\)</span> của mô hình hỗn hợp <a href="#def-mix-model">ĐN&nbsp;<span>5.6</span></a>.</p>
 <p>Giả sử ta quan sát được <span class="math inline">\(X_1=x_1, \ldots, X_n=x_n\)</span>. Gọi các trọng số tiềm ẩn tương ứng là <span class="math inline">\(Z_1=z_1, \ldots, Z_n=z_n.\)</span></p>
 <p>Sau khi khởi tạo <span class="math inline">\(\theta = \theta_0\)</span> ngẫu nhiên, ta lặp lại 2 bước <strong>E, M</strong> như sau để cập nhật <span class="math inline">\(\theta_k, k=1,2,\ldots\)</span> cho đến khi hội tụ.</p>
 <ul>

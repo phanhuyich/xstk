@@ -193,6 +193,7 @@ $$
 \def\is{:=}
 \def\Gaus{\mathcal{N}}
 \def\fone#1{\mathbb{1}\{#1\}}
+\def\p{\vec{p}}
 \def\P{\mathbb{P}}
 \def\Poi{\text{Poi}}
 \def\R{\mathbb{R}}
@@ -224,29 +225,34 @@ $$
 <p>Có một số kiểu hội tụ của biến ngẫu nhiên.</p>
 <section id="hội-tụ-xác-suất" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="hội-tụ-xác-suất"><span class="header-section-number">3.1</span> Hội tụ xác suất</h2>
-<div id="def-conv-proba" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 3.1 </strong></span>Cho một chuỗi biến ngẫu nhiên <span class="math inline">\(X_1,X_2,\ldotp\)</span> và một biến ngẫu nhiên <span class="math inline">\(X\)</span>.</p>
-<ol type="1">
-<li><p>Hội tụ gần tuyệt đối: <span class="math display">\[
+<p>Cho một chuỗi biến ngẫu nhiên <span class="math inline">\(X_1,X_2,\ldotp\)</span> và một biến ngẫu nhiên <span class="math inline">\(X\)</span>.</p>
+<div id="def-conv-sure" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 3.1 (Hội tụ gần tuyệt đối) </strong></span><span class="math display">\[
 X_n \xrightarrow[n\to\infty]{\as} X \iff
 \P(\{\omega\in\Omega: X_n(\omega)\to X(\omega)\}) = 1.
-\]</span></p></li>
-<li><p>Hội tụ theo xác suất: <span class="math display">\[
+\]</span></p>
+</div>
+<div id="def-conv-proba" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 3.2 (Hội tụ theo xác suất) </strong></span><span class="math display">\[
 X_n \xrightarrow[n\to\infty]{\P} X \iff
 \P(|X_n-X| &gt;\epsilon)
 \xrightarrow[n\to\infty]{}
 0,\quad\forall\epsilon&gt;0.
-\]</span></p></li>
-<li><p>Hội tụ theo phân phối: <span class="math display">\[
+\]</span></p>
+</div>
+<div id="def-conv-dist" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 3.3 (Hội tụ theo phân phối) </strong></span><span class="math display">\[
 X_n \todist X \iff
 \P[X_n(x)\leq x]\xrightarrow[n\to\infty]{} \P[X\leq x]
-\]</span> tại mọi điểm <span class="math inline">\(x\)</span> mà cdf của <span class="math inline">\(X\)</span> liên tục.</p></li>
-<li><p>Hội tụ về chuẩn: (asymptotically normal) với phương sai <span class="math inline">\(\sigma^2\)</span> <span class="math display">\[
-\sqrt{n}\left(\frac{{X}_n-X}{|\sigma|}\right)
+\]</span> tại mọi điểm <span class="math inline">\(x\)</span> mà cdf của <span class="math inline">\(X\)</span> liên tục.</p>
+</div>
+<div id="def-asymp-normal" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 3.4 (Hội tụ về chuẩn) </strong></span>(asymptotically normal) với phương sai <span class="math inline">\(\sigma^2\)</span> <span class="math display">\[
+\frac{\sqrt{n}}{|\sigma|}
+\left({X}_n-X\right)
 \todist
 \Gaus(0,1).
-\]</span></p></li>
-</ol>
+\]</span></p>
 </div>
 </section>
 <section id="độ-mạnh" class="level2" data-number="3.2">
@@ -272,7 +278,7 @@ X_n \todist X.
 <section id="slutsky" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="slutsky"><span class="header-section-number">3.4</span> Slutsky</h2>
 <div id="thm-slutsky" class="theorem">
-<p><span class="theorem-title"><strong>Định lý 3.3 </strong></span>Hơn nữa, ở <a href="#thm-convege">Định lý&nbsp;<span>3.2</span></a> nếu <span class="math inline">\(Y_n \xrightarrow[]{\P} y\)</span>, <span class="math inline">\(y\)</span> là một số thực cố định thì có thể nới lỏng điều kiện đối với <span class="math inline">\(X_n\)</span> thành hội tụ theo phân phối.</p>
+<p><span class="theorem-title"><strong>Định lý 3.3 </strong></span>Hơn nữa, ở <a href="#thm-convege">ĐL&nbsp;<span>3.2</span></a> nếu <span class="math inline">\(Y_n \xrightarrow[]{\P} y\)</span>, <span class="math inline">\(y\)</span> là một số thực cố định thì có thể nới lỏng điều kiện đối với <span class="math inline">\(X_n\)</span> thành hội tụ theo phân phối.</p>
 </div>
 </section>
 <section id="ánh-xạ-liên-tục" class="level2" data-number="3.5">
@@ -319,11 +325,33 @@ X_n \todist X.
 <section id="phương-pháp-delta" class="level2" data-number="3.9">
 <h2 data-number="3.9" class="anchored" data-anchor-id="phương-pháp-delta"><span class="header-section-number">3.9</span> Phương pháp Delta</h2>
 <div id="thm-delta-method" class="theorem">
-<p><span class="theorem-title"><strong>Định lý 3.8 </strong></span>Giả sử chuỗi <span class="math inline">\((\theta_n)_{n\geq 1}\)</span> chuẩn tiến với phương sai <span class="math inline">\(\sigma^2\)</span> về một điểm <span class="math inline">\(\theta\in\R\)</span>. Giả sử <span class="math inline">\(g:\R\to\R\)</span> có vi phân <span class="math inline">\(g^\prime\)</span> liên tục tại <span class="math inline">\(\theta\)</span>. Khi đó, <span class="math display">\[
-\sqrt{n}\left(\frac{g(\theta_n)-g(\theta)}
-{\left|\sigma g^\prime(\theta)\right|}\right)
+<p><span class="theorem-title"><strong>Định lý 3.8 (Phương pháp Delta) </strong></span>Giả sử chuỗi <span class="math inline">\((\theta_n)_{n\geq 1}\)</span> chuẩn tiến (<a href="#def-asymp-normal">ĐN&nbsp;<span>3.4</span></a>) với phương sai <span class="math inline">\(\sigma^2\)</span> về một điểm <span class="math inline">\(\theta\in\R\)</span>. Giả sử <span class="math inline">\(g:\R\to\R\)</span> có vi phân <span class="math inline">\(g^\prime\)</span> liên tục, <span class="math inline">\(\neq 0\)</span> tại <span class="math inline">\(\theta\)</span>. Khi đó, <span class="math display">\[
+\frac{\sqrt{n}}{|\sigma|}
+\left(\frac{g(\theta_n)-g(\theta)}
+{g^\prime(\theta)}\right)
 \todist
 \Gaus\left(0,1\right)
+\]</span></p>
+</div>
+<div id="thm-multivar-delta" class="theorem">
+<p><span class="theorem-title"><strong>Định lý 3.9 (Phương pháp Delta nhiều biến) </strong></span>Giả sử chuỗi <span class="math inline">\((\vec{\theta}_n)_{n\geq 1}\)</span> chuẩn tiến với phương sai <span class="math inline">\(\Sigma(\vec{\theta})\)</span> về <span class="math inline">\(\vec{\theta}\in\R^d:\)</span> <span class="math display">\[
+\sqrt{n}(\vec{\theta}_n-\vec{\theta})
+\todist\Gaus_d(\vec{0},\Sigma).
+\]</span></p>
+<p>Giả sử <span class="math inline">\(g:\R^d\to\R^k\)</span> có vi phân <span class="math inline">\(\nabla g\)</span> liên tục <span class="math inline">\((k&lt;d)\)</span>. Khi đó, <span class="math display">\[
+\sqrt{n}\left(g(\vec{\theta}_n)-g(\vec{\theta})\right)
+\todist\Gaus_k
+\left(\vec{0}, \Gamma\right)
+,
+\]</span></p>
+<p>với <span class="math inline">\(\Gamma:=\nabla g(\vec{\theta})^T \Sigma \nabla g(\vec{\theta}).\)</span> Nếu <span class="math inline">\(\Sigma\)</span> khả nghịch, <span class="math inline">\(\nabla g\)</span> rank <span class="math inline">\(k\)</span> thì <span class="math inline">\(\Gamma\)</span> khả nghịch, <span class="math display">\[
+\sqrt{n}\Gamma^{-1/2}\left(g(\vec{\theta}_n)-g(\vec{\theta})\right)
+\todist\Gaus_k\left(\vec{0}, \vec{I}_k\right)
+,
+\]</span> <span class="math display">\[
+{n}\Gamma^{-1}\left(g(\vec{\theta}_n)-g(\vec{\theta})\right)^2
+\todist\chi_k^2
+.
 \]</span></p>
 </div>
 

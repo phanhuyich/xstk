@@ -64,3 +64,5 @@ crossref:
   def-prefix: ĐN
   thm-title: Định lý
   thm-prefix: ĐL
+  cor-title: Hệ quả
+  cor-prefix: HQ

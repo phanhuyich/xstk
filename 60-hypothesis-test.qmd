@@ -323,6 +323,13 @@ $$
 .$$
 :::
 
+:::{#cor-chi-test-continous}
+### Kiểm định $\chi^2$ cho phân phối liên tục
+Đối với phân phối liên tục, ta có thể phân hoạch tập giá trị biến
+thành các khoảng (quantile) để chuyển
+thành phân phối rời rạc rồi áp dụng kiểm định $\chi^2.$
+:::
+
 ## Kiểm định KS
 
 :::{#def-kolmogorov-smirnov}

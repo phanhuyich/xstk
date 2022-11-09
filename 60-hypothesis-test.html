@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.262">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>XSTK - 6&nbsp; Kiểm định</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./50-est-method.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kiểm định</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">XSTK</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/vochicong/xstk" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="./xstk.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Lời nói đầu</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Xác suất</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-proba-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Xác suất</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-distributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Phân phối</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./30-proba-converge.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Hội tụ</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Thống kê</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./40-stat-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Thống kê</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./50-est-method.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ước lượng</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./60-hypothesis-test.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kiểm định</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">Giáo trình</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#giả-thuyết-không-và-đối" id="toc-giả-thuyết-không-và-đối" class="nav-link active" data-scroll-target="#giả-thuyết-không-và-đối"><span class="toc-section-number">6.1</span>  Giả thuyết không và đối</a></li>
+  <li><a href="#kiểm-định" id="toc-kiểm-định" class="nav-link" data-scroll-target="#kiểm-định"><span class="toc-section-number">6.2</span>  Kiểm định</a></li>
+  <li><a href="#mức-độ-lỗi" id="toc-mức-độ-lỗi" class="nav-link" data-scroll-target="#mức-độ-lỗi"><span class="toc-section-number">6.3</span>  Mức độ lỗi</a>
+  <ul class="collapse">
+  <li><a href="#p-value" id="toc-p-value" class="nav-link" data-scroll-target="#p-value"><span class="toc-section-number">6.3.1</span>  p-value</a></li>
+  </ul></li>
+  <li><a href="#khoảng-tin-cậy" id="toc-khoảng-tin-cậy" class="nav-link" data-scroll-target="#khoảng-tin-cậy"><span class="toc-section-number">6.4</span>  Khoảng tin cậy</a></li>
+  <li><a href="#wald-test" id="toc-wald-test" class="nav-link" data-scroll-target="#wald-test"><span class="toc-section-number">6.5</span>  Wald Test</a></li>
+  <li><a href="#định-lý-cochran" id="toc-định-lý-cochran" class="nav-link" data-scroll-target="#định-lý-cochran"><span class="toc-section-number">6.6</span>  Định lý Cochran</a></li>
+  <li><a href="#students-t-test" id="toc-students-t-test" class="nav-link" data-scroll-target="#students-t-test"><span class="toc-section-number">6.7</span>  Student’s T test</a></li>
+  <li><a href="#two-sample-t-test" id="toc-two-sample-t-test" class="nav-link" data-scroll-target="#two-sample-t-test"><span class="toc-section-number">6.8</span>  Two-sample T-test</a></li>
+  <li><a href="#kiểm-định-tỷ-lệ-hợp-lý" id="toc-kiểm-định-tỷ-lệ-hợp-lý" class="nav-link" data-scroll-target="#kiểm-định-tỷ-lệ-hợp-lý"><span class="toc-section-number">6.9</span>  Kiểm định tỷ lệ hợp lý</a>
+  <ul class="collapse">
+  <li><a href="#định-lý-wilks" id="toc-định-lý-wilks" class="nav-link" data-scroll-target="#định-lý-wilks"><span class="toc-section-number">6.9.1</span>  Định lý Wilks</a></li>
+  </ul></li>
+  <li><a href="#kiểm-định-nhiều-lần" id="toc-kiểm-định-nhiều-lần" class="nav-link" data-scroll-target="#kiểm-định-nhiều-lần"><span class="toc-section-number">6.10</span>  Kiểm định nhiều lần</a></li>
+  <li><a href="#kiểm-định-chi2" id="toc-kiểm-định-chi2" class="nav-link" data-scroll-target="#kiểm-định-chi2"><span class="toc-section-number">6.11</span>  Kiểm định <span class="math inline">\(\chi^2\)</span></a></li>
+  <li><a href="#kiểm-định-ks" id="toc-kiểm-định-ks" class="nav-link" data-scroll-target="#kiểm-định-ks"><span class="toc-section-number">6.12</span>  Kiểm định KS</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+$$
+\def\argmax{\operatorname*{argmax}}
+\def\argmin{\operatorname*{argmin}}
+\def\as{\textrm{a.s.}}
+\def\Ber{\text{Ber}}
+\def\Bin{\text{Bin}}
+\def\Unif{\text{Unif}}
+\def\E{\mathbb{E}}
+\def\iid{\stackrel{iid}{\sim}}
+\def\is{\coloneqq}
+\def\Gaus{\mathcal{N}}
+\def\indicator#1{\mathbb{1}\{#1\}}
+\def\p{\vec{p}}
+\def\P{\mathbb{P}}
+\def\Poi{\text{Poi}}
+\def\R{\mathbb{R}}
+\def\V{\mathbb{V}}
+\def\N{\mathbb{Z}_+}
+\def\TV{\textrm{TV}}
+\def\KL{\textrm{KL}}
+\def\vec#1{\boldsymbol{#1}}
+\def\toapd{\xrightarrow[n\to\infty]{\as/\P/(d)}}
+\def\toprob{\xrightarrow[n\to\infty]{\P}}
+\def\tosure{\xrightarrow[n\to\infty]{\as}}
+\def\todist{\xrightarrow[n\to\infty]{(d)}}
+$$
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kiểm định</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Hypothesis testing</p>
+<ul>
+<li>Định nghĩa giả thuyết không và giả thuyết đối.</li>
+<li>Thiết kế kiểm định thống kê</li>
+<li>Phân loại lỗi Loại 1 và Loại 2</li>
+<li>Tính hàm công suất của kiểm định</li>
+<li>Định mức đối với kiểm định</li>
+<li>Tính toán và giải thích giá trị p</li>
+</ul>
+<section id="giả-thuyết-không-và-đối" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="giả-thuyết-không-và-đối"><span class="header-section-number">6.1</span> Giả thuyết không và đối</h2>
+<p>Với mô hình thống kê <span class="math inline">\(\left(E,(\P_\theta)_{\theta\in\Theta}\right),\)</span> sử dụng bộ mẫu dữ liệu iid <span class="math inline">\(X_1,\ldots,X_n,\)</span> ta xem xét hai giả thuyết về tham số <span class="math inline">\(\theta\)</span> như sau:</p>
+<p><span class="math display">\[
+\begin{cases}
+H_0:&amp;\theta\in\Theta_0\\
+H_1:&amp;\theta\in\Theta_1
+\end{cases}
+\]</span></p>
+<p>với <span class="math inline">\(\Theta_0,\Theta_1\)</span> là phân mảnh (không giao nhau) của <span class="math inline">\(\Theta,\)</span> <span class="math inline">\(\Theta_0\)</span> là “thường thức” (status quo), còn <span class="math inline">\(\Theta_1\)</span> là “phát hiện” (discovery) mới. Ta gọi <span class="math inline">\(H_0\)</span> là giả thuyết không, còn <span class="math inline">\(H_1\)</span> là giả thuyết đối (thay thế).</p>
+</section>
+<section id="kiểm-định" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="kiểm-định"><span class="header-section-number">6.2</span> Kiểm định</h2>
+<p>Ta sẽ <strong>kiểm định</strong> <span class="math inline">\(H_0\)</span> đối với <span class="math inline">\(H_1\)</span> bằng cách chọn và sử dụng một định lượng thống kê <span class="math inline">\(\psi(X_1,\ldots,X_n)\in\{0,1\}.\)</span></p>
+<table class="table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 36%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;"><span class="math inline">\(\psi=0:\)</span> chấp nhận <span class="math inline">\(H_0\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\psi=1:\)</span> phủ nhận <span class="math inline">\(H_0\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\theta\in\Theta_0\)</span></td>
+<td style="text-align: center;">Kiểm định đúng</td>
+<td style="text-align: center;">Lỗi loại 1</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\theta\in\Theta_1\)</span></td>
+<td style="text-align: center;">Lỗi loại 2</td>
+<td style="text-align: center;">Kiểm định đúng</td>
+</tr>
+</tbody>
+</table>
+<p>Có thể viết <span class="math inline">\(\psi=\indicator{R_\psi}\)</span> với sự kiện <span class="math inline">\(R_\psi\)</span> là <strong>vùng phủ nhận</strong>, còn <span class="math inline">\(R_\psi^c\)</span> là <strong>vùng chấp nhận</strong> .</p>
+<p>Ta thiết kế kiểm định sao cho hàm <strong>công suất</strong> sau đây có giá trị nhỏ khi <span class="math inline">\(\theta\in\Theta_0\)</span> và lớn khi <span class="math inline">\(\theta\in\Theta_1:\)</span></p>
+<p><span class="math display">\[
+\beta_\psi(\theta) \is \P_\theta(\psi=1) \equiv \P_\theta(R_\psi)\in[0,1]
+\]</span></p>
+<p>Vùng phủ nhận thường có dạng <span class="math display">\[
+R_\psi = \{X_i: T(X_i)\geq c\}
+\]</span> với <span class="math inline">\(T\)</span> là một lượng thống kê còn <span class="math inline">\(c\)</span> là một giá trị biên.</p>
+</section>
+<section id="mức-độ-lỗi" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="mức-độ-lỗi"><span class="header-section-number">6.3</span> Mức độ lỗi</h2>
+<p>Kiểm định <span class="math inline">\(\psi\)</span> là ở mức (significance level) <span class="math inline">\(\alpha\in(0,1)\)</span> nếu có xác suất lỗi loại 1 không vượt quá <span class="math inline">\(\alpha:\)</span> <span class="math display">\[
+\sup_{\theta\in\Theta_0}
+\beta_\psi(\theta)
+\leq\alpha
+.
+\]</span></p>
+<p>Chuỗi kiểm định <span class="math inline">\((\psi_n)_{n=1,2,\ldots}\)</span> được gọi là tiệm cận về mức <span class="math inline">\(\alpha\)</span> nếu <span class="math display">\[
+\lim_{n\to\infty}
+\sup_{\theta\in\Theta_0}
+\beta_{\psi_n}(\theta)
+\leq\alpha
+.
+\]</span></p>
+<p>Phương thức Neyman-Pearson chọn một mức <span class="math inline">\(\alpha\)</span>, đảm bảo xác suất lỗi loại 1 không vượt quá <span class="math inline">\(\alpha\)</span> rồi tối thiểu hóa xác suất lỗi loại 2. Nói cách khác là giữ cho công suất <span class="math inline">\(\beta_\psi(\theta)\)</span> đủ nhỏ khi <span class="math inline">\(\psi\in\Theta_0,\)</span> rồi tối đại hóa công suất khi <span class="math inline">\(\psi\in\Theta_1.\)</span></p>
+<section id="p-value" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="p-value"><span class="header-section-number">6.3.1</span> p-value</h3>
+<p>Từ quan sát <span class="math inline">\(X_1, \ldots, X_n\)</span> ta tính giá trị mức <span class="math inline">\(\alpha\)</span> (tiệm cận) nhỏ nhất tại đó kiểm định <span class="math inline">\(\psi\)</span> phủ nhận <span class="math inline">\(H_0,\)</span> gọi nó là p-value (tiệm cận) của <span class="math inline">\(\psi.\)</span> Nếu p-value càng nhỏ thì ta càng tự tin phủ nhận <span class="math inline">\(H_0.\)</span></p>
+<p><span class="math display">\[
+\textrm{p-value} \is
+\inf_{X_1, \ldots, X_n; \theta\in H_0}\beta_\psi(\theta)
+\]</span></p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>p-value</th>
+<th>chứng cứ phủ nhận <span class="math inline">\(H_0\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(&lt;0.1\%\)</span></td>
+<td>vô cùng mạnh</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(0.1\%\textemdash 1\%\)</span></td>
+<td>rất mạnh</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(1\%\textemdash 5\%\)</span></td>
+<td>mạnh</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(5\%\textemdash 10\%\)</span></td>
+<td>yếu</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(&gt;10\%\)</span></td>
+<td>không có</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="khoảng-tin-cậy" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="khoảng-tin-cậy"><span class="header-section-number">6.4</span> Khoảng tin cậy</h2>
+<p>Thông thường ta có thể xây dựng được kiểm định từ khoảng tin cậy. Ví dụ, ta muốn kiếm định tham số <span class="math inline">\(\theta\)</span>, <span class="math inline">\(H_0: \theta=\theta_0,\)</span> đối <span class="math inline">\(H_1: \theta\neq\theta_0.\)</span> Giả sử ta có khoảng tin cậy <span class="math inline">\(\mathcal{I}\)</span> ở mức <span class="math inline">\(1-\alpha\)</span>, tức là <span class="math display">\[\P_\theta(I\ni \theta)\geq 1-\alpha.\]</span> Khi đó, <span class="math inline">\(\psi=\indicator{\theta_0\notin\mathcal{I}}\)</span> là kiểm định mức <span class="math inline">\(\alpha\)</span></p>
+<p><span class="math display">\[
+\beta_\psi(\theta_0) = \P_{\theta_0}(\theta_0\notin I) \leq \alpha.
+\]</span></p>
+</section>
+<section id="wald-test" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="wald-test"><span class="header-section-number">6.5</span> Wald Test</h2>
+<p>Giả sử <span class="math inline">\(\hat{\theta}\)</span> là ước lượng của tham số <span class="math inline">\(\theta\)</span>, và <span class="math inline">\(\hat{\V}[\hat{\theta}]\)</span> là ước lượng phương sai của <span class="math inline">\(\hat{\theta}\)</span>, sao cho <span class="math display">\[
+\frac{\hat{\theta}-\theta}
+{\sqrt{\hat{\V}[\hat{\theta}]}}
+\todist
+\Gaus(0,1).
+\]</span></p>
+<p>Đặt</p>
+<p><span class="math display">\[
+W \is \frac{\hat{\theta}-\theta_0}
+{\sqrt{\hat{\V}[\hat{\theta}]}}
+,
+\]</span></p>
+<p>ta có thể xây dựng các kiểm định Wald có mức tiệm cận là <span class="math inline">\(\alpha,\)</span> tức là <span class="math inline">\(\P_{H_0}(\psi_\alpha) \xrightarrow[n\to\infty]{} \alpha.\)</span></p>
+<table class="table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 31%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giả thuyết</th>
+<th>Kiểm định Wald</th>
+<th>asymp. p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(H_0: \theta=\theta_0, H_1: \theta\neq\theta_0\)</span></td>
+<td><span class="math inline">\(\psi_\alpha=\indicator{|W|&gt;q_{\alpha/2}}\)</span></td>
+<td><span class="math inline">\(\P(|Z|&gt;|W^{obs}|)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(H_0: \theta\leq\theta_0, H_1: \theta&gt;\theta_0\)</span></td>
+<td><span class="math inline">\(\psi_\alpha=\indicator{W&gt;q_\alpha}\)</span></td>
+<td><span class="math inline">\(\P(Z&gt;W^{obs})\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(H_0: \theta\geq\theta_0, H_1: \theta&lt;\theta_0\)</span></td>
+<td><span class="math inline">\(\psi_\alpha=\indicator{W&lt;-q_\alpha}\)</span></td>
+<td><span class="math inline">\(\P(Z&lt;W^{obs})\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Trong bảng trên, p-value được tính từ <span class="math inline">\(W^{obs}\)</span> là một quan sát đối với <span class="math inline">\(W.\)</span></p>
+</section>
+<section id="định-lý-cochran" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="định-lý-cochran"><span class="header-section-number">6.6</span> Định lý Cochran</h2>
+<div id="thm-cochoran" class="theorem">
+<p><span class="theorem-title"><strong>Định lý 6.1 </strong></span>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus(\mu,\sigma^2).\)</span> Đặt <span class="math display">\[
+S_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2.
+\]</span></p>
+<p>Khi đó <span class="math inline">\(\E[S_n^2] \equiv \sigma^2,\)</span> <span class="math display">\[
+\frac{S_n^2}{\sigma^2}
+\sim
+\frac{\chi_{n-1}^2}{n-1}
+,
+\]</span></p>
+<p>và <span class="math inline">\(\bar{X}_n, S_n^2\)</span> độc lập với nhau.</p>
+</div>
+</section>
+<section id="students-t-test" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="students-t-test"><span class="header-section-number">6.7</span> Student’s T test</h2>
+<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus(\mu,\sigma^2),\)</span> <span class="math inline">\(\mu,\sigma\)</span> chưa biết, và ta muốn kiểm định <span class="math inline">\(\mu.\)</span> Theo <a href="#thm-cochoran">ĐL&nbsp;<span>6.1</span></a>, <span class="math display">\[
+T\is
+\frac{\bar{X}_n-\mu}{\sqrt{S_n^2/n}}
+\equiv
+\frac{\sqrt{n}{(\bar{X}_n-\mu)}{/\sigma}}
+{\sqrt{{S_n^2}{/\sigma^2}}}
+\sim t_{n-1}
+\]</span> tuân theo phân phối Student’s T. Ta có thể xây dựng các kiểm định Student có mức <span class="math inline">\(\alpha,\)</span> tức là <span class="math inline">\(\P_{H_0}(\psi_\alpha) \equiv \alpha.\)</span></p>
+<table class="table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 31%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giả thuyết</th>
+<th>Kiểm định Student</th>
+<th>p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(H_0: \mu=\mu_0, H_1: \mu\neq\mu_0\)</span></td>
+<td><span class="math inline">\(\psi_\alpha=\indicator{|T| &gt;q_{\alpha/2}^{t_{n-1}}}\)</span></td>
+<td><span class="math inline">\(\P_{t_{n-1}}(|Z|&gt;|T^{obs}|)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(H_0: \mu\leq\mu_0, H_1: \mu&gt;\mu_0\)</span></td>
+<td><span class="math inline">\(\psi_\alpha=\indicator{T&gt;q_\alpha^{t_{n-1}}}\)</span></td>
+<td><span class="math inline">\(\P_{t_{n-1}}(Z&gt;T^{obs})\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(H_0: \mu\geq\mu_0, H_1: \mu&lt;\mu_0\)</span></td>
+<td><span class="math inline">\(\psi_\alpha=\indicator{T&lt;-q_\alpha^{t_{n-1}}}\)</span></td>
+<td><span class="math inline">\(\P_{t_{n-1}}(Z&lt;T^{obs})\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Trong bảng trên, p-value được tính từ <span class="math inline">\(T^{obs}\)</span> là một quan sát đối với <span class="math inline">\(T.\)</span></p>
+</section>
+<section id="two-sample-t-test" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="two-sample-t-test"><span class="header-section-number">6.8</span> Two-sample T-test</h2>
+<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus(\mu_x,\sigma_x^2),\)</span> <span class="math inline">\(Y_1,\ldots,Y_m\iid\Gaus(\mu_y,\sigma_y^2),\)</span> với <span class="math inline">\(\mu_x,\sigma_x, \mu_y,\sigma_y\)</span> chưa biết, và ta muốn kiểm định <span class="math inline">\(\mu_x-\mu_y.\)</span> Đặt <span class="math display">\[ \hat{\mu}_n\is\frac{1}{n}\sum_{i=1}^{n}X_i,\quad
+\hat{\sigma}_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\hat{\mu}_n)^2
+,
+\]</span> <span class="math display">\[ \hat{\mu}_m\is\frac{1}{m}\sum_{i=1}^{m}Y_i,\quad
+\hat{\sigma}_m^2\is\frac{1}{m-1}\sum_{i=1}^{m}(Y_i-\hat{\mu}_m)^2
+.\]</span> Ta có gần đúng <span class="math display">\[
+\frac{(\hat{\mu}_n-\hat{\mu}_m)-(\mu_x-\mu_y)}
+{\sqrt{\hat{\sigma}_n^2/n + \hat{\sigma}_m^2/m}}
+\sim t_N
+\]</span> là phân phối Student’s T với độ tự do tuân theo công thức WS (Welch-Satterthwaite): <span class="math display">\[
+N =
+\frac{(\hat{\sigma}_n^2/n + \hat{\sigma}_m^2/m)^2}
+{{{\hat{\sigma}_n^4}/{\left(n^2(n-1)\right)}  +
+{\hat{\sigma}_m^4}/{\left(m^2(m-1)\right)}}}
+\geq \min(n, m)
+\]</span> Đặt <span class="math display">\[
+T = \frac{\hat{\mu}_n-\hat{\mu}_m}
+{\sqrt{\hat{\sigma}_n^2/n + \hat{\sigma}_m^2/m}}
+.\]</span></p>
+<table class="table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 31%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Giả thuyết</th>
+<th>Kiểm định 2 mẫu</th>
+<th>p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(H_0: \mu_x=\mu_y, H_1: \mu_x\neq\mu_y\)</span></td>
+<td><span class="math inline">\(\psi_\alpha=\indicator{|T| &gt;q_{\alpha/2}^{t_{N}}}\)</span></td>
+<td><span class="math inline">\(\P_{t_{N}}(|Z|&gt;|T^{obs}|)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(H_0: \mu_x\leq\mu_y, H_1: \mu_x&gt;\mu_y\)</span></td>
+<td><span class="math inline">\(\psi_\alpha=\indicator{T&gt;q_\alpha^{t_{N}}}\)</span></td>
+<td><span class="math inline">\(\P_{t_{N}}(Z&gt;T^{obs})\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(H_0: \mu_x\geq\mu_y, H_1: \mu_x&lt;\mu_y\)</span></td>
+<td><span class="math inline">\(\psi_\alpha=\indicator{T&lt;-q_\alpha^{t_{N}}}\)</span></td>
+<td><span class="math inline">\(\P_{t_{N}}(Z&lt;T^{obs})\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="kiểm-định-tỷ-lệ-hợp-lý" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="kiểm-định-tỷ-lệ-hợp-lý"><span class="header-section-number">6.9</span> Kiểm định tỷ lệ hợp lý</h2>
+<p><em>Likelihood ratio test</em></p>
+<p>Với dữ liệu <span class="math inline">\(X_1,\ldots,X_n\iid \P_\theta,\)</span> để kiểm định <span class="math inline">\(H_0: \theta \in \Theta_0,\)</span> <span class="math inline">\(H_1: \theta \notin \Theta_0,\)</span> định lượng tỷ lệ hợp lý là <span class="math display">\[
+T_n =
+2\ln\frac{{L_n}(\hat{\theta})}{{L_n}(\hat{\theta}_0)}
+\]</span> với <span class="math inline">\(L(\hat{\theta})\)</span> là hợp lý cực đại tổng quát, còn <span class="math inline">\(L(\hat{\theta}_0)\)</span> là hợp lý cực đại khi <span class="math inline">\(H_0\)</span> đúng.</p>
+<section id="định-lý-wilks" class="level3" data-number="6.9.1">
+<h3 data-number="6.9.1" class="anchored" data-anchor-id="định-lý-wilks"><span class="header-section-number">6.9.1</span> Định lý Wilks</h3>
+<p>Giả sử <span class="math inline">\(\theta=\left(\theta_1,\ldots,\theta_{q+r}\right) \in\Theta\subset\R^{q+r},\)</span> <span class="math display">\[
+\Theta_0=\left\{\theta\in\Theta:
+\left(\theta_{q+1},\ldots,\theta_{q+r}\right)
+=
+\left(\theta_{q+1}^{(0)},\ldots,\theta_{q+r}^{(0)}\right)
+\right\}
+\]</span> với <span class="math inline">\(\left(\theta_{q+1}^{(0)},\ldots,\theta_r^{(0)}\right)\in\R^r\)</span> là cố định. Nếu <span class="math inline">\(H_0\)</span> đúng và các điều kiện hội tụ của MLE (<a href="50-est-method.html#thm-mle-asym">ĐL&nbsp;<span>5.2</span></a>) được thỏa mãn thì: <span class="math display">\[
+T_n\todist\chi_{r}^2.
+\]</span></p>
+</section>
+</section>
+<section id="kiểm-định-nhiều-lần" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="kiểm-định-nhiều-lần"><span class="header-section-number">6.10</span> Kiểm định nhiều lần</h2>
+<p>Gọi số lần thực hiện và quan sát kết quả kiểm định là <span class="math inline">\(t,\)</span> mức độ lỗi loại 1 cho phép là <span class="math inline">\(\alpha.\)</span> Nếu <span class="math inline">\(H_0\)</span> là đúng thì lỗi loại 1 sẽ xuất hiện khoảng <span class="math inline">\(\alpha t\)</span> lần, số lần này sẽ càng lớn nếu <span class="math inline">\(t\)</span> càng lớn.</p>
+<p>Gọi tỷ lệ p-value không vượt quá ngưỡng <span class="math inline">\(\alpha\)</span> là <span class="math inline">\(F(\alpha)\is\P(\textrm{p-value}\leq \alpha).\)</span> Ta có <span class="math inline">\(F(\alpha)\leq \alpha\)</span> với mọi loại kiểm định. Hơn nữa, <span class="math inline">\(F(\alpha)=\alpha\)</span> với kiểm định Student’s T.</p>
+</section>
+<section id="kiểm-định-chi2" class="level2" data-number="6.11">
+<h2 data-number="6.11" class="anchored" data-anchor-id="kiểm-định-chi2"><span class="header-section-number">6.11</span> Kiểm định <span class="math inline">\(\chi^2\)</span></h2>
+<div id="thm-chi-test" class="theorem">
+<p><span class="theorem-title"><strong>Định lý 6.2 (Kiểm định <span class="math inline">\(\chi^2\)</span>) </strong></span>Gọi <span class="math inline">\(\hat{\p}\)</span> là MLE (<a href="50-est-method.html#def-mle">ĐN&nbsp;<span>5.5</span></a>), <span class="math inline">\(\p^{*}\)</span> là tham số thật của mô hình phân loại <span class="math display">\[
+\left(
+    \left\{a_1,\ldots,a_K\right\},
+    \{\P_{\p}\}_{\p\in\Delta_K}
+\right)
+,
+\]</span> với <span class="math inline">\(\Delta_K\is\left\{\p\in\R_+^K: \sum_{i=1}^K p_i=1\right\}.\)</span> Khi đó <span class="math inline">\(\sqrt{n}(\hat{\p}-\p^*)\)</span> tiến về phân phối chuẩn (<a href="30-proba-converge.html#def-asymp-normal">ĐN&nbsp;<span>3.4</span></a>), còn <span class="math display">\[
+n\sum_{i=1}^K\frac{(\hat{p}_i-p^*_i)^2}{p^*_i}
+\todist
+\chi_{K-1}^2
+\]</span> tiến về phân phối <span class="math inline">\(\chi^2\)</span> (<a href="50-est-method.html#thm-mle-asym">ĐL&nbsp;<span>5.2</span></a>) với độ tự do giảm mất <span class="math inline">\(1\)</span> từ <span class="math inline">\(K,\)</span> vì có ràng buộc <span class="math display">\[
+\sum_{i=1}^K p_i = 1
+.\]</span></p>
+</div>
+<div id="cor-chi-test-continous" class="theorem corollary">
+<p><span class="theorem-title"><strong>Hệ quả 6.1 (Kiểm định <span class="math inline">\(\chi^2\)</span> cho phân phối liên tục) </strong></span>Đối với phân phối liên tục, ta có thể phân hoạch tập giá trị biến thành các khoảng (quantile) để chuyển thành phân phối rời rạc rồi áp dụng kiểm định <span class="math inline">\(\chi^2.\)</span></p>
+</div>
+</section>
+<section id="kiểm-định-ks" class="level2" data-number="6.12">
+<h2 data-number="6.12" class="anchored" data-anchor-id="kiểm-định-ks"><span class="header-section-number">6.12</span> Kiểm định KS</h2>
+<div id="def-kolmogorov-smirnov" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 6.1 (Kiểm định Kolmogorov-Smirnov, KS test) </strong></span>Gọi <span class="math inline">\(F_n\)</span> là cdf thực nghiệm (<a href="40-stat-intro.html#def-emprical-cdf">ĐN&nbsp;<span>4.4</span></a>), <span class="math inline">\(F\)</span> là cdf thật (<a href="10-proba-intro.html#def-cdf">ĐN&nbsp;<span>1.3</span></a>) của <span class="math inline">\(X_1,\ldots,X_n\iid X.\)</span> Cho cdf liên tục <span class="math inline">\(F^0,\)</span> để kiểm định giả thuyết <span class="math inline">\(H_0: F=F^0\)</span> v.s. <span class="math inline">\(H_1: F\neq F^0,\)</span> đặt định lượng kiểm định <span class="math display">\[
+T_n\is\sup_{t\in\R}\sqrt{n}\left|F_n(t)-F^0(t)\right|
+.
+\]</span></p>
+<p>Theo định lý Donsker (<a href="40-stat-intro.html#thm-donsker">ĐL&nbsp;<span>4.2</span></a>), nếu <span class="math inline">\(H_0\)</span> là đúng thì <span class="math inline">\(T_n\todist Z,\)</span> với <span class="math inline">\(Z\)</span> là phân bố của đỉnh tuyệt đối của Brownian bridge.</p>
+<p>Vì các cdf đều tăng đơn điệu, cdf thực nghiệm có dạng bậc thang, ta có thể xếp <span class="math inline">\(X_1\leq\ldots\leq X_n\)</span> từ nhỏ đến lớn để tính <span class="math inline">\(T_n\)</span> dễ dàng hơn. <span class="math display">\[
+T_n\equiv
+\sqrt{n}
+\max_{i=1,\ldots,n}
+\left\{
+\max
+\left\{
+    \left|
+        \frac{i-1}{n} - F^0(X_i)
+    \right|,
+    \left|
+        \frac{i}{n} - F^0(X_i)
+    \right|
+\right\}
+\right\}
+.\]</span></p>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./50-est-method.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ước lượng</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">Giáo trình</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

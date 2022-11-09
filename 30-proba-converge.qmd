@@ -186,7 +186,7 @@ $$
 $$
 
 với
-$\Gamma:=\nabla g(\vec{\theta})^T \Sigma \nabla g(\vec{\theta}).$
+$\Gamma\is\nabla g(\vec{\theta})^T \Sigma \nabla g(\vec{\theta}).$
 Nếu $\Sigma$ khả nghịch, $\nabla g$ rank $k$ thì
 $\Gamma$ khả nghịch,
 $$

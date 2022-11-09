@@ -7,7 +7,7 @@ $$
 \def\Unif{\text{Unif}}
 \def\E{\mathbb{E}}
 \def\iid{\stackrel{iid}{\sim}}
-\def\is{:=}
+\def\is{\coloneqq}
 \def\Gaus{\mathcal{N}}
 \def\fone#1{\mathbb{1}\{#1\}}
 \def\p{\vec{p}}

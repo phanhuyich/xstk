@@ -148,7 +148,7 @@ Nếu $X$ và $Y$ độc lập thì $\textrm{Cov}[X,Y] = 0$.
 ## Phương sai
 
 ::: {#def-variance}
-Phương sai, hay phân tán (variance, 分散) là
+Phương sai, hay phân tán (variance) là
 $$
 \V[X]\is\textrm{Cov}[X,X]\equiv\E[X^2]-\E^2[X].
 $$
@@ -161,7 +161,7 @@ $$
 
 ## Tích suất
 
-Tích suất (moment, 積率) thể hiện trọng tâm, độ phân tán, hay độ lệch
+Tích suất (moment) thể hiện trọng tâm, độ phân tán, hay độ lệch
 của phân phối. Tích suất bậc $n$ của biến $X$ với mật độ $f(x)$ là:
 
 $$
@@ -177,7 +177,7 @@ $$
 $$
 :::
 
-Nếu MGF "tồn tại" xung quanh $0$ thì đạo hàm cấp $k$ của $\psi$ tại $0$
+Nếu MGF "tồn tại" lân cận $0$ thì đạo hàm cấp $k$ của $\psi$ tại $0$
 chính là:
 $$
 \psi_X^{(k)}(0)\equiv \E[X^k].

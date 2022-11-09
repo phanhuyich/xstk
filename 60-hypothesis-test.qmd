@@ -150,7 +150,7 @@ là một quan sát đối với $W.$
 Giả sử $X_1,\ldots,X_n\iid\Gaus(\mu,\sigma^2).$
 Đặt
 $$
-S_n^2:=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2.
+S_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2.
 $$
 
 Khi đó $\E[S_n^2] \equiv \sigma^2,$
@@ -170,7 +170,7 @@ Giả sử $X_1,\ldots,X_n\iid\Gaus(\mu,\sigma^2),$
 $\mu,\sigma$ chưa biết, và ta muốn kiểm định $\mu.$
 Theo @thm-cochoran,
 $$
-T:=
+T\is
 \frac{\bar{X}_n-\mu}{\sqrt{S_n^2/n}}
 \equiv
 \frac{\sqrt{n}{(\bar{X}_n-\mu)}{/\sigma}}
@@ -302,8 +302,10 @@ $$
     \left\{a_1,\ldots,a_K\right\},
     \{\P_{\p}\}_{\p\in\Delta_K}
 \right)
-.
+,
 $$
+với
+$\Delta_K\is\left\{\p\in\R_+^K: \sum_{i=1}^K p_i=1\right\}.$
 Khi đó
 $\sqrt{n}(\hat{\p}-\p^*)$
 tiến về phân phối chuẩn (@def-asymp-normal),
@@ -314,5 +316,9 @@ n\sum_{i=1}^K\frac{(\hat{p}_i-p^*_i)^2}{p^*_i}
 \chi_{K-1}^2
 $$
 tiến về phân phối $\chi^2$
-(@def-chi-dist).
+(@thm-mle-asym)
+với độ tự do giảm mất $1$ từ $K,$ vì có ràng buộc
+$$
+\sum_{i=1}^K p_i = 1
+.$$
 :::

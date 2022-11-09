@@ -37,7 +37,7 @@ Ta sẽ **kiểm định** $H_0$ đối với $H_1$ bằng cách chọn và sử
 | $\theta\in\Theta_0$ |      Kiểm định đúng       |        Lỗi loại 1        |
 | $\theta\in\Theta_1$ |        Lỗi loại 2         |      Kiểm định đúng      |
 
-Có thể viết $\psi=\fone{R_\psi}$ với sự kiện $R_\psi$ là **vùng phủ
+Có thể viết $\psi=\indicator{R_\psi}$ với sự kiện $R_\psi$ là **vùng phủ
 nhận**, còn $R_\psi^c$ là **vùng chấp nhận** .
 
 Ta thiết kế kiểm định sao cho hàm **công suất** sau
@@ -106,7 +106,7 @@ Thông thường ta có thể xây dựng được kiểm định từ khoảng 
 ta muốn kiếm định tham số $\theta$, $H_0: \theta=\theta_0,$ đối
 $H_1: \theta\neq\theta_0.$ Giả sử ta có khoảng tin cậy $\mathcal{I}$ ở
 mức $1-\alpha$, tức là $$\P_\theta(I\ni \theta)\geq 1-\alpha.$$ Khi đó,
-$\psi=\fone{\theta_0\notin\mathcal{I}}$ là kiểm định mức $\alpha$
+$\psi=\indicator{\theta_0\notin\mathcal{I}}$ là kiểm định mức $\alpha$
 
 $$
 \beta_\psi(\theta_0) = \P_{\theta_0}(\theta_0\notin I) \leq \alpha.
@@ -137,9 +137,9 @@ tức là $\P_{H_0}(\psi_\alpha) \xrightarrow[n\to\infty]{} \alpha.$
 
 | Giả thuyết                                      | Kiểm định Wald                        | asymp. p-value      |
 |---------------------------|-----------------------|-----------------------|
-| $H_0: \theta=\theta_0, H_1: \theta\neq\theta_0$ | $\psi_\alpha=\fone{|W|>q_{\alpha/2}}$ | $\P(|Z|>|W^{obs}|)$ |
-| $H_0: \theta\leq\theta_0, H_1: \theta>\theta_0$ | $\psi_\alpha=\fone{W>q_\alpha}$       | $\P(Z>W^{obs})$     |
-| $H_0: \theta\geq\theta_0, H_1: \theta<\theta_0$ | $\psi_\alpha=\fone{W<-q_\alpha}$      | $\P(Z<W^{obs})$     |
+| $H_0: \theta=\theta_0, H_1: \theta\neq\theta_0$ | $\psi_\alpha=\indicator{|W|>q_{\alpha/2}}$ | $\P(|Z|>|W^{obs}|)$ |
+| $H_0: \theta\leq\theta_0, H_1: \theta>\theta_0$ | $\psi_\alpha=\indicator{W>q_\alpha}$       | $\P(Z>W^{obs})$     |
+| $H_0: \theta\geq\theta_0, H_1: \theta<\theta_0$ | $\psi_\alpha=\indicator{W<-q_\alpha}$      | $\P(Z<W^{obs})$     |
 
 Trong bảng trên, p-value được tính từ $W^{obs}$
 là một quan sát đối với $W.$
@@ -183,9 +183,9 @@ tức là $\P_{H_0}(\psi_\alpha) \equiv \alpha.$
 
 | Giả thuyết                                      | Kiểm định Student                        | p-value      |
 |---------------------------|-----------------------|-----------------------|
-| $H_0: \mu=\mu_0, H_1: \mu\neq\mu_0$ | $\psi_\alpha=\fone{|T| >q_{\alpha/2}^{t_{n-1}}}$ | $\P_{t_{n-1}}(|Z|>|T^{obs}|)$ |
-| $H_0: \mu\leq\mu_0, H_1: \mu>\mu_0$ | $\psi_\alpha=\fone{T>q_\alpha^{t_{n-1}}}$       | $\P_{t_{n-1}}(Z>T^{obs})$     |
-| $H_0: \mu\geq\mu_0, H_1: \mu<\mu_0$ | $\psi_\alpha=\fone{T<-q_\alpha^{t_{n-1}}}$      | $\P_{t_{n-1}}(Z<T^{obs})$     |
+| $H_0: \mu=\mu_0, H_1: \mu\neq\mu_0$ | $\psi_\alpha=\indicator{|T| >q_{\alpha/2}^{t_{n-1}}}$ | $\P_{t_{n-1}}(|Z|>|T^{obs}|)$ |
+| $H_0: \mu\leq\mu_0, H_1: \mu>\mu_0$ | $\psi_\alpha=\indicator{T>q_\alpha^{t_{n-1}}}$       | $\P_{t_{n-1}}(Z>T^{obs})$     |
+| $H_0: \mu\geq\mu_0, H_1: \mu<\mu_0$ | $\psi_\alpha=\indicator{T<-q_\alpha^{t_{n-1}}}$      | $\P_{t_{n-1}}(Z<T^{obs})$     |
 
 Trong bảng trên, p-value được tính từ $T^{obs}$ là một quan sát đối với
 $T.$
@@ -229,9 +229,9 @@ T = \frac{\hat{\mu}_n-\hat{\mu}_m}
 
 | Giả thuyết                                      | Kiểm định 2 mẫu                        | p-value      |
 |---------------------------|-----------------------|-----------------------|
-| $H_0: \mu_x=\mu_y, H_1: \mu_x\neq\mu_y$ | $\psi_\alpha=\fone{|T| >q_{\alpha/2}^{t_{N}}}$ | $\P_{t_{N}}(|Z|>|T^{obs}|)$ |
-| $H_0: \mu_x\leq\mu_y, H_1: \mu_x>\mu_y$ | $\psi_\alpha=\fone{T>q_\alpha^{t_{N}}}$       | $\P_{t_{N}}(Z>T^{obs})$     |
-| $H_0: \mu_x\geq\mu_y, H_1: \mu_x<\mu_y$ | $\psi_\alpha=\fone{T<-q_\alpha^{t_{N}}}$      | $\P_{t_{N}}(Z<T^{obs})$     |
+| $H_0: \mu_x=\mu_y, H_1: \mu_x\neq\mu_y$ | $\psi_\alpha=\indicator{|T| >q_{\alpha/2}^{t_{N}}}$ | $\P_{t_{N}}(|Z|>|T^{obs}|)$ |
+| $H_0: \mu_x\leq\mu_y, H_1: \mu_x>\mu_y$ | $\psi_\alpha=\indicator{T>q_\alpha^{t_{N}}}$       | $\P_{t_{N}}(Z>T^{obs})$     |
+| $H_0: \mu_x\geq\mu_y, H_1: \mu_x<\mu_y$ | $\psi_\alpha=\indicator{T<-q_\alpha^{t_{N}}}$      | $\P_{t_{N}}(Z<T^{obs})$     |
 
 ## Kiểm định tỷ lệ hợp lý
 

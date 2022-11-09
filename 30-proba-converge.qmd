@@ -9,7 +9,7 @@ và một biến ngẫu nhiên $X$.
 ::: {#def-conv-sure}
 ### Hội tụ gần tuyệt đối
 $$
-X_n \xrightarrow[n\to\infty]{\as} X \iff
+X_n \tosure X \iff
 \P(\{\omega\in\Omega: X_n(\omega)\to X(\omega)\}) = 1.
 $$
 :::
@@ -17,7 +17,7 @@ $$
 ::: {#def-conv-proba}
 ### Hội tụ theo xác suất
 $$
-X_n \xrightarrow[n\to\infty]{\P} X \iff
+X_n \toprob X \iff
 \P(|X_n-X| >\epsilon)
 \xrightarrow[n\to\infty]{}
 0,\quad\forall\epsilon>0.
@@ -52,8 +52,8 @@ $$
 Xếp theo thứ tự từ mạnh đến yếu:
 
 $$
-X_n \xrightarrow[n\to\infty]{\as} X \implies
-X_n \xrightarrow[n\to\infty]{\P} X \implies
+X_n \tosure X \implies
+X_n \toprob X \implies
 X_n \todist X.
 $$
 
@@ -61,14 +61,14 @@ Nếu
 $X_n \todist X$,
 và
 $X$ có mật độ xác suất, thì
-$X_n \xrightarrow[n\to\infty]{\P} X$.
+$X_n \toprob X$.
 
 Nếu chuỗi $X_n$ có
 $\E[X_n]\xrightarrow[]{} \mu$ và
 $\V[X_n]\xrightarrow[]{} 0$ thì
 $X_n\xrightarrow[]{\P} \mu$.
 
-Nếu $X_n\xrightarrow[n\to\infty]{\P} X$ thì
+Nếu $X_n\toprob X$ thì
 $\P(a\leq X_n\leq b) \xrightarrow[n\to\infty]{} \P(a\leq X\leq b)$
 với mọi khoảng $[a,b]$.
 :::
@@ -92,25 +92,27 @@ nới lỏng điều kiện đối với $X_n$ thành hội tụ theo phân ph�
 ## Ánh xạ liên tục
 :::{#thm-contmap}
 (Continuous mapping)
-Nếu $X_n\xrightarrow[n\to\infty]{\as/\P/(d)} X$ thì
+Nếu $X_n\tosure/\P/(d)} X$ thì
 đối với mọi hàm $f$ liên tục:
 
-- $f(X_n)\xrightarrow[n\to\infty]{\as/\P/(d)} f(X)$.
+- $f(X_n)\tosure/\P/(d)} f(X)$.
 - $\E[f(X_n)]\xrightarrow[n\to\infty]{}\E[f(X)]$ nếu $f$ còn bị chặn.
 :::
 
-## Đại đa số (Law of Large Numbers)
+## Đại đa số
 ::: {#thm-lln}
-Cho $n$ biến iid $X_1, X_2,\ldotp,X_n$ có chung
-$\E[X_i]=\mu<\infty$.
+### Law of Large Numbers, LLN
+Cho $n$ biến iid $X_1, X_2,\ldotp,X_n\iid X$ có
+$\E[X]<\infty$.
 Khi đó:
 $$\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}
-\xrightarrow[n\to\infty]{\P,\,\as}\mu.
+\xrightarrow[n\to\infty]{\P,\,\as}\E[X].
 $$
 :::
 
-## Hội tụ trung tâm (Central Limit)
+## Hội tụ trung tâm
 ::: {#thm-clt}
+### Central Limit Theorem, CLT
 Giả sử thêm là
 $\V[X_i]=\sigma^2<\infty$.
 Khi đó

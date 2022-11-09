@@ -91,11 +91,11 @@ nới lỏng điều kiện đối với $X_n$ thành hội tụ theo phân ph�
 
 ## Ánh xạ liên tục
 :::{#thm-contmap}
-(Continuous mapping)
-Nếu $X_n\tosure/\P/(d)} X$ thì
+### Continuous mapping
+Nếu $X_n\toapd X$ thì
 đối với mọi hàm $f$ liên tục:
 
-- $f(X_n)\tosure/\P/(d)} f(X)$.
+- $f(X_n)\toapd f(X)$.
 - $\E[f(X_n)]\xrightarrow[n\to\infty]{}\E[f(X)]$ nếu $f$ còn bị chặn.
 :::
 

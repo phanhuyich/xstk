@@ -2,8 +2,10 @@
 
 Có một số phân phối xác suất thông dụng.
 
-## Phân phối Bernoulli
+## Phân phối rời rạc
+
 ::: {#def-bernoulli}
+### Phân phối Bernoulli
 $X\sim\Ber(p)$
 có
 $$
@@ -13,8 +15,8 @@ và
 $\E[X] = p, \V[X] = p(1-p)$.
 :::
 
-## Phân phối Binomial
 ::: {#def-binomial}
+### Phân phối Binomial
 $X\sim\Bin(n, p)$
 với $n\in\N, p\in(0,1)$
 mô tả tổng số lần thành công
@@ -28,8 +30,8 @@ và
 $\E[X] = np, \V[X] = np(1-p)$.
 :::
 
-## Phân phối Poisson
 :::{#def-poisson}
+### Phân phối Poisson
 $X\sim\Poi(\lambda)$
 thường dùng để mô tả số lần $k$ mà sự kiện phát sinh
 trong một giới hạn cố định,
@@ -47,8 +49,8 @@ $\E[X] = \V[X] = \lambda$.
 Khi $n$ đủ lớn và $p$ đủ nhỏ thì
 $\Poi(np)$ gần với $\Bin(n,p)$.
 
-## Phân phối Geometric
 :::{#def-geomdist}
+### Phân phối Geometric
 $X\sim\text{Geom}(p), p \in (0,1)$
 có
 $$
@@ -58,8 +60,26 @@ và
 $\E[X]=1/p,\V[X]=(1-p)/p^2.$
 :::
 
-## Phân phối Exponential
+## Phân phối liên tục
+
+:::{#def-uniform}
+### Phân phối đồng đều
+$X\sim\Unif[a,b]$ có mật độ
+$$
+f(x)\is
+\frac{x-a}{b-a}
+\textrm{ for }
+x\in[a,b]
+$$
+và
+$$\E[X] = \frac{a+b}{2}, \V[X]=\frac{(b-a)^2}{12}.$$
+:::
+
+Nếu biến $X$ có cdf $F$ (@def-cdf) khả nghịch thì
+$F(X)\sim\Unif[0,1].$
+
 :::{#def-expdist}
+### Phân phối Exponential
 $X\sim\text{Exp}(\lambda)$
 dùng để mô tả khoảng cách $x$ giữa hai lần phát sinh
 của một chuỗi sự kiện kiểu Poisson
@@ -73,12 +93,8 @@ và
 $\E[X]=1/\lambda,\V[X]=1/\lambda^2.$
 :::
 
-## Phân phối chuẩn
-
-*Gaussian Distribution*
-
 :::{#def-gaussian}
-### Phân phối chuẩn 1 biến
+### Phân phối chuẩn 1 biến, Gaussian Distribution
 $X\sim\Gaus(\mu,\sigma^2)$ có
 mật độ
 $$
@@ -109,8 +125,6 @@ $\boldsymbol{v}$
 được gọi là một vector phân phối chuẩn.
 :::
 
-## Phân phối $\chi^2$
-
 :::{#def-chi-dist}
 ### Phân phối $\chi^2$
 $X\sim\chi_k^2$ là
@@ -125,7 +139,8 @@ và có
 $\E[X]=k,\V[X]=2k$.
 :::
 
-## Phân phối Student's T
+:::{#def-student-dist}
+### Phân phối Student's T
 
 Nếu có $Z\sim\Gaus(0,1), V\sim \chi_k^2$ độc lập với nhau thì
 
@@ -134,3 +149,4 @@ X \is \frac{Z}{\sqrt{V/k}}
 $$
 
 tuân theo phân phối Student's $t_k$.
+:::

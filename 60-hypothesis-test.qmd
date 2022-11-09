@@ -289,7 +289,7 @@ với kiểm định Student's T.
 
 ## Kiểm định $\chi^2$
 
-:::{thm-chi-test}
+:::{#thm-chi-test}
 ### Kiểm định $\chi^2$
 Gọi
 $\hat{\p}$
@@ -320,5 +320,46 @@ tiến về phân phối $\chi^2$
 với độ tự do giảm mất $1$ từ $K,$ vì có ràng buộc
 $$
 \sum_{i=1}^K p_i = 1
+.$$
+:::
+
+## Kiểm định KS
+
+:::{#def-kolmogorov-smirnov}
+### Kiểm định Kolmogorov-Smirnov, KS test
+Gọi $F_n$ là cdf thực nghiệm (@def-emprical-cdf),
+$F$ là cdf thật (@def-cdf) của
+$X_1,\ldots,X_n\iid X.$
+Cho cdf liên tục $F^0,$
+để kiểm định giả thuyết
+$H_0: F=F^0$ v.s. $H_1: F\neq F^0,$
+đặt định lượng kiểm định
+$$
+T_n\is\sup_{t\in\R}\sqrt{n}\left|F_n(t)-F^0(t)\right|
+.
+$$
+
+Theo định lý Donsker (@thm-donsker),
+nếu $H_0$ là đúng thì
+$T_n\todist Z,$
+với $Z$ là phân bố của đỉnh tuyệt đối của Brownian bridge.
+
+Vì các cdf đều tăng đơn điệu, cdf thực nghiệm có dạng bậc thang,
+ta có thể xếp $X_1\leq\ldots\leq X_n$ từ nhỏ đến lớn để tính $T_n$ dễ dàng hơn.
+$$
+T_n\equiv
+\sqrt{n}
+\max_{i=1,\ldots,n}
+\left\{
+\max
+\left\{
+    \left|
+        \frac{i-1}{n} - F^0(X_i)
+    \right|,
+    \left|
+        \frac{i}{n} - F^0(X_i)
+    \right|
+\right\}
+\right\}
 .$$
 :::

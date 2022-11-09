@@ -116,6 +116,15 @@ $$
 tức là tỷ lệ số biến $X_i\leq t.$
 :::
 
+Nếu xếp
+$X_1\leq\ldots\leq X_n<X_{n+1}=\infty$
+từ nhỏ đến lớn thì ta có
+$$
+F(t) = \frac{i}{n}
+\, \textrm{ for } t\in[X_{i}, X_{i+1})
+\quad\forall i=1,\ldots,n
+.$$
+
 Áp dụng LLN lên biến
 $\indicator{X<t}$ ta có
 $F_n(t)\tosure F(t)\,\forall t\in\R.$
@@ -147,9 +156,11 @@ $$
 \sqrt{n}\sup_{t\in\R}
 |F_n(t)-F(t)|
 \todist
+Z\sim
 \sup_{0\leq x \leq 1}|B(x)|
 ,$$
-với
-$B$ là **Brownian bridge**,
-$\sup_{0\leq x \leq 1}|B(x)|$ là pivotal (@def-pivot-stat).
+với $Z$
+là phân phối của đỉnh giá trị tuyệt đối của
+**Brownian bridge**,
+và là phân phối pivotal(@def-pivot-stat).
 :::

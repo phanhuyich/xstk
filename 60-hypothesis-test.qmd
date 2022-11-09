@@ -289,18 +289,12 @@ với kiểm định Student's T.
 
 ## Kiểm định $\chi^2$
 
-:::{.hidden}
-$$
-\def\p{\vec{p}}
-$$
-:::
-
 :::{thm-chi-test}
 ### Kiểm định $\chi^2$
 Gọi
 $\hat{\p}$
 là MLE (@def-mle),
-$\p^*$
+$\p^{*}$
 là tham số thật
 của mô hình phân loại
 $$

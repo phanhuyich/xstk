@@ -25,6 +25,14 @@ $A_i A_j\equiv\emptyset$ với mọi $i\neq j$. Khi đó nếu
 $A_1\cup A_2\cup\cdots\equiv C$ thì ta nói $A_1, A_2, \ldots$ là một
 cách **phân hoạch** sự kiện $C$.
 
+
+::: {#def-randvar}
+### Biến ngẫu nhiên, random variable
+là một quy tắc ánh xạ $X: \Omega\to\R$ gán cho
+mỗi hiện tượng $\omega$ trong không gian $\Omega$ một số thực
+$X(\omega).$
+:::
+
 ## Xác suất
 
 Nếu một xạ ảnh $\P$ từ không gian các sự kiện $A\subseteq\Omega$ lên tập
@@ -43,33 +51,60 @@ nếu ta thực hiện thí nghiệm vô số lần. Còn theo cách hiểu ni�
 $\P(A)$ là thước đo mức độ mà một quan sát viên tin tưởng rằng hiện
 tượng $A$ sẽ xảy ra.
 
-### Biến ngẫu nhiên
-
-::: {#def-randvar}
-("random variable", *rv*) là một quy tắc ánh xạ $X: \Omega\to\R$ gán cho
-mỗi hiện tượng $\omega$ trong không gian $\Omega$ một số thực
-$X(\omega).$
+:::{#def-pmf}
+### Hàm khối xác suất, probability mass function
+Với biến rời rạc
+$X:\Omega\to D,$
+$D=\{x_1, x_2, \ldots\}$ đếm được,
+thì ta có thể gán xác suất
+$\P(x_i) = p_i\geq 0,\forall i=1,2,\ldots$ sao cho
+$\sum_i p_i \equiv 1.$
 :::
 
-### Điểm cắt
+:::{#def-cdf}
+### Hàm phân phối tích lũy, cumulative distribution function
+là hàm tăng đơn điệu và liên tục bên phải
+$F:\R\to[0,1], F(x)\is\P(X\leq x)$
+với biến
+$X:\Omega\to \R.$
+:::
+
+:::{#def-pdf}
+### Hàm mật độ xác suất, probability density function
+là $f(x) = F^\prime(x)$
+với
+$F(x)\is\P(X\leq x)$ là phân phối tích lũy của
+biến
+$X:\Omega\to \R.$
+Mật độ xác suất là không âm và có tích phân toàn phần bằng $1$.
+:::
 
 ::: {#def-quantile}
-Điểm cắt tại mức $1-\alpha$ của biến $X$ là một số $q_\alpha$ mà
-$\P(X\leq q_\alpha)=1-\alpha.$
+### Điểm cắt
+Biến $X$ tuân theo phân phối tích lũy $F$
+có
+điểm cắt tại mức $1-\alpha$
+là $q_\alpha\is F^{-1}(1-\alpha).$
 :::
 
-### Độc lập
+## Phụ thuộc
+
+::: {#def-joint-proba}
+### Xác suất hợp
+Ký hiệu $\P(A, B)$ hoặc $\P(A\cap B)$ chỉ xác suất sự kiện $A$ và sự
+kiện $B$ đồng thời xảy ra.
+:::
 
 ::: {#def-independent-var}
-Hai sự kiện $A$ và $B$ là độc lập nếu $\P(AB)\equiv \P(A)\P(B)$.
+### Độc lập
+Hai sự kiện $A$ và $B$ là độc lập nếu $\P(A,B)\equiv \P(A)\P(B)$.
 
 Hai biến $X$ và $Y$ là độc lập nếu hai sự kiện $X\leq x$ và $Y\leq y$ là
 độc lập đối với mọi $x,y$.
 :::
 
-### IID
-
 ::: {#def-iid}
+### IID
 Các biến ngẫu nhiên $X_1, X_2, \ldotp$ được gọi là iid ("independent and
 identically distributed", "độc lập và phân phối giống nhau") nếu chúng
 cùng tuân theo duy nhất một phân phối xác suất, và từng cặp biến là độc
@@ -80,16 +115,8 @@ X_1,\ldots,X_n \iid X.
 $$
 :::
 
-### Xác suất hợp
-
-::: {#def-joint-proba}
-Ký hiệu $\P(A, B)$ hoặc $\P(A\cap B)$ chỉ xác suất sự kiện $A$ và sự
-kiện $B$ đồng thời xảy ra.
-:::
-
-### Xác suất có điều kiện
-
 ::: {#def-conditional-proba}
+### Xác suất có điều kiện
 Ký hiệu $\P(A|B)$ hoặc $\P_B(A)$ chỉ xác suất của sự kiện $A$, khi biết
 sự kiện $B$ đã xảy ra,
 
@@ -108,9 +135,10 @@ $$
 $$
 :::
 
-## Trung bình
+## Đặc trưng
 
 ::: {#def-expectation}
+### Trung bình
 **Trung bình**, hay **giá trị kỳ vọng** của biến X là
 
 $$
@@ -132,9 +160,8 @@ $$
 \E[X+Y] \equiv \E[X] + E[Y].
 $$
 
-## Hiệp phương sai
-
 ::: {#def-covar}
+### Hiệp phương sai
 ```{=tex}
 \begin{align}
 \textrm{Cov}[X,Y] &\is \E[(X-\E[X])(Y-\E[Y])] \\
@@ -145,9 +172,8 @@ $$
 
 Nếu $X$ và $Y$ độc lập thì $\textrm{Cov}[X,Y] = 0$.
 
-## Phương sai
-
 ::: {#def-variance}
+### Phương sai
 Phương sai, hay phân tán (variance) là
 $$
 \V[X]\is\textrm{Cov}[X,X]\equiv\E[X^2]-\E^2[X].
@@ -159,18 +185,18 @@ $$
 \V[X+Y] \equiv \V[X]+\V[Y] + 2\textrm{Cov}[X,Y].
 $$
 
-## Tích suất
-
+:::{#def-moment}
+### Tích suất
 Tích suất (moment) thể hiện trọng tâm, độ phân tán, hay độ lệch
 của phân phối. Tích suất bậc $n$ của biến $X$ với mật độ $f(x)$ là:
+:::
 
 $$
 \E[X^n]\is \int x^n f(x) dx
 $$
 
-### Hàm tạo tích suất
-
 ::: {#def-mgf}
+### Hàm tạo tích suất
 "Moment generation function (MGF)" của biến $X$ là
 $$
 \psi_X(t)\is\E[e^{tX}], t\in\R.

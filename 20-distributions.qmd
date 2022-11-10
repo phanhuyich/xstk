@@ -4,6 +4,7 @@ Có một số phân phối xác suất thông dụng.
 
 ## Phân phối rời rạc
 
+### Phân phối Bernoulli
 ::: {#def-bernoulli}
 ### Phân phối Bernoulli
 $X\sim\Ber(p)$
@@ -15,6 +16,7 @@ và
 $\E[X] = p, \V[X] = p(1-p)$.
 :::
 
+### Phân phối Binomial
 ::: {#def-binomial}
 ### Phân phối Binomial
 $X\sim\Bin(n, p)$
@@ -30,6 +32,7 @@ và
 $\E[X] = np, \V[X] = np(1-p)$.
 :::
 
+### Phân phối Poisson
 :::{#def-poisson}
 ### Phân phối Poisson
 $X\sim\Poi(\lambda)$
@@ -49,6 +52,7 @@ $\E[X] = \V[X] = \lambda$.
 Khi $n$ đủ lớn và $p$ đủ nhỏ thì
 $\Poi(np)$ gần với $\Bin(n,p)$.
 
+### Phân phối Geometric
 :::{#def-geomdist}
 ### Phân phối Geometric
 $X\sim\text{Geom}(p), p \in (0,1)$
@@ -62,8 +66,9 @@ $\E[X]=1/p,\V[X]=(1-p)/p^2.$
 
 ## Phân phối liên tục
 
-:::{#def-uniform}
 ### Phân phối đồng đều
+:::{#def-uniform}
+### Uniform distribution
 $X\sim\Unif[a,b]$ có mật độ
 $$
 f(x)\is
@@ -78,8 +83,9 @@ $$\E[X] = \frac{a+b}{2}, \V[X]=\frac{(b-a)^2}{12}.$$
 Nếu biến $X$ có cdf $F$ (@def-cdf) khả nghịch thì
 $F(X)\sim\Unif[0,1].$
 
+### Phân phối mũ
 :::{#def-expdist}
-### Phân phối Exponential
+### Exponential distribution
 $X\sim\text{Exp}(\lambda)$
 dùng để mô tả khoảng cách $x$ giữa hai lần phát sinh
 của một chuỗi sự kiện kiểu Poisson
@@ -93,8 +99,9 @@ và
 $\E[X]=1/\lambda,\V[X]=1/\lambda^2.$
 :::
 
+### Phân phối chuẩn
 :::{#def-gaussian}
-### Phân phối chuẩn 1 biến, Gaussian Distribution
+### Gaussian Distribution
 $X\sim\Gaus(\mu,\sigma^2)$ có
 mật độ
 $$
@@ -116,6 +123,7 @@ $$\sum_{i=1}^n X_i\sim\Gaus\left(\sum_{i=1}^n \mu_i,\sum_{i=1}^n \sigma_i^2\righ
 .$$
 :::
 
+### Vector phân phối chuẩn
 :::{#def-normal-vector}
 ### Vector phân phối chuẩn
 Nếu mọi tổ hợp tuyến tính các yếu tố của
@@ -125,6 +133,7 @@ $\boldsymbol{v}$
 được gọi là một vector phân phối chuẩn.
 :::
 
+### Phân phối $\chi^2$
 :::{#def-chi-dist}
 ### Phân phối $\chi^2$
 $X\sim\chi_k^2$ là
@@ -139,6 +148,7 @@ và có
 $\E[X]=k,\V[X]=2k$.
 :::
 
+### Phân phối Student's T
 :::{#def-student-dist}
 ### Phân phối Student's T
 
@@ -149,4 +159,17 @@ X \is \frac{Z}{\sqrt{V/k}}
 $$
 
 tuân theo phân phối Student's $t_k$.
+:::
+
+### Phân phối Beta
+:::{#def-beta-dist}
+### Beta distribution
+với tham số
+$\alpha>0,\beta>0$
+có mật độ trên $[0,1]$ là
+$$
+f(x) = C(\alpha,\beta)x^{\alpha-1}(1-x)^{\beta-1}
+,
+$$
+$C(\alpha,\beta)$ là hằng số chuẩn hóa không phụ thuộc vào $x.$
 :::

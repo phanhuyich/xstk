@@ -47,11 +47,23 @@ là một thống kê khác không phụ thuộc vào $\theta$.
 Đánh giá được gọi là nhất quán (consistent) nếu nó hội tụ về
 mục tiêu (@def-conv-proba).
 
-Độ lệch (bias)
+:::{#def-pivot-stat}
+### Pivotal statistic
+Một phân phối hay một ước lượng
+được gọi là pivotal nếu nó không phụ thuộc vào
+phân phối chưa biết và
+giá trị cụ thể của dữ liệu.
+:::
+
+## Sai số
+:::{#def-bias}
+### Độ lệch, bias
 giữa đánh giá $\theta_n$ với mục tiêu $\theta$ là
 $$\textrm{bias}_{\theta}({\theta}_n) \is \E[\theta_n] - \theta.$$
+:::
 
-Sai số bậc 2 (quadratic risk, mean squared error)
+:::{#def-mse}
+### Sai số bậc 2, quadratic risk, mean squared error
 giữa đánh giá $\theta_n$ với mục tiêu $\theta$ là
 $$
 \textrm{MSE}(\theta_n)\is\E[(\theta_n-\theta)^2]
@@ -61,6 +73,7 @@ $$
 \V[\theta_n]
 $$
 bao hàm cả độ lệch và độ nhiễu của đánh giá.
+:::
 
 ## Khoảng tin cậy
 
@@ -85,3 +98,69 @@ $$\lim_{n\to\infty}\P_\theta[\mathcal{I}\ni\theta]\geq 1-\alpha,\quad\forall\the
 thì ta gọi $\mathcal{I}$
 là khoảng tin cậy tiệm cận cấp $1-\alpha$
 đối với $\theta$.
+
+## Định lý cơ bản
+
+:::{#def-emprical-cdf}
+### Empirical cdf
+Với
+$X_1,\ldots,X_n\iid X,$
+ước lượng phân phối tích lũy (@def-cdf) của $X$
+là hàm tăng đơn điệu và liên tục bên phải
+$$
+F_n:\R\to[0,1],
+F_n(t)\is
+\frac{1}{n}
+\sum_{i=1}^n\indicator{X_i\leq t},
+$$
+tức là tỷ lệ số biến $X_i\leq t.$
+:::
+
+Nếu xếp
+$X_1\leq\ldots\leq X_n<X_{n+1}=\infty$
+từ nhỏ đến lớn thì ta có
+$$
+F(t) = \frac{i}{n}
+\, \textrm{ for } t\in[X_{i}, X_{i+1})
+\quad\forall i=1,\ldots,n
+.$$
+
+Áp dụng LLN lên biến
+$\indicator{X<t}$ ta có
+$F_n(t)\tosure F(t)\,\forall t\in\R.$
+
+:::{#thm-fundamental}
+### Glivenko-Cantelli, Fundamental Theorem of Statistics
+$F_n$ hội tụ đồng đều (converge uniformly) lên $F.$
+$$
+\sup_{t\in\R}|F_n(t)-F(t)|
+\tosure 0
+.$$
+Nói cách khác
+$\forall\delta>0,\forall\epsilon>0:\exists N:$
+$$
+n>N \implies
+\P\left(
+\sup_{t\in\R}|F_n(t)-F(t)| < \delta
+\right)
+\geq 1-\epsilon
+.
+$$
+:::
+
+:::{#thm-donsker}
+### Donsker's theorem
+Nếu cdf $F$ thật là liên tục thì
+
+$$
+\sqrt{n}\sup_{t\in\R}
+|F_n(t)-F(t)|
+\todist
+Z\sim
+\sup_{0\leq x \leq 1}|B(x)|
+,$$
+với $Z$
+là phân phối của đỉnh giá trị tuyệt đối của
+**Brownian bridge**,
+và là phân phối pivotal(@def-pivot-stat).
+:::

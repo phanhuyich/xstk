@@ -9,7 +9,7 @@ Hypothesis testing
 -   Định mức đối với kiểm định
 -   Tính toán và giải thích giá trị p
 
-## Giả thuyết không và đối
+## Giả thuyết
 
 Với mô hình thống kê $\left(E,(\P_\theta)_{\theta\in\Theta}\right),$ sử
 dụng bộ mẫu dữ liệu iid $X_1,\ldots,X_n,$ ta xem xét hai giả thuyết về
@@ -27,7 +27,7 @@ $\Theta_0$ là "thường thức" (status quo), còn $\Theta_1$ là "phát hiệ
 (discovery) mới. Ta gọi $H_0$ là giả thuyết không, còn $H_1$ là giả
 thuyết đối (thay thế).
 
-## Kiểm định
+### Kiểm định
 
 Ta sẽ **kiểm định** $H_0$ đối với $H_1$ bằng cách chọn và sử dụng một
 định lượng thống kê $\psi(X_1,\ldots,X_n)\in\{0,1\}.$
@@ -37,7 +37,7 @@ Ta sẽ **kiểm định** $H_0$ đối với $H_1$ bằng cách chọn và sử
 | $\theta\in\Theta_0$ |      Kiểm định đúng       |        Lỗi loại 1        |
 | $\theta\in\Theta_1$ |        Lỗi loại 2         |      Kiểm định đúng      |
 
-Có thể viết $\psi=\fone{R_\psi}$ với sự kiện $R_\psi$ là **vùng phủ
+Có thể viết $\psi=\indicator{R_\psi}$ với sự kiện $R_\psi$ là **vùng phủ
 nhận**, còn $R_\psi^c$ là **vùng chấp nhận** .
 
 Ta thiết kế kiểm định sao cho hàm **công suất** sau
@@ -54,7 +54,7 @@ R_\psi = \{X_i: T(X_i)\geq c\}
 $$
 với $T$ là một lượng thống kê còn $c$ là một giá trị biên.
 
-## Mức độ lỗi
+### Mức độ lỗi
 
 Kiểm định $\psi$ là ở mức (significance level) $\alpha\in(0,1)$ nếu có xác suất lỗi loại 1
 không vượt quá $\alpha:$
@@ -100,19 +100,21 @@ $$
 | $5\%\textemdash 10\%$ | yếu
 | $>10\%$ | không có
 
-## Khoảng tin cậy
+### Khoảng tin cậy
 
 Thông thường ta có thể xây dựng được kiểm định từ khoảng tin cậy. Ví dụ,
 ta muốn kiếm định tham số $\theta$, $H_0: \theta=\theta_0,$ đối
 $H_1: \theta\neq\theta_0.$ Giả sử ta có khoảng tin cậy $\mathcal{I}$ ở
 mức $1-\alpha$, tức là $$\P_\theta(I\ni \theta)\geq 1-\alpha.$$ Khi đó,
-$\psi=\fone{\theta_0\notin\mathcal{I}}$ là kiểm định mức $\alpha$
+$\psi=\indicator{\theta_0\notin\mathcal{I}}$ là kiểm định mức $\alpha$
 
 $$
 \beta_\psi(\theta_0) = \P_{\theta_0}(\theta_0\notin I) \leq \alpha.
 $$
 
-## Wald Test
+## Kiểm định tham số
+
+### Wald Test
 
 Giả sử $\hat{\theta}$ là ước lượng của tham số $\theta$, và
 $\hat{\V}[\hat{\theta}]$ là ước lượng phương sai của $\hat{\theta}$, sao
@@ -137,20 +139,20 @@ tức là $\P_{H_0}(\psi_\alpha) \xrightarrow[n\to\infty]{} \alpha.$
 
 | Giả thuyết                                      | Kiểm định Wald                        | asymp. p-value      |
 |---------------------------|-----------------------|-----------------------|
-| $H_0: \theta=\theta_0, H_1: \theta\neq\theta_0$ | $\psi_\alpha=\fone{|W|>q_{\alpha/2}}$ | $\P(|Z|>|W^{obs}|)$ |
-| $H_0: \theta\leq\theta_0, H_1: \theta>\theta_0$ | $\psi_\alpha=\fone{W>q_\alpha}$       | $\P(Z>W^{obs})$     |
-| $H_0: \theta\geq\theta_0, H_1: \theta<\theta_0$ | $\psi_\alpha=\fone{W<-q_\alpha}$      | $\P(Z<W^{obs})$     |
+| $H_0: \theta=\theta_0, H_1: \theta\neq\theta_0$ | $\psi_\alpha=\indicator{|W|>q_{\alpha/2}}$ | $\P(|Z|>|W^{obs}|)$ |
+| $H_0: \theta\leq\theta_0, H_1: \theta>\theta_0$ | $\psi_\alpha=\indicator{W>q_\alpha}$       | $\P(Z>W^{obs})$     |
+| $H_0: \theta\geq\theta_0, H_1: \theta<\theta_0$ | $\psi_\alpha=\indicator{W<-q_\alpha}$      | $\P(Z<W^{obs})$     |
 
 Trong bảng trên, p-value được tính từ $W^{obs}$
 là một quan sát đối với $W.$
 
-## Định lý Cochran
+### Định lý Cochran
 
 :::{#thm-cochoran}
 Giả sử $X_1,\ldots,X_n\iid\Gaus(\mu,\sigma^2).$
 Đặt
 $$
-S_n^2:=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2.
+S_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2.
 $$
 
 Khi đó $\E[S_n^2] \equiv \sigma^2,$
@@ -164,13 +166,13 @@ $$
 và $\bar{X}_n, S_n^2$ độc lập với nhau.
 :::
 
-## Student's T test
+### Student's T test
 
 Giả sử $X_1,\ldots,X_n\iid\Gaus(\mu,\sigma^2),$
 $\mu,\sigma$ chưa biết, và ta muốn kiểm định $\mu.$
 Theo @thm-cochoran,
 $$
-T:=
+T\is
 \frac{\bar{X}_n-\mu}{\sqrt{S_n^2/n}}
 \equiv
 \frac{\sqrt{n}{(\bar{X}_n-\mu)}{/\sigma}}
@@ -183,14 +185,14 @@ tức là $\P_{H_0}(\psi_\alpha) \equiv \alpha.$
 
 | Giả thuyết                                      | Kiểm định Student                        | p-value      |
 |---------------------------|-----------------------|-----------------------|
-| $H_0: \mu=\mu_0, H_1: \mu\neq\mu_0$ | $\psi_\alpha=\fone{|T| >q_{\alpha/2}^{t_{n-1}}}$ | $\P_{t_{n-1}}(|Z|>|T^{obs}|)$ |
-| $H_0: \mu\leq\mu_0, H_1: \mu>\mu_0$ | $\psi_\alpha=\fone{T>q_\alpha^{t_{n-1}}}$       | $\P_{t_{n-1}}(Z>T^{obs})$     |
-| $H_0: \mu\geq\mu_0, H_1: \mu<\mu_0$ | $\psi_\alpha=\fone{T<-q_\alpha^{t_{n-1}}}$      | $\P_{t_{n-1}}(Z<T^{obs})$     |
+| $H_0: \mu=\mu_0, H_1: \mu\neq\mu_0$ | $\psi_\alpha=\indicator{|T| >q_{\alpha/2}^{t_{n-1}}}$ | $\P_{t_{n-1}}(|Z|>|T^{obs}|)$ |
+| $H_0: \mu\leq\mu_0, H_1: \mu>\mu_0$ | $\psi_\alpha=\indicator{T>q_\alpha^{t_{n-1}}}$       | $\P_{t_{n-1}}(Z>T^{obs})$     |
+| $H_0: \mu\geq\mu_0, H_1: \mu<\mu_0$ | $\psi_\alpha=\indicator{T<-q_\alpha^{t_{n-1}}}$      | $\P_{t_{n-1}}(Z<T^{obs})$     |
 
 Trong bảng trên, p-value được tính từ $T^{obs}$ là một quan sát đối với
 $T.$
 
-## Two-sample T-test
+### Two-sample T-test
 
 Giả sử
 $X_1,\ldots,X_n\iid\Gaus(\mu_x,\sigma_x^2),$
@@ -199,37 +201,41 @@ với
 $\mu_x,\sigma_x, \mu_y,\sigma_y$
 chưa biết, và ta muốn kiểm định $\mu_x-\mu_y.$
 Đặt
+$$ \hat{\mu}_n\is\frac{1}{n}\sum_{i=1}^{n}X_i,\quad
+\hat{\sigma}_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\hat{\mu}_n)^2
+,
 $$
-S_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2 , $$
-$$
-S_m^2\is\frac{1}{m-1}\sum_{i=1}^{n}(Y_i-\bar{Y}_m)^2 , $$
+$$ \hat{\mu}_m\is\frac{1}{m}\sum_{i=1}^{m}Y_i,\quad
+\hat{\sigma}_m^2\is\frac{1}{m-1}\sum_{i=1}^{m}(Y_i-\hat{\mu}_m)^2
+.$$
 Ta có gần đúng
 $$
-\frac{(\bar{X}_n-\bar{Y}_m)-(\mu_x-\mu_y)}
-{\sqrt{S_n^2/n + S_m^2/m}}
+\frac{(\hat{\mu}_n-\hat{\mu}_m)-(\mu_x-\mu_y)}
+{\sqrt{\hat{\sigma}_n^2/n + \hat{\sigma}_m^2/m}}
 \sim t_N
 $$
 là phân phối Student's T với độ tự do
 tuân theo công thức WS (Welch-Satterthwaite):
 $$
 N =
-\frac{\sqrt{S_n^2/n + S_m^2/m}}
-{\sqrt{\frac{S_n^4}{n^2(n-1)}  + \frac{S_m^4}{m^2(m-1)}}}
+\frac{(\hat{\sigma}_n^2/n + \hat{\sigma}_m^2/m)^2}
+{{{\hat{\sigma}_n^4}/{\left(n^2(n-1)\right)}  +
+{\hat{\sigma}_m^4}/{\left(m^2(m-1)\right)}}}
 \geq \min(n, m)
 $$
 Đặt
 $$
-T = \frac{\bar{X}_n-\bar{Y}_m}
-{\sqrt{S_n^2/n + S_m^2/m}}
-$$
+T = \frac{\hat{\mu}_n-\hat{\mu}_m}
+{\sqrt{\hat{\sigma}_n^2/n + \hat{\sigma}_m^2/m}}
+.$$
 
 | Giả thuyết                                      | Kiểm định 2 mẫu                        | p-value      |
 |---------------------------|-----------------------|-----------------------|
-| $H_0: \mu_x=\mu_y, H_1: \mu_x\neq\mu_y$ | $\psi_\alpha=\fone{|T| >q_{\alpha/2}^{t_{N}}}$ | $\P_{t_{N}}(|Z|>|T^{obs}|)$ |
-| $H_0: \mu_x\leq\mu_y, H_1: \mu_x>\mu_y$ | $\psi_\alpha=\fone{T>q_\alpha^{t_{N}}}$       | $\P_{t_{N}}(Z>T^{obs})$     |
-| $H_0: \mu_x\geq\mu_y, H_1: \mu_x<\mu_y$ | $\psi_\alpha=\fone{T<-q_\alpha^{t_{N}}}$      | $\P_{t_{N}}(Z<T^{obs})$     |
+| $H_0: \mu_x=\mu_y, H_1: \mu_x\neq\mu_y$ | $\psi_\alpha=\indicator{|T| >q_{\alpha/2}^{t_{N}}}$ | $\P_{t_{N}}(|Z|>|T^{obs}|)$ |
+| $H_0: \mu_x\leq\mu_y, H_1: \mu_x>\mu_y$ | $\psi_\alpha=\indicator{T>q_\alpha^{t_{N}}}$       | $\P_{t_{N}}(Z>T^{obs})$     |
+| $H_0: \mu_x\geq\mu_y, H_1: \mu_x<\mu_y$ | $\psi_\alpha=\indicator{T<-q_\alpha^{t_{N}}}$      | $\P_{t_{N}}(Z<T^{obs})$     |
 
-## Kiểm định tỷ lệ hợp lý
+### Kiểm định tỷ lệ hợp lý
 
 *Likelihood ratio test*
 
@@ -268,7 +274,7 @@ $$
 T_n\todist\chi_{r}^2.
 $$
 
-## Kiểm định nhiều lần
+### Kiểm định nhiều lần
 
 Gọi số lần thực hiện và quan sát kết quả kiểm định là $t,$
 mức độ lỗi loại 1 cho phép là $\alpha.$
@@ -282,3 +288,122 @@ Ta có $F(\alpha)\leq \alpha$ với mọi loại kiểm định.
 Hơn nữa,
 $F(\alpha)=\alpha$
 với kiểm định Student's T.
+
+## Kiểm định mô hình
+
+### Kiểm định $\chi^2$
+
+:::{#thm-chi-test}
+### Kiểm định $\chi^2$
+Cho mô hình phân loại
+$$
+\left(
+    \left\{a_1,\ldots,a_K\right\},
+    \{\P_{\p}\}_{\p\in\Delta_K}
+\right)
+,
+$$
+với $\Delta_K\is\left\{\p\in\R_+^K: \sum_{i=1}^K p_i=1\right\}.$
+Đặt $N_k = \sum_{i=1}^n \indicator{X_i=a_k}.$
+Cố định $\p^0\in\Delta_K$, kiểm định
+$H_0: \p=\p^0$
+vs
+$H_1: \p\neq\p^0.$
+Nếu $H_0$ là đúng thì
+$$
+T_n\is
+n\sum_{i=1}^K\frac{\left(\frac{N_i}{n}-p^0_i\right)^2}{p^0_i}
+\todist \chi_{K-1}^2
+.
+$$
+:::
+
+:::{#thm-chi-test-family}
+### Kiểm định $\chi^2$ cho hệ phân phối
+Xem xét hệ phân phối rời rạc $\P_\theta$
+có pmf $f_\theta$ với
+$\theta\in\Theta\subset\R^d.$
+Với dữ liệu $X_1,\ldots,X_n$,
+gọi MLE của $\theta$ là $\hat{\theta},$
+ước lượng $\hat{p}_i\is f_{\hat{\theta}}(a_i),\,i=1,\ldots,K.$
+Kiểm định
+$H_0: \theta\in\Theta$
+vs
+$H_1: \theta\notin\Theta.$
+Nếu $H_0$ là đúng thì
+
+$$
+T_n\is
+n\sum_{i=1}^K\frac{\left(\frac{N_i}{n}-\hat{p}_i\right)^2}{\hat{p}_i}
+\todist \chi_{K-d-1}^2
+.
+$$
+
+$T_n$ không phải pivotal.
+:::
+
+:::{#cor-chi-test-continous}
+### Kiểm định $\chi^2$ cho phân phối liên tục
+Đối với phân phối liên tục, ta có thể phân hoạch tập giá trị biến
+thành các khoảng (quantile) để chuyển
+thành phân phối rời rạc rồi áp dụng kiểm định $\chi^2.$
+:::
+
+### Kiểm định KS
+
+:::{#def-kolmogorov-smirnov}
+### Kiểm định Kolmogorov-Smirnov
+Gọi $F_n$ là cdf thực nghiệm (@def-emprical-cdf),
+$F$ là cdf thật (@def-cdf) của
+$X_1,\ldots,X_n\iid X.$
+Cho cdf liên tục $F^0,$
+kiểm định giả thuyết
+$H_0: F=F^0$ v.s. $H_1: F\neq F^0.$
+Định lượng kiểm định
+$$
+T_n\is\sup_{t\in\R}\sqrt{n}\left|F_n(t)-F^0(t)\right|
+$$
+là pivotal.
+:::
+
+Theo định lý Donsker (@thm-donsker),
+nếu $H_0$ là đúng thì
+$T_n\todist Z,$
+với $Z$ là phân bố của đỉnh tuyệt đối của Brownian bridge.
+
+Vì các cdf đều tăng đơn điệu, cdf thực nghiệm có dạng bậc thang,
+ta có thể xếp $X_1\leq\ldots\leq X_n$ từ nhỏ đến lớn để tính $T_n$ dễ dàng hơn.
+$$
+T_n\equiv
+\sqrt{n}
+\max_{i=1,\ldots,n}
+\left\{
+\max
+\left\{
+    \left|
+        \frac{i-1}{n} - F^0(X_i)
+    \right|,
+    \left|
+        \frac{i}{n} - F^0(X_i)
+    \right|
+\right\}
+\right\}
+.
+$$
+
+### Kiểm định KL
+:::{#def-kolmogorov-lilliefors}
+### Kolmogorov-Lilliefors test
+Trong tiền đề của @def-kolmogorov-smirnov,
+nếu bỏ điều kiện $F_0$ cố định,
+thay vào đó là
+kiểm chứng phân phối $\P$ thuộc
+hệ phân phối chuẩn
+$\{\Gaus(\mu,\sigma^2\}.$
+Gọi MLE là $\hat{\mu},\hat{\sigma}^2$,
+định lượng kiểm định
+$$
+T_n\is\sup_{t\in\R}\sqrt{n}\left|F_n(t)-\Phi_{\hat{\mu},\hat{\sigma}^2}(t)\right|
+$$
+là pivotal.
+:::

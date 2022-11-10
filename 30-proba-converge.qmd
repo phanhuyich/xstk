@@ -3,37 +3,44 @@
 Có một số kiểu hội tụ của biến ngẫu nhiên.
 
 ## Hội tụ xác suất
-::: {#def-conv-proba}
 Cho một chuỗi biến ngẫu nhiên $X_1,X_2,\ldotp$
 và một biến ngẫu nhiên $X$.
 
-1. Hội tụ gần tuyệt đối:
+::: {#def-conv-sure}
+### Hội tụ gần tuyệt đối
 $$
-X_n \xrightarrow[n\to\infty]{\as} X \iff
+X_n \tosure X \iff
 \P(\{\omega\in\Omega: X_n(\omega)\to X(\omega)\}) = 1.
 $$
+:::
 
-2. Hội tụ theo xác suất:
+::: {#def-conv-proba}
+### Hội tụ theo xác suất
 $$
-X_n \xrightarrow[n\to\infty]{\P} X \iff
+X_n \toprob X \iff
 \P(|X_n-X| >\epsilon)
 \xrightarrow[n\to\infty]{}
 0,\quad\forall\epsilon>0.
 $$
+:::
 
-3. Hội tụ theo phân phối:
+:::{#def-conv-dist}
+### Hội tụ theo phân phối
 $$
 X_n \todist X \iff
 \P[X_n(x)\leq x]\xrightarrow[n\to\infty]{} \P[X\leq x]
 $$
 tại mọi điểm $x$ mà cdf của $X$ liên tục.
+:::
 
-4. Hội tụ về chuẩn:
+:::{#def-asymp-normal}
+### Hội tụ về chuẩn
 (asymptotically normal)
 với phương sai
 $\sigma^2$
 $$
-\sqrt{n}\left(\frac{{X}_n-X}{|\sigma|}\right)
+\frac{\sqrt{n}}{|\sigma|}
+\left({X}_n-X\right)
 \todist
 \Gaus(0,1).
 $$
@@ -45,8 +52,8 @@ $$
 Xếp theo thứ tự từ mạnh đến yếu:
 
 $$
-X_n \xrightarrow[n\to\infty]{\as} X \implies
-X_n \xrightarrow[n\to\infty]{\P} X \implies
+X_n \tosure X \implies
+X_n \toprob X \implies
 X_n \todist X.
 $$
 
@@ -54,14 +61,14 @@ Nếu
 $X_n \todist X$,
 và
 $X$ có mật độ xác suất, thì
-$X_n \xrightarrow[n\to\infty]{\P} X$.
+$X_n \toprob X$.
 
 Nếu chuỗi $X_n$ có
 $\E[X_n]\xrightarrow[]{} \mu$ và
 $\V[X_n]\xrightarrow[]{} 0$ thì
 $X_n\xrightarrow[]{\P} \mu$.
 
-Nếu $X_n\xrightarrow[n\to\infty]{\P} X$ thì
+Nếu $X_n\toprob X$ thì
 $\P(a\leq X_n\leq b) \xrightarrow[n\to\infty]{} \P(a\leq X\leq b)$
 với mọi khoảng $[a,b]$.
 :::
@@ -84,26 +91,28 @@ nới lỏng điều kiện đối với $X_n$ thành hội tụ theo phân ph�
 
 ## Ánh xạ liên tục
 :::{#thm-contmap}
-(Continuous mapping)
-Nếu $X_n\xrightarrow[n\to\infty]{\as/\P/(d)} X$ thì
+### Continuous mapping
+Nếu $X_n\toapd X$ thì
 đối với mọi hàm $f$ liên tục:
 
-- $f(X_n)\xrightarrow[n\to\infty]{\as/\P/(d)} f(X)$.
+- $f(X_n)\toapd f(X)$.
 - $\E[f(X_n)]\xrightarrow[n\to\infty]{}\E[f(X)]$ nếu $f$ còn bị chặn.
 :::
 
-## Đại đa số (Law of Large Numbers)
+## Đại đa số
 ::: {#thm-lln}
-Cho $n$ biến iid $X_1, X_2,\ldotp,X_n$ có chung
-$\E[X_i]=\mu<\infty$.
+### Law of Large Numbers, LLN
+Cho $n$ biến iid $X_1, X_2,\ldotp,X_n\iid X$ có
+$\E[X]<\infty$.
 Khi đó:
 $$\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}
-\xrightarrow[n\to\infty]{\P,\,\as}\mu.
+\xrightarrow[n\to\infty]{\P,\,\as}\E[X].
 $$
 :::
 
-## Hội tụ trung tâm (Central Limit)
+## Hội tụ trung tâm
 ::: {#thm-clt}
+### Central Limit Theorem, CLT
 Giả sử thêm là
 $\V[X_i]=\sigma^2<\infty$.
 Khi đó
@@ -129,9 +138,11 @@ $$
 
 
 ## Phương pháp Delta
+
 :::{#thm-delta-method}
+### Phương pháp Delta
 Giả sử chuỗi $(\theta_n)_{n\geq 1}$
-chuẩn tiến
+chuẩn tiến (@def-asymp-normal)
 với phương sai
 $\sigma^2$
 về một điểm
@@ -139,12 +150,55 @@ $\theta\in\R$.
 Giả sử $g:\R\to\R$
 có vi phân
 $g^\prime$
-liên tục tại $\theta$.
+liên tục, $\neq 0$ tại $\theta$.
 Khi đó,
 $$
-\sqrt{n}\left(\frac{g(\theta_n)-g(\theta)}
-{\left|\sigma g^\prime(\theta)\right|}\right)
+\frac{\sqrt{n}}{|\sigma|}
+\left(\frac{g(\theta_n)-g(\theta)}
+{g^\prime(\theta)}\right)
 \todist
 \Gaus\left(0,1\right)
+$$
+:::
+
+:::{#thm-multivar-delta}
+### Phương pháp Delta nhiều biến
+Giả sử chuỗi $(\vec{\theta}_n)_{n\geq 1}$
+chuẩn tiến
+với phương sai
+$\Sigma(\vec{\theta})$
+về
+$\vec{\theta}\in\R^d:$
+$$
+\sqrt{n}(\vec{\theta}_n-\vec{\theta})
+\todist\Gaus_d(\vec{0},\Sigma).
+$$
+
+Giả sử $g:\R^d\to\R^k$
+có vi phân
+$\nabla g$
+liên tục
+$(k<d)$.
+Khi đó,
+$$
+\sqrt{n}\left(g(\vec{\theta}_n)-g(\vec{\theta})\right)
+\todist\Gaus_k
+\left(\vec{0}, \Gamma\right)
+,
+$$
+
+với
+$\Gamma\is\nabla g(\vec{\theta})^T \Sigma \nabla g(\vec{\theta}).$
+Nếu $\Sigma$ khả nghịch, $\nabla g$ rank $k$ thì
+$\Gamma$ khả nghịch,
+$$
+\sqrt{n}\Gamma^{-1/2}\left(g(\vec{\theta}_n)-g(\vec{\theta})\right)
+\todist\Gaus_k\left(\vec{0}, \vec{I}_k\right)
+,
+$$
+$$
+{n}\Gamma^{-1}\left(g(\vec{\theta}_n)-g(\vec{\theta})\right)^2
+\todist\chi_k^2
+.
 $$
 :::

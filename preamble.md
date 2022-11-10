@@ -7,9 +7,10 @@ $$
 \def\Unif{\text{Unif}}
 \def\E{\mathbb{E}}
 \def\iid{\stackrel{iid}{\sim}}
-\def\is{:=}
+\def\is{\coloneqq}
 \def\Gaus{\mathcal{N}}
-\def\fone#1{\mathbb{1}\{#1\}}
+\def\indicator#1{\mathbb{1}\{#1\}}
+\def\p{\vec{p}}
 \def\P{\mathbb{P}}
 \def\Poi{\text{Poi}}
 \def\R{\mathbb{R}}
@@ -18,5 +19,8 @@ $$
 \def\TV{\textrm{TV}}
 \def\KL{\textrm{KL}}
 \def\vec#1{\boldsymbol{#1}}
+\def\toapd{\xrightarrow[n\to\infty]{\as/\P/(d)}}
+\def\toprob{\xrightarrow[n\to\infty]{\P}}
+\def\tosure{\xrightarrow[n\to\infty]{\as}}
 \def\todist{\xrightarrow[n\to\infty]{(d)}}
 $$

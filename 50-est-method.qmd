@@ -20,12 +20,6 @@ $\theta^*\in\Theta$
 $X_1\sim\P_{\theta^*}$
 .
 
-## Pivotal statistic
-
-Một phân phối hay một ước lượng
-được gọi là pivotal nếu nó không phụ thuộc vào
-giá trị cụ thể của tham số thật.
-
 ## Tổng biến động
 
 ### Khoảng cách
@@ -104,13 +98,10 @@ thỏa mãn 2/4 đặc điểm của "khoảng cách":
 2. $\KL(\P_\theta, \P_\eta) \equiv 0 \iff \P_\theta \equiv \P_\eta$.
 :::
 
-## MLE
+## Hợp lý cực đại
 
-**Ước lượng hợp lý cực đại**
-(Maximum Likelihood Estimation)
-
-### Likelihood
 :::{#def-likelihood}
+#### Hợp lý, Likelihood
 $$L_\theta(x_1,\ldots,x_n)\is
 \P_\theta(X_1=x_1,\ldots,X_n=x_n)
 =
@@ -118,8 +109,8 @@ $$L_\theta(x_1,\ldots,x_n)\is
 .$$
 :::
 
-### Log likelihood
 :::{#def-likelihood}
+#### Log likelihood
 $$
 \ell_\theta(x_1,\ldots,x_n)\is
 \ln
@@ -130,9 +121,8 @@ L_\theta(x_1,\ldots,x_n)
 $$
 :::
 
-### Maximum Likelihood Estimator
 :::{#def-mle}
-
+#### Maximum Likelihood Estimator, MLE
 $$
 \hat{\theta}_n \is
 \argmax_\theta
@@ -188,27 +178,44 @@ cho đến khi hội tụ.
 ## Chuẩn tính của MLE
 
 :::{#def-fisher-info}
-Giả sử log likelihood đối với một quan sát $X$ theo mô hình $\theta$ là
-$\ell(\theta) = \ln L_1(X,\theta), \theta\in\Theta\subset\R.$
+### Thông tin Fisher, Fisher information
+Giả sử log likelihood đối với một quan sát $X$ theo mô hình $\theta\in\R$ là
+$\ell(\theta)\is\ln L_1(X,\theta), \theta\in\Theta\subset\R.$
 Giả sử $\ell(\theta)$ có đạo hàm bậc hai. Dưới một số điều kiện chuẩn,
 **thông tin Fisher** của mô hình được định nghĩa là
 
 $$
 I(\theta)
-= \V[\ell^{\prime}(\theta)]
+\is
+\V[\ell^{\prime}(\theta)]
 = \E[(\ell^{\prime}(\theta))^2]
 = -\E[\ell^{\prime\prime}(\theta)]
+.
+$$
+
+Trường hợp mô hình đa biến, $\theta\is(\theta_1,\ldots,\theta_k)\in\R^k:$
+$$
+H_{ij} \is \frac{\partial^2\ell}{\partial\theta_i\partial\theta_j},
+$$
+$$
+I(\theta) \is -\E
+\begin{bmatrix}
+H_{11} & \cdots & H_{1k} \\
+\vdots & \ddots & \vdots \\
+H_{k1} & \cdots & H_{kk} \\
+\end{bmatrix}
 .
 $$
 :::
 
 :::{#thm-mle-asym}
+### MLE hội tụ
 Gọi $\theta^*\in\Theta$ là tham số *thật* cần tìm. Giả sử
 
 1. Các tham số là indentifiable
 2. Support của $\P_\theta$ không phụ thuộc vào $\theta$ với mọi $\theta\in\Theta$
 3. $\theta^*$ không nằm trên biên giới của $\Theta$
-4. Thông tin Fisher $I(\theta)\neq 0$ xung quanh $\theta^*$
+4. Thông tin Fisher khả nghịch lân cận $\theta^*$
 5. Một số điều kiện kỹ thuật khác
 
 Khi đó, chuỗi $\hat{\theta}_n^{MLE}$ thỏa mãn:
@@ -217,6 +224,14 @@ $$\hat{\theta}_n^{MLE} \xrightarrow[n\to\infty]{\P_{\theta^*}}\theta^*$$
 $$\sqrt{n I(\theta^*)}\left(\hat{\theta}_n^{MLE}-\theta^*\right)
 \xrightarrow[n\to\infty]{(d)\textrm{ w.r.t.}\P_{\theta^*}}
 \Gaus(0, 1).$$
+
+Trường hợp mô hình đa biến, $\theta\in\R^k:$
+$${n
+\left(\hat{\theta}_n^{MLE}-\theta^*\right)^T
+I(\theta^*)}
+\left(\hat{\theta}_n^{MLE}-\theta^*\right)
+\xrightarrow[n\to\infty]{(d)\textrm{ w.r.t.}\P_{\theta^*}}
+\chi_k^2.$$
 
 Chú ý là điều kiện số 2 dễ bị vi phạm,
 ví dụ $X_i\iid\Unif[0, \theta]$

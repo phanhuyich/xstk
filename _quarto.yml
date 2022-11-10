@@ -13,13 +13,13 @@ book:
     - part: "Xác suất"
       chapters:
         - 10-proba-intro.qmd
-        - 13-distributions.qmd
-        - 15-proba-converge.qmd
+        - 20-distributions.qmd
+        - 30-proba-converge.qmd
     - part: "Thống kê"
       chapters:
-        - 20-stat-intro.qmd
-        - 30-est-method.qmd
-        - 40-hypothesis-test.qmd
+        - 40-stat-intro.qmd
+        - 50-est-method.qmd
+        - 60-hypothesis-test.qmd
     - references.qmd
   repo-url: https://github.com/vochicong/xstk
   # sharing: [twitter, facebook]
@@ -59,8 +59,10 @@ format:
 
 crossref:
   fig-title: Hình
-  fig-prefix: Hình
+  fig-prefix: H
   def-title: Định nghĩa
-  def-prefix: Định nghĩa
+  def-prefix: ĐN
   thm-title: Định lý
-  thm-prefix: Định lý
+  thm-prefix: ĐL
+  cor-title: Hệ quả
+  cor-prefix: HQ

@@ -51,6 +51,14 @@ nếu ta thực hiện thí nghiệm vô số lần. Còn theo cách hiểu ni�
 $\P(A)$ là thước đo mức độ mà một quan sát viên tin tưởng rằng hiện
 tượng $A$ sẽ xảy ra.
 
+:::{#def-cdf}
+### Hàm phân phối tích lũy, cumulative distribution function
+là hàm tăng đơn điệu và liên tục bên phải
+$F:\R\to[0,1], F(x)\is\P(X\leq x)$
+với biến
+$X:\Omega\to \R.$
+:::
+
 :::{#def-pmf}
 ### Hàm khối xác suất, probability mass function
 Với biến rời rạc
@@ -61,14 +69,6 @@ $\P(x_i) = p_i\geq 0,\forall i=1,2,\ldots$ sao cho
 $\sum_i p_i \equiv 1.$
 :::
 
-:::{#def-cdf}
-### Hàm phân phối tích lũy, cumulative distribution function
-là hàm tăng đơn điệu và liên tục bên phải
-$F:\R\to[0,1], F(x)\is\P(X\leq x)$
-với biến
-$X:\Omega\to \R.$
-:::
-
 :::{#def-pdf}
 ### Hàm mật độ xác suất, probability density function
 là $f(x) = F^\prime(x)$
@@ -76,7 +76,13 @@ với
 $F(x)\is\P(X\leq x)$ là phân phối tích lũy của
 biến
 $X:\Omega\to \R.$
-Mật độ xác suất là không âm và có tích phân toàn phần bằng $1$.
+:::
+
+:::{.remark}
+Mật độ xác suất là không âm và có tích phân toàn phần bằng $1.$
+Nếu có độ đo $g(x)\geq 0,x\in\R$ khả tích toàn phần
+thì có mật độ xác suất
+$$f(x)\is\frac{g(x)}{\int_{\R}{g(x)dx}} \propto g(x).$$
 :::
 
 ::: {#def-quantile}
@@ -164,12 +170,12 @@ $$
 
 ::: {#def-covar}
 ### Hiệp phương sai
-```{=tex}
-\begin{align}
+$$
+\begin{split}
 \textrm{Cov}[X,Y] &\is \E[(X-\E[X])(Y-\E[Y])] \\
 &\equiv \E[XY] - \E[X]\E[Y]
-\end{align}
-```
+\end{split}
+$$
 :::
 
 Nếu $X$ và $Y$ độc lập thì $\textrm{Cov}[X,Y] = 0$.

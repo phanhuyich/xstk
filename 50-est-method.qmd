@@ -201,13 +201,14 @@ $$
 H_{ij} \is \frac{\partial^2\ell}{\partial\theta_i\partial\theta_j},
 $$
 $$
-I(\theta) \is -\E
-\begin{bmatrix}
+I(\theta) \is -\E_X
+\left[
+\begin{pmatrix}
 H_{11} & \cdots & H_{1k} \\
 \vdots & \ddots & \vdots \\
 H_{k1} & \cdots & H_{kk} \\
-\end{bmatrix}
-.
+\end{pmatrix}
+\right].
 $$
 :::
 
@@ -226,7 +227,7 @@ Khi đó, chuỗi $\hat{\theta}_n^{MLE}$ thỏa mãn:
 $$\hat{\theta}_n^{MLE} \xrightarrow[n\to\infty]{\P_{\theta^*}}\theta^*$$
 $$\sqrt{n I(\theta^*)}\left(\hat{\theta}_n^{MLE}-\theta^*\right)
 \xrightarrow[n\to\infty]{(d)\textrm{ w.r.t.}\P_{\theta^*}}
-\Gaus(0, 1).$$
+\Gaus{0}{1}.$$
 
 Trường hợp mô hình đa biến, $\theta\in\R^k:$
 $${n

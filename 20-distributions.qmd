@@ -53,7 +53,7 @@ $\Poiss(np)$ gần với $\Bin(n,p)$.
 
 :::{#def-geomdist}
 ### Geometric distribution
-$K\sim\text{Geom}(p), p \in (0,1)$
+$K\sim\Geom(p), p \in (0,1)$
 có
 $$
 \P(K=k)=p(1-p)^{k-1}, k=1,2,\ldots
@@ -99,7 +99,7 @@ $$\E[X]=1/\lambda,\V[X]=1/\lambda^2.$$
 ## Phân phối chuẩn
 :::{#def-gaussian}
 ### Gaussian Distribution
-$X\sim\Gaus(\mu,\sigma^2)$ có
+$X\sim\Gaus{\mu}{\sigma^2}$ có
 mật độ
 $$
 f(x) =
@@ -113,10 +113,11 @@ $\E[X]=\mu,\V[X]=\sigma^2$.
 :::{#thm-sum-gaussian}
 ### Tổng của các phân phối chuẩn
 Nếu
-$X_i \sim\Gaus(\mu_i,\sigma_i^2) (i=1,\ldots,n)$
+$X_i \sim\Gaus{\mu_i}{\sigma_i^2} (i=1,\ldots,n)$
 thì
 
-$$\sum_{i=1}^n X_i\sim\Gaus\left(\sum_{i=1}^n \mu_i,\sum_{i=1}^n \sigma_i^2\right)
+$$\sum_{i=1}^n X_i\sim
+\Gaus{\sum_{i=1}^n \mu_i}{\sum_{i=1}^n \sigma_i^2}
 .$$
 :::
 
@@ -134,7 +135,7 @@ $\boldsymbol{v}$
 ### Phân phối $\chi^2$
 $X\sim\chi_k^2$ là
 tổng bình phương của
-$X_1,\ldots,X_k\iid\Gaus(0,1)$
+$X_1,\ldots,X_k\iid\Gaus{0}{1}$
 
 $$
 X \is \sum_{i=0}^k X_i^2
@@ -148,7 +149,7 @@ $\E[X]=k,\V[X]=2k$.
 :::{#def-student-dist}
 ### Student's T distribution
 
-Nếu có $Z\sim\Gaus(0,1), V\sim \chi_k^2$ độc lập với nhau thì
+Nếu có $Z\sim\Gaus{0}{1}, V\sim \chi_k^2$ độc lập với nhau thì
 
 $$
 X \is \frac{Z}{\sqrt{V/k}}
@@ -160,7 +161,7 @@ tuân theo phân phối Student's $t_k$.
 ## Phân phối Beta
 :::{#def-beta-dist}
 ### Beta distribution
-$X\sim\Beta(\alpha,\beta),$
+$X\sim\Beta{\alpha}{\beta},$
 tham số
 $\alpha>0,\beta>0$
 có mật độ trên $x\in [0,1]$ là
@@ -176,7 +177,7 @@ rất phù hợp để sử dụng làm xác suất tiền nghiệm (@def-bayesi
 cho một tham số xác suất $p\in[0,1].$
 
 Ví dụ
-$\Unif[0,1] = \Beta(1,1).$
+$\Unif[0,1] = \Beta{1}{1}.$
 
 ## Phân phối Gamma
 

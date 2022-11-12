@@ -42,7 +42,7 @@ $$
 \frac{\sqrt{n}}{|\sigma|}
 \left({X}_n-X\right)
 \todist
-\Gaus(0,1).
+\Gaus{0}{1}.
 $$
 :::
 
@@ -122,7 +122,7 @@ $$
 \frac{\bar{X}_n-\mu}{|\sigma|}
 \right)
 \todist
-\Gaus(0,1).
+\Gaus{0}{1}.
 $$
 :::
 
@@ -157,7 +157,7 @@ $$
 \left(\frac{g(\theta_n)-g(\theta)}
 {g^\prime(\theta)}\right)
 \todist
-\Gaus\left(0,1\right)
+\Gaus{0}{1}
 $$
 :::
 

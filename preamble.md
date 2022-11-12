@@ -3,13 +3,14 @@ $$
 \def\argmin{\operatorname*{argmin}}
 \def\as{\textrm{a.s.}}
 \def\Ber{\text{Ber}}
-\def\Beta{\text{Beta}}
+\def\Beta#1#2{\text{Beta}\left(#1,#2\right)}
 \def\Bin{\text{Bin}}
+\def\Geom{\text{Geom}}
 \def\Unif{\text{Unif}}
 \def\E{\mathbb{E}}
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{\coloneqq}
-\def\Gaus{\mathcal{N}}
+\def\Gaus#1#2{\mathcal{N}\left(#1,#2\right)}
 \def\indicator#1{\mathbb{1}\{#1\}}
 \def\p{\vec{p}}
 \def\P{\mathbb{P}}

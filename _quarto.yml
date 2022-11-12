@@ -10,6 +10,7 @@ book:
   downloads: pdf
   chapters:
     - index.qmd
+    - notation.qmd
     - part: "Xác suất"
       chapters:
         - 10-proba-intro.qmd
@@ -59,6 +60,7 @@ format:
     lang: vi
 
 crossref:
+  exm-title: Ví dụ
   fig-title: Hình
   fig-prefix: H
   def-title: Định nghĩa

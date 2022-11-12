@@ -14,24 +14,14 @@ gọi MLE (@def-mle) là $L_n$
 3. Tính xác suất hậu nghiệm (posterior) theo Bayes @thm-bayes:
 
 $$
-\begin{align}
+\begin{split}
 \pi(\theta|X_1,\ldots,X_n)
-&=
-\frac{
-L_n(X_1,\ldots,X_n|\theta)
-\pi(\theta)
-}{
-    \int_{\theta\in\Theta}
-L_n(X_1,\ldots,X_n|\theta)
-\pi(\theta)
-d\theta
-}\\
 &\propto
 L_n(X_1,\ldots,X_n|\theta)
 \pi(\theta),
 \quad\theta\in\Theta
 .
-\end{align}
+\end{split}
 $$
 :::
 
@@ -42,7 +32,9 @@ $$
 Nếu xác suất tiền nghiệm và xác suất hậu nghiệm thuộc cùng một hệ xác suất, ta nói xác suất tiền nghiệm là liên hợp đối với mô hình.
 :::
 
-Ví dụ, $\Beta$ là xác suất liên hợp tiền nghiệm đối với $\Ber,\Bin,\textrm{Geom}.$
+:::{#exm-conjugate-prior}
+Beta là xác suất liên hợp tiền nghiệm đối với mô hình Bernoulli $\Ber$, nhị thức $\Bin$ và hình học $\Geom.$
+:::
 
 :::{#def-non-informative-prior}
 ### Non informative prior
@@ -57,4 +49,21 @@ Nếu
 hàm $\pi:\Theta\to[0,+\infty)$ là đo được (measurable)
 nhưng không khả tích toàn phần trên $\Theta$
 thì ta nói $\pi$ là improper prior.
+:::
+
+:::{#def-jeffreys-prior}
+### Jeffreys prior
+$$\pi_J(\theta)\propto\sqrt{\det I(\theta)}
+$$
+với $I(\theta)$ là thông tin Fisher (@def-fisher-info)
+của mô hình thống kê cho
+$X_1,\ldots,X_n.$
+:::
+
+:::{#exm-jeffreys-prior}
+- Thí nghiệm $\Ber(p), p\in(0,1)$ có
+$$\pi_J(p)\propto\frac{1}{\sqrt{p(1-p)}}\propto\Beta{\frac{1}{2}}{\frac{1}{2}}
+.$$
+- Thí nghiệm $\Gaus{\mu}{\sigma^2}, (\mu,\sigma^2)\in\R\times\R_+$ có
+$\pi_J(\mu,\sigma^2)\propto \sigma^{-3}$ là improper prior.
 :::

@@ -1,0 +1,26 @@
+# Bayesian
+
+## Phương pháp Bayesian
+
+:::{#def-bayesian-method}
+### Bayesian method
+Với dữ liệu $X_1,\ldots,X_n,$
+ta
+ước lượng tham số $\theta$ cho mô hình xác suất qua các bước:
+
+1. Gán xác suất tiên nghiệm (prior) $\pi(\theta)$ cho tham số $\theta\in\Theta.$
+2. Chọn mô hình xác suất $f(X|\theta)$ phụ thuộc vào $\theta,$
+gọi MLE (@def-mle) là $L_n(X_1,\ldots,X_n|\theta)$
+3. Tính xác suất hậu nghiệm (posterior) theo Bayes @thm-bayes:
+
+$$
+\pi(\theta|X_1,\ldots,X_n)
+\propto
+\pi(\theta)
+L_n(X_1,\ldots,X_n|\theta),
+\quad\theta\in\Theta
+,
+$$
+Hai vế tỷ lệ thuận theo một hằng số độc lập với $\theta,$
+đảm bảo tích phân của xác suất hậu nghiệm trên $\Theta$ bằng $1.$
+:::

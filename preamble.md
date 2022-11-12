@@ -12,7 +12,7 @@ $$
 \def\indicator#1{\mathbb{1}\{#1\}}
 \def\p{\vec{p}}
 \def\P{\mathbb{P}}
-\def\Poi{\text{Poi}}
+\def\Poiss{\text{Poiss}}
 \def\R{\mathbb{R}}
 \def\V{\mathbb{V}}
 \def\N{\mathbb{Z}_+}

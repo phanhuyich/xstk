@@ -105,10 +105,12 @@ Hai biến $X$ và $Y$ là độc lập nếu hai sự kiện $X\leq x$ và $Y\l
 
 ::: {#def-iid}
 ### IID
-Các biến ngẫu nhiên $X_1, X_2, \ldotp$ được gọi là iid ("independent and
-identically distributed", "độc lập và phân phối giống nhau") nếu chúng
-cùng tuân theo duy nhất một phân phối xác suất, và từng cặp biến là độc
-lập với nhau. Dùng biến $X$ để thể hiện phân phối xác suất chung đó, ta
+Các biến ngẫu nhiên $X_1, X_2, \ldotp$ được gọi là
+iid ("independent and identically distributed", "độc lập và phân phối giống nhau")
+nếu chúng
+cùng tuân theo duy nhất (identical) một phân phối xác suất,
+và từng cặp biến là độc lập (independent) với nhau.
+Dùng biến $X$ để thể hiện phân phối xác suất chung đó, ta
 viết
 $$
 X_1,\ldots,X_n \iid X.

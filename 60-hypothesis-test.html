@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./70-bayes-stat.html" rel="next">
 <link href="./50-est-method.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -103,6 +103,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="./index.html" class="sidebar-item-text sidebar-link">Lời nói đầu</a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./notation.html" class="sidebar-item-text sidebar-link">Ký hiệu</a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Xác suất</a>
@@ -151,11 +156,16 @@ ul.task-list li input[type="checkbox"] {
   <a href="./60-hypothesis-test.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kiểm định</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./70-bayes-stat.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">Giáo trình</a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">Tham khảo</a>
   </div>
 </li>
     </ul>
@@ -200,16 +210,18 @@ $$
 \def\argmin{\operatorname*{argmin}}
 \def\as{\textrm{a.s.}}
 \def\Ber{\text{Ber}}
+\def\Beta#1#2{\text{Beta}\left(#1,#2\right)}
 \def\Bin{\text{Bin}}
+\def\Geom{\text{Geom}}
 \def\Unif{\text{Unif}}
 \def\E{\mathbb{E}}
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{\coloneqq}
-\def\Gaus{\mathcal{N}}
+\def\Gaus#1#2{\mathcal{N}\left(#1,#2\right)}
 \def\indicator#1{\mathbb{1}\{#1\}}
 \def\p{\vec{p}}
 \def\P{\mathbb{P}}
-\def\Poi{\text{Poi}}
+\def\Poiss{\text{Poiss}}
 \def\R{\mathbb{R}}
 \def\V{\mathbb{V}}
 \def\N{\mathbb{Z}_+}
@@ -367,7 +379,7 @@ R_\psi = \{X_i: T(X_i)\geq c\}
 \frac{\hat{\theta}-\theta}
 {\sqrt{\hat{\V}[\hat{\theta}]}}
 \todist
-\Gaus(0,1).
+\Gaus{0}{1}.
 \]</span></p>
 <p>Đặt</p>
 <p><span class="math display">\[
@@ -412,7 +424,7 @@ W \is \frac{\hat{\theta}-\theta_0}
 <section id="định-lý-cochran" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="định-lý-cochran"><span class="header-section-number">6.2.2</span> Định lý Cochran</h3>
 <div id="thm-cochoran" class="theorem">
-<p><span class="theorem-title"><strong>Định lý 6.1 </strong></span>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus(\mu,\sigma^2).\)</span> Đặt <span class="math display">\[
+<p><span class="theorem-title"><strong>Định lý 6.1 </strong></span>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus{\mu}{\sigma^2}.\)</span> Đặt <span class="math display">\[
 S_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2.
 \]</span></p>
 <p>Khi đó <span class="math inline">\(\E[S_n^2] \equiv \sigma^2,\)</span> <span class="math display">\[
@@ -426,7 +438,7 @@ S_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2.
 </section>
 <section id="students-t-test" class="level3" data-number="6.2.3">
 <h3 data-number="6.2.3" class="anchored" data-anchor-id="students-t-test"><span class="header-section-number">6.2.3</span> Student’s T test</h3>
-<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus(\mu,\sigma^2),\)</span> <span class="math inline">\(\mu,\sigma\)</span> chưa biết, và ta muốn kiểm định <span class="math inline">\(\mu.\)</span> Theo <a href="#thm-cochoran">ĐL&nbsp;<span>6.1</span></a>, <span class="math display">\[
+<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus{\mu}{\sigma^2},\)</span> <span class="math inline">\(\mu,\sigma\)</span> chưa biết, và ta muốn kiểm định <span class="math inline">\(\mu.\)</span> Theo <a href="#thm-cochoran">ĐL&nbsp;<span>6.1</span></a>, <span class="math display">\[
 T\is
 \frac{\bar{X}_n-\mu}{\sqrt{S_n^2/n}}
 \equiv
@@ -469,7 +481,7 @@ T\is
 </section>
 <section id="two-sample-t-test" class="level3" data-number="6.2.4">
 <h3 data-number="6.2.4" class="anchored" data-anchor-id="two-sample-t-test"><span class="header-section-number">6.2.4</span> Two-sample T-test</h3>
-<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus(\mu_x,\sigma_x^2),\)</span> <span class="math inline">\(Y_1,\ldots,Y_m\iid\Gaus(\mu_y,\sigma_y^2),\)</span> với <span class="math inline">\(\mu_x,\sigma_x, \mu_y,\sigma_y\)</span> chưa biết, và ta muốn kiểm định <span class="math inline">\(\mu_x-\mu_y.\)</span> Đặt <span class="math display">\[ \hat{\mu}_n\is\frac{1}{n}\sum_{i=1}^{n}X_i,\quad
+<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus{\mu_x}{\sigma_x^2},\)</span> <span class="math inline">\(Y_1,\ldots,Y_m\iid\Gaus{\mu_y}{\sigma_y^2},\)</span> với <span class="math inline">\(\mu_x,\sigma_x, \mu_y,\sigma_y\)</span> chưa biết, và ta muốn kiểm định <span class="math inline">\(\mu_x-\mu_y.\)</span> Đặt <span class="math display">\[ \hat{\mu}_n\is\frac{1}{n}\sum_{i=1}^{n}X_i,\quad
 \hat{\sigma}_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\hat{\mu}_n)^2
 ,
 \]</span> <span class="math display">\[ \hat{\mu}_m\is\frac{1}{m}\sum_{i=1}^{m}Y_i,\quad
@@ -757,8 +769,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">Giáo trình</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./70-bayes-stat.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

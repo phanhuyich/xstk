@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>XSTK - Giáo trình</title>
+<title>XSTK - Tham khảo</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -49,7 +49,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./60-hypothesis-test.html" rel="prev">
+<link href="./70-bayes-stat.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -89,7 +89,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Giáo trình</h1>
+      <h1 class="quarto-secondary-nav-title">Tham khảo</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -119,6 +119,11 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">Lời nói đầu</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./notation.html" class="sidebar-item-text sidebar-link">Ký hiệu</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -169,11 +174,16 @@ div.csl-indent {
   <a href="./60-hypothesis-test.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kiểm định</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./70-bayes-stat.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">Giáo trình</a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link active">Tham khảo</a>
   </div>
 </li>
     </ul>
@@ -185,7 +195,7 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#tham-khảo" id="toc-tham-khảo" class="nav-link active" data-scroll-target="#tham-khảo">Tham khảo</a></li>
+  <li><a href="#giáo-trình" id="toc-giáo-trình" class="nav-link active" data-scroll-target="#giáo-trình">Giáo trình</a></li>
   <li><a href="#mitx-18.6501x" id="toc-mitx-18.6501x" class="nav-link" data-scroll-target="#mitx-18.6501x">MITx 18.6501x</a>
   <ul class="collapse">
   <li><a href="#quy-định" id="toc-quy-định" class="nav-link" data-scroll-target="#quy-định">Quy định</a></li>
@@ -204,16 +214,18 @@ $$
 \def\argmin{\operatorname*{argmin}}
 \def\as{\textrm{a.s.}}
 \def\Ber{\text{Ber}}
+\def\Beta#1#2{\text{Beta}\left(#1,#2\right)}
 \def\Bin{\text{Bin}}
+\def\Geom{\text{Geom}}
 \def\Unif{\text{Unif}}
 \def\E{\mathbb{E}}
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{\coloneqq}
-\def\Gaus{\mathcal{N}}
+\def\Gaus#1#2{\mathcal{N}\left(#1,#2\right)}
 \def\indicator#1{\mathbb{1}\{#1\}}
 \def\p{\vec{p}}
 \def\P{\mathbb{P}}
-\def\Poi{\text{Poi}}
+\def\Poiss{\text{Poiss}}
 \def\R{\mathbb{R}}
 \def\V{\mathbb{V}}
 \def\N{\mathbb{Z}_+}
@@ -228,7 +240,7 @@ $$
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Giáo trình</h1>
+<h1 class="title d-none d-lg-block">Tham khảo</h1>
 </div>
 
 
@@ -243,8 +255,8 @@ $$
 
 </header>
 
-<section id="tham-khảo" class="level2">
-<h2 class="anchored" data-anchor-id="tham-khảo">Tham khảo</h2>
+<section id="giáo-trình" class="level2">
+<h2 class="anchored" data-anchor-id="giáo-trình">Giáo trình</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-mitxProba" class="csl-entry" role="doc-biblioentry">
 John Tsitsiklis, Dimitri Bertsekas, Partick Jaillet. 2022.
@@ -468,8 +480,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./60-hypothesis-test.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kiểm định</span></span>
+      <a href="./70-bayes-stat.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

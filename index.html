@@ -50,7 +50,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./10-proba-intro.html" rel="next">
+<link href="./notation.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -125,6 +125,11 @@ div.csl-indent {
   <a href="./index.html" class="sidebar-item-text sidebar-link active">Lời nói đầu</a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./notation.html" class="sidebar-item-text sidebar-link">Ký hiệu</a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Xác suất</a>
@@ -173,11 +178,16 @@ div.csl-indent {
   <a href="./60-hypothesis-test.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kiểm định</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./70-bayes-stat.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">Giáo trình</a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">Tham khảo</a>
   </div>
 </li>
     </ul>
@@ -200,16 +210,18 @@ $$
 \def\argmin{\operatorname*{argmin}}
 \def\as{\textrm{a.s.}}
 \def\Ber{\text{Ber}}
+\def\Beta#1#2{\text{Beta}\left(#1,#2\right)}
 \def\Bin{\text{Bin}}
+\def\Geom{\text{Geom}}
 \def\Unif{\text{Unif}}
 \def\E{\mathbb{E}}
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{\coloneqq}
-\def\Gaus{\mathcal{N}}
+\def\Gaus#1#2{\mathcal{N}\left(#1,#2\right)}
 \def\indicator#1{\mathbb{1}\{#1\}}
 \def\p{\vec{p}}
 \def\P{\mathbb{P}}
-\def\Poi{\text{Poi}}
+\def\Poiss{\text{Poiss}}
 \def\R{\mathbb{R}}
 \def\V{\mathbb{V}}
 \def\N{\mathbb{Z}_+}
@@ -427,8 +439,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./10-proba-intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Xác suất</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./notation.html" class="pagination-link">
+        <span class="nav-page-text">Ký hiệu</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./20-distributions.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./notation.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -103,6 +103,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="./index.html" class="sidebar-item-text sidebar-link">Lời nói đầu</a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./notation.html" class="sidebar-item-text sidebar-link">Ký hiệu</a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Xác suất</a>
@@ -151,11 +156,16 @@ ul.task-list li input[type="checkbox"] {
   <a href="./60-hypothesis-test.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kiểm định</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./70-bayes-stat.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">Giáo trình</a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">Tham khảo</a>
   </div>
 </li>
     </ul>
@@ -181,16 +191,18 @@ $$
 \def\argmin{\operatorname*{argmin}}
 \def\as{\textrm{a.s.}}
 \def\Ber{\text{Ber}}
+\def\Beta#1#2{\text{Beta}\left(#1,#2\right)}
 \def\Bin{\text{Bin}}
+\def\Geom{\text{Geom}}
 \def\Unif{\text{Unif}}
 \def\E{\mathbb{E}}
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{\coloneqq}
-\def\Gaus{\mathcal{N}}
+\def\Gaus#1#2{\mathcal{N}\left(#1,#2\right)}
 \def\indicator#1{\mathbb{1}\{#1\}}
 \def\p{\vec{p}}
 \def\P{\mathbb{P}}
-\def\Poi{\text{Poi}}
+\def\Poiss{\text{Poiss}}
 \def\R{\mathbb{R}}
 \def\V{\mathbb{V}}
 \def\N{\mathbb{Z}_+}
@@ -263,7 +275,7 @@ $$
 <p>Hai biến <span class="math inline">\(X\)</span> và <span class="math inline">\(Y\)</span> là độc lập nếu hai sự kiện <span class="math inline">\(X\leq x\)</span> và <span class="math inline">\(Y\leq y\)</span> là độc lập đối với mọi <span class="math inline">\(x,y\)</span>.</p>
 </div>
 <div id="def-iid" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.8 (IID) </strong></span>Các biến ngẫu nhiên <span class="math inline">\(X_1, X_2, \ldotp\)</span> được gọi là iid (“independent and identically distributed”, “độc lập và phân phối giống nhau”) nếu chúng cùng tuân theo duy nhất một phân phối xác suất, và từng cặp biến là độc lập với nhau. Dùng biến <span class="math inline">\(X\)</span> để thể hiện phân phối xác suất chung đó, ta viết <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 1.8 (IID) </strong></span>Các biến ngẫu nhiên <span class="math inline">\(X_1, X_2, \ldotp\)</span> được gọi là iid (“independent and identically distributed”, “độc lập và phân phối giống nhau”) nếu chúng cùng tuân theo duy nhất (identical) một phân phối xác suất, và từng cặp biến là độc lập (independent) với nhau. Dùng biến <span class="math inline">\(X\)</span> để thể hiện phân phối xác suất chung đó, ta viết <span class="math display">\[
 X_1,\ldots,X_n \iid X.
 \]</span></p>
 </div>
@@ -300,11 +312,12 @@ X_1,\ldots,X_n \iid X.
 \E[X+Y] \equiv \E[X] + E[Y].
 \]</span></p>
 <div id="def-covar" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.11 (Hiệp phương sai) </strong></span>&nbsp;</p>
-<span class="math display">\[\begin{align}
+<p><span class="theorem-title"><strong>Định nghĩa 1.11 (Hiệp phương sai) </strong></span><span class="math display">\[
+\begin{split}
 \textrm{Cov}[X,Y] &amp;\is \E[(X-\E[X])(Y-\E[Y])] \\
 &amp;\equiv \E[XY] - \E[X]\E[Y]
-\end{align}\]</span>
+\end{split}
+\]</span></p>
 </div>
 <p>Nếu <span class="math inline">\(X\)</span> và <span class="math inline">\(Y\)</span> độc lập thì <span class="math inline">\(\textrm{Cov}[X,Y] = 0\)</span>.</p>
 <div id="def-variance" class="theorem definition">
@@ -469,8 +482,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lời nói đầu</span>
+      <a href="./notation.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Ký hiệu</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

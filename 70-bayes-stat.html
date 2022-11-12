@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>XSTK - 4&nbsp; Thống kê</title>
+<title>XSTK - 7&nbsp; Bayesian</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./50-est-method.html" rel="next">
-<link href="./30-proba-converge.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./60-hypothesis-test.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Thống kê</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -143,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./40-stat-intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Thống kê</span></a>
+  <a href="./40-stat-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Thống kê</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -158,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./70-bayes-stat.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian</span></a>
+  <a href="./70-bayes-stat.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian</span></a>
   </div>
 </li>
       </ul>
@@ -177,11 +177,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#mô-hình" id="toc-mô-hình" class="nav-link active" data-scroll-target="#mô-hình"><span class="toc-section-number">4.1</span>  Mô hình</a></li>
-  <li><a href="#ước-lượng" id="toc-ước-lượng" class="nav-link" data-scroll-target="#ước-lượng"><span class="toc-section-number">4.2</span>  Ước lượng</a></li>
-  <li><a href="#sai-số" id="toc-sai-số" class="nav-link" data-scroll-target="#sai-số"><span class="toc-section-number">4.3</span>  Sai số</a></li>
-  <li><a href="#khoảng-tin-cậy" id="toc-khoảng-tin-cậy" class="nav-link" data-scroll-target="#khoảng-tin-cậy"><span class="toc-section-number">4.4</span>  Khoảng tin cậy</a></li>
-  <li><a href="#định-lý-cơ-bản" id="toc-định-lý-cơ-bản" class="nav-link" data-scroll-target="#định-lý-cơ-bản"><span class="toc-section-number">4.5</span>  Định lý cơ bản</a></li>
+  <li><a href="#phương-pháp" id="toc-phương-pháp" class="nav-link active" data-scroll-target="#phương-pháp"><span class="toc-section-number">7.1</span>  Phương pháp</a></li>
+  <li><a href="#loại-prior" id="toc-loại-prior" class="nav-link" data-scroll-target="#loại-prior"><span class="toc-section-number">7.2</span>  Loại prior</a></li>
   </ul>
 </nav>
     </div>
@@ -218,7 +215,7 @@ $$
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Thống kê</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian</span></h1>
 </div>
 
 
@@ -233,80 +230,62 @@ $$
 
 </header>
 
-<section id="mô-hình" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="mô-hình"><span class="header-section-number">4.1</span> Mô hình</h2>
-<p>Trên không gian đo được <span class="math inline">\(E\subseteq\R\)</span> ta quan sát các mẫu <span class="math inline">\(X_1,\ldots,X_n\iid\P\)</span>. Với tập tham số <span class="math inline">\(\Theta\)</span> ta xây dựng bộ độ đo xác suất <span class="math inline">\((\P_\theta)_{\theta\in\Theta}\)</span> để mô phỏng <span class="math inline">\(\P\)</span> .</p>
-<p>Nếu tồn tại <span class="math inline">\(\theta\in\Theta\)</span> để <span class="math inline">\(\P_\theta\equiv\P\)</span> thì ta nói mô hình “hợp lệ” (well specified).</p>
-<p>Nếu từ tập <span class="math inline">\(\Theta\)</span>, ánh xạ <span class="math inline">\(\theta\mapsto\P_{\theta}\)</span> là đơn ánh thì ta nói <span class="math inline">\(\theta\)</span> (hoặc <span class="math inline">\(\P_\theta\)</span>) là “có thể xác định” (identifiable).</p>
-<p>Nếu <span class="math inline">\(\Theta\subseteq\R^d\)</span> thì mô hình được nói có số biến hữu hạn (parametric model).</p>
-</section>
-<section id="ước-lượng" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="ước-lượng"><span class="header-section-number">4.2</span> Ước lượng</h2>
-<p>Thống kê lượng (statistic) <span class="math inline">\(\theta\)</span> là bất cứ hàm số nào có thể đo được (measurable function) trên tập dữ liệu đối tượng <span class="math inline">\(X_i\)</span>.</p>
-<p>Đánh giá (estimator) <span class="math inline">\(\theta_n\)</span> đối với mục tiêu thống kê <span class="math inline">\(\theta\)</span> là một thống kê khác không phụ thuộc vào <span class="math inline">\(\theta\)</span>.</p>
-<p>Đánh giá được gọi là nhất quán (consistent) nếu nó hội tụ về mục tiêu (<a href="30-proba-converge.html#def-conv-proba">ĐN&nbsp;<span>3.2</span></a>).</p>
-<div id="def-pivot-stat" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 4.1 (Pivotal statistic) </strong></span>Một phân phối hay một ước lượng được gọi là pivotal nếu nó không phụ thuộc vào phân phối chưa biết và giá trị cụ thể của dữ liệu.</p>
-</div>
-</section>
-<section id="sai-số" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="sai-số"><span class="header-section-number">4.3</span> Sai số</h2>
-<div id="def-bias" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 4.2 (Độ lệch, bias) </strong></span>giữa đánh giá <span class="math inline">\(\theta_n\)</span> với mục tiêu <span class="math inline">\(\theta\)</span> là <span class="math display">\[\textrm{bias}_{\theta}({\theta}_n) \is \E[\theta_n] - \theta.\]</span></p>
-</div>
-<div id="def-mse" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 4.3 (Sai số bậc 2, quadratic risk, mean squared error) </strong></span>giữa đánh giá <span class="math inline">\(\theta_n\)</span> với mục tiêu <span class="math inline">\(\theta\)</span> là <span class="math display">\[
-\textrm{MSE}(\theta_n)\is\E[(\theta_n-\theta)^2]
-\equiv
-\textrm{bias}_{\theta}(\theta_n)^2
-+
-\V[\theta_n]
-\]</span> bao hàm cả độ lệch và độ nhiễu của đánh giá.</p>
-</div>
-</section>
-<section id="khoảng-tin-cậy" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="khoảng-tin-cậy"><span class="header-section-number">4.4</span> Khoảng tin cậy</h2>
-<p>Với mô hình thống kê <span class="math inline">\((E,(\P_\theta)_{\theta\in\Theta})\)</span> xây dựng dựa trên quan sát <span class="math inline">\(X_1,\ldots,X_n\)</span>, giả sử số <span class="math inline">\(\alpha\in(0,1).\)</span> Khoảng tin cậy (confidence interval) cấp <span class="math inline">\(1-\alpha\)</span> đối với <span class="math inline">\(\theta\)</span> là một khoảng ngẫu nhiên <span class="math inline">\(\mathcal{I}\)</span> (phụ thuộc vào <span class="math inline">\(X_1,\ldots,X_n\)</span>, không phụ thuộc vào <span class="math inline">\(\theta\)</span>), mà xác suất <span class="math inline">\(\mathcal{I}\)</span> có chứa <span class="math inline">\(\theta\)</span> là đủ cao: <span class="math display">\[\P_\theta[\mathcal{I}\ni\theta]\geq 1-\alpha,\quad\forall\theta\in\Theta.\]</span></p>
-<p>Nếu <span class="math display">\[\lim_{n\to\infty}\P_\theta[\mathcal{I}\ni\theta]\geq 1-\alpha,\quad\forall\theta\in\Theta\]</span> thì ta gọi <span class="math inline">\(\mathcal{I}\)</span> là khoảng tin cậy tiệm cận cấp <span class="math inline">\(1-\alpha\)</span> đối với <span class="math inline">\(\theta\)</span>.</p>
-</section>
-<section id="định-lý-cơ-bản" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="định-lý-cơ-bản"><span class="header-section-number">4.5</span> Định lý cơ bản</h2>
-<div id="def-emprical-cdf" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 4.4 (Empirical cdf) </strong></span>Với <span class="math inline">\(X_1,\ldots,X_n\iid X,\)</span> ước lượng phân phối tích lũy (<a href="10-proba-intro.html#def-cdf">ĐN&nbsp;<span>1.3</span></a>) của <span class="math inline">\(X\)</span> là hàm tăng đơn điệu và liên tục bên phải <span class="math display">\[
-F_n:\R\to[0,1],
-F_n(t)\is
-\frac{1}{n}
-\sum_{i=1}^n\indicator{X_i\leq t},
-\]</span> tức là tỷ lệ số biến <span class="math inline">\(X_i\leq t.\)</span></p>
-</div>
-<p>Nếu xếp <span class="math inline">\(X_1\leq\ldots\leq X_n&lt;X_{n+1}=\infty\)</span> từ nhỏ đến lớn thì ta có <span class="math display">\[
-F(t) = \frac{i}{n}
-\, \textrm{ for } t\in[X_{i}, X_{i+1})
-\quad\forall i=1,\ldots,n
-.\]</span></p>
-<p>Áp dụng LLN lên biến <span class="math inline">\(\indicator{X&lt;t}\)</span> ta có <span class="math inline">\(F_n(t)\tosure F(t)\,\forall t\in\R.\)</span></p>
-<div id="thm-fundamental" class="theorem">
-<p><span class="theorem-title"><strong>Định lý 4.1 (Glivenko-Cantelli, Fundamental Theorem of Statistics) </strong></span><span class="math inline">\(F_n\)</span> hội tụ đồng đều (converge uniformly) lên <span class="math inline">\(F.\)</span> <span class="math display">\[
-\sup_{t\in\R}|F_n(t)-F(t)|
-\tosure 0
-.\]</span> Nói cách khác <span class="math inline">\(\forall\delta&gt;0,\forall\epsilon&gt;0:\exists N:\)</span> <span class="math display">\[
-n&gt;N \implies
-\P\left(
-\sup_{t\in\R}|F_n(t)-F(t)| &lt; \delta
-\right)
-\geq 1-\epsilon
+<section id="phương-pháp" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="phương-pháp"><span class="header-section-number">7.1</span> Phương pháp</h2>
+<div id="def-bayesian-method" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 7.1 (Bayesian method) </strong></span>Với dữ liệu <span class="math inline">\(X_1,\ldots,X_n,\)</span> ta ước lượng tham số <span class="math inline">\(\theta\)</span> cho mô hình xác suất qua các bước:</p>
+<ol type="1">
+<li>Gán xác suất tiên nghiệm (prior) <span class="math inline">\(\pi(\theta)\)</span> cho tham số <span class="math inline">\(\theta\in\Theta.\)</span></li>
+<li>Chọn xác suất <span class="math inline">\(f(X|\theta)\)</span> phụ thuộc vào <span class="math inline">\(\theta,\)</span> gọi MLE (<a href="50-est-method.html#def-mle">ĐN&nbsp;<span>5.5</span></a>) là <span class="math inline">\(L_n\)</span></li>
+<li>Tính xác suất hậu nghiệm (posterior) theo Bayes <a href="10-proba-intro.html#thm-bayes">ĐL&nbsp;<span>1.1</span></a>:</li>
+</ol>
+<p><span class="math display">\[
+\begin{split}
+\pi(\theta|X_1,\ldots,X_n)
+&amp;=
+\frac{
+L_n(X_1,\ldots,X_n|\theta)
+\pi(\theta)
+}{
+    \int_{\theta\in\Theta}
+L_n(X_1,\ldots,X_n|\theta)
+\pi(\theta)
+d\theta
+}\\
+&amp;\propto
+L_n(X_1,\ldots,X_n|\theta)
+\pi(\theta),
+\quad\theta\in\Theta
 .
+\end{split}
 \]</span></p>
 </div>
-<div id="thm-donsker" class="theorem">
-<p><span class="theorem-title"><strong>Định lý 4.2 (Donsker’s theorem) </strong></span>Nếu cdf <span class="math inline">\(F\)</span> thật là liên tục thì</p>
-<p><span class="math display">\[
-\sqrt{n}\sup_{t\in\R}
-|F_n(t)-F(t)|
-\todist
-Z\sim
-\sup_{0\leq x \leq 1}|B(x)|
-,\]</span> với <span class="math inline">\(Z\)</span> là phân phối của đỉnh giá trị tuyệt đối của <strong>Brownian bridge</strong>, và là phân phối pivotal(<a href="#def-pivot-stat">ĐN&nbsp;<span>4.1</span></a>).</p>
+</section>
+<section id="loại-prior" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="loại-prior"><span class="header-section-number">7.2</span> Loại prior</h2>
+<div id="def-conjugate-prior" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 7.2 (Conjugate prior) </strong></span>Nếu xác suất tiền nghiệm và xác suất hậu nghiệm thuộc cùng một hệ xác suất, ta nói xác suất tiền nghiệm là liên hợp đối với mô hình.</p>
+</div>
+<div id="exm-conjugate-prior" class="theorem example">
+<p><span class="theorem-title"><strong>Ví dụ 7.1 </strong></span>Beta là xác suất liên hợp tiền nghiệm đối với mô hình Bernoulli <span class="math inline">\(\Ber\)</span>, nhị thức <span class="math inline">\(\Bin\)</span> và hình học <span class="math inline">\(\Geom.\)</span></p>
+</div>
+<div id="def-non-informative-prior" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 7.3 (Non informative prior) </strong></span>Nếu ta không có thông tin tiền nghiệm gì về tham số <span class="math inline">\(\theta\in\Theta=[a, b]\)</span> thì có thể dùng phân phối đồng đều <span class="math inline">\(\Unif[a,b]\)</span> làm xác suất tiền nghiệm.</p>
+</div>
+<div id="def-improper-prior" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 7.4 (Improper prior) </strong></span>Nếu hàm <span class="math inline">\(\pi:\Theta\to[0,+\infty)\)</span> là đo được (measurable) nhưng không khả tích toàn phần trên <span class="math inline">\(\Theta\)</span> thì ta nói <span class="math inline">\(\pi\)</span> là improper prior.</p>
+</div>
+<div id="def-jeffreys-prior" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 7.5 (Jeffreys prior) </strong></span><span class="math display">\[\pi_J(\theta)\propto\sqrt{\det I(\theta)}
+\]</span> với <span class="math inline">\(I(\theta)\)</span> là thông tin Fisher (<a href="50-est-method.html#def-fisher-info">ĐN&nbsp;<span>5.8</span></a>) của mô hình thống kê cho <span class="math inline">\(X_1,\ldots,X_n.\)</span></p>
+</div>
+<div id="exm-jeffreys-prior" class="theorem example">
+<p><span class="theorem-title"><strong>Ví dụ 7.2 </strong></span>&nbsp;</p>
+<ul>
+<li>Thí nghiệm <span class="math inline">\(\Ber(p), p\in(0,1)\)</span> có <span class="math display">\[\pi_J(p)\propto\frac{1}{\sqrt{p(1-p)}}\propto\Beta{\frac{1}{2}}{\frac{1}{2}}
+.\]</span></li>
+<li>Thí nghiệm <span class="math inline">\(\Gaus{\mu}{1}, \mu\in\R\)</span> có <span class="math inline">\(\pi_J(\mu)\propto 1\)</span> là improper prior.</li>
+</ul>
 </div>
 
 
@@ -448,13 +427,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./30-proba-converge.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Hội tụ</span></span>
+      <a href="./60-hypothesis-test.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kiểm định</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./50-est-method.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ước lượng</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">Tham khảo</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

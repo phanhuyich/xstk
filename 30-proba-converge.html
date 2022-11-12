@@ -103,6 +103,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="./index.html" class="sidebar-item-text sidebar-link">Lời nói đầu</a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./notation.html" class="sidebar-item-text sidebar-link">Ký hiệu</a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Xác suất</a>
@@ -151,11 +156,16 @@ ul.task-list li input[type="checkbox"] {
   <a href="./60-hypothesis-test.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kiểm định</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./70-bayes-stat.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">Giáo trình</a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">Tham khảo</a>
   </div>
 </li>
     </ul>
@@ -186,16 +196,18 @@ $$
 \def\argmin{\operatorname*{argmin}}
 \def\as{\textrm{a.s.}}
 \def\Ber{\text{Ber}}
+\def\Beta#1#2{\text{Beta}\left(#1,#2\right)}
 \def\Bin{\text{Bin}}
+\def\Geom{\text{Geom}}
 \def\Unif{\text{Unif}}
 \def\E{\mathbb{E}}
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{\coloneqq}
-\def\Gaus{\mathcal{N}}
+\def\Gaus#1#2{\mathcal{N}\left(#1,#2\right)}
 \def\indicator#1{\mathbb{1}\{#1\}}
 \def\p{\vec{p}}
 \def\P{\mathbb{P}}
-\def\Poi{\text{Poi}}
+\def\Poiss{\text{Poiss}}
 \def\R{\mathbb{R}}
 \def\V{\mathbb{V}}
 \def\N{\mathbb{Z}_+}
@@ -254,7 +266,7 @@ X_n \todist X \iff
 \frac{\sqrt{n}}{|\sigma|}
 \left({X}_n-X\right)
 \todist
-\Gaus(0,1).
+\Gaus{0}{1}.
 \]</span></p>
 </div>
 </section>
@@ -311,7 +323,7 @@ X_n \todist X.
 \frac{\bar{X}_n-\mu}{|\sigma|}
 \right)
 \todist
-\Gaus(0,1).
+\Gaus{0}{1}.
 \]</span></p>
 </div>
 </section>
@@ -333,7 +345,7 @@ X_n \todist X.
 \left(\frac{g(\theta_n)-g(\theta)}
 {g^\prime(\theta)}\right)
 \todist
-\Gaus\left(0,1\right)
+\Gaus{0}{1}
 \]</span></p>
 </div>
 <div id="thm-multivar-delta" class="theorem">

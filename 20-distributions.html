@@ -103,6 +103,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="./index.html" class="sidebar-item-text sidebar-link">Lời nói đầu</a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./notation.html" class="sidebar-item-text sidebar-link">Ký hiệu</a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Xác suất</a>
@@ -151,11 +156,16 @@ ul.task-list li input[type="checkbox"] {
   <a href="./60-hypothesis-test.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kiểm định</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./70-bayes-stat.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">Giáo trình</a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">Tham khảo</a>
   </div>
 </li>
     </ul>
@@ -167,8 +177,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#phân-phối-rời-rạc" id="toc-phân-phối-rời-rạc" class="nav-link active" data-scroll-target="#phân-phối-rời-rạc"><span class="toc-section-number">2.1</span>  Phân phối rời rạc</a></li>
-  <li><a href="#phân-phối-liên-tục" id="toc-phân-phối-liên-tục" class="nav-link" data-scroll-target="#phân-phối-liên-tục"><span class="toc-section-number">2.2</span>  Phân phối liên tục</a></li>
+  <li><a href="#phân-phối-bernoulli" id="toc-phân-phối-bernoulli" class="nav-link active" data-scroll-target="#phân-phối-bernoulli"><span class="toc-section-number">2.1</span>  Phân phối Bernoulli</a></li>
+  <li><a href="#phân-phối-nhị-thức" id="toc-phân-phối-nhị-thức" class="nav-link" data-scroll-target="#phân-phối-nhị-thức"><span class="toc-section-number">2.2</span>  Phân phối nhị thức</a></li>
+  <li><a href="#phân-phối-poisson" id="toc-phân-phối-poisson" class="nav-link" data-scroll-target="#phân-phối-poisson"><span class="toc-section-number">2.3</span>  Phân phối Poisson</a></li>
+  <li><a href="#phân-phối-hình-học" id="toc-phân-phối-hình-học" class="nav-link" data-scroll-target="#phân-phối-hình-học"><span class="toc-section-number">2.4</span>  Phân phối hình học</a></li>
+  <li><a href="#phân-phối-liên-tục" id="toc-phân-phối-liên-tục" class="nav-link" data-scroll-target="#phân-phối-liên-tục"><span class="toc-section-number">2.5</span>  Phân phối liên tục</a></li>
+  <li><a href="#phân-phối-đều" id="toc-phân-phối-đều" class="nav-link" data-scroll-target="#phân-phối-đều"><span class="toc-section-number">2.6</span>  Phân phối đều</a></li>
+  <li><a href="#phân-phối-mũ" id="toc-phân-phối-mũ" class="nav-link" data-scroll-target="#phân-phối-mũ"><span class="toc-section-number">2.7</span>  Phân phối mũ</a></li>
+  <li><a href="#phân-phối-chuẩn" id="toc-phân-phối-chuẩn" class="nav-link" data-scroll-target="#phân-phối-chuẩn"><span class="toc-section-number">2.8</span>  Phân phối chuẩn</a></li>
+  <li><a href="#phân-phối-chi2" id="toc-phân-phối-chi2" class="nav-link" data-scroll-target="#phân-phối-chi2"><span class="toc-section-number">2.9</span>  Phân phối <span class="math inline">\(\chi^2\)</span></a></li>
+  <li><a href="#phân-phối-student" id="toc-phân-phối-student" class="nav-link" data-scroll-target="#phân-phối-student"><span class="toc-section-number">2.10</span>  Phân phối Student</a></li>
+  <li><a href="#phân-phối-beta" id="toc-phân-phối-beta" class="nav-link" data-scroll-target="#phân-phối-beta"><span class="toc-section-number">2.11</span>  Phân phối Beta</a></li>
+  <li><a href="#phân-phối-gamma" id="toc-phân-phối-gamma" class="nav-link" data-scroll-target="#phân-phối-gamma"><span class="toc-section-number">2.12</span>  Phân phối Gamma</a></li>
   </ul>
 </nav>
     </div>
@@ -179,16 +199,18 @@ $$
 \def\argmin{\operatorname*{argmin}}
 \def\as{\textrm{a.s.}}
 \def\Ber{\text{Ber}}
+\def\Beta#1#2{\text{Beta}\left(#1,#2\right)}
 \def\Bin{\text{Bin}}
+\def\Geom{\text{Geom}}
 \def\Unif{\text{Unif}}
 \def\E{\mathbb{E}}
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{\coloneqq}
-\def\Gaus{\mathcal{N}}
+\def\Gaus#1#2{\mathcal{N}\left(#1,#2\right)}
 \def\indicator#1{\mathbb{1}\{#1\}}
 \def\p{\vec{p}}
 \def\P{\mathbb{P}}
-\def\Poi{\text{Poi}}
+\def\Poiss{\text{Poiss}}
 \def\R{\mathbb{R}}
 \def\V{\mathbb{V}}
 \def\N{\mathbb{Z}_+}
@@ -219,35 +241,48 @@ $$
 </header>
 
 <p>Có một số phân phối xác suất thông dụng.</p>
-<section id="phân-phối-rời-rạc" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="phân-phối-rời-rạc"><span class="header-section-number">2.1</span> Phân phối rời rạc</h2>
+<section id="phân-phối-bernoulli" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="phân-phối-bernoulli"><span class="header-section-number">2.1</span> Phân phối Bernoulli</h2>
 <div id="def-bernoulli" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 2.1 (Phân phối Bernoulli) </strong></span><span class="math inline">\(X\sim\Ber(p)\)</span> có <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 2.1 (Bernoulli distribution) </strong></span><span class="math inline">\(X\sim\Ber(p)\)</span> có <span class="math display">\[
 \P(X=1) = p = 1-\P(X=0)
 \]</span> và <span class="math inline">\(\E[X] = p, \V[X] = p(1-p)\)</span>.</p>
 </div>
+</section>
+<section id="phân-phối-nhị-thức" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="phân-phối-nhị-thức"><span class="header-section-number">2.2</span> Phân phối nhị thức</h2>
 <div id="def-binomial" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 2.2 (Phân phối Binomial) </strong></span><span class="math inline">\(X\sim\Bin(n, p)\)</span> với <span class="math inline">\(n\in\N, p\in(0,1)\)</span> mô tả tổng số lần thành công của <span class="math inline">\(n\)</span> thí nghiệm độc lập <span class="math inline">\(X_1,\ldots,X_n \iid \Ber(p).\)</span> Ta có <span class="math display">\[
-\P(X=k) = \binom{n}{k}p^{k}(1-p)^{n-k}
-\]</span> và <span class="math inline">\(\E[X] = np, \V[X] = np(1-p)\)</span>.</p>
-</div>
-<div id="def-poisson" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 2.3 (Phân phối Poisson) </strong></span><span class="math inline">\(X\sim\Poi(\lambda)\)</span> thường dùng để mô tả số lần <span class="math inline">\(k\)</span> mà sự kiện phát sinh trong một giới hạn cố định, với giả định tần suất phát sinh sự kiện là <span class="math inline">\(\lambda &gt; 0\)</span> cố định, và các sự kiện phát sinh độc lập. <span class="math display">\[
-\P(X=k) = e^{-\lambda}
-\frac{\lambda^k}{k!}, \,k=0,1,2,\ldots
-\]</span> và <span class="math inline">\(\E[X] = \V[X] = \lambda\)</span>.</p>
-</div>
-<p>Khi <span class="math inline">\(n\)</span> đủ lớn và <span class="math inline">\(p\)</span> đủ nhỏ thì <span class="math inline">\(\Poi(np)\)</span> gần với <span class="math inline">\(\Bin(n,p)\)</span>.</p>
-<div id="def-geomdist" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 2.4 (Phân phối Geometric) </strong></span><span class="math inline">\(X\sim\text{Geom}(p), p \in (0,1)\)</span> có <span class="math display">\[
-\P(X=k)=p(1-p)^{k-1}, k=1,2,\ldots
-\]</span> và <span class="math inline">\(\E[X]=1/p,\V[X]=(1-p)/p^2.\)</span></p>
+<p><span class="theorem-title"><strong>Định nghĩa 2.2 (Binomial distribution) </strong></span><span class="math inline">\(K\sim\Bin(n, p)\)</span> với <span class="math inline">\(n\in\N, p\in(0,1)\)</span> mô tả tổng số lần thành công của <span class="math inline">\(n\)</span> thí nghiệm độc lập <span class="math inline">\(K_1,\ldots,K_n \iid \Ber(p).\)</span> Ta có <span class="math display">\[
+\P(K=k) = \binom{n}{k}p^{k}(1-p)^{n-k}
+\]</span> và <span class="math inline">\(\E[K] = np, \V[K] = np(1-p)\)</span>.</p>
 </div>
 </section>
-<section id="phân-phối-liên-tục" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="phân-phối-liên-tục"><span class="header-section-number">2.2</span> Phân phối liên tục</h2>
+<section id="phân-phối-poisson" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="phân-phối-poisson"><span class="header-section-number">2.3</span> Phân phối Poisson</h2>
+<div id="def-poisson" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 2.3 (Phân phối Poisson) </strong></span><span class="math inline">\(K\sim\Poiss(\lambda),\)</span> <span class="math inline">\(\lambda &gt; 0\)</span> cố định, có <span class="math display">\[
+\P(K=k) = e^{-\lambda}
+\frac{\lambda^k}{k!},
+\]</span> <span class="math inline">\(k=0,1,2,\ldots\)</span> là số lần phát sinh sự kiện trong một giới hạn cố định, các sự kiện phát sinh độc lập. <span class="math display">\[\E[K] = \V[K] = \lambda
+.\]</span></p>
+</div>
+<p>Khi <span class="math inline">\(n\)</span> đủ lớn và <span class="math inline">\(p\)</span> đủ nhỏ thì <span class="math inline">\(\Poiss(np)\)</span> gần với <span class="math inline">\(\Bin(n,p)\)</span>.</p>
+</section>
+<section id="phân-phối-hình-học" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="phân-phối-hình-học"><span class="header-section-number">2.4</span> Phân phối hình học</h2>
+<div id="def-geomdist" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 2.4 (Geometric distribution) </strong></span><span class="math inline">\(K\sim\Geom(p), p \in (0,1)\)</span> có <span class="math display">\[
+\P(K=k)=p(1-p)^{k-1}, k=1,2,\ldots
+\]</span> là xác suất thành công đầu tiên xảy ra sau đúng <span class="math inline">\(k\)</span> lần thực nghiệm <span class="math inline">\(\Ber(k).\)</span> <span class="math display">\[\E[K]=1/p,\V[K]=(1-p)/p^2.\]</span></p>
+</div>
+</section>
+<section id="phân-phối-liên-tục" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="phân-phối-liên-tục"><span class="header-section-number">2.5</span> Phân phối liên tục</h2>
+</section>
+<section id="phân-phối-đều" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="phân-phối-đều"><span class="header-section-number">2.6</span> Phân phối đều</h2>
 <div id="def-uniform" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 2.5 (Phân phối đồng đều) </strong></span><span class="math inline">\(X\sim\Unif[a,b]\)</span> có mật độ <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 2.5 (Uniform distribution) </strong></span><span class="math inline">\(X\sim\Unif[a,b]\)</span> có mật độ <span class="math display">\[
 f(x)\is
 \frac{x-a}{b-a}
 \textrm{ for }
@@ -255,39 +290,74 @@ x\in[a,b]
 \]</span> và <span class="math display">\[\E[X] = \frac{a+b}{2}, \V[X]=\frac{(b-a)^2}{12}.\]</span></p>
 </div>
 <p>Nếu biến <span class="math inline">\(X\)</span> có cdf <span class="math inline">\(F\)</span> (<a href="10-proba-intro.html#def-cdf">ĐN&nbsp;<span>1.3</span></a>) khả nghịch thì <span class="math inline">\(F(X)\sim\Unif[0,1].\)</span></p>
+</section>
+<section id="phân-phối-mũ" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="phân-phối-mũ"><span class="header-section-number">2.7</span> Phân phối mũ</h2>
 <div id="def-expdist" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 2.6 (Phân phối Exponential) </strong></span><span class="math inline">\(X\sim\text{Exp}(\lambda)\)</span> dùng để mô tả khoảng cách <span class="math inline">\(x\)</span> giữa hai lần phát sinh của một chuỗi sự kiện kiểu Poisson (hai lần phát sinh sự kiện liên tiếp là độc lập với nhau, và tần suất phát sinh <span class="math inline">\(\lambda&gt;0\)</span> là cố định). Có <span class="math display">\[
-f(x)={\lambda}e^{-\lambda x},x\in\R_+
-\]</span> và <span class="math inline">\(\E[X]=1/\lambda,\V[X]=1/\lambda^2.\)</span></p>
+<p><span class="theorem-title"><strong>Định nghĩa 2.6 (Exponential distribution) </strong></span><span class="math inline">\(X\sim\text{Exp}(\lambda)\)</span> có <span class="math display">\[
+f(x)={\lambda}e^{-\lambda x},x\in\R_+,
+\]</span> <span class="math inline">\(x\)</span> ước lượng khoảng cách giữa hai lần phát sinh sự kiện trong quá trình <span class="math inline">\(\Poiss(\lambda).\)</span> <span class="math display">\[\E[X]=1/\lambda,\V[X]=1/\lambda^2.\]</span></p>
 </div>
+</section>
+<section id="phân-phối-chuẩn" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="phân-phối-chuẩn"><span class="header-section-number">2.8</span> Phân phối chuẩn</h2>
 <div id="def-gaussian" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 2.7 (Phân phối chuẩn 1 biến, Gaussian Distribution) </strong></span><span class="math inline">\(X\sim\Gaus(\mu,\sigma^2)\)</span> có mật độ <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 2.7 (Gaussian Distribution) </strong></span><span class="math inline">\(X\sim\Gaus{\mu}{\sigma^2}\)</span> có mật độ <span class="math display">\[
 f(x) =
 \frac{1}{\sqrt{\pi 2\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right),
 x\in\R
 \]</span> và <span class="math inline">\(\E[X]=\mu,\V[X]=\sigma^2\)</span>.</p>
 </div>
 <div id="thm-sum-gaussian" class="theorem">
-<p><span class="theorem-title"><strong>Định lý 2.1 (Tổng của các phân phối chuẩn) </strong></span>Nếu <span class="math inline">\(X_i \sim\Gaus(\mu_i,\sigma_i^2) (i=1,\ldots,n)\)</span> thì</p>
-<p><span class="math display">\[\sum_{i=1}^n X_i\sim\Gaus\left(\sum_{i=1}^n \mu_i,\sum_{i=1}^n \sigma_i^2\right)
+<p><span class="theorem-title"><strong>Định lý 2.1 (Tổng của các phân phối chuẩn) </strong></span>Nếu <span class="math inline">\(X_i \sim\Gaus{\mu_i}{\sigma_i^2} (i=1,\ldots,n)\)</span> thì</p>
+<p><span class="math display">\[\sum_{i=1}^n X_i\sim
+\Gaus{\sum_{i=1}^n \mu_i}{\sum_{i=1}^n \sigma_i^2}
 .\]</span></p>
 </div>
 <div id="def-normal-vector" class="theorem definition">
 <p><span class="theorem-title"><strong>Định nghĩa 2.8 (Vector phân phối chuẩn) </strong></span>Nếu mọi tổ hợp tuyến tính các yếu tố của vector <span class="math inline">\(\boldsymbol{v}\)</span> đều thuộc phân phối chuẩn 1 biến thì <span class="math inline">\(\boldsymbol{v}\)</span> được gọi là một vector phân phối chuẩn.</p>
 </div>
+</section>
+<section id="phân-phối-chi2" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="phân-phối-chi2"><span class="header-section-number">2.9</span> Phân phối <span class="math inline">\(\chi^2\)</span></h2>
 <div id="def-chi-dist" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 2.9 (Phân phối <span class="math inline">\(\chi^2\)</span>) </strong></span><span class="math inline">\(X\sim\chi_k^2\)</span> là tổng bình phương của <span class="math inline">\(X_1,\ldots,X_k\iid\Gaus(0,1)\)</span></p>
+<p><span class="theorem-title"><strong>Định nghĩa 2.9 (Phân phối <span class="math inline">\(\chi^2\)</span>) </strong></span><span class="math inline">\(X\sim\chi_k^2\)</span> là tổng bình phương của <span class="math inline">\(X_1,\ldots,X_k\iid\Gaus{0}{1}\)</span></p>
 <p><span class="math display">\[
 X \is \sum_{i=0}^k X_i^2
 \]</span></p>
 <p>và có <span class="math inline">\(\E[X]=k,\V[X]=2k\)</span>.</p>
 </div>
+</section>
+<section id="phân-phối-student" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="phân-phối-student"><span class="header-section-number">2.10</span> Phân phối Student</h2>
 <div id="def-student-dist" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 2.10 (Phân phối Student’s T) </strong></span>Nếu có <span class="math inline">\(Z\sim\Gaus(0,1), V\sim \chi_k^2\)</span> độc lập với nhau thì</p>
+<p><span class="theorem-title"><strong>Định nghĩa 2.10 (Student’s T distribution) </strong></span>Nếu có <span class="math inline">\(Z\sim\Gaus{0}{1}, V\sim \chi_k^2\)</span> độc lập với nhau thì</p>
 <p><span class="math display">\[
 X \is \frac{Z}{\sqrt{V/k}}
 \]</span></p>
 <p>tuân theo phân phối Student’s <span class="math inline">\(t_k\)</span>.</p>
+</div>
+</section>
+<section id="phân-phối-beta" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="phân-phối-beta"><span class="header-section-number">2.11</span> Phân phối Beta</h2>
+<div id="def-beta-dist" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 2.11 (Beta distribution) </strong></span><span class="math inline">\(X\sim\Beta{\alpha}{\beta},\)</span> tham số <span class="math inline">\(\alpha&gt;0,\beta&gt;0\)</span> có mật độ trên <span class="math inline">\(x\in [0,1]\)</span> là <span class="math display">\[
+f(x) = Cx^{\alpha-1}(1-x)^{\beta-1}
+,
+\]</span> <span class="math inline">\(C=C(\alpha,\beta)\)</span> là hằng số chuẩn hóa.</p>
+</div>
+<p>Phân phối Beta có đồ thị rất linh hoạt trên khoảng <span class="math inline">\([0,1],\)</span> rất phù hợp để sử dụng làm xác suất tiền nghiệm (<a href="70-bayes-stat.html#def-bayesian-method">ĐN&nbsp;<span>7.1</span></a>) cho một tham số xác suất <span class="math inline">\(p\in[0,1].\)</span></p>
+<p>Ví dụ <span class="math inline">\(\Unif[0,1] = \Beta{1}{1}.\)</span></p>
+</section>
+<section id="phân-phối-gamma" class="level2" data-number="2.12">
+<h2 data-number="2.12" class="anchored" data-anchor-id="phân-phối-gamma"><span class="header-section-number">2.12</span> Phân phối Gamma</h2>
+<div id="def-gamma-dist" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 2.12 (Gamma distribution) </strong></span>với tham số <span class="math inline">\(q&gt;0, \lambda&gt;0,\)</span> có mật độ là <span class="math display">\[
+f(x)\is\frac{\lambda^q x^{q-1} e^{-\lambda x}}{\Gamma(q)}
+\quad \forall
+x\in (0,\infty)
+,
+\]</span> <span class="math inline">\(\Gamma\)</span> là hàm Euler Gamma.</p>
 </div>
 
 

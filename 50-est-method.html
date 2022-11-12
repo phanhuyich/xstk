@@ -376,13 +376,14 @@ I(\theta)
 <p>Trường hợp mô hình đa biến, <span class="math inline">\(\theta\is(\theta_1,\ldots,\theta_k)\in\R^k:\)</span> <span class="math display">\[
 H_{ij} \is \frac{\partial^2\ell}{\partial\theta_i\partial\theta_j},
 \]</span> <span class="math display">\[
-I(\theta) \is -\E
-\begin{bmatrix}
+I(\theta) \is -\E_X
+\left[
+\begin{pmatrix}
 H_{11} &amp; \cdots &amp; H_{1k} \\
 \vdots &amp; \ddots &amp; \vdots \\
 H_{k1} &amp; \cdots &amp; H_{kk} \\
-\end{bmatrix}
-.
+\end{pmatrix}
+\right].
 \]</span></p>
 </div>
 <div id="thm-mle-asym" class="theorem">

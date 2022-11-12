@@ -252,14 +252,17 @@ $$
 </ol>
 <p>thì ta gọi <span class="math inline">\(\P\)</span> là một <strong>phân phối xác suất</strong> hoặc <strong>độ đo xác suất</strong>.</p>
 <p>Có hai cách cắt nghĩa khái niệm xác suất là tần suất và niềm tin. Theo cách hiểu tần suất thì <span class="math inline">\(\P(A)\)</span> chính là tỷ lệ số lần sự kiện <span class="math inline">\(A\)</span> xảy ra nếu ta thực hiện thí nghiệm vô số lần. Còn theo cách hiểu niềm tin thì <span class="math inline">\(\P(A)\)</span> là thước đo mức độ mà một quan sát viên tin tưởng rằng hiện tượng <span class="math inline">\(A\)</span> sẽ xảy ra.</p>
-<div id="def-pmf" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.2 (Hàm khối xác suất, probability mass function) </strong></span>Với biến rời rạc <span class="math inline">\(X:\Omega\to D,\)</span> <span class="math inline">\(D=\{x_1, x_2, \ldots\}\)</span> đếm được, thì ta có thể gán xác suất <span class="math inline">\(\P(x_i) = p_i\geq 0,\forall i=1,2,\ldots\)</span> sao cho <span class="math inline">\(\sum_i p_i \equiv 1.\)</span></p>
-</div>
 <div id="def-cdf" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.3 (Hàm phân phối tích lũy, cumulative distribution function) </strong></span>là hàm tăng đơn điệu và liên tục bên phải <span class="math inline">\(F:\R\to[0,1], F(x)\is\P(X\leq x)\)</span> với biến <span class="math inline">\(X:\Omega\to \R.\)</span></p>
+<p><span class="theorem-title"><strong>Định nghĩa 1.2 (Hàm phân phối tích lũy, cumulative distribution function) </strong></span>là hàm tăng đơn điệu và liên tục bên phải <span class="math inline">\(F:\R\to[0,1], F(x)\is\P(X\leq x)\)</span> với biến <span class="math inline">\(X:\Omega\to \R.\)</span></p>
+</div>
+<div id="def-pmf" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 1.3 (Hàm khối xác suất, probability mass function) </strong></span>Với biến rời rạc <span class="math inline">\(X:\Omega\to D,\)</span> <span class="math inline">\(D=\{x_1, x_2, \ldots\}\)</span> đếm được, thì ta có thể gán xác suất <span class="math inline">\(\P(x_i) = p_i\geq 0,\forall i=1,2,\ldots\)</span> sao cho <span class="math inline">\(\sum_i p_i \equiv 1.\)</span></p>
 </div>
 <div id="def-pdf" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.4 (Hàm mật độ xác suất, probability density function) </strong></span>là <span class="math inline">\(f(x) = F^\prime(x)\)</span> với <span class="math inline">\(F(x)\is\P(X\leq x)\)</span> là phân phối tích lũy của biến <span class="math inline">\(X:\Omega\to \R.\)</span> Mật độ xác suất là không âm và có tích phân toàn phần bằng <span class="math inline">\(1\)</span>.</p>
+<p><span class="theorem-title"><strong>Định nghĩa 1.4 (Hàm mật độ xác suất, probability density function) </strong></span>là <span class="math inline">\(f(x) = F^\prime(x)\)</span> với <span class="math inline">\(F(x)\is\P(X\leq x)\)</span> là phân phối tích lũy của biến <span class="math inline">\(X:\Omega\to \R.\)</span></p>
+</div>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remark</em>. </span>Mật độ xác suất là không âm và có tích phân toàn phần bằng <span class="math inline">\(1.\)</span> Nếu có độ đo <span class="math inline">\(g(x)\geq 0,x\in\R\)</span> khả tích toàn phần thì có mật độ xác suất <span class="math display">\[f(x)\is\frac{g(x)}{\int_{\R}{g(x)dx}} \propto g(x).\]</span></p>
 </div>
 <div id="def-quantile" class="theorem definition">
 <p><span class="theorem-title"><strong>Định nghĩa 1.5 (Điểm cắt) </strong></span>Biến <span class="math inline">\(X\)</span> tuân theo phân phối tích lũy <span class="math inline">\(F\)</span> có điểm cắt tại mức <span class="math inline">\(1-\alpha\)</span> là <span class="math inline">\(q_\alpha\is F^{-1}(1-\alpha).\)</span></p>

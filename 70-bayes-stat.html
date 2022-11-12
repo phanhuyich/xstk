@@ -242,16 +242,6 @@ $$
 <p><span class="math display">\[
 \begin{split}
 \pi(\theta|X_1,\ldots,X_n)
-&amp;=
-\frac{
-L_n(X_1,\ldots,X_n|\theta)
-\pi(\theta)
-}{
-    \int_{\theta\in\Theta}
-L_n(X_1,\ldots,X_n|\theta)
-\pi(\theta)
-d\theta
-}\\
 &amp;\propto
 L_n(X_1,\ldots,X_n|\theta)
 \pi(\theta),
@@ -284,7 +274,7 @@ L_n(X_1,\ldots,X_n|\theta)
 <ul>
 <li>Thí nghiệm <span class="math inline">\(\Ber(p), p\in(0,1)\)</span> có <span class="math display">\[\pi_J(p)\propto\frac{1}{\sqrt{p(1-p)}}\propto\Beta{\frac{1}{2}}{\frac{1}{2}}
 .\]</span></li>
-<li>Thí nghiệm <span class="math inline">\(\Gaus{\mu}{1}, \mu\in\R\)</span> có <span class="math inline">\(\pi_J(\mu)\propto 1\)</span> là improper prior.</li>
+<li>Thí nghiệm <span class="math inline">\(\Gaus{\mu}{\sigma^2}, (\mu,\sigma^2)\in\R\times\R_+\)</span> có <span class="math inline">\(\pi_J(\mu,\sigma^2)\propto \sigma^{-3}\)</span> là improper prior.</li>
 </ul>
 </div>
 

@@ -1,6 +1,6 @@
 # Bayesian
 
-## Phương pháp Bayesian
+## Phương pháp
 
 :::{#def-bayesian-method}
 ### Bayesian method
@@ -9,18 +9,52 @@ ta
 ước lượng tham số $\theta$ cho mô hình xác suất qua các bước:
 
 1. Gán xác suất tiên nghiệm (prior) $\pi(\theta)$ cho tham số $\theta\in\Theta.$
-2. Chọn mô hình xác suất $f(X|\theta)$ phụ thuộc vào $\theta,$
-gọi MLE (@def-mle) là $L_n(X_1,\ldots,X_n|\theta)$
+2. Chọn xác suất $f(X|\theta)$ phụ thuộc vào $\theta,$
+gọi MLE (@def-mle) là $L_n$
 3. Tính xác suất hậu nghiệm (posterior) theo Bayes @thm-bayes:
 
 $$
+\begin{align}
 \pi(\theta|X_1,\ldots,X_n)
-\propto
+&=
+\frac{
+L_n(X_1,\ldots,X_n|\theta)
 \pi(\theta)
-L_n(X_1,\ldots,X_n|\theta),
+}{
+    \int_{\theta\in\Theta}
+L_n(X_1,\ldots,X_n|\theta)
+\pi(\theta)
+d\theta
+}\\
+&\propto
+L_n(X_1,\ldots,X_n|\theta)
+\pi(\theta),
 \quad\theta\in\Theta
-,
+.
+\end{align}
 $$
-Hai vế tỷ lệ thuận theo một hằng số độc lập với $\theta,$
-đảm bảo tích phân của xác suất hậu nghiệm trên $\Theta$ bằng $1.$
+:::
+
+## Loại prior
+
+:::{#def-conjugate-prior}
+### Conjugate prior
+Nếu xác suất tiền nghiệm và xác suất hậu nghiệm thuộc cùng một hệ xác suất, ta nói xác suất tiền nghiệm là liên hợp đối với mô hình.
+:::
+
+Ví dụ, $\Beta$ là xác suất liên hợp tiền nghiệm đối với $\Ber,\Bin,\textrm{Geom}.$
+
+:::{#def-non-informative-prior}
+### Non informative prior
+Nếu ta không có thông tin tiền nghiệm gì về tham số
+$\theta\in\Theta=[a, b]$ thì có thể dùng
+phân phối đồng đều $\Unif[a,b]$ làm xác suất tiền nghiệm.
+:::
+
+:::{#def-improper-prior}
+### Improper prior
+Nếu
+hàm $\pi:\Theta\to[0,+\infty)$ là đo được (measurable)
+nhưng không khả tích toàn phần trên $\Theta$
+thì ta nói $\pi$ là improper prior.
 :::

@@ -180,16 +180,19 @@ cho đến khi hội tụ.
 :::{#def-fisher-info}
 ### Thông tin Fisher, Fisher information
 Giả sử log likelihood đối với một quan sát $X$ theo mô hình $\theta\in\R$ là
-$\ell(\theta)\is\ln L_1(X,\theta), \theta\in\Theta\subset\R.$
+$\ell=\ell(\theta)\is\ln L_1(X,\theta), \theta\in\Theta\subset\R.$
 Giả sử $\ell(\theta)$ có đạo hàm bậc hai. Dưới một số điều kiện chuẩn,
 **thông tin Fisher** của mô hình được định nghĩa là
 
 $$
 I(\theta)
 \is
-\V[\ell^{\prime}(\theta)]
-= \E[(\ell^{\prime}(\theta))^2]
-= -\E[\ell^{\prime\prime}(\theta)]
+\V_X
+\left[\frac{\partial\ell}{\partial\theta}\right]
+= \E_X
+\left[\left(\frac{\partial\ell}{\partial\theta}\right)^2\right]
+= -\E_X
+\left[\frac{\partial^2\ell}{\partial\theta^2}\right]
 .
 $$
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.262">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -223,7 +223,6 @@ $$
 <div class="quarto-title-meta">
 
     
-  
     
   </div>
   
@@ -270,8 +269,8 @@ L_n(X_1,\ldots,X_n|\theta)
 \]</span> với <span class="math inline">\(I(\theta)\)</span> là thông tin Fisher (<a href="50-est-method.html#def-fisher-info">ĐN&nbsp;<span>5.8</span></a>) của mô hình thống kê cho <span class="math inline">\(X_1,\ldots,X_n.\)</span></p>
 </div>
 <div id="exm-jeffreys-prior" class="theorem example">
-<p><span class="theorem-title"><strong>Ví dụ 7.2 </strong></span>&nbsp;</p>
 <ul>
+<li><span class="theorem-title"><strong>Ví dụ 7.2 </strong></span></li>
 <li>Thí nghiệm <span class="math inline">\(\Ber(p), p\in(0,1)\)</span> có <span class="math display">\[\pi_J(p)\propto\frac{1}{\sqrt{p(1-p)}}\propto\Beta{\frac{1}{2}}{\frac{1}{2}}
 .\]</span></li>
 <li>Thí nghiệm <span class="math inline">\(\Gaus{\mu}{\sigma^2}, (\mu,\sigma^2)\in\R\times\R_+\)</span> có <span class="math inline">\(\pi_J(\mu,\sigma^2)\propto \sigma^{-3}\)</span> là improper prior.</li>
@@ -323,24 +322,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
     setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -376,42 +358,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
       });
-    }
+      return popup.innerHTML;
+    });
   }
 });
 </script>

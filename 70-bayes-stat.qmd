@@ -51,13 +51,16 @@ nhưng không khả tích toàn phần trên $\Theta$
 thì ta nói $\pi$ là improper prior.
 :::
 
+## Jeffreys prior
+
 :::{#def-jeffreys-prior}
 ### Jeffreys prior
+Với mô hình thống kê dựa trên tham số $\theta$ cho
+$X$
+có thông tin Fisher (@def-fisher-info)
+là $I(\theta)$ thì Jeffreys prior là
 $$\pi_J(\theta)\propto\sqrt{\det I(\theta)}
 $$
-với $I(\theta)$ là thông tin Fisher (@def-fisher-info)
-của mô hình thống kê cho
-$X_1,\ldots,X_n.$
 :::
 
 :::{#exm-jeffreys-prior}
@@ -66,4 +69,18 @@ $$\pi_J(p)\propto\frac{1}{\sqrt{p(1-p)}}\propto\Beta{\frac{1}{2}}{\frac{1}{2}}
 .$$
 - Thí nghiệm $\Gaus{\mu}{\sigma^2}, (\mu,\sigma^2)\in\R\times\R_+$ có
 $\pi_J(\mu,\sigma^2)\propto \sigma^{-3}$ là improper prior.
+:::
+
+:::{#thm-invariant-jeffreys}
+### Jeffreys prior là invariant khi đổi tham số
+Nếu đổi tham số $\theta\mapsto\eta = \phi(\theta)$ (@thm-rv-transformation) thì mật độ của tham số mới
+$\eta$ là
+$$
+\tilde{\pi}(\eta) = \frac{\pi(\phi^{-1}(\eta))}{\phi^{\prime}(\phi^{-1}(\eta))}
+\propto
+\sqrt{\det\tilde{I}(\eta)}
+$$
+với
+$\tilde{I}(\eta)$ là thông tin Fisher của mô hình dựa trên tham số
+$\eta$ thay vì $\theta.$
 :::

@@ -243,8 +243,9 @@ mà lại cần tìm tham số $\theta.$
 
 :::
 
-## M-estimatior
+## M-estimation
 :::{#def-m-est}
+### M-estimatior
 Với mục tiêu ước lượng thuộc tính $\mu^*$ của xác suất $\P(X)$,
 ta tìm một "hàm tổn thất" $\rho(X,\mu)$ có giá trị kỳ vọng
 đạt cực tiểu tại $\mu = \mu^*:$
@@ -274,9 +275,31 @@ $$
 $$
 :::
 
-Ví dụ,
+:::{.remark}
+Với $\rho(x,\theta) = -\ln p_\theta(x)$ ta có MLE để ước lượng tham số $\theta^*$ của mô hình $\P.$
+:::
 
-- với $\rho(x,\theta) = -\ln p_\theta(x)$ ta có MLE để ước lượng tham số $\theta^*$ của mô hình $\P$
-- với $\vec x,\vec\mu\in\R^d$,
+:::{#exm-m-est-2}
+Với $\vec x,\vec\mu\in\R^d$,
 dùng $\rho(\vec x,\vec\mu) = \|\vec x-\vec\mu\|^2$
 ta ước lượng được $\vec\mu^*=\E[\vec x].$
+:::
+
+## Method of moments
+:::{#def-meth-moment-est}
+### Method of moments estimator
+Để ước lượng ${\theta}\in\Theta\subset\R^d$
+
+1. Từ quan sát $X_1,\ldots,X_n$ tính tích suất mẫu (@def-sample-moment)
+$\hat{m}_1,\ldots,\hat{m}_d$
+2. Với $m_i$ là tích suất bậc $i$ (@def-moment),
+tìm $\hat{\theta}\in\R^d:$
+$$
+\begin{split}
+m_1(\hat{\theta}) &= \hat{m}_1, \\
+m_2(\hat{\theta}) &= \hat{m}_2, \\
+& \vdots \\
+m_d(\hat{\theta}) &= \hat{m}_d .
+\end{split}
+$$
+:::

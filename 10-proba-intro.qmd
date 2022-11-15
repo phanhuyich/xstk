@@ -219,6 +219,8 @@ $$
 \V[X+Y] \equiv \V[X]+\V[Y] + 2\textrm{Cov}[X,Y].
 $$
 
+## Tích suất
+
 :::{#def-moment}
 ### Tích suất
 Tích suất (moment) thể hiện trọng tâm, độ phân tán, hay độ lệch
@@ -242,3 +244,15 @@ chính là:
 $$
 \psi_X^{(k)}(0)\equiv \E[X^k].
 $$
+
+:::{#def-sample-moment}
+### Tích suất mẫu
+Từ các quan sát
+$X_1,\ldots X_n\iid \P_\theta, \theta\in\Theta\subset\R^d.$
+Để ước lượng tích suất
+$\E[X^k]$
+ta có thể dùng các *sample moment*:
+$$
+\hat{m}_k\is \frac{1}{n}\sum_{i=1}^n X_i^k,\quad k=1,2,\ldots.
+$$
+:::

@@ -85,7 +85,14 @@ với
 $\tilde{I}(\eta)$ là thông tin Fisher của mô hình dựa trên tham số
 $\eta$ thay vì $\theta.$
 :::
-
+:::{.remark}
+Phân phối tích lũy
+$$
+F_{\tilde{\pi}}(\eta)
+\equiv
+F_{\pi}(\phi^{-1}(\eta))
+.$$
+:::
 ## Bayesian estimation
 
 :::{#def-posterior-mean}

@@ -303,3 +303,15 @@ m_d(\hat{\theta}) &= \hat{m}_d .
 \end{split}
 $$
 :::
+
+## Biến đổi tham số
+
+Với mô hình thống kê
+$(E,(\P_\theta)_{\theta\in\Theta}),$
+giả sử MLE, method of moments hoặc M-estimation
+ước lượng được duy nhất một giá trị tham số tối ưu là
+$\theta^*\in\Theta.$
+Áp dụng biến đổi tham số $\eta = \phi(\theta)$ (@thm-rv-transformation)
+lên các mô hình đó
+sẽ dẫn tới nghiệm tối ưu $\eta^*$ thỏa mãn
+$\eta^{*}\equiv\phi(\theta^*).$

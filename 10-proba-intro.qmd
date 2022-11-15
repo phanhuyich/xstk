@@ -69,6 +69,13 @@ phân vị mức $1-\alpha$
 là $q_\alpha\is F^{-1}(1-\alpha).$
 :::
 
+:::{#def-median-mode}
+### Quartile, median, mode
+Ta gọi $q_{3/4}, q_{1/2}, q_{1/4}$
+là tứ phân vị đầu tiên (first quartile), trung vị (median), và tứ phân vị thứ ba.
+Gọi mode là giá trị biến số có xác suất cao nhất.
+:::
+
 :::{#def-pmf}
 ### Hàm khối xác suất, probability mass function
 Với biến rời rạc

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,6 +19,25 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
 }
 </style>
 
@@ -179,8 +198,9 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#sự-kiện" id="toc-sự-kiện" class="nav-link active" data-scroll-target="#sự-kiện"><span class="toc-section-number">1.1</span>  Sự kiện</a></li>
   <li><a href="#xác-suất" id="toc-xác-suất" class="nav-link" data-scroll-target="#xác-suất"><span class="toc-section-number">1.2</span>  Xác suất</a></li>
-  <li><a href="#phụ-thuộc" id="toc-phụ-thuộc" class="nav-link" data-scroll-target="#phụ-thuộc"><span class="toc-section-number">1.3</span>  Phụ thuộc</a></li>
-  <li><a href="#đặc-trưng" id="toc-đặc-trưng" class="nav-link" data-scroll-target="#đặc-trưng"><span class="toc-section-number">1.4</span>  Đặc trưng</a></li>
+  <li><a href="#tham-số" id="toc-tham-số" class="nav-link" data-scroll-target="#tham-số"><span class="toc-section-number">1.3</span>  Tham số</a></li>
+  <li><a href="#phụ-thuộc" id="toc-phụ-thuộc" class="nav-link" data-scroll-target="#phụ-thuộc"><span class="toc-section-number">1.4</span>  Phụ thuộc</a></li>
+  <li><a href="#đặc-trưng" id="toc-đặc-trưng" class="nav-link" data-scroll-target="#đặc-trưng"><span class="toc-section-number">1.5</span>  Đặc trưng</a></li>
   </ul>
 </nav>
     </div>
@@ -225,6 +245,7 @@ $$
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -237,9 +258,6 @@ $$
 <p>Ví dụ xem xét thí nghiệm tung một đồng xu đúng hai lần, quan sát đồng xu rớt xuống nằm ngửa (<span class="math inline">\(H\)</span>) hay sấp (<span class="math inline">\(T\)</span>), ta có <span class="math inline">\(\Omega = \{HH, HT, TH, TT\}\)</span> bao gồm 4 kết quả có thể xảy ra. Sự kiện lần tung đầu tiên ra mặt ngửa của đồng xu là tập hợp <span class="math inline">\(\{HH, HT\}.\)</span></p>
 <p>Cho một sự kiện <span class="math inline">\(A\subseteq\Omega\)</span>, ta nói <span class="math inline">\(A\)</span> <strong>xảy ra</strong>, hoặc <span class="math inline">\(A\)</span> là <strong>đúng</strong>, nếu có một hiện tượng <span class="math inline">\(\omega\in A\)</span> <strong>xảy ra</strong>. Sự kiện <strong>ngược lại</strong> với <span class="math inline">\(A\)</span> là <span class="math inline">\(A^c\is\Omega-A\is \{\omega\in\Omega: \omega\notin A\}\)</span>, tức là “không xảy ra <span class="math inline">\(A\)</span>”. Theo định nghĩa, rõ ràng <span class="math inline">\(\Omega\)</span> luôn luôn đúng, còn sự kiện rỗng <span class="math inline">\(\emptyset\equiv\Omega^c\)</span> luôn luôn sai. Cho thêm sự kiện <span class="math inline">\(B\)</span>, ta có <span class="math inline">\(A\cup B\)</span> là sự kiện “<span class="math inline">\(A\)</span> <strong>hoặc</strong> <span class="math inline">\(B\)</span> ít nhất một việc xảy ra”, còn <span class="math inline">\(AB\is A\cap B\)</span> là sự kiện “<span class="math inline">\(A\)</span> <strong>và</strong> <span class="math inline">\(B\)</span> đồng thời xảy ra”.</p>
 <p>Chuỗi sự kiện <span class="math inline">\(A_1, A_2, \ldots\)</span> được gọi là <strong>phân ly</strong> nếu <span class="math inline">\(A_i A_j\equiv\emptyset\)</span> với mọi <span class="math inline">\(i\neq j\)</span>. Khi đó nếu <span class="math inline">\(A_1\cup A_2\cup\cdots\equiv C\)</span> thì ta nói <span class="math inline">\(A_1, A_2, \ldots\)</span> là một cách <strong>phân hoạch</strong> sự kiện <span class="math inline">\(C\)</span>.</p>
-<div id="def-randvar" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.1 (Biến ngẫu nhiên, random variable) </strong></span>là một quy tắc ánh xạ <span class="math inline">\(X: \Omega\to\R\)</span> gán cho mỗi hiện tượng <span class="math inline">\(\omega\)</span> trong không gian <span class="math inline">\(\Omega\)</span> một số thực <span class="math inline">\(X(\omega).\)</span></p>
-</div>
 </section>
 <section id="xác-suất" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="xác-suất"><span class="header-section-number">1.2</span> Xác suất</h2>
@@ -251,54 +269,73 @@ $$
 </ol>
 <p>thì ta gọi <span class="math inline">\(\P\)</span> là một <strong>phân phối xác suất</strong> hoặc <strong>độ đo xác suất</strong>.</p>
 <p>Có hai cách cắt nghĩa khái niệm xác suất là tần suất và niềm tin. Theo cách hiểu tần suất thì <span class="math inline">\(\P(A)\)</span> chính là tỷ lệ số lần sự kiện <span class="math inline">\(A\)</span> xảy ra nếu ta thực hiện thí nghiệm vô số lần. Còn theo cách hiểu niềm tin thì <span class="math inline">\(\P(A)\)</span> là thước đo mức độ mà một quan sát viên tin tưởng rằng hiện tượng <span class="math inline">\(A\)</span> sẽ xảy ra.</p>
+</section>
+<section id="tham-số" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="tham-số"><span class="header-section-number">1.3</span> Tham số</h2>
+<div id="def-randvar" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 1.1 (Biến ngẫu nhiên, random variable) </strong></span>là một quy tắc ánh xạ <span class="math inline">\(X: \Omega\to\R\)</span> gán cho mỗi hiện tượng <span class="math inline">\(\omega\)</span> trong không gian <span class="math inline">\(\Omega\)</span> một số thực <span class="math inline">\(X(\omega).\)</span></p>
+</div>
 <div id="def-cdf" class="theorem definition">
 <p><span class="theorem-title"><strong>Định nghĩa 1.2 (Hàm phân phối tích lũy, cumulative distribution function) </strong></span>là hàm tăng đơn điệu và liên tục bên phải <span class="math inline">\(F:\R\to[0,1], F(x)\is\P(X\leq x)\)</span> với biến <span class="math inline">\(X:\Omega\to \R.\)</span></p>
 </div>
+<div id="def-quantile" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 1.3 (Phân vị) </strong></span>Biến <span class="math inline">\(X\)</span> tuân theo phân phối tích lũy <span class="math inline">\(F\)</span> có phân vị mức <span class="math inline">\(1-\alpha\)</span> là <span class="math inline">\(q_\alpha\is F^{-1}(1-\alpha).\)</span></p>
+</div>
+<div id="def-median-mode" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 1.4 (Quartile, median, mode) </strong></span>Ta gọi <span class="math inline">\(q_{3/4}, q_{1/2}, q_{1/4}\)</span> là tứ phân vị đầu tiên (first quartile), trung vị (median), và tứ phân vị thứ ba. Gọi mode là giá trị biến số có xác suất cao nhất.</p>
+</div>
 <div id="def-pmf" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.3 (Hàm khối xác suất, probability mass function) </strong></span>Với biến rời rạc <span class="math inline">\(X:\Omega\to D,\)</span> <span class="math inline">\(D=\{x_1, x_2, \ldots\}\)</span> đếm được, thì ta có thể gán xác suất <span class="math inline">\(\P(x_i) = p_i\geq 0,\forall i=1,2,\ldots\)</span> sao cho <span class="math inline">\(\sum_i p_i \equiv 1.\)</span></p>
+<p><span class="theorem-title"><strong>Định nghĩa 1.5 (Hàm khối xác suất, probability mass function) </strong></span>Với biến rời rạc <span class="math inline">\(X:\Omega\to D,\)</span> <span class="math inline">\(D=\{x_1, x_2, \ldots\}\)</span> đếm được, thì ta có thể gán xác suất <span class="math inline">\(\P(x_i) = p_i\geq 0,\forall i=1,2,\ldots\)</span> sao cho <span class="math inline">\(\sum_i p_i \equiv 1.\)</span></p>
 </div>
 <div id="def-pdf" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.4 (Hàm mật độ xác suất, probability density function) </strong></span>là <span class="math inline">\(f(x) = F^\prime(x)\)</span> với <span class="math inline">\(F(x)\is\P(X\leq x)\)</span> là phân phối tích lũy của biến <span class="math inline">\(X:\Omega\to \R.\)</span></p>
+<p><span class="theorem-title"><strong>Định nghĩa 1.6 (Hàm mật độ xác suất, probability density function) </strong></span>là <span class="math inline">\(f(x) = F^\prime(x)\)</span> với <span class="math inline">\(F(x)\is\P(X\leq x)\)</span> là phân phối tích lũy của biến <span class="math inline">\(X:\Omega\to \R.\)</span></p>
 </div>
-<div class="remark proof">
-<p><span class="proof-title"><em>Remark</em>. </span>Mật độ xác suất là không âm và có tích phân toàn phần bằng <span class="math inline">\(1.\)</span> Nếu có độ đo <span class="math inline">\(g(x)\geq 0,x\in\R\)</span> khả tích toàn phần thì có mật độ xác suất <span class="math display">\[f(x)\is\frac{g(x)}{\int_{\R}{g(x)dx}} \propto g(x).\]</span></p>
+<p>Mật độ xác suất là không âm và có tích phân toàn phần bằng <span class="math inline">\(1.\)</span></p>
+<div id="thm-density-propto" class="theorem">
+<p><span class="theorem-title"><strong>Định lý 1.1 (Chuẩn hóa mật độ xác suất) </strong></span>Nếu có độ đo <span class="math inline">\(g(x)\geq 0,x\in\R\)</span> khả tích toàn phần thì có mật độ xác suất <span class="math display">\[f(x)\is\frac{g(x)}{\int_{\R}{g(x)dx}} \propto g(x).\]</span></p>
 </div>
-<div id="def-quantile" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.5 (Điểm cắt) </strong></span>Biến <span class="math inline">\(X\)</span> tuân theo phân phối tích lũy <span class="math inline">\(F\)</span> có điểm cắt tại mức <span class="math inline">\(1-\alpha\)</span> là <span class="math inline">\(q_\alpha\is F^{-1}(1-\alpha).\)</span></p>
+<div id="thm-rv-transformation" class="theorem">
+<p><span class="theorem-title"><strong>Định lý 1.2 (Biến đổi tham số) </strong></span>Gỉả sử <span class="math inline">\(X\)</span> là tham số có mật độ xác suất <span class="math inline">\(f_X\)</span>, hàm <span class="math inline">\(g:\R\to\R\)</span> có vi phân <span class="math inline">\(&gt;0\)</span>. Khi đó tham số <span class="math inline">\(Y=g(X)\)</span> có mật độ xác suất là</p>
+<p><span class="math display">\[f_Y(y) = \frac{f_X(g^{-1}(y))}{g^\prime(g^{-1}(y))}
+\quad \forall y\in g(\R)
+.\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Xem “4.1.3 Functions of Continuous Random Variables”, <span class="citation" data-cites="probabilitycourse">Pishro-Nik (<a href="references.html#ref-probabilitycourse" role="doc-biblioref">2014</a>)</span>.</p>
 </div>
 </section>
-<section id="phụ-thuộc" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="phụ-thuộc"><span class="header-section-number">1.3</span> Phụ thuộc</h2>
+<section id="phụ-thuộc" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="phụ-thuộc"><span class="header-section-number">1.4</span> Phụ thuộc</h2>
 <div id="def-joint-proba" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.6 (Xác suất hợp) </strong></span>Ký hiệu <span class="math inline">\(\P(A, B)\)</span> hoặc <span class="math inline">\(\P(A\cap B)\)</span> chỉ xác suất sự kiện <span class="math inline">\(A\)</span> và sự kiện <span class="math inline">\(B\)</span> đồng thời xảy ra.</p>
+<p><span class="theorem-title"><strong>Định nghĩa 1.7 (Xác suất hợp) </strong></span>Ký hiệu <span class="math inline">\(\P(A, B)\)</span> hoặc <span class="math inline">\(\P(A\cap B)\)</span> chỉ xác suất sự kiện <span class="math inline">\(A\)</span> và sự kiện <span class="math inline">\(B\)</span> đồng thời xảy ra.</p>
 </div>
 <div id="def-independent-var" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.7 (Độc lập) </strong></span>Hai sự kiện <span class="math inline">\(A\)</span> và <span class="math inline">\(B\)</span> là độc lập nếu <span class="math inline">\(\P(A,B)\equiv \P(A)\P(B)\)</span>.</p>
+<p><span class="theorem-title"><strong>Định nghĩa 1.8 (Độc lập) </strong></span>Hai sự kiện <span class="math inline">\(A\)</span> và <span class="math inline">\(B\)</span> là độc lập nếu <span class="math inline">\(\P(A,B)\equiv \P(A)\P(B)\)</span>.</p>
 <p>Hai biến <span class="math inline">\(X\)</span> và <span class="math inline">\(Y\)</span> là độc lập nếu hai sự kiện <span class="math inline">\(X\leq x\)</span> và <span class="math inline">\(Y\leq y\)</span> là độc lập đối với mọi <span class="math inline">\(x,y\)</span>.</p>
 </div>
 <div id="def-iid" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.8 (IID) </strong></span>Các biến ngẫu nhiên <span class="math inline">\(X_1, X_2, \ldotp\)</span> được gọi là iid (“independent and identically distributed”, “độc lập và phân phối giống nhau”) nếu chúng cùng tuân theo duy nhất (identical) một phân phối xác suất, và từng cặp biến là độc lập (independent) với nhau. Dùng biến <span class="math inline">\(X\)</span> để thể hiện phân phối xác suất chung đó, ta viết <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 1.9 (IID) </strong></span>Các biến ngẫu nhiên <span class="math inline">\(X_1, X_2, \ldotp\)</span> được gọi là iid (“independent and identically distributed”, “độc lập và phân phối giống nhau”) nếu chúng cùng tuân theo duy nhất (identical) một phân phối xác suất, và từng cặp biến là độc lập (independent) với nhau. Dùng biến <span class="math inline">\(X\)</span> để thể hiện phân phối xác suất chung đó, ta viết <span class="math display">\[
 X_1,\ldots,X_n \iid X.
 \]</span></p>
 </div>
 <div id="def-conditional-proba" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.9 (Xác suất có điều kiện) </strong></span>Ký hiệu <span class="math inline">\(\P(A|B)\)</span> hoặc <span class="math inline">\(\P_B(A)\)</span> chỉ xác suất của sự kiện <span class="math inline">\(A\)</span>, khi biết sự kiện <span class="math inline">\(B\)</span> đã xảy ra,</p>
+<p><span class="theorem-title"><strong>Định nghĩa 1.10 (Xác suất có điều kiện) </strong></span>Ký hiệu <span class="math inline">\(\P(A|B)\)</span> hoặc <span class="math inline">\(\P_B(A)\)</span> chỉ xác suất của sự kiện <span class="math inline">\(A\)</span>, khi biết sự kiện <span class="math inline">\(B\)</span> đã xảy ra,</p>
 <p><span class="math display">\[
 \P(A|B) = \frac{\P(A,B)}{\P(B)}.
 \]</span></p>
 </div>
 <div id="thm-bayes" class="theorem">
-<p><span class="theorem-title"><strong>Định lý 1.1 (Định lý Bayes) </strong></span><span class="math display">\[
+<p><span class="theorem-title"><strong>Định lý 1.3 (Định lý Bayes) </strong></span><span class="math display">\[
 \P(A|B) = \frac{\P(B|A)\P(A)}{\P(B)}
 = \frac{\P(B|A)\P(A)}{\P(B|A)\P(A) + \P(B|A^c)\P(A^c)}
 .
 \]</span></p>
 </div>
 </section>
-<section id="đặc-trưng" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="đặc-trưng"><span class="header-section-number">1.4</span> Đặc trưng</h2>
+<section id="đặc-trưng" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="đặc-trưng"><span class="header-section-number">1.5</span> Đặc trưng</h2>
 <div id="def-expectation" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.10 (Trung bình) </strong></span><strong>Trung bình</strong>, hay <strong>giá trị kỳ vọng</strong> của biến X là</p>
+<p><span class="theorem-title"><strong>Định nghĩa 1.11 (Trung bình) </strong></span><strong>Trung bình</strong>, hay <strong>giá trị kỳ vọng</strong> của biến X là</p>
 <p><span class="math display">\[
 \E[X]\is
 \int x dF(x)
@@ -314,7 +351,7 @@ X_1,\ldots,X_n \iid X.
 \E[X+Y] \equiv \E[X] + E[Y].
 \]</span></p>
 <div id="def-covar" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.11 (Hiệp phương sai) </strong></span><span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 1.12 (Hiệp phương sai) </strong></span><span class="math display">\[
 \begin{split}
 \textrm{Cov}[X,Y] &amp;\is \E[(X-\E[X])(Y-\E[Y])] \\
 &amp;\equiv \E[XY] - \E[X]\E[Y]
@@ -323,7 +360,7 @@ X_1,\ldots,X_n \iid X.
 </div>
 <p>Nếu <span class="math inline">\(X\)</span> và <span class="math inline">\(Y\)</span> độc lập thì <span class="math inline">\(\textrm{Cov}[X,Y] = 0\)</span>.</p>
 <div id="def-variance" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.12 (Phương sai) </strong></span>Phương sai, hay phân tán (variance) là <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 1.13 (Phương sai) </strong></span>Phương sai, hay phân tán (variance) là <span class="math display">\[
 \V[X]\is\textrm{Cov}[X,X]\equiv\E[X^2]-\E^2[X].
 \]</span></p>
 </div>
@@ -331,13 +368,13 @@ X_1,\ldots,X_n \iid X.
 \V[X+Y] \equiv \V[X]+\V[Y] + 2\textrm{Cov}[X,Y].
 \]</span></p>
 <div id="def-moment" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.13 (Tích suất) </strong></span>Tích suất (moment) thể hiện trọng tâm, độ phân tán, hay độ lệch của phân phối. Tích suất bậc <span class="math inline">\(n\)</span> của biến <span class="math inline">\(X\)</span> với mật độ <span class="math inline">\(f(x)\)</span> là:</p>
+<p><span class="theorem-title"><strong>Định nghĩa 1.14 (Tích suất) </strong></span>Tích suất (moment) thể hiện trọng tâm, độ phân tán, hay độ lệch của phân phối. Tích suất bậc <span class="math inline">\(n\)</span> của biến <span class="math inline">\(X\)</span> với mật độ <span class="math inline">\(f(x)\)</span> là:</p>
 </div>
 <p><span class="math display">\[
 \E[X^n]\is \int x^n f(x) dx
 \]</span></p>
 <div id="def-mgf" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.14 (Hàm tạo tích suất) </strong></span>“Moment generation function (MGF)” của biến <span class="math inline">\(X\)</span> là <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 1.15 (Hàm tạo tích suất) </strong></span>“Moment generation function (MGF)” của biến <span class="math inline">\(X\)</span> là <span class="math display">\[
 \psi_X(t)\is\E[e^{tX}], t\in\R.
 \]</span></p>
 </div>
@@ -346,6 +383,11 @@ X_1,\ldots,X_n \iid X.
 \]</span></p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-probabilitycourse" class="csl-entry" role="doc-biblioentry">
+Pishro-Nik, H. 2014. <em>Introduction to Probability, Statistics, and Random Processes</em>. Kappa Research LLC. <a href="https://www.probabilitycourse.com">https://www.probabilitycourse.com</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -390,7 +432,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -426,24 +485,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

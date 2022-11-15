@@ -33,7 +33,7 @@ Nếu xác suất tiền nghiệm và xác suất hậu nghiệm thuộc cùng m
 :::
 
 :::{#exm-conjugate-prior}
-Beta là xác suất liên hợp tiền nghiệm đối với mô hình Bernoulli $\Ber$, nhị thức $\Bin$ và hình học $\Geom.$
+Beta là xác suất tiền nghiệm liên hợp đối với mô hình Bernoulli $\Ber$, nhị thức $\Bin$ và hình học $\Geom.$
 :::
 
 :::{#def-non-informative-prior}
@@ -58,9 +58,10 @@ thì ta nói $\pi$ là improper prior.
 Với mô hình thống kê dựa trên tham số $\theta$ cho
 $X$
 có thông tin Fisher (@def-fisher-info)
-là $I(\theta)$ thì Jeffreys prior là
-$$\pi_J(\theta)\propto\sqrt{\det I(\theta)}
+là $I(\theta)$ thì Jeffreys prior
+$$\pi_J(\theta)\propto\sqrt{\det I(\theta)},
 $$
+là non informative.
 :::
 
 :::{#exm-jeffreys-prior}
@@ -83,4 +84,38 @@ $$
 với
 $\tilde{I}(\eta)$ là thông tin Fisher của mô hình dựa trên tham số
 $\eta$ thay vì $\theta.$
+:::
+
+## Bayesian estimation
+
+:::{#def-posterior-mean}
+### Posterior mean
+Từ tiền nghiệm $\pi(\theta),$
+sau khi tính hậu nghiệm $\pi(\theta|X_1,\ldots,X_n)$
+ta ước lượng $\theta$ bằng trung bình:
+$$
+\hat{\theta}^{(\pi)} \is
+\int_\Theta {\theta \pi(\theta | X_1,\ldots,X_n) d\theta}
+.$$
+:::
+
+:::{#def-maximum-posteriori}
+### MAP, maximum a posteriori
+Chọn cực đại
+$$
+\hat{\theta}^\textrm{MAP} \is
+\argmax_{\theta\in\Theta}{\pi(\theta | X_1,\ldots,X_n)}
+.$$
+:::
+
+:::{#thm-bayes-convergence}
+### Asymptotic properties of the Bayes estimator
+Thông thưởng,
+tính hội tụ về chuẩn (@def-asymp-normal) của Bayes estimator
+không phụ thuộc vào chọn lựa xác suất tiền nghiệm.
+:::
+
+:::{.remark}
+Tính phương sai của hội tụ tương tự như MLE
+(@thm-mle-asym).
 :::

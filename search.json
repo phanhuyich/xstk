@@ -287,6 +287,13 @@
     "text": "5.7 Method of moments\n\nĐịnh nghĩa 5.10 (Method of moments estimator) Để ước lượng \\({\\theta}\\in\\Theta\\subset\\R^d\\)\n\nTừ quan sát \\(X_1,\\ldots,X_n\\) tính tích suất mẫu (ĐN 1.16) \\(\\hat{m}_1,\\ldots,\\hat{m}_d\\)\nVới \\(m_i\\) là tích suất bậc \\(i\\) (ĐN 1.14), tìm \\(\\hat{\\theta}\\in\\R^d:\\) \\[\n\\begin{split}\nm_1(\\hat{\\theta}) &= \\hat{m}_1, \\\\\nm_2(\\hat{\\theta}) &= \\hat{m}_2, \\\\\n& \\vdots \\\\\nm_d(\\hat{\\theta}) &= \\hat{m}_d .\n\\end{split}\n\\]"
   },
   {
+    "objectID": "50-est-method.html#biến-đổi-tham-số",
+    "href": "50-est-method.html#biến-đổi-tham-số",
+    "title": "5  Ước lượng",
+    "section": "5.8 Biến đổi tham số",
+    "text": "5.8 Biến đổi tham số\nVới mô hình thống kê \\((E,(\\P_\\theta)_{\\theta\\in\\Theta}),\\) giả sử MLE, method of moments hoặc M-estimation ước lượng được duy nhất một giá trị tham số tối ưu là \\(\\theta^*\\in\\Theta.\\) Áp dụng biến đổi tham số \\(\\eta = \\phi(\\theta)\\) (ĐL 1.2) lên các mô hình đó sẽ dẫn tới nghiệm tối ưu \\(\\eta^*\\) thỏa mãn \\(\\eta^{*}\\equiv\\phi(\\theta^*).\\)"
+  },
+  {
     "objectID": "60-hypothesis-test.html#giả-thuyết",
     "href": "60-hypothesis-test.html#giả-thuyết",
     "title": "6  Kiểm định",
@@ -326,7 +333,7 @@
     "href": "70-bayes-stat.html#jeffreys-prior",
     "title": "7  Bayesian",
     "section": "7.3 Jeffreys prior",
-    "text": "7.3 Jeffreys prior\n\nĐịnh nghĩa 7.5 (Jeffreys prior) Với mô hình thống kê dựa trên tham số \\(\\theta\\) cho \\(X\\) có thông tin Fisher (ĐN 5.8) là \\(I(\\theta)\\) thì Jeffreys prior \\[\\pi_J(\\theta)\\propto\\sqrt{\\det I(\\theta)},\n\\] là non informative.\n\n\nVí dụ 7.2  \n\nThí nghiệm \\(\\Ber(p), p\\in(0,1)\\) có \\[\\pi_J(p)\\propto\\frac{1}{\\sqrt{p(1-p)}}\\propto\\Beta{\\frac{1}{2}}{\\frac{1}{2}}\n.\\]\nThí nghiệm \\(\\Gaus{\\mu}{\\sigma^2}, (\\mu,\\sigma^2)\\in\\R\\times\\R_+\\) có \\(\\pi_J(\\mu,\\sigma^2)\\propto \\sigma^{-3}\\) là improper prior.\n\n\n\nĐịnh lý 7.1 (Jeffreys prior là invariant khi đổi tham số) Nếu đổi tham số \\(\\theta\\mapsto\\eta = \\phi(\\theta)\\) (ĐL 1.2) thì mật độ của tham số mới \\(\\eta\\) là \\[\n\\tilde{\\pi}(\\eta) = \\frac{\\pi(\\phi^{-1}(\\eta))}{\\phi^{\\prime}(\\phi^{-1}(\\eta))}\n\\propto\n\\sqrt{\\det\\tilde{I}(\\eta)}\n\\] với \\(\\tilde{I}(\\eta)\\) là thông tin Fisher của mô hình dựa trên tham số \\(\\eta\\) thay vì \\(\\theta.\\)\n\n\nRemark."
+    "text": "7.3 Jeffreys prior\n\nĐịnh nghĩa 7.5 (Jeffreys prior) Với mô hình thống kê dựa trên tham số \\(\\theta\\) cho \\(X\\) có thông tin Fisher (ĐN 5.8) là \\(I(\\theta)\\) thì Jeffreys prior \\[\\pi_J(\\theta)\\propto\\sqrt{\\det I(\\theta)},\n\\] là non informative.\n\n\nVí dụ 7.2  \n\nThí nghiệm \\(\\Ber(p), p\\in(0,1)\\) có \\[\\pi_J(p)\\propto\\frac{1}{\\sqrt{p(1-p)}}\\propto\\Beta{\\frac{1}{2}}{\\frac{1}{2}}\n.\\]\nThí nghiệm \\(\\Gaus{\\mu}{\\sigma^2}, (\\mu,\\sigma^2)\\in\\R\\times\\R_+\\) có \\(\\pi_J(\\mu,\\sigma^2)\\propto \\sigma^{-3}\\) là improper prior.\n\n\n\nĐịnh lý 7.1 (Jeffreys prior là invariant khi đổi tham số) Nếu đổi tham số \\(\\theta\\mapsto\\eta = \\phi(\\theta)\\) (ĐL 1.2) thì mật độ của tham số mới \\(\\eta\\) là \\[\n\\tilde{\\pi}(\\eta) = \\frac{\\pi(\\phi^{-1}(\\eta))}{\\phi^{\\prime}(\\phi^{-1}(\\eta))}\n\\propto\n\\sqrt{\\det\\tilde{I}(\\eta)}\n\\] với \\(\\tilde{I}(\\eta)\\) là thông tin Fisher của mô hình dựa trên tham số \\(\\eta\\) thay vì \\(\\theta.\\)\n\n\nRemark. Phân phối tích lũy \\[\nF_{\\tilde{\\pi}}(\\eta)\n\\equiv\nF_{\\pi}(\\phi^{-1}(\\eta))\n.\\]"
   },
   {
     "objectID": "70-bayes-stat.html#bayesian-estimation",

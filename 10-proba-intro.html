@@ -201,6 +201,7 @@ div.csl-indent {
   <li><a href="#tham-số" id="toc-tham-số" class="nav-link" data-scroll-target="#tham-số"><span class="toc-section-number">1.3</span>  Tham số</a></li>
   <li><a href="#phụ-thuộc" id="toc-phụ-thuộc" class="nav-link" data-scroll-target="#phụ-thuộc"><span class="toc-section-number">1.4</span>  Phụ thuộc</a></li>
   <li><a href="#đặc-trưng" id="toc-đặc-trưng" class="nav-link" data-scroll-target="#đặc-trưng"><span class="toc-section-number">1.5</span>  Đặc trưng</a></li>
+  <li><a href="#tích-suất" id="toc-tích-suất" class="nav-link" data-scroll-target="#tích-suất"><span class="toc-section-number">1.6</span>  Tích suất</a></li>
   </ul>
 </nav>
     </div>
@@ -367,6 +368,9 @@ X_1,\ldots,X_n \iid X.
 <p>Ta có <span class="math display">\[
 \V[X+Y] \equiv \V[X]+\V[Y] + 2\textrm{Cov}[X,Y].
 \]</span></p>
+</section>
+<section id="tích-suất" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="tích-suất"><span class="header-section-number">1.6</span> Tích suất</h2>
 <div id="def-moment" class="theorem definition">
 <p><span class="theorem-title"><strong>Định nghĩa 1.14 (Tích suất) </strong></span>Tích suất (moment) thể hiện trọng tâm, độ phân tán, hay độ lệch của phân phối. Tích suất bậc <span class="math inline">\(n\)</span> của biến <span class="math inline">\(X\)</span> với mật độ <span class="math inline">\(f(x)\)</span> là:</p>
 </div>
@@ -381,6 +385,11 @@ X_1,\ldots,X_n \iid X.
 <p>Nếu MGF “tồn tại” lân cận <span class="math inline">\(0\)</span> thì đạo hàm cấp <span class="math inline">\(k\)</span> của <span class="math inline">\(\psi\)</span> tại <span class="math inline">\(0\)</span> chính là: <span class="math display">\[
 \psi_X^{(k)}(0)\equiv \E[X^k].
 \]</span></p>
+<div id="def-sample-moment" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 1.16 (Tích suất mẫu) </strong></span>Từ các quan sát <span class="math inline">\(X_1,\ldots X_n\iid \P_\theta, \theta\in\Theta\subset\R^d.\)</span> Để ước lượng tích suất <span class="math inline">\(\E[X^k]\)</span> ta có thể dùng các <em>sample moment</em>: <span class="math display">\[
+\hat{m}_k\is \frac{1}{n}\sum_{i=1}^n X_i^k,\quad k=1,2,\ldots.
+\]</span></p>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">

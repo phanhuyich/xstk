@@ -192,7 +192,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#giải-thuật-em" id="toc-giải-thuật-em" class="nav-link" data-scroll-target="#giải-thuật-em"><span class="toc-section-number">5.4.1</span>  Giải thuật EM</a></li>
   </ul></li>
   <li><a href="#chuẩn-tính-của-mle" id="toc-chuẩn-tính-của-mle" class="nav-link" data-scroll-target="#chuẩn-tính-của-mle"><span class="toc-section-number">5.5</span>  Chuẩn tính của MLE</a></li>
-  <li><a href="#m-estimatior" id="toc-m-estimatior" class="nav-link" data-scroll-target="#m-estimatior"><span class="toc-section-number">5.6</span>  M-estimatior</a></li>
+  <li><a href="#m-estimation" id="toc-m-estimation" class="nav-link" data-scroll-target="#m-estimation"><span class="toc-section-number">5.6</span>  M-estimation</a></li>
+  <li><a href="#method-of-moments" id="toc-method-of-moments" class="nav-link" data-scroll-target="#method-of-moments"><span class="toc-section-number">5.7</span>  Method of moments</a></li>
   </ul>
 </nav>
     </div>
@@ -408,10 +409,10 @@ I(\theta^*)}
 <p>Chú ý là điều kiện số 2 dễ bị vi phạm, ví dụ <span class="math inline">\(X_i\iid\Unif[0, \theta]\)</span> mà lại cần tìm tham số <span class="math inline">\(\theta.\)</span></p>
 </div>
 </section>
-<section id="m-estimatior" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="m-estimatior"><span class="header-section-number">5.6</span> M-estimatior</h2>
+<section id="m-estimation" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="m-estimation"><span class="header-section-number">5.6</span> M-estimation</h2>
 <div id="def-m-est" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 5.9 </strong></span>Với mục tiêu ước lượng thuộc tính <span class="math inline">\(\mu^*\)</span> của xác suất <span class="math inline">\(\P(X)\)</span>, ta tìm một “hàm tổn thất” <span class="math inline">\(\rho(X,\mu)\)</span> có giá trị kỳ vọng đạt cực tiểu tại <span class="math inline">\(\mu = \mu^*:\)</span> <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 5.9 (M-estimatior) </strong></span>Với mục tiêu ước lượng thuộc tính <span class="math inline">\(\mu^*\)</span> của xác suất <span class="math inline">\(\P(X)\)</span>, ta tìm một “hàm tổn thất” <span class="math inline">\(\rho(X,\mu)\)</span> có giá trị kỳ vọng đạt cực tiểu tại <span class="math inline">\(\mu = \mu^*:\)</span> <span class="math display">\[
 \mathcal{Q}(\mu)
 \is \E_{\P}[\rho(X,\mu)]
 .
@@ -431,11 +432,29 @@ I(\theta^*)}
 .
 \]</span></p>
 </div>
-<p>Ví dụ,</p>
-<ul>
-<li>với <span class="math inline">\(\rho(x,\theta) = -\ln p_\theta(x)\)</span> ta có MLE để ước lượng tham số <span class="math inline">\(\theta^*\)</span> của mô hình <span class="math inline">\(\P\)</span></li>
-<li>với <span class="math inline">\(\vec x,\vec\mu\in\R^d\)</span>, dùng <span class="math inline">\(\rho(\vec x,\vec\mu) = \|\vec x-\vec\mu\|^2\)</span> ta ước lượng được <span class="math inline">\(\vec\mu^*=\E[\vec x].\)</span></li>
-</ul>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remark</em>. </span>Với <span class="math inline">\(\rho(x,\theta) = -\ln p_\theta(x)\)</span> ta có MLE để ước lượng tham số <span class="math inline">\(\theta^*\)</span> của mô hình <span class="math inline">\(\P.\)</span></p>
+</div>
+<div id="exm-m-est-2" class="theorem example">
+<p><span class="theorem-title"><strong>Ví dụ 5.1 </strong></span>Với <span class="math inline">\(\vec x,\vec\mu\in\R^d\)</span>, dùng <span class="math inline">\(\rho(\vec x,\vec\mu) = \|\vec x-\vec\mu\|^2\)</span> ta ước lượng được <span class="math inline">\(\vec\mu^*=\E[\vec x].\)</span></p>
+</div>
+</section>
+<section id="method-of-moments" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="method-of-moments"><span class="header-section-number">5.7</span> Method of moments</h2>
+<div id="def-meth-moment-est" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 5.10 (Method of moments estimator) </strong></span>Để ước lượng <span class="math inline">\({\theta}\in\Theta\subset\R^d\)</span></p>
+<ol type="1">
+<li>Từ quan sát <span class="math inline">\(X_1,\ldots,X_n\)</span> tính tích suất mẫu (<a href="10-proba-intro.html#def-sample-moment">ĐN&nbsp;<span>1.16</span></a>) <span class="math inline">\(\hat{m}_1,\ldots,\hat{m}_d\)</span></li>
+<li>Với <span class="math inline">\(m_i\)</span> là tích suất bậc <span class="math inline">\(i\)</span> (<a href="10-proba-intro.html#def-moment">ĐN&nbsp;<span>1.14</span></a>), tìm <span class="math inline">\(\hat{\theta}\in\R^d:\)</span> <span class="math display">\[
+\begin{split}
+m_1(\hat{\theta}) &amp;= \hat{m}_1, \\
+m_2(\hat{\theta}) &amp;= \hat{m}_2, \\
+&amp; \vdots \\
+m_d(\hat{\theta}) &amp;= \hat{m}_d .
+\end{split}
+\]</span></li>
+</ol>
+</div>
 
 
 </section>

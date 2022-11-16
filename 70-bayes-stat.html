@@ -180,6 +180,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#phương-pháp" id="toc-phương-pháp" class="nav-link active" data-scroll-target="#phương-pháp"><span class="toc-section-number">7.1</span>  Phương pháp</a></li>
   <li><a href="#loại-prior" id="toc-loại-prior" class="nav-link" data-scroll-target="#loại-prior"><span class="toc-section-number">7.2</span>  Loại prior</a></li>
   <li><a href="#jeffreys-prior" id="toc-jeffreys-prior" class="nav-link" data-scroll-target="#jeffreys-prior"><span class="toc-section-number">7.3</span>  Jeffreys prior</a></li>
+  <li><a href="#bayesian-estimation" id="toc-bayesian-estimation" class="nav-link" data-scroll-target="#bayesian-estimation"><span class="toc-section-number">7.4</span>  Bayesian estimation</a></li>
   </ul>
 </nav>
     </div>
@@ -258,7 +259,7 @@ L_n(X_1,\ldots,X_n|\theta)
 <p><span class="theorem-title"><strong>Định nghĩa 7.2 (Conjugate prior) </strong></span>Nếu xác suất tiền nghiệm và xác suất hậu nghiệm thuộc cùng một hệ xác suất, ta nói xác suất tiền nghiệm là liên hợp đối với mô hình.</p>
 </div>
 <div id="exm-conjugate-prior" class="theorem example">
-<p><span class="theorem-title"><strong>Ví dụ 7.1 </strong></span>Beta là xác suất liên hợp tiền nghiệm đối với mô hình Bernoulli <span class="math inline">\(\Ber\)</span>, nhị thức <span class="math inline">\(\Bin\)</span> và hình học <span class="math inline">\(\Geom.\)</span></p>
+<p><span class="theorem-title"><strong>Ví dụ 7.1 </strong></span>Beta là xác suất tiền nghiệm liên hợp đối với mô hình Bernoulli <span class="math inline">\(\Ber\)</span>, nhị thức <span class="math inline">\(\Bin\)</span> và hình học <span class="math inline">\(\Geom.\)</span></p>
 </div>
 <div id="def-non-informative-prior" class="theorem definition">
 <p><span class="theorem-title"><strong>Định nghĩa 7.3 (Non informative prior) </strong></span>Nếu ta không có thông tin tiền nghiệm gì về tham số <span class="math inline">\(\theta\in\Theta=[a, b]\)</span> thì có thể dùng phân phối đồng đều <span class="math inline">\(\Unif[a,b]\)</span> làm xác suất tiền nghiệm.</p>
@@ -270,8 +271,8 @@ L_n(X_1,\ldots,X_n|\theta)
 <section id="jeffreys-prior" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="jeffreys-prior"><span class="header-section-number">7.3</span> Jeffreys prior</h2>
 <div id="def-jeffreys-prior" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 7.5 (Jeffreys prior) </strong></span>Với mô hình thống kê dựa trên tham số <span class="math inline">\(\theta\)</span> cho <span class="math inline">\(X\)</span> có thông tin Fisher (<a href="50-est-method.html#def-fisher-info">ĐN&nbsp;<span>5.8</span></a>) là <span class="math inline">\(I(\theta)\)</span> thì Jeffreys prior là <span class="math display">\[\pi_J(\theta)\propto\sqrt{\det I(\theta)}
-\]</span></p>
+<p><span class="theorem-title"><strong>Định nghĩa 7.5 (Jeffreys prior) </strong></span>Với mô hình thống kê dựa trên tham số <span class="math inline">\(\theta\)</span> cho <span class="math inline">\(X\)</span> có thông tin Fisher (<a href="50-est-method.html#def-fisher-info">ĐN&nbsp;<span>5.8</span></a>) là <span class="math inline">\(I(\theta)\)</span> thì Jeffreys prior <span class="math display">\[\pi_J(\theta)\propto\sqrt{\det I(\theta)},
+\]</span> là non informative.</p>
 </div>
 <div id="exm-jeffreys-prior" class="theorem example">
 <p><span class="theorem-title"><strong>Ví dụ 7.2 </strong></span>&nbsp;</p>
@@ -287,6 +288,27 @@ L_n(X_1,\ldots,X_n|\theta)
 \propto
 \sqrt{\det\tilde{I}(\eta)}
 \]</span> với <span class="math inline">\(\tilde{I}(\eta)\)</span> là thông tin Fisher của mô hình dựa trên tham số <span class="math inline">\(\eta\)</span> thay vì <span class="math inline">\(\theta.\)</span></p>
+</div>
+</section>
+<section id="bayesian-estimation" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="bayesian-estimation"><span class="header-section-number">7.4</span> Bayesian estimation</h2>
+<div id="def-posterior-mean" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 7.6 (Posterior mean) </strong></span>Từ tiền nghiệm <span class="math inline">\(\pi(\theta),\)</span> sau khi tính hậu nghiệm <span class="math inline">\(\pi(\theta|X_1,\ldots,X_n)\)</span> ta ước lượng <span class="math inline">\(\theta\)</span> bằng trung bình: <span class="math display">\[
+\hat{\theta}^{(\pi)} \is
+\int_\Theta {\theta \pi(\theta | X_1,\ldots,X_n) d\theta}
+.\]</span></p>
+</div>
+<div id="def-maximum-posteriori" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 7.7 (MAP, maximum a posteriori) </strong></span>Chọn cực đại <span class="math display">\[
+\hat{\theta}^\textrm{MAP} \is
+\argmax_{\theta\in\Theta}{\pi(\theta | X_1,\ldots,X_n)}
+.\]</span></p>
+</div>
+<div id="thm-bayes-convergence" class="theorem">
+<p><span class="theorem-title"><strong>Định lý 7.2 (Asymptotic properties of the Bayes estimator) </strong></span>Thông thưởng, tính hội tụ về chuẩn (<a href="30-proba-converge.html#def-asymp-normal">ĐN&nbsp;<span>3.4</span></a>) của Bayes estimator không phụ thuộc vào chọn lựa xác suất tiền nghiệm.</p>
+</div>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remark</em>. </span>Tính phương sai của hội tụ tương tự như MLE (<a href="50-est-method.html#thm-mle-asym">ĐL&nbsp;<span>5.2</span></a>).</p>
 </div>
 
 

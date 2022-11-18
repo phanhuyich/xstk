@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.262">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -200,7 +200,7 @@ $$
 \def\as{\textrm{a.s.}}
 \def\Ber{\text{Ber}}
 \def\Beta#1#2{\text{Beta}\left(#1,#2\right)}
-\def\Bin{\text{Bin}}
+\def\Binom{\text{Binom}}
 \def\Geom{\text{Geom}}
 \def\Unif{\text{Unif}}
 \def\E{\mathbb{E}}
@@ -252,7 +252,7 @@ $$
 <section id="phân-phối-nhị-thức" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="phân-phối-nhị-thức"><span class="header-section-number">2.2</span> Phân phối nhị thức</h2>
 <div id="def-binomial" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 2.2 (Binomial distribution) </strong></span><span class="math inline">\(K\sim\Bin(n, p)\)</span> với <span class="math inline">\(n\in\N, p\in(0,1)\)</span> mô tả tổng số lần thành công của <span class="math inline">\(n\)</span> thí nghiệm độc lập <span class="math inline">\(K_1,\ldots,K_n \iid \Ber(p).\)</span> Ta có <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 2.2 (Binomial distribution) </strong></span><span class="math inline">\(K\sim\Binom(n, p)\)</span> với <span class="math inline">\(n\in\N, p\in(0,1)\)</span> mô tả tổng số lần thành công của <span class="math inline">\(n\)</span> thí nghiệm độc lập <span class="math inline">\(K_1,\ldots,K_n \iid \Ber(p).\)</span> Ta có <span class="math display">\[
 \P(K=k) = \binom{n}{k}p^{k}(1-p)^{n-k}
 \]</span> và <span class="math inline">\(\E[K] = np, \V[K] = np(1-p)\)</span>.</p>
 </div>
@@ -266,7 +266,7 @@ $$
 \]</span> <span class="math inline">\(k=0,1,2,\ldots\)</span> là số lần phát sinh sự kiện trong một giới hạn cố định, các sự kiện phát sinh độc lập. <span class="math display">\[\E[K] = \V[K] = \lambda
 .\]</span></p>
 </div>
-<p>Khi <span class="math inline">\(n\)</span> đủ lớn và <span class="math inline">\(p\)</span> đủ nhỏ thì <span class="math inline">\(\Poiss(np)\)</span> gần với <span class="math inline">\(\Bin(n,p)\)</span>.</p>
+<p>Khi <span class="math inline">\(n\)</span> đủ lớn và <span class="math inline">\(p\)</span> đủ nhỏ thì <span class="math inline">\(\Poiss(np)\)</span> gần với <span class="math inline">\(\Binom(n,p)\)</span>.</p>
 </section>
 <section id="phân-phối-hình-học" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="phân-phối-hình-học"><span class="header-section-number">2.4</span> Phân phối hình học</h2>

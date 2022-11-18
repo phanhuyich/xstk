@@ -2,10 +2,9 @@
 
 Có một số phân phối xác suất thông dụng.
 
-## Phân phối rời rạc
-
+## Phân phối Bernoulli
 ::: {#def-bernoulli}
-### Phân phối Bernoulli
+### Bernoulli distribution
 $X\sim\Ber(p)$
 có
 $$
@@ -15,55 +14,61 @@ và
 $\E[X] = p, \V[X] = p(1-p)$.
 :::
 
+## Phân phối nhị thức
 ::: {#def-binomial}
-### Phân phối Binomial
-$X\sim\Bin(n, p)$
+### Binomial distribution
+$K\sim\Binom(n, p)$
 với $n\in\N, p\in(0,1)$
 mô tả tổng số lần thành công
 của $n$ thí nghiệm độc lập
-$X_1,\ldots,X_n \iid \Ber(p).$
+$K_1,\ldots,K_n \iid \Ber(p).$
 Ta có
 $$
-\P(X=k) = \binom{n}{k}p^{k}(1-p)^{n-k}
+\P(K=k) = \binom{n}{k}p^{k}(1-p)^{n-k}
 $$
 và
-$\E[X] = np, \V[X] = np(1-p)$.
+$\E[K] = np, \V[K] = np(1-p)$.
 :::
 
+## Phân phối Poisson
 :::{#def-poisson}
 ### Phân phối Poisson
-$X\sim\Poi(\lambda)$
-thường dùng để mô tả số lần $k$ mà sự kiện phát sinh
-trong một giới hạn cố định,
-với giả định tần suất phát sinh sự kiện là
+$K\sim\Poiss(\lambda),$
 $\lambda > 0$ cố định,
-và các sự kiện phát sinh độc lập.
+có
 $$
-\P(X=k) = e^{-\lambda}
-\frac{\lambda^k}{k!}, \,k=0,1,2,\ldots
+\P(K=k) = e^{-\lambda}
+\frac{\lambda^k}{k!},
 $$
-và
-$\E[X] = \V[X] = \lambda$.
+$k=0,1,2,\ldots$ là số lần phát sinh sự kiện trong một giới hạn cố định,
+các sự kiện phát sinh độc lập.
+$$\E[K] = \V[K] = \lambda
+.$$
 :::
 
 Khi $n$ đủ lớn và $p$ đủ nhỏ thì
-$\Poi(np)$ gần với $\Bin(n,p)$.
+$\Poiss(np)$ gần với $\Binom(n,p)$.
+
+## Phân phối hình học
 
 :::{#def-geomdist}
-### Phân phối Geometric
-$X\sim\text{Geom}(p), p \in (0,1)$
+### Geometric distribution
+$K\sim\Geom(p), p \in (0,1)$
 có
 $$
-\P(X=k)=p(1-p)^{k-1}, k=1,2,\ldots
+\P(K=k)=p(1-p)^{k-1}, k=1,2,\ldots
 $$
-và
-$\E[X]=1/p,\V[X]=(1-p)/p^2.$
+là xác suất thành công đầu tiên xảy ra sau đúng $k$ lần thực nghiệm
+$\Ber(k).$
+$$\E[K]=1/p,\V[K]=(1-p)/p^2.$$
+
 :::
 
 ## Phân phối liên tục
 
+## Phân phối đều
 :::{#def-uniform}
-### Phân phối đồng đều
+### Uniform distribution
 $X\sim\Unif[a,b]$ có mật độ
 $$
 f(x)\is
@@ -78,24 +83,23 @@ $$\E[X] = \frac{a+b}{2}, \V[X]=\frac{(b-a)^2}{12}.$$
 Nếu biến $X$ có cdf $F$ (@def-cdf) khả nghịch thì
 $F(X)\sim\Unif[0,1].$
 
+## Phân phối mũ
 :::{#def-expdist}
-### Phân phối Exponential
+### Exponential distribution
 $X\sim\text{Exp}(\lambda)$
-dùng để mô tả khoảng cách $x$ giữa hai lần phát sinh
-của một chuỗi sự kiện kiểu Poisson
-(hai lần phát sinh sự kiện liên tiếp là độc lập với nhau,
-và tần suất phát sinh $\lambda>0$ là cố định).
-Có
+có
 $$
-f(x)={\lambda}e^{-\lambda x},x\in\R_+
+f(x)={\lambda}e^{-\lambda x},x\in\R_+,
 $$
-và
-$\E[X]=1/\lambda,\V[X]=1/\lambda^2.$
+$x$ ước lượng khoảng cách giữa hai lần phát sinh
+sự kiện trong quá trình $\Poiss(\lambda).$
+$$\E[X]=1/\lambda,\V[X]=1/\lambda^2.$$
 :::
 
+## Phân phối chuẩn
 :::{#def-gaussian}
-### Phân phối chuẩn 1 biến, Gaussian Distribution
-$X\sim\Gaus(\mu,\sigma^2)$ có
+### Gaussian Distribution
+$X\sim\Gaus{\mu}{\sigma^2}$ có
 mật độ
 $$
 f(x) =
@@ -109,10 +113,11 @@ $\E[X]=\mu,\V[X]=\sigma^2$.
 :::{#thm-sum-gaussian}
 ### Tổng của các phân phối chuẩn
 Nếu
-$X_i \sim\Gaus(\mu_i,\sigma_i^2) (i=1,\ldots,n)$
+$X_i \sim\Gaus{\mu_i}{\sigma_i^2} (i=1,\ldots,n)$
 thì
 
-$$\sum_{i=1}^n X_i\sim\Gaus\left(\sum_{i=1}^n \mu_i,\sum_{i=1}^n \sigma_i^2\right)
+$$\sum_{i=1}^n X_i\sim
+\Gaus{\sum_{i=1}^n \mu_i}{\sum_{i=1}^n \sigma_i^2}
 .$$
 :::
 
@@ -125,11 +130,12 @@ $\boldsymbol{v}$
 được gọi là một vector phân phối chuẩn.
 :::
 
+## Phân phối $\chi^2$
 :::{#def-chi-dist}
 ### Phân phối $\chi^2$
 $X\sim\chi_k^2$ là
 tổng bình phương của
-$X_1,\ldots,X_k\iid\Gaus(0,1)$
+$X_1,\ldots,X_k\iid\Gaus{0}{1}$
 
 $$
 X \is \sum_{i=0}^k X_i^2
@@ -139,14 +145,51 @@ và có
 $\E[X]=k,\V[X]=2k$.
 :::
 
+## Phân phối Student
 :::{#def-student-dist}
-### Phân phối Student's T
+### Student's T distribution
 
-Nếu có $Z\sim\Gaus(0,1), V\sim \chi_k^2$ độc lập với nhau thì
+Nếu có $Z\sim\Gaus{0}{1}, V\sim \chi_k^2$ độc lập với nhau thì
 
 $$
 X \is \frac{Z}{\sqrt{V/k}}
 $$
 
 tuân theo phân phối Student's $t_k$.
+:::
+
+## Phân phối Beta
+:::{#def-beta-dist}
+### Beta distribution
+$X\sim\Beta{\alpha}{\beta},$
+tham số
+$\alpha>0,\beta>0$
+có mật độ trên $x\in [0,1]$ là
+$$
+f(x) = Cx^{\alpha-1}(1-x)^{\beta-1}
+,
+$$
+$C=C(\alpha,\beta)$ là hằng số chuẩn hóa.
+:::
+
+Phân phối Beta có đồ thị rất linh hoạt trên khoảng $[0,1],$
+rất phù hợp để sử dụng làm xác suất tiền nghiệm (@def-bayesian-method)
+cho một tham số xác suất $p\in[0,1].$
+
+Ví dụ
+$\Unif[0,1] = \Beta{1}{1}.$
+
+## Phân phối Gamma
+
+:::{#def-gamma-dist}
+### Gamma distribution
+với tham số $q>0, \lambda>0,$
+có mật độ là
+$$
+f(x)\is\frac{\lambda^q x^{q-1} e^{-\lambda x}}{\Gamma(q)}
+ \quad \forall
+x\in (0,\infty)
+,
+$$
+$\Gamma$ là hàm Euler Gamma.
 :::

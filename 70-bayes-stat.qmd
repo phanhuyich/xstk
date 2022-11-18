@@ -1,0 +1,128 @@
+# Bayesian
+
+## Phương pháp
+
+:::{#def-bayesian-method}
+### Bayesian method
+Với dữ liệu $X_1,\ldots,X_n,$
+ta
+ước lượng tham số $\theta$ cho mô hình xác suất qua các bước:
+
+1. Gán xác suất tiên nghiệm (prior) $\pi(\theta)$ cho tham số $\theta\in\Theta.$
+2. Chọn xác suất $f(X|\theta)$ phụ thuộc vào $\theta,$
+gọi MLE (@def-mle) là $L_n$
+3. Tính xác suất hậu nghiệm (posterior) theo Bayes @thm-bayes:
+
+$$
+\begin{split}
+\pi(\theta|X_1,\ldots,X_n)
+&\propto
+L_n(X_1,\ldots,X_n|\theta)
+\pi(\theta),
+\quad\theta\in\Theta
+.
+\end{split}
+$$
+:::
+
+## Loại prior
+
+:::{#def-conjugate-prior}
+### Conjugate prior
+Nếu xác suất tiền nghiệm và xác suất hậu nghiệm thuộc cùng một hệ xác suất, ta nói xác suất tiền nghiệm là liên hợp đối với mô hình.
+:::
+
+:::{#exm-conjugate-prior}
+Beta là xác suất tiền nghiệm liên hợp đối với mô hình Bernoulli $\Ber$, nhị thức $\Binom$ và hình học $\Geom.$
+:::
+
+:::{#def-non-informative-prior}
+### Non informative prior
+Nếu ta không có thông tin tiền nghiệm gì về tham số
+$\theta\in\Theta=[a, b]$ thì có thể dùng
+phân phối đồng đều $\Unif[a,b]$ làm xác suất tiền nghiệm.
+:::
+
+:::{#def-improper-prior}
+### Improper prior
+Nếu
+hàm $\pi:\Theta\to[0,+\infty)$ là đo được (measurable)
+nhưng không khả tích toàn phần trên $\Theta$
+thì ta nói $\pi$ là improper prior.
+:::
+
+## Jeffreys prior
+
+:::{#def-jeffreys-prior}
+### Jeffreys prior
+Với mô hình thống kê dựa trên tham số $\theta$ cho
+$X$
+có thông tin Fisher (@def-fisher-info)
+là $I(\theta)$ thì Jeffreys prior
+$$\pi_J(\theta)\propto\sqrt{\det I(\theta)},
+$$
+là non informative.
+:::
+
+:::{#exm-jeffreys-prior}
+- Thí nghiệm $\Ber(p), p\in(0,1)$ có
+$$\pi_J(p)\propto\frac{1}{\sqrt{p(1-p)}}\propto\Beta{\frac{1}{2}}{\frac{1}{2}}
+.$$
+- Thí nghiệm $\Gaus{\mu}{\sigma^2}, (\mu,\sigma^2)\in\R\times\R_+$ có
+$\pi_J(\mu,\sigma^2)\propto \sigma^{-3}$ là improper prior.
+:::
+
+:::{#thm-invariant-jeffreys}
+### Jeffreys prior là invariant khi đổi tham số
+Nếu đổi tham số $\theta\mapsto\eta = \phi(\theta)$ (@thm-rv-transformation) thì mật độ của tham số mới
+$\eta$ là
+$$
+\tilde{\pi}(\eta) = \frac{\pi(\phi^{-1}(\eta))}{\phi^{\prime}(\phi^{-1}(\eta))}
+\propto
+\sqrt{\det\tilde{I}(\eta)}
+$$
+với
+$\tilde{I}(\eta)$ là thông tin Fisher của mô hình dựa trên tham số
+$\eta$ thay vì $\theta.$
+:::
+:::{.remark}
+Phân phối tích lũy
+$$
+F_{\tilde{\pi}}(\eta)
+\equiv
+F_{\pi}(\phi^{-1}(\eta))
+.$$
+:::
+## Bayesian estimation
+
+:::{#def-posterior-mean}
+### Posterior mean
+Từ tiền nghiệm $\pi(\theta),$
+sau khi tính hậu nghiệm $\pi(\theta|X_1,\ldots,X_n)$
+ta ước lượng $\theta$ bằng trung bình:
+$$
+\hat{\theta}^{(\pi)} \is
+\int_\Theta {\theta \pi(\theta | X_1,\ldots,X_n) d\theta}
+.$$
+:::
+
+:::{#def-maximum-posteriori}
+### MAP, maximum a posteriori
+Chọn cực đại
+$$
+\hat{\theta}^\textrm{MAP} \is
+\argmax_{\theta\in\Theta}{\pi(\theta | X_1,\ldots,X_n)}
+.$$
+:::
+
+:::{#thm-bayes-convergence}
+### Asymptotic properties of the Bayes estimator
+Thông thưởng,
+tính hội tụ về chuẩn (@def-asymp-normal) của Bayes estimator
+không phụ thuộc vào chọn lựa xác suất tiền nghiệm.
+:::
+
+:::{.remark}
+Tính phương sai của hội tụ tương tự như MLE
+(@thm-mle-asym).
+:::

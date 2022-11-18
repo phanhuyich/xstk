@@ -10,6 +10,7 @@ book:
   downloads: pdf
   chapters:
     - index.qmd
+    - notation.qmd
     - part: "Xác suất"
       chapters:
         - 10-proba-intro.qmd
@@ -20,6 +21,7 @@ book:
         - 40-stat-intro.qmd
         - 50-est-method.qmd
         - 60-hypothesis-test.qmd
+        - 70-bayes-stat.qmd
     - references.qmd
   repo-url: https://github.com/vochicong/xstk
   # sharing: [twitter, facebook]
@@ -58,6 +60,7 @@ format:
     lang: vi
 
 crossref:
+  exm-title: Ví dụ
   fig-title: Hình
   fig-prefix: H
   def-title: Định nghĩa

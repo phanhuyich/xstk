@@ -1,6 +1,6 @@
-# Giáo trình {.unnumbered}
+# Tham khảo {.unnumbered}
 
-## Tham khảo
+## Giáo trình
 
 ::: {#refs}
 :::

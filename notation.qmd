@@ -1,0 +1,8 @@
+# Ký hiệu {.unnumbered}
+
+ Ký hiệu | Ý nghĩa
+--------:|:--------
+ $\R$ | Tập hợp số thực
+ $\R_+$ | Tập hợp số thực dương
+$f(\alpha) \propto g(\alpha)$ | $f/g$ không phụ thuộc $\alpha$
+$\Gaus{\mu}{\sigma^2}$ | phân phối chuẩn tâm $\mu$, lệch $|\sigma|$

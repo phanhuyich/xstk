@@ -180,16 +180,19 @@ cho đến khi hội tụ.
 :::{#def-fisher-info}
 ### Thông tin Fisher, Fisher information
 Giả sử log likelihood đối với một quan sát $X$ theo mô hình $\theta\in\R$ là
-$\ell(\theta)\is\ln L_1(X,\theta), \theta\in\Theta\subset\R.$
+$\ell=\ell(\theta)\is\ln L_1(X,\theta), \theta\in\Theta\subset\R.$
 Giả sử $\ell(\theta)$ có đạo hàm bậc hai. Dưới một số điều kiện chuẩn,
 **thông tin Fisher** của mô hình được định nghĩa là
 
 $$
 I(\theta)
 \is
-\V[\ell^{\prime}(\theta)]
-= \E[(\ell^{\prime}(\theta))^2]
-= -\E[\ell^{\prime\prime}(\theta)]
+\V_X
+\left[\frac{\partial\ell}{\partial\theta}\right]
+= \E_X
+\left[\left(\frac{\partial\ell}{\partial\theta}\right)^2\right]
+= -\E_X
+\left[\frac{\partial^2\ell}{\partial\theta^2}\right]
 .
 $$
 
@@ -198,13 +201,14 @@ $$
 H_{ij} \is \frac{\partial^2\ell}{\partial\theta_i\partial\theta_j},
 $$
 $$
-I(\theta) \is -\E
-\begin{bmatrix}
+I(\theta) \is -\E_X
+\left[
+\begin{pmatrix}
 H_{11} & \cdots & H_{1k} \\
 \vdots & \ddots & \vdots \\
 H_{k1} & \cdots & H_{kk} \\
-\end{bmatrix}
-.
+\end{pmatrix}
+\right].
 $$
 :::
 
@@ -223,7 +227,7 @@ Khi đó, chuỗi $\hat{\theta}_n^{MLE}$ thỏa mãn:
 $$\hat{\theta}_n^{MLE} \xrightarrow[n\to\infty]{\P_{\theta^*}}\theta^*$$
 $$\sqrt{n I(\theta^*)}\left(\hat{\theta}_n^{MLE}-\theta^*\right)
 \xrightarrow[n\to\infty]{(d)\textrm{ w.r.t.}\P_{\theta^*}}
-\Gaus(0, 1).$$
+\Gaus{0}{1}.$$
 
 Trường hợp mô hình đa biến, $\theta\in\R^k:$
 $${n
@@ -239,8 +243,9 @@ mà lại cần tìm tham số $\theta.$
 
 :::
 
-## M-estimatior
+## M-estimation
 :::{#def-m-est}
+### M-estimatior
 Với mục tiêu ước lượng thuộc tính $\mu^*$ của xác suất $\P(X)$,
 ta tìm một "hàm tổn thất" $\rho(X,\mu)$ có giá trị kỳ vọng
 đạt cực tiểu tại $\mu = \mu^*:$
@@ -270,9 +275,43 @@ $$
 $$
 :::
 
-Ví dụ,
+:::{.remark}
+Với $\rho(x,\theta) = -\ln p_\theta(x)$ ta có MLE để ước lượng tham số $\theta^*$ của mô hình $\P.$
+:::
 
-- với $\rho(x,\theta) = -\ln p_\theta(x)$ ta có MLE để ước lượng tham số $\theta^*$ của mô hình $\P$
-- với $\vec x,\vec\mu\in\R^d$,
+:::{#exm-m-est-2}
+Với $\vec x,\vec\mu\in\R^d$,
 dùng $\rho(\vec x,\vec\mu) = \|\vec x-\vec\mu\|^2$
 ta ước lượng được $\vec\mu^*=\E[\vec x].$
+:::
+
+## Method of moments
+:::{#def-meth-moment-est}
+### Method of moments estimator
+Để ước lượng ${\theta}\in\Theta\subset\R^d$
+
+1. Từ quan sát $X_1,\ldots,X_n$ tính tích suất mẫu (@def-sample-moment)
+$\hat{m}_1,\ldots,\hat{m}_d$
+2. Với $m_i$ là tích suất bậc $i$ (@def-moment),
+tìm $\hat{\theta}\in\R^d:$
+$$
+\begin{split}
+m_1(\hat{\theta}) &= \hat{m}_1, \\
+m_2(\hat{\theta}) &= \hat{m}_2, \\
+& \vdots \\
+m_d(\hat{\theta}) &= \hat{m}_d .
+\end{split}
+$$
+:::
+
+## Biến đổi tham số
+
+Với mô hình thống kê
+$(E,(\P_\theta)_{\theta\in\Theta}),$
+giả sử MLE, method of moments hoặc M-estimation
+ước lượng được duy nhất một giá trị tham số tối ưu là
+$\theta^*\in\Theta.$
+Áp dụng biến đổi tham số $\eta = \phi(\theta)$ (@thm-rv-transformation)
+lên các mô hình đó
+sẽ dẫn tới nghiệm tối ưu $\eta^*$ thỏa mãn
+$\eta^{*}\equiv\phi(\theta^*).$

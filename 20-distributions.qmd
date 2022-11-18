@@ -17,7 +17,7 @@ $\E[X] = p, \V[X] = p(1-p)$.
 ## Phân phối nhị thức
 ::: {#def-binomial}
 ### Binomial distribution
-$K\sim\Bin(n, p)$
+$K\sim\Binom(n, p)$
 với $n\in\N, p\in(0,1)$
 mô tả tổng số lần thành công
 của $n$ thí nghiệm độc lập
@@ -47,7 +47,7 @@ $$\E[K] = \V[K] = \lambda
 :::
 
 Khi $n$ đủ lớn và $p$ đủ nhỏ thì
-$\Poiss(np)$ gần với $\Bin(n,p)$.
+$\Poiss(np)$ gần với $\Binom(n,p)$.
 
 ## Phân phối hình học
 

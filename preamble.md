@@ -4,7 +4,7 @@ $$
 \def\as{\textrm{a.s.}}
 \def\Ber{\text{Ber}}
 \def\Beta#1#2{\text{Beta}\left(#1,#2\right)}
-\def\Bin{\text{Bin}}
+\def\Binom{\text{Binom}}
 \def\Geom{\text{Geom}}
 \def\Unif{\text{Unif}}
 \def\E{\mathbb{E}}

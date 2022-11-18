@@ -33,7 +33,7 @@ Nếu xác suất tiền nghiệm và xác suất hậu nghiệm thuộc cùng m
 :::
 
 :::{#exm-conjugate-prior}
-Beta là xác suất tiền nghiệm liên hợp đối với mô hình Bernoulli $\Ber$, nhị thức $\Bin$ và hình học $\Geom.$
+Beta là xác suất tiền nghiệm liên hợp đối với mô hình Bernoulli $\Ber$, nhị thức $\Binom$ và hình học $\Geom.$
 :::
 
 :::{#def-non-informative-prior}

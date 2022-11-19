@@ -2,19 +2,14 @@
 
 Giả sử
 $(X_i, Y_i)_{i=1,\ldots,n}\iid \P_{(X,Y)}$
-với mật độ xác suất liên kết $h(x,y),$
-mật độ xác suất biên và
-mật độ xác suất có điều kiện là:
-
-$$
-\begin{split}
-h(x) &\is \int h(x,y) dy, \\
-h(y|x) &\is \frac{h(x,y)}{h(x)}.
-\end{split}
-$$
+với mật độ xác suất $h(x,y),$
+mật độ xác suất biên $h(x)$ và
+mật độ xác suất có điều kiện $h(y|x).$
 
 :::{#def-regression}
-### Hàm hồi quy, regression function
+### Regression function
+Hồi quy là kỳ vọng giá trị của $Y$
+khi đã chọn $X=x:$
 $$
 x\mapsto f(x) \is \E[Y|X=x] = \int y h(y|x) dy
 .$$
@@ -22,10 +17,22 @@ x\mapsto f(x) \is \E[Y|X=x] = \int y h(y|x) dy
 
 :::{#def-conditional-quantile}
 ### Conditional quantile
-Với $\alpha\in[0,1],$
+Cho $\alpha\in[0,1],$
+phân vị $q_{\alpha}$ đối với $Y$
+khi đã chọn $X=x:$
 $$
 x\mapsto q_{\alpha}(x) \textrm{ such that }
 \int_{-\infty}^{q_{\alpha}(x)} h(y|x) dy \equiv 1-\alpha
 .$$
 Khi $\alpha=1/2$ ta có conditional median.
+:::
+
+## Hồi quy tuyến tính
+:::{#def-linear-regression}
+### Linear regression
+Giả sử hồi quy @def-regression là hàm tuyến tính, ta có:
+$$
+\nu(x)\is \E[Y|X=x] = a + bx,
+$$
+với hệ số $(a,b).$
 :::

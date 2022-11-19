@@ -93,9 +93,28 @@ với
 $F(x)\is\P(X\leq x)$ là phân phối tích lũy của
 biến
 $X:\Omega\to \R.$
+Mật độ xác suất là không âm và có tích phân toàn phần bằng $1.$
 :::
 
-Mật độ xác suất là không âm và có tích phân toàn phần bằng $1.$
+:::{#def-pdf-bivariate-continuous}
+### PDF of bivariate distributions
+Với hai biến liên tục $(X,Y)\in\R^2$ ta gọi hàm không âm $f(x,y)$ là mật độ xác suất đồng thời nếu:
+
+$$\int\int_A f(x,y) dx dy \equiv \P((X,Y)\in A),\quad\forall A\subset\R^2
+.$$
+
+Mật độ xác suất biên và
+mật độ xác suất có điều kiện tương ứng là:
+
+$$
+\begin{split}
+f(x) &\is \int f(x,y) dy, \\
+f(y|x) &\is \frac{f(x,y)}{f(x)}.
+\end{split}
+$$
+
+
+:::
 
 :::{#thm-density-propto}
 ### Chuẩn hóa mật độ xác suất
@@ -119,7 +138,7 @@ Xem "4.1.3 Functions of Continuous Random Variables",
 @probabilitycourse.
 :::
 
-## Phụ thuộc
+## Xác suất đồng thời
 
 ::: {#def-joint-proba}
 ### Xác suất hợp
@@ -218,6 +237,14 @@ Ta có
 $$
 \V[X+Y] \equiv \V[X]+\V[Y] + 2\textrm{Cov}[X,Y].
 $$
+
+:::{#thm-iterated-expectations}
+### Iterated Expectations
+Với các biến $X,Y,$ giả sử các giá trị kỳ vọng tồn tại, ta có
+$$
+\E\left[\E[Y|X]\right] \equiv \E[Y]
+.$$
+:::
 
 ## Tích suất
 

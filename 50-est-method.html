@@ -161,6 +161,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="./70-bayes-stat.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./80-linear-regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hồi quy</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -413,12 +418,17 @@ I(\theta^*)}
 <section id="m-estimation" class="level2" data-number="5.6">
 <h2 data-number="5.6" class="anchored" data-anchor-id="m-estimation"><span class="header-section-number">5.6</span> M-estimation</h2>
 <div id="def-m-est" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 5.9 (M-estimatior) </strong></span>Với mục tiêu ước lượng thuộc tính <span class="math inline">\(\mu^*\)</span> của xác suất <span class="math inline">\(\P(X)\)</span>, ta tìm một “hàm tổn thất” <span class="math inline">\(\rho(X,\mu)\)</span> có giá trị kỳ vọng đạt cực tiểu tại <span class="math inline">\(\mu = \mu^*:\)</span> <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 5.9 (M-estimatior) </strong></span>Để ước lượng thuộc tính <span class="math inline">\(\mu^*\)</span> của <span class="math inline">\(X\sim\P\)</span>, ta tìm một “hàm tổn thất” <span class="math inline">\(\rho(X,\mu)\)</span> có kỳ vọng cực tiểu tại <span class="math inline">\(\mu^*:\)</span> <span class="math display">\[
+\begin{split}
 \mathcal{Q}(\mu)
-\is \E_{\P}[\rho(X,\mu)]
-.
+&amp;\is \E[\rho(X,\mu)]
+,\\
+{\mu}^*
+&amp;\equiv\argmin_{\mu}
+\mathcal{Q}(\mu).
+\end{split}
 \]</span></p>
-<p>Nếu quan sát được <span class="math inline">\(X_1,\ldots,X_n\iid\P(X),\)</span> ta ước lượng <span class="math display">\[
+<p>Quan sát <span class="math inline">\(X_1,\ldots,X_n\iid\P,\)</span> ta ước lượng <span class="math display">\[
 \mathcal{Q}(\mu)
 \approx
 \mathcal{Q}_n(\mu)
@@ -433,11 +443,14 @@ I(\theta^*)}
 .
 \]</span></p>
 </div>
-<div class="remark proof">
-<p><span class="proof-title"><em>Remark</em>. </span>Với <span class="math inline">\(\rho(x,\theta) = -\ln p_\theta(x)\)</span> ta có MLE để ước lượng tham số <span class="math inline">\(\theta^*\)</span> của mô hình <span class="math inline">\(\P.\)</span></p>
+<div id="exm-m-est-1" class="theorem example">
+<p><span class="theorem-title"><strong>Ví dụ 5.1 </strong></span>Với <span class="math inline">\(\rho(x,\theta) = -\ln p_\theta(x)\)</span> ta có MLE để ước lượng tham số <span class="math inline">\(\theta^*\)</span> của mô hình <span class="math inline">\(\P.\)</span></p>
 </div>
 <div id="exm-m-est-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ví dụ 5.1 </strong></span>Với <span class="math inline">\(\vec x,\vec\mu\in\R^d\)</span>, dùng <span class="math inline">\(\rho(\vec x,\vec\mu) = \|\vec x-\vec\mu\|^2\)</span> ta ước lượng được <span class="math inline">\(\vec\mu^*=\E[\vec x].\)</span></p>
+<p><span class="theorem-title"><strong>Ví dụ 5.2 </strong></span>Với <span class="math inline">\(\vec x,\vec\mu\in\R^d\)</span>, dùng <span class="math inline">\(\rho(\vec x,\vec\mu) = \|\vec x-\vec\mu\|^2\)</span> ta ước lượng được mean <span class="math inline">\(\vec\mu^*=\E[\vec x].\)</span></p>
+</div>
+<div id="exm-m-est-3" class="theorem example">
+<p><span class="theorem-title"><strong>Ví dụ 5.3 </strong></span>Có thể dùng M-estimation để ước lượng median và quantiles.</p>
 </div>
 </section>
 <section id="method-of-moments" class="level2" data-number="5.7">

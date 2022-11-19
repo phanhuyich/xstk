@@ -246,16 +246,21 @@ mà lại cần tìm tham số $\theta.$
 ## M-estimation
 :::{#def-m-est}
 ### M-estimatior
-Với mục tiêu ước lượng thuộc tính $\mu^*$ của xác suất $\P(X)$,
-ta tìm một "hàm tổn thất" $\rho(X,\mu)$ có giá trị kỳ vọng
-đạt cực tiểu tại $\mu = \mu^*:$
+Để ước lượng thuộc tính $\mu^*$ của $X\sim\P$,
+ta tìm một "hàm tổn thất" $\rho(X,\mu)$ có kỳ vọng
+cực tiểu tại $\mu^*:$
 $$
+\begin{split}
 \mathcal{Q}(\mu)
-\is \E_{\P}[\rho(X,\mu)]
-.
+&\is \E[\rho(X,\mu)]
+,\\
+{\mu}^*
+&\equiv\argmin_{\mu}
+\mathcal{Q}(\mu).
+\end{split}
 $$
 
-Nếu quan sát được $X_1,\ldots,X_n\iid\P(X),$ ta ước lượng
+Quan sát $X_1,\ldots,X_n\iid\P,$ ta ước lượng
 $$
 \mathcal{Q}(\mu)
 \approx
@@ -275,14 +280,16 @@ $$
 $$
 :::
 
-:::{.remark}
+:::{#exm-m-est-1}
 Với $\rho(x,\theta) = -\ln p_\theta(x)$ ta có MLE để ước lượng tham số $\theta^*$ của mô hình $\P.$
 :::
-
 :::{#exm-m-est-2}
 Với $\vec x,\vec\mu\in\R^d$,
 dùng $\rho(\vec x,\vec\mu) = \|\vec x-\vec\mu\|^2$
-ta ước lượng được $\vec\mu^*=\E[\vec x].$
+ta ước lượng được mean $\vec\mu^*=\E[\vec x].$
+:::
+:::{#exm-m-est-3}
+Có thể dùng M-estimation để ước lượng median và quantiles.
 :::
 
 ## Method of moments

@@ -20,10 +20,12 @@ x\mapsto f(x) \is \E[Y|X=x] = \int y h(y|x) dy
 .$$
 :::
 
-:::{#def-conditional-median}
-### Conditional median
+:::{#def-conditional-quantile}
+### Conditional quantile
+Với $\alpha\in[0,1],$
 $$
-x\mapsto m(x) \textrm{ such that }
-\int_{-\infty}^{m(x)} h(y|x) dy \equiv \frac{1}{2}
+x\mapsto q_{\alpha}(x) \textrm{ such that }
+\int_{-\infty}^{q_{\alpha}(x)} h(y|x) dy \equiv 1-\alpha
 .$$
+Khi $\alpha=1/2$ ta có conditional median.
 :::

@@ -204,7 +204,11 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#lời-nói-đầu" id="toc-lời-nói-đầu" class="nav-link active" data-scroll-target="#lời-nói-đầu">Lời nói đầu</a></li>
+  <li><a href="#lời-nói-đầu" id="toc-lời-nói-đầu" class="nav-link active" data-scroll-target="#lời-nói-đầu">Lời nói đầu</a>
+  <ul class="collapse">
+  <li><a href="#động-cơ" id="toc-động-cơ" class="nav-link" data-scroll-target="#động-cơ">Động cơ</a></li>
+  <li><a href="#chú-ý" id="toc-chú-ý" class="nav-link" data-scroll-target="#chú-ý">Chú ý</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -265,20 +269,14 @@ $$
 
 <section id="lời-nói-đầu" class="level1 unnumbered">
 <h1 class="unnumbered">Lời nói đầu</h1>
-<p>Xác suất thống kê là nền tảng giúp ích cho việc phân tích dữ liệu, tổ chức thực hành thí nghiệm, chạy các mô hình giả lập, giải các bài toán tìm nghiệm tối ưu, nghiên cứu và ứng dụng học máy.</p>
-<p>Môn “xác suất” tôi đã học những kiến thức cơ bản vài lần, tính ra là ở cấp 3, trong đại học, và gần đây là học trực tuyến. Môn “thống kê” tôi chưa học được cho ra bài bản lần nào, mấy tháng đầu năm 2022 có thử sức học trực tuyến nhưng đầu tư thời gian không đủ nên thi rớt thảm hại.</p>
-<p>Lần này nhất quyết học lại môn thống kê một cách nghiêm túc hơn, tôi tóm tắt lại kiến thức xác suất thống kê bằng tiếng Việt, mặc dù tài liệu học hầu hết là tiếng Anh, tiếng Nhật. Hy vọng tiếng mẹ đẻ sẽ giúp tôi hiểu rõ hơn các vấn đề, và trau dồi vốn từ vựng để chia sẻ kiến thức với các đồng nghiệp và bạn bè người Việt.</p>
-<p>Động cơ của việc học xác suất thống kê của tôi là để hiểu rõ hơn các lý thuyết căn bản trong ngành học máy và trí tuệ nhân tạo và áp dụng vào thực tiễn một cách đúng đắn, an toàn và công bằng hơn.</p>
-<p>Mục tiêu cụ thể trước mắt tôi đặt ra là học hiểu và lấy được chứng chỉ hoàn thành khoá học Fundamentals of Statistics của <span class="citation" data-cites="mitxStats">Philippe Rigollet (<a href="references.html#ref-mitxStats" role="doc-biblioref">2022</a>)</span>, giáo sư đại học MIT dạy trên nền tảng trực tuyến edX. Tài liệu tham khảo là quyển “All of Statistics” của <span class="citation" data-cites="wasserman2010statistics">Wasserman (<a href="references.html#ref-wasserman2010statistics" role="doc-biblioref">2004</a>)</span>, cũng chính là tài liệu tham khảo của khoá học nêu trên.</p>
-<p>Môn xác suất nghiên cứu cách suy luận ra các đặc tính của tập dữ liệu sẽ được tạo ra từ một nguyên lý, quy trình sản sinh dữ liệu. Ngược lại, môn thống kê nghiên cứu cách dự đoán đặc tính của một quy trình sản sinh dữ liệu từ tập dữ liệu về hiện tượng đã phát sinh và được quan sát. <a href="#fig-proba-stats">H&nbsp;<span>1</span></a> minh hoạ quan hệ giữa “xác suất” và “thống kê”.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-proba-stats" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p>
 </p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
-  A((Nguyên lý,\n Quy trình))
-  B((Hiện tượng,\n Quan trắc))
+  A((Quy luật))
+  B((Quan sát))
   A-- Xác suất --&gt;B
   B-- Thống kê --&gt; A
 </pre>
@@ -291,7 +289,18 @@ $$
 </div>
 </div>
 </div>
+<p>Xác suất thống kê là nền tảng giúp ích cho việc phân tích dữ liệu, tổ chức thực hành thí nghiệm, chạy các mô hình giả lập, giải các bài toán tìm nghiệm tối ưu, nghiên cứu và ứng dụng học máy.</p>
+<p>Môn xác suất nghiên cứu cách suy luận ra các đặc tính của tập dữ liệu sẽ được tạo ra từ một nguyên lý, quy trình sản sinh dữ liệu. Ngược lại, môn thống kê nghiên cứu cách dự đoán đặc tính của một quy trình sản sinh dữ liệu từ tập dữ liệu về hiện tượng đã phát sinh và được quan sát. <a href="#fig-proba-stats">H&nbsp;<span>1</span></a> minh hoạ quan hệ giữa “xác suất” và “thống kê”.</p>
 <p>Phân tích, khai thác dữ liệu, học máy và khoa học dữ liệu là những tên gọi khác của thống kê, tùy theo bối cảnh và trào lưu. Một số ứng dụng cụ thể của thống kê là tính toán hồi quy, mật độ, phân loại và giả lập.</p>
+<section id="động-cơ" class="level2">
+<h2 class="anchored" data-anchor-id="động-cơ">Động cơ</h2>
+<p>Môn “xác suất” tôi đã học những kiến thức cơ bản vài lần, tính ra là ở cấp 3, trong đại học, và gần đây là học trực tuyến. Môn “thống kê” tôi chưa học được cho ra bài bản lần nào, mấy tháng đầu năm 2022 có thử sức học trực tuyến nhưng đầu tư thời gian không đủ nên thi rớt thảm hại.</p>
+<p>Lần này nhất quyết học lại môn thống kê một cách nghiêm túc hơn, tôi tóm tắt lại kiến thức xác suất thống kê bằng tiếng Việt, mặc dù tài liệu học hầu hết là tiếng Anh, tiếng Nhật. Hy vọng tiếng mẹ đẻ sẽ giúp tôi hiểu rõ hơn các vấn đề, và trau dồi vốn từ vựng để chia sẻ kiến thức với các đồng nghiệp và bạn bè người Việt.</p>
+<p>Động cơ của việc học xác suất thống kê của tôi là để hiểu rõ hơn các lý thuyết căn bản trong ngành học máy và trí tuệ nhân tạo và áp dụng vào thực tiễn một cách đúng đắn, an toàn và công bằng hơn.</p>
+<p>Mục tiêu cụ thể trước mắt tôi đặt ra là học hiểu và lấy được chứng chỉ hoàn thành khoá học Fundamentals of Statistics của <span class="citation" data-cites="mitxStats">Philippe Rigollet (<a href="references.html#ref-mitxStats" role="doc-biblioref">2022</a>)</span>, giáo sư đại học MIT dạy trên nền tảng trực tuyến edX. Tài liệu tham khảo là quyển “All of Statistics” của <span class="citation" data-cites="wasserman2010statistics">Wasserman (<a href="references.html#ref-wasserman2010statistics" role="doc-biblioref">2004</a>)</span>, cũng chính là tài liệu tham khảo của khoá học nêu trên.</p>
+</section>
+<section id="chú-ý" class="level2">
+<h2 class="anchored" data-anchor-id="chú-ý">Chú ý</h2>
 <p>Tài liệu này không đi sâu vào các chứng minh chi tiết, nhưng sẽ cố gắng ghi rõ các công thức và định nghĩa. Thuật ngữ chuyên môn trong tài liệu này chắc chắn có nhiều chỗ không chuẩn chỉnh do vốn tiếng Việt và kiến thức hạn chế của tác giả. Xin vui lòng góp ý tại <a href="https://github.com/vochicong/xstk/issues">GitHub issues</a>.</p>
 <p>Tài liệu này được viết bằng các công cụ là <a href="https://quarto.org/docs/books">Quarto</a> và <a href="https://code.visualstudio.com">VSCode</a>. Truy cập trực tuyến tại <a href="https://vochicong.github.io/xstk/">xstk</a> . <span class="math inline">\({}\)</span></p>
 
@@ -304,6 +313,7 @@ Philippe Rigollet, Tyler Maunu, Jan Christian Huetter. 2022. <span>“Fundamenta
 Wasserman, Larry. 2004. <em>All of Statistics : A Concise Course in Statistical Inference</em>. New York: Springer. <a href="https://archive.org/details/springer_10.1007-978-0-387-21736-9">https://archive.org/details/springer_10.1007-978-0-387-21736-9</a>.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->

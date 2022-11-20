@@ -195,7 +195,7 @@ $$
 **Trung bình**, hay **giá trị kỳ vọng** của biến X là
 
 $$
-\E[X]\is
+\E{X}\is
 \int x dF(x)
 \is
 \begin{cases}
@@ -205,44 +205,44 @@ $$
 $$
 :::
 
-Nếu giá trị $\int |x| dF(x) < \infty$ ta nói là $\E[X]$ "tồn tại"
+Nếu giá trị $\int |x| dF(x) < \infty$ ta nói là $\E{X}$ "tồn tại"
 (well-defined).
 
 Ta có
 $$
-\E[X+Y] \equiv \E[X] + E[Y].
+\E{X+Y} \equiv \E{X} + E[Y].
 $$
 
 ::: {#def-covar}
 ### Hiệp phương sai
 $$
 \begin{split}
-\textrm{Cov}[X,Y] &\is \E[(X-\E[X])(Y-\E[Y])] \\
-&\equiv \E[XY] - \E[X]\E[Y]
+\Cov{X,Y} &\is \E{(X-\E{X})(Y-\E{Y})} \\
+&\equiv \E{XY} - \E{X}\E{Y}
 \end{split}
 $$
 :::
 
-Nếu $X$ và $Y$ độc lập thì $\textrm{Cov}[X,Y] = 0$.
+Nếu $X$ và $Y$ độc lập thì $\Cov{X,Y} = 0$.
 
 ::: {#def-variance}
 ### Phương sai
 Phương sai, hay phân tán (variance) là
 $$
-\V[X]\is\textrm{Cov}[X,X]\equiv\E[X^2]-\E^2[X].
+\V{X}\is\Cov{X,X}\equiv\E{X^2}-(\E{X})^2.
 $$
 :::
 
 Ta có
 $$
-\V[X+Y] \equiv \V[X]+\V[Y] + 2\textrm{Cov}[X,Y].
+\V{X+Y} \equiv \V{X}+\V{Y} + 2\Cov{X,Y}.
 $$
 
 :::{#thm-iterated-expectations}
 ### Iterated Expectations
 Với các biến $X,Y,$ giả sử các giá trị kỳ vọng tồn tại, ta có
 $$
-\E\left[\E[Y|X]\right] \equiv \E[Y]
+\E{\E{Y|X}} \equiv \E{Y}
 .$$
 :::
 
@@ -255,21 +255,21 @@ của phân phối. Tích suất bậc $n$ của biến $X$ với mật độ $f
 :::
 
 $$
-\E[X^n]\is \int x^n f(x) dx
+\E{X^n}\is \int x^n f(x) dx
 $$
 
 ::: {#def-mgf}
 ### Hàm tạo tích suất
 "Moment generation function (MGF)" của biến $X$ là
 $$
-\psi_X(t)\is\E[e^{tX}], t\in\R.
+\psi_X(t)\is\E{e^{tX}}, t\in\R.
 $$
 :::
 
 Nếu MGF "tồn tại" lân cận $0$ thì đạo hàm cấp $k$ của $\psi$ tại $0$
 chính là:
 $$
-\psi_X^{(k)}(0)\equiv \E[X^k].
+\psi_X^{(k)}(0)\equiv \E{X^k}.
 $$
 
 :::{#def-sample-moment}
@@ -277,7 +277,7 @@ $$
 Từ các quan sát
 $X_1,\ldots X_n\iid \P_\theta, \theta\in\Theta\subset\R^d.$
 Để ước lượng tích suất
-$\E[X^k]$
+$\E{X^k}$
 ta có thể dùng các *sample moment*:
 $$
 \hat{m}_k\is \frac{1}{n}\sum_{i=1}^n X_i^k,\quad k=1,2,\ldots.

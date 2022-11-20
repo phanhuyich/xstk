@@ -64,8 +64,8 @@ $X$ có mật độ xác suất, thì
 $X_n \toprob X$.
 
 Nếu chuỗi $X_n$ có
-$\E[X_n]\xrightarrow[]{} \mu$ và
-$\V[X_n]\xrightarrow[]{} 0$ thì
+$\E{X_n}\xrightarrow[]{} \mu$ và
+$\V{X_n}\xrightarrow[]{} 0$ thì
 $X_n\xrightarrow[]{\P} \mu$.
 
 Nếu $X_n\toprob X$ thì
@@ -96,17 +96,17 @@ Nếu $X_n\toapd X$ thì
 đối với mọi hàm $f$ liên tục:
 
 - $f(X_n)\toapd f(X)$.
-- $\E[f(X_n)]\xrightarrow[n\to\infty]{}\E[f(X)]$ nếu $f$ còn bị chặn.
+- $\E{f(X_n)}\xrightarrow[n\to\infty]{}\E{f(X)}$ nếu $f$ còn bị chặn.
 :::
 
 ## Đại đa số
 ::: {#thm-lln}
 ### Law of Large Numbers, LLN
 Cho $n$ biến iid $X_1, X_2,\ldotp,X_n\iid X$ có
-$\E[X]<\infty$.
+$\E{X}<\infty$.
 Khi đó:
 $$\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}
-\xrightarrow[n\to\infty]{\P,\,\as}\E[X].
+\xrightarrow[n\to\infty]{\P,\,\as}\E{X}.
 $$
 :::
 
@@ -114,7 +114,7 @@ $$
 ::: {#thm-clt}
 ### Central Limit Theorem, CLT
 Giả sử thêm là
-$\V[X_i]=\sigma^2<\infty$.
+$\V{X_i}=\sigma^2<\infty$.
 Khi đó
 $$
 \sqrt{n}

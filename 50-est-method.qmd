@@ -59,12 +59,12 @@ Nếu tập mẫu $E$ là liên tục
 xác suất
 $\P_\theta, \P_{\eta}$
 có mật độ lần lượt là
-$f_\theta, f_{\eta}$
+$f_{\theta}, f_{\eta}$
 thì
 $$
 \TV(\P_\theta,\P_{\eta}) =
 \frac{1}{2}
-\int_{E}\mid f_\theta(x) - f_\eta(x)\mid dx.
+\int_{E}\mid f_{\theta}(x) - f_{\eta}(x)\mid dx.
 $$
 :::
 
@@ -80,11 +80,11 @@ hàm khối xác suất:
 
 $$
 \KL(\P_\theta, \P_\eta) \is
-\E_\theta\left[ \ln\frac{f_\theta(x)}{f_\eta(x)} \right]
+\mathbb{E}_{\theta}\left[ \ln\frac{f_{\theta}(x)}{f_{\eta}(x)} \right]
 =
-\E_\theta\left[ \ln{f_\theta(x)} \right]
+\mathbb{E}_{\theta}\left[ \ln{f_{\theta}(x)} \right]
 -
-\E_\theta\left[ \ln{f_\eta(x)} \right]
+\mathbb{E}_{\theta}\left[ \ln{f_{\eta}(x)} \right]
 .
 $$
 :::
@@ -171,7 +171,7 @@ lặp lại 2 bước **E, M** như sau
 để cập nhật $\theta_k, k=1,2,\ldots$
 cho đến khi hội tụ.
 
-- **E**stimate: Ước lượng $Z_i\approx\omega_i\is\E[Z|X_i=x_i, \theta=\theta_{k-1}], i=1,\ldots,n.$
+- **E**stimate: Ước lượng $Z_i\approx\omega_i\is\E{Z|X_i=x_i, \theta=\theta_{k-1}}, i=1,\ldots,n.$
 - **M**aximize: Thay $Z_i$ bởi $\omega_i$ vào công thức likelihood để tối ưu MLE $\theta = \theta_k$
 :::
 
@@ -252,7 +252,7 @@ cực tiểu tại $\mu^*:$
 $$
 \begin{split}
 \mathcal{Q}(\mu)
-&\is \E[\rho(X,\mu)]
+&\is \E{\rho(X,\mu)}
 ,\\
 {\mu}^*
 &\equiv\argmin_{\mu}
@@ -286,7 +286,7 @@ Với $\rho(x,\theta) = -\ln p_\theta(x)$ ta có MLE để ước lượng tham 
 :::{#exm-m-est-2}
 Với $\vec x,\vec\mu\in\R^d$,
 dùng $\rho(\vec x,\vec\mu) = \|\vec x-\vec\mu\|^2$
-ta ước lượng được mean $\vec\mu^*=\E[\vec x].$
+ta ước lượng được mean $\vec\mu^*=\E{\vec x}.$
 :::
 :::{#exm-m-est-3}
 Có thể dùng M-estimation để ước lượng median và quantiles.

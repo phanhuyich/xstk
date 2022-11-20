@@ -8,31 +8,75 @@ mật độ xác suất có điều kiện $h(y|x).$
 
 :::{#def-regression}
 ### Regression function
-Hồi quy là kỳ vọng giá trị của $Y$
-khi đã chọn $X=x:$
+Hồi quy là kỳ vọng về $Y$
+khi biết $X:$
 $$
-x\mapsto f(x) \is \E[Y|X=x] = \int y h(y|x) dy
+x\mapsto f(x) \is \E{Y|X=x} = \int y h(y|x) dy
 .$$
 :::
 
 :::{#def-conditional-quantile}
 ### Conditional quantile
 Cho $\alpha\in[0,1],$
-phân vị $q_{\alpha}$ đối với $Y$
-khi đã chọn $X=x:$
+phân vị $q_{\alpha}$ cho $Y$
+khi biết $X=x:$
 $$
 x\mapsto q_{\alpha}(x) \textrm{ such that }
 \int_{-\infty}^{q_{\alpha}(x)} h(y|x) dy \equiv 1-\alpha
 .$$
-Khi $\alpha=1/2$ ta có conditional median.
+Đặt $\alpha=1/2$ ta có conditional median.
 :::
 
 ## Hồi quy tuyến tính
 :::{#def-linear-regression}
-### Linear regression
-Giả sử hồi quy @def-regression là hàm tuyến tính, ta có:
+### Theoretical linear regression
+Giả sử $\V{X}>0.$
+Đường
+hồi quy tuyến tính áp $Y$ lên $X$ là
+$y = a x + b$
+với hệ số
 $$
-\nu(x)\is \E[Y|X=x] = a + bx,
+(a, b) \is
+\argmin_{(\alpha,\beta)\in\R^2} \E{(Y-\alpha X-\beta)^2}.
 $$
-với hệ số $(a,b).$
+:::
+:::{.remark}
+Lấy đạo hàm từng phần và giải hệ phương trình ta có
+$$
+\begin{split}
+a &= \frac{\Cov{X,Y}}{\V{X}},\\
+b &= \E{Y} - a\E{X}.
+\end{split}
+$$
+:::
+
+:::{#def-regression-noise}
+### Noise
+Nhiễu
+$$
+\epsilon\is Y-(a X+b)
+,$$
+có
+$\E{\epsilon}\equiv 0, \Cov{X,\epsilon}\equiv 0.$
+:::
+
+## Bình phương tối thiểu
+
+:::{#def-least-squares-estimator}
+### Least squares estimator, LSE
+Quan sát $(X_i, Y_i), i=1,\ldots,n.$ LSE là điểm cực tiểu của
+tổng bình phương lỗi (sum of squared errors):
+$$
+(\hat{a}, \hat{b}) \is
+\argmin_{(\alpha,\beta)\in\R^2} \sum_{i=1}^{n}{(Y_i-\alpha X_i-\beta)^2}
+.$$
+:::
+:::{.remark}
+Lấy đạo hàm từng phần và giải hệ phương trình ta có
+$$
+\begin{split}
+\hat{a} &= \frac{\overline{XY}-\bar{X}\bar{Y}}{\overline{X^2}-\bar{X}^2},\\
+\hat{b} &= \bar{Y} - \hat{a}\bar{X}.
+\end{split}
+$$
 :::

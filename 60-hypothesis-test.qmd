@@ -155,7 +155,7 @@ $$
 S_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2.
 $$
 
-Khi đó $\E[S_n^2] \equiv \sigma^2,$
+Khi đó $\E{S_n^2} \equiv \sigma^2,$
 $$
 \frac{S_n^2}{\sigma^2}
 \sim
@@ -321,7 +321,7 @@ $$
 :::{#thm-chi-test-family}
 ### Kiểm định $\chi^2$ cho hệ phân phối
 Xem xét hệ phân phối rời rạc $\P_\theta$
-có pmf $f_\theta$ với
+có pmf $f_{\theta}$ với
 $\theta\in\Theta\subset\R^d.$
 Với dữ liệu $X_1,\ldots,X_n$,
 gọi MLE của $\theta$ là $\hat{\theta},$

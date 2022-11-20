@@ -7,7 +7,7 @@ $$
 \def\Binom{\text{Binom}}
 \def\Geom{\text{Geom}}
 \def\Unif{\text{Unif}}
-\def\E{\mathbb{E}}
+\def\E#1{\mathbb{E}\left[#1\right]}
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{\coloneqq}
 \def\Gaus#1#2{\mathcal{N}\left(#1,#2\right)}
@@ -16,7 +16,8 @@ $$
 \def\P{\mathbb{P}}
 \def\Poiss{\text{Poiss}}
 \def\R{\mathbb{R}}
-\def\V{\mathbb{V}}
+\def\V#1{\textrm{Var}\left(#1\right)}
+\def\Cov#1{\textrm{Cov}\left(#1\right)}
 \def\N{\mathbb{Z}_+}
 \def\TV{\textrm{TV}}
 \def\KL{\textrm{KL}}

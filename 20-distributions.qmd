@@ -11,7 +11,7 @@ $$
 \P(X=1) = p = 1-\P(X=0)
 $$
 và
-$\E[X] = p, \V[X] = p(1-p)$.
+$\E{X} = p, \V{X} = p(1-p)$.
 :::
 
 ## Phân phối nhị thức
@@ -27,7 +27,7 @@ $$
 \P(K=k) = \binom{n}{k}p^{k}(1-p)^{n-k}
 $$
 và
-$\E[K] = np, \V[K] = np(1-p)$.
+$\E{K} = np, \V{K} = np(1-p)$.
 :::
 
 ## Phân phối Poisson
@@ -42,7 +42,7 @@ $$
 $$
 $k=0,1,2,\ldots$ là số lần phát sinh sự kiện trong một giới hạn cố định,
 các sự kiện phát sinh độc lập.
-$$\E[K] = \V[K] = \lambda
+$$\E{K} = \V{K} = \lambda
 .$$
 :::
 
@@ -60,7 +60,7 @@ $$
 $$
 là xác suất thành công đầu tiên xảy ra sau đúng $k$ lần thực nghiệm
 $\Ber(k).$
-$$\E[K]=1/p,\V[K]=(1-p)/p^2.$$
+$$\E{K}=1/p,\V{K}=(1-p)/p^2.$$
 
 :::
 
@@ -77,7 +77,7 @@ f(x)\is
 x\in[a,b]
 $$
 và
-$$\E[X] = \frac{a+b}{2}, \V[X]=\frac{(b-a)^2}{12}.$$
+$$\E{X} = \frac{a+b}{2}, \V{X}=\frac{(b-a)^2}{12}.$$
 :::
 
 Nếu biến $X$ có cdf $F$ (@def-cdf) khả nghịch thì
@@ -93,7 +93,7 @@ f(x)={\lambda}e^{-\lambda x},x\in\R_+,
 $$
 $x$ ước lượng khoảng cách giữa hai lần phát sinh
 sự kiện trong quá trình $\Poiss(\lambda).$
-$$\E[X]=1/\lambda,\V[X]=1/\lambda^2.$$
+$$\E{X}=1/\lambda,\V{X}=1/\lambda^2.$$
 :::
 
 ## Phân phối chuẩn
@@ -107,7 +107,7 @@ f(x) =
 x\in\R
 $$
 và
-$\E[X]=\mu,\V[X]=\sigma^2$.
+$\E{X}=\mu,\V{X}=\sigma^2$.
 :::
 
 :::{#thm-sum-gaussian}
@@ -142,7 +142,7 @@ X \is \sum_{i=0}^k X_i^2
 $$
 
 và có
-$\E[X]=k,\V[X]=2k$.
+$\E{X}=k,\V{X}=2k$.
 :::
 
 ## Phân phối Student

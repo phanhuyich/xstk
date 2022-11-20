@@ -117,11 +117,11 @@ $$
 ### Wald Test
 
 Giả sử $\hat{\theta}$ là ước lượng của tham số $\theta$, và
-$\hat{\V}[\hat{\theta}]$ là ước lượng phương sai của $\hat{\theta}$, sao
+$\hat{V}[\hat{\theta}]$ là ước lượng phương sai của $\hat{\theta}$, sao
 cho
 $$
 \frac{\hat{\theta}-\theta}
-{\sqrt{\hat{\V}[\hat{\theta}]}}
+{\sqrt{\hat{V}[\hat{\theta}]}}
 \todist
 \Gaus{0}{1}.
 $$
@@ -130,7 +130,7 @@ $$
 
 $$
 W \is \frac{\hat{\theta}-\theta_0}
-{\sqrt{\hat{\V}[\hat{\theta}]}}
+{\sqrt{\hat{V}[\hat{\theta}]}}
 ,
 $$
 

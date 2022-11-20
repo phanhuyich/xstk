@@ -175,10 +175,10 @@ cho đến khi hội tụ.
 - **M**aximize: Thay $Z_i$ bởi $\omega_i$ vào công thức likelihood để tối ưu MLE $\theta = \theta_k$
 :::
 
-## Chuẩn tính của MLE
+## Thông tin Fisher
 
 :::{#def-fisher-info}
-### Thông tin Fisher, Fisher information
+### Fisher information
 Giả sử log likelihood đối với một quan sát $X$ theo mô hình $\theta\in\R$ là
 $\ell=\ell(\theta)\is\ln L_1(X,\theta), \theta\in\Theta\subset\R.$
 Giả sử $\ell(\theta)$ có đạo hàm bậc hai. Dưới một số điều kiện chuẩn,
@@ -187,12 +187,9 @@ Giả sử $\ell(\theta)$ có đạo hàm bậc hai. Dưới một số điều 
 $$
 I(\theta)
 \is
-\V_X
-\left[\frac{\partial\ell}{\partial\theta}\right]
-= \E_X
-\left[\left(\frac{\partial\ell}{\partial\theta}\right)^2\right]
-= -\E_X
-\left[\frac{\partial^2\ell}{\partial\theta^2}\right]
+\V{\frac{\partial\ell}{\partial\theta}}
+= \E{\left(\frac{\partial\ell}{\partial\theta}\right)^2}
+= -\E{\frac{\partial^2\ell}{\partial\theta^2}}
 .
 $$
 
@@ -201,14 +198,13 @@ $$
 H_{ij} \is \frac{\partial^2\ell}{\partial\theta_i\partial\theta_j},
 $$
 $$
-I(\theta) \is -\E_X
-\left[
+I(\theta) \is -\E{
 \begin{pmatrix}
 H_{11} & \cdots & H_{1k} \\
 \vdots & \ddots & \vdots \\
 H_{k1} & \cdots & H_{kk} \\
 \end{pmatrix}
-\right].
+}.
 $$
 :::
 

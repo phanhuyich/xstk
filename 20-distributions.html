@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.262">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -208,7 +208,7 @@ $$
 \def\Binom{\text{Binom}}
 \def\Geom{\text{Geom}}
 \def\Unif{\text{Unif}}
-\def\E{\mathbb{E}}
+\def\E#1{\mathbb{E}\left[#1\right]}
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{\coloneqq}
 \def\Gaus#1#2{\mathcal{N}\left(#1,#2\right)}
@@ -217,7 +217,8 @@ $$
 \def\P{\mathbb{P}}
 \def\Poiss{\text{Poiss}}
 \def\R{\mathbb{R}}
-\def\V{\mathbb{V}}
+\def\V#1{\textrm{Var}\left(#1\right)}
+\def\Cov#1{\textrm{Cov}\left(#1\right)}
 \def\N{\mathbb{Z}_+}
 \def\TV{\textrm{TV}}
 \def\KL{\textrm{KL}}
@@ -251,7 +252,7 @@ $$
 <div id="def-bernoulli" class="theorem definition">
 <p><span class="theorem-title"><strong>Định nghĩa 2.1 (Bernoulli distribution) </strong></span><span class="math inline">\(X\sim\Ber(p)\)</span> có <span class="math display">\[
 \P(X=1) = p = 1-\P(X=0)
-\]</span> và <span class="math inline">\(\E[X] = p, \V[X] = p(1-p)\)</span>.</p>
+\]</span> và <span class="math inline">\(\E{X} = p, \V{X} = p(1-p)\)</span>.</p>
 </div>
 </section>
 <section id="phân-phối-nhị-thức" class="level2" data-number="2.2">
@@ -259,7 +260,7 @@ $$
 <div id="def-binomial" class="theorem definition">
 <p><span class="theorem-title"><strong>Định nghĩa 2.2 (Binomial distribution) </strong></span><span class="math inline">\(K\sim\Binom(n, p)\)</span> với <span class="math inline">\(n\in\N, p\in(0,1)\)</span> mô tả tổng số lần thành công của <span class="math inline">\(n\)</span> thí nghiệm độc lập <span class="math inline">\(K_1,\ldots,K_n \iid \Ber(p).\)</span> Ta có <span class="math display">\[
 \P(K=k) = \binom{n}{k}p^{k}(1-p)^{n-k}
-\]</span> và <span class="math inline">\(\E[K] = np, \V[K] = np(1-p)\)</span>.</p>
+\]</span> và <span class="math inline">\(\E{K} = np, \V{K} = np(1-p)\)</span>.</p>
 </div>
 </section>
 <section id="phân-phối-poisson" class="level2" data-number="2.3">
@@ -268,7 +269,7 @@ $$
 <p><span class="theorem-title"><strong>Định nghĩa 2.3 (Phân phối Poisson) </strong></span><span class="math inline">\(K\sim\Poiss(\lambda),\)</span> <span class="math inline">\(\lambda &gt; 0\)</span> cố định, có <span class="math display">\[
 \P(K=k) = e^{-\lambda}
 \frac{\lambda^k}{k!},
-\]</span> <span class="math inline">\(k=0,1,2,\ldots\)</span> là số lần phát sinh sự kiện trong một giới hạn cố định, các sự kiện phát sinh độc lập. <span class="math display">\[\E[K] = \V[K] = \lambda
+\]</span> <span class="math inline">\(k=0,1,2,\ldots\)</span> là số lần phát sinh sự kiện trong một giới hạn cố định, các sự kiện phát sinh độc lập. <span class="math display">\[\E{K} = \V{K} = \lambda
 .\]</span></p>
 </div>
 <p>Khi <span class="math inline">\(n\)</span> đủ lớn và <span class="math inline">\(p\)</span> đủ nhỏ thì <span class="math inline">\(\Poiss(np)\)</span> gần với <span class="math inline">\(\Binom(n,p)\)</span>.</p>
@@ -278,7 +279,7 @@ $$
 <div id="def-geomdist" class="theorem definition">
 <p><span class="theorem-title"><strong>Định nghĩa 2.4 (Geometric distribution) </strong></span><span class="math inline">\(K\sim\Geom(p), p \in (0,1)\)</span> có <span class="math display">\[
 \P(K=k)=p(1-p)^{k-1}, k=1,2,\ldots
-\]</span> là xác suất thành công đầu tiên xảy ra sau đúng <span class="math inline">\(k\)</span> lần thực nghiệm <span class="math inline">\(\Ber(k).\)</span> <span class="math display">\[\E[K]=1/p,\V[K]=(1-p)/p^2.\]</span></p>
+\]</span> là xác suất thành công đầu tiên xảy ra sau đúng <span class="math inline">\(k\)</span> lần thực nghiệm <span class="math inline">\(\Ber(k).\)</span> <span class="math display">\[\E{K}=1/p,\V{K}=(1-p)/p^2.\]</span></p>
 </div>
 </section>
 <section id="phân-phối-liên-tục" class="level2" data-number="2.5">
@@ -292,7 +293,7 @@ f(x)\is
 \frac{x-a}{b-a}
 \textrm{ for }
 x\in[a,b]
-\]</span> và <span class="math display">\[\E[X] = \frac{a+b}{2}, \V[X]=\frac{(b-a)^2}{12}.\]</span></p>
+\]</span> và <span class="math display">\[\E{X} = \frac{a+b}{2}, \V{X}=\frac{(b-a)^2}{12}.\]</span></p>
 </div>
 <p>Nếu biến <span class="math inline">\(X\)</span> có cdf <span class="math inline">\(F\)</span> (<a href="10-proba-intro.html#def-cdf">ĐN&nbsp;<span>1.2</span></a>) khả nghịch thì <span class="math inline">\(F(X)\sim\Unif[0,1].\)</span></p>
 </section>
@@ -301,7 +302,7 @@ x\in[a,b]
 <div id="def-expdist" class="theorem definition">
 <p><span class="theorem-title"><strong>Định nghĩa 2.6 (Exponential distribution) </strong></span><span class="math inline">\(X\sim\text{Exp}(\lambda)\)</span> có <span class="math display">\[
 f(x)={\lambda}e^{-\lambda x},x\in\R_+,
-\]</span> <span class="math inline">\(x\)</span> ước lượng khoảng cách giữa hai lần phát sinh sự kiện trong quá trình <span class="math inline">\(\Poiss(\lambda).\)</span> <span class="math display">\[\E[X]=1/\lambda,\V[X]=1/\lambda^2.\]</span></p>
+\]</span> <span class="math inline">\(x\)</span> ước lượng khoảng cách giữa hai lần phát sinh sự kiện trong quá trình <span class="math inline">\(\Poiss(\lambda).\)</span> <span class="math display">\[\E{X}=1/\lambda,\V{X}=1/\lambda^2.\]</span></p>
 </div>
 </section>
 <section id="phân-phối-chuẩn" class="level2" data-number="2.8">
@@ -311,7 +312,7 @@ f(x)={\lambda}e^{-\lambda x},x\in\R_+,
 f(x) =
 \frac{1}{\sqrt{\pi 2\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right),
 x\in\R
-\]</span> và <span class="math inline">\(\E[X]=\mu,\V[X]=\sigma^2\)</span>.</p>
+\]</span> và <span class="math inline">\(\E{X}=\mu,\V{X}=\sigma^2\)</span>.</p>
 </div>
 <div id="thm-sum-gaussian" class="theorem">
 <p><span class="theorem-title"><strong>Định lý 2.1 (Tổng của các phân phối chuẩn) </strong></span>Nếu <span class="math inline">\(X_i \sim\Gaus{\mu_i}{\sigma_i^2} (i=1,\ldots,n)\)</span> thì</p>
@@ -330,7 +331,7 @@ x\in\R
 <p><span class="math display">\[
 X \is \sum_{i=0}^k X_i^2
 \]</span></p>
-<p>và có <span class="math inline">\(\E[X]=k,\V[X]=2k\)</span>.</p>
+<p>và có <span class="math inline">\(\E{X}=k,\V{X}=2k\)</span>.</p>
 </div>
 </section>
 <section id="phân-phối-student" class="level2" data-number="2.10">

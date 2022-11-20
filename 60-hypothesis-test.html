@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.262">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -219,7 +219,7 @@ $$
 \def\Binom{\text{Binom}}
 \def\Geom{\text{Geom}}
 \def\Unif{\text{Unif}}
-\def\E{\mathbb{E}}
+\def\E#1{\mathbb{E}\left[#1\right]}
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{\coloneqq}
 \def\Gaus#1#2{\mathcal{N}\left(#1,#2\right)}
@@ -228,7 +228,8 @@ $$
 \def\P{\mathbb{P}}
 \def\Poiss{\text{Poiss}}
 \def\R{\mathbb{R}}
-\def\V{\mathbb{V}}
+\def\V#1{\textrm{Var}\left(#1\right)}
+\def\Cov#1{\textrm{Cov}\left(#1\right)}
 \def\N{\mathbb{Z}_+}
 \def\TV{\textrm{TV}}
 \def\KL{\textrm{KL}}
@@ -380,16 +381,16 @@ R_\psi = \{X_i: T(X_i)\geq c\}
 <h2 data-number="6.2" class="anchored" data-anchor-id="kiểm-định-tham-số"><span class="header-section-number">6.2</span> Kiểm định tham số</h2>
 <section id="wald-test" class="level3" data-number="6.2.1">
 <h3 data-number="6.2.1" class="anchored" data-anchor-id="wald-test"><span class="header-section-number">6.2.1</span> Wald Test</h3>
-<p>Giả sử <span class="math inline">\(\hat{\theta}\)</span> là ước lượng của tham số <span class="math inline">\(\theta\)</span>, và <span class="math inline">\(\hat{\V}[\hat{\theta}]\)</span> là ước lượng phương sai của <span class="math inline">\(\hat{\theta}\)</span>, sao cho <span class="math display">\[
+<p>Giả sử <span class="math inline">\(\hat{\theta}\)</span> là ước lượng của tham số <span class="math inline">\(\theta\)</span>, và <span class="math inline">\(\hat{V}[\hat{\theta}]\)</span> là ước lượng phương sai của <span class="math inline">\(\hat{\theta}\)</span>, sao cho <span class="math display">\[
 \frac{\hat{\theta}-\theta}
-{\sqrt{\hat{\V}[\hat{\theta}]}}
+{\sqrt{\hat{V}[\hat{\theta}]}}
 \todist
 \Gaus{0}{1}.
 \]</span></p>
 <p>Đặt</p>
 <p><span class="math display">\[
 W \is \frac{\hat{\theta}-\theta_0}
-{\sqrt{\hat{\V}[\hat{\theta}]}}
+{\sqrt{\hat{V}[\hat{\theta}]}}
 ,
 \]</span></p>
 <p>ta có thể xây dựng các kiểm định Wald có mức tiệm cận là <span class="math inline">\(\alpha,\)</span> tức là <span class="math inline">\(\P_{H_0}(\psi_\alpha) \xrightarrow[n\to\infty]{} \alpha.\)</span></p>
@@ -432,7 +433,7 @@ W \is \frac{\hat{\theta}-\theta_0}
 <p><span class="theorem-title"><strong>Định lý 6.1 </strong></span>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus{\mu}{\sigma^2}.\)</span> Đặt <span class="math display">\[
 S_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2.
 \]</span></p>
-<p>Khi đó <span class="math inline">\(\E[S_n^2] \equiv \sigma^2,\)</span> <span class="math display">\[
+<p>Khi đó <span class="math inline">\(\E{S_n^2} \equiv \sigma^2,\)</span> <span class="math display">\[
 \frac{S_n^2}{\sigma^2}
 \sim
 \frac{\chi_{n-1}^2}{n-1}
@@ -582,7 +583,7 @@ n\sum_{i=1}^K\frac{\left(\frac{N_i}{n}-p^0_i\right)^2}{p^0_i}
 \]</span></p>
 </div>
 <div id="thm-chi-test-family" class="theorem">
-<p><span class="theorem-title"><strong>Định lý 6.3 (Kiểm định <span class="math inline">\(\chi^2\)</span> cho hệ phân phối) </strong></span>Xem xét hệ phân phối rời rạc <span class="math inline">\(\P_\theta\)</span> có pmf <span class="math inline">\(f_\theta\)</span> với <span class="math inline">\(\theta\in\Theta\subset\R^d.\)</span> Với dữ liệu <span class="math inline">\(X_1,\ldots,X_n\)</span>, gọi MLE của <span class="math inline">\(\theta\)</span> là <span class="math inline">\(\hat{\theta},\)</span> ước lượng <span class="math inline">\(\hat{p}_i\is f_{\hat{\theta}}(a_i),\,i=1,\ldots,K.\)</span> Kiểm định <span class="math inline">\(H_0: \theta\in\Theta\)</span> vs <span class="math inline">\(H_1: \theta\notin\Theta.\)</span> Nếu <span class="math inline">\(H_0\)</span> là đúng thì</p>
+<p><span class="theorem-title"><strong>Định lý 6.3 (Kiểm định <span class="math inline">\(\chi^2\)</span> cho hệ phân phối) </strong></span>Xem xét hệ phân phối rời rạc <span class="math inline">\(\P_\theta\)</span> có pmf <span class="math inline">\(f_{\theta}\)</span> với <span class="math inline">\(\theta\in\Theta\subset\R^d.\)</span> Với dữ liệu <span class="math inline">\(X_1,\ldots,X_n\)</span>, gọi MLE của <span class="math inline">\(\theta\)</span> là <span class="math inline">\(\hat{\theta},\)</span> ước lượng <span class="math inline">\(\hat{p}_i\is f_{\hat{\theta}}(a_i),\,i=1,\ldots,K.\)</span> Kiểm định <span class="math inline">\(H_0: \theta\in\Theta\)</span> vs <span class="math inline">\(H_1: \theta\notin\Theta.\)</span> Nếu <span class="math inline">\(H_0\)</span> là đúng thì</p>
 <p><span class="math display">\[
 T_n\is
 n\sum_{i=1}^K\frac{\left(\frac{N_i}{n}-\hat{p}_i\right)^2}{\hat{p}_i}

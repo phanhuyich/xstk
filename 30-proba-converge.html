@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.262">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -205,7 +205,7 @@ $$
 \def\Binom{\text{Binom}}
 \def\Geom{\text{Geom}}
 \def\Unif{\text{Unif}}
-\def\E{\mathbb{E}}
+\def\E#1{\mathbb{E}\left[#1\right]}
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{\coloneqq}
 \def\Gaus#1#2{\mathcal{N}\left(#1,#2\right)}
@@ -214,7 +214,8 @@ $$
 \def\P{\mathbb{P}}
 \def\Poiss{\text{Poiss}}
 \def\R{\mathbb{R}}
-\def\V{\mathbb{V}}
+\def\V#1{\textrm{Var}\left(#1\right)}
+\def\Cov#1{\textrm{Cov}\left(#1\right)}
 \def\N{\mathbb{Z}_+}
 \def\TV{\textrm{TV}}
 \def\KL{\textrm{KL}}
@@ -285,7 +286,7 @@ X_n \toprob X \implies
 X_n \todist X.
 \]</span></p>
 <p>Nếu <span class="math inline">\(X_n \todist X\)</span>, và <span class="math inline">\(X\)</span> có mật độ xác suất, thì <span class="math inline">\(X_n \toprob X\)</span>.</p>
-<p>Nếu chuỗi <span class="math inline">\(X_n\)</span> có <span class="math inline">\(\E[X_n]\xrightarrow[]{} \mu\)</span> và <span class="math inline">\(\V[X_n]\xrightarrow[]{} 0\)</span> thì <span class="math inline">\(X_n\xrightarrow[]{\P} \mu\)</span>.</p>
+<p>Nếu chuỗi <span class="math inline">\(X_n\)</span> có <span class="math inline">\(\E{X_n}\xrightarrow[]{} \mu\)</span> và <span class="math inline">\(\V{X_n}\xrightarrow[]{} 0\)</span> thì <span class="math inline">\(X_n\xrightarrow[]{\P} \mu\)</span>.</p>
 <p>Nếu <span class="math inline">\(X_n\toprob X\)</span> thì <span class="math inline">\(\P(a\leq X_n\leq b) \xrightarrow[n\to\infty]{} \P(a\leq X\leq b)\)</span> với mọi khoảng <span class="math inline">\([a,b]\)</span>.</p>
 </div>
 </section>
@@ -307,22 +308,22 @@ X_n \todist X.
 <p><span class="theorem-title"><strong>Định lý 3.4 (Continuous mapping) </strong></span>Nếu <span class="math inline">\(X_n\toapd X\)</span> thì đối với mọi hàm <span class="math inline">\(f\)</span> liên tục:</p>
 <ul>
 <li><span class="math inline">\(f(X_n)\toapd f(X)\)</span>.</li>
-<li><span class="math inline">\(\E[f(X_n)]\xrightarrow[n\to\infty]{}\E[f(X)]\)</span> nếu <span class="math inline">\(f\)</span> còn bị chặn.</li>
+<li><span class="math inline">\(\E{f(X_n)}\xrightarrow[n\to\infty]{}\E{f(X)}\)</span> nếu <span class="math inline">\(f\)</span> còn bị chặn.</li>
 </ul>
 </div>
 </section>
 <section id="đại-đa-số" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="đại-đa-số"><span class="header-section-number">3.6</span> Đại đa số</h2>
 <div id="thm-lln" class="theorem">
-<p><span class="theorem-title"><strong>Định lý 3.5 (Law of Large Numbers, LLN) </strong></span>Cho <span class="math inline">\(n\)</span> biến iid <span class="math inline">\(X_1, X_2,\ldotp,X_n\iid X\)</span> có <span class="math inline">\(\E[X]&lt;\infty\)</span>. Khi đó: <span class="math display">\[\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}
-\xrightarrow[n\to\infty]{\P,\,\as}\E[X].
+<p><span class="theorem-title"><strong>Định lý 3.5 (Law of Large Numbers, LLN) </strong></span>Cho <span class="math inline">\(n\)</span> biến iid <span class="math inline">\(X_1, X_2,\ldotp,X_n\iid X\)</span> có <span class="math inline">\(\E{X}&lt;\infty\)</span>. Khi đó: <span class="math display">\[\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}
+\xrightarrow[n\to\infty]{\P,\,\as}\E{X}.
 \]</span></p>
 </div>
 </section>
 <section id="hội-tụ-trung-tâm" class="level2" data-number="3.7">
 <h2 data-number="3.7" class="anchored" data-anchor-id="hội-tụ-trung-tâm"><span class="header-section-number">3.7</span> Hội tụ trung tâm</h2>
 <div id="thm-clt" class="theorem">
-<p><span class="theorem-title"><strong>Định lý 3.6 (Central Limit Theorem, CLT) </strong></span>Giả sử thêm là <span class="math inline">\(\V[X_i]=\sigma^2&lt;\infty\)</span>. Khi đó <span class="math display">\[
+<p><span class="theorem-title"><strong>Định lý 3.6 (Central Limit Theorem, CLT) </strong></span>Giả sử thêm là <span class="math inline">\(\V{X_i}=\sigma^2&lt;\infty\)</span>. Khi đó <span class="math display">\[
 \sqrt{n}
 \left(
 \frac{\bar{X}_n-\mu}{|\sigma|}

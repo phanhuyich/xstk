@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.262">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -201,7 +201,7 @@ $$
 \def\Binom{\text{Binom}}
 \def\Geom{\text{Geom}}
 \def\Unif{\text{Unif}}
-\def\E{\mathbb{E}}
+\def\E#1{\mathbb{E}\left[#1\right]}
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{\coloneqq}
 \def\Gaus#1#2{\mathcal{N}\left(#1,#2\right)}
@@ -210,7 +210,8 @@ $$
 \def\P{\mathbb{P}}
 \def\Poiss{\text{Poiss}}
 \def\R{\mathbb{R}}
-\def\V{\mathbb{V}}
+\def\V#1{\textrm{Var}\left(#1\right)}
+\def\Cov#1{\textrm{Cov}\left(#1\right)}
 \def\N{\mathbb{Z}_+}
 \def\TV{\textrm{TV}}
 \def\KL{\textrm{KL}}
@@ -257,15 +258,15 @@ $$
 <section id="sai-số" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="sai-số"><span class="header-section-number">4.3</span> Sai số</h2>
 <div id="def-bias" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 4.2 (Độ lệch, bias) </strong></span>giữa đánh giá <span class="math inline">\(\theta_n\)</span> với mục tiêu <span class="math inline">\(\theta\)</span> là <span class="math display">\[\textrm{bias}_{\theta}({\theta}_n) \is \E[\theta_n] - \theta.\]</span></p>
+<p><span class="theorem-title"><strong>Định nghĩa 4.2 (Độ lệch, bias) </strong></span>giữa đánh giá <span class="math inline">\(\theta_n\)</span> với mục tiêu <span class="math inline">\(\theta\)</span> là <span class="math display">\[\textrm{bias}_{\theta}({\theta}_n) \is \E{\theta_n} - \theta.\]</span></p>
 </div>
 <div id="def-mse" class="theorem definition">
 <p><span class="theorem-title"><strong>Định nghĩa 4.3 (Sai số bậc 2, quadratic risk, mean squared error) </strong></span>giữa đánh giá <span class="math inline">\(\theta_n\)</span> với mục tiêu <span class="math inline">\(\theta\)</span> là <span class="math display">\[
-\textrm{MSE}(\theta_n)\is\E[(\theta_n-\theta)^2]
+\textrm{MSE}(\theta_n)\is\E{(\theta_n-\theta)^2}
 \equiv
 \textrm{bias}_{\theta}(\theta_n)^2
 +
-\V[\theta_n]
+\V{\theta_n}
 \]</span> bao hàm cả độ lệch và độ nhiễu của đánh giá.</p>
 </div>
 </section>

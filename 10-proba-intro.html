@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.262">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -204,7 +204,7 @@ div.csl-indent {
   <li><a href="#sự-kiện" id="toc-sự-kiện" class="nav-link active" data-scroll-target="#sự-kiện"><span class="toc-section-number">1.1</span>  Sự kiện</a></li>
   <li><a href="#xác-suất" id="toc-xác-suất" class="nav-link" data-scroll-target="#xác-suất"><span class="toc-section-number">1.2</span>  Xác suất</a></li>
   <li><a href="#tham-số" id="toc-tham-số" class="nav-link" data-scroll-target="#tham-số"><span class="toc-section-number">1.3</span>  Tham số</a></li>
-  <li><a href="#phụ-thuộc" id="toc-phụ-thuộc" class="nav-link" data-scroll-target="#phụ-thuộc"><span class="toc-section-number">1.4</span>  Phụ thuộc</a></li>
+  <li><a href="#xác-suất-đồng-thời" id="toc-xác-suất-đồng-thời" class="nav-link" data-scroll-target="#xác-suất-đồng-thời"><span class="toc-section-number">1.4</span>  Xác suất đồng thời</a></li>
   <li><a href="#đặc-trưng" id="toc-đặc-trưng" class="nav-link" data-scroll-target="#đặc-trưng"><span class="toc-section-number">1.5</span>  Đặc trưng</a></li>
   <li><a href="#tích-suất" id="toc-tích-suất" class="nav-link" data-scroll-target="#tích-suất"><span class="toc-section-number">1.6</span>  Tích suất</a></li>
   </ul>
@@ -221,7 +221,7 @@ $$
 \def\Binom{\text{Binom}}
 \def\Geom{\text{Geom}}
 \def\Unif{\text{Unif}}
-\def\E{\mathbb{E}}
+\def\E#1{\mathbb{E}\left[#1\right]}
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{\coloneqq}
 \def\Gaus#1#2{\mathcal{N}\left(#1,#2\right)}
@@ -230,7 +230,8 @@ $$
 \def\P{\mathbb{P}}
 \def\Poiss{\text{Poiss}}
 \def\R{\mathbb{R}}
-\def\V{\mathbb{V}}
+\def\V#1{\textrm{Var}\left(#1\right)}
+\def\Cov#1{\textrm{Cov}\left(#1\right)}
 \def\N{\mathbb{Z}_+}
 \def\TV{\textrm{TV}}
 \def\KL{\textrm{KL}}
@@ -294,9 +295,20 @@ $$
 <p><span class="theorem-title"><strong>Định nghĩa 1.5 (Hàm khối xác suất, probability mass function) </strong></span>Với biến rời rạc <span class="math inline">\(X:\Omega\to D,\)</span> <span class="math inline">\(D=\{x_1, x_2, \ldots\}\)</span> đếm được, thì ta có thể gán xác suất <span class="math inline">\(\P(x_i) = p_i\geq 0,\forall i=1,2,\ldots\)</span> sao cho <span class="math inline">\(\sum_i p_i \equiv 1.\)</span></p>
 </div>
 <div id="def-pdf" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.6 (Hàm mật độ xác suất, probability density function) </strong></span>là <span class="math inline">\(f(x) = F^\prime(x)\)</span> với <span class="math inline">\(F(x)\is\P(X\leq x)\)</span> là phân phối tích lũy của biến <span class="math inline">\(X:\Omega\to \R.\)</span></p>
+<p><span class="theorem-title"><strong>Định nghĩa 1.6 (Hàm mật độ xác suất, probability density function) </strong></span>là <span class="math inline">\(f(x) = F^\prime(x)\)</span> với <span class="math inline">\(F(x)\is\P(X\leq x)\)</span> là phân phối tích lũy của biến <span class="math inline">\(X:\Omega\to \R.\)</span> Mật độ xác suất là không âm và có tích phân toàn phần bằng <span class="math inline">\(1.\)</span></p>
 </div>
-<p>Mật độ xác suất là không âm và có tích phân toàn phần bằng <span class="math inline">\(1.\)</span></p>
+<div id="def-pdf-bivariate-continuous" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 1.7 (PDF of bivariate distributions) </strong></span>Với hai biến liên tục <span class="math inline">\((X,Y)\in\R^2\)</span> ta gọi hàm không âm <span class="math inline">\(f(x,y)\)</span> là mật độ xác suất đồng thời nếu:</p>
+<p><span class="math display">\[\int\int_A f(x,y) dx dy \equiv \P((X,Y)\in A),\quad\forall A\subset\R^2
+.\]</span></p>
+<p>Mật độ xác suất biên và mật độ xác suất có điều kiện tương ứng là:</p>
+<p><span class="math display">\[
+\begin{split}
+f(x) &amp;\is \int f(x,y) dy, \\
+f(y|x) &amp;\is \frac{f(x,y)}{f(x)}.
+\end{split}
+\]</span></p>
+</div>
 <div id="thm-density-propto" class="theorem">
 <p><span class="theorem-title"><strong>Định lý 1.1 (Chuẩn hóa mật độ xác suất) </strong></span>Nếu có độ đo <span class="math inline">\(g(x)\geq 0,x\in\R\)</span> khả tích toàn phần thì có mật độ xác suất <span class="math display">\[f(x)\is\frac{g(x)}{\int_{\R}{g(x)dx}} \propto g(x).\]</span></p>
 </div>
@@ -310,22 +322,22 @@ $$
 <p><span class="proof-title"><em>Proof</em>. </span>Xem “4.1.3 Functions of Continuous Random Variables”, <span class="citation" data-cites="probabilitycourse">Pishro-Nik (<a href="references.html#ref-probabilitycourse" role="doc-biblioref">2014</a>)</span>.</p>
 </div>
 </section>
-<section id="phụ-thuộc" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="phụ-thuộc"><span class="header-section-number">1.4</span> Phụ thuộc</h2>
+<section id="xác-suất-đồng-thời" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="xác-suất-đồng-thời"><span class="header-section-number">1.4</span> Xác suất đồng thời</h2>
 <div id="def-joint-proba" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.7 (Xác suất hợp) </strong></span>Ký hiệu <span class="math inline">\(\P(A, B)\)</span> hoặc <span class="math inline">\(\P(A\cap B)\)</span> chỉ xác suất sự kiện <span class="math inline">\(A\)</span> và sự kiện <span class="math inline">\(B\)</span> đồng thời xảy ra.</p>
+<p><span class="theorem-title"><strong>Định nghĩa 1.8 (Xác suất hợp) </strong></span>Ký hiệu <span class="math inline">\(\P(A, B)\)</span> hoặc <span class="math inline">\(\P(A\cap B)\)</span> chỉ xác suất sự kiện <span class="math inline">\(A\)</span> và sự kiện <span class="math inline">\(B\)</span> đồng thời xảy ra.</p>
 </div>
 <div id="def-independent-var" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.8 (Độc lập) </strong></span>Hai sự kiện <span class="math inline">\(A\)</span> và <span class="math inline">\(B\)</span> là độc lập nếu <span class="math inline">\(\P(A,B)\equiv \P(A)\P(B)\)</span>.</p>
+<p><span class="theorem-title"><strong>Định nghĩa 1.9 (Độc lập) </strong></span>Hai sự kiện <span class="math inline">\(A\)</span> và <span class="math inline">\(B\)</span> là độc lập nếu <span class="math inline">\(\P(A,B)\equiv \P(A)\P(B)\)</span>.</p>
 <p>Hai biến <span class="math inline">\(X\)</span> và <span class="math inline">\(Y\)</span> là độc lập nếu hai sự kiện <span class="math inline">\(X\leq x\)</span> và <span class="math inline">\(Y\leq y\)</span> là độc lập đối với mọi <span class="math inline">\(x,y\)</span>.</p>
 </div>
 <div id="def-iid" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.9 (IID) </strong></span>Các biến ngẫu nhiên <span class="math inline">\(X_1, X_2, \ldotp\)</span> được gọi là iid (“independent and identically distributed”, “độc lập và phân phối giống nhau”) nếu chúng cùng tuân theo duy nhất (identical) một phân phối xác suất, và từng cặp biến là độc lập (independent) với nhau. Dùng biến <span class="math inline">\(X\)</span> để thể hiện phân phối xác suất chung đó, ta viết <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 1.10 (IID) </strong></span>Các biến ngẫu nhiên <span class="math inline">\(X_1, X_2, \ldotp\)</span> được gọi là iid (“independent and identically distributed”, “độc lập và phân phối giống nhau”) nếu chúng cùng tuân theo duy nhất (identical) một phân phối xác suất, và từng cặp biến là độc lập (independent) với nhau. Dùng biến <span class="math inline">\(X\)</span> để thể hiện phân phối xác suất chung đó, ta viết <span class="math display">\[
 X_1,\ldots,X_n \iid X.
 \]</span></p>
 </div>
 <div id="def-conditional-proba" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.10 (Xác suất có điều kiện) </strong></span>Ký hiệu <span class="math inline">\(\P(A|B)\)</span> hoặc <span class="math inline">\(\P_B(A)\)</span> chỉ xác suất của sự kiện <span class="math inline">\(A\)</span>, khi biết sự kiện <span class="math inline">\(B\)</span> đã xảy ra,</p>
+<p><span class="theorem-title"><strong>Định nghĩa 1.11 (Xác suất có điều kiện) </strong></span>Ký hiệu <span class="math inline">\(\P(A|B)\)</span> hoặc <span class="math inline">\(\P_B(A)\)</span> chỉ xác suất của sự kiện <span class="math inline">\(A\)</span>, khi biết sự kiện <span class="math inline">\(B\)</span> đã xảy ra,</p>
 <p><span class="math display">\[
 \P(A|B) = \frac{\P(A,B)}{\P(B)}.
 \]</span></p>
@@ -341,9 +353,9 @@ X_1,\ldots,X_n \iid X.
 <section id="đặc-trưng" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="đặc-trưng"><span class="header-section-number">1.5</span> Đặc trưng</h2>
 <div id="def-expectation" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.11 (Trung bình) </strong></span><strong>Trung bình</strong>, hay <strong>giá trị kỳ vọng</strong> của biến X là</p>
+<p><span class="theorem-title"><strong>Định nghĩa 1.12 (Trung bình) </strong></span><strong>Trung bình</strong>, hay <strong>giá trị kỳ vọng</strong> của biến X là</p>
 <p><span class="math display">\[
-\E[X]\is
+\E{X}\is
 \int x dF(x)
 \is
 \begin{cases}
@@ -352,46 +364,51 @@ X_1,\ldots,X_n \iid X.
 \end{cases}
 \]</span></p>
 </div>
-<p>Nếu giá trị <span class="math inline">\(\int |x| dF(x) &lt; \infty\)</span> ta nói là <span class="math inline">\(\E[X]\)</span> “tồn tại” (well-defined).</p>
+<p>Nếu giá trị <span class="math inline">\(\int |x| dF(x) &lt; \infty\)</span> ta nói là <span class="math inline">\(\E{X}\)</span> “tồn tại” (well-defined).</p>
 <p>Ta có <span class="math display">\[
-\E[X+Y] \equiv \E[X] + E[Y].
+\E{X+Y} \equiv \E{X} + E[Y].
 \]</span></p>
 <div id="def-covar" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.12 (Hiệp phương sai) </strong></span><span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 1.13 (Hiệp phương sai) </strong></span><span class="math display">\[
 \begin{split}
-\textrm{Cov}[X,Y] &amp;\is \E[(X-\E[X])(Y-\E[Y])] \\
-&amp;\equiv \E[XY] - \E[X]\E[Y]
+\Cov{X,Y} &amp;\is \E{(X-\E{X})(Y-\E{Y})} \\
+&amp;\equiv \E{XY} - \E{X}\E{Y}
 \end{split}
 \]</span></p>
 </div>
-<p>Nếu <span class="math inline">\(X\)</span> và <span class="math inline">\(Y\)</span> độc lập thì <span class="math inline">\(\textrm{Cov}[X,Y] = 0\)</span>.</p>
+<p>Nếu <span class="math inline">\(X\)</span> và <span class="math inline">\(Y\)</span> độc lập thì <span class="math inline">\(\Cov{X,Y} = 0\)</span>.</p>
 <div id="def-variance" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.13 (Phương sai) </strong></span>Phương sai, hay phân tán (variance) là <span class="math display">\[
-\V[X]\is\textrm{Cov}[X,X]\equiv\E[X^2]-\E^2[X].
+<p><span class="theorem-title"><strong>Định nghĩa 1.14 (Phương sai) </strong></span>Phương sai, hay phân tán (variance) là <span class="math display">\[
+\V{X}\is\Cov{X,X}\equiv\E{X^2}-(\E{X})^2.
 \]</span></p>
 </div>
 <p>Ta có <span class="math display">\[
-\V[X+Y] \equiv \V[X]+\V[Y] + 2\textrm{Cov}[X,Y].
+\V{X+Y} \equiv \V{X}+\V{Y} + 2\Cov{X,Y}.
 \]</span></p>
+<div id="thm-iterated-expectations" class="theorem">
+<p><span class="theorem-title"><strong>Định lý 1.4 (Iterated Expectations) </strong></span>Với các biến <span class="math inline">\(X,Y,\)</span> giả sử các giá trị kỳ vọng tồn tại, ta có <span class="math display">\[
+\E{\E{Y|X}} \equiv \E{Y}
+.\]</span></p>
+</div>
 </section>
 <section id="tích-suất" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="tích-suất"><span class="header-section-number">1.6</span> Tích suất</h2>
 <div id="def-moment" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.14 (Tích suất) </strong></span>Tích suất (moment) thể hiện trọng tâm, độ phân tán, hay độ lệch của phân phối. Tích suất bậc <span class="math inline">\(n\)</span> của biến <span class="math inline">\(X\)</span> với mật độ <span class="math inline">\(f(x)\)</span> là:</p>
+<p><span class="theorem-title"><strong>Định nghĩa 1.15 (Tích suất) </strong></span>Tích suất (moment) thể hiện trọng tâm, độ phân tán, hay độ lệch của phân phối. Tích suất bậc <span class="math inline">\(n\)</span> của biến <span class="math inline">\(X\)</span> với mật độ <span class="math inline">\(f(x)\)</span> là:</p>
 </div>
 <p><span class="math display">\[
-\E[X^n]\is \int x^n f(x) dx
+\E{X^n}\is \int x^n f(x) dx
 \]</span></p>
 <div id="def-mgf" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.15 (Hàm tạo tích suất) </strong></span>“Moment generation function (MGF)” của biến <span class="math inline">\(X\)</span> là <span class="math display">\[
-\psi_X(t)\is\E[e^{tX}], t\in\R.
+<p><span class="theorem-title"><strong>Định nghĩa 1.16 (Hàm tạo tích suất) </strong></span>“Moment generation function (MGF)” của biến <span class="math inline">\(X\)</span> là <span class="math display">\[
+\psi_X(t)\is\E{e^{tX}}, t\in\R.
 \]</span></p>
 </div>
 <p>Nếu MGF “tồn tại” lân cận <span class="math inline">\(0\)</span> thì đạo hàm cấp <span class="math inline">\(k\)</span> của <span class="math inline">\(\psi\)</span> tại <span class="math inline">\(0\)</span> chính là: <span class="math display">\[
-\psi_X^{(k)}(0)\equiv \E[X^k].
+\psi_X^{(k)}(0)\equiv \E{X^k}.
 \]</span></p>
 <div id="def-sample-moment" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.16 (Tích suất mẫu) </strong></span>Từ các quan sát <span class="math inline">\(X_1,\ldots X_n\iid \P_\theta, \theta\in\Theta\subset\R^d.\)</span> Để ước lượng tích suất <span class="math inline">\(\E[X^k]\)</span> ta có thể dùng các <em>sample moment</em>: <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 1.17 (Tích suất mẫu) </strong></span>Từ các quan sát <span class="math inline">\(X_1,\ldots X_n\iid \P_\theta, \theta\in\Theta\subset\R^d.\)</span> Để ước lượng tích suất <span class="math inline">\(\E{X^k}\)</span> ta có thể dùng các <em>sample moment</em>: <span class="math display">\[
 \hat{m}_k\is \frac{1}{n}\sum_{i=1}^n X_i^k,\quad k=1,2,\ldots.
 \]</span></p>
 </div>

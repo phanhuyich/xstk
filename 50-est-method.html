@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.262">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -196,7 +196,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#giải-thuật-em" id="toc-giải-thuật-em" class="nav-link" data-scroll-target="#giải-thuật-em"><span class="toc-section-number">5.4.1</span>  Giải thuật EM</a></li>
   </ul></li>
-  <li><a href="#chuẩn-tính-của-mle" id="toc-chuẩn-tính-của-mle" class="nav-link" data-scroll-target="#chuẩn-tính-của-mle"><span class="toc-section-number">5.5</span>  Chuẩn tính của MLE</a></li>
+  <li><a href="#thông-tin-fisher" id="toc-thông-tin-fisher" class="nav-link" data-scroll-target="#thông-tin-fisher"><span class="toc-section-number">5.5</span>  Thông tin Fisher</a></li>
   <li><a href="#m-estimation" id="toc-m-estimation" class="nav-link" data-scroll-target="#m-estimation"><span class="toc-section-number">5.6</span>  M-estimation</a></li>
   <li><a href="#method-of-moments" id="toc-method-of-moments" class="nav-link" data-scroll-target="#method-of-moments"><span class="toc-section-number">5.7</span>  Method of moments</a></li>
   <li><a href="#biến-đổi-tham-số" id="toc-biến-đổi-tham-số" class="nav-link" data-scroll-target="#biến-đổi-tham-số"><span class="toc-section-number">5.8</span>  Biến đổi tham số</a></li>
@@ -214,7 +214,7 @@ $$
 \def\Binom{\text{Binom}}
 \def\Geom{\text{Geom}}
 \def\Unif{\text{Unif}}
-\def\E{\mathbb{E}}
+\def\E#1{\mathbb{E}\left[#1\right]}
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{\coloneqq}
 \def\Gaus#1#2{\mathcal{N}\left(#1,#2\right)}
@@ -223,7 +223,8 @@ $$
 \def\P{\mathbb{P}}
 \def\Poiss{\text{Poiss}}
 \def\R{\mathbb{R}}
-\def\V{\mathbb{V}}
+\def\V#1{\textrm{Var}\left(#1\right)}
+\def\Cov#1{\textrm{Cov}\left(#1\right)}
 \def\N{\mathbb{Z}_+}
 \def\TV{\textrm{TV}}
 \def\KL{\textrm{KL}}
@@ -276,10 +277,10 @@ $$
 \frac{1}{2}
 \sum_{x\in E}\mid p_\theta(x) - p_\eta(x)\mid.
 \]</span></p>
-<p>Nếu tập mẫu <span class="math inline">\(E\)</span> là liên tục (continuous), xác suất <span class="math inline">\(\P_\theta, \P_{\eta}\)</span> có mật độ lần lượt là <span class="math inline">\(f_\theta, f_{\eta}\)</span> thì <span class="math display">\[
+<p>Nếu tập mẫu <span class="math inline">\(E\)</span> là liên tục (continuous), xác suất <span class="math inline">\(\P_\theta, \P_{\eta}\)</span> có mật độ lần lượt là <span class="math inline">\(f_{\theta}, f_{\eta}\)</span> thì <span class="math display">\[
 \TV(\P_\theta,\P_{\eta}) =
 \frac{1}{2}
-\int_{E}\mid f_\theta(x) - f_\eta(x)\mid dx.
+\int_{E}\mid f_{\theta}(x) - f_{\eta}(x)\mid dx.
 \]</span></p>
 </div>
 </section>
@@ -292,11 +293,11 @@ $$
 <p><span class="theorem-title"><strong>Định nghĩa 5.2 </strong></span>(KL divergence) Ký hiệu <span class="math inline">\(f\)</span> là mật độ hoặc hàm khối xác suất:</p>
 <p><span class="math display">\[
 \KL(\P_\theta, \P_\eta) \is
-\E_\theta\left[ \ln\frac{f_\theta(x)}{f_\eta(x)} \right]
+\mathbb{E}_{\theta}\left[ \ln\frac{f_{\theta}(x)}{f_{\eta}(x)} \right]
 =
-\E_\theta\left[ \ln{f_\theta(x)} \right]
+\mathbb{E}_{\theta}\left[ \ln{f_{\theta}(x)} \right]
 -
-\E_\theta\left[ \ln{f_\eta(x)} \right]
+\mathbb{E}_{\theta}\left[ \ln{f_{\eta}(x)} \right]
 .
 \]</span></p>
 </div>
@@ -359,38 +360,34 @@ X = \sum_{k=1}^K
 <p>Giả sử ta quan sát được <span class="math inline">\(X_1=x_1, \ldots, X_n=x_n\)</span>. Gọi các trọng số tiềm ẩn tương ứng là <span class="math inline">\(Z_1=z_1, \ldots, Z_n=z_n.\)</span></p>
 <p>Sau khi khởi tạo <span class="math inline">\(\theta = \theta_0\)</span> ngẫu nhiên, ta lặp lại 2 bước <strong>E, M</strong> như sau để cập nhật <span class="math inline">\(\theta_k, k=1,2,\ldots\)</span> cho đến khi hội tụ.</p>
 <ul>
-<li><strong>E</strong>stimate: Ước lượng <span class="math inline">\(Z_i\approx\omega_i\is\E[Z|X_i=x_i, \theta=\theta_{k-1}], i=1,\ldots,n.\)</span></li>
+<li><strong>E</strong>stimate: Ước lượng <span class="math inline">\(Z_i\approx\omega_i\is\E{Z|X_i=x_i, \theta=\theta_{k-1}}, i=1,\ldots,n.\)</span></li>
 <li><strong>M</strong>aximize: Thay <span class="math inline">\(Z_i\)</span> bởi <span class="math inline">\(\omega_i\)</span> vào công thức likelihood để tối ưu MLE <span class="math inline">\(\theta = \theta_k\)</span></li>
 </ul>
 </div>
 </section>
 </section>
-<section id="chuẩn-tính-của-mle" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="chuẩn-tính-của-mle"><span class="header-section-number">5.5</span> Chuẩn tính của MLE</h2>
+<section id="thông-tin-fisher" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="thông-tin-fisher"><span class="header-section-number">5.5</span> Thông tin Fisher</h2>
 <div id="def-fisher-info" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 5.8 (Thông tin Fisher, Fisher information) </strong></span>Giả sử log likelihood đối với một quan sát <span class="math inline">\(X\)</span> theo mô hình <span class="math inline">\(\theta\in\R\)</span> là <span class="math inline">\(\ell=\ell(\theta)\is\ln L_1(X,\theta), \theta\in\Theta\subset\R.\)</span> Giả sử <span class="math inline">\(\ell(\theta)\)</span> có đạo hàm bậc hai. Dưới một số điều kiện chuẩn, <strong>thông tin Fisher</strong> của mô hình được định nghĩa là</p>
+<p><span class="theorem-title"><strong>Định nghĩa 5.8 (Fisher information) </strong></span>Giả sử log likelihood đối với một quan sát <span class="math inline">\(X\)</span> theo mô hình <span class="math inline">\(\theta\in\R\)</span> là <span class="math inline">\(\ell=\ell(\theta)\is\ln L_1(X,\theta), \theta\in\Theta\subset\R.\)</span> Giả sử <span class="math inline">\(\ell(\theta)\)</span> có đạo hàm bậc hai. Dưới một số điều kiện chuẩn, <strong>thông tin Fisher</strong> của mô hình được định nghĩa là</p>
 <p><span class="math display">\[
 I(\theta)
 \is
-\V_X
-\left[\frac{\partial\ell}{\partial\theta}\right]
-= \E_X
-\left[\left(\frac{\partial\ell}{\partial\theta}\right)^2\right]
-= -\E_X
-\left[\frac{\partial^2\ell}{\partial\theta^2}\right]
+\V{\frac{\partial\ell}{\partial\theta}}
+= \E{\left(\frac{\partial\ell}{\partial\theta}\right)^2}
+= -\E{\frac{\partial^2\ell}{\partial\theta^2}}
 .
 \]</span></p>
 <p>Trường hợp mô hình đa biến, <span class="math inline">\(\theta\is(\theta_1,\ldots,\theta_k)\in\R^k:\)</span> <span class="math display">\[
 H_{ij} \is \frac{\partial^2\ell}{\partial\theta_i\partial\theta_j},
 \]</span> <span class="math display">\[
-I(\theta) \is -\E_X
-\left[
+I(\theta) \is -\E{
 \begin{pmatrix}
 H_{11} &amp; \cdots &amp; H_{1k} \\
 \vdots &amp; \ddots &amp; \vdots \\
 H_{k1} &amp; \cdots &amp; H_{kk} \\
 \end{pmatrix}
-\right].
+}.
 \]</span></p>
 </div>
 <div id="thm-mle-asym" class="theorem">
@@ -421,7 +418,7 @@ I(\theta^*)}
 <p><span class="theorem-title"><strong>Định nghĩa 5.9 (M-estimatior) </strong></span>Để ước lượng thuộc tính <span class="math inline">\(\mu^*\)</span> của <span class="math inline">\(X\sim\P\)</span>, ta tìm một “hàm tổn thất” <span class="math inline">\(\rho(X,\mu)\)</span> có kỳ vọng cực tiểu tại <span class="math inline">\(\mu^*:\)</span> <span class="math display">\[
 \begin{split}
 \mathcal{Q}(\mu)
-&amp;\is \E[\rho(X,\mu)]
+&amp;\is \E{\rho(X,\mu)}
 ,\\
 {\mu}^*
 &amp;\equiv\argmin_{\mu}
@@ -447,7 +444,7 @@ I(\theta^*)}
 <p><span class="theorem-title"><strong>Ví dụ 5.1 </strong></span>Với <span class="math inline">\(\rho(x,\theta) = -\ln p_\theta(x)\)</span> ta có MLE để ước lượng tham số <span class="math inline">\(\theta^*\)</span> của mô hình <span class="math inline">\(\P.\)</span></p>
 </div>
 <div id="exm-m-est-2" class="theorem example">
-<p><span class="theorem-title"><strong>Ví dụ 5.2 </strong></span>Với <span class="math inline">\(\vec x,\vec\mu\in\R^d\)</span>, dùng <span class="math inline">\(\rho(\vec x,\vec\mu) = \|\vec x-\vec\mu\|^2\)</span> ta ước lượng được mean <span class="math inline">\(\vec\mu^*=\E[\vec x].\)</span></p>
+<p><span class="theorem-title"><strong>Ví dụ 5.2 </strong></span>Với <span class="math inline">\(\vec x,\vec\mu\in\R^d\)</span>, dùng <span class="math inline">\(\rho(\vec x,\vec\mu) = \|\vec x-\vec\mu\|^2\)</span> ta ước lượng được mean <span class="math inline">\(\vec\mu^*=\E{\vec x}.\)</span></p>
 </div>
 <div id="exm-m-est-3" class="theorem example">
 <p><span class="theorem-title"><strong>Ví dụ 5.3 </strong></span>Có thể dùng M-estimation để ước lượng median và quantiles.</p>
@@ -458,8 +455,8 @@ I(\theta^*)}
 <div id="def-meth-moment-est" class="theorem definition">
 <p><span class="theorem-title"><strong>Định nghĩa 5.10 (Method of moments estimator) </strong></span>Để ước lượng <span class="math inline">\({\theta}\in\Theta\subset\R^d\)</span></p>
 <ol type="1">
-<li>Từ quan sát <span class="math inline">\(X_1,\ldots,X_n\)</span> tính tích suất mẫu (<a href="10-proba-intro.html#def-sample-moment">ĐN&nbsp;<span>1.16</span></a>) <span class="math inline">\(\hat{m}_1,\ldots,\hat{m}_d\)</span></li>
-<li>Với <span class="math inline">\(m_i\)</span> là tích suất bậc <span class="math inline">\(i\)</span> (<a href="10-proba-intro.html#def-moment">ĐN&nbsp;<span>1.14</span></a>), tìm <span class="math inline">\(\hat{\theta}\in\R^d:\)</span> <span class="math display">\[
+<li>Từ quan sát <span class="math inline">\(X_1,\ldots,X_n\)</span> tính tích suất mẫu (<a href="10-proba-intro.html#def-sample-moment">ĐN&nbsp;<span>1.17</span></a>) <span class="math inline">\(\hat{m}_1,\ldots,\hat{m}_d\)</span></li>
+<li>Với <span class="math inline">\(m_i\)</span> là tích suất bậc <span class="math inline">\(i\)</span> (<a href="10-proba-intro.html#def-moment">ĐN&nbsp;<span>1.15</span></a>), tìm <span class="math inline">\(\hat{\theta}\in\R^d:\)</span> <span class="math display">\[
 \begin{split}
 m_1(\hat{\theta}) &amp;= \hat{m}_1, \\
 m_2(\hat{\theta}) &amp;= \hat{m}_2, \\

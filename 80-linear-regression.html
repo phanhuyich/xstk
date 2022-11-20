@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.262">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -178,7 +178,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#hồi-quy-tuyến-tính" id="toc-hồi-quy-tuyến-tính" class="nav-link active" data-scroll-target="#hồi-quy-tuyến-tính"><span class="toc-section-number">8.1</span>  Hồi quy tuyến tính</a></li>
+  <li><a href="#bình-phương-tối-thiểu" id="toc-bình-phương-tối-thiểu" class="nav-link" data-scroll-target="#bình-phương-tối-thiểu"><span class="toc-section-number">8.2</span>  Bình phương tối thiểu</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -191,7 +198,7 @@ $$
 \def\Binom{\text{Binom}}
 \def\Geom{\text{Geom}}
 \def\Unif{\text{Unif}}
-\def\E{\mathbb{E}}
+\def\E#1{\mathbb{E}\left[#1\right]}
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{\coloneqq}
 \def\Gaus#1#2{\mathcal{N}\left(#1,#2\right)}
@@ -200,7 +207,8 @@ $$
 \def\P{\mathbb{P}}
 \def\Poiss{\text{Poiss}}
 \def\R{\mathbb{R}}
-\def\V{\mathbb{V}}
+\def\V#1{\textrm{Var}\left(#1\right)}
+\def\Cov#1{\textrm{Cov}\left(#1\right)}
 \def\N{\mathbb{Z}_+}
 \def\TV{\textrm{TV}}
 \def\KL{\textrm{KL}}
@@ -228,26 +236,59 @@ $$
 
 </header>
 
-<p>Giả sử <span class="math inline">\((X_i, Y_i)_{i=1,\ldots,n}\iid \P_{(X,Y)}\)</span> với mật độ xác suất liên kết <span class="math inline">\(h(x,y),\)</span> mật độ xác suất biên và mật độ xác suất có điều kiện là:</p>
-<p><span class="math display">\[
-\begin{split}
-h(x) &amp;\is \int h(x,y) dy, \\
-h(y|x) &amp;\is \frac{h(x,y)}{h(x)}.
-\end{split}
-\]</span></p>
+<p>Giả sử <span class="math inline">\((X_i, Y_i)_{i=1,\ldots,n}\iid \P_{(X,Y)}\)</span> với mật độ xác suất <span class="math inline">\(h(x,y),\)</span> mật độ xác suất biên <span class="math inline">\(h(x)\)</span> và mật độ xác suất có điều kiện <span class="math inline">\(h(y|x).\)</span></p>
 <div id="def-regression" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 8.1 (Hàm hồi quy, regression function) </strong></span><span class="math display">\[
-x\mapsto f(x) \is \E[Y|X=x] = \int y h(y|x) dy
+<p><span class="theorem-title"><strong>Định nghĩa 8.1 (Regression function) </strong></span>Hồi quy là kỳ vọng về <span class="math inline">\(Y\)</span> khi biết <span class="math inline">\(X:\)</span> <span class="math display">\[
+x\mapsto f(x) \is \E{Y|X=x} = \int y h(y|x) dy
 .\]</span></p>
 </div>
 <div id="def-conditional-quantile" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 8.2 (Conditional quantile) </strong></span>Với <span class="math inline">\(\alpha\in[0,1],\)</span> <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 8.2 (Conditional quantile) </strong></span>Cho <span class="math inline">\(\alpha\in[0,1],\)</span> phân vị <span class="math inline">\(q_{\alpha}\)</span> cho <span class="math inline">\(Y\)</span> khi biết <span class="math inline">\(X=x:\)</span> <span class="math display">\[
 x\mapsto q_{\alpha}(x) \textrm{ such that }
 \int_{-\infty}^{q_{\alpha}(x)} h(y|x) dy \equiv 1-\alpha
-.\]</span> Khi <span class="math inline">\(\alpha=1/2\)</span> ta có conditional median.</p>
+.\]</span> Đặt <span class="math inline">\(\alpha=1/2\)</span> ta có conditional median.</p>
+</div>
+<section id="hồi-quy-tuyến-tính" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="hồi-quy-tuyến-tính"><span class="header-section-number">8.1</span> Hồi quy tuyến tính</h2>
+<div id="def-linear-regression" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 8.3 (Theoretical linear regression) </strong></span>Giả sử <span class="math inline">\(\V{X}&gt;0.\)</span> Đường hồi quy tuyến tính áp <span class="math inline">\(Y\)</span> lên <span class="math inline">\(X\)</span> là <span class="math inline">\(y = a x + b\)</span> với hệ số <span class="math display">\[
+(a, b) \is
+\argmin_{(\alpha,\beta)\in\R^2} \E{(Y-\alpha X-\beta)^2}.
+\]</span></p>
+</div>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remark</em>. </span>Lấy đạo hàm từng phần và giải hệ phương trình ta có <span class="math display">\[
+\begin{split}
+a &amp;= \frac{\Cov{X,Y}}{\V{X}},\\
+b &amp;= \E{Y} - a\E{X}.
+\end{split}
+\]</span></p>
+</div>
+<div id="def-regression-noise" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 8.4 (Noise) </strong></span>Nhiễu <span class="math display">\[
+\epsilon\is Y-(a X+b)
+,\]</span> có <span class="math inline">\(\E{\epsilon}\equiv 0, \Cov{X,\epsilon}\equiv 0.\)</span></p>
+</div>
+</section>
+<section id="bình-phương-tối-thiểu" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="bình-phương-tối-thiểu"><span class="header-section-number">8.2</span> Bình phương tối thiểu</h2>
+<div id="def-least-squares-estimator" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 8.5 (Least squares estimator, LSE) </strong></span>Quan sát <span class="math inline">\((X_i, Y_i), i=1,\ldots,n.\)</span> LSE là điểm cực tiểu của tổng bình phương lỗi (sum of squared errors): <span class="math display">\[
+(\hat{a}, \hat{b}) \is
+\argmin_{(\alpha,\beta)\in\R^2} \sum_{i=1}^{n}{(Y_i-\alpha X_i-\beta)^2}
+.\]</span></p>
+</div>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remark</em>. </span>Lấy đạo hàm từng phần và giải hệ phương trình ta có <span class="math display">\[
+\begin{split}
+\hat{a} &amp;= \frac{\overline{XY}-\bar{X}\bar{Y}}{\overline{X^2}-\bar{X}^2},\\
+\hat{b} &amp;= \bar{Y} - \hat{a}\bar{X}.
+\end{split}
+\]</span></p>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

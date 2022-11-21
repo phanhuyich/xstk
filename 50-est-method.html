@@ -196,10 +196,9 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#giải-thuật-em" id="toc-giải-thuật-em" class="nav-link" data-scroll-target="#giải-thuật-em"><span class="toc-section-number">5.4.1</span>  Giải thuật EM</a></li>
   </ul></li>
-  <li><a href="#thông-tin-fisher" id="toc-thông-tin-fisher" class="nav-link" data-scroll-target="#thông-tin-fisher"><span class="toc-section-number">5.5</span>  Thông tin Fisher</a></li>
-  <li><a href="#m-estimation" id="toc-m-estimation" class="nav-link" data-scroll-target="#m-estimation"><span class="toc-section-number">5.6</span>  M-estimation</a></li>
-  <li><a href="#method-of-moments" id="toc-method-of-moments" class="nav-link" data-scroll-target="#method-of-moments"><span class="toc-section-number">5.7</span>  Method of moments</a></li>
-  <li><a href="#biến-đổi-tham-số" id="toc-biến-đổi-tham-số" class="nav-link" data-scroll-target="#biến-đổi-tham-số"><span class="toc-section-number">5.8</span>  Biến đổi tham số</a></li>
+  <li><a href="#m-estimation" id="toc-m-estimation" class="nav-link" data-scroll-target="#m-estimation"><span class="toc-section-number">5.5</span>  M-estimation</a></li>
+  <li><a href="#method-of-moments" id="toc-method-of-moments" class="nav-link" data-scroll-target="#method-of-moments"><span class="toc-section-number">5.6</span>  Method of moments</a></li>
+  <li><a href="#biến-đổi-tham-số" id="toc-biến-đổi-tham-số" class="nav-link" data-scroll-target="#biến-đổi-tham-số"><span class="toc-section-number">5.7</span>  Biến đổi tham số</a></li>
   </ul>
 </nav>
     </div>
@@ -344,33 +343,8 @@ L_\theta(x_1,\ldots,x_n)
 .
 \]</span></p>
 </div>
-</section>
-<section id="mix-model" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="mix-model"><span class="header-section-number">5.4</span> Mix model</h2>
-<div id="def-mix-model" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 5.6 </strong></span>Cho các mô hình gốc <span class="math inline">\(X^{(k)}, k= 1,\ldots,K,\)</span> lấy biến tiềm ẩn <span class="math inline">\(Z\)</span> trên <span class="math inline">\(\{1,\ldots,K\}\)</span> làm trọng số, ta có mô hình hỗn hợp <span class="math display">\[
-X = \sum_{k=1}^K
-\P(Z=k) X^{(k)}
-.
-\]</span></p>
-</div>
-<section id="giải-thuật-em" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="giải-thuật-em"><span class="header-section-number">5.4.1</span> Giải thuật EM</h3>
-<div id="def-em-alg" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 5.7 </strong></span>(<strong>E</strong>stimation <strong>M</strong>aximization) <em>có thể</em> tìm được tham số <span class="math inline">\(\theta\)</span> của mô hình hỗn hợp <a href="#def-mix-model">ĐN&nbsp;<span>5.6</span></a>.</p>
-<p>Giả sử ta quan sát được <span class="math inline">\(X_1=x_1, \ldots, X_n=x_n\)</span>. Gọi các trọng số tiềm ẩn tương ứng là <span class="math inline">\(Z_1=z_1, \ldots, Z_n=z_n.\)</span></p>
-<p>Sau khi khởi tạo <span class="math inline">\(\theta = \theta_0\)</span> ngẫu nhiên, ta lặp lại 2 bước <strong>E, M</strong> như sau để cập nhật <span class="math inline">\(\theta_k, k=1,2,\ldots\)</span> cho đến khi hội tụ.</p>
-<ul>
-<li><strong>E</strong>stimate: Ước lượng <span class="math inline">\(Z_i\approx\omega_i\is\E{Z|X_i=x_i, \theta=\theta_{k-1}}, i=1,\ldots,n.\)</span></li>
-<li><strong>M</strong>aximize: Thay <span class="math inline">\(Z_i\)</span> bởi <span class="math inline">\(\omega_i\)</span> vào công thức likelihood để tối ưu MLE <span class="math inline">\(\theta = \theta_k\)</span></li>
-</ul>
-</div>
-</section>
-</section>
-<section id="thông-tin-fisher" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="thông-tin-fisher"><span class="header-section-number">5.5</span> Thông tin Fisher</h2>
 <div id="def-fisher-info" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 5.8 (Fisher information) </strong></span>Giả sử log likelihood đối với một quan sát <span class="math inline">\(X\)</span> theo mô hình <span class="math inline">\(\theta\in\R\)</span> là <span class="math inline">\(\ell=\ell(\theta)\is\ln L_1(X,\theta), \theta\in\Theta\subset\R.\)</span> Giả sử <span class="math inline">\(\ell(\theta)\)</span> có đạo hàm bậc hai. Dưới một số điều kiện chuẩn, <strong>thông tin Fisher</strong> của mô hình được định nghĩa là</p>
+<p><span class="theorem-title"><strong>Định nghĩa 5.6 (Fisher information) </strong></span>Giả sử log likelihood đối với một quan sát <span class="math inline">\(X\)</span> theo mô hình <span class="math inline">\(\theta\in\R\)</span> là <span class="math inline">\(\ell=\ell(\theta)\is\ln L_1(X,\theta), \theta\in\Theta\subset\R.\)</span> Giả sử <span class="math inline">\(\ell(\theta)\)</span> có đạo hàm bậc hai. Dưới một số điều kiện chuẩn, <strong>thông tin Fisher</strong> của mô hình được định nghĩa là</p>
 <p><span class="math display">\[
 I(\theta)
 \is
@@ -413,8 +387,30 @@ I(\theta^*)}
 <p>Chú ý là điều kiện số 2 dễ bị vi phạm, ví dụ <span class="math inline">\(X_i\iid\Unif[0, \theta]\)</span> mà lại cần tìm tham số <span class="math inline">\(\theta.\)</span></p>
 </div>
 </section>
-<section id="m-estimation" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="m-estimation"><span class="header-section-number">5.6</span> M-estimation</h2>
+<section id="mix-model" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="mix-model"><span class="header-section-number">5.4</span> Mix model</h2>
+<div id="def-mix-model" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 5.7 </strong></span>Cho các mô hình gốc <span class="math inline">\(X^{(k)}, k= 1,\ldots,K,\)</span> lấy biến tiềm ẩn <span class="math inline">\(Z\)</span> trên <span class="math inline">\(\{1,\ldots,K\}\)</span> làm trọng số, ta có mô hình hỗn hợp <span class="math display">\[
+X = \sum_{k=1}^K
+\P(Z=k) X^{(k)}
+.
+\]</span></p>
+</div>
+<section id="giải-thuật-em" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="giải-thuật-em"><span class="header-section-number">5.4.1</span> Giải thuật EM</h3>
+<div id="def-em-alg" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 5.8 </strong></span>(<strong>E</strong>stimation <strong>M</strong>aximization) <em>có thể</em> tìm được tham số <span class="math inline">\(\theta\)</span> của mô hình hỗn hợp <a href="#def-mix-model">ĐN&nbsp;<span>5.7</span></a>.</p>
+<p>Giả sử ta quan sát được <span class="math inline">\(X_1=x_1, \ldots, X_n=x_n\)</span>. Gọi các trọng số tiềm ẩn tương ứng là <span class="math inline">\(Z_1=z_1, \ldots, Z_n=z_n.\)</span></p>
+<p>Sau khi khởi tạo <span class="math inline">\(\theta = \theta_0\)</span> ngẫu nhiên, ta lặp lại 2 bước <strong>E, M</strong> như sau để cập nhật <span class="math inline">\(\theta_k, k=1,2,\ldots\)</span> cho đến khi hội tụ.</p>
+<ul>
+<li><strong>E</strong>stimate: Ước lượng <span class="math inline">\(Z_i\approx\omega_i\is\E{Z|X_i=x_i, \theta=\theta_{k-1}}, i=1,\ldots,n.\)</span></li>
+<li><strong>M</strong>aximize: Thay <span class="math inline">\(Z_i\)</span> bởi <span class="math inline">\(\omega_i\)</span> vào công thức likelihood để tối ưu MLE <span class="math inline">\(\theta = \theta_k\)</span></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="m-estimation" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="m-estimation"><span class="header-section-number">5.5</span> M-estimation</h2>
 <div id="def-m-est" class="theorem definition">
 <p><span class="theorem-title"><strong>Định nghĩa 5.9 (M-estimatior) </strong></span>Để ước lượng thuộc tính <span class="math inline">\(\mu^*\)</span> của <span class="math inline">\(X\sim\P\)</span>, ta tìm một “hàm tổn thất” <span class="math inline">\(\rho(X,\mu)\)</span> có kỳ vọng cực tiểu tại <span class="math inline">\(\mu^*:\)</span> <span class="math display">\[
 \begin{split}
@@ -451,8 +447,8 @@ I(\theta^*)}
 <p><span class="theorem-title"><strong>Ví dụ 5.3 </strong></span>Có thể dùng M-estimation để ước lượng median và quantiles.</p>
 </div>
 </section>
-<section id="method-of-moments" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="method-of-moments"><span class="header-section-number">5.7</span> Method of moments</h2>
+<section id="method-of-moments" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="method-of-moments"><span class="header-section-number">5.6</span> Method of moments</h2>
 <div id="def-meth-moment-est" class="theorem definition">
 <p><span class="theorem-title"><strong>Định nghĩa 5.10 (Method of moments estimator) </strong></span>Để ước lượng <span class="math inline">\({\theta}\in\Theta\subset\R^d\)</span></p>
 <ol type="1">
@@ -468,8 +464,8 @@ m_d(\hat{\theta}) &amp;= \hat{m}_d .
 </ol>
 </div>
 </section>
-<section id="biến-đổi-tham-số" class="level2" data-number="5.8">
-<h2 data-number="5.8" class="anchored" data-anchor-id="biến-đổi-tham-số"><span class="header-section-number">5.8</span> Biến đổi tham số</h2>
+<section id="biến-đổi-tham-số" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="biến-đổi-tham-số"><span class="header-section-number">5.7</span> Biến đổi tham số</h2>
 <p>Với mô hình thống kê <span class="math inline">\((E,(\P_\theta)_{\theta\in\Theta}),\)</span> giả sử MLE, method of moments hoặc M-estimation ước lượng được duy nhất một giá trị tham số tối ưu là <span class="math inline">\(\theta^*\in\Theta.\)</span> Áp dụng biến đổi tham số <span class="math inline">\(\eta = \phi(\theta)\)</span> (<a href="10-proba-intro.html#thm-rv-transformation">ĐL&nbsp;<span>1.2</span></a>) lên các mô hình đó sẽ dẫn tới nghiệm tối ưu <span class="math inline">\(\eta^*\)</span> thỏa mãn <span class="math inline">\(\eta^{*}\equiv\phi(\theta^*).\)</span></p>
 
 

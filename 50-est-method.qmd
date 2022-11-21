@@ -134,49 +134,6 @@ L_\theta(x_1,\ldots,x_n)
 $$
 :::
 
-## Mix model
-:::{#def-mix-model}
-Cho
-các mô hình gốc
-$X^{(k)}, k= 1,\ldots,K,$
-lấy
-biến tiềm ẩn
-$Z$
-trên
-$\{1,\ldots,K\}$
-làm trọng số,
-ta có mô hình hỗn hợp
-$$
-X = \sum_{k=1}^K
-\P(Z=k) X^{(k)}
-.
-$$
-:::
-
-### Giải thuật EM
-:::{#def-em-alg}
-(**E**stimation **M**aximization)
-*có thể* tìm được
-tham số $\theta$ của
-mô hình hỗn hợp @def-mix-model.
-
-Giả sử ta quan sát được
-$X_1=x_1, \ldots, X_n=x_n$.
-Gọi các trọng số tiềm ẩn tương ứng là
-$Z_1=z_1, \ldots, Z_n=z_n.$
-
-Sau khi khởi tạo $\theta = \theta_0$ ngẫu nhiên,
-ta
-lặp lại 2 bước **E, M** như sau
-để cập nhật $\theta_k, k=1,2,\ldots$
-cho đến khi hội tụ.
-
-- **E**stimate: Ước lượng $Z_i\approx\omega_i\is\E{Z|X_i=x_i, \theta=\theta_{k-1}}, i=1,\ldots,n.$
-- **M**aximize: Thay $Z_i$ bởi $\omega_i$ vào công thức likelihood để tối ưu MLE $\theta = \theta_k$
-:::
-
-## Thông tin Fisher
-
 :::{#def-fisher-info}
 ### Fisher information
 Giả sử log likelihood đối với một quan sát $X$ theo mô hình $\theta\in\R$ là
@@ -237,6 +194,47 @@ Chú ý là điều kiện số 2 dễ bị vi phạm,
 ví dụ $X_i\iid\Unif[0, \theta]$
 mà lại cần tìm tham số $\theta.$
 
+:::
+
+## Mix model
+:::{#def-mix-model}
+Cho
+các mô hình gốc
+$X^{(k)}, k= 1,\ldots,K,$
+lấy
+biến tiềm ẩn
+$Z$
+trên
+$\{1,\ldots,K\}$
+làm trọng số,
+ta có mô hình hỗn hợp
+$$
+X = \sum_{k=1}^K
+\P(Z=k) X^{(k)}
+.
+$$
+:::
+
+### Giải thuật EM
+:::{#def-em-alg}
+(**E**stimation **M**aximization)
+*có thể* tìm được
+tham số $\theta$ của
+mô hình hỗn hợp @def-mix-model.
+
+Giả sử ta quan sát được
+$X_1=x_1, \ldots, X_n=x_n$.
+Gọi các trọng số tiềm ẩn tương ứng là
+$Z_1=z_1, \ldots, Z_n=z_n.$
+
+Sau khi khởi tạo $\theta = \theta_0$ ngẫu nhiên,
+ta
+lặp lại 2 bước **E, M** như sau
+để cập nhật $\theta_k, k=1,2,\ldots$
+cho đến khi hội tụ.
+
+- **E**stimate: Ước lượng $Z_i\approx\omega_i\is\E{Z|X_i=x_i, \theta=\theta_{k-1}}, i=1,\ldots,n.$
+- **M**aximize: Thay $Z_i$ bởi $\omega_i$ vào công thức likelihood để tối ưu MLE $\theta = \theta_k$
 :::
 
 ## M-estimation

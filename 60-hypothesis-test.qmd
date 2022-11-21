@@ -201,32 +201,33 @@ với
 $\mu_x,\sigma_x, \mu_y,\sigma_y$
 chưa biết, và ta muốn kiểm định $\mu_x-\mu_y.$
 Đặt
-$$ \hat{\mu}_n\is\frac{1}{n}\sum_{i=1}^{n}X_i,\quad
-\hat{\sigma}_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\hat{\mu}_n)^2
+$$ \bar{X}_n\is\frac{\sum_{i=1}^{n}X_i}{n},\quad
+\widehat{\sigma_x^2}\is\frac{\sum_{i=1}^{n}(X_i-\bar{X}_n)^2}{n-1}
 ,
 $$
-$$ \hat{\mu}_m\is\frac{1}{m}\sum_{i=1}^{m}Y_i,\quad
-\hat{\sigma}_m^2\is\frac{1}{m-1}\sum_{i=1}^{m}(Y_i-\hat{\mu}_m)^2
+$$ \bar{Y}_m\is\frac{\sum_{i=1}^{m}Y_i}{m},\quad
+\widehat{\sigma_y^2}\is\frac{\sum_{i=1}^{m}(Y_i-\bar{Y}_m)^2}{m-1}
 .$$
-Ta có gần đúng
+Ta có
+Student's T (@def-student-dist) với độ tự do
+$N$
+tuân theo công thức Welch-Satterthwaite:
 $$
-\frac{(\hat{\mu}_n-\hat{\mu}_m)-(\mu_x-\mu_y)}
-{\sqrt{\hat{\sigma}_n^2/n + \hat{\sigma}_m^2/m}}
-\sim t_N
+\begin{split}
+&\frac{(\bar{X}_n-\bar{Y}_m)-(\mu_x-\mu_y)}
+{\sqrt{\widehat{\sigma_x^2}/n + \widehat{\sigma_y^2}/m}}
+\sim t_N,\\
+N &=
+\frac{(\widehat{\sigma_x^2}/n + \widehat{\sigma_y^2}/m)^2}
+{{{\hat{\sigma}_x^4}/{\left(n^2(n-1)\right)}  +
+{\hat{\sigma}_y^4}/{\left(m^2(m-1)\right)}}}\\
+&\geq \min(n, m)
+\end{split}
 $$
-là phân phối Student's T với độ tự do
-tuân theo công thức WS (Welch-Satterthwaite):
+Đặt $t$-statistic
 $$
-N =
-\frac{(\hat{\sigma}_n^2/n + \hat{\sigma}_m^2/m)^2}
-{{{\hat{\sigma}_n^4}/{\left(n^2(n-1)\right)}  +
-{\hat{\sigma}_m^4}/{\left(m^2(m-1)\right)}}}
-\geq \min(n, m)
-$$
-Đặt
-$$
-T = \frac{\hat{\mu}_n-\hat{\mu}_m}
-{\sqrt{\hat{\sigma}_n^2/n + \hat{\sigma}_m^2/m}}
+T_{n,m} \is \frac{\bar{X}_n-\bar{Y}_m}
+{\sqrt{\widehat{\sigma_x^2}/n + \widehat{\sigma_y^2}/m}}
 .$$
 
 | Giả thuyết                                      | Kiểm định 2 mẫu                        | p-value      |

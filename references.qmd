@@ -19,7 +19,7 @@
 
 #### Thời gian cần thiết
 
-Mỗi tuần khoảng hơn 12 tiếng
+Mỗi tuần hơn $12$ tiếng
 
 - 5-7 hours on exercises, including 3 hours of lecture clips
 - 1-2 hours watching recitations
@@ -28,41 +28,3 @@ Mỗi tuần khoảng hơn 12 tiếng
 #### Tính điểm
 
 Điểm thi đậu chứng chỉ là 60% [tổng số điểm](https://learning.edx.org/course/course-v1:MITx+18.6501x+2T2022/block-v1:MITx+18.6501x+2T2022+type@sequential+block@u0s1_overview/block-v1:MITx+18.6501x+2T2022+type@vertical+block@u0s1_overview-tab5) tối đa.
-
-- 20% for the lecture exercises (divided equally among the 20 out of 23 lectures)
-- 20% for the homeworks (divided equally among 10 (out of 12) homeworks)
-- 18% for the first midterm exam (timed)
-- 18% for the second midterm exam (timed)
-- 24% for the final exam (timed)
-
-### Unit 1
-
-Ôn lại kiến thức về xác suất "Probability - The Science of Uncertainty and Data" by @mitxProba.
-
-### Unit 2
-
-Học về nền tảng của suy luận (Foundations of Inference).
-
-- Lecture 3: Mô hình xác suất có số biến hữu hạn (Parametric Statistical Models)
-- Lecture 4: Dự đoán với số biến hữu hạn và vùng tự tin (Parametric Estimation and Confidence Intervals)
-${}$
-- Lecture 5: Vùng tự tin và phương pháp Delta (Confidence Intervals and Delta Method)
-
-### Unit 3
-
-Phương pháp ước lượng tham số của mô hình xác suất
-
-- Lecture 6: Khoảng cách giữa các phân phối xác suất
-- Lecture 7: Maximum Likelihood Estimator
-- Lecture 8: Ví dụ cho Maximum Likelihood Estimator
-- Lecture 9: Các tính chất thống kê của Maximum Likelihood Estimator
-- Lecture 10: Phương pháp tích suất và M-Estimation
-
-### Unit 4
-
-Kiểm định thống kê
-
-- Lecture 11: Introduction to Parametric Hypothesis Testing
-- Lecture 12: The Wald Test and Likelihood Ratio Test
-- Lecture 13: The T-test
-- Lecture 14: Multiple Hypothesis Testing

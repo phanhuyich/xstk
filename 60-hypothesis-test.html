@@ -488,24 +488,25 @@ T\is
 </section>
 <section id="two-sample-t-test" class="level3" data-number="6.2.4">
 <h3 data-number="6.2.4" class="anchored" data-anchor-id="two-sample-t-test"><span class="header-section-number">6.2.4</span> Two-sample T-test</h3>
-<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus{\mu_x}{\sigma_x^2},\)</span> <span class="math inline">\(Y_1,\ldots,Y_m\iid\Gaus{\mu_y}{\sigma_y^2},\)</span> với <span class="math inline">\(\mu_x,\sigma_x, \mu_y,\sigma_y\)</span> chưa biết, và ta muốn kiểm định <span class="math inline">\(\mu_x-\mu_y.\)</span> Đặt <span class="math display">\[ \hat{\mu}_n\is\frac{1}{n}\sum_{i=1}^{n}X_i,\quad
-\hat{\sigma}_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\hat{\mu}_n)^2
+<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus{\mu_x}{\sigma_x^2},\)</span> <span class="math inline">\(Y_1,\ldots,Y_m\iid\Gaus{\mu_y}{\sigma_y^2},\)</span> với <span class="math inline">\(\mu_x,\sigma_x, \mu_y,\sigma_y\)</span> chưa biết, và ta muốn kiểm định <span class="math inline">\(\mu_x-\mu_y.\)</span> Đặt <span class="math display">\[ \bar{X}_n\is\frac{\sum_{i=1}^{n}X_i}{n},\quad
+\widehat{\sigma_x^2}\is\frac{\sum_{i=1}^{n}(X_i-\bar{X}_n)^2}{n-1}
 ,
-\]</span> <span class="math display">\[ \hat{\mu}_m\is\frac{1}{m}\sum_{i=1}^{m}Y_i,\quad
-\hat{\sigma}_m^2\is\frac{1}{m-1}\sum_{i=1}^{m}(Y_i-\hat{\mu}_m)^2
-.\]</span> Ta có gần đúng <span class="math display">\[
-\frac{(\hat{\mu}_n-\hat{\mu}_m)-(\mu_x-\mu_y)}
-{\sqrt{\hat{\sigma}_n^2/n + \hat{\sigma}_m^2/m}}
-\sim t_N
-\]</span> là phân phối Student’s T với độ tự do tuân theo công thức WS (Welch-Satterthwaite): <span class="math display">\[
-N =
-\frac{(\hat{\sigma}_n^2/n + \hat{\sigma}_m^2/m)^2}
-{{{\hat{\sigma}_n^4}/{\left(n^2(n-1)\right)}  +
-{\hat{\sigma}_m^4}/{\left(m^2(m-1)\right)}}}
-\geq \min(n, m)
-\]</span> Đặt <span class="math display">\[
-T = \frac{\hat{\mu}_n-\hat{\mu}_m}
-{\sqrt{\hat{\sigma}_n^2/n + \hat{\sigma}_m^2/m}}
+\]</span> <span class="math display">\[ \bar{Y}_m\is\frac{\sum_{i=1}^{m}Y_i}{m},\quad
+\widehat{\sigma_y^2}\is\frac{\sum_{i=1}^{m}(Y_i-\bar{Y}_m)^2}{m-1}
+.\]</span> Ta có Student’s T (<a href="20-distributions.html#def-student-dist">ĐN&nbsp;<span>2.10</span></a>) với độ tự do <span class="math inline">\(N\)</span> tuân theo công thức Welch-Satterthwaite: <span class="math display">\[
+\begin{split}
+&amp;\frac{(\bar{X}_n-\bar{Y}_m)-(\mu_x-\mu_y)}
+{\sqrt{\widehat{\sigma_x^2}/n + \widehat{\sigma_y^2}/m}}
+\sim t_N,\\
+N &amp;=
+\frac{(\widehat{\sigma_x^2}/n + \widehat{\sigma_y^2}/m)^2}
+{{{\hat{\sigma}_x^4}/{\left(n^2(n-1)\right)}  +
+{\hat{\sigma}_y^4}/{\left(m^2(m-1)\right)}}}\\
+&amp;\geq \min(n, m)
+\end{split}
+\]</span> Đặt <span class="math inline">\(t\)</span>-statistic <span class="math display">\[
+T_{n,m} \is \frac{\bar{X}_n-\bar{Y}_m}
+{\sqrt{\widehat{\sigma_x^2}/n + \widehat{\sigma_y^2}/m}}
 .\]</span></p>
 <table class="table">
 <colgroup>

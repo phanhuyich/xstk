@@ -357,17 +357,17 @@ X_n \todist X.
 <div id="thm-multivar-delta" class="theorem">
 <p><span class="theorem-title"><strong>Định lý 3.9 (Phương pháp Delta nhiều biến) </strong></span>Giả sử chuỗi <span class="math inline">\((\vec{\theta}_n)_{n\geq 1}\)</span> chuẩn tiến với phương sai <span class="math inline">\(\Sigma(\vec{\theta})\)</span> về <span class="math inline">\(\vec{\theta}\in\R^d:\)</span> <span class="math display">\[
 \sqrt{n}(\vec{\theta}_n-\vec{\theta})
-\todist\Gaus_d(\vec{0},\Sigma).
+\todist\mathcal{N}_d(\vec{0},\Sigma).
 \]</span></p>
 <p>Giả sử <span class="math inline">\(g:\R^d\to\R^k\)</span> có vi phân <span class="math inline">\(\nabla g\)</span> liên tục <span class="math inline">\((k&lt;d)\)</span>. Khi đó, <span class="math display">\[
 \sqrt{n}\left(g(\vec{\theta}_n)-g(\vec{\theta})\right)
-\todist\Gaus_k
+\todist\mathcal{N}_k
 \left(\vec{0}, \Gamma\right)
 ,
 \]</span></p>
 <p>với <span class="math inline">\(\Gamma\is\nabla g(\vec{\theta})^T \Sigma \nabla g(\vec{\theta}).\)</span> Nếu <span class="math inline">\(\Sigma\)</span> khả nghịch, <span class="math inline">\(\nabla g\)</span> rank <span class="math inline">\(k\)</span> thì <span class="math inline">\(\Gamma\)</span> khả nghịch, <span class="math display">\[
 \sqrt{n}\Gamma^{-1/2}\left(g(\vec{\theta}_n)-g(\vec{\theta})\right)
-\todist\Gaus_k\left(\vec{0}, \vec{I}_k\right)
+\todist\mathcal{N}_k\left(\vec{0}, \vec{I}_k\right)
 ,
 \]</span> <span class="math display">\[
 {n}\Gamma^{-1}\left(g(\vec{\theta}_n)-g(\vec{\theta})\right)^2

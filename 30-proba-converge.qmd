@@ -171,7 +171,7 @@ về
 $\vec{\theta}\in\R^d:$
 $$
 \sqrt{n}(\vec{\theta}_n-\vec{\theta})
-\todist\Gaus_d(\vec{0},\Sigma).
+\todist\Gauk{d}{\vec{0}}{\Sigma}.
 $$
 
 Giả sử $g:\R^d\to\R^k$
@@ -182,8 +182,8 @@ $(k<d)$.
 Khi đó,
 $$
 \sqrt{n}\left(g(\vec{\theta}_n)-g(\vec{\theta})\right)
-\todist\Gaus_k
-\left(\vec{0}, \Gamma\right)
+\todist\Gauk{k}
+{\vec{0}}{\Gamma}
 ,
 $$
 
@@ -193,7 +193,7 @@ Nếu $\Sigma$ khả nghịch, $\nabla g$ rank $k$ thì
 $\Gamma$ khả nghịch,
 $$
 \sqrt{n}\Gamma^{-1/2}\left(g(\vec{\theta}_n)-g(\vec{\theta})\right)
-\todist\Gaus_k\left(\vec{0}, \vec{I}_k\right)
+\todist\Gauk{k}{\vec{0}}{\vec{I}_k}
 ,
 $$
 $$

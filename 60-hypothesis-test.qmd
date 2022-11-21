@@ -399,7 +399,7 @@ nếu bỏ điều kiện $F_0$ cố định,
 thay vào đó là
 kiểm chứng phân phối $\P$ thuộc
 hệ phân phối chuẩn
-$\{\Gaus(\mu,\sigma^2\}.$
+$\{\Gaus{\mu}{\sigma^2}.$
 Gọi MLE là $\hat{\mu},\hat{\sigma}^2$,
 định lượng kiểm định
 $$

@@ -101,45 +101,43 @@ thỏa mãn 2/4 đặc điểm của "khoảng cách":
 ## Hợp lý cực đại
 
 :::{#def-likelihood}
-#### Hợp lý, Likelihood
-$$L_\theta(x_1,\ldots,x_n)\is
+#### Likelihood
+**Độ hợp lý** của tham số $\theta$ là
+$$L_n(x_1,\ldots,x_n; \theta)\is
 \P_\theta(X_1=x_1,\ldots,X_n=x_n)
-=
-\prod_{i=1}^n p_\theta(X_i=x_i)
 .$$
 :::
 
 :::{#def-likelihood}
 #### Log likelihood
 $$
-\ell_\theta(x_1,\ldots,x_n)\is
+\ell_n(x_1,\ldots,x_n)\is
 \ln
-L_\theta(x_1,\ldots,x_n)
-=
-\sum_{i=1}^n \ln p_\theta(X_i=x_i)
+L_\theta(x_1,\ldots,x_n; \theta)
 .
 $$
 :::
 
 :::{#def-mle}
 #### Maximum Likelihood Estimator, MLE
+Điểm **hợp lý cực đại** là
 $$
-\hat{\theta}_n \is
-\argmax_\theta
-L_\theta(x_1,\ldots,x_n)
-\equiv
-\argmax_\theta
-\ell_\theta(x_1,\ldots,x_n)
+\begin{split}
+\hat{\theta}_n
+\is\, &\argmax_\theta L_n(x_1,\ldots,x_n; \theta)\\
+\equiv\, &\argmax_\theta \ell_n(x_1,\ldots,x_n; \theta)
 .
+\end{split}
 $$
 :::
 
+### MLE hội tụ
 :::{#def-fisher-info}
 ### Fisher information
-Giả sử log likelihood đối với một quan sát $X$ theo mô hình $\theta\in\R$ là
-$\ell=\ell(\theta)\is\ln L_1(X,\theta), \theta\in\Theta\subset\R.$
+Giả sử với $n=1$ quan sát $X$ có
+$\ell(\theta)\is\ln L_1(X;\theta), \theta\in\R.$
 Giả sử $\ell(\theta)$ có đạo hàm bậc hai. Dưới một số điều kiện chuẩn,
-**thông tin Fisher** của mô hình được định nghĩa là
+**thông tin Fisher** của mô hình là
 
 $$
 I(\theta)
@@ -150,12 +148,11 @@ I(\theta)
 .
 $$
 
-Trường hợp mô hình đa biến, $\theta\is(\theta_1,\ldots,\theta_k)\in\R^k:$
+Với $\theta\is(\theta_1,\ldots,\theta_k)\in\R^k,$
+đặt
+$H_{ij} \is \frac{\partial^2\ell}{\partial\theta_i\partial\theta_j}:$
 $$
-H_{ij} \is \frac{\partial^2\ell}{\partial\theta_i\partial\theta_j},
-$$
-$$
-I(\theta) \is -\E{
+\vec{I}(\theta) \is -\E{
 \begin{pmatrix}
 H_{11} & \cdots & H_{1k} \\
 \vdots & \ddots & \vdots \\
@@ -169,7 +166,7 @@ $$
 ### MLE hội tụ
 Gọi $\theta^*\in\Theta$ là tham số *thật* cần tìm. Giả sử
 
-1. Các tham số là indentifiable
+1. Các tham số là identifiable (@def-identifiable-param)
 2. Support của $\P_\theta$ không phụ thuộc vào $\theta$ với mọi $\theta\in\Theta$
 3. $\theta^*$ không nằm trên biên giới của $\Theta$
 4. Thông tin Fisher khả nghịch lân cận $\theta^*$
@@ -185,7 +182,7 @@ $$\sqrt{n I(\theta^*)}\left(\hat{\theta}_n^{MLE}-\theta^*\right)
 Trường hợp mô hình đa biến, $\theta\in\R^k:$
 $${n
 \left(\hat{\theta}_n^{MLE}-\theta^*\right)^T
-I(\theta^*)}
+\vec{I}(\theta^*)}
 \left(\hat{\theta}_n^{MLE}-\theta^*\right)
 \xrightarrow[n\to\infty]{(d)\textrm{ w.r.t.}\P_{\theta^*}}
 \chi_k^2.$$

@@ -14,25 +14,32 @@ $(\P_\theta)_{\theta\in\Theta}$
 $\P$
 .
 
+:::{#def-well-specified}
+### well specified
 Nếu tồn tại
 $\theta\in\Theta$
 để
 $\P_\theta\equiv\P$
-thì ta nói mô hình "hợp lệ"
-(well specified).
+thì ta nói mô hình **hợp lệ**.
+:::
 
+:::{#def-identifiable-param}
+### identifiable parameter
 Nếu từ tập $\Theta$,
 ánh xạ
 $\theta\mapsto\P_{\theta}$
 là đơn ánh
 thì ta nói $\theta$ (hoặc $\P_\theta$) là
-"có thể xác định" (identifiable).
+**có thể xác định**.
+:::
 
 
+:::{#def-parametric-model}
+### parametric model
 Nếu
 $\Theta\subseteq\R^d$
-thì mô hình được nói có số biến hữu hạn
-(parametric model).
+thì mô hình được nói có **số biến hữu hạn**.
+:::
 
 ## Ước lượng
 

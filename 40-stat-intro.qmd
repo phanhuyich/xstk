@@ -60,6 +60,7 @@ giá trị cụ thể của dữ liệu.
 ### Độ lệch, bias
 giữa đánh giá $\theta_n$ với mục tiêu $\theta$ là
 $$\textrm{bias}_{\theta}({\theta}_n) \is \E{\theta_n} - \theta.$$
+Nếu độ lệch bằng $0$ ta nói đánh giá không lệch (unbiased).
 :::
 
 :::{#def-mse}

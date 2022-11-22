@@ -213,6 +213,16 @@ $$
 \E{X+Y} \equiv \E{X} + E[Y].
 $$
 
+::: {#def-sample-mean}
+### Sample mean
+Cho mẫu $X_1,\ldots,X_n\iid X.$
+Trung bình mẫu là
+$$
+\bar{X}_n
+\is\frac{1}{n}\sum_{i=1}^{n} X_i.
+$$
+:::
+
 ::: {#def-covar}
 ### Hiệp phương sai
 $$
@@ -233,10 +243,24 @@ $$
 $$
 :::
 
-Ta có
+:::{.remark}
 $$
 \V{X+Y} \equiv \V{X}+\V{Y} + 2\Cov{X,Y}.
 $$
+:::
+
+::: {#def-unbiased-sample-variance}
+### Unbiased sample variance
+Cho mẫu $X_1,\ldots,X_n\iid X.$
+Phương sai mẫu không lệch (@def-bias) là
+$$
+S_n^2 \is\frac{\sum_{i=1}^{n}(X_i-\bar{X}_n)^2}{n-1}.
+$$
+Ta có $\E{S_n^2}\equiv\V{X}.$
+:::
+:::{.remark}
+Định lý Cochoran @thm-cochoran.
+:::
 
 :::{#thm-iterated-expectations}
 ### Iterated Expectations

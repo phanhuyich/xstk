@@ -103,7 +103,7 @@ $$
 ### Khoảng tin cậy
 
 Thông thường ta có thể xây dựng được kiểm định từ khoảng tin cậy. Ví dụ,
-ta muốn kiếm định tham số $\theta$, $H_0: \theta=\theta_0,$ đối
+kiếm định tham số $\theta$, $H_0: \theta=\theta_0,$ đối
 $H_1: \theta\neq\theta_0.$ Giả sử ta có khoảng tin cậy $\mathcal{I}$ ở
 mức $1-\alpha$, tức là $$\P_\theta(I\ni \theta)\geq 1-\alpha.$$ Khi đó,
 $\psi=\indicator{\theta_0\notin\mathcal{I}}$ là kiểm định mức $\alpha$
@@ -149,13 +149,10 @@ là một quan sát đối với $W.$
 ### Định lý Cochran
 
 :::{#thm-cochoran}
-Giả sử $X_1,\ldots,X_n\iid\Gaus{\mu}{\sigma^2}.$
-Đặt
-$$
-S_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2.
-$$
-
-Khi đó $\E{S_n^2} \equiv \sigma^2,$
+Giả sử $X_1,\ldots,X_n\iid\Gaus{\mu}{\sigma^2}$
+có phương sai mẫu không lệch (@def-unbiased-sample-variance)
+là $S_n^2.$
+Khi đó
 $$
 \frac{S_n^2}{\sigma^2}
 \sim
@@ -166,10 +163,10 @@ $$
 và $\bar{X}_n, S_n^2$ độc lập với nhau.
 :::
 
-### Student's T test
+### Student's $t$-test
 
-Giả sử $X_1,\ldots,X_n\iid\Gaus{\mu}{\sigma^2},$
-$\mu,\sigma$ chưa biết, và ta muốn kiểm định $\mu.$
+Giả sử $X_1,\ldots,X_n\iid\Gaus{\mu}{\sigma^2}$ theo phân phối chuẩn (@def-gaussian),
+$\mu,\sigma$ chưa biết, và cần kiểm định $\mu.$
 Theo @thm-cochoran,
 $$
 T\is
@@ -192,14 +189,14 @@ tức là $\P_{H_0}(\psi_\alpha) \equiv \alpha.$
 Trong bảng trên, p-value được tính từ $T^{obs}$ là một quan sát đối với
 $T.$
 
-### Two-sample T-test
+### Two-sample $t$-test
 
 Giả sử
 $X_1,\ldots,X_n\iid\Gaus{\mu_x}{\sigma_x^2},$
 $Y_1,\ldots,Y_m\iid\Gaus{\mu_y}{\sigma_y^2},$
 với
 $\mu_x,\sigma_x, \mu_y,\sigma_y$
-chưa biết, và ta muốn kiểm định $\mu_x-\mu_y.$
+chưa biết, và cần kiểm định $\mu_x-\mu_y.$
 Đặt
 $$ \bar{X}_n\is\frac{\sum_{i=1}^{n}X_i}{n},\quad
 \widehat{\sigma_x^2}\is\frac{\sum_{i=1}^{n}(X_i-\bar{X}_n)^2}{n-1}

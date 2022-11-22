@@ -104,7 +104,7 @@ Nếu $X_n\toapd X$ thì
 ### Law of Large Numbers, LLN
 Cho $n$ biến iid $X_1, X_2,\ldotp,X_n\iid X$ có
 $\E{X}<\infty$.
-Khi đó:
+Khi đó trung bình mẫu (@def-sample-mean) hội tụ:
 $$\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}
 \xrightarrow[n\to\infty]{\P,\,\as}\E{X}.
 $$

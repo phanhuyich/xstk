@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.262">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -205,8 +205,13 @@ div.csl-indent {
   <li><a href="#xác-suất" id="toc-xác-suất" class="nav-link" data-scroll-target="#xác-suất"><span class="toc-section-number">1.2</span>  Xác suất</a></li>
   <li><a href="#tham-số" id="toc-tham-số" class="nav-link" data-scroll-target="#tham-số"><span class="toc-section-number">1.3</span>  Tham số</a></li>
   <li><a href="#xác-suất-đồng-thời" id="toc-xác-suất-đồng-thời" class="nav-link" data-scroll-target="#xác-suất-đồng-thời"><span class="toc-section-number">1.4</span>  Xác suất đồng thời</a></li>
-  <li><a href="#đặc-trưng" id="toc-đặc-trưng" class="nav-link" data-scroll-target="#đặc-trưng"><span class="toc-section-number">1.5</span>  Đặc trưng</a></li>
-  <li><a href="#tích-suất" id="toc-tích-suất" class="nav-link" data-scroll-target="#tích-suất"><span class="toc-section-number">1.6</span>  Tích suất</a></li>
+  <li><a href="#đặc-trưng" id="toc-đặc-trưng" class="nav-link" data-scroll-target="#đặc-trưng"><span class="toc-section-number">1.5</span>  Đặc trưng</a>
+  <ul class="collapse">
+  <li><a href="#trung-bình" id="toc-trung-bình" class="nav-link" data-scroll-target="#trung-bình"><span class="toc-section-number">1.5.1</span>  Trung bình</a></li>
+  <li><a href="#phương-sai" id="toc-phương-sai" class="nav-link" data-scroll-target="#phương-sai"><span class="toc-section-number">1.5.2</span>  Phương sai</a></li>
+  <li><a href="#tích-suất" id="toc-tích-suất" class="nav-link" data-scroll-target="#tích-suất"><span class="toc-section-number">1.5.3</span>  Tích suất</a></li>
+  <li><a href="#đặc-trưng-mẫu" id="toc-đặc-trưng-mẫu" class="nav-link" data-scroll-target="#đặc-trưng-mẫu"><span class="toc-section-number">1.5.4</span>  Đặc trưng mẫu</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -353,6 +358,8 @@ X_1,\ldots,X_n \iid X.
 </section>
 <section id="đặc-trưng" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="đặc-trưng"><span class="header-section-number">1.5</span> Đặc trưng</h2>
+<section id="trung-bình" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="trung-bình"><span class="header-section-number">1.5.1</span> Trung bình</h3>
 <div id="def-expectation" class="theorem definition">
 <p><span class="theorem-title"><strong>Định nghĩa 1.12 (Trung bình) </strong></span><strong>Trung bình</strong>, hay <strong>giá trị kỳ vọng</strong> của biến X là</p>
 <p><span class="math display">\[
@@ -369,14 +376,16 @@ X_1,\ldots,X_n \iid X.
 <p>Ta có <span class="math display">\[
 \E{X+Y} \equiv \E{X} + E[Y].
 \]</span></p>
-<div id="def-sample-mean" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.13 (Sample mean) </strong></span>Cho mẫu <span class="math inline">\(X_1,\ldots,X_n\iid X.\)</span> Trung bình mẫu là <span class="math display">\[
-\bar{X}_n
-\is\frac{1}{n}\sum_{i=1}^{n} X_i.
-\]</span></p>
+<div id="thm-iterated-expectations" class="theorem">
+<p><span class="theorem-title"><strong>Định lý 1.4 (Iterated Expectations) </strong></span>Với các biến <span class="math inline">\(X,Y,\)</span> giả sử các giá trị kỳ vọng tồn tại, ta có <span class="math display">\[
+\E{\E{Y|X}} \equiv \E{Y}
+.\]</span></p>
 </div>
+</section>
+<section id="phương-sai" class="level3" data-number="1.5.2">
+<h3 data-number="1.5.2" class="anchored" data-anchor-id="phương-sai"><span class="header-section-number">1.5.2</span> Phương sai</h3>
 <div id="def-covar" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.14 (Hiệp phương sai) </strong></span><span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 1.13 (Hiệp phương sai) </strong></span><span class="math display">\[
 \begin{split}
 \Cov{X,Y} &amp;\is \E{(X-\E{X})(Y-\E{Y})} \\
 &amp;\equiv \E{XY} - \E{X}\E{Y}
@@ -385,7 +394,7 @@ X_1,\ldots,X_n \iid X.
 </div>
 <p>Nếu <span class="math inline">\(X\)</span> và <span class="math inline">\(Y\)</span> độc lập thì <span class="math inline">\(\Cov{X,Y} = 0\)</span>.</p>
 <div id="def-variance" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.15 (Phương sai) </strong></span>Phương sai, hay phân tán (variance) là <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 1.14 (Phương sai) </strong></span>Phương sai, hay phân tán (variance) là <span class="math display">\[
 \V{X}\is\Cov{X,X}\equiv\E{X^2}-(\E{X})^2.
 \]</span></p>
 </div>
@@ -394,40 +403,57 @@ X_1,\ldots,X_n \iid X.
 \V{X+Y} \equiv \V{X}+\V{Y} + 2\Cov{X,Y}.
 \]</span></p>
 </div>
-<div id="def-unbiased-sample-variance" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.16 (Unbiased sample variance) </strong></span>Cho mẫu <span class="math inline">\(X_1,\ldots,X_n\iid X.\)</span> Phương sai mẫu không lệch (<a href="40-stat-intro.html#def-bias">ĐN&nbsp;<span>4.2</span></a>) là <span class="math display">\[
-S_n^2 \is\frac{\sum_{i=1}^{n}(X_i-\bar{X}_n)^2}{n-1}.
-\]</span> Ta có <span class="math inline">\(\E{S_n^2}\equiv\V{X}.\)</span></p>
-</div>
-<div class="remark proof">
-<p><span class="proof-title"><em>Remark</em>. </span>Định lý Cochoran <a href="60-hypothesis-test.html#thm-cochoran">ĐL&nbsp;<span>6.1</span></a>.</p>
-</div>
-<div id="thm-iterated-expectations" class="theorem">
-<p><span class="theorem-title"><strong>Định lý 1.4 (Iterated Expectations) </strong></span>Với các biến <span class="math inline">\(X,Y,\)</span> giả sử các giá trị kỳ vọng tồn tại, ta có <span class="math display">\[
-\E{\E{Y|X}} \equiv \E{Y}
-.\]</span></p>
-</div>
 </section>
-<section id="tích-suất" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="tích-suất"><span class="header-section-number">1.6</span> Tích suất</h2>
+<section id="tích-suất" class="level3" data-number="1.5.3">
+<h3 data-number="1.5.3" class="anchored" data-anchor-id="tích-suất"><span class="header-section-number">1.5.3</span> Tích suất</h3>
 <div id="def-moment" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.17 (Tích suất) </strong></span>Tích suất (moment) thể hiện trọng tâm, độ phân tán, hay độ lệch của phân phối. Tích suất bậc <span class="math inline">\(n\)</span> của biến <span class="math inline">\(X\)</span> với mật độ <span class="math inline">\(f(x)\)</span> là:</p>
+<p><span class="theorem-title"><strong>Định nghĩa 1.15 (Tích suất) </strong></span>Tích suất (moment) thể hiện trọng tâm, độ phân tán, hay độ lệch của phân phối. Tích suất bậc <span class="math inline">\(n\)</span> của biến <span class="math inline">\(X\)</span> với mật độ <span class="math inline">\(f(x)\)</span> là:</p>
 </div>
 <p><span class="math display">\[
 \E{X^n}\is \int x^n f(x) dx
 \]</span></p>
 <div id="def-mgf" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.18 (Hàm tạo tích suất) </strong></span>“Moment generation function (MGF)” của biến <span class="math inline">\(X\)</span> là <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 1.16 (Hàm tạo tích suất) </strong></span>“Moment generation function (MGF)” của biến <span class="math inline">\(X\)</span> là <span class="math display">\[
 \psi_X(t)\is\E{e^{tX}}, t\in\R.
 \]</span></p>
 </div>
 <p>Nếu MGF “tồn tại” lân cận <span class="math inline">\(0\)</span> thì đạo hàm cấp <span class="math inline">\(k\)</span> của <span class="math inline">\(\psi\)</span> tại <span class="math inline">\(0\)</span> chính là: <span class="math display">\[
 \psi_X^{(k)}(0)\equiv \E{X^k}.
 \]</span></p>
+</section>
+<section id="đặc-trưng-mẫu" class="level3" data-number="1.5.4">
+<h3 data-number="1.5.4" class="anchored" data-anchor-id="đặc-trưng-mẫu"><span class="header-section-number">1.5.4</span> Đặc trưng mẫu</h3>
 <div id="def-sample-moment" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.19 (Tích suất mẫu) </strong></span>Từ các quan sát <span class="math inline">\(X_1,\ldots X_n\iid \P_\theta, \theta\in\Theta\subset\R^d.\)</span> Để ước lượng tích suất <span class="math inline">\(\E{X^k}\)</span> ta có thể dùng các <em>sample moment</em>: <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 1.17 (Sample moment) </strong></span>Quan sát <span class="math inline">\(X_1,\ldots X_n\iid X.\)</span> Để ước lượng <span class="math inline">\(\E{X^k}\)</span> ta có tích suất mẫu: <span class="math display">\[
 \hat{m}_k\is \frac{1}{n}\sum_{i=1}^n X_i^k,\quad k=1,2,\ldots.
 \]</span></p>
+</div>
+<div id="def-sample-mean" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 1.18 (Sample mean) </strong></span>Trung bình mẫu là tích suất mẫu bậc 1: <span class="math display">\[
+\bar{X}_n
+\is\frac{1}{n}\sum_{i=1}^{n} X_i.
+\]</span></p>
+</div>
+<div id="def-sample-squares" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 1.19 (Sample squares mean) </strong></span>Trung bình mẫu bình phương là tích suất mẫu bậc 2: <span class="math display">\[
+\overline{X_n^2} \is \frac{1}{n}{\sum_{i=1}^n X_i^2}
+.\]</span></p>
+</div>
+<div id="def-sample-variance" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 1.20 (Sample variance) </strong></span>Phương sai mẫu là: <span class="math display">\[
+S_n^2 \is\frac{1}{n}{\sum_{i=1}^{n}(X_i-\bar{X}_n)^2} \equiv \overline{X_n^2}-\overline{X_n}^2 .
+\]</span></p>
+</div>
+<div id="def-unbiased-sample-variance" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 1.21 (Unbiased sample variance) </strong></span>Phương sai mẫu không lệch (<a href="40-stat-intro.html#def-bias">ĐN&nbsp;<span>4.2</span></a>) là <span class="math display">\[
+\tilde{S}_n^2 \is\frac{n}{n-1}{S_n}.
+\]</span> Ta có <span class="math inline">\(\E{\tilde{S}_n^2}\equiv\V{X}.\)</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Chương 1.3 - Unbiased Estimation, <span class="citation" data-cites="stat415"><span>“STAT 415 Introduction to Mathematical Statistics”</span> (<a href="references.html#ref-stat415" role="doc-biblioref">2022</a>)</span>.</p>
+</div>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remark</em>. </span>Định lý Cochoran <a href="60-hypothesis-test.html#thm-cochoran">ĐL&nbsp;<span>6.1</span></a>.</p>
 </div>
 
 
@@ -435,7 +461,11 @@ S_n^2 \is\frac{\sum_{i=1}^{n}(X_i-\bar{X}_n)^2}{n-1}.
 <div id="ref-probabilitycourse" class="csl-entry" role="doc-biblioentry">
 Pishro-Nik, H. 2014. <em>Introduction to Probability, Statistics, and Random Processes</em>. Kappa Research LLC. <a href="https://www.probabilitycourse.com">https://www.probabilitycourse.com</a>.
 </div>
+<div id="ref-stat415" class="csl-entry" role="doc-biblioentry">
+<span>“STAT 415 Introduction to Mathematical Statistics.”</span> 2022. Penn State’s World Campus. <a href="https://online.stat.psu.edu/stat415">https://online.stat.psu.edu/stat415</a>.
 </div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->

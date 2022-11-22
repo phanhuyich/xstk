@@ -48,11 +48,17 @@ $$
 \beta_\psi(\theta) \is \P_\theta(\psi=1) \equiv \P_\theta(R_\psi)\in[0,1]
 $$
 
+:::{#def-test-statistic}
+### Test statistic
 Vùng phủ nhận thường có dạng
 $$
-R_\psi = \{X_i: T(X_i)\geq c\}
+\begin{split}
+R_\psi &= \{X: T(X)\geq c\},\\
+\psi &= \indicator{T(X)\geq c}
+\end{split}
 $$
-với $T$ là một lượng thống kê còn $c$ là một giá trị biên.
+với $T$ là **lượng kiểm định thống kê** còn $c$ là giá trị biên.
+:::
 
 ### Mức độ lỗi
 

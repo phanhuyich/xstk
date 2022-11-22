@@ -193,8 +193,8 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#wald-test" id="toc-wald-test" class="nav-link" data-scroll-target="#wald-test"><span class="toc-section-number">6.2.1</span>  Wald Test</a></li>
   <li><a href="#định-lý-cochran" id="toc-định-lý-cochran" class="nav-link" data-scroll-target="#định-lý-cochran"><span class="toc-section-number">6.2.2</span>  Định lý Cochran</a></li>
-  <li><a href="#students-t-test" id="toc-students-t-test" class="nav-link" data-scroll-target="#students-t-test"><span class="toc-section-number">6.2.3</span>  Student’s T test</a></li>
-  <li><a href="#two-sample-t-test" id="toc-two-sample-t-test" class="nav-link" data-scroll-target="#two-sample-t-test"><span class="toc-section-number">6.2.4</span>  Two-sample T-test</a></li>
+  <li><a href="#students-t-test" id="toc-students-t-test" class="nav-link" data-scroll-target="#students-t-test"><span class="toc-section-number">6.2.3</span>  Student’s <span class="math inline">\(t\)</span>-test</a></li>
+  <li><a href="#two-sample-t-test" id="toc-two-sample-t-test" class="nav-link" data-scroll-target="#two-sample-t-test"><span class="toc-section-number">6.2.4</span>  Two-sample <span class="math inline">\(t\)</span>-test</a></li>
   <li><a href="#kiểm-định-tỷ-lệ-hợp-lý" id="toc-kiểm-định-tỷ-lệ-hợp-lý" class="nav-link" data-scroll-target="#kiểm-định-tỷ-lệ-hợp-lý"><span class="toc-section-number">6.2.5</span>  Kiểm định tỷ lệ hợp lý</a></li>
   <li><a href="#định-lý-wilks" id="toc-định-lý-wilks" class="nav-link" data-scroll-target="#định-lý-wilks"><span class="toc-section-number">6.2.6</span>  Định lý Wilks</a></li>
   <li><a href="#kiểm-định-nhiều-lần" id="toc-kiểm-định-nhiều-lần" class="nav-link" data-scroll-target="#kiểm-định-nhiều-lần"><span class="toc-section-number">6.2.7</span>  Kiểm định nhiều lần</a></li>
@@ -372,7 +372,7 @@ R_\psi = \{X_i: T(X_i)\geq c\}
 </section>
 <section id="khoảng-tin-cậy" class="level3" data-number="6.1.4">
 <h3 data-number="6.1.4" class="anchored" data-anchor-id="khoảng-tin-cậy"><span class="header-section-number">6.1.4</span> Khoảng tin cậy</h3>
-<p>Thông thường ta có thể xây dựng được kiểm định từ khoảng tin cậy. Ví dụ, ta muốn kiếm định tham số <span class="math inline">\(\theta\)</span>, <span class="math inline">\(H_0: \theta=\theta_0,\)</span> đối <span class="math inline">\(H_1: \theta\neq\theta_0.\)</span> Giả sử ta có khoảng tin cậy <span class="math inline">\(\mathcal{I}\)</span> ở mức <span class="math inline">\(1-\alpha\)</span>, tức là <span class="math display">\[\P_\theta(I\ni \theta)\geq 1-\alpha.\]</span> Khi đó, <span class="math inline">\(\psi=\indicator{\theta_0\notin\mathcal{I}}\)</span> là kiểm định mức <span class="math inline">\(\alpha\)</span></p>
+<p>Thông thường ta có thể xây dựng được kiểm định từ khoảng tin cậy. Ví dụ, kiếm định tham số <span class="math inline">\(\theta\)</span>, <span class="math inline">\(H_0: \theta=\theta_0,\)</span> đối <span class="math inline">\(H_1: \theta\neq\theta_0.\)</span> Giả sử ta có khoảng tin cậy <span class="math inline">\(\mathcal{I}\)</span> ở mức <span class="math inline">\(1-\alpha\)</span>, tức là <span class="math display">\[\P_\theta(I\ni \theta)\geq 1-\alpha.\]</span> Khi đó, <span class="math inline">\(\psi=\indicator{\theta_0\notin\mathcal{I}}\)</span> là kiểm định mức <span class="math inline">\(\alpha\)</span></p>
 <p><span class="math display">\[
 \beta_\psi(\theta_0) = \P_{\theta_0}(\theta_0\notin I) \leq \alpha.
 \]</span></p>
@@ -431,10 +431,7 @@ W \is \frac{\hat{\theta}-\theta_0}
 <section id="định-lý-cochran" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="định-lý-cochran"><span class="header-section-number">6.2.2</span> Định lý Cochran</h3>
 <div id="thm-cochoran" class="theorem">
-<p><span class="theorem-title"><strong>Định lý 6.1 </strong></span>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus{\mu}{\sigma^2}.\)</span> Đặt <span class="math display">\[
-S_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2.
-\]</span></p>
-<p>Khi đó <span class="math inline">\(\E{S_n^2} \equiv \sigma^2,\)</span> <span class="math display">\[
+<p><span class="theorem-title"><strong>Định lý 6.1 </strong></span>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus{\mu}{\sigma^2}\)</span> có phương sai mẫu không lệch (<a href="10-proba-intro.html#def-unbiased-sample-variance">ĐN&nbsp;<span>1.16</span></a>) là <span class="math inline">\(S_n^2.\)</span> Khi đó <span class="math display">\[
 \frac{S_n^2}{\sigma^2}
 \sim
 \frac{\chi_{n-1}^2}{n-1}
@@ -444,8 +441,8 @@ S_n^2\is\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X}_n)^2.
 </div>
 </section>
 <section id="students-t-test" class="level3" data-number="6.2.3">
-<h3 data-number="6.2.3" class="anchored" data-anchor-id="students-t-test"><span class="header-section-number">6.2.3</span> Student’s T test</h3>
-<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus{\mu}{\sigma^2},\)</span> <span class="math inline">\(\mu,\sigma\)</span> chưa biết, và ta muốn kiểm định <span class="math inline">\(\mu.\)</span> Theo <a href="#thm-cochoran">ĐL&nbsp;<span>6.1</span></a>, <span class="math display">\[
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="students-t-test"><span class="header-section-number">6.2.3</span> Student’s <span class="math inline">\(t\)</span>-test</h3>
+<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus{\mu}{\sigma^2}\)</span> theo phân phối chuẩn (<a href="20-distributions.html#def-gaussian">ĐN&nbsp;<span>2.7</span></a>), <span class="math inline">\(\mu,\sigma\)</span> chưa biết, và cần kiểm định <span class="math inline">\(\mu.\)</span> Theo <a href="#thm-cochoran">ĐL&nbsp;<span>6.1</span></a>, <span class="math display">\[
 T\is
 \frac{\bar{X}_n-\mu}{\sqrt{S_n^2/n}}
 \equiv
@@ -487,8 +484,8 @@ T\is
 <p>Trong bảng trên, p-value được tính từ <span class="math inline">\(T^{obs}\)</span> là một quan sát đối với <span class="math inline">\(T.\)</span></p>
 </section>
 <section id="two-sample-t-test" class="level3" data-number="6.2.4">
-<h3 data-number="6.2.4" class="anchored" data-anchor-id="two-sample-t-test"><span class="header-section-number">6.2.4</span> Two-sample T-test</h3>
-<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus{\mu_x}{\sigma_x^2},\)</span> <span class="math inline">\(Y_1,\ldots,Y_m\iid\Gaus{\mu_y}{\sigma_y^2},\)</span> với <span class="math inline">\(\mu_x,\sigma_x, \mu_y,\sigma_y\)</span> chưa biết, và ta muốn kiểm định <span class="math inline">\(\mu_x-\mu_y.\)</span> Đặt <span class="math display">\[ \bar{X}_n\is\frac{\sum_{i=1}^{n}X_i}{n},\quad
+<h3 data-number="6.2.4" class="anchored" data-anchor-id="two-sample-t-test"><span class="header-section-number">6.2.4</span> Two-sample <span class="math inline">\(t\)</span>-test</h3>
+<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus{\mu_x}{\sigma_x^2},\)</span> <span class="math inline">\(Y_1,\ldots,Y_m\iid\Gaus{\mu_y}{\sigma_y^2},\)</span> với <span class="math inline">\(\mu_x,\sigma_x, \mu_y,\sigma_y\)</span> chưa biết, và cần kiểm định <span class="math inline">\(\mu_x-\mu_y.\)</span> Đặt <span class="math display">\[ \bar{X}_n\is\frac{\sum_{i=1}^{n}X_i}{n},\quad
 \widehat{\sigma_x^2}\is\frac{\sum_{i=1}^{n}(X_i-\bar{X}_n)^2}{n-1}
 ,
 \]</span> <span class="math display">\[ \bar{Y}_m\is\frac{\sum_{i=1}^{m}Y_i}{m},\quad

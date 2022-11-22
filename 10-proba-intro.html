@@ -369,8 +369,14 @@ X_1,\ldots,X_n \iid X.
 <p>Ta có <span class="math display">\[
 \E{X+Y} \equiv \E{X} + E[Y].
 \]</span></p>
+<div id="def-sample-mean" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 1.13 (Sample mean) </strong></span>Cho mẫu <span class="math inline">\(X_1,\ldots,X_n\iid X.\)</span> Trung bình mẫu là <span class="math display">\[
+\bar{X}_n
+\is\frac{1}{n}\sum_{i=1}^{n} X_i.
+\]</span></p>
+</div>
 <div id="def-covar" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.13 (Hiệp phương sai) </strong></span><span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 1.14 (Hiệp phương sai) </strong></span><span class="math display">\[
 \begin{split}
 \Cov{X,Y} &amp;\is \E{(X-\E{X})(Y-\E{Y})} \\
 &amp;\equiv \E{XY} - \E{X}\E{Y}
@@ -379,13 +385,23 @@ X_1,\ldots,X_n \iid X.
 </div>
 <p>Nếu <span class="math inline">\(X\)</span> và <span class="math inline">\(Y\)</span> độc lập thì <span class="math inline">\(\Cov{X,Y} = 0\)</span>.</p>
 <div id="def-variance" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.14 (Phương sai) </strong></span>Phương sai, hay phân tán (variance) là <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 1.15 (Phương sai) </strong></span>Phương sai, hay phân tán (variance) là <span class="math display">\[
 \V{X}\is\Cov{X,X}\equiv\E{X^2}-(\E{X})^2.
 \]</span></p>
 </div>
-<p>Ta có <span class="math display">\[
+<div class="remark proof">
+<p><span class="proof-title"><em>Remark</em>. </span><span class="math display">\[
 \V{X+Y} \equiv \V{X}+\V{Y} + 2\Cov{X,Y}.
 \]</span></p>
+</div>
+<div id="def-unbiased-sample-variance" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 1.16 (Unbiased sample variance) </strong></span>Cho mẫu <span class="math inline">\(X_1,\ldots,X_n\iid X.\)</span> Phương sai mẫu không lệch (<a href="40-stat-intro.html#def-bias">ĐN&nbsp;<span>4.2</span></a>) là <span class="math display">\[
+S_n^2 \is\frac{\sum_{i=1}^{n}(X_i-\bar{X}_n)^2}{n-1}.
+\]</span> Ta có <span class="math inline">\(\E{S_n^2}\equiv\V{X}.\)</span></p>
+</div>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remark</em>. </span>Định lý Cochoran <a href="60-hypothesis-test.html#thm-cochoran">ĐL&nbsp;<span>6.1</span></a>.</p>
+</div>
 <div id="thm-iterated-expectations" class="theorem">
 <p><span class="theorem-title"><strong>Định lý 1.4 (Iterated Expectations) </strong></span>Với các biến <span class="math inline">\(X,Y,\)</span> giả sử các giá trị kỳ vọng tồn tại, ta có <span class="math display">\[
 \E{\E{Y|X}} \equiv \E{Y}
@@ -395,13 +411,13 @@ X_1,\ldots,X_n \iid X.
 <section id="tích-suất" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="tích-suất"><span class="header-section-number">1.6</span> Tích suất</h2>
 <div id="def-moment" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.15 (Tích suất) </strong></span>Tích suất (moment) thể hiện trọng tâm, độ phân tán, hay độ lệch của phân phối. Tích suất bậc <span class="math inline">\(n\)</span> của biến <span class="math inline">\(X\)</span> với mật độ <span class="math inline">\(f(x)\)</span> là:</p>
+<p><span class="theorem-title"><strong>Định nghĩa 1.17 (Tích suất) </strong></span>Tích suất (moment) thể hiện trọng tâm, độ phân tán, hay độ lệch của phân phối. Tích suất bậc <span class="math inline">\(n\)</span> của biến <span class="math inline">\(X\)</span> với mật độ <span class="math inline">\(f(x)\)</span> là:</p>
 </div>
 <p><span class="math display">\[
 \E{X^n}\is \int x^n f(x) dx
 \]</span></p>
 <div id="def-mgf" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.16 (Hàm tạo tích suất) </strong></span>“Moment generation function (MGF)” của biến <span class="math inline">\(X\)</span> là <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 1.18 (Hàm tạo tích suất) </strong></span>“Moment generation function (MGF)” của biến <span class="math inline">\(X\)</span> là <span class="math display">\[
 \psi_X(t)\is\E{e^{tX}}, t\in\R.
 \]</span></p>
 </div>
@@ -409,7 +425,7 @@ X_1,\ldots,X_n \iid X.
 \psi_X^{(k)}(0)\equiv \E{X^k}.
 \]</span></p>
 <div id="def-sample-moment" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 1.17 (Tích suất mẫu) </strong></span>Từ các quan sát <span class="math inline">\(X_1,\ldots X_n\iid \P_\theta, \theta\in\Theta\subset\R^d.\)</span> Để ước lượng tích suất <span class="math inline">\(\E{X^k}\)</span> ta có thể dùng các <em>sample moment</em>: <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 1.19 (Tích suất mẫu) </strong></span>Từ các quan sát <span class="math inline">\(X_1,\ldots X_n\iid \P_\theta, \theta\in\Theta\subset\R^d.\)</span> Để ước lượng tích suất <span class="math inline">\(\E{X^k}\)</span> ta có thể dùng các <em>sample moment</em>: <span class="math display">\[
 \hat{m}_k\is \frac{1}{n}\sum_{i=1}^n X_i^k,\quad k=1,2,\ldots.
 \]</span></p>
 </div>

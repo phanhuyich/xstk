@@ -191,7 +191,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#phân-kỳ-kl-1" id="toc-phân-kỳ-kl-1" class="nav-link" data-scroll-target="#phân-kỳ-kl-1"><span class="toc-section-number">5.2.1</span>  Phân kỳ KL</a></li>
   <li><a href="#đặc-điểm" id="toc-đặc-điểm" class="nav-link" data-scroll-target="#đặc-điểm"><span class="toc-section-number">5.2.2</span>  Đặc điểm</a></li>
   </ul></li>
-  <li><a href="#hợp-lý-cực-đại" id="toc-hợp-lý-cực-đại" class="nav-link" data-scroll-target="#hợp-lý-cực-đại"><span class="toc-section-number">5.3</span>  Hợp lý cực đại</a></li>
+  <li><a href="#hợp-lý-cực-đại" id="toc-hợp-lý-cực-đại" class="nav-link" data-scroll-target="#hợp-lý-cực-đại"><span class="toc-section-number">5.3</span>  Hợp lý cực đại</a>
+  <ul class="collapse">
+  <li><a href="#mle-hội-tụ" id="toc-mle-hội-tụ" class="nav-link" data-scroll-target="#mle-hội-tụ"><span class="toc-section-number">5.3.1</span>  MLE hội tụ</a></li>
+  </ul></li>
   <li><a href="#mix-model" id="toc-mix-model" class="nav-link" data-scroll-target="#mix-model"><span class="toc-section-number">5.4</span>  Mix model</a>
   <ul class="collapse">
   <li><a href="#giải-thuật-em" id="toc-giải-thuật-em" class="nav-link" data-scroll-target="#giải-thuật-em"><span class="toc-section-number">5.4.1</span>  Giải thuật EM</a></li>
@@ -316,35 +319,32 @@ $$
 <section id="hợp-lý-cực-đại" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="hợp-lý-cực-đại"><span class="header-section-number">5.3</span> Hợp lý cực đại</h2>
 <div id="def-likelihood" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 5.3 (Hợp lý, Likelihood) </strong></span><span class="math display">\[L_\theta(x_1,\ldots,x_n)\is
+<p><span class="theorem-title"><strong>Định nghĩa 5.3 (Likelihood) </strong></span><strong>Độ hợp lý</strong> của tham số <span class="math inline">\(\theta\)</span> là <span class="math display">\[L_n(x_1,\ldots,x_n; \theta)\is
 \P_\theta(X_1=x_1,\ldots,X_n=x_n)
-=
-\prod_{i=1}^n p_\theta(X_i=x_i)
 .\]</span></p>
 </div>
 <div id="def-likelihood" class="theorem definition">
 <p><span class="theorem-title"><strong>Định nghĩa 5.4 (Log likelihood) </strong></span><span class="math display">\[
-\ell_\theta(x_1,\ldots,x_n)\is
+\ell_n(x_1,\ldots,x_n)\is
 \ln
-L_\theta(x_1,\ldots,x_n)
-=
-\sum_{i=1}^n \ln p_\theta(X_i=x_i)
+L_\theta(x_1,\ldots,x_n; \theta)
 .
 \]</span></p>
 </div>
 <div id="def-mle" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 5.5 (Maximum Likelihood Estimator, MLE) </strong></span><span class="math display">\[
-\hat{\theta}_n \is
-\argmax_\theta
-L_\theta(x_1,\ldots,x_n)
-\equiv
-\argmax_\theta
-\ell_\theta(x_1,\ldots,x_n)
+<p><span class="theorem-title"><strong>Định nghĩa 5.5 (Maximum Likelihood Estimator, MLE) </strong></span>Điểm <strong>hợp lý cực đại</strong> là <span class="math display">\[
+\begin{split}
+\hat{\theta}_n
+\is\, &amp;\argmax_\theta L_n(x_1,\ldots,x_n; \theta)\\
+\equiv\, &amp;\argmax_\theta \ell_n(x_1,\ldots,x_n; \theta)
 .
+\end{split}
 \]</span></p>
 </div>
+<section id="mle-hội-tụ" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="mle-hội-tụ"><span class="header-section-number">5.3.1</span> MLE hội tụ</h3>
 <div id="def-fisher-info" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 5.6 (Fisher information) </strong></span>Giả sử log likelihood đối với một quan sát <span class="math inline">\(X\)</span> theo mô hình <span class="math inline">\(\theta\in\R\)</span> là <span class="math inline">\(\ell=\ell(\theta)\is\ln L_1(X,\theta), \theta\in\Theta\subset\R.\)</span> Giả sử <span class="math inline">\(\ell(\theta)\)</span> có đạo hàm bậc hai. Dưới một số điều kiện chuẩn, <strong>thông tin Fisher</strong> của mô hình được định nghĩa là</p>
+<p><span class="theorem-title"><strong>Định nghĩa 5.6 (Fisher information) </strong></span>Giả sử với <span class="math inline">\(n=1\)</span> quan sát <span class="math inline">\(X\)</span> có <span class="math inline">\(\ell(\theta)\is\ln L_1(X;\theta), \theta\in\R.\)</span> Giả sử <span class="math inline">\(\ell(\theta)\)</span> có đạo hàm bậc hai. Dưới một số điều kiện chuẩn, <strong>thông tin Fisher</strong> của mô hình là</p>
 <p><span class="math display">\[
 I(\theta)
 \is
@@ -353,10 +353,8 @@ I(\theta)
 = -\E{\frac{\partial^2\ell}{\partial\theta^2}}
 .
 \]</span></p>
-<p>Trường hợp mô hình đa biến, <span class="math inline">\(\theta\is(\theta_1,\ldots,\theta_k)\in\R^k:\)</span> <span class="math display">\[
-H_{ij} \is \frac{\partial^2\ell}{\partial\theta_i\partial\theta_j},
-\]</span> <span class="math display">\[
-I(\theta) \is -\E{
+<p>Với <span class="math inline">\(\theta\is(\theta_1,\ldots,\theta_k)\in\R^k,\)</span> đặt <span class="math inline">\(H_{ij} \is \frac{\partial^2\ell}{\partial\theta_i\partial\theta_j}:\)</span> <span class="math display">\[
+\vec{I}(\theta) \is -\E{
 \begin{pmatrix}
 H_{11} &amp; \cdots &amp; H_{1k} \\
 \vdots &amp; \ddots &amp; \vdots \\
@@ -368,7 +366,7 @@ H_{k1} &amp; \cdots &amp; H_{kk} \\
 <div id="thm-mle-asym" class="theorem">
 <p><span class="theorem-title"><strong>Định lý 5.2 (MLE hội tụ) </strong></span>Gọi <span class="math inline">\(\theta^*\in\Theta\)</span> là tham số <em>thật</em> cần tìm. Giả sử</p>
 <ol type="1">
-<li>Các tham số là indentifiable</li>
+<li>Các tham số là identifiable (<a href="40-stat-intro.html#def-identifiable-param">ĐN&nbsp;<span>4.2</span></a>)</li>
 <li>Support của <span class="math inline">\(\P_\theta\)</span> không phụ thuộc vào <span class="math inline">\(\theta\)</span> với mọi <span class="math inline">\(\theta\in\Theta\)</span></li>
 <li><span class="math inline">\(\theta^*\)</span> không nằm trên biên giới của <span class="math inline">\(\Theta\)</span></li>
 <li>Thông tin Fisher khả nghịch lân cận <span class="math inline">\(\theta^*\)</span></li>
@@ -380,12 +378,13 @@ H_{k1} &amp; \cdots &amp; H_{kk} \\
 \Gaus{0}{1}.\]</span></p>
 <p>Trường hợp mô hình đa biến, <span class="math inline">\(\theta\in\R^k:\)</span> <span class="math display">\[{n
 \left(\hat{\theta}_n^{MLE}-\theta^*\right)^T
-I(\theta^*)}
+\vec{I}(\theta^*)}
 \left(\hat{\theta}_n^{MLE}-\theta^*\right)
 \xrightarrow[n\to\infty]{(d)\textrm{ w.r.t.}\P_{\theta^*}}
 \chi_k^2.\]</span></p>
 <p>Chú ý là điều kiện số 2 dễ bị vi phạm, ví dụ <span class="math inline">\(X_i\iid\Unif[0, \theta]\)</span> mà lại cần tìm tham số <span class="math inline">\(\theta.\)</span></p>
 </div>
+</section>
 </section>
 <section id="mix-model" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="mix-model"><span class="header-section-number">5.4</span> Mix model</h2>

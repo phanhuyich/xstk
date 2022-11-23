@@ -311,9 +311,14 @@ H_1:&amp;\theta\in\Theta_1
 <p><span class="math display">\[
 \beta_\psi(\theta) \is \P_\theta(\psi=1) \equiv \P_\theta(R_\psi)\in[0,1]
 \]</span></p>
-<p>Vùng phủ nhận thường có dạng <span class="math display">\[
-R_\psi = \{X_i: T(X_i)\geq c\}
-\]</span> với <span class="math inline">\(T\)</span> là một lượng thống kê còn <span class="math inline">\(c\)</span> là một giá trị biên.</p>
+<div id="def-test-statistic" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 6.1 (Test statistic) </strong></span>Vùng phủ nhận thường có dạng <span class="math display">\[
+\begin{split}
+R_\psi &amp;= \{X: T(X)\geq c\},\\
+\psi &amp;= \indicator{T(X)\geq c}
+\end{split}
+\]</span> với <span class="math inline">\(T\)</span> là <strong>lượng kiểm định thống kê</strong> còn <span class="math inline">\(c\)</span> là giá trị biên.</p>
+</div>
 </section>
 <section id="mức-độ-lỗi" class="level3" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="mức-độ-lỗi"><span class="header-section-number">6.1.2</span> Mức độ lỗi</h3>
@@ -598,7 +603,7 @@ n\sum_{i=1}^K\frac{\left(\frac{N_i}{n}-\hat{p}_i\right)^2}{\hat{p}_i}
 <section id="kiểm-định-ks" class="level3" data-number="6.3.2">
 <h3 data-number="6.3.2" class="anchored" data-anchor-id="kiểm-định-ks"><span class="header-section-number">6.3.2</span> Kiểm định KS</h3>
 <div id="def-kolmogorov-smirnov" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 6.1 (Kiểm định Kolmogorov-Smirnov) </strong></span>Gọi <span class="math inline">\(F_n\)</span> là cdf thực nghiệm (<a href="40-stat-intro.html#def-emprical-cdf">ĐN&nbsp;<span>4.4</span></a>), <span class="math inline">\(F\)</span> là cdf thật (<a href="10-proba-intro.html#def-cdf">ĐN&nbsp;<span>1.2</span></a>) của <span class="math inline">\(X_1,\ldots,X_n\iid X.\)</span> Cho cdf liên tục <span class="math inline">\(F^0,\)</span> kiểm định giả thuyết <span class="math inline">\(H_0: F=F^0\)</span> v.s. <span class="math inline">\(H_1: F\neq F^0.\)</span> Định lượng kiểm định <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 6.2 (Kiểm định Kolmogorov-Smirnov) </strong></span>Gọi <span class="math inline">\(F_n\)</span> là cdf thực nghiệm (<a href="40-stat-intro.html#def-emprical-cdf">ĐN&nbsp;<span>4.7</span></a>), <span class="math inline">\(F\)</span> là cdf thật (<a href="10-proba-intro.html#def-cdf">ĐN&nbsp;<span>1.2</span></a>) của <span class="math inline">\(X_1,\ldots,X_n\iid X.\)</span> Cho cdf liên tục <span class="math inline">\(F^0,\)</span> kiểm định giả thuyết <span class="math inline">\(H_0: F=F^0\)</span> v.s. <span class="math inline">\(H_1: F\neq F^0.\)</span> Định lượng kiểm định <span class="math display">\[
 T_n\is\sup_{t\in\R}\sqrt{n}\left|F_n(t)-F^0(t)\right|
 \]</span> là pivotal.</p>
 </div>
@@ -624,7 +629,7 @@ T_n\equiv
 <section id="kiểm-định-kl" class="level3" data-number="6.3.3">
 <h3 data-number="6.3.3" class="anchored" data-anchor-id="kiểm-định-kl"><span class="header-section-number">6.3.3</span> Kiểm định KL</h3>
 <div id="def-kolmogorov-lilliefors" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 6.2 (Kolmogorov-Lilliefors test) </strong></span>Trong tiền đề của <a href="#def-kolmogorov-smirnov">ĐN&nbsp;<span>6.1</span></a>, nếu bỏ điều kiện <span class="math inline">\(F_0\)</span> cố định, thay vào đó là kiểm chứng phân phối <span class="math inline">\(\P\)</span> thuộc hệ phân phối chuẩn <span class="math inline">\(\{\Gaus{\mu}{\sigma^2}.\)</span> Gọi MLE là <span class="math inline">\(\hat{\mu},\hat{\sigma}^2\)</span>, định lượng kiểm định <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 6.3 (Kolmogorov-Lilliefors test) </strong></span>Trong tiền đề của <a href="#def-kolmogorov-smirnov">ĐN&nbsp;<span>6.2</span></a>, nếu bỏ điều kiện <span class="math inline">\(F_0\)</span> cố định, thay vào đó là kiểm chứng phân phối <span class="math inline">\(\P\)</span> thuộc hệ phân phối chuẩn <span class="math inline">\(\{\Gaus{\mu}{\sigma^2}.\)</span> Gọi MLE là <span class="math inline">\(\hat{\mu},\hat{\sigma}^2\)</span>, định lượng kiểm định <span class="math display">\[
 T_n\is\sup_{t\in\R}\sqrt{n}\left|F_n(t)-\Phi_{\hat{\mu},\hat{\sigma}^2}(t)\right|
 \]</span> là pivotal.</p>
 </div>

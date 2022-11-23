@@ -243,9 +243,15 @@ $$
 <section id="mô-hình" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="mô-hình"><span class="header-section-number">4.1</span> Mô hình</h2>
 <p>Trên không gian đo được <span class="math inline">\(E\subseteq\R\)</span> ta quan sát các mẫu <span class="math inline">\(X_1,\ldots,X_n\iid\P\)</span>. Với tập tham số <span class="math inline">\(\Theta\)</span> ta xây dựng bộ độ đo xác suất <span class="math inline">\((\P_\theta)_{\theta\in\Theta}\)</span> để mô phỏng <span class="math inline">\(\P\)</span> .</p>
-<p>Nếu tồn tại <span class="math inline">\(\theta\in\Theta\)</span> để <span class="math inline">\(\P_\theta\equiv\P\)</span> thì ta nói mô hình “hợp lệ” (well specified).</p>
-<p>Nếu từ tập <span class="math inline">\(\Theta\)</span>, ánh xạ <span class="math inline">\(\theta\mapsto\P_{\theta}\)</span> là đơn ánh thì ta nói <span class="math inline">\(\theta\)</span> (hoặc <span class="math inline">\(\P_\theta\)</span>) là “có thể xác định” (identifiable).</p>
-<p>Nếu <span class="math inline">\(\Theta\subseteq\R^d\)</span> thì mô hình được nói có số biến hữu hạn (parametric model).</p>
+<div id="def-well-specified" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 4.1 (well specified) </strong></span>Nếu tồn tại <span class="math inline">\(\theta\in\Theta\)</span> để <span class="math inline">\(\P_\theta\equiv\P\)</span> thì ta nói mô hình <strong>hợp lệ</strong>.</p>
+</div>
+<div id="def-identifiable-param" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 4.2 (identifiable parameter) </strong></span>Nếu từ tập <span class="math inline">\(\Theta\)</span>, ánh xạ <span class="math inline">\(\theta\mapsto\P_{\theta}\)</span> là đơn ánh thì ta nói <span class="math inline">\(\theta\)</span> (hoặc <span class="math inline">\(\P_\theta\)</span>) là <strong>có thể xác định</strong>.</p>
+</div>
+<div id="def-parametric-model" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 4.3 (parametric model) </strong></span>Nếu <span class="math inline">\(\Theta\subseteq\R^d\)</span> thì mô hình được nói có <strong>số biến hữu hạn</strong>.</p>
+</div>
 </section>
 <section id="ước-lượng" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="ước-lượng"><span class="header-section-number">4.2</span> Ước lượng</h2>
@@ -253,16 +259,16 @@ $$
 <p>Đánh giá (estimator) <span class="math inline">\(\theta_n\)</span> đối với mục tiêu thống kê <span class="math inline">\(\theta\)</span> là một thống kê khác không phụ thuộc vào <span class="math inline">\(\theta\)</span>.</p>
 <p>Đánh giá được gọi là nhất quán (consistent) nếu nó hội tụ về mục tiêu (<a href="30-proba-converge.html#def-conv-proba">ĐN&nbsp;<span>3.2</span></a>).</p>
 <div id="def-pivot-stat" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 4.1 (Pivotal statistic) </strong></span>Một phân phối hay một ước lượng được gọi là pivotal nếu nó không phụ thuộc vào phân phối chưa biết và giá trị cụ thể của dữ liệu.</p>
+<p><span class="theorem-title"><strong>Định nghĩa 4.4 (Pivotal statistic) </strong></span>Một phân phối hay một ước lượng được gọi là pivotal nếu nó không phụ thuộc vào phân phối chưa biết và giá trị cụ thể của dữ liệu.</p>
 </div>
 </section>
 <section id="sai-số" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="sai-số"><span class="header-section-number">4.3</span> Sai số</h2>
 <div id="def-bias" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 4.2 (Độ lệch, bias) </strong></span>giữa đánh giá <span class="math inline">\(\theta_n\)</span> với mục tiêu <span class="math inline">\(\theta\)</span> là <span class="math display">\[\textrm{bias}_{\theta}({\theta}_n) \is \E{\theta_n} - \theta.\]</span> Nếu độ lệch bằng <span class="math inline">\(0\)</span> ta nói đánh giá không lệch (unbiased).</p>
+<p><span class="theorem-title"><strong>Định nghĩa 4.5 (Độ lệch, bias) </strong></span>giữa đánh giá <span class="math inline">\(\theta_n\)</span> với mục tiêu <span class="math inline">\(\theta\)</span> là <span class="math display">\[\textrm{bias}_{\theta}({\theta}_n) \is \E{\theta_n} - \theta.\]</span> Nếu độ lệch bằng <span class="math inline">\(0\)</span> ta nói đánh giá không lệch (unbiased).</p>
 </div>
 <div id="def-mse" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 4.3 (Sai số bậc 2, quadratic risk, mean squared error) </strong></span>giữa đánh giá <span class="math inline">\(\theta_n\)</span> với mục tiêu <span class="math inline">\(\theta\)</span> là <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 4.6 (Sai số bậc 2, quadratic risk, mean squared error) </strong></span>giữa đánh giá <span class="math inline">\(\theta_n\)</span> với mục tiêu <span class="math inline">\(\theta\)</span> là <span class="math display">\[
 \textrm{MSE}(\theta_n)\is\E{(\theta_n-\theta)^2}
 \equiv
 \textrm{bias}_{\theta}(\theta_n)^2
@@ -279,7 +285,7 @@ $$
 <section id="định-lý-cơ-bản" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="định-lý-cơ-bản"><span class="header-section-number">4.5</span> Định lý cơ bản</h2>
 <div id="def-emprical-cdf" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 4.4 (Empirical cdf) </strong></span>Với <span class="math inline">\(X_1,\ldots,X_n\iid X,\)</span> ước lượng phân phối tích lũy (<a href="10-proba-intro.html#def-cdf">ĐN&nbsp;<span>1.2</span></a>) của <span class="math inline">\(X\)</span> là hàm tăng đơn điệu và liên tục bên phải <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 4.7 (Empirical cdf) </strong></span>Với <span class="math inline">\(X_1,\ldots,X_n\iid X,\)</span> ước lượng phân phối tích lũy (<a href="10-proba-intro.html#def-cdf">ĐN&nbsp;<span>1.2</span></a>) của <span class="math inline">\(X\)</span> là hàm tăng đơn điệu và liên tục bên phải <span class="math display">\[
 F_n:\R\to[0,1],
 F_n(t)\is
 \frac{1}{n}
@@ -313,7 +319,7 @@ n&gt;N \implies
 \todist
 Z\sim
 \sup_{0\leq x \leq 1}|B(x)|
-,\]</span> với <span class="math inline">\(Z\)</span> là phân phối của đỉnh giá trị tuyệt đối của <strong>Brownian bridge</strong>, và là phân phối pivotal(<a href="#def-pivot-stat">ĐN&nbsp;<span>4.1</span></a>).</p>
+,\]</span> với <span class="math inline">\(Z\)</span> là phân phối của đỉnh giá trị tuyệt đối của <strong>Brownian bridge</strong>, và là phân phối pivotal(<a href="#def-pivot-stat">ĐN&nbsp;<span>4.4</span></a>).</p>
 </div>
 
 

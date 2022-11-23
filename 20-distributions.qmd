@@ -1,7 +1,5 @@
 # Phân phối
 
-Có một số phân phối xác suất thông dụng.
-
 ## Phân phối Bernoulli
 ::: {#def-bernoulli}
 ### Bernoulli distribution
@@ -64,8 +62,6 @@ $$\E{K}=1/p,\V{K}=(1-p)/p^2.$$
 
 :::
 
-## Phân phối liên tục
-
 ## Phân phối đều
 :::{#def-uniform}
 ### Uniform distribution
@@ -74,14 +70,17 @@ $$
 f(x)\is
 \frac{x-a}{b-a}
 \textrm{ for }
-x\in[a,b]
+x\in[a,b].
 $$
-và
+:::
+:::{.remark}
 $$\E{X} = \frac{a+b}{2}, \V{X}=\frac{(b-a)^2}{12}.$$
 :::
 
+:::{.remark}
 Nếu biến $X$ có cdf $F$ (@def-cdf) khả nghịch thì
 $F(X)\sim\Unif[0,1].$
+:::
 
 ## Phân phối mũ
 :::{#def-expdist}
@@ -98,26 +97,32 @@ $$\E{X}=1/\lambda,\V{X}=1/\lambda^2.$$
 
 ## Phân phối chuẩn
 :::{#def-gaussian}
-### Gaussian Distribution
-$X\sim\Gaus{\mu}{\sigma^2}$ có
+### Normal/Gaussian Distribution
+Phân phối chuẩn
+$X\sim\Gaus{\mu, \sigma^2}$ có
 mật độ
 $$
 f(x) =
 \frac{1}{\sqrt{\pi 2\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right),
-x\in\R
+x\in\R.
 $$
-và
+:::
+:::{.remark}
 $\E{X}=\mu,\V{X}=\sigma^2$.
+:::
+:::{#def-standard-normal-dist}
+### Standard Normal Distribution
+$\Gaus{0,1}$ là **phân phối chuẩn tắc**.
 :::
 
 :::{#thm-sum-gaussian}
-### Tổng của các phân phối chuẩn
+### Cộng phân phối chuẩn
 Nếu
-$X_i \sim\Gaus{\mu_i}{\sigma_i^2} (i=1,\ldots,n)$
-thì
+$X_i \sim\Gaus{\mu_i, \sigma_i^2}, i=1,\ldots,n$
+độc lập thì
 
 $$\sum_{i=1}^n X_i\sim
-\Gaus{\sum_{i=1}^n \mu_i}{\sum_{i=1}^n \sigma_i^2}
+\Gaus{\sum_{i=1}^n \mu_i, \sum_{i=1}^n \sigma_i^2}
 .$$
 :::
 
@@ -135,7 +140,7 @@ $\boldsymbol{v}$
 ### Phân phối $\chi^2$
 $X\sim\chi_k^2$ là
 tổng bình phương của
-$X_1,\ldots,X_k\iid\Gaus{0}{1}$
+$X_1,\ldots,X_k\iid\Gaus{0, 1}$
 
 $$
 X \is \sum_{i=0}^k X_i^2
@@ -149,7 +154,7 @@ $\E{X}=k,\V{X}=2k$.
 :::{#def-student-dist}
 ### Student's T distribution
 
-Nếu có $Z\sim\Gaus{0}{1}, V\sim \chi_k^2$ độc lập với nhau thì
+Nếu có $Z\sim\Gaus{0, 1}, V\sim \chi_k^2$ độc lập với nhau thì
 
 $$
 X \is \frac{Z}{\sqrt{V/k}}
@@ -161,7 +166,7 @@ tuân theo phân phối Student's $t_k$.
 ## Phân phối Beta
 :::{#def-beta-dist}
 ### Beta distribution
-$X\sim\Beta{\alpha}{\beta},$
+$X\sim\Betad{\alpha, \beta},$
 tham số
 $\alpha>0,\beta>0$
 có mật độ trên $x\in [0,1]$ là
@@ -172,8 +177,6 @@ $$
 $B(\alpha,\beta)$ là hằng số chuẩn hóa.
 :::
 :::{.remark}
-$X\sim\Beta{\alpha}{\beta}$
-có
 $$
 \begin{split}
 \E{X}&=\frac{\alpha}{\alpha+\beta},\\
@@ -185,12 +188,11 @@ $$
 
 :::{.remark}
 Phân phối Beta có đồ thị rất linh hoạt trên khoảng $[0,1],$
-phù hợp làm xác suất tiền nghiệm (@def-bayesian-method)
-cho tham số $p\in[0,1].$
+phù hợp làm xác suất tiền nghiệm (@def-bayesian-method).
 :::
 
 :::{#exm-unif-beta}
-$\Unif[0,1] = \Beta{1}{1}.$
+$\Unif[0,1] = \Betad{1, 1}.$
 :::
 
 ## Phân phối Gamma

@@ -177,7 +177,7 @@ Khi đó, chuỗi $\hat{\theta}_n^{MLE}$ thỏa mãn:
 $$\hat{\theta}_n^{MLE} \xrightarrow[n\to\infty]{\P_{\theta^*}}\theta^*$$
 $$\sqrt{n I(\theta^*)}\left(\hat{\theta}_n^{MLE}-\theta^*\right)
 \xrightarrow[n\to\infty]{(d)\textrm{ w.r.t.}\P_{\theta^*}}
-\Gaus{0}{1}.$$
+\Gaus{0,1}.$$
 
 Trường hợp mô hình đa biến, $\theta\in\R^k:$
 $${n

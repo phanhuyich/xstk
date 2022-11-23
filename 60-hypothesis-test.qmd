@@ -131,7 +131,7 @@ W \is
 \sqrt{n{I}(\hat{\theta})}
 \left(\hat{\theta}-\theta\right)
 \xrightarrow[n\to\infty]{(d)}
-Z\sim\Gaus{0}{1}.
+Z\sim\Gaus{0,1}.
 $$
 
 | Giả thuyết                                      | Kiểm định Wald                        | asymp. p-value      |
@@ -148,7 +148,7 @@ là một quan sát đối với $W.$
 ### Định lý Cochran
 
 :::{#thm-cochoran}
-Giả sử $X_1,\ldots,X_n\iid\Gaus{\mu}{\sigma^2}$
+Giả sử $X_1,\ldots,X_n\iid\Gaus{\mu, \sigma^2}$
 có phương sai mẫu không lệch (@def-unbiased-sample-variance)
 là $S_n^2.$
 Khi đó
@@ -164,7 +164,7 @@ và $\bar{X}_n, S_n^2$ độc lập với nhau.
 
 ### Student's $t$-test
 
-Giả sử $X_1,\ldots,X_n\iid\Gaus{\mu}{\sigma^2}$ theo phân phối chuẩn (@def-gaussian),
+Giả sử $X_1,\ldots,X_n\iid\Gaus{\mu, \sigma^2}$ theo phân phối chuẩn (@def-gaussian),
 $\mu,\sigma$ chưa biết, và cần kiểm định $\mu.$
 Theo @thm-cochoran,
 $$
@@ -191,8 +191,8 @@ $T.$
 ### Two-sample $t$-test
 
 Giả sử
-$X_1,\ldots,X_n\iid\Gaus{\mu_x}{\sigma_x^2},$
-$Y_1,\ldots,Y_m\iid\Gaus{\mu_y}{\sigma_y^2},$
+$X_1,\ldots,X_n\iid\Gaus{\mu_x, \sigma_x^2},$
+$Y_1,\ldots,Y_m\iid\Gaus{\mu_y, \sigma_y^2},$
 với
 $\mu_x,\sigma_x, \mu_y,\sigma_y$
 chưa biết, và cần kiểm định $\mu_x-\mu_y.$
@@ -398,7 +398,7 @@ nếu bỏ điều kiện $F_0$ cố định,
 thay vào đó là
 kiểm chứng phân phối $\P$ thuộc
 hệ phân phối chuẩn
-$\{\Gaus{\mu}{\sigma^2}.$
+$\{\Gaus{\mu, \sigma^2}.$
 Gọi MLE là $\hat{\mu},\hat{\sigma}^2$,
 định lượng kiểm định
 $$

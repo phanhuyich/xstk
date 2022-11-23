@@ -196,15 +196,15 @@ $$
 \def\argmin{\operatorname*{argmin}}
 \def\as{\textrm{a.s.}}
 \def\Ber{\text{Ber}}
-\def\Beta#1#2{\text{Beta}\left(#1,#2\right)}
+\def\Betad#1{\text{Beta}\left(#1\right)}
 \def\Binom{\text{Binom}}
 \def\Geom{\text{Geom}}
 \def\Unif{\text{Unif}}
 \def\E#1{\mathbb{E}\left[#1\right]}
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{\coloneqq}
-\def\Gauk#1#2#3{\mathcal{N}_{#1}\left(#2,#3\right)}
-\def\Gaus#1#2{\Gauk{}{#1}{#2}}
+\def\Gauk#1#2{\mathcal{N}_{#1}\left(#2\right)}
+\def\Gaus#1{\Gauk{}{#1}}
 \def\indicator#1{\mathbb{1}\{#1\}}
 \def\p{\vec{p}}
 \def\P{\mathbb{P}}
@@ -284,9 +284,10 @@ L_n(X_1,\ldots,X_n|\theta)
 <div id="exm-jeffreys-prior" class="theorem example">
 <p><span class="theorem-title"><strong>Ví dụ 7.2 </strong></span>&nbsp;</p>
 <ul>
-<li>Thí nghiệm <span class="math inline">\(\Ber(p), p\in(0,1)\)</span> có <span class="math display">\[\pi_J(p)\propto\frac{1}{\sqrt{p(1-p)}}\propto\Beta{\frac{1}{2}}{\frac{1}{2}}
+<li>Thí nghiệm <span class="math inline">\(\Ber(p), p\in(0,1)\)</span> có <span class="math display">\[\pi_J(p)\propto\frac{1}{\sqrt{p(1-p)}}\propto
+\Betad{\frac{1}{2}, \frac{1}{2}}
 .\]</span></li>
-<li>Thí nghiệm <span class="math inline">\(\Gaus{\mu}{\sigma^2}, (\mu,\sigma^2)\in\R\times\R_+\)</span> có <span class="math inline">\(\pi_J(\mu,\sigma^2)\propto \sigma^{-3}\)</span> là improper prior.</li>
+<li>Thí nghiệm <span class="math inline">\(\Gaus{\mu, \sigma^2}, (\mu,\sigma^2)\in\R\times\R_+\)</span> có <span class="math inline">\(\pi_J(\mu,\sigma^2)\propto \sigma^{-3}\)</span> là improper prior.</li>
 </ul>
 </div>
 <div id="thm-invariant-jeffreys" class="theorem">

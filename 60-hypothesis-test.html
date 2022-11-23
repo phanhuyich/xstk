@@ -214,15 +214,15 @@ $$
 \def\argmin{\operatorname*{argmin}}
 \def\as{\textrm{a.s.}}
 \def\Ber{\text{Ber}}
-\def\Beta#1#2{\text{Beta}\left(#1,#2\right)}
+\def\Betad#1{\text{Beta}\left(#1\right)}
 \def\Binom{\text{Binom}}
 \def\Geom{\text{Geom}}
 \def\Unif{\text{Unif}}
 \def\E#1{\mathbb{E}\left[#1\right]}
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{\coloneqq}
-\def\Gauk#1#2#3{\mathcal{N}_{#1}\left(#2,#3\right)}
-\def\Gaus#1#2{\Gauk{}{#1}{#2}}
+\def\Gauk#1#2{\mathcal{N}_{#1}\left(#2\right)}
+\def\Gaus#1{\Gauk{}{#1}}
 \def\indicator#1{\mathbb{1}\{#1\}}
 \def\p{\vec{p}}
 \def\P{\mathbb{P}}
@@ -392,7 +392,7 @@ W \is
 \sqrt{n{I}(\hat{\theta})}
 \left(\hat{\theta}-\theta\right)
 \xrightarrow[n\to\infty]{(d)}
-Z\sim\Gaus{0}{1}.
+Z\sim\Gaus{0,1}.
 \]</span></p>
 <table class="table">
 <colgroup>
@@ -430,7 +430,7 @@ Z\sim\Gaus{0}{1}.
 <section id="định-lý-cochran" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="định-lý-cochran"><span class="header-section-number">6.2.2</span> Định lý Cochran</h3>
 <div id="thm-cochoran" class="theorem">
-<p><span class="theorem-title"><strong>Định lý 6.1 </strong></span>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus{\mu}{\sigma^2}\)</span> có phương sai mẫu không lệch (<a href="10-proba-intro.html#def-unbiased-sample-variance">ĐN&nbsp;<span>1.21</span></a>) là <span class="math inline">\(S_n^2.\)</span> Khi đó <span class="math display">\[
+<p><span class="theorem-title"><strong>Định lý 6.1 </strong></span>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus{\mu, \sigma^2}\)</span> có phương sai mẫu không lệch (<a href="10-proba-intro.html#def-unbiased-sample-variance">ĐN&nbsp;<span>1.21</span></a>) là <span class="math inline">\(S_n^2.\)</span> Khi đó <span class="math display">\[
 \frac{S_n^2}{\sigma^2}
 \sim
 \frac{\chi_{n-1}^2}{n-1}
@@ -441,7 +441,7 @@ Z\sim\Gaus{0}{1}.
 </section>
 <section id="students-t-test" class="level3" data-number="6.2.3">
 <h3 data-number="6.2.3" class="anchored" data-anchor-id="students-t-test"><span class="header-section-number">6.2.3</span> Student’s <span class="math inline">\(t\)</span>-test</h3>
-<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus{\mu}{\sigma^2}\)</span> theo phân phối chuẩn (<a href="20-distributions.html#def-gaussian">ĐN&nbsp;<span>2.7</span></a>), <span class="math inline">\(\mu,\sigma\)</span> chưa biết, và cần kiểm định <span class="math inline">\(\mu.\)</span> Theo <a href="#thm-cochoran">ĐL&nbsp;<span>6.1</span></a>, <span class="math display">\[
+<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus{\mu, \sigma^2}\)</span> theo phân phối chuẩn (<a href="20-distributions.html#def-gaussian">ĐN&nbsp;<span>2.7</span></a>), <span class="math inline">\(\mu,\sigma\)</span> chưa biết, và cần kiểm định <span class="math inline">\(\mu.\)</span> Theo <a href="#thm-cochoran">ĐL&nbsp;<span>6.1</span></a>, <span class="math display">\[
 T\is
 \frac{\bar{X}_n-\mu}{\sqrt{S_n^2/n}}
 \equiv
@@ -484,12 +484,12 @@ T\is
 </section>
 <section id="two-sample-t-test" class="level3" data-number="6.2.4">
 <h3 data-number="6.2.4" class="anchored" data-anchor-id="two-sample-t-test"><span class="header-section-number">6.2.4</span> Two-sample <span class="math inline">\(t\)</span>-test</h3>
-<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus{\mu_x}{\sigma_x^2},\)</span> <span class="math inline">\(Y_1,\ldots,Y_m\iid\Gaus{\mu_y}{\sigma_y^2},\)</span> với <span class="math inline">\(\mu_x,\sigma_x, \mu_y,\sigma_y\)</span> chưa biết, và cần kiểm định <span class="math inline">\(\mu_x-\mu_y.\)</span> Đặt <span class="math display">\[ \bar{X}_n\is\frac{\sum_{i=1}^{n}X_i}{n},\quad
+<p>Giả sử <span class="math inline">\(X_1,\ldots,X_n\iid\Gaus{\mu_x, \sigma_x^2},\)</span> <span class="math inline">\(Y_1,\ldots,Y_m\iid\Gaus{\mu_y, \sigma_y^2},\)</span> với <span class="math inline">\(\mu_x,\sigma_x, \mu_y,\sigma_y\)</span> chưa biết, và cần kiểm định <span class="math inline">\(\mu_x-\mu_y.\)</span> Đặt <span class="math display">\[ \bar{X}_n\is\frac{\sum_{i=1}^{n}X_i}{n},\quad
 \widehat{\sigma_x^2}\is\frac{\sum_{i=1}^{n}(X_i-\bar{X}_n)^2}{n-1}
 ,
 \]</span> <span class="math display">\[ \bar{Y}_m\is\frac{\sum_{i=1}^{m}Y_i}{m},\quad
 \widehat{\sigma_y^2}\is\frac{\sum_{i=1}^{m}(Y_i-\bar{Y}_m)^2}{m-1}
-.\]</span> Ta có Student’s T (<a href="20-distributions.html#def-student-dist">ĐN&nbsp;<span>2.10</span></a>) với độ tự do <span class="math inline">\(N\)</span> tuân theo công thức Welch-Satterthwaite: <span class="math display">\[
+.\]</span> Ta có Student’s T (<a href="20-distributions.html#def-student-dist">ĐN&nbsp;<span>2.11</span></a>) với độ tự do <span class="math inline">\(N\)</span> tuân theo công thức Welch-Satterthwaite: <span class="math display">\[
 \begin{split}
 &amp;\frac{(\bar{X}_n-\bar{Y}_m)-(\mu_x-\mu_y)}
 {\sqrt{\widehat{\sigma_x^2}/n + \widehat{\sigma_y^2}/m}}
@@ -623,7 +623,7 @@ T_n\equiv
 <section id="kiểm-định-kl" class="level3" data-number="6.3.3">
 <h3 data-number="6.3.3" class="anchored" data-anchor-id="kiểm-định-kl"><span class="header-section-number">6.3.3</span> Kiểm định KL</h3>
 <div id="def-kolmogorov-lilliefors" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 6.3 (Kolmogorov-Lilliefors test) </strong></span>Trong tiền đề của <a href="#def-kolmogorov-smirnov">ĐN&nbsp;<span>6.2</span></a>, nếu bỏ điều kiện <span class="math inline">\(F_0\)</span> cố định, thay vào đó là kiểm chứng phân phối <span class="math inline">\(\P\)</span> thuộc hệ phân phối chuẩn <span class="math inline">\(\{\Gaus{\mu}{\sigma^2}.\)</span> Gọi MLE là <span class="math inline">\(\hat{\mu},\hat{\sigma}^2\)</span>, định lượng kiểm định <span class="math display">\[
+<p><span class="theorem-title"><strong>Định nghĩa 6.3 (Kolmogorov-Lilliefors test) </strong></span>Trong tiền đề của <a href="#def-kolmogorov-smirnov">ĐN&nbsp;<span>6.2</span></a>, nếu bỏ điều kiện <span class="math inline">\(F_0\)</span> cố định, thay vào đó là kiểm chứng phân phối <span class="math inline">\(\P\)</span> thuộc hệ phân phối chuẩn <span class="math inline">\(\{\Gaus{\mu, \sigma^2}.\)</span> Gọi MLE là <span class="math inline">\(\hat{\mu},\hat{\sigma}^2\)</span>, định lượng kiểm định <span class="math display">\[
 T_n\is\sup_{t\in\R}\sqrt{n}\left|F_n(t)-\Phi_{\hat{\mu},\hat{\sigma}^2}(t)\right|
 \]</span> là pivotal.</p>
 </div>

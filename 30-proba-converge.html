@@ -201,15 +201,15 @@ $$
 \def\argmin{\operatorname*{argmin}}
 \def\as{\textrm{a.s.}}
 \def\Ber{\text{Ber}}
-\def\Beta#1#2{\text{Beta}\left(#1,#2\right)}
+\def\Betad#1{\text{Beta}\left(#1\right)}
 \def\Binom{\text{Binom}}
 \def\Geom{\text{Geom}}
 \def\Unif{\text{Unif}}
 \def\E#1{\mathbb{E}\left[#1\right]}
 \def\iid{\stackrel{iid}{\sim}}
 \def\is{\coloneqq}
-\def\Gauk#1#2#3{\mathcal{N}_{#1}\left(#2,#3\right)}
-\def\Gaus#1#2{\Gauk{}{#1}{#2}}
+\def\Gauk#1#2{\mathcal{N}_{#1}\left(#2\right)}
+\def\Gaus#1{\Gauk{}{#1}}
 \def\indicator#1{\mathbb{1}\{#1\}}
 \def\p{\vec{p}}
 \def\P{\mathbb{P}}
@@ -273,7 +273,7 @@ X_n \todist X \iff
 \frac{\sqrt{n}}{|\sigma|}
 \left({X}_n-X\right)
 \todist
-\Gaus{0}{1}.
+\Gaus{0,1}.
 \]</span></p>
 </div>
 </section>
@@ -330,7 +330,7 @@ X_n \todist X.
 \frac{\bar{X}_n-\mu}{|\sigma|}
 \right)
 \todist
-\Gaus{0}{1}.
+\Gaus{0,1}.
 \]</span></p>
 </div>
 </section>
@@ -352,23 +352,22 @@ X_n \todist X.
 \left(\frac{g(\theta_n)-g(\theta)}
 {g^\prime(\theta)}\right)
 \todist
-\Gaus{0}{1}
+\Gaus{0,1}
 \]</span></p>
 </div>
 <div id="thm-multivar-delta" class="theorem">
 <p><span class="theorem-title"><strong>Định lý 3.9 (Phương pháp Delta nhiều biến) </strong></span>Giả sử chuỗi <span class="math inline">\((\vec{\theta}_n)_{n\geq 1}\)</span> chuẩn tiến với phương sai <span class="math inline">\(\Sigma(\vec{\theta})\)</span> về <span class="math inline">\(\vec{\theta}\in\R^d:\)</span> <span class="math display">\[
 \sqrt{n}(\vec{\theta}_n-\vec{\theta})
-\todist\Gauk{d}{\vec{0}}{\Sigma}.
+\todist\Gauk{d}{\vec{0}, \Sigma}.
 \]</span></p>
 <p>Giả sử <span class="math inline">\(g:\R^d\to\R^k\)</span> có vi phân <span class="math inline">\(\nabla g\)</span> liên tục <span class="math inline">\((k&lt;d)\)</span>. Khi đó, <span class="math display">\[
 \sqrt{n}\left(g(\vec{\theta}_n)-g(\vec{\theta})\right)
-\todist\Gauk{k}
-{\vec{0}}{\Gamma}
+\todist\Gauk{k}{\vec{0}, \Gamma}
 ,
 \]</span></p>
 <p>với <span class="math inline">\(\Gamma\is\nabla g(\vec{\theta})^T \Sigma \nabla g(\vec{\theta}).\)</span> Nếu <span class="math inline">\(\Sigma\)</span> khả nghịch, <span class="math inline">\(\nabla g\)</span> rank <span class="math inline">\(k\)</span> thì <span class="math inline">\(\Gamma\)</span> khả nghịch, <span class="math display">\[
 \sqrt{n}\Gamma^{-1/2}\left(g(\vec{\theta}_n)-g(\vec{\theta})\right)
-\todist\Gauk{k}{\vec{0}}{\vec{I}_k}
+\todist\Gauk{k}{\vec{0}, \vec{I}_k}
 ,
 \]</span> <span class="math display">\[
 {n}\Gamma^{-1}\left(g(\vec{\theta}_n)-g(\vec{\theta})\right)^2

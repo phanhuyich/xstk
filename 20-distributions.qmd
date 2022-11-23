@@ -166,18 +166,32 @@ tham số
 $\alpha>0,\beta>0$
 có mật độ trên $x\in [0,1]$ là
 $$
-f(x) = Cx^{\alpha-1}(1-x)^{\beta-1}
+f(x) = \frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)}
 ,
 $$
-$C=C(\alpha,\beta)$ là hằng số chuẩn hóa.
+$B(\alpha,\beta)$ là hằng số chuẩn hóa.
+:::
+:::{.remark}
+$X\sim\Beta{\alpha}{\beta}$
+có
+$$
+\begin{split}
+\E{X}&=\frac{\alpha}{\alpha+\beta},\\
+\V{X}&=\frac{\alpha \beta }{(\alpha +\beta )^2(\alpha + \beta + 1)},\\
+\argmax f &= \frac{\alpha -1}{\alpha +\beta -2} \text { for } \alpha ,\beta > 1.
+\end{split}
+$$
 :::
 
+:::{.remark}
 Phân phối Beta có đồ thị rất linh hoạt trên khoảng $[0,1],$
-rất phù hợp để sử dụng làm xác suất tiền nghiệm (@def-bayesian-method)
-cho một tham số xác suất $p\in[0,1].$
+phù hợp làm xác suất tiền nghiệm (@def-bayesian-method)
+cho tham số $p\in[0,1].$
+:::
 
-Ví dụ
+:::{#exm-unif-beta}
 $\Unif[0,1] = \Beta{1}{1}.$
+:::
 
 ## Phân phối Gamma
 

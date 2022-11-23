@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.262">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -349,12 +349,25 @@ X \is \frac{Z}{\sqrt{V/k}}
 <h2 data-number="2.11" class="anchored" data-anchor-id="phân-phối-beta"><span class="header-section-number">2.11</span> Phân phối Beta</h2>
 <div id="def-beta-dist" class="theorem definition">
 <p><span class="theorem-title"><strong>Định nghĩa 2.11 (Beta distribution) </strong></span><span class="math inline">\(X\sim\Beta{\alpha}{\beta},\)</span> tham số <span class="math inline">\(\alpha&gt;0,\beta&gt;0\)</span> có mật độ trên <span class="math inline">\(x\in [0,1]\)</span> là <span class="math display">\[
-f(x) = Cx^{\alpha-1}(1-x)^{\beta-1}
+f(x) = \frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)}
 ,
-\]</span> <span class="math inline">\(C=C(\alpha,\beta)\)</span> là hằng số chuẩn hóa.</p>
+\]</span> <span class="math inline">\(B(\alpha,\beta)\)</span> là hằng số chuẩn hóa.</p>
 </div>
-<p>Phân phối Beta có đồ thị rất linh hoạt trên khoảng <span class="math inline">\([0,1],\)</span> rất phù hợp để sử dụng làm xác suất tiền nghiệm (<a href="70-bayes-stat.html#def-bayesian-method">ĐN&nbsp;<span>7.1</span></a>) cho một tham số xác suất <span class="math inline">\(p\in[0,1].\)</span></p>
-<p>Ví dụ <span class="math inline">\(\Unif[0,1] = \Beta{1}{1}.\)</span></p>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remark</em>. </span><span class="math inline">\(X\sim\Beta{\alpha}{\beta}\)</span> có <span class="math display">\[
+\begin{split}
+\E{X}&amp;=\frac{\alpha}{\alpha+\beta},\\
+\V{X}&amp;=\frac{\alpha \beta }{(\alpha +\beta )^2(\alpha + \beta + 1)},\\
+\argmax f &amp;= \frac{\alpha -1}{\alpha +\beta -2} \text { for } \alpha ,\beta &gt; 1.
+\end{split}
+\]</span></p>
+</div>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remark</em>. </span>Phân phối Beta có đồ thị rất linh hoạt trên khoảng <span class="math inline">\([0,1],\)</span> phù hợp làm xác suất tiền nghiệm (<a href="70-bayes-stat.html#def-bayesian-method">ĐN&nbsp;<span>7.1</span></a>) cho tham số <span class="math inline">\(p\in[0,1].\)</span></p>
+</div>
+<div id="exm-unif-beta" class="theorem example">
+<p><span class="theorem-title"><strong>Ví dụ 2.1 </strong></span><span class="math inline">\(\Unif[0,1] = \Beta{1}{1}.\)</span></p>
+</div>
 </section>
 <section id="phân-phối-gamma" class="level2" data-number="2.12">
 <h2 data-number="2.12" class="anchored" data-anchor-id="phân-phối-gamma"><span class="header-section-number">2.12</span> Phân phối Gamma</h2>

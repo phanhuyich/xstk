@@ -17,6 +17,8 @@ $$
 \def\P{\mathbb{P}}
 \def\Poiss{\text{Poiss}}
 \def\R{\mathbb{R}}
+\def\X{\vec{X}}
+\def\XX{\mathbb{X}}
 \def\V#1{\textrm{Var}\left(#1\right)}
 \def\Cov#1{\textrm{Cov}\left(#1\right)}
 \def\N{\mathbb{Z}_+}

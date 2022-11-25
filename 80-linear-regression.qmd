@@ -60,8 +60,6 @@ có
 $\E{\epsilon}\equiv 0, \Cov{X,\epsilon}\equiv 0.$
 :::
 
-## Bình phương tối thiểu
-
 :::{#def-least-squares-estimator}
 ### Least squares estimator, LSE
 Quan sát $(X_i, Y_i), i=1,\ldots,n.$ LSE là điểm cực tiểu của
@@ -79,4 +77,66 @@ $$
 \hat{b} &= \bar{Y} - \hat{a}\bar{X}.
 \end{split}
 $$
+:::
+
+## Hồi quy đa biến
+
+:::{#def-multivariate-linear-regression}
+### Multivariate regression
+
+Quan sát các cặp biến $(\X_i, Y_i), i=1,\ldots,n.$
+
+- $\X_i\in\R^p$: nhập liệu đa chiều (multivariate input, explanatory variables, covariates, independent variables)
+- $Y_i\in\R$: kết quả (output, response, explained variable, dependent variable)
+
+Giả sử tọa độ đầu tiên của các biến $\X_{i}$ đều là 1.
+Tìm hệ số $\vec{a}\in\R^p$ để
+
+$$Y_i = \X_i^T\vec{a} + \epsilon_i, i=1,\ldots,n
+,$$
+
+trong đó
+$\{\epsilon_i\}_{i=1,\ldots,n}$ là nhiễu.
+:::
+
+:::{#def-lse-multivars}
+### Least squares estimator, LSE in matrix form
+Sắp xếp
+
+$$
+\begin{split}
+\XX &\is
+\begin{pmatrix}
+\X_1^T\\
+\vdots\\
+\X_n^T\\
+\end{pmatrix}
+\in\R^{n\times p},\\
+\vec{\epsilon} &\is (\epsilon_1,\ldots,\epsilon_n)^T\in\R^n,\\
+\vec{Y} &\is (Y_1,\ldots,Y_n)^T \in \R^n,\\
+\implies \vec{Y} &= \XX \vec{a} + \vec{\epsilon}.
+\end{split}
+$$
+
+Ta có LSE
+$$
+$$
+
+$$
+\hat{\vec{a}} \is
+\argmin_{\vec{a}\in\R^p} \|\vec{Y} - \XX \vec{a}\|_2^2
+.$$
+:::
+
+:::{.remark}
+Nếu $\XX$ full rank:
+$$
+\hat{\vec{a}} \equiv (\XX^T\XX)^{-1}\XX^T\vec{Y}.
+$$
+
+Đặt $P\is \XX(\XX^T\XX)^{-1}\XX^T$ ta có
+$$
+\XX\hat{\vec{a}} = P\vec{Y} \equiv P^2\vec{Y},
+$$
+là xạ ảnh của $\vec{Y}$ lên không gian tuyến tính dựng trên các cột của $\XX .$
 :::

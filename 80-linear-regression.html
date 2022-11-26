@@ -183,7 +183,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#hồi-quy-tuyến-tính" id="toc-hồi-quy-tuyến-tính" class="nav-link active" data-scroll-target="#hồi-quy-tuyến-tính"><span class="toc-section-number">8.1</span>  Hồi quy tuyến tính</a></li>
-  <li><a href="#bình-phương-tối-thiểu" id="toc-bình-phương-tối-thiểu" class="nav-link" data-scroll-target="#bình-phương-tối-thiểu"><span class="toc-section-number">8.2</span>  Bình phương tối thiểu</a></li>
+  <li><a href="#hồi-quy-đa-biến" id="toc-hồi-quy-đa-biến" class="nav-link" data-scroll-target="#hồi-quy-đa-biến"><span class="toc-section-number">8.2</span>  Hồi quy đa biến</a></li>
   </ul>
 </nav>
     </div>
@@ -208,6 +208,8 @@ $$
 \def\P{\mathbb{P}}
 \def\Poiss{\text{Poiss}}
 \def\R{\mathbb{R}}
+\def\X{\vec{X}}
+\def\XX{\mathbb{X}}
 \def\V#1{\textrm{Var}\left(#1\right)}
 \def\Cov#1{\textrm{Cov}\left(#1\right)}
 \def\N{\mathbb{Z}_+}
@@ -270,9 +272,6 @@ b &amp;= \E{Y} - a\E{X}.
 \epsilon\is Y-(a X+b)
 ,\]</span> có <span class="math inline">\(\E{\epsilon}\equiv 0, \Cov{X,\epsilon}\equiv 0.\)</span></p>
 </div>
-</section>
-<section id="bình-phương-tối-thiểu" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="bình-phương-tối-thiểu"><span class="header-section-number">8.2</span> Bình phương tối thiểu</h2>
 <div id="def-least-squares-estimator" class="theorem definition">
 <p><span class="theorem-title"><strong>Định nghĩa 8.5 (Least squares estimator, LSE) </strong></span>Quan sát <span class="math inline">\((X_i, Y_i), i=1,\ldots,n.\)</span> LSE là điểm cực tiểu của tổng bình phương lỗi (sum of squared errors): <span class="math display">\[
 (\hat{a}, \hat{b}) \is
@@ -286,6 +285,51 @@ b &amp;= \E{Y} - a\E{X}.
 \hat{b} &amp;= \bar{Y} - \hat{a}\bar{X}.
 \end{split}
 \]</span></p>
+</div>
+</section>
+<section id="hồi-quy-đa-biến" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="hồi-quy-đa-biến"><span class="header-section-number">8.2</span> Hồi quy đa biến</h2>
+<div id="def-multivariate-linear-regression" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 8.6 (Multivariate regression) </strong></span>Quan sát các cặp biến <span class="math inline">\((\X_i, Y_i), i=1,\ldots,n.\)</span></p>
+<ul>
+<li><span class="math inline">\(\X_i\in\R^p\)</span>: nhập liệu đa chiều (multivariate input, explanatory variables, covariates, independent variables)</li>
+<li><span class="math inline">\(Y_i\in\R\)</span>: kết quả (output, response, explained variable, dependent variable)</li>
+</ul>
+<p>Giả sử tọa độ đầu tiên của các biến <span class="math inline">\(\X_{i}\)</span> đều là 1. Tìm hệ số <span class="math inline">\(\vec{a}\in\R^p\)</span> để</p>
+<p><span class="math display">\[Y_i = \X_i^T\vec{a} + \epsilon_i, i=1,\ldots,n
+,\]</span></p>
+<p>trong đó <span class="math inline">\(\{\epsilon_i\}_{i=1,\ldots,n}\)</span> là nhiễu.</p>
+</div>
+<div id="def-lse-multivars" class="theorem definition">
+<p><span class="theorem-title"><strong>Định nghĩa 8.7 (Least squares estimator, LSE in matrix form) </strong></span>Sắp xếp</p>
+<p><span class="math display">\[
+\begin{split}
+\XX &amp;\is
+\begin{pmatrix}
+\X_1^T\\
+\vdots\\
+\X_n^T\\
+\end{pmatrix}
+\in\R^{n\times p},\\
+\vec{\epsilon} &amp;\is (\epsilon_1,\ldots,\epsilon_n)^T\in\R^n,\\
+\vec{Y} &amp;\is (Y_1,\ldots,Y_n)^T \in \R^n,\\
+\implies \vec{Y} &amp;= \XX \vec{a} + \vec{\epsilon}.
+\end{split}
+\]</span></p>
+<p>Ta có LSE <span class="math display">\[
+\]</span></p>
+<p><span class="math display">\[
+\hat{\vec{a}} \is
+\argmin_{\vec{a}\in\R^p} \|\vec{Y} - \XX \vec{a}\|_2^2
+.\]</span></p>
+</div>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remark</em>. </span>Nếu <span class="math inline">\(\XX\)</span> full rank: <span class="math display">\[
+\hat{\vec{a}} \equiv (\XX^T\XX)^{-1}\XX^T\vec{Y}.
+\]</span></p>
+<p>Đặt <span class="math inline">\(P\is \XX(\XX^T\XX)^{-1}\XX^T\)</span> ta có <span class="math display">\[
+\XX\hat{\vec{a}} = P\vec{Y} \equiv P^2\vec{Y},
+\]</span> là xạ ảnh của <span class="math inline">\(\vec{Y}\)</span> lên không gian tuyến tính dựng trên các cột của <span class="math inline">\(\XX .\)</span></p>
 </div>
 
 

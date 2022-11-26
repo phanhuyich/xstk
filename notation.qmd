@@ -5,3 +5,4 @@
  $\R$ | Tập hợp số thực
  $\R_+$ | Tập hợp số thực dương
 $f(\alpha) \propto g(\alpha)$ | $f/g$ không phụ thuộc $\alpha$
+$\vec{M}^\tp$ | ma trận $\vec{M}$ chuyển vị, $\vec{M}^{\tp}_{i,j} \equiv \vec{M}_{j,i}$

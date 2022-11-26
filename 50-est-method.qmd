@@ -181,7 +181,7 @@ $$\sqrt{n I(\theta^*)}\left(\hat{\theta}_n^{MLE}-\theta^*\right)
 
 Trường hợp mô hình đa biến, $\theta\in\R^k:$
 $${n
-\left(\hat{\theta}_n^{MLE}-\theta^*\right)^T
+\left(\hat{\theta}_n^{MLE}-\theta^*\right)^\tp
 \vec{I}(\theta^*)}
 \left(\hat{\theta}_n^{MLE}-\theta^*\right)
 \xrightarrow[n\to\infty]{(d)\textrm{ w.r.t.}\P_{\theta^*}}

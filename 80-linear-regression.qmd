@@ -1,17 +1,24 @@
 # Hồi quy
 
+Hồi quy là phương pháp tìm quan hệ giữa
+nhập liệu và kết quả:
+
+- $X$: nhập liệu (input, features, explanatory variables, covariates, independent variables)
+- $Y$: kết quả (output, response, explained variable, dependent variable)
+
 Giả sử
-$(X_i, Y_i)_{i=1,\ldots,n}\iid \P_{(X,Y)}$
-với mật độ xác suất $h(x,y),$
-mật độ xác suất biên $h(x)$ và
-mật độ xác suất có điều kiện $h(y|x).$
+cặp biến
+$(X, Y) \sim \P_{X,Y}$
+có mật độ xác suất $f(x,y),$
+mật độ xác suất biên $f(x)$ và
+mật độ xác suất có điều kiện $f(y|x).$
 
 :::{#def-regression}
 ### Regression function
-Hồi quy là kỳ vọng về $Y$
+Hàm hồi quy là kỳ vọng về $Y$
 khi biết $X:$
 $$
-x\mapsto f(x) \is \E{Y|X=x} = \int y h(y|x) dy
+x\mapsto r(x) \is \E{Y|X=x} = \int y f(y|x) dy
 .$$
 :::
 
@@ -22,7 +29,7 @@ phân vị $q_{\alpha}$ cho $Y$
 khi biết $X=x:$
 $$
 x\mapsto q_{\alpha}(x) \textrm{ such that }
-\int_{-\infty}^{q_{\alpha}(x)} h(y|x) dy \equiv 1-\alpha
+\int_{-\infty}^{q_{\alpha}(x)} f(y|x) dy \equiv 1-\alpha
 .$$
 Đặt $\alpha=1/2$ ta có conditional median.
 :::
@@ -30,44 +37,48 @@ x\mapsto q_{\alpha}(x) \textrm{ such that }
 ## Hồi quy tuyến tính
 :::{#def-linear-regression}
 ### Theoretical linear regression
-Giả sử $\V{X}>0.$
 Đường
 hồi quy tuyến tính áp $Y$ lên $X$ là
-$y = a x + b$
-với hệ số
+$\hat{y} = r(x) = \beta_0 + \beta_1 x$
+với hệ số (intercept và slope) là
 $$
-(a, b) \is
-\argmin_{(\alpha,\beta)\in\R^2} \E{(Y-\alpha X-\beta)^2}.
-$$
-:::
-:::{.remark}
-Lấy đạo hàm từng phần và giải hệ phương trình ta có
-$$
-\begin{split}
-a &= \frac{\Cov{X,Y}}{\V{X}},\\
-b &= \E{Y} - a\E{X}.
-\end{split}
+(\beta_0, \beta_1) \is
+\argmin_{(a,b)\in\R^2} \E{(Y-a-b X)^2}.
 $$
 :::
 
 :::{#def-regression-noise}
 ### Noise
 Nhiễu
-$$
-\epsilon\is Y-(a X+b)
-,$$
-có
-$\E{\epsilon}\equiv 0, \Cov{X,\epsilon}\equiv 0.$
+$\epsilon\is Y-(\beta_0+\beta_1 X).$
 :::
+
+:::{#thm-linear-regression}
+Giả sử $\V{X}>0,$ ta có:
+$$
+\begin{split}
+\beta_0 &= \E{Y} - \beta_1\E{X},\\
+\beta_1 &= \frac{\Cov{X,Y}}{\V{X}},\\
+\E{\epsilon}&= 0, \Cov{X,\epsilon} = 0.
+\end{split}
+$$
+:::
+
+### LSE
 
 :::{#def-least-squares-estimator}
 ### Least squares estimator, LSE
-Quan sát $(X_i, Y_i), i=1,\ldots,n.$ LSE là điểm cực tiểu của
-tổng bình phương lỗi (sum of squared errors):
+Quan sát
+$(X_i, Y_i)_{i=1,\ldots,n}\iid \P_{(X,Y)}.$
+LSE là điểm cực tiểu của
+tổng bình phương độ lệch (residual sums of squares):
 $$
-(\hat{a}, \hat{b}) \is
-\argmin_{(\alpha,\beta)\in\R^2} \sum_{i=1}^{n}{(Y_i-\alpha X_i-\beta)^2}
-.$$
+\begin{split}
+(\hat{a}, \hat{b}) &\is
+\argmin_{(\beta_0,\beta_1)\in\R^2} \sum_{i=1}^{n}\epsilon_i^2,\\
+\epsilon_i&\is {(Y_i-\beta_0 X_i-\beta_1)}\quad i=1,\ldots,n.
+\end{split}
+$$
 :::
 :::{.remark}
 Lấy đạo hàm từng phần và giải hệ phương trình ta có
@@ -84,59 +95,98 @@ $$
 :::{#def-multivariate-linear-regression}
 ### Multivariate regression
 
-Quan sát các cặp biến $(\X_i, Y_i), i=1,\ldots,n.$
+Quan sát $(\X_i, Y_i), i=1,\ldots,n.$
 
-- $\X_i\in\R^p$: nhập liệu đa chiều (multivariate input, explanatory variables, covariates, independent variables)
+- $\X_i\in\R^p$: nhập liệu (input, features, explanatory variables, covariates, independent variables)
 - $Y_i\in\R$: kết quả (output, response, explained variable, dependent variable)
 
-Giả sử tọa độ đầu tiên của các biến $\X_{i}$ đều là 1.
-Tìm hệ số $\vec{a}\in\R^p$ để
-
-$$Y_i = \X_i^T\vec{a} + \epsilon_i, i=1,\ldots,n
-,$$
+Giả sử tọa độ đầu tiên của các $\X_{i}$ đều là 1.
+Tìm tham số $\vec{\beta}\in\R^p$ cho mô hình
+$$
+Y = \X^\tp\vec{\beta} + \epsilon,
+$$
+Ta có $n$ samples, $p$ covariates:
+$$
+Y_i = \X_i^\tp\vec{\beta} + \epsilon_i, i=1,\ldots,n,
+$$
 
 trong đó
 $\{\epsilon_i\}_{i=1,\ldots,n}$ là nhiễu.
 :::
 
+### LSE đa biến
+
 :::{#def-lse-multivars}
 ### Least squares estimator, LSE in matrix form
-Sắp xếp
+Đặt
 
 $$
 \begin{split}
 \XX &\is
 \begin{pmatrix}
-\X_1^T\\
+\X_1^\tp\\
 \vdots\\
-\X_n^T\\
+\X_n^\tp\\
 \end{pmatrix}
 \in\R^{n\times p},\\
-\vec{\epsilon} &\is (\epsilon_1,\ldots,\epsilon_n)^T\in\R^n,\\
-\vec{Y} &\is (Y_1,\ldots,Y_n)^T \in \R^n,\\
-\implies \vec{Y} &= \XX \vec{a} + \vec{\epsilon}.
+\vec{\epsilon} &\is (\epsilon_1,\ldots,\epsilon_n)^\tp\in\R^n,\\
+\vec{Y} &\is\begin{pmatrix}
+Y_1\\
+\vdots\\
+Y_n\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+\X_1^\tp\\
+\vdots\\
+\X_n^\tp\\
+\end{pmatrix}
+\vec{\beta} + \vec{\epsilon}
+=
+\XX\vec{\beta} + \vec{\epsilon}
+.
+\\
 \end{split}
 $$
 
-Ta có LSE
+Gọi $\XX$ là **design matrix**.
+Ta có
 $$
+\begin{split}
+\textrm{LSE}\quad \hat{\vec{\beta}} &\is
+\argmin_{\vec{\beta}\in\R^p} \|\vec{Y} - \XX \vec{\beta}\|_2^2.
+\end{split}
 $$
+:::
 
+:::{#thm-score-equation}
+### Score equation
 $$
-\hat{\vec{a}} \is
-\argmin_{\vec{a}\in\R^p} \|\vec{Y} - \XX \vec{a}\|_2^2
-.$$
+(\XX^\tp\XX)\hat{\vec{\beta}} \equiv \XX^\tp\vec{Y}.
+$$
+Nếu $\XX$ full rank thì
+$\hat{\vec{\beta}} \equiv (\XX^\tp\XX)^{-1}\XX^\tp\vec{Y}.$
 :::
 
 :::{.remark}
-Nếu $\XX$ full rank:
-$$
-\hat{\vec{a}} \equiv (\XX^T\XX)^{-1}\XX^T\vec{Y}.
-$$
-
-Đặt $P\is \XX(\XX^T\XX)^{-1}\XX^T$ ta có
-$$
-\XX\hat{\vec{a}} = P\vec{Y} \equiv P^2\vec{Y},
-$$
+Đặt $P\is \XX(\XX^\tp\XX)^{-1}\XX^\tp$ ta có
+$\hat{\vec{Y}}\is\XX\hat{\vec{\beta}} = P\vec{Y} \equiv P^2\vec{Y}$
 là xạ ảnh của $\vec{Y}$ lên không gian tuyến tính dựng trên các cột của $\XX .$
+:::
+
+:::{.remark}
+Giả định $\XX$ là hằng số. Khi đó
+tính ngẫu nhiên của
+$\vec{Y}$
+tuân theo tính ngẫu nhiên của
+$\vec{\epsilon}.$
+Để suy luận thống kê ta thường giả định thêm
+$\XX$ là full rank; $\epsilon_1,\ldots\epsilon_n$ là **homoscedastic** (iid).
+:::
+
+:::{#exm-homoscedastic-gaussian}
+### Homoscedastic gaussian
+Giả định $\XX$ là hằng số, full rank,
+$\epsilon_1,\ldots\epsilon_n\iid \Gaus{0,\sigma^2}.$
+Khi đó LSE trùng với MLE.
 :::

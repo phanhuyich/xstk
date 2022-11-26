@@ -52,6 +52,9 @@ là một quy tắc ánh xạ $X: \Omega\to\R$ gán cho
 mỗi hiện tượng $\omega$ trong không gian $\Omega$ một số thực
 $X(\omega).$
 :::
+:::{.remark}
+Biến $X$ không ngẫu nhiên thì được gọi là hằng số **deterministic/constant**.
+:::
 
 :::{#def-cdf}
 ### Hàm phân phối tích lũy, cumulative distribution function
@@ -59,21 +62,6 @@ là hàm tăng đơn điệu và liên tục bên phải
 $F:\R\to[0,1], F(x)\is\P(X\leq x)$
 với biến
 $X:\Omega\to \R.$
-:::
-
-::: {#def-quantile}
-### Phân vị
-Biến $X$ tuân theo phân phối tích lũy $F$
-có
-phân vị mức $1-\alpha$
-là $q_\alpha\is F^{-1}(1-\alpha).$
-:::
-
-:::{#def-median-mode}
-### Quartile, median, mode
-Ta gọi $q_{3/4}, q_{1/2}, q_{1/4}$
-là tứ phân vị đầu tiên (first quartile), trung vị (median), và tứ phân vị thứ ba.
-Gọi mode là giá trị biến số có xác suất cao nhất.
 :::
 
 :::{#def-pmf}
@@ -190,30 +178,50 @@ $$
 
 ## Đặc trưng
 
+### Phân vị
+
+::: {#def-quantile}
+### Quantile
+Biến $X$ tuân theo phân phối tích lũy $F$
+có
+phân vị mức $1-\alpha$
+là $q_\alpha\is F^{-1}(1-\alpha).$
+:::
+
+:::{#def-median-mode}
+### Quartile, median, mode
+Ta gọi $q_{3/4}, q_{1/2}, q_{1/4}$
+là tứ phân vị đầu tiên (first quartile), trung vị (median), và tứ phân vị thứ ba.
+Gọi mode là giá trị biến số có xác suất cao nhất.
+:::
+:::{.remark}
+Nếu $X$ liên tục thì median cực tiểu
+$m\mapsto\E{|X-m|}.$
+:::
+
 ### Trung bình
 
 ::: {#def-expectation}
-### Trung bình
+### Mean, expected value
 **Trung bình**, hay **giá trị kỳ vọng** của biến X là
 
 $$
 \E{X}\is
-\int x dF(x)
-\is
 \begin{cases}
-\sum_x x p(x) & \textrm{ if } X \textrm{ is discrete}\\
-\int x f(x) dx & \textrm{ if } X \textrm{ is continuous}.
+\displaystyle \sum_x x p(x) & \textrm{ nếu } X \textrm{ rời rạc}\\
+\displaystyle \int x f(x) dx & \textrm{ nếu } X \textrm{ liên tục}.
 \end{cases}
 $$
-:::
-
-Nếu giá trị $\int |x| dF(x) < \infty$ ta nói là $\E{X}$ "tồn tại"
+Nếu $\E{|X|} < \infty$ ta nói là $\E{X}$ "tồn tại"
 (well-defined).
-
-Ta có
-$$
-\E{X+Y} \equiv \E{X} + E[Y].
-$$
+:::
+:::{.remark}
+$\E{X+Y} \equiv \E{X} + E[Y].$
+:::
+:::{.remark}
+Nếu $X$ liên tục thì $\E{X}$ cực tiểu
+$m\mapsto\E{(X-m)^2}.$
+:::
 
 :::{#thm-iterated-expectations}
 ### Iterated Expectations
@@ -246,9 +254,35 @@ $$
 :::
 
 :::{.remark}
+Nếu $m$ là hằng số thì
+$\V{X-m}\equiv\V{X}.$
+:::
+:::{.remark}
+$\V{X+Y} \equiv \V{X}+\V{Y} + 2\Cov{X,Y}.$
+:::
+
+:::{#def-cov-mat}
+### Covariance matrix
+Cho $n$ biến ngẫu nhiên $X_1,\ldots,X_n\in\R,$
+đặt $\X\is (X_1,\ldots,X_n)^\tp\in\R^n,$
+ma trận hiệp phương sai là
+
 $$
-\V{X+Y} \equiv \V{X}+\V{Y} + 2\Cov{X,Y}.
+\begin{split}
+\Sigma_{\X}&\is
+\E{(\X-\E{X})(\X-\E{X})^\tp}\\
+&=
+\begin{pmatrix}
+\V{X_1} & \Cov{X_1,X_2} & \cdots & \Cov{X_1,X_n}\\
+\Cov{X_2,X_1} & \V{X_2} & \cdots & \Cov{X_2,X_n}\\
+\vdots &\vdots &\ddots &\vdots \\
+\Cov{X_n,X_1} & \Cov{X_n,X_2} & \cdots & \V{X_n}\\
+\end{pmatrix}.
+\end{split}
 $$
+:::
+:::{.remark}
+Nếu $\Y=M\X$ thì $\Sigma_{\Y} = M\Sigma_{\X}M^\tp.$
 :::
 
 ### Tích suất

@@ -161,6 +161,16 @@ ul.task-list li input[type="checkbox"] {
   <a href="./70-bayes-stat.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Hồi quy</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./80-linear-regression.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hồi quy</span></a>
@@ -182,8 +192,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#hồi-quy-tuyến-tính" id="toc-hồi-quy-tuyến-tính" class="nav-link active" data-scroll-target="#hồi-quy-tuyến-tính"><span class="toc-section-number">8.1</span>  Hồi quy tuyến tính</a></li>
-  <li><a href="#hồi-quy-đa-biến" id="toc-hồi-quy-đa-biến" class="nav-link" data-scroll-target="#hồi-quy-đa-biến"><span class="toc-section-number">8.2</span>  Hồi quy đa biến</a></li>
+  <li><a href="#hồi-quy-tuyến-tính" id="toc-hồi-quy-tuyến-tính" class="nav-link active" data-scroll-target="#hồi-quy-tuyến-tính"><span class="toc-section-number">8.1</span>  Hồi quy tuyến tính</a>
+  <ul class="collapse">
+  <li><a href="#lse" id="toc-lse" class="nav-link" data-scroll-target="#lse"><span class="toc-section-number">8.1.1</span>  LSE</a></li>
+  </ul></li>
+  <li><a href="#hồi-quy-đa-biến" id="toc-hồi-quy-đa-biến" class="nav-link" data-scroll-target="#hồi-quy-đa-biến"><span class="toc-section-number">8.2</span>  Hồi quy đa biến</a>
+  <ul class="collapse">
+  <li><a href="#lse-đa-biến" id="toc-lse-đa-biến" class="nav-link" data-scroll-target="#lse-đa-biến"><span class="toc-section-number">8.2.1</span>  LSE đa biến</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -204,14 +220,16 @@ $$
 \def\Gauk#1#2{\mathcal{N}_{#1}\left(#2\right)}
 \def\Gaus#1{\Gauk{}{#1}}
 \def\indicator#1{\mathbb{1}\{#1\}}
+\def\tp{\intercal}
 \def\p{\vec{p}}
 \def\P{\mathbb{P}}
 \def\Poiss{\text{Poiss}}
 \def\R{\mathbb{R}}
 \def\X{\vec{X}}
+\def\Y{\vec{Y}}
 \def\XX{\mathbb{X}}
-\def\V#1{\textrm{Var}\left(#1\right)}
-\def\Cov#1{\textrm{Cov}\left(#1\right)}
+\def\V#1{\mathbb{V}\left(#1\right)}
+\def\Cov#1{\V{#1}}
 \def\N{\mathbb{Z}_+}
 \def\TV{\textrm{TV}}
 \def\KL{\textrm{KL}}
@@ -239,44 +257,53 @@ $$
 
 </header>
 
-<p>Giả sử <span class="math inline">\((X_i, Y_i)_{i=1,\ldots,n}\iid \P_{(X,Y)}\)</span> với mật độ xác suất <span class="math inline">\(h(x,y),\)</span> mật độ xác suất biên <span class="math inline">\(h(x)\)</span> và mật độ xác suất có điều kiện <span class="math inline">\(h(y|x).\)</span></p>
+<p>Hồi quy là phương pháp tìm quan hệ giữa nhập liệu và kết quả:</p>
+<ul>
+<li><span class="math inline">\(X\)</span>: nhập liệu (input, features, explanatory variables, covariates, independent variables)</li>
+<li><span class="math inline">\(Y\)</span>: kết quả (output, response, explained variable, dependent variable)</li>
+</ul>
+<p>Giả sử cặp biến <span class="math inline">\((X, Y) \sim \P_{X,Y}\)</span> có mật độ xác suất <span class="math inline">\(f(x,y),\)</span> mật độ xác suất biên <span class="math inline">\(f(x)\)</span> và mật độ xác suất có điều kiện <span class="math inline">\(f(y|x).\)</span></p>
 <div id="def-regression" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 8.1 (Regression function) </strong></span>Hồi quy là kỳ vọng về <span class="math inline">\(Y\)</span> khi biết <span class="math inline">\(X:\)</span> <span class="math display">\[
-x\mapsto f(x) \is \E{Y|X=x} = \int y h(y|x) dy
+<p><span class="theorem-title"><strong>Định nghĩa 8.1 (Regression function) </strong></span>Hàm hồi quy là kỳ vọng về <span class="math inline">\(Y\)</span> khi biết <span class="math inline">\(X:\)</span> <span class="math display">\[
+x\mapsto r(x) \is \E{Y|X=x} = \int y f(y|x) dy
 .\]</span></p>
 </div>
 <div id="def-conditional-quantile" class="theorem definition">
 <p><span class="theorem-title"><strong>Định nghĩa 8.2 (Conditional quantile) </strong></span>Cho <span class="math inline">\(\alpha\in[0,1],\)</span> phân vị <span class="math inline">\(q_{\alpha}\)</span> cho <span class="math inline">\(Y\)</span> khi biết <span class="math inline">\(X=x:\)</span> <span class="math display">\[
 x\mapsto q_{\alpha}(x) \textrm{ such that }
-\int_{-\infty}^{q_{\alpha}(x)} h(y|x) dy \equiv 1-\alpha
+\int_{-\infty}^{q_{\alpha}(x)} f(y|x) dy \equiv 1-\alpha
 .\]</span> Đặt <span class="math inline">\(\alpha=1/2\)</span> ta có conditional median.</p>
 </div>
 <section id="hồi-quy-tuyến-tính" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="hồi-quy-tuyến-tính"><span class="header-section-number">8.1</span> Hồi quy tuyến tính</h2>
 <div id="def-linear-regression" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 8.3 (Theoretical linear regression) </strong></span>Giả sử <span class="math inline">\(\V{X}&gt;0.\)</span> Đường hồi quy tuyến tính áp <span class="math inline">\(Y\)</span> lên <span class="math inline">\(X\)</span> là <span class="math inline">\(y = a x + b\)</span> với hệ số <span class="math display">\[
-(a, b) \is
-\argmin_{(\alpha,\beta)\in\R^2} \E{(Y-\alpha X-\beta)^2}.
-\]</span></p>
-</div>
-<div class="remark proof">
-<p><span class="proof-title"><em>Remark</em>. </span>Lấy đạo hàm từng phần và giải hệ phương trình ta có <span class="math display">\[
-\begin{split}
-a &amp;= \frac{\Cov{X,Y}}{\V{X}},\\
-b &amp;= \E{Y} - a\E{X}.
-\end{split}
+<p><span class="theorem-title"><strong>Định nghĩa 8.3 (Theoretical linear regression) </strong></span>Đường hồi quy tuyến tính áp <span class="math inline">\(Y\)</span> lên <span class="math inline">\(X\)</span> là <span class="math inline">\(\hat{y} = r(x) = \beta_0 + \beta_1 x\)</span> với hệ số (intercept và slope) là <span class="math display">\[
+(\beta_0, \beta_1) \is
+\argmin_{(a,b)\in\R^2} \E{(Y-a-b X)^2}.
 \]</span></p>
 </div>
 <div id="def-regression-noise" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 8.4 (Noise) </strong></span>Nhiễu <span class="math display">\[
-\epsilon\is Y-(a X+b)
-,\]</span> có <span class="math inline">\(\E{\epsilon}\equiv 0, \Cov{X,\epsilon}\equiv 0.\)</span></p>
+<p><span class="theorem-title"><strong>Định nghĩa 8.4 (Noise) </strong></span>Nhiễu <span class="math inline">\(\epsilon\is Y-(\beta_0+\beta_1 X).\)</span></p>
 </div>
+<div id="thm-linear-regression" class="theorem">
+<p><span class="theorem-title"><strong>Định lý 8.1 </strong></span>Giả sử <span class="math inline">\(\V{X}&gt;0,\)</span> ta có: <span class="math display">\[
+\begin{split}
+\beta_0 &amp;= \E{Y} - \beta_1\E{X},\\
+\beta_1 &amp;= \frac{\Cov{X,Y}}{\V{X}},\\
+\E{\epsilon}&amp;= 0, \Cov{X,\epsilon} = 0.
+\end{split}
+\]</span></p>
+</div>
+<section id="lse" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="lse"><span class="header-section-number">8.1.1</span> LSE</h3>
 <div id="def-least-squares-estimator" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 8.5 (Least squares estimator, LSE) </strong></span>Quan sát <span class="math inline">\((X_i, Y_i), i=1,\ldots,n.\)</span> LSE là điểm cực tiểu của tổng bình phương lỗi (sum of squared errors): <span class="math display">\[
-(\hat{a}, \hat{b}) \is
-\argmin_{(\alpha,\beta)\in\R^2} \sum_{i=1}^{n}{(Y_i-\alpha X_i-\beta)^2}
-.\]</span></p>
+<p><span class="theorem-title"><strong>Định nghĩa 8.5 (Least squares estimator, LSE) </strong></span>Quan sát <span class="math inline">\((X_i, Y_i)_{i=1,\ldots,n}\iid \P_{(X,Y)}.\)</span> LSE là điểm cực tiểu của tổng bình phương độ lệch (residual sums of squares): <span class="math display">\[
+\begin{split}
+(\hat{a}, \hat{b}) &amp;\is
+\argmin_{(\beta_0,\beta_1)\in\R^2} \sum_{i=1}^{n}\epsilon_i^2,\\
+\epsilon_i&amp;\is {(Y_i-\beta_0 X_i-\beta_1)}\quad i=1,\ldots,n.
+\end{split}
+\]</span></p>
 </div>
 <div class="remark proof">
 <p><span class="proof-title"><em>Remark</em>. </span>Lấy đạo hàm từng phần và giải hệ phương trình ta có <span class="math display">\[
@@ -287,52 +314,78 @@ b &amp;= \E{Y} - a\E{X}.
 \]</span></p>
 </div>
 </section>
+</section>
 <section id="hồi-quy-đa-biến" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="hồi-quy-đa-biến"><span class="header-section-number">8.2</span> Hồi quy đa biến</h2>
 <div id="def-multivariate-linear-regression" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 8.6 (Multivariate regression) </strong></span>Quan sát các cặp biến <span class="math inline">\((\X_i, Y_i), i=1,\ldots,n.\)</span></p>
+<p><span class="theorem-title"><strong>Định nghĩa 8.6 (Multivariate regression) </strong></span>Quan sát <span class="math inline">\((\X_i, Y_i), i=1,\ldots,n.\)</span></p>
 <ul>
-<li><span class="math inline">\(\X_i\in\R^p\)</span>: nhập liệu đa chiều (multivariate input, explanatory variables, covariates, independent variables)</li>
+<li><span class="math inline">\(\X_i\in\R^p\)</span>: nhập liệu (input, features, explanatory variables, covariates, independent variables)</li>
 <li><span class="math inline">\(Y_i\in\R\)</span>: kết quả (output, response, explained variable, dependent variable)</li>
 </ul>
-<p>Giả sử tọa độ đầu tiên của các biến <span class="math inline">\(\X_{i}\)</span> đều là 1. Tìm hệ số <span class="math inline">\(\vec{a}\in\R^p\)</span> để</p>
-<p><span class="math display">\[Y_i = \X_i^T\vec{a} + \epsilon_i, i=1,\ldots,n
-,\]</span></p>
+<p>Giả sử tọa độ đầu tiên của các <span class="math inline">\(\X_{i}\)</span> đều là 1. Tìm tham số <span class="math inline">\(\vec{\beta}\in\R^p\)</span> cho mô hình <span class="math display">\[
+Y = \X^\tp\vec{\beta} + \epsilon,
+\]</span> Ta có <span class="math inline">\(n\)</span> samples, <span class="math inline">\(p\)</span> covariates: <span class="math display">\[
+Y_i = \X_i^\tp\vec{\beta} + \epsilon_i, i=1,\ldots,n,
+\]</span></p>
 <p>trong đó <span class="math inline">\(\{\epsilon_i\}_{i=1,\ldots,n}\)</span> là nhiễu.</p>
 </div>
+<section id="lse-đa-biến" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="lse-đa-biến"><span class="header-section-number">8.2.1</span> LSE đa biến</h3>
 <div id="def-lse-multivars" class="theorem definition">
-<p><span class="theorem-title"><strong>Định nghĩa 8.7 (Least squares estimator, LSE in matrix form) </strong></span>Sắp xếp</p>
+<p><span class="theorem-title"><strong>Định nghĩa 8.7 (Least squares estimator, LSE in matrix form) </strong></span>Đặt</p>
 <p><span class="math display">\[
 \begin{split}
 \XX &amp;\is
 \begin{pmatrix}
-\X_1^T\\
+\X_1^\tp\\
 \vdots\\
-\X_n^T\\
+\X_n^\tp\\
 \end{pmatrix}
 \in\R^{n\times p},\\
-\vec{\epsilon} &amp;\is (\epsilon_1,\ldots,\epsilon_n)^T\in\R^n,\\
-\vec{Y} &amp;\is (Y_1,\ldots,Y_n)^T \in \R^n,\\
-\implies \vec{Y} &amp;= \XX \vec{a} + \vec{\epsilon}.
+\vec{\epsilon} &amp;\is (\epsilon_1,\ldots,\epsilon_n)^\tp\in\R^n,\\
+\vec{Y} &amp;\is\begin{pmatrix}
+Y_1\\
+\vdots\\
+Y_n\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+\X_1^\tp\\
+\vdots\\
+\X_n^\tp\\
+\end{pmatrix}
+\vec{\beta} + \vec{\epsilon}
+=
+\XX\vec{\beta} + \vec{\epsilon}
+.
+\\
 \end{split}
 \]</span></p>
-<p>Ta có LSE <span class="math display">\[
+<p>Gọi <span class="math inline">\(\XX\)</span> là <strong>design matrix</strong>. Ta có <span class="math display">\[
+\begin{split}
+\textrm{LSE}\quad \hat{\vec{\beta}} &amp;\is
+\argmin_{\vec{\beta}\in\R^p} \|\vec{Y} - \XX \vec{\beta}\|_2^2.
+\end{split}
 \]</span></p>
-<p><span class="math display">\[
-\hat{\vec{a}} \is
-\argmin_{\vec{a}\in\R^p} \|\vec{Y} - \XX \vec{a}\|_2^2
-.\]</span></p>
+</div>
+<div id="thm-score-equation" class="theorem">
+<p><span class="theorem-title"><strong>Định lý 8.2 (Score equation) </strong></span><span class="math display">\[
+(\XX^\tp\XX)\hat{\vec{\beta}} \equiv \XX^\tp\vec{Y}.
+\]</span> Nếu <span class="math inline">\(\XX\)</span> full rank thì <span class="math inline">\(\hat{\vec{\beta}} \equiv (\XX^\tp\XX)^{-1}\XX^\tp\vec{Y}.\)</span></p>
 </div>
 <div class="remark proof">
-<p><span class="proof-title"><em>Remark</em>. </span>Nếu <span class="math inline">\(\XX\)</span> full rank: <span class="math display">\[
-\hat{\vec{a}} \equiv (\XX^T\XX)^{-1}\XX^T\vec{Y}.
-\]</span></p>
-<p>Đặt <span class="math inline">\(P\is \XX(\XX^T\XX)^{-1}\XX^T\)</span> ta có <span class="math display">\[
-\XX\hat{\vec{a}} = P\vec{Y} \equiv P^2\vec{Y},
-\]</span> là xạ ảnh của <span class="math inline">\(\vec{Y}\)</span> lên không gian tuyến tính dựng trên các cột của <span class="math inline">\(\XX .\)</span></p>
+<p><span class="proof-title"><em>Remark</em>. </span>Đặt <span class="math inline">\(P\is \XX(\XX^\tp\XX)^{-1}\XX^\tp\)</span> ta có <span class="math inline">\(\hat{\vec{Y}}\is\XX\hat{\vec{\beta}} = P\vec{Y} \equiv P^2\vec{Y}\)</span> là xạ ảnh của <span class="math inline">\(\vec{Y}\)</span> lên không gian tuyến tính dựng trên các cột của <span class="math inline">\(\XX .\)</span></p>
+</div>
+<div class="remark proof">
+<p><span class="proof-title"><em>Remark</em>. </span>Giả định <span class="math inline">\(\XX\)</span> là hằng số. Khi đó tính ngẫu nhiên của <span class="math inline">\(\vec{Y}\)</span> tuân theo tính ngẫu nhiên của <span class="math inline">\(\vec{\epsilon}.\)</span> Để suy luận thống kê ta thường giả định thêm <span class="math inline">\(\XX\)</span> là full rank; <span class="math inline">\(\epsilon_1,\ldots\epsilon_n\)</span> là <strong>homoscedastic</strong> (iid).</p>
+</div>
+<div id="exm-homoscedastic-gaussian" class="theorem example">
+<p><span class="theorem-title"><strong>Ví dụ 8.1 (Homoscedastic gaussian) </strong></span>Giả định <span class="math inline">\(\XX\)</span> là hằng số, full rank, <span class="math inline">\(\epsilon_1,\ldots\epsilon_n\iid \Gaus{0,\sigma^2}.\)</span> Khi đó LSE trùng với MLE.</p>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

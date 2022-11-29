@@ -161,6 +161,16 @@ ul.task-list li input[type="checkbox"] {
   <a href="./70-bayes-stat.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bayesian</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Hồi quy</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./80-linear-regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hồi quy</span></a>
@@ -211,14 +221,16 @@ $$
 \def\Gauk#1#2{\mathcal{N}_{#1}\left(#2\right)}
 \def\Gaus#1{\Gauk{}{#1}}
 \def\indicator#1{\mathbb{1}\{#1\}}
+\def\tp{\intercal}
 \def\p{\vec{p}}
 \def\P{\mathbb{P}}
 \def\Poiss{\text{Poiss}}
 \def\R{\mathbb{R}}
 \def\X{\vec{X}}
+\def\Y{\vec{Y}}
 \def\XX{\mathbb{X}}
-\def\V#1{\textrm{Var}\left(#1\right)}
-\def\Cov#1{\textrm{Cov}\left(#1\right)}
+\def\V#1{\mathbb{V}\left(#1\right)}
+\def\Cov#1{\V{#1}}
 \def\N{\mathbb{Z}_+}
 \def\TV{\textrm{TV}}
 \def\KL{\textrm{KL}}
@@ -318,7 +330,7 @@ X_n \todist X.
 <section id="đại-đa-số" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="đại-đa-số"><span class="header-section-number">3.6</span> Đại đa số</h2>
 <div id="thm-lln" class="theorem">
-<p><span class="theorem-title"><strong>Định lý 3.5 (Law of Large Numbers, LLN) </strong></span>Cho <span class="math inline">\(n\)</span> biến iid <span class="math inline">\(X_1, X_2,\ldotp,X_n\iid X\)</span> có <span class="math inline">\(\E{X}&lt;\infty\)</span>. Khi đó trung bình mẫu (<a href="10-proba-intro.html#def-sample-mean">ĐN&nbsp;<span>1.18</span></a>) hội tụ: <span class="math display">\[\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}
+<p><span class="theorem-title"><strong>Định lý 3.5 (Law of Large Numbers, LLN) </strong></span>Cho <span class="math inline">\(n\)</span> biến iid <span class="math inline">\(X_1, X_2,\ldotp,X_n\iid X\)</span> có <span class="math inline">\(\E{X}&lt;\infty\)</span>. Khi đó trung bình mẫu (<a href="10-proba-intro.html#def-sample-mean">ĐN&nbsp;<span>1.19</span></a>) hội tụ: <span class="math display">\[\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}
 \xrightarrow[n\to\infty]{\P,\,\as}\E{X}.
 \]</span></p>
 </div>
@@ -367,7 +379,7 @@ X_n \todist X.
 \todist\Gauk{k}{\vec{0}, \Gamma}
 ,
 \]</span></p>
-<p>với <span class="math inline">\(\Gamma\is\nabla g(\vec{\theta})^T \Sigma \nabla g(\vec{\theta}).\)</span> Nếu <span class="math inline">\(\Sigma\)</span> khả nghịch, <span class="math inline">\(\nabla g\)</span> rank <span class="math inline">\(k\)</span> thì <span class="math inline">\(\Gamma\)</span> khả nghịch, <span class="math display">\[
+<p>với <span class="math inline">\(\Gamma\is\nabla g(\vec{\theta})^\tp \Sigma \nabla g(\vec{\theta}).\)</span> Nếu <span class="math inline">\(\Sigma\)</span> khả nghịch, <span class="math inline">\(\nabla g\)</span> rank <span class="math inline">\(k\)</span> thì <span class="math inline">\(\Gamma\)</span> khả nghịch, <span class="math display">\[
 \sqrt{n}\Gamma^{-1/2}\left(g(\vec{\theta}_n)-g(\vec{\theta})\right)
 \todist\Gauk{k}{\vec{0}, \vec{I}_k}
 ,

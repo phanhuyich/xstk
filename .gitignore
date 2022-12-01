@@ -12,3 +12,4 @@ index_files
 *.tex
 *.pdf
 !preamble.tex
+.env

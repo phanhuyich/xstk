@@ -38,7 +38,7 @@ x\mapsto q_{\alpha}(x) \textrm{ such that }
 :::{#def-linear-regression}
 ### Theoretical linear regression
 Đường
-hồi quy tuyến tính áp $Y$ lên $X$ là
+hồi quy tuyến tính áp $Y\in\R$ lên $X\in\R$ là
 $\hat{y} = r(x) = \beta_0 + \beta_1 x$
 với hệ số (intercept và slope) là
 $$
@@ -64,11 +64,29 @@ $$
 $$
 :::
 
-### LSE
+## Hồi quy đa biến
+:::{#def-multivariate-linear-regression}
+### Multivariate regression
+Giả sử biến $\X\in\R^p, Y\in\R,$
+tọa độ đầu tiên của $\X$ là 1,
+mô hình hồi quy tuyến tính
+với tham số $\vec{\beta}^*\in\R^p$ là
+$$
+Y = \X^\tp\vec{\beta}^* + \epsilon,
+$$
+với
+$$
+\vec{\beta}^* \is
+\argmin_{\vec{\beta}\in\R^p} \E{(Y-\X^\tp\vec{\beta})^2},
+$$
+và nhiễu $\epsilon$ thỏa mãn
+$\E{\epsilon}= 0, \Cov{\X,\epsilon} = \vec{0}.$
+:::
 
+## LSE đơn biến
 :::{#def-least-squares-estimator}
 ### Least squares estimator, LSE
-Quan sát
+Quan sát trên $\R\times\R$ các cặp biến thực
 $(X_i, Y_i)_{i=1,\ldots,n}\iid \P_{(X,Y)}.$
 LSE là điểm cực tiểu của
 tổng bình phương độ lệch (residual sums of squares):
@@ -80,8 +98,8 @@ $$
 \end{split}
 $$
 :::
-:::{.remark}
-Lấy đạo hàm từng phần và giải hệ phương trình ta có
+:::{#thm-lse-solution}
+### LSE solution
 $$
 \begin{split}
 \hat{a} &= \frac{\overline{XY}-\bar{X}\bar{Y}}{\overline{X^2}-\bar{X}^2},\\
@@ -90,47 +108,32 @@ $$
 $$
 :::
 
-## Hồi quy đa biến
-
-:::{#def-multivariate-linear-regression}
-### Multivariate regression
-
-Quan sát $(\X_i, Y_i), i=1,\ldots,n.$
-
-- $\X_i\in\R^p$: nhập liệu (input, features, explanatory variables, covariates, independent variables)
-- $Y_i\in\R$: kết quả (output, response, explained variable, dependent variable)
-
-Giả sử tọa độ đầu tiên của các $\X_{i}$ đều là 1.
-Tìm tham số $\vec{\beta}\in\R^p$ cho mô hình
-$$
-Y = \X^\tp\vec{\beta} + \epsilon,
-$$
-Ta có $n$ samples, $p$ covariates:
-$$
-Y_i = \X_i^\tp\vec{\beta} + \epsilon_i, i=1,\ldots,n,
-$$
-
-trong đó
-$\{\epsilon_i\}_{i=1,\ldots,n}$ là nhiễu.
-:::
-
-### LSE đa biến
-
+## LSE đa biến
 :::{#def-lse-multivars}
 ### Least squares estimator, LSE in matrix form
+Quan sát i.i.d
+$\X_i\in\R^p, Y_i\in\R, i=1,\ldots,n.$
+Giả sử tọa độ đầu tiên của các $\X_{i}$ đều là 1.
+Nhiễu là
+$$
+\epsilon_i = Y_i - \X_i^\tp\vec{\beta}, i=1,\ldots,n,
+$$
+thỏa mãn
+$\E{\epsilon_i}= 0, \Cov{\X_i,\epsilon_i} = \vec{0},$
+
 Đặt
 
 $$
 \begin{split}
-\XX &\is
+\XX \is&
 \begin{pmatrix}
 \X_1^\tp\\
 \vdots\\
 \X_n^\tp\\
 \end{pmatrix}
-\in\R^{n\times p},\\
-\vec{\epsilon} &\is (\epsilon_1,\ldots,\epsilon_n)^\tp\in\R^n,\\
-\vec{Y} &\is\begin{pmatrix}
+\in\R^{n\times p},\,
+\vec{\epsilon} \is (\epsilon_1,\ldots,\epsilon_n)^\tp\in\R^n,\\
+&\vec{Y} \is\begin{pmatrix}
 Y_1\\
 \vdots\\
 Y_n\\
@@ -150,7 +153,7 @@ Y_n\\
 $$
 
 Gọi $\XX$ là **design matrix**.
-Ta có
+Ta ước lượng $\vec{\beta}^*$ bởi
 $$
 \begin{split}
 \textrm{LSE}\quad \hat{\vec{\beta}} &\is
@@ -184,9 +187,18 @@ $\vec{\epsilon}.$
 $\XX$ là full rank; $\epsilon_1,\ldots\epsilon_n$ là **homoscedastic** (iid).
 :::
 
+## Homoscedastic model
 :::{#exm-homoscedastic-gaussian}
 ### Homoscedastic gaussian
 Giả định $\XX$ là hằng số, full rank,
 $\epsilon_1,\ldots\epsilon_n\iid \Gaus{0,\sigma^2}.$
-Khi đó LSE trùng với MLE.
+Khi đó
+
+- LSE $\equiv$ MLE
+- $\hat{\vec{\beta}}\sim\Gauk{p}{\vec{\beta}^*,\sigma^2(\XX^\tp\XX)^{-1}}.$
+- MSE
+$\E{\|\hat{\vec{\beta}}-\vec{\beta}^*\|_2^2} = \sigma^2\mathrm{tr}\left((\XX^\tp\XX)^{-1}\right).$
+- Prediction error
+$\E{\|\Y-\XX\hat{\vec{\beta}}\|_2^2} = \sigma^2(n-p).$
+- Unbiased estimator of $\displaystyle \sigma^2:\quad \hat{\sigma}^2 = \frac{\E{\|\hat{\vec{\beta}}-\vec{\beta}^*\|_2^2}}{n-p}.$
 :::

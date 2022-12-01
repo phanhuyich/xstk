@@ -13,7 +13,7 @@ $$
 \def\Gauk#1#2{\mathcal{N}_{#1}\left(#2\right)}
 \def\Gaus#1{\Gauk{}{#1}}
 \def\indicator#1{\mathbb{1}\{#1\}}
-\def\tp{\intercal}
+\def\tp{\top}
 \def\p{\vec{p}}
 \def\P{\mathbb{P}}
 \def\Poiss{\text{Poiss}}

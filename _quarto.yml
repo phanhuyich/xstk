@@ -9,8 +9,10 @@ book:
   # date: "2022/8/25"
   downloads: pdf
   chapters:
-    - index.qmd
-    - notation.qmd
+    - part: "Mở đầu"
+      chapters:
+      - index.qmd
+      - notation.qmd
     - part: "Xác suất"
       chapters:
         - 10-proba-intro.qmd

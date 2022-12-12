@@ -6,3 +6,6 @@
  $\R_+$ | Tập hợp số thực dương
 $f(\alpha) \propto g(\alpha)$ | $f/g$ không phụ thuộc $\alpha$
 $\vec{M}^\tp$ | ma trận $\vec{M}$ chuyển vị, $\vec{M}^{\tp}_{i,j} \equiv \vec{M}_{j,i}$
+$\textrm{tr}(\Xm)$ | trace của ma trận $\Xm$
+$\l2norm{\X}$ | $\ell^2$ (Euclidean) norm của vector $\X$
+$\vec{a}\independent\vec{b}$ | $\vec{a}$ và $\vec{b}$ độc lập, trực giao

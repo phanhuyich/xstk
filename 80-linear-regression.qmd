@@ -92,9 +92,9 @@ LSE là điểm cực tiểu của
 tổng bình phương độ lệch (residual sums of squares):
 $$
 \begin{split}
-(\hat{a}, \hat{b}) &\is
-\argmin_{(\beta_0,\beta_1)\in\R^2} \sum_{i=1}^{n}\epsilon_i^2,\\
-\epsilon_i&\is {(Y_i-\beta_0 X_i-\beta_1)}\quad i=1,\ldots,n.
+\epsilon_i&\is {(Y_i-\beta_0-\beta_1 X_i)}\quad i=1,\ldots,n,\\
+(\hat{\beta}_0, \hat{\beta}_1) &\is
+\argmin_{(\beta_0,\beta_1)\in\R^2} \sum_{i=1}^{n}\epsilon_i^2.\\
 \end{split}
 $$
 :::
@@ -102,8 +102,8 @@ $$
 ### LSE solution
 $$
 \begin{split}
-\hat{a} &= \frac{\overline{XY}-\bar{X}\bar{Y}}{\overline{X^2}-\bar{X}^2},\\
-\hat{b} &= \bar{Y} - \hat{a}\bar{X}.
+\hat{\beta}_0 &= \bar{Y} - \hat{\beta}_1\bar{X},\\
+\hat{\beta}_1 &= \frac{\overline{XY}-\bar{X}\bar{Y}}{\overline{X^2}-\bar{X}^2}.\\
 \end{split}
 $$
 :::
@@ -116,7 +116,7 @@ $\X_i\in\R^p, Y_i\in\R, i=1,\ldots,n.$
 Giả sử tọa độ đầu tiên của các $\X_{i}$ đều là 1.
 Nhiễu là
 $$
-\epsilon_i = Y_i - \X_i^\tp\vec{\beta}, i=1,\ldots,n,
+\epsilon_i = Y_i - \X_i^\tp\vec{\beta}^*, i=1,\ldots,n,
 $$
 thỏa mãn
 $\E{\epsilon_i}= 0, \Cov{\X_i,\epsilon_i} = \vec{0},$
@@ -125,7 +125,7 @@ $\E{\epsilon_i}= 0, \Cov{\X_i,\epsilon_i} = \vec{0},$
 
 $$
 \begin{split}
-\XX \is&
+\Xm \is&
 \begin{pmatrix}
 \X_1^\tp\\
 \vdots\\
@@ -144,61 +144,118 @@ Y_n\\
 \vdots\\
 \X_n^\tp\\
 \end{pmatrix}
-\vec{\beta} + \vec{\epsilon}
+\vec{\beta}^* + \vec{\epsilon}
 =
-\XX\vec{\beta} + \vec{\epsilon}
+\Xm\vec{\beta}^* + \vec{\epsilon}
 .
 \\
 \end{split}
 $$
 
-Gọi $\XX$ là **design matrix**.
+Gọi $\Xm$ là **design matrix**.
 Ta ước lượng $\vec{\beta}^*$ bởi
 $$
 \begin{split}
 \textrm{LSE}\quad \hat{\vec{\beta}} &\is
-\argmin_{\vec{\beta}\in\R^p} \|\vec{Y} - \XX \vec{\beta}\|_2^2.
+\argmin_{\vec{\beta}\in\R^p} \l2norm{\vec{Y} - \Xm \vec{\beta}}^2.
 \end{split}
 $$
 :::
 
+### Score equation
 :::{#thm-score-equation}
 ### Score equation
 $$
-(\XX^\tp\XX)\hat{\vec{\beta}} \equiv \XX^\tp\vec{Y}.
+\Xm^\tp\Xm\hat{\vec{\beta}}
+\equiv \Xm^\tp\vec{Y}
+\equiv
+\Xm^\tp \Xm\vec{\beta}^* + \Xm^\tp\vec{\epsilon}.
 $$
-Nếu $\XX$ full rank thì
-$\hat{\vec{\beta}} \equiv (\XX^\tp\XX)^{-1}\XX^\tp\vec{Y}.$
+:::
+:::{.remark}
+Nếu $\textrm{rank}(\Xm)\equiv p$ thì
+$$
+\hat{\vec{\beta}}
+= (\Xm^\tp\Xm)^{-1}\Xm^\tp\vec{Y}
+= \vec{\beta}^* +
+(\Xm^\tp\Xm)^{-1}\Xm^\tp\vec{\epsilon}.
+$$
+:::
+:::{.remark}
+Đặt $P\is \Xm(\Xm^\tp\Xm)^{-1}\Xm^\tp$ ta có
+$\hat{\vec{Y}}\is\Xm\hat{\vec{\beta}} = P\vec{Y} \equiv P^2\vec{Y}$
+là xạ ảnh của $\vec{Y}$ lên không gian tuyến tính dựng trên các cột của $\Xm .$
 :::
 
 :::{.remark}
-Đặt $P\is \XX(\XX^\tp\XX)^{-1}\XX^\tp$ ta có
-$\hat{\vec{Y}}\is\XX\hat{\vec{\beta}} = P\vec{Y} \equiv P^2\vec{Y}$
-là xạ ảnh của $\vec{Y}$ lên không gian tuyến tính dựng trên các cột của $\XX .$
-:::
-
-:::{.remark}
-Giả định $\XX$ là hằng số. Khi đó
+Giả định $\Xm$ là hằng số. Khi đó
 tính ngẫu nhiên của
 $\vec{Y}$
 tuân theo tính ngẫu nhiên của
 $\vec{\epsilon}.$
 Để suy luận thống kê ta thường giả định thêm
-$\XX$ là full rank; $\epsilon_1,\ldots\epsilon_n$ là **homoscedastic** (iid).
+$\textrm{rank}(\Xm)\equiv p;$
+$\epsilon_1,\ldots\epsilon_n$ là **homoscedastic** (iid).
 :::
 
 ## Homoscedastic model
 :::{#exm-homoscedastic-gaussian}
 ### Homoscedastic gaussian
-Giả định $\XX$ là hằng số, full rank,
+Giả định $\Xm$ là hằng số,
+$\textrm{rank}(\Xm)\equiv p,$
 $\epsilon_1,\ldots\epsilon_n\iid \Gaus{0,\sigma^2}.$
+Vector nhiễu $\vec{\epsilon}$ là Gaussian (@def-gaussian-vector)
+$$
+\begin{split}
+\vec{\epsilon}&\sim\Gauk{n}{\vec{0},\sigma^2\Im},\\
+\vec{Y}&\sim\Gauk{n}{\Xm\vec{\beta}^*,\sigma^2\Im}.\\
+\end{split}
+$$
 Khi đó
+LSE (@def-lse-multivars) $\equiv$ MLE (@def-mle)
+có phân phối
+$$\hat{\vec{\beta}}\sim\Gauk{p}{\vec{\beta}^*,\sigma^2(\Xm^\tp\Xm)^{-1}}
+.$$
+MSE (@def-mse):
+$$\E{\l2norm{\hat{\vec{\beta}}-\vec{\beta}^*}^2} = \sigma^2\mathrm{tr}\left((\Xm^\tp\Xm)^{-1}\right)
+.$$
+Prediction error:
+$$
+\begin{split}
+{\l2norm{\Y-\Xm\hat{\vec{\beta}}}^2}
+&= \l2norm{P^\perp\Y}
+= \l2norm{P^\perp\vec{\epsilon}}
+ ,\\
+\E{\l2norm{\Y-\Xm\hat{\vec{\beta}}}^2}
+&= \sigma^2(n-p).
+\end{split}
+$$
+Unbiased estimator of $\sigma^2$
+là
+$\hat{\sigma}^2:$
+$$
+\begin{split}
+\hat{\sigma}^2
+&=
+\frac
+{{\l2norm{\Y-\Xm\hat{\vec{\beta}}}^2}}
+{n-p}
+= \frac
+{\sum_{i=1}^n \hat{\epsilon_i}^2}
+{n-p}
+,
+\\
+&(n-p)\frac{\hat{\sigma}^2}{\sigma^2}
+\sim \chi_{n-p}^2.
+\end{split}
+$$
 
-- LSE $\equiv$ MLE
-- $\hat{\vec{\beta}}\sim\Gauk{p}{\vec{\beta}^*,\sigma^2(\XX^\tp\XX)^{-1}}.$
-- MSE
-$\E{\|\hat{\vec{\beta}}-\vec{\beta}^*\|_2^2} = \sigma^2\mathrm{tr}\left((\XX^\tp\XX)^{-1}\right).$
-- Prediction error
-$\E{\|\Y-\XX\hat{\vec{\beta}}\|_2^2} = \sigma^2(n-p).$
-- Unbiased estimator of $\displaystyle \sigma^2:\quad \hat{\sigma}^2 = \frac{\E{\|\hat{\vec{\beta}}-\vec{\beta}^*\|_2^2}}{n-p}.$
+Cochran's theorem (@thm-cochran):
+$$
+\hat{\vec{\beta}}
+\independent
+\hat{\sigma}^2
+.
+$$
+
 :::

@@ -276,7 +276,7 @@ Với $\rho(x,\theta) = -\ln p_\theta(x)$ ta có MLE để ước lượng tham 
 :::
 :::{#exm-m-est-2}
 Với $\vec x,\vec\mu\in\R^d$,
-dùng $\rho(\vec x,\vec\mu) = \|\vec x-\vec\mu\|^2$
+dùng $\rho(\vec x,\vec\mu) = \l2norm{\vec x-\vec\mu}^2$
 ta ước lượng được mean $\vec\mu^*=\E{\vec x}.$
 :::
 :::{#exm-m-est-3}

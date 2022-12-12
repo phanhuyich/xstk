@@ -147,7 +147,7 @@ là một quan sát đối với $W.$
 
 ### Định lý Cochran
 
-:::{#thm-cochoran}
+:::{#thm-cochran}
 Giả sử $X_1,\ldots,X_n\iid\Gaus{\mu, \sigma^2}$
 có phương sai mẫu không lệch (@def-unbiased-sample-variance)
 là $S_n^2.$
@@ -159,14 +159,14 @@ $$
 ,
 $$
 
-và $\bar{X}_n, S_n^2$ độc lập với nhau.
+và $\bar{X}_n \independent S_n^2.$
 :::
 
 ### Student's $t$-test
 
 Giả sử $X_1,\ldots,X_n\iid\Gaus{\mu, \sigma^2}$ theo phân phối chuẩn (@def-gaussian),
 $\mu,\sigma$ chưa biết, và cần kiểm định $\mu.$
-Theo @thm-cochoran,
+Theo @thm-cochran,
 $$
 T\is
 \frac{\bar{X}_n-\mu}{\sqrt{S_n^2/n}}

@@ -71,7 +71,7 @@ Nếu độ lệch bằng $0$ ta nói đánh giá không lệch (unbiased).
 :::
 
 :::{#def-mse}
-### Sai số bậc 2, quadratic risk, mean squared error
+### Sai số bậc 2, quadratic risk, mean squared error, MSE
 giữa đánh giá $\theta_n$ với mục tiêu $\theta$ là
 $$
 \textrm{MSE}(\theta_n)\is\E{(\theta_n-\theta)^2}

@@ -192,7 +192,7 @@ Nếu $\Sigma$ khả nghịch, $\nabla g$ rank $k$ thì
 $\Gamma$ khả nghịch,
 $$
 \sqrt{n}\Gamma^{-1/2}\left(g(\vec{\theta}_n)-g(\vec{\theta})\right)
-\todist\Gauk{k}{\vec{0}, \vec{I}_k}
+\todist\Gauk{k}{\vec{0}, \Im_k}
 ,
 $$
 $$

@@ -53,7 +53,7 @@ mỗi hiện tượng $\omega$ trong không gian $\Omega$ một số thực
 $X(\omega).$
 :::
 :::{.remark}
-Biến $X$ không ngẫu nhiên thì được gọi là hằng số **deterministic/constant**.
+Biến $X$ không ngẫu nhiên thì được gọi là cố định hay hằng số **deterministic/constant**.
 :::
 
 :::{#def-cdf}
@@ -363,5 +363,5 @@ Ta có $\E{\tilde{S}_n^2}\equiv\V{X}.$
 Chương 1.3 - Unbiased Estimation, @stat415.
 :::
 :::{.remark}
-Định lý Cochoran @thm-cochoran.
+Định lý Cochran @thm-cochran.
 :::

@@ -126,8 +126,8 @@ $$\sum_{i=1}^n X_i\sim
 .$$
 :::
 
-:::{#def-normal-vector}
-### Vector phân phối chuẩn
+:::{#def-gaussian-vector}
+### Multivariate normal distribution, or joint normal distribution
 Nếu mọi tổ hợp tuyến tính các yếu tố của
 vector $\boldsymbol{v}$ đều
 thuộc phân phối chuẩn 1 biến thì

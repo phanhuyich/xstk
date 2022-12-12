@@ -84,6 +84,16 @@ $X:\Omega\to \R.$
 Mật độ xác suất là không âm và có tích phân toàn phần bằng $1.$
 :::
 
+:::{.remark}
+Cho biến $X\in\R$ với mật độ xác suất là $f(x)$ và hằng số $c\in\R.$
+
+- Biến $Y=X+c$ có mật độ là
+$g(y) = f\left({y}-{c}\right).$
+- Biến $Y=cX$ có mật độ là
+$g(y) = f\left({y}/{c}\right)/{|c|}.$
+
+:::
+
 :::{#def-pdf-bivariate-continuous}
 ### PDF of bivariate distributions
 Với hai biến liên tục $(X,Y)\in\R^2$ ta gọi hàm không âm $f(x,y)$ là mật độ xác suất đồng thời nếu:

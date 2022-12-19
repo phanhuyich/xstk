@@ -9,8 +9,10 @@ book:
   # date: "2022/8/25"
   downloads: pdf
   chapters:
-    - index.qmd
-    - notation.qmd
+    - part: "Mở đầu"
+      chapters:
+      - index.qmd
+      - notation.qmd
     - part: "Xác suất"
       chapters:
         - 10-proba-intro.qmd
@@ -22,6 +24,9 @@ book:
         - 50-est-method.qmd
         - 60-hypothesis-test.qmd
         - 70-bayes-stat.qmd
+    - part: "Hồi quy"
+      chapters:
+        - 80-linear-regression.qmd
     - references.qmd
   repo-url: https://github.com/vochicong/xstk
   # sharing: [twitter, facebook]

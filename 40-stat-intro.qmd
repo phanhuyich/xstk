@@ -14,25 +14,32 @@ $(\P_\theta)_{\theta\in\Theta}$
 $\P$
 .
 
+:::{#def-well-specified}
+### well specified
 Nếu tồn tại
 $\theta\in\Theta$
 để
 $\P_\theta\equiv\P$
-thì ta nói mô hình "hợp lệ"
-(well specified).
+thì ta nói mô hình **hợp lệ**.
+:::
 
+:::{#def-identifiable-param}
+### identifiable parameter
 Nếu từ tập $\Theta$,
 ánh xạ
 $\theta\mapsto\P_{\theta}$
 là đơn ánh
 thì ta nói $\theta$ (hoặc $\P_\theta$) là
-"có thể xác định" (identifiable).
+**có thể xác định**.
+:::
 
 
+:::{#def-parametric-model}
+### parametric model
 Nếu
 $\Theta\subseteq\R^d$
-thì mô hình được nói có số biến hữu hạn
-(parametric model).
+thì mô hình được nói có **số biến hữu hạn**.
+:::
 
 ## Ước lượng
 
@@ -59,18 +66,19 @@ giá trị cụ thể của dữ liệu.
 :::{#def-bias}
 ### Độ lệch, bias
 giữa đánh giá $\theta_n$ với mục tiêu $\theta$ là
-$$\textrm{bias}_{\theta}({\theta}_n) \is \E[\theta_n] - \theta.$$
+$$\textrm{bias}_{\theta}({\theta}_n) \is \E{\theta_n} - \theta.$$
+Nếu độ lệch bằng $0$ ta nói đánh giá không lệch (unbiased).
 :::
 
 :::{#def-mse}
-### Sai số bậc 2, quadratic risk, mean squared error
+### Sai số bậc 2, quadratic risk, mean squared error, MSE
 giữa đánh giá $\theta_n$ với mục tiêu $\theta$ là
 $$
-\textrm{MSE}(\theta_n)\is\E[(\theta_n-\theta)^2]
+\textrm{MSE}(\theta_n)\is\E{(\theta_n-\theta)^2}
 \equiv
 \textrm{bias}_{\theta}(\theta_n)^2
 +
-\V[\theta_n]
+\V{\theta_n}
 $$
 bao hàm cả độ lệch và độ nhiễu của đánh giá.
 :::

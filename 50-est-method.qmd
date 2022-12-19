@@ -59,12 +59,12 @@ Nếu tập mẫu $E$ là liên tục
 xác suất
 $\P_\theta, \P_{\eta}$
 có mật độ lần lượt là
-$f_\theta, f_{\eta}$
+$f_{\theta}, f_{\eta}$
 thì
 $$
 \TV(\P_\theta,\P_{\eta}) =
 \frac{1}{2}
-\int_{E}\mid f_\theta(x) - f_\eta(x)\mid dx.
+\int_{E}\mid f_{\theta}(x) - f_{\eta}(x)\mid dx.
 $$
 :::
 
@@ -80,11 +80,11 @@ hàm khối xác suất:
 
 $$
 \KL(\P_\theta, \P_\eta) \is
-\E_\theta\left[ \ln\frac{f_\theta(x)}{f_\eta(x)} \right]
+\mathbb{E}_{\theta}\left[ \ln\frac{f_{\theta}(x)}{f_{\eta}(x)} \right]
 =
-\E_\theta\left[ \ln{f_\theta(x)} \right]
+\mathbb{E}_{\theta}\left[ \ln{f_{\theta}(x)} \right]
 -
-\E_\theta\left[ \ln{f_\eta(x)} \right]
+\mathbb{E}_{\theta}\left[ \ln{f_{\eta}(x)} \right]
 .
 $$
 :::
@@ -101,37 +101,96 @@ thỏa mãn 2/4 đặc điểm của "khoảng cách":
 ## Hợp lý cực đại
 
 :::{#def-likelihood}
-#### Hợp lý, Likelihood
-$$L_\theta(x_1,\ldots,x_n)\is
+#### Likelihood
+**Độ hợp lý** của tham số $\theta$ là
+$$L_n(x_1,\ldots,x_n; \theta)\is
 \P_\theta(X_1=x_1,\ldots,X_n=x_n)
-=
-\prod_{i=1}^n p_\theta(X_i=x_i)
 .$$
 :::
 
 :::{#def-likelihood}
 #### Log likelihood
 $$
-\ell_\theta(x_1,\ldots,x_n)\is
+\ell_n(x_1,\ldots,x_n)\is
 \ln
-L_\theta(x_1,\ldots,x_n)
-=
-\sum_{i=1}^n \ln p_\theta(X_i=x_i)
+L_\theta(x_1,\ldots,x_n; \theta)
 .
 $$
 :::
 
 :::{#def-mle}
 #### Maximum Likelihood Estimator, MLE
+Điểm **hợp lý cực đại** là
 $$
-\hat{\theta}_n \is
-\argmax_\theta
-L_\theta(x_1,\ldots,x_n)
-\equiv
-\argmax_\theta
-\ell_\theta(x_1,\ldots,x_n)
+\begin{split}
+\hat{\theta}_n
+\is\, &\argmax_\theta L_n(x_1,\ldots,x_n; \theta)\\
+\equiv\, &\argmax_\theta \ell_n(x_1,\ldots,x_n; \theta)
+.
+\end{split}
+$$
+:::
+
+### MLE hội tụ
+:::{#def-fisher-info}
+### Fisher information
+Giả sử với $n=1$ quan sát $X$ có
+$\ell(\theta)\is\ln L_1(X;\theta), \theta\in\R.$
+Giả sử $\ell(\theta)$ có đạo hàm bậc hai. Dưới một số điều kiện chuẩn,
+**thông tin Fisher** của mô hình là
+
+$$
+I(\theta)
+\is
+\V{\frac{\partial\ell}{\partial\theta}}
+= \E{\left(\frac{\partial\ell}{\partial\theta}\right)^2}
+= -\E{\frac{\partial^2\ell}{\partial\theta^2}}
 .
 $$
+
+Với $\theta\is(\theta_1,\ldots,\theta_k)\in\R^k,$
+đặt
+$H_{ij} \is \frac{\partial^2\ell}{\partial\theta_i\partial\theta_j}:$
+$$
+\vec{I}(\theta) \is -\E{
+\begin{pmatrix}
+H_{11} & \cdots & H_{1k} \\
+\vdots & \ddots & \vdots \\
+H_{k1} & \cdots & H_{kk} \\
+\end{pmatrix}
+}.
+$$
+:::
+
+:::{#thm-mle-asym}
+### MLE hội tụ
+Gọi $\theta^*\in\Theta$ là tham số *thật* cần tìm. Giả sử
+
+1. Các tham số là identifiable (@def-identifiable-param)
+2. Support của $\P_\theta$ không phụ thuộc vào $\theta$ với mọi $\theta\in\Theta$
+3. $\theta^*$ không nằm trên biên giới của $\Theta$
+4. Thông tin Fisher khả nghịch lân cận $\theta^*$
+5. Một số điều kiện kỹ thuật khác
+
+Khi đó, chuỗi $\hat{\theta}_n^{MLE}$ thỏa mãn:
+
+$$\hat{\theta}_n^{MLE} \xrightarrow[n\to\infty]{\P_{\theta^*}}\theta^*$$
+$$\sqrt{n I(\theta^*)}\left(\hat{\theta}_n^{MLE}-\theta^*\right)
+\xrightarrow[n\to\infty]{(d)\textrm{ w.r.t.}\P_{\theta^*}}
+\Gaus{0,1}.$$
+
+Trường hợp mô hình đa biến, $\theta\in\R^k:$
+$${n
+\left(\hat{\theta}_n^{MLE}-\theta^*\right)^\tp
+\vec{I}(\theta^*)}
+\left(\hat{\theta}_n^{MLE}-\theta^*\right)
+\xrightarrow[n\to\infty]{(d)\textrm{ w.r.t.}\P_{\theta^*}}
+\chi_k^2.$$
+
+Chú ý là điều kiện số 2 dễ bị vi phạm,
+ví dụ $X_i\iid\Unif[0, \theta]$
+mà lại cần tìm tham số $\theta.$
+
 :::
 
 ## Mix model
@@ -171,91 +230,28 @@ lặp lại 2 bước **E, M** như sau
 để cập nhật $\theta_k, k=1,2,\ldots$
 cho đến khi hội tụ.
 
-- **E**stimate: Ước lượng $Z_i\approx\omega_i\is\E[Z|X_i=x_i, \theta=\theta_{k-1}], i=1,\ldots,n.$
+- **E**stimate: Ước lượng $Z_i\approx\omega_i\is\E{Z|X_i=x_i, \theta=\theta_{k-1}}, i=1,\ldots,n.$
 - **M**aximize: Thay $Z_i$ bởi $\omega_i$ vào công thức likelihood để tối ưu MLE $\theta = \theta_k$
-:::
-
-## Chuẩn tính của MLE
-
-:::{#def-fisher-info}
-### Thông tin Fisher, Fisher information
-Giả sử log likelihood đối với một quan sát $X$ theo mô hình $\theta\in\R$ là
-$\ell=\ell(\theta)\is\ln L_1(X,\theta), \theta\in\Theta\subset\R.$
-Giả sử $\ell(\theta)$ có đạo hàm bậc hai. Dưới một số điều kiện chuẩn,
-**thông tin Fisher** của mô hình được định nghĩa là
-
-$$
-I(\theta)
-\is
-\V_X
-\left[\frac{\partial\ell}{\partial\theta}\right]
-= \E_X
-\left[\left(\frac{\partial\ell}{\partial\theta}\right)^2\right]
-= -\E_X
-\left[\frac{\partial^2\ell}{\partial\theta^2}\right]
-.
-$$
-
-Trường hợp mô hình đa biến, $\theta\is(\theta_1,\ldots,\theta_k)\in\R^k:$
-$$
-H_{ij} \is \frac{\partial^2\ell}{\partial\theta_i\partial\theta_j},
-$$
-$$
-I(\theta) \is -\E_X
-\left[
-\begin{pmatrix}
-H_{11} & \cdots & H_{1k} \\
-\vdots & \ddots & \vdots \\
-H_{k1} & \cdots & H_{kk} \\
-\end{pmatrix}
-\right].
-$$
-:::
-
-:::{#thm-mle-asym}
-### MLE hội tụ
-Gọi $\theta^*\in\Theta$ là tham số *thật* cần tìm. Giả sử
-
-1. Các tham số là indentifiable
-2. Support của $\P_\theta$ không phụ thuộc vào $\theta$ với mọi $\theta\in\Theta$
-3. $\theta^*$ không nằm trên biên giới của $\Theta$
-4. Thông tin Fisher khả nghịch lân cận $\theta^*$
-5. Một số điều kiện kỹ thuật khác
-
-Khi đó, chuỗi $\hat{\theta}_n^{MLE}$ thỏa mãn:
-
-$$\hat{\theta}_n^{MLE} \xrightarrow[n\to\infty]{\P_{\theta^*}}\theta^*$$
-$$\sqrt{n I(\theta^*)}\left(\hat{\theta}_n^{MLE}-\theta^*\right)
-\xrightarrow[n\to\infty]{(d)\textrm{ w.r.t.}\P_{\theta^*}}
-\Gaus{0}{1}.$$
-
-Trường hợp mô hình đa biến, $\theta\in\R^k:$
-$${n
-\left(\hat{\theta}_n^{MLE}-\theta^*\right)^T
-I(\theta^*)}
-\left(\hat{\theta}_n^{MLE}-\theta^*\right)
-\xrightarrow[n\to\infty]{(d)\textrm{ w.r.t.}\P_{\theta^*}}
-\chi_k^2.$$
-
-Chú ý là điều kiện số 2 dễ bị vi phạm,
-ví dụ $X_i\iid\Unif[0, \theta]$
-mà lại cần tìm tham số $\theta.$
-
 :::
 
 ## M-estimation
 :::{#def-m-est}
 ### M-estimatior
-Với mục tiêu ước lượng thuộc tính $\mu^*$ của xác suất $\P(X)$,
-ta tìm một "hàm tổn thất" $\rho(X,\mu)$ có giá trị kỳ vọng
-đạt cực tiểu tại $\mu = \mu^*:$
+Để ước lượng thuộc tính $\mu^*$ của $X\sim\P$,
+ta tìm một "hàm tổn thất" $\rho(X,\mu)$ có kỳ vọng
+cực tiểu tại $\mu^*:$
 $$
+\begin{split}
 \mathcal{Q}(\mu)
-\is \E_{\P}[\rho(X,\mu)]
-.
+&\is \E{\rho(X,\mu)}
+,\\
+{\mu}^*
+&\equiv\argmin_{\mu}
+\mathcal{Q}(\mu).
+\end{split}
 $$
 
-Nếu quan sát được $X_1,\ldots,X_n\iid\P(X),$ ta ước lượng
+Quan sát $X_1,\ldots,X_n\iid\P,$ ta ước lượng
 $$
 \mathcal{Q}(\mu)
 \approx
@@ -275,14 +271,16 @@ $$
 $$
 :::
 
-:::{.remark}
+:::{#exm-m-est-1}
 Với $\rho(x,\theta) = -\ln p_\theta(x)$ ta có MLE để ước lượng tham số $\theta^*$ của mô hình $\P.$
 :::
-
 :::{#exm-m-est-2}
 Với $\vec x,\vec\mu\in\R^d$,
-dùng $\rho(\vec x,\vec\mu) = \|\vec x-\vec\mu\|^2$
-ta ước lượng được $\vec\mu^*=\E[\vec x].$
+dùng $\rho(\vec x,\vec\mu) = \l2norm{\vec x-\vec\mu}^2$
+ta ước lượng được mean $\vec\mu^*=\E{\vec x}.$
+:::
+:::{#exm-m-est-3}
+Có thể dùng M-estimation để ước lượng median và quantiles.
 :::
 
 ## Method of moments

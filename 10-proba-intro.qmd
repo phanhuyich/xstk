@@ -52,6 +52,9 @@ là một quy tắc ánh xạ $X: \Omega\to\R$ gán cho
 mỗi hiện tượng $\omega$ trong không gian $\Omega$ một số thực
 $X(\omega).$
 :::
+:::{.remark}
+Biến $X$ không ngẫu nhiên thì được gọi là cố định hay hằng số **deterministic/constant**.
+:::
 
 :::{#def-cdf}
 ### Hàm phân phối tích lũy, cumulative distribution function
@@ -59,21 +62,6 @@ là hàm tăng đơn điệu và liên tục bên phải
 $F:\R\to[0,1], F(x)\is\P(X\leq x)$
 với biến
 $X:\Omega\to \R.$
-:::
-
-::: {#def-quantile}
-### Phân vị
-Biến $X$ tuân theo phân phối tích lũy $F$
-có
-phân vị mức $1-\alpha$
-là $q_\alpha\is F^{-1}(1-\alpha).$
-:::
-
-:::{#def-median-mode}
-### Quartile, median, mode
-Ta gọi $q_{3/4}, q_{1/2}, q_{1/4}$
-là tứ phân vị đầu tiên (first quartile), trung vị (median), và tứ phân vị thứ ba.
-Gọi mode là giá trị biến số có xác suất cao nhất.
 :::
 
 :::{#def-pmf}
@@ -93,9 +81,38 @@ với
 $F(x)\is\P(X\leq x)$ là phân phối tích lũy của
 biến
 $X:\Omega\to \R.$
+Mật độ xác suất là không âm và có tích phân toàn phần bằng $1.$
 :::
 
-Mật độ xác suất là không âm và có tích phân toàn phần bằng $1.$
+:::{.remark}
+Cho biến $X\in\R$ với mật độ xác suất là $f(x)$ và hằng số $c\in\R.$
+
+- Biến $Y=X+c$ có mật độ là
+$g(y) = f\left({y}-{c}\right).$
+- Biến $Y=cX$ có mật độ là
+$g(y) = f\left({y}/{c}\right)/{|c|}.$
+
+:::
+
+:::{#def-pdf-bivariate-continuous}
+### PDF of bivariate distributions
+Với hai biến liên tục $(X,Y)\in\R^2$ ta gọi hàm không âm $f(x,y)$ là mật độ xác suất đồng thời nếu:
+
+$$\int\int_A f(x,y) dx dy \equiv \P((X,Y)\in A),\quad\forall A\subset\R^2
+.$$
+
+Mật độ xác suất biên và
+mật độ xác suất có điều kiện tương ứng là:
+
+$$
+\begin{split}
+f(x) &\is \int f(x,y) dy, \\
+f(y|x) &\is \frac{f(x,y)}{f(x)}.
+\end{split}
+$$
+
+
+:::
 
 :::{#thm-density-propto}
 ### Chuẩn hóa mật độ xác suất
@@ -119,7 +136,7 @@ Xem "4.1.3 Functions of Continuous Random Variables",
 @probabilitycourse.
 :::
 
-## Phụ thuộc
+## Xác suất đồng thời
 
 ::: {#def-joint-proba}
 ### Xác suất hợp
@@ -171,55 +188,114 @@ $$
 
 ## Đặc trưng
 
-::: {#def-expectation}
+### Phân vị
+
+::: {#def-quantile}
+### Quantile
+Biến $X$ tuân theo phân phối tích lũy $F$
+có
+phân vị mức $1-\alpha$
+là $q_\alpha\is F^{-1}(1-\alpha).$
+:::
+
+:::{#def-median-mode}
+### Quartile, median, mode
+Ta gọi $q_{3/4}, q_{1/2}, q_{1/4}$
+là tứ phân vị đầu tiên (first quartile), trung vị (median), và tứ phân vị thứ ba.
+Gọi mode là giá trị biến số có xác suất cao nhất.
+:::
+:::{.remark}
+Nếu $X$ liên tục thì median cực tiểu
+$m\mapsto\E{|X-m|}.$
+:::
+
 ### Trung bình
+
+::: {#def-expectation}
+### Mean, expected value
 **Trung bình**, hay **giá trị kỳ vọng** của biến X là
 
 $$
-\E[X]\is
-\int x dF(x)
-\is
+\E{X}\is
 \begin{cases}
-\sum_x x p(x) & \textrm{ if } X \textrm{ is discrete}\\
-\int x f(x) dx & \textrm{ if } X \textrm{ is continuous}.
+\displaystyle \sum_x x p(x) & \textrm{ nếu } X \textrm{ rời rạc}\\
+\displaystyle \int x f(x) dx & \textrm{ nếu } X \textrm{ liên tục}.
 \end{cases}
 $$
+Nếu $\E{|X|} < \infty$ ta nói là $\E{X}$ "tồn tại"
+(well-defined).
+:::
+:::{.remark}
+$\E{X+Y} \equiv \E{X} + E[Y].$
+:::
+:::{.remark}
+Nếu $X$ liên tục thì $\E{X}$ cực tiểu
+$m\mapsto\E{(X-m)^2}.$
 :::
 
-Nếu giá trị $\int |x| dF(x) < \infty$ ta nói là $\E[X]$ "tồn tại"
-(well-defined).
+:::{#thm-iterated-expectations}
+### Iterated Expectations
+Với các biến $X,Y,$ giả sử các giá trị kỳ vọng tồn tại, ta có
+$$
+\E{\E{Y|X}} \equiv \E{Y}
+.$$
+:::
 
-Ta có
-$$
-\E[X+Y] \equiv \E[X] + E[Y].
-$$
+### Phương sai
 
 ::: {#def-covar}
 ### Hiệp phương sai
 $$
 \begin{split}
-\textrm{Cov}[X,Y] &\is \E[(X-\E[X])(Y-\E[Y])] \\
-&\equiv \E[XY] - \E[X]\E[Y]
+\Cov{X,Y} &\is \E{(X-\E{X})(Y-\E{Y})} \\
+&\equiv \E{XY} - \E{X}\E{Y}
 \end{split}
 $$
 :::
 
-Nếu $X$ và $Y$ độc lập thì $\textrm{Cov}[X,Y] = 0$.
+Nếu $X$ và $Y$ độc lập thì $\Cov{X,Y} = 0$.
 
 ::: {#def-variance}
 ### Phương sai
 Phương sai, hay phân tán (variance) là
 $$
-\V[X]\is\textrm{Cov}[X,X]\equiv\E[X^2]-\E^2[X].
+\V{X}\is\Cov{X,X}\equiv\E{X^2}-(\E{X})^2.
 $$
 :::
 
-Ta có
-$$
-\V[X+Y] \equiv \V[X]+\V[Y] + 2\textrm{Cov}[X,Y].
-$$
+:::{.remark}
+Nếu $m$ là hằng số thì
+$\V{X-m}\equiv\V{X}.$
+:::
+:::{.remark}
+$\V{X+Y} \equiv \V{X}+\V{Y} + 2\Cov{X,Y}.$
+:::
 
-## Tích suất
+:::{#def-cov-mat}
+### Covariance matrix
+Cho $n$ biến ngẫu nhiên $X_1,\ldots,X_n\in\R,$
+đặt $\X\is (X_1,\ldots,X_n)^\tp\in\R^n,$
+ma trận hiệp phương sai là
+
+$$
+\begin{split}
+\Sigma_{\X}&\is
+\E{(\X-\E{X})(\X-\E{X})^\tp}\\
+&=
+\begin{pmatrix}
+\V{X_1} & \Cov{X_1,X_2} & \cdots & \Cov{X_1,X_n}\\
+\Cov{X_2,X_1} & \V{X_2} & \cdots & \Cov{X_2,X_n}\\
+\vdots &\vdots &\ddots &\vdots \\
+\Cov{X_n,X_1} & \Cov{X_n,X_2} & \cdots & \V{X_n}\\
+\end{pmatrix}.
+\end{split}
+$$
+:::
+:::{.remark}
+Nếu $\Y=M\X$ thì $\Sigma_{\Y} = M\Sigma_{\X}M^\tp.$
+:::
+
+### Tích suất
 
 :::{#def-moment}
 ### Tích suất
@@ -228,31 +304,74 @@ của phân phối. Tích suất bậc $n$ của biến $X$ với mật độ $f
 :::
 
 $$
-\E[X^n]\is \int x^n f(x) dx
+\E{X^n}\is \int x^n f(x) dx
 $$
 
 ::: {#def-mgf}
 ### Hàm tạo tích suất
 "Moment generation function (MGF)" của biến $X$ là
 $$
-\psi_X(t)\is\E[e^{tX}], t\in\R.
+\psi_X(t)\is\E{e^{tX}}, t\in\R.
 $$
 :::
 
 Nếu MGF "tồn tại" lân cận $0$ thì đạo hàm cấp $k$ của $\psi$ tại $0$
 chính là:
 $$
-\psi_X^{(k)}(0)\equiv \E[X^k].
+\psi_X^{(k)}(0)\equiv \E{X^k}.
 $$
 
+### Đặc trưng mẫu
+
 :::{#def-sample-moment}
-### Tích suất mẫu
-Từ các quan sát
-$X_1,\ldots X_n\iid \P_\theta, \theta\in\Theta\subset\R^d.$
-Để ước lượng tích suất
-$\E[X^k]$
-ta có thể dùng các *sample moment*:
+### Sample moment
+Quan sát
+$X_1,\ldots X_n\iid X.$
+Để ước lượng
+$\E{X^k}$
+ta có tích suất mẫu:
 $$
 \hat{m}_k\is \frac{1}{n}\sum_{i=1}^n X_i^k,\quad k=1,2,\ldots.
 $$
+:::
+
+::: {#def-sample-mean}
+### Sample mean
+Trung bình mẫu là tích suất mẫu bậc 1:
+$$
+\bar{X}_n
+\is\frac{1}{n}\sum_{i=1}^{n} X_i.
+$$
+:::
+
+::: {#def-sample-squares}
+### Sample squares mean
+Trung bình mẫu bình phương là tích suất mẫu bậc 2:
+$$
+\overline{X_n^2} \is \frac{1}{n}{\sum_{i=1}^n X_i^2}
+.$$
+
+:::
+
+::: {#def-sample-variance}
+### Sample variance
+Phương sai mẫu là:
+$$
+S_n^2 \is\frac{1}{n}{\sum_{i=1}^{n}(X_i-\bar{X}_n)^2} \equiv \overline{X_n^2}-\overline{X_n}^2 .
+$$
+:::
+
+::: {#def-unbiased-sample-variance}
+### Unbiased sample variance
+Phương sai mẫu không lệch (@def-bias) là
+$$
+\tilde{S}_n^2 \is\frac{n}{n-1}{S_n}.
+$$
+Ta có $\E{\tilde{S}_n^2}\equiv\V{X}.$
+:::
+:::{.proof}
+Chương 1.3 - Unbiased Estimation, @stat415.
+:::
+:::{.remark}
+Định lý Cochran @thm-cochran.
 :::

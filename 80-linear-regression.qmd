@@ -1,0 +1,261 @@
+# Hồi quy
+
+Hồi quy là phương pháp tìm quan hệ giữa
+nhập liệu và kết quả:
+
+- $X$: nhập liệu (input, features, explanatory variables, covariates, independent variables)
+- $Y$: kết quả (output, response, explained variable, dependent variable)
+
+Giả sử
+cặp biến
+$(X, Y) \sim \P_{X,Y}$
+có mật độ xác suất $f(x,y),$
+mật độ xác suất biên $f(x)$ và
+mật độ xác suất có điều kiện $f(y|x).$
+
+:::{#def-regression}
+### Regression function
+Hàm hồi quy là kỳ vọng về $Y$
+khi biết $X:$
+$$
+x\mapsto r(x) \is \E{Y|X=x} = \int y f(y|x) dy
+.$$
+:::
+
+:::{#def-conditional-quantile}
+### Conditional quantile
+Cho $\alpha\in[0,1],$
+phân vị $q_{\alpha}$ cho $Y$
+khi biết $X=x:$
+$$
+x\mapsto q_{\alpha}(x) \textrm{ such that }
+\int_{-\infty}^{q_{\alpha}(x)} f(y|x) dy \equiv 1-\alpha
+.$$
+Đặt $\alpha=1/2$ ta có conditional median.
+:::
+
+## Hồi quy tuyến tính
+:::{#def-linear-regression}
+### Theoretical linear regression
+Đường
+hồi quy tuyến tính áp $Y\in\R$ lên $X\in\R$ là
+$\hat{y} = r(x) = \beta_0 + \beta_1 x$
+với hệ số (intercept và slope) là
+$$
+(\beta_0, \beta_1) \is
+\argmin_{(a,b)\in\R^2} \E{(Y-a-b X)^2}.
+$$
+:::
+
+:::{#def-regression-noise}
+### Noise
+Nhiễu
+$\epsilon\is Y-(\beta_0+\beta_1 X).$
+:::
+
+:::{#thm-linear-regression}
+Giả sử $\V{X}>0,$ ta có:
+$$
+\begin{split}
+\beta_0 &= \E{Y} - \beta_1\E{X},\\
+\beta_1 &= \frac{\Cov{X,Y}}{\V{X}},\\
+\E{\epsilon}&= 0, \Cov{X,\epsilon} = 0.
+\end{split}
+$$
+:::
+
+## Hồi quy đa biến
+:::{#def-multivariate-linear-regression}
+### Multivariate regression
+Giả sử biến $\X\in\R^p, Y\in\R,$
+tọa độ đầu tiên của $\X$ là 1,
+mô hình hồi quy tuyến tính
+với tham số $\vec{\beta}^*\in\R^p$ là
+$$
+Y = \X^\tp\vec{\beta}^* + \epsilon,
+$$
+với
+$$
+\vec{\beta}^* \is
+\argmin_{\vec{\beta}\in\R^p} \E{(Y-\X^\tp\vec{\beta})^2},
+$$
+và nhiễu $\epsilon$ thỏa mãn
+$\E{\epsilon}= 0, \Cov{\X,\epsilon} = \vec{0}.$
+:::
+
+## LSE đơn biến
+:::{#def-least-squares-estimator}
+### Least squares estimator, LSE
+Quan sát trên $\R\times\R$ các cặp biến thực
+$(X_i, Y_i)_{i=1,\ldots,n}\iid \P_{(X,Y)}.$
+LSE là điểm cực tiểu của
+tổng bình phương độ lệch (residual sums of squares):
+$$
+\begin{split}
+\epsilon_i&\is {(Y_i-\beta_0-\beta_1 X_i)}\quad i=1,\ldots,n,\\
+(\hat{\beta}_0, \hat{\beta}_1) &\is
+\argmin_{(\beta_0,\beta_1)\in\R^2} \sum_{i=1}^{n}\epsilon_i^2.\\
+\end{split}
+$$
+:::
+:::{#thm-lse-solution}
+### LSE solution
+$$
+\begin{split}
+\hat{\beta}_0 &= \bar{Y} - \hat{\beta}_1\bar{X},\\
+\hat{\beta}_1 &= \frac{\overline{XY}-\bar{X}\bar{Y}}{\overline{X^2}-\bar{X}^2}.\\
+\end{split}
+$$
+:::
+
+## LSE đa biến
+:::{#def-lse-multivars}
+### Least squares estimator, LSE in matrix form
+Quan sát i.i.d
+$\X_i\in\R^p, Y_i\in\R, i=1,\ldots,n.$
+Giả sử tọa độ đầu tiên của các $\X_{i}$ đều là 1.
+Nhiễu là
+$$
+\epsilon_i = Y_i - \X_i^\tp\vec{\beta}^*, i=1,\ldots,n,
+$$
+thỏa mãn
+$\E{\epsilon_i}= 0, \Cov{\X_i,\epsilon_i} = \vec{0},$
+
+Đặt
+
+$$
+\begin{split}
+\Xm \is&
+\begin{pmatrix}
+\X_1^\tp\\
+\vdots\\
+\X_n^\tp\\
+\end{pmatrix}
+\in\R^{n\times p},\,
+\vec{\epsilon} \is (\epsilon_1,\ldots,\epsilon_n)^\tp\in\R^n,\\
+&\vec{Y} \is\begin{pmatrix}
+Y_1\\
+\vdots\\
+Y_n\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+\X_1^\tp\\
+\vdots\\
+\X_n^\tp\\
+\end{pmatrix}
+\vec{\beta}^* + \vec{\epsilon}
+=
+\Xm\vec{\beta}^* + \vec{\epsilon}
+.
+\\
+\end{split}
+$$
+
+Gọi $\Xm$ là **design matrix**.
+Ta ước lượng $\vec{\beta}^*$ bởi
+$$
+\begin{split}
+\textrm{LSE}\quad \hat{\vec{\beta}} &\is
+\argmin_{\vec{\beta}\in\R^p} \l2norm{\vec{Y} - \Xm \vec{\beta}}^2.
+\end{split}
+$$
+:::
+
+### Score equation
+:::{#thm-score-equation}
+### Score equation
+$$
+\Xm^\tp\Xm\hat{\vec{\beta}}
+\equiv \Xm^\tp\vec{Y}
+\equiv
+\Xm^\tp \Xm\vec{\beta}^* + \Xm^\tp\vec{\epsilon}.
+$$
+:::
+:::{.remark}
+Nếu $\textrm{rank}(\Xm)\equiv p$ thì
+$$
+\hat{\vec{\beta}}
+= (\Xm^\tp\Xm)^{-1}\Xm^\tp\vec{Y}
+= \vec{\beta}^* +
+(\Xm^\tp\Xm)^{-1}\Xm^\tp\vec{\epsilon}.
+$$
+:::
+:::{.remark}
+Đặt $P\is \Xm(\Xm^\tp\Xm)^{-1}\Xm^\tp$ ta có
+$\hat{\vec{Y}}\is\Xm\hat{\vec{\beta}} = P\vec{Y} \equiv P^2\vec{Y}$
+là xạ ảnh của $\vec{Y}$ lên không gian tuyến tính dựng trên các cột của $\Xm .$
+:::
+
+:::{.remark}
+Giả định $\Xm$ là hằng số. Khi đó
+tính ngẫu nhiên của
+$\vec{Y}$
+tuân theo tính ngẫu nhiên của
+$\vec{\epsilon}.$
+Để suy luận thống kê ta thường giả định thêm
+$\textrm{rank}(\Xm)\equiv p;$
+$\epsilon_1,\ldots\epsilon_n$ là **homoscedastic** (iid).
+:::
+
+## Homoscedastic model
+:::{#exm-homoscedastic-gaussian}
+### Homoscedastic gaussian
+Giả định $\Xm$ là hằng số,
+$\textrm{rank}(\Xm)\equiv p,$
+$\epsilon_1,\ldots\epsilon_n\iid \Gaus{0,\sigma^2}.$
+Vector nhiễu $\vec{\epsilon}$ là Gaussian (@def-gaussian-vector)
+$$
+\begin{split}
+\vec{\epsilon}&\sim\Gauk{n}{\vec{0},\sigma^2\Im},\\
+\vec{Y}&\sim\Gauk{n}{\Xm\vec{\beta}^*,\sigma^2\Im}.\\
+\end{split}
+$$
+Khi đó
+LSE (@def-lse-multivars) $\equiv$ MLE (@def-mle)
+có phân phối
+$$\hat{\vec{\beta}}\sim\Gauk{p}{\vec{\beta}^*,\sigma^2(\Xm^\tp\Xm)^{-1}}
+.$$
+MSE (@def-mse):
+$$\E{\l2norm{\hat{\vec{\beta}}-\vec{\beta}^*}^2} = \sigma^2\mathrm{tr}\left((\Xm^\tp\Xm)^{-1}\right)
+.$$
+Prediction error:
+$$
+\begin{split}
+{\l2norm{\Y-\Xm\hat{\vec{\beta}}}^2}
+&= \l2norm{P^\perp\Y}
+= \l2norm{P^\perp\vec{\epsilon}}
+ ,\\
+\E{\l2norm{\Y-\Xm\hat{\vec{\beta}}}^2}
+&= \sigma^2(n-p).
+\end{split}
+$$
+Unbiased estimator of $\sigma^2$
+là
+$\hat{\sigma}^2:$
+$$
+\begin{split}
+\hat{\sigma}^2
+&=
+\frac
+{{\l2norm{\Y-\Xm\hat{\vec{\beta}}}^2}}
+{n-p}
+= \frac
+{\sum_{i=1}^n \hat{\epsilon_i}^2}
+{n-p}
+,
+\\
+&(n-p)\frac{\hat{\sigma}^2}{\sigma^2}
+\sim \chi_{n-p}^2.
+\end{split}
+$$
+
+Cochran's theorem (@thm-cochran):
+$$
+\hat{\vec{\beta}}
+\independent
+\hat{\sigma}^2
+.
+$$
+
+:::

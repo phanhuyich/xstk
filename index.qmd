@@ -1,6 +1,22 @@
 # Lời nói đầu {.unnumbered}
 
+```{mermaid}
+%%| label: fig-proba-stats
+%%| fig-cap: Xác suất và thống kê.
+flowchart LR
+  A((Quy luật))
+  B((Quan sát))
+  A-- Xác suất -->B
+  B-- Thống kê --> A
+```
+
 Xác suất thống kê là nền tảng giúp ích cho việc phân tích dữ liệu, tổ chức thực hành thí nghiệm, chạy các mô hình giả lập, giải các bài toán tìm nghiệm tối ưu, nghiên cứu và ứng dụng học máy.
+
+Môn xác suất nghiên cứu cách suy luận ra các đặc tính của tập dữ liệu sẽ được tạo ra từ một nguyên lý, quy trình sản sinh dữ liệu. Ngược lại, môn thống kê nghiên cứu cách dự đoán đặc tính của một quy trình sản sinh dữ liệu từ tập dữ liệu về hiện tượng đã phát sinh và được quan sát. @fig-proba-stats minh hoạ quan hệ giữa "xác suất" và "thống kê".
+
+Phân tích, khai thác dữ liệu, học máy và khoa học dữ liệu là những tên gọi khác của thống kê, tùy theo bối cảnh và trào lưu. Một số ứng dụng cụ thể của thống kê là tính toán hồi quy, mật độ, phân loại và giả lập.
+
+## Động cơ
 
 Môn "xác suất" tôi đã học những kiến thức cơ bản vài lần, tính ra là ở cấp 3, trong đại học, và gần đây là học trực tuyến. Môn "thống kê" tôi chưa học được cho ra bài bản lần nào, mấy tháng đầu năm 2022 có thử sức học trực tuyến nhưng đầu tư thời gian không đủ nên thi rớt thảm hại.
 
@@ -10,19 +26,7 @@ Lần này nhất quyết học lại môn thống kê một cách nghiêm túc 
 
 Mục tiêu cụ thể trước mắt tôi đặt ra là học hiểu và lấy được chứng chỉ hoàn thành khoá học Fundamentals of Statistics của @mitxStats, giáo sư đại học MIT dạy trên nền tảng trực tuyến edX. Tài liệu tham khảo là quyển "All of Statistics" của @wasserman2010statistics, cũng chính là tài liệu tham khảo của khoá học nêu trên.
 
-Môn xác suất nghiên cứu cách suy luận ra các đặc tính của tập dữ liệu sẽ được tạo ra từ một nguyên lý, quy trình sản sinh dữ liệu. Ngược lại, môn thống kê nghiên cứu cách dự đoán đặc tính của một quy trình sản sinh dữ liệu từ tập dữ liệu về hiện tượng đã phát sinh và được quan sát. @fig-proba-stats minh hoạ quan hệ giữa "xác suất" và "thống kê".
-
-```{mermaid}
-%%| label: fig-proba-stats
-%%| fig-cap: Xác suất và thống kê.
-flowchart LR
-  A((Nguyên lý,\n Quy trình))
-  B((Hiện tượng,\n Quan trắc))
-  A-- Xác suất -->B
-  B-- Thống kê --> A
-```
-
-Phân tích, khai thác dữ liệu, học máy và khoa học dữ liệu là những tên gọi khác của thống kê, tùy theo bối cảnh và trào lưu. Một số ứng dụng cụ thể của thống kê là tính toán hồi quy, mật độ, phân loại và giả lập.
+## Chú ý
 
 Tài liệu này không đi sâu vào các chứng minh chi tiết, nhưng sẽ cố gắng ghi rõ các công thức và định nghĩa. Thuật ngữ chuyên môn trong tài liệu này chắc chắn có nhiều chỗ không chuẩn chỉnh do vốn tiếng Việt và kiến thức hạn chế của tác giả. Xin vui lòng góp ý tại [GitHub issues](https://github.com/vochicong/xstk/issues).
 

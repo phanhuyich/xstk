@@ -42,7 +42,7 @@ $$
 \frac{\sqrt{n}}{|\sigma|}
 \left({X}_n-X\right)
 \todist
-\Gaus{0}{1}.
+\Gaus{0,1}.
 $$
 :::
 
@@ -64,8 +64,8 @@ $X$ có mật độ xác suất, thì
 $X_n \toprob X$.
 
 Nếu chuỗi $X_n$ có
-$\E[X_n]\xrightarrow[]{} \mu$ và
-$\V[X_n]\xrightarrow[]{} 0$ thì
+$\E{X_n}\xrightarrow[]{} \mu$ và
+$\V{X_n}\xrightarrow[]{} 0$ thì
 $X_n\xrightarrow[]{\P} \mu$.
 
 Nếu $X_n\toprob X$ thì
@@ -96,17 +96,17 @@ Nếu $X_n\toapd X$ thì
 đối với mọi hàm $f$ liên tục:
 
 - $f(X_n)\toapd f(X)$.
-- $\E[f(X_n)]\xrightarrow[n\to\infty]{}\E[f(X)]$ nếu $f$ còn bị chặn.
+- $\E{f(X_n)}\xrightarrow[n\to\infty]{}\E{f(X)}$ nếu $f$ còn bị chặn.
 :::
 
 ## Đại đa số
 ::: {#thm-lln}
 ### Law of Large Numbers, LLN
 Cho $n$ biến iid $X_1, X_2,\ldotp,X_n\iid X$ có
-$\E[X]<\infty$.
-Khi đó:
+$\E{X}<\infty$.
+Khi đó trung bình mẫu (@def-sample-mean) hội tụ:
 $$\bar{X}_n\is\frac{1}{n}\sum_{i=1}^n{X_i}
-\xrightarrow[n\to\infty]{\P,\,\as}\E[X].
+\xrightarrow[n\to\infty]{\P,\,\as}\E{X}.
 $$
 :::
 
@@ -114,15 +114,15 @@ $$
 ::: {#thm-clt}
 ### Central Limit Theorem, CLT
 Giả sử thêm là
-$\V[X_i]=\sigma^2<\infty$.
+$\V{X_i}=\sigma^2<\infty$.
 Khi đó
 $$
 \sqrt{n}
 \left(
-\frac{\bar{X}_n-\mu}{|\sigma|}
+{\bar{X}_n-\mu}
 \right)
 \todist
-\Gaus{0}{1}.
+\Gaus{0,\sigma^2}.
 $$
 :::
 
@@ -153,11 +153,9 @@ $g^\prime$
 liên tục, $\neq 0$ tại $\theta$.
 Khi đó,
 $$
-\frac{\sqrt{n}}{|\sigma|}
-\left(\frac{g(\theta_n)-g(\theta)}
-{g^\prime(\theta)}\right)
+\sqrt{n}\left(g(\theta_n)-g(\theta)\right)
 \todist
-\Gaus{0}{1}
+\Gaus{0,\sigma^2{g^\prime(\theta)}^2}
 $$
 :::
 
@@ -171,7 +169,7 @@ về
 $\vec{\theta}\in\R^d:$
 $$
 \sqrt{n}(\vec{\theta}_n-\vec{\theta})
-\todist\Gaus_d(\vec{0},\Sigma).
+\todist\Gauk{d}{\vec{0}, \Sigma}.
 $$
 
 Giả sử $g:\R^d\to\R^k$
@@ -182,18 +180,17 @@ $(k<d)$.
 Khi đó,
 $$
 \sqrt{n}\left(g(\vec{\theta}_n)-g(\vec{\theta})\right)
-\todist\Gaus_k
-\left(\vec{0}, \Gamma\right)
+\todist\Gauk{k}{\vec{0}, \Gamma}
 ,
 $$
 
 với
-$\Gamma\is\nabla g(\vec{\theta})^T \Sigma \nabla g(\vec{\theta}).$
+$\Gamma\is\nabla g(\vec{\theta})^\tp \Sigma \nabla g(\vec{\theta}).$
 Nếu $\Sigma$ khả nghịch, $\nabla g$ rank $k$ thì
 $\Gamma$ khả nghịch,
 $$
 \sqrt{n}\Gamma^{-1/2}\left(g(\vec{\theta}_n)-g(\vec{\theta})\right)
-\todist\Gaus_k\left(\vec{0}, \vec{I}_k\right)
+\todist\Gauk{k}{\vec{0}, \Im_k}
 ,
 $$
 $$

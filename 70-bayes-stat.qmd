@@ -65,10 +65,9 @@ là non informative.
 :::
 
 :::{#exm-jeffreys-prior}
-- Thí nghiệm $\Ber(p), p\in(0,1)$ có
-$$\pi_J(p)\propto\frac{1}{\sqrt{p(1-p)}}\propto\Beta{\frac{1}{2}}{\frac{1}{2}}
-.$$
-- Thí nghiệm $\Gaus{\mu}{\sigma^2}, (\mu,\sigma^2)\in\R\times\R_+$ có
+- $\Ber(p), p\in(0,1)$ có
+$\pi_J(p)\propto{(p(1-p)})^{-1/2}\propto \Betad{1/2, 1/2}.$
+- $\Gaus{\mu, \sigma^2}, (\mu,\sigma^2)\in\R\times\R_+$ có
 $\pi_J(\mu,\sigma^2)\propto \sigma^{-3}$ là improper prior.
 :::
 

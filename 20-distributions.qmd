@@ -1,7 +1,5 @@
 # Phân phối
 
-Có một số phân phối xác suất thông dụng.
-
 ## Phân phối Bernoulli
 ::: {#def-bernoulli}
 ### Bernoulli distribution
@@ -11,7 +9,7 @@ $$
 \P(X=1) = p = 1-\P(X=0)
 $$
 và
-$\E[X] = p, \V[X] = p(1-p)$.
+$\E{X} = p, \V{X} = p(1-p)$.
 :::
 
 ## Phân phối nhị thức
@@ -27,7 +25,7 @@ $$
 \P(K=k) = \binom{n}{k}p^{k}(1-p)^{n-k}
 $$
 và
-$\E[K] = np, \V[K] = np(1-p)$.
+$\E{K} = np, \V{K} = np(1-p)$.
 :::
 
 ## Phân phối Poisson
@@ -42,7 +40,7 @@ $$
 $$
 $k=0,1,2,\ldots$ là số lần phát sinh sự kiện trong một giới hạn cố định,
 các sự kiện phát sinh độc lập.
-$$\E[K] = \V[K] = \lambda
+$$\E{K} = \V{K} = \lambda
 .$$
 :::
 
@@ -60,11 +58,9 @@ $$
 $$
 là xác suất thành công đầu tiên xảy ra sau đúng $k$ lần thực nghiệm
 $\Ber(k).$
-$$\E[K]=1/p,\V[K]=(1-p)/p^2.$$
+$$\E{K}=1/p,\V{K}=(1-p)/p^2.$$
 
 :::
-
-## Phân phối liên tục
 
 ## Phân phối đều
 :::{#def-uniform}
@@ -74,14 +70,17 @@ $$
 f(x)\is
 \frac{x-a}{b-a}
 \textrm{ for }
-x\in[a,b]
+x\in[a,b].
 $$
-và
-$$\E[X] = \frac{a+b}{2}, \V[X]=\frac{(b-a)^2}{12}.$$
+:::
+:::{.remark}
+$$\E{X} = \frac{a+b}{2}, \V{X}=\frac{(b-a)^2}{12}.$$
 :::
 
+:::{.remark}
 Nếu biến $X$ có cdf $F$ (@def-cdf) khả nghịch thì
 $F(X)\sim\Unif[0,1].$
+:::
 
 ## Phân phối mũ
 :::{#def-expdist}
@@ -89,40 +88,46 @@ $F(X)\sim\Unif[0,1].$
 $X\sim\text{Exp}(\lambda)$
 có
 $$
-f(x)={\lambda}e^{-\lambda x},x\in\R_+,
+f(x)={\lambda}e^{-\lambda x},x\in\R_{\geq 0},
 $$
 $x$ ước lượng khoảng cách giữa hai lần phát sinh
 sự kiện trong quá trình $\Poiss(\lambda).$
-$$\E[X]=1/\lambda,\V[X]=1/\lambda^2.$$
+$$\E{X}=1/\lambda,\V{X}=1/\lambda^2.$$
 :::
 
 ## Phân phối chuẩn
 :::{#def-gaussian}
-### Gaussian Distribution
-$X\sim\Gaus{\mu}{\sigma^2}$ có
+### Normal/Gaussian Distribution
+Phân phối chuẩn
+$X\sim\Gaus{\mu, \sigma^2}$ có
 mật độ
 $$
 f(x) =
 \frac{1}{\sqrt{\pi 2\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right),
-x\in\R
+x\in\R.
 $$
-và
-$\E[X]=\mu,\V[X]=\sigma^2$.
+:::
+:::{.remark}
+$\E{X}=\mu,\V{X}=\sigma^2$.
+:::
+:::{#def-standard-normal-dist}
+### Standard Normal Distribution
+$\Gaus{0,1}$ là **phân phối chuẩn tắc**.
 :::
 
 :::{#thm-sum-gaussian}
-### Tổng của các phân phối chuẩn
+### Cộng phân phối chuẩn
 Nếu
-$X_i \sim\Gaus{\mu_i}{\sigma_i^2} (i=1,\ldots,n)$
-thì
+$X_i \sim\Gaus{\mu_i, \sigma_i^2}, i=1,\ldots,n$
+độc lập thì
 
 $$\sum_{i=1}^n X_i\sim
-\Gaus{\sum_{i=1}^n \mu_i}{\sum_{i=1}^n \sigma_i^2}
+\Gaus{\sum_{i=1}^n \mu_i, \sum_{i=1}^n \sigma_i^2}
 .$$
 :::
 
-:::{#def-normal-vector}
-### Vector phân phối chuẩn
+:::{#def-gaussian-vector}
+### Multivariate normal distribution, or joint normal distribution
 Nếu mọi tổ hợp tuyến tính các yếu tố của
 vector $\boldsymbol{v}$ đều
 thuộc phân phối chuẩn 1 biến thì
@@ -135,21 +140,21 @@ $\boldsymbol{v}$
 ### Phân phối $\chi^2$
 $X\sim\chi_k^2$ là
 tổng bình phương của
-$X_1,\ldots,X_k\iid\Gaus{0}{1}$
+$X_1,\ldots,X_k\iid\Gaus{0, 1}$
 
 $$
 X \is \sum_{i=0}^k X_i^2
 $$
 
 và có
-$\E[X]=k,\V[X]=2k$.
+$\E{X}=k,\V{X}=2k$.
 :::
 
 ## Phân phối Student
 :::{#def-student-dist}
 ### Student's T distribution
 
-Nếu có $Z\sim\Gaus{0}{1}, V\sim \chi_k^2$ độc lập với nhau thì
+Nếu có $Z\sim\Gaus{0, 1}, V\sim \chi_k^2$ độc lập với nhau thì
 
 $$
 X \is \frac{Z}{\sqrt{V/k}}
@@ -161,29 +166,40 @@ tuân theo phân phối Student's $t_k$.
 ## Phân phối Beta
 :::{#def-beta-dist}
 ### Beta distribution
-$X\sim\Beta{\alpha}{\beta},$
+$X\sim\Betad{\alpha, \beta},$
 tham số
 $\alpha>0,\beta>0$
 có mật độ trên $x\in [0,1]$ là
 $$
-f(x) = Cx^{\alpha-1}(1-x)^{\beta-1}
+f(x) = \frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)}
 ,
 $$
-$C=C(\alpha,\beta)$ là hằng số chuẩn hóa.
+$B(\alpha,\beta)$ là hằng số chuẩn hóa.
+:::
+:::{.remark}
+$$
+\begin{split}
+\E{X}&=\frac{\alpha}{\alpha+\beta},\\
+\V{X}&=\frac{\alpha \beta }{(\alpha +\beta )^2(\alpha + \beta + 1)},\\
+\argmax f &= \frac{\alpha -1}{\alpha +\beta -2} \text { for } \alpha ,\beta > 1.
+\end{split}
+$$
 :::
 
+:::{.remark}
 Phân phối Beta có đồ thị rất linh hoạt trên khoảng $[0,1],$
-rất phù hợp để sử dụng làm xác suất tiền nghiệm (@def-bayesian-method)
-cho một tham số xác suất $p\in[0,1].$
+phù hợp làm xác suất tiền nghiệm (@def-bayesian-method).
+:::
 
-Ví dụ
-$\Unif[0,1] = \Beta{1}{1}.$
+:::{#exm-unif-beta}
+$\Unif[0,1] = \Betad{1, 1}.$
+:::
 
 ## Phân phối Gamma
 
 :::{#def-gamma-dist}
 ### Gamma distribution
-với tham số $q>0, \lambda>0,$
+với tham số $q>0$ (shape), $\lambda>0$ (rate)
 có mật độ là
 $$
 f(x)\is\frac{\lambda^q x^{q-1} e^{-\lambda x}}{\Gamma(q)}
@@ -192,4 +208,7 @@ x\in (0,\infty)
 ,
 $$
 $\Gamma$ là hàm Euler Gamma.
+:::
+:::{.remark}
+$$\E{X} = q/\lambda.$$
 :::

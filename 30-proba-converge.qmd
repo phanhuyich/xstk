@@ -119,10 +119,10 @@ Khi đó
 $$
 \sqrt{n}
 \left(
-\frac{\bar{X}_n-\mu}{|\sigma|}
+{\bar{X}_n-\mu}
 \right)
 \todist
-\Gaus{0,1}.
+\Gaus{0,\sigma^2}.
 $$
 :::
 
@@ -153,11 +153,9 @@ $g^\prime$
 liên tục, $\neq 0$ tại $\theta$.
 Khi đó,
 $$
-\frac{\sqrt{n}}{|\sigma|}
-\left(\frac{g(\theta_n)-g(\theta)}
-{g^\prime(\theta)}\right)
+\sqrt{n}\left(g(\theta_n)-g(\theta)\right)
 \todist
-\Gaus{0,1}
+\Gaus{0,\sigma^2{g^\prime(\theta)}^2}
 $$
 :::
 

@@ -88,7 +88,7 @@ $F(X)\sim\Unif[0,1].$
 $X\sim\text{Exp}(\lambda)$
 có
 $$
-f(x)={\lambda}e^{-\lambda x},x\in\R_+,
+f(x)={\lambda}e^{-\lambda x},x\in\R_{\geq 0},
 $$
 $x$ ước lượng khoảng cách giữa hai lần phát sinh
 sự kiện trong quá trình $\Poiss(\lambda).$
@@ -199,7 +199,7 @@ $\Unif[0,1] = \Betad{1, 1}.$
 
 :::{#def-gamma-dist}
 ### Gamma distribution
-với tham số $q>0, \lambda>0,$
+với tham số $q>0$ (shape), $\lambda>0$ (rate)
 có mật độ là
 $$
 f(x)\is\frac{\lambda^q x^{q-1} e^{-\lambda x}}{\Gamma(q)}
@@ -208,4 +208,7 @@ x\in (0,\infty)
 ,
 $$
 $\Gamma$ là hàm Euler Gamma.
+:::
+:::{.remark}
+$$\E{X} = q/\lambda.$$
 :::
